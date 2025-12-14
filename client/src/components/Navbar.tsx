@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ShieldCheck } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -19,15 +19,12 @@ export default function Navbar() {
   const isActive = (path: string) => location === path;
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-white/5 bg-background/80 backdrop-blur-xl">
+    <nav className="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/">
-          <a className="flex items-center gap-2 font-heading text-xl font-bold text-foreground hover:opacity-90 transition-opacity">
-            <ShieldCheck className="h-8 w-8 text-white" />
-            <span className="tracking-tight">
-              MySentry<span className="text-white/50">.ai</span>
-            </span>
+          <a className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <img src="/images/mysentry-logo.png" alt="MySentry" className="h-8 w-auto" />
           </a>
         </Link>
 
@@ -37,10 +34,10 @@ export default function Navbar() {
             <Link key={link.name} href={link.href}>
               <a
                 className={cn(
-                  "text-sm font-medium transition-all hover:text-white",
+                  "text-sm font-medium transition-all hover:text-primary",
                   isActive(link.href)
-                    ? "text-white font-semibold"
-                    : "text-white/60"
+                    ? "text-primary font-semibold"
+                    : "text-foreground/60"
                 )}
               >
                 {link.name}
@@ -48,7 +45,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="/pricing">
-            <Button variant="default" className="bg-white text-black hover:bg-white/90 font-semibold rounded-full px-6">
+            <Button className="bg-primary text-white hover:bg-primary/90 font-semibold rounded-full px-6">
               Start Free Trial
             </Button>
           </Link>
@@ -65,14 +62,14 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden border-t border-white/10 bg-background p-4 shadow-2xl animate-in slide-in-from-top-5">
+        <div className="md:hidden border-t border-primary/10 bg-white p-4 shadow-lg animate-in slide-in-from-top-5">
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href}>
                 <a
                   className={cn(
-                    "block text-base font-medium transition-colors hover:text-white",
-                    isActive(link.href) ? "text-white" : "text-white/60"
+                    "block text-base font-medium transition-colors hover:text-primary",
+                    isActive(link.href) ? "text-primary" : "text-foreground/60"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
@@ -81,7 +78,7 @@ export default function Navbar() {
               </Link>
             ))}
             <Link href="/pricing">
-              <Button className="w-full bg-white text-black rounded-full" onClick={() => setIsOpen(false)}>
+              <Button className="w-full bg-primary text-white rounded-full" onClick={() => setIsOpen(false)}>
                 Start Free Trial
               </Button>
             </Link>

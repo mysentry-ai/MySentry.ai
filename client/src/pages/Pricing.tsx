@@ -1,31 +1,133 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Check, X, HelpCircle, Shield, Zap, Users, Building2 } from "lucide-react";
+import { Check, X, Shield, Zap, Users, Building2, Heart, AlertTriangle } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { Link } from "wouter";
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+
+  const monthlyPrices = {
+    free: 0,
+    individual: 9.99,
+    family: 19.99,
+    enterprise: null
+  };
+
+  const annualPrices = {
+    free: 0,
+    individual: isAnnual ? 99.99 : 119.88,
+    family: isAnnual ? 199.99 : 239.88,
+    enterprise: null
+  };
+
+  const plans = [
+    {
+      id: "free",
+      name: "Free",
+      tagline: "Basic Safety",
+      price: monthlyPrices.free,
+      annualPrice: annualPrices.free,
+      description: "Get started with essential safety features.",
+      cta: "Start Free",
+      highlighted: false,
+      features: [
+        { name: "Panic Alarm (Voice & Button)", included: true },
+        { name: "Fall Detection", included: false },
+        { name: "Crash Detection", included: false },
+        { name: "Health Monitoring", included: false },
+        { name: "24/7 Professional Monitoring", included: false },
+        { name: "Live Video Response", included: false },
+        { name: "5 Emergency Contacts", included: true },
+        { name: "Location Sharing", included: true }
+      ]
+    },
+    {
+      id: "individual",
+      name: "Safety & Health",
+      tagline: "Complete Protection",
+      price: monthlyPrices.individual,
+      annualPrice: annualPrices.individual,
+      description: "Full protection with all safety and health features.",
+      cta: "Start Free Trial",
+      highlighted: true,
+      badge: "Most Popular",
+      features: [
+        { name: "Panic Alarm (Voice, Button, Watch)", included: true },
+        { name: "Fall Detection", included: true },
+        { name: "Crash Detection", included: true },
+        { name: "Real-Time Health Monitoring", included: true },
+        { name: "24/7 Professional Monitoring", included: true },
+        { name: "Live Video Response", included: true },
+        { name: "5 Emergency Contacts", included: true },
+        { name: "Location Sharing & History", included: true },
+        { name: "Health Trends & Alerts", included: true }
+      ]
+    },
+    {
+      id: "family",
+      name: "Family Bundle",
+      tagline: "Protect Everyone",
+      price: monthlyPrices.family,
+      annualPrice: annualPrices.family,
+      description: "Up to 4 members. Add more for $5/user/month.",
+      cta: "Start Free Trial",
+      highlighted: false,
+      features: [
+        { name: "All Safety & Health Features", included: true },
+        { name: "Up to 4 Family Members", included: true },
+        { name: "Additional Members ($5/user/month)", included: true },
+        { name: "Shared Emergency Contacts", included: true },
+        { name: "Family Dashboard", included: true },
+        { name: "Individual Health Profiles", included: true },
+        { name: "Privacy Controls per Member", included: true },
+        { name: "24/7 Professional Monitoring", included: true }
+      ]
+    },
+    {
+      id: "enterprise",
+      name: "Enterprise",
+      tagline: "Workplace Safety",
+      price: null,
+      annualPrice: null,
+      description: "Custom solutions for teams and organizations.",
+      cta: "Request Demo",
+      highlighted: false,
+      features: [
+        { name: "All Safety & Health Features", included: true },
+        { name: "Unlimited Team Members", included: true },
+        { name: "Team Management Dashboard", included: true },
+        { name: "Custom Health Thresholds", included: true },
+        { name: "Compliance Reporting (OSHA, HIPAA)", included: true },
+        { name: "Dedicated Account Manager", included: true },
+        { name: "API Integration", included: true },
+        { name: "Custom SLA & Support", included: true }
+      ]
+    }
+  ];
 
   return (
     <Layout>
-      <section className="py-24 bg-background">
+      {/* Hero */}
+      <section className="py-24 bg-white">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
-              Safety for Everyone.
+            <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-6">
+              Safety for Every Budget
             </h1>
-            <p className="text-xl text-white/60 mb-8">
-              Start your 7-day free trial. No hardware to buy. Cancel anytime.
+            <p className="text-xl text-foreground/70 mb-8">
+              7-day free trial. No credit card required. 30-day money-back guarantee.
             </p>
             
             {/* Toggle */}
-            <div className="flex items-center justify-center gap-4 p-1 bg-white/5 rounded-full inline-flex border border-white/10">
+            <div className="flex items-center justify-center gap-2 p-1 bg-primary/10 rounded-full inline-flex border border-primary/20">
               <button 
                 onClick={() => setIsAnnual(false)}
                 className={cn(
                   "px-6 py-2 rounded-full text-sm font-bold transition-all",
-                  !isAnnual ? "bg-white text-black" : "text-white/60 hover:text-white"
+                  !isAnnual ? "bg-primary text-white" : "text-foreground/60 hover:text-foreground"
                 )}
               >
                 Monthly
@@ -34,179 +136,217 @@ export default function Pricing() {
                 onClick={() => setIsAnnual(true)}
                 className={cn(
                   "px-6 py-2 rounded-full text-sm font-bold transition-all flex items-center gap-2",
-                  isAnnual ? "bg-white text-black" : "text-white/60 hover:text-white"
+                  isAnnual ? "bg-primary text-white" : "text-foreground/60 hover:text-foreground"
                 )}
               >
-                Yearly <span className="text-[10px] bg-green-500 text-white px-1.5 py-0.5 rounded-full">SAVE 20%</span>
+                Yearly <span className="text-[10px] bg-secondary text-white px-2 py-0.5 rounded-full font-bold">SAVE 2 MONTHS</span>
               </button>
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {/* Free Plan */}
-            <div className="relative p-8 rounded-3xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors flex flex-col">
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">Basic</h3>
-                <p className="text-white/60">Essential connection for peace of mind.</p>
-              </div>
-              <div className="mb-8">
-                <span className="text-5xl font-bold text-white">$0</span>
-                <span className="text-white/60">/mo</span>
-              </div>
-              <Button variant="outline" className="w-full h-12 rounded-full text-lg mb-8 border-white/20 text-white hover:bg-white hover:text-black">
-                Get Started
-              </Button>
-              <ul className="space-y-4 flex-1">
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-white shrink-0 mt-0.5" />
-                  <span className="text-white/80">Basic Activity Tracking</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-white shrink-0 mt-0.5" />
-                  <span className="text-white/80">1 Emergency Contact</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-white shrink-0 mt-0.5" />
-                  <span className="text-white/80">Daily Check-in Notification</span>
-                </li>
-                <li className="flex items-start gap-3 opacity-40">
-                  <X className="h-5 w-5 text-white shrink-0 mt-0.5" />
-                  <span className="text-white/80">Professional Monitoring</span>
-                </li>
-                <li className="flex items-start gap-3 opacity-40">
-                  <X className="h-5 w-5 text-white shrink-0 mt-0.5" />
-                  <span className="text-white/80">Fall & Crash Detection</span>
-                </li>
-              </ul>
-            </div>
+          {/* Pricing Cards */}
+          <div className="grid lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+            {plans.map((plan) => (
+              <div 
+                key={plan.id}
+                className={cn(
+                  "relative rounded-3xl border transition-all duration-300 overflow-hidden flex flex-col",
+                  plan.highlighted 
+                    ? "border-primary/50 bg-primary/5 shadow-lg scale-105 lg:scale-100" 
+                    : "border-primary/10 bg-white hover:border-primary/30 shadow-sm hover:shadow-md"
+                )}
+              >
+                {/* Badge */}
+                {plan.badge && (
+                  <div className="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                    {plan.badge}
+                  </div>
+                )}
 
-            {/* Premium Plan */}
-            <div className="relative p-8 rounded-3xl border-2 border-white bg-black shadow-[0_0_40px_rgba(255,255,255,0.1)] transform lg:-translate-y-4 flex flex-col z-10">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white text-black px-4 py-1 rounded-full text-sm font-bold shadow-lg">
-                Most Popular
-              </div>
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">Safety & Health</h3>
-                <p className="text-white/60">Complete protection for you and your family.</p>
-              </div>
-              <div className="mb-8">
-                <span className="text-5xl font-bold text-white">
-                  ${isAnnual ? "9.99" : "12.99"}
-                </span>
-                <span className="text-white/60">/mo</span>
-                {isAnnual && <p className="text-sm text-green-400 font-medium mt-2">Billed ${9.99 * 12} yearly</p>}
-              </div>
-              <Button size="lg" className="w-full h-12 rounded-full text-lg mb-8 bg-white text-black hover:bg-white/90 font-bold">
-                Start 7-Day Free Trial
-              </Button>
-              <ul className="space-y-4 flex-1">
-                <li className="flex items-start gap-3">
-                  <div className="p-1 rounded-full bg-green-500/20 text-green-500">
-                    <Check className="h-3 w-3" />
-                  </div>
-                  <span className="font-medium text-white">24/7 Professional Monitoring</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="p-1 rounded-full bg-green-500/20 text-green-500">
-                    <Check className="h-3 w-3" />
-                  </div>
-                  <span className="font-medium text-white">Live Video Response</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="p-1 rounded-full bg-green-500/20 text-green-500">
-                    <Check className="h-3 w-3" />
-                  </div>
-                  <span className="font-medium text-white">Fall & Crash Detection</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="p-1 rounded-full bg-green-500/20 text-green-500">
-                    <Check className="h-3 w-3" />
-                  </div>
-                  <span className="font-medium text-white">Real-time Health Vitals</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="p-1 rounded-full bg-green-500/20 text-green-500">
-                    <Check className="h-3 w-3" />
-                  </div>
-                  <span className="font-medium text-white">Unlimited Emergency Contacts</span>
-                </li>
-              </ul>
-              
-              {/* Family Add-on */}
-              <div className="mt-8 pt-8 border-t border-white/10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-white/10 rounded-lg text-white">
-                    <Users className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-white">Family Bundle</h4>
-                    <p className="text-sm text-white/60">Add up to 4 members</p>
-                  </div>
-                  <div className="ml-auto font-bold text-white">
-                    +$5<span className="text-xs font-normal text-white/60">/user/mo</span>
-                  </div>
+                {/* Header */}
+                <div className="p-8 border-b border-primary/10">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
+                  <p className="text-sm text-foreground/60 mb-6">{plan.tagline}</p>
+                  
+                  {plan.price !== null ? (
+                    <div className="mb-4">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-4xl font-bold text-primary">${isAnnual ? (plan.annualPrice / 12).toFixed(2) : plan.price}</span>
+                        <span className="text-foreground/60">/month</span>
+                      </div>
+                      {isAnnual && (
+                        <p className="text-xs text-foreground/50 mt-2">
+                          Billed ${plan.annualPrice} annually
+                        </p>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="mb-4">
+                      <p className="text-2xl font-bold text-primary">Custom Pricing</p>
+                      <p className="text-xs text-foreground/50 mt-2">Contact for quote</p>
+                    </div>
+                  )}
+
+                  <p className="text-sm text-foreground/70 mb-6">{plan.description}</p>
+
+                  <Link href="/pricing">
+                    <Button 
+                      className={cn(
+                        "w-full h-12 rounded-full font-bold transition-all",
+                        plan.highlighted
+                          ? "bg-primary text-white hover:bg-primary/90"
+                          : "bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20"
+                      )}
+                      onClick={() => setSelectedPlan(plan.id)}
+                    >
+                      {plan.cta}
+                    </Button>
+                  </Link>
                 </div>
-                <p className="text-xs text-white/40">
-                  Protect the whole household. Includes all premium features for every member.
+
+                {/* Features */}
+                <div className="p-8 space-y-4 flex-1">
+                  {plan.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      {feature.included ? (
+                        <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      ) : (
+                        <X className="h-5 w-5 text-foreground/20 shrink-0 mt-0.5" />
+                      )}
+                      <span className={cn(
+                        "text-sm",
+                        feature.included ? "text-foreground/80" : "text-foreground/40"
+                      )}>
+                        {feature.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Family Bundle Details */}
+      <section className="py-24 bg-primary/5 border-t border-primary/10">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-heading font-bold text-foreground mb-8">
+              Family Bundle Breakdown
+            </h2>
+            <div className="space-y-6">
+              <div className="p-6 rounded-2xl bg-white border border-primary/10">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-bold text-foreground">Primary User</h3>
+                  <span className="text-primary font-bold">${isAnnual ? (199.99 / 12).toFixed(2) : 19.99}/month</span>
+                </div>
+                <p className="text-sm text-foreground/60">Full access to all features</p>
+              </div>
+              
+              {[1, 2, 3, 4].map((i) => (
+                <div key={i} className="p-6 rounded-2xl bg-white border border-primary/10">
+                  <div className="flex items-center justify-between mb-2">
+                    <h3 className="font-bold text-foreground">Additional Member {i}</h3>
+                    <span className="text-primary font-bold">$5/month</span>
+                  </div>
+                  <p className="text-sm text-foreground/60">Full access to all features</p>
+                </div>
+              ))}
+
+              <div className="p-6 rounded-2xl bg-secondary/10 border border-secondary/30">
+                <p className="text-sm text-foreground/70 mb-4">
+                  <strong>Example:</strong> Family of 4 = ${isAnnual ? (199.99 / 12 + 15).toFixed(2) : (19.99 + 15)}/month
+                </p>
+                <p className="text-xs text-foreground/60">
+                  Each member has their own privacy settings and emergency contacts.
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Enterprise Plan */}
-            <div className="relative p-8 rounded-3xl border border-white/10 bg-white/5 hover:bg-white/10 transition-colors flex flex-col">
-              <div className="mb-8">
-                <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
-                <p className="text-white/60">For workforce safety and compliance.</p>
-              </div>
-              <div className="mb-8">
-                <span className="text-5xl font-bold text-white">Custom</span>
-              </div>
-              <Button variant="outline" className="w-full h-12 rounded-full text-lg mb-8 border-white/20 text-white hover:bg-white hover:text-black">
-                Contact Sales
-              </Button>
-              <ul className="space-y-4 flex-1">
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-white shrink-0 mt-0.5" />
-                  <span className="text-white/80">Centralized Manager Dashboard</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-white shrink-0 mt-0.5" />
-                  <span className="text-white/80">Incident Reporting & Analytics</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-white shrink-0 mt-0.5" />
-                  <span className="text-white/80">API Integration</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-white shrink-0 mt-0.5" />
-                  <span className="text-white/80">Dedicated Account Manager</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <Check className="h-5 w-5 text-white shrink-0 mt-0.5" />
-                  <span className="text-white/80">Volume Discounts</span>
-                </li>
-              </ul>
+      {/* Trust Signals */}
+      <section className="py-24 bg-white border-t border-primary/10">
+        <div className="container">
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-16 text-center">
+            Why Choose MySentry?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="text-center">
+              <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="font-bold text-foreground mb-2">30-Day Money-Back</h3>
+              <p className="text-foreground/60 text-sm">Not satisfied? Full refund, no questions asked.</p>
+            </div>
+            <div className="text-center">
+              <AlertTriangle className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="font-bold text-foreground mb-2">24/7 Monitoring</h3>
+              <p className="text-foreground/60 text-sm">Live agents respond to every alert in seconds.</p>
+            </div>
+            <div className="text-center">
+              <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="font-bold text-foreground mb-2">HIPAA Compliant</h3>
+              <p className="text-foreground/60 text-sm">Your health data is encrypted and secure.</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Trust Badges */}
-          <div className="mt-24 grid md:grid-cols-3 gap-8 text-center border-t border-white/10 pt-16">
-            <div className="p-6">
-              <Shield className="h-10 w-10 text-white mx-auto mb-4" />
-              <h3 className="font-bold text-white mb-2">30-Day Money-Back</h3>
-              <p className="text-white/60 text-sm">If you don't feel safer, we'll refund every penny. No questions asked.</p>
-            </div>
-            <div className="p-6">
-              <HelpCircle className="h-10 w-10 text-white mx-auto mb-4" />
-              <h3 className="font-bold text-white mb-2">No Contracts</h3>
-              <p className="text-white/60 text-sm">We believe in earning your trust every month. Cancel anytime.</p>
-            </div>
-            <div className="p-6">
-              <Zap className="h-10 w-10 text-white mx-auto mb-4" />
-              <h3 className="font-bold text-white mb-2">Instant Setup</h3>
-              <p className="text-white/60 text-sm">Download the app, pair your watch, and you're protected in minutes.</p>
-            </div>
+      {/* FAQ */}
+      <section className="py-24 bg-primary/5 border-t border-primary/10">
+        <div className="container max-w-3xl">
+          <h2 className="text-3xl font-heading font-bold text-foreground mb-12 text-center">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {[
+              {
+                q: "Do I need to buy a new device?",
+                a: "No. MySentry works with Apple Watch Series 4+ and Samsung Galaxy Watch 4+. If you already own one, you're ready to go."
+              },
+              {
+                q: "Can I cancel anytime?",
+                a: "Yes. Cancel your subscription anytime with no penalties. If you're not satisfied within 30 days, we'll refund your money."
+              },
+              {
+                q: "What if I have multiple family members?",
+                a: "Use the Family Bundle. Add up to 4 members for $5/user/month. Each member has their own profile and privacy settings."
+              },
+              {
+                q: "Is my health data private?",
+                a: "Absolutely. All data is encrypted end-to-end and HIPAA compliant. Only you and your emergency contacts can see your information."
+              },
+              {
+                q: "What happens if I don't respond to an alert?",
+                a: "Our 24/7 monitoring team will attempt to contact you. If you don't respond, we dispatch emergency services to your location."
+              },
+              {
+                q: "Do I get a free trial?",
+                a: "Yes. 7-day free trial with full access to all features. No credit card required to start."
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="p-6 rounded-2xl bg-white border border-primary/10">
+                <h3 className="font-bold text-foreground mb-3">{item.q}</h3>
+                <p className="text-foreground/70 text-sm">{item.a}</p>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-24 text-center bg-primary text-white">
+        <div className="container max-w-3xl">
+          <h2 className="text-4xl font-heading font-bold mb-6">
+            Ready to Get Help Fast?
+          </h2>
+          <p className="text-xl text-white/80 mb-8">
+            Start your 7-day free trial today. No credit card. No commitment.
+          </p>
+          <Button size="lg" className="h-14 px-12 text-lg rounded-full bg-white text-primary hover:bg-white/90 shadow-xl font-bold">
+            Start Free Trial
+          </Button>
         </div>
       </section>
     </Layout>

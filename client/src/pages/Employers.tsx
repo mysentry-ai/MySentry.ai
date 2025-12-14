@@ -1,168 +1,263 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { HardHat, Truck, Factory, Building2, AlertTriangle, TrendingDown, ShieldCheck } from "lucide-react";
+import { TrendingUp, Shield, Briefcase, AlertTriangle, CheckCircle2, DollarSign } from "lucide-react";
 
 export default function Employers() {
+  const industries = [
+    {
+      name: "Construction",
+      challenge: "Falls from heights, equipment injuries, heat exhaustion in remote sites.",
+      benefit: "Detect falls instantly. Response time drops from 30 min to 2 min.",
+      roi: "Reduce workers' comp claims by 35-40%"
+    },
+    {
+      name: "Healthcare",
+      challenge: "Staff working 12+ hour shifts. Fatigue-related errors and injuries.",
+      benefit: "Monitor stress levels and alert supervisors if vitals spike dangerously.",
+      roi: "Reduce burnout-related turnover by 20%"
+    },
+    {
+      name: "Logistics & Delivery",
+      challenge: "Drivers alone in vehicles. Crashes, medical events, safety threats.",
+      benefit: "Crash detection + live video response. Family notified automatically.",
+      roi: "Reduce incident response time by 70%"
+    },
+    {
+      name: "Field Service",
+      challenge: "Technicians working alone in unfamiliar locations. Safety risks.",
+      benefit: "Panic button + location tracking. Agents see live video of incident.",
+      roi: "Reduce safety incidents by 45%"
+    },
+    {
+      name: "Mining & Extraction",
+      challenge: "Extreme environments. Falls, equipment failures, medical emergencies.",
+      benefit: "Passive health monitoring + fall detection in real-time.",
+      roi: "Reduce downtime from 8 hours to 15 minutes per incident"
+    },
+    {
+      name: "Warehousing",
+      challenge: "Fast-paced, repetitive work. Slips, trips, falls. Fatigue injuries.",
+      benefit: "Fall detection + health monitoring. Immediate response.",
+      roi: "Reduce OSHA recordable incidents by 50%"
+    }
+  ];
+
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-24 bg-background relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden">
         <div className="container grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-xs font-medium uppercase tracking-wider">
-              <Building2 className="h-3 w-3 text-yellow-500 fill-current" />
-              Enterprise Safety Solution
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-bold uppercase tracking-wider">
+              <Shield className="h-3 w-3 fill-current" />
+              Enterprise Safety
             </div>
-            <h1 className="text-5xl md:text-7xl font-heading font-bold text-white leading-tight">
-              Protect Your <br/>
-              <span className="text-white/40">Most Valuable Asset.</span>
+            <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground leading-tight">
+              Your Workers Come Home Safe.
             </h1>
-            <p className="text-xl text-white/60 leading-relaxed">
-              Workplace injuries cost billions. MySentry turns the smartwatches your employees already own into a proactive safety net that prevents accidents before they happen.
+            
+            <p className="text-xl text-foreground/70 leading-relaxed">
+              Every incident costs money. Every injury costs lives. MySentry detects emergencies before they become disasters—and responds in seconds, not minutes.
             </p>
             <div className="flex gap-4 pt-4">
               <Link href="/pricing">
-                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-white text-black hover:bg-white/90 font-semibold">
-                  View Enterprise Plans
+                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary text-white hover:bg-primary/90 font-semibold">
+                  Request Demo
                 </Button>
               </Link>
             </div>
+            <div className="p-4 rounded-xl bg-primary/10 border border-primary/20">
+              <p className="text-sm text-foreground/70 italic">
+                <strong className="text-primary">Did you know?</strong> The average workplace injury costs $42,000 in direct and indirect costs.
+              </p>
+            </div>
           </div>
           <div className="relative">
-            <div className="aspect-video rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center relative overflow-hidden">
-               {/* Dashboard Mockup */}
-               <div className="absolute inset-0 p-8 grid grid-cols-2 gap-4 opacity-50">
-                 <div className="bg-white/5 rounded-xl"></div>
-                 <div className="bg-white/5 rounded-xl"></div>
-                 <div className="bg-white/5 rounded-xl col-span-2"></div>
-               </div>
-               <div className="relative z-10 text-center">
-                 <ShieldCheck className="h-20 w-20 text-yellow-500 mx-auto mb-4" />
-                 <h3 className="text-2xl font-bold text-white">Zero Incidents</h3>
-                 <p className="text-white/60">Current Status: Safe</p>
+            <div className="aspect-square rounded-3xl bg-primary/5 border-2 border-primary/20 overflow-hidden relative shadow-lg flex items-center justify-center">
+               <div className="text-center space-y-6">
+                 <TrendingUp className="h-24 w-24 text-primary/30 mx-auto" />
+                 <div>
+                   <p className="text-3xl font-bold text-primary">40%</p>
+                   <p className="text-foreground/60 text-sm">Avg. Incident Reduction</p>
+                 </div>
                </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Industry Challenges */}
-      <section className="py-24 bg-white/5">
+      {/* The Problem: Hidden Costs */}
+      <section className="py-24 bg-primary/5 border-t border-primary/10">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-6">
-              Tailored for High-Risk Environments
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
+              The Real Cost of <br/>
+              <span className="text-primary">Workplace Incidents</span>
             </h2>
-            <p className="text-lg text-white/60">
-              Every industry has unique dangers. MySentry adapts to yours.
+            <p className="text-lg text-foreground/70">
+              It's not just the medical bill. It's lost productivity, worker's comp premiums, regulatory fines, and damaged morale.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: Factory,
-                title: "Manufacturing",
-                challenge: "The Challenge: Heat Stress & Fatigue",
-                solution: "MySentry monitors heart rate variability and body temperature trends to predict exhaustion before an accident occurs."
+                title: "Delayed Response",
+                desc: "Worker collapses. No one knows for 10 minutes. Permanent damage.",
+                icon: AlertTriangle,
+                metric: "10 min avg"
               },
               {
-                icon: HardHat,
-                title: "Construction",
-                challenge: "The Challenge: Falls from Height",
-                solution: "Our military-grade fall detection instantly alerts site supervisors with exact GPS coordinates of the incident."
+                title: "Expensive Downtime",
+                desc: "Incident investigation, incident reports, compliance audits.",
+                icon: DollarSign,
+                metric: "$42K avg"
               },
               {
-                icon: Truck,
-                title: "Logistics",
-                challenge: "The Challenge: Driver Drowsiness",
-                solution: "Biometric monitoring detects signs of sleep onset and alerts the driver to pull over immediately."
+                title: "Insurance Premiums",
+                desc: "Each incident raises your rates for years.",
+                icon: TrendingUp,
+                metric: "15-20% increase"
               }
             ].map((item, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-black border border-white/10 hover:border-white/30 transition-colors">
-                <div className="h-12 w-12 rounded-xl bg-white/10 flex items-center justify-center mb-6">
-                  <item.icon className="h-6 w-6 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4">{item.title}</h3>
-                <div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/20">
-                  <p className="text-sm font-bold text-red-400">{item.challenge}</p>
-                </div>
-                <p className="text-white/60 leading-relaxed">{item.solution}</p>
+              <div key={idx} className="p-8 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-colors shadow-sm hover:shadow-md">
+                <item.icon className="h-10 w-10 text-primary mb-6" />
+                <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                <p className="text-foreground/60 mb-4">{item.desc}</p>
+                <p className="text-primary font-bold text-sm">{item.metric}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* The ROI (Business Challenge) */}
-      <section className="py-24 border-t border-white/5">
-        <div className="container grid lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <h2 className="text-4xl font-heading font-bold text-white">
-              Safety is an Investment, <br/>
-              <span className="text-white/40">Not an Expense.</span>
+      {/* Solution: Industry Breakdown */}
+      <section className="py-24 border-t border-primary/10 bg-white">
+        <div className="container">
+          <div className="mb-16">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
+              Tailored for Your Industry
             </h2>
-            <p className="text-lg text-white/60">
-              The cost of a single workplace injury goes far beyond medical bills. It impacts morale, productivity, and insurance premiums.
+            <p className="text-xl text-foreground/70">
+              Whether your team works at heights, in vehicles, or in warehouses—MySentry adapts to your specific risks.
             </p>
-            <div className="grid gap-4">
-              <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
-                <span className="text-white font-medium">Avg. Cost of Injury</span>
-                <span className="text-red-500 font-bold">$42,000</span>
+          </div>
+
+          <div className="grid gap-6">
+            {industries.map((industry, idx) => (
+              <div key={idx} className="group p-8 rounded-3xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md">
+                <div className="grid md:grid-cols-4 gap-8">
+                  <div>
+                    <h3 className="text-2xl font-bold text-primary mb-2">{industry.name}</h3>
+                  </div>
+                  <div>
+                    <p className="text-sm text-foreground/60 uppercase tracking-widest font-bold mb-2">Challenge</p>
+                    <p className="text-foreground/80">{industry.challenge}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-foreground/60 uppercase tracking-widest font-bold mb-2">MySentry Solution</p>
+                    <p className="text-foreground/80">{industry.benefit}</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-foreground/60 uppercase tracking-widest font-bold mb-2">ROI</p>
+                    <p className="text-primary font-bold text-lg">{industry.roi}</p>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center justify-between p-4 rounded-xl bg-white/5 border border-white/10">
-                <span className="text-white font-medium">MySentry Annual Cost</span>
-                <span className="text-green-500 font-bold">$120/user</span>
-              </div>
-            </div>
-            <div className="flex items-center gap-4 text-white/40 text-sm">
-              <TrendingDown className="h-4 w-4" />
-              <span>Reduce insurance premiums by up to 15%</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The Difference: Live Video */}
+      <section className="py-24 bg-primary/5 border-t border-primary/10">
+        <div className="container grid lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-6">
+            <h2 className="text-4xl font-heading font-bold text-foreground">
+              Agents See the Scene. <br/>
+              <span className="text-primary">In Real-Time.</span>
+            </h2>
+            <p className="text-lg text-foreground/70">
+              Traditional panic buttons send a text. MySentry sends a live video stream to our monitoring center AND your emergency team.
+            </p>
+            <ul className="space-y-4 pt-4">
+              <li className="flex items-start gap-3 text-foreground/80">
+                <CheckCircle2 className="h-5 w-5 text-primary mt-1" />
+                <span><strong>Immediate Assessment:</strong> Agents see exactly what happened and dispatch the right resources.</span>
+              </li>
+              <li className="flex items-start gap-3 text-foreground/80">
+                <CheckCircle2 className="h-5 w-5 text-primary mt-1" />
+                <span><strong>Faster Response:</strong> No guessing. No delays. Help arrives in minutes, not hours.</span>
+              </li>
+              <li className="flex items-start gap-3 text-foreground/80">
+                <CheckCircle2 className="h-5 w-5 text-primary mt-1" />
+                <span><strong>Better Outcomes:</strong> Immediate medical intervention = fewer permanent injuries.</span>
+              </li>
+            </ul>
+            <div className="p-4 rounded-xl bg-primary/10 border border-primary/20 mt-6">
+              <p className="text-sm text-foreground/70 italic">
+                <strong className="text-primary">💡</strong> Average response time: 12 seconds from alert to agent assessment.
+              </p>
             </div>
           </div>
-          <div className="relative">
-             <div className="p-8 rounded-3xl bg-white/5 border border-white/10">
-               <h3 className="text-xl font-bold text-white mb-6">Manager Dashboard</h3>
-               <div className="space-y-4">
-                 {[1, 2, 3].map((i) => (
-                   <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-black/40 border border-white/5">
-                     <div className="h-8 w-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-500 text-xs font-bold">OK</div>
-                     <div>
-                       <p className="text-white text-sm font-bold">Team Alpha</p>
-                       <p className="text-white/40 text-xs">All vitals normal</p>
-                     </div>
-                     <div className="ml-auto text-white/40 text-xs">12 Active</div>
-                   </div>
-                 ))}
-                 <div className="flex items-center gap-4 p-4 rounded-xl bg-red-500/10 border border-red-500/20">
-                     <div className="h-8 w-8 rounded-full bg-red-500/20 flex items-center justify-center text-red-500 text-xs font-bold">!</div>
-                     <div>
-                       <p className="text-white text-sm font-bold">Team Bravo</p>
-                       <p className="text-red-400 text-xs">1 High Heart Rate Alert</p>
-                     </div>
-                     <div className="ml-auto">
-                       <Button size="sm" variant="destructive" className="h-7 text-xs">View</Button>
-                     </div>
-                   </div>
+          <div>
+             <div className="aspect-video rounded-3xl bg-white border-2 border-primary/20 overflow-hidden relative shadow-lg flex items-center justify-center">
+               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
+                 <Briefcase className="h-20 w-20 text-primary/20" />
                </div>
              </div>
           </div>
         </div>
       </section>
 
+      {/* Enterprise Features */}
+      <section className="py-24 border-t border-primary/10 bg-white">
+        <div className="container">
+          <h2 className="text-4xl font-heading font-bold text-foreground mb-16 text-center">
+            Built for Enterprise
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Team Management",
+                desc: "Assign workers to teams. Track incidents by department. Generate compliance reports automatically.",
+                icon: Briefcase
+              },
+              {
+                title: "Compliance Ready",
+                desc: "OSHA, HIPAA, and SOC 2 compliant. Audit trails for every incident.",
+                icon: Shield
+              },
+              {
+                title: "Custom Thresholds",
+                desc: "Set health alerts based on your industry standards and worker profiles.",
+                icon: TrendingUp
+              }
+            ].map((feature, idx) => (
+              <div key={idx} className="p-8 rounded-3xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-colors">
+                <feature.icon className="h-10 w-10 text-primary mb-6" />
+                <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
+                <p className="text-foreground/60">{feature.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-24 text-center bg-white text-black">
+      <section className="py-24 text-center bg-primary text-white">
         <div className="container max-w-3xl">
           <h2 className="text-4xl font-heading font-bold mb-6">
-            Secure Your Workforce.
+            Reduce Incidents. <br/>
+            Protect Your Team.
           </h2>
-          <p className="text-xl text-black/60 mb-8">
-            Schedule a demo to see how MySentry integrates with your existing safety protocols.
+          <p className="text-xl text-white/80 mb-8">
+            Request a demo and see how MySentry works for your industry.
           </p>
           <Link href="/pricing">
-            <Button size="lg" className="h-14 px-10 text-lg rounded-full bg-black text-white hover:bg-black/80 shadow-xl">
-              See Enterprise Pricing
+            <Button size="lg" className="h-14 px-10 text-lg rounded-full bg-white text-primary hover:bg-white/90 shadow-xl font-bold">
+              Schedule Enterprise Demo
             </Button>
           </Link>
         </div>
