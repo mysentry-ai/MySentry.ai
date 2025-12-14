@@ -22,10 +22,10 @@ export default function Features() {
             className="max-w-3xl"
           >
             <h1 className="text-5xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-6">
-              How MySentry protects you.
+              Safety. Health. Connectivity.
             </h1>
             <p className="text-xl text-[#1a1a1a] mb-8">
-              Seven layers of protection. All working together. All the time. Detecting problems before they become emergencies.
+              MySentry combines three essential pillars to keep you safe, healthy, and connected. Seven integrated features work together 24/7 to detect problems early, respond instantly, and keep your family informed every step of the way.
             </p>
             <Link href="/pricing">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary text-white hover:bg-primary/90 font-semibold shadow-lg">
@@ -360,37 +360,78 @@ export default function Features() {
         </div>
       </section>
 
-      {/* How It All Works Together */}
+      {/* Three Pillars */}
       <section className="py-32 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6">
-              How it all works together.
+              Three pillars. One solution.
             </h2>
             <p className="text-lg text-[#1a1a1a]">
-              MySentry doesn't just respond to emergencies. It prevents them. It detects problems early. It gets help there fast. And it keeps your family informed every step of the way.
+              MySentry integrates Safety, Health, and Connectivity into one seamless system. Every feature supports all three pillars, creating a comprehensive protection network that works 24/7.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[
               {
-                title: "Prevention",
-                items: ["Near-Fall Detection alerts you to prevent falls", "Real-Time Health Monitoring detects problems 24-48 hours early", "Smart Connectivity keeps your family informed"]
+                title: "🛡️ Safety",
+                description: "Instant detection and response to emergencies",
+                items: ["Panic Alarm (voice or tap)", "Fall Detection (automatic)", "Crash Detection (automatic)", "Live Video Response", "24/7 Professional Monitoring"]
               },
               {
-                title: "Detection",
-                items: ["Fall Detection works automatically", "Crash Detection works automatically", "Health Threshold Alerts work automatically"]
+                title: "❤️ Health",
+                description: "Continuous monitoring of your vital signs",
+                items: ["Real-Time Health Monitoring", "Personalized Baselines", "Near-Fall Detection", "Early Warning Alerts", "Preventive Care Focus"]
               },
               {
-                title: "Response",
-                items: ["Panic Alarm connects you to an agent in seconds", "Live Video shows agents exactly what's happening", "Emergency contacts are alerted immediately"]
-              },
-              {
-                title: "Evidence",
-                items: ["Video is recorded for every incident", "Clear documentation for insurance claims", "Liability protection with video evidence"]
+                title: "🔗 Connectivity",
+                description: "Keep your family informed and connected",
+                items: ["Smart Connectivity Alerts", "5 Emergency Contacts", "Live Video Sharing", "Automated Location Updates", "Peace of Mind"]
               }
-            ].map((section, idx) => (
+            ].map((pillar, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="p-8 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all"
+              >
+                <h3 className="text-2xl font-bold text-[#1a1a1a] mb-2">{pillar.title}</h3>
+                <p className="text-[#1a1a1a] font-semibold mb-6 text-primary">{pillar.description}</p>
+                <ul className="space-y-3">
+                  {pillar.items.map((item, i) => (
+                    <li key={i} className="flex gap-3 text-[#1a1a1a]">
+                      <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="bg-[#d4edda] rounded-2xl p-8 border border-primary/20">
+            <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">How They Work Together</h3>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  title: "Prevention",
+                  items: ["Near-Fall Detection alerts you to prevent falls", "Real-Time Health Monitoring detects problems 24-48 hours early", "Smart Connectivity keeps your family informed"]
+                },
+                {
+                  title: "Detection",
+                  items: ["Fall Detection works automatically", "Crash Detection works automatically", "Health Threshold Alerts work automatically"]
+                },
+                {
+                  title: "Response",
+                  items: ["Panic Alarm connects you to an agent in seconds", "Live Video shows agents exactly what's happening", "Emergency contacts are alerted immediately"]
+                },
+                {
+                  title: "Evidence",
+                  items: ["Video is recorded for every incident", "Clear documentation for insurance claims", "Liability protection with video evidence"]
+                }
+              ].map((section, idx) => (
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
@@ -409,6 +450,7 @@ export default function Features() {
                 </ul>
               </motion.div>
             ))}
+            </div>
           </div>
         </div>
       </section>
