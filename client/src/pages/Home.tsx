@@ -51,31 +51,31 @@ export default function Home() {
               Works with Apple & Samsung Watches
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight tracking-tight text-foreground">
+            <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight tracking-tight text-foreground fade-in-up">
               Get help fast in a safety or health emergency.
             </h1>
             
-            <p className="text-xl text-foreground/70 max-w-lg leading-relaxed font-light">
+            <p className="text-xl text-foreground/80 max-w-lg leading-relaxed font-light fade-in-up" style={{animationDelay: '0.1s'}}>
               Your watch already knows your heart rate. Your phone already has your location. MySentry connects the dots—automatically alerting loved ones and professionals the moment something goes wrong.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 pt-6">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6 fade-in-up" style={{animationDelay: '0.2s'}}>
               <Link href="/pricing">
-                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105 font-semibold">
+                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105 font-semibold shadow-lg hover:shadow-xl">
                   Start 7-Day Free Trial
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link href="/features">
-                <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50">
+                <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 hover-lift">
                   See How It Works
                 </Button>
               </Link>
             </div>
             
             {/* Curiosity Sound Bite */}
-            <div className="pt-8 p-4 rounded-2xl bg-primary/5 border border-primary/10">
-              <p className="text-sm text-foreground/60 italic">
+            <div className="pt-8 p-4 rounded-2xl bg-primary/5 border border-primary/10 fade-in-up glow-effect" style={{animationDelay: '0.3s'}}>
+              <p className="text-sm text-foreground/70 italic">
                 <strong className="text-primary">Did you know?</strong> Fall detection algorithms can identify a hard fall in under 2 seconds—faster than you can press a button.
               </p>
             </div>
@@ -88,8 +88,8 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative h-[700px] w-full hidden lg:block"
           >
-            <div className="absolute inset-0 flex items-center justify-center">
-               <div className="relative w-[350px] h-[600px] bg-gradient-to-br from-primary/5 to-secondary/5 rounded-[3rem] border-8 border-primary/10 shadow-2xl overflow-hidden">
+               <div className="absolute inset-0 flex items-center justify-center">
+                 <div className="relative w-[350px] h-[600px] bg-gradient-to-br from-primary/5 to-secondary/5 rounded-[3rem] border-8 border-primary/10 shadow-2xl overflow-hidden hover-lift">
                  <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white opacity-40 z-10"></div>
                  {/* UI Mockup */}
                  <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center space-y-6">
@@ -112,9 +112,9 @@ export default function Home() {
                  </div>
                </div>
                {/* Watch Mockup Floating */}
-               <div className="absolute top-1/2 -right-10 -translate-y-1/2 w-[200px] h-[200px] bg-white rounded-full border-4 border-primary/20 shadow-2xl z-30 flex items-center justify-center">
+               <div className="absolute top-1/2 -right-10 -translate-y-1/2 w-[200px] h-[200px] bg-white rounded-full border-4 border-primary/20 shadow-2xl z-30 flex items-center justify-center float-animation pulse-glow">
                   <div className="text-center">
-                    <HeartPulse className="h-8 w-8 text-primary mx-auto mb-2" />
+                    <HeartPulse className="h-8 w-8 text-primary mx-auto mb-2 animate-pulse" />
                     <p className="text-3xl font-bold text-foreground">120</p>
                     <p className="text-xs text-foreground/50 uppercase tracking-widest">BPM Alert</p>
                   </div>
@@ -154,10 +154,10 @@ export default function Home() {
                 icon: Video
               }
             ].map((item, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-colors shadow-sm hover:shadow-md">
+              <div key={idx} className="p-8 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-md hover-lift fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
                 <item.icon className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-foreground/60 leading-relaxed">{item.desc}</p>
+                <p className="text-foreground/70 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -215,7 +215,7 @@ export default function Home() {
                 curiosity: "Average response time: 12 seconds from alert to agent."
               }
             ].map((feature, idx) => (
-              <div key={idx} className="group relative p-8 md:p-12 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md">
+              <div key={idx} className="group relative p-8 md:p-12 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md hover-lift fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
                 <div className="absolute top-0 right-0 p-8 opacity-5 font-heading font-bold text-8xl text-primary group-hover:opacity-10 transition-opacity">
                   {feature.id}
                 </div>
@@ -228,7 +228,7 @@ export default function Home() {
                   </div>
                   <div className="md:col-span-1">
                     <div className="space-y-2">
-                      <p className="text-sm text-foreground/60 font-mono border-l-2 border-primary/20 pl-4">
+                      <p className="text-sm text-foreground/70 font-mono border-l-2 border-primary/20 pl-4">
                         {feature.detail}
                       </p>
                       <p className="text-xs text-primary/70 font-mono border-l-2 border-primary/10 pl-4 italic">

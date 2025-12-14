@@ -53,12 +53,13 @@ export default function Employers() {
               <Shield className="h-3 w-3 fill-current" />
               Enterprise Safety
             </div>
-            <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground leading-tight">
-              Your Workers Come Home Safe.
+            <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground leading-tight fade-in-up">
+              Protect Your Employees.<br/>
+              <span className="text-primary">Your Most Valuable Assets.</span>
             </h1>
             
-            <p className="text-xl text-foreground/70 leading-relaxed">
-              Every incident costs money. Every injury costs lives. MySentry detects emergencies before they become disasters—and responds in seconds, not minutes.
+            <p className="text-xl text-foreground/80 leading-relaxed fade-in-up" style={{animationDelay: '0.1s'}}>
+              Improve productivity. Reduce turnover. Prevent incidents. MySentry detects emergencies before they become disasters—and responds in seconds, not minutes.
             </p>
             <div className="flex gap-4 pt-4">
               <Link href="/pricing">
