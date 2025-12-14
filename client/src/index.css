@@ -53,17 +53,17 @@
   --secondary: #4a9d5f; /* Lighter Green - Accent */
   --secondary-foreground: #ffffff;
   
-  --background: #ffffff; /* Clean White */
-  --foreground: #000000; /* PURE BLACK */
+  --background: #e8f5e9; /* Light Green Background */
+  --foreground: #1a1a1a; /* Dark Text */
   
   --card: #ffffff; /* Pure White Cards */
-  --card-foreground: #000000; /* PURE BLACK text on cards */
+  --card-foreground: #1a1a1a; /* Dark text on cards */
   
   --popover: #ffffff;
-  --popover-foreground: #000000;
+  --popover-foreground: #1a1a1a;
   
   --muted: #f0f0f0;
-  --muted-foreground: #333333; /* Dark gray text */
+  --muted-foreground: #1a1a1a; /* Dark text */
   
   --accent: #4a9d5f; /* Bright Green Accent */
   --accent-foreground: #ffffff;
@@ -84,11 +84,11 @@
   --chart-5: #a855f7; /* Purple */
   
   --sidebar: #ffffff;
-  --sidebar-foreground: #000000;
+  --sidebar-foreground: #1a1a1a;
   --sidebar-primary: #2d7a4a;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #4a9d5f;
-  --sidebar-accent-foreground: #000000;
+  --sidebar-accent-foreground: #1a1a1a;
   --sidebar-border: #e5e7eb;
   --sidebar-ring: #2d7a4a;
 }
