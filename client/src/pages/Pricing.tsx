@@ -111,7 +111,7 @@ export default function Pricing() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#e8f5e9]">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-6">
@@ -122,7 +122,7 @@ export default function Pricing() {
             </p>
             
             {/* Toggle */}
-            <div className="flex items-center justify-center gap-2 p-1 bg-primary/10 rounded-full inline-flex border border-primary/20">
+            <div className="flex items-center justify-center gap-2 p-1 bg-[#c8e6c9] rounded-full inline-flex border border-primary/20">
               <button 
                 onClick={() => setIsAnnual(false)}
                 className={cn(
@@ -152,8 +152,8 @@ export default function Pricing() {
                 className={cn(
                   "relative rounded-3xl border transition-all duration-300 overflow-hidden flex flex-col",
                   plan.highlighted 
-                    ? "border-primary/50 bg-primary/5 shadow-lg scale-105 lg:scale-100" 
-                    : "border-primary/10 bg-white hover:border-primary/30 shadow-sm hover:shadow-md"
+                    ? "border-primary/50 bg-[#d4edda] shadow-lg scale-105 lg:scale-100" 
+                    : "border-primary/10 bg-[#e8f5e9] hover:border-primary/30 shadow-sm hover:shadow-md"
                 )}
               >
                 {/* Badge */}
@@ -195,7 +195,7 @@ export default function Pricing() {
                         "w-full h-12 rounded-full font-bold transition-all",
                         plan.highlighted
                           ? "bg-primary text-white hover:bg-primary/90"
-                          : "bg-primary/10 text-primary hover:bg-primary/20 border border-primary/20"
+                          : "bg-[#c8e6c9] text-primary hover:bg-primary/20 border border-primary/20"
                       )}
                       onClick={() => setSelectedPlan(plan.id)}
                     >
@@ -229,14 +229,14 @@ export default function Pricing() {
       </section>
 
       {/* Family Bundle Details */}
-      <section className="py-24 bg-primary/5 border-t border-primary/10">
+      <section className="py-24 bg-[#d4edda] border-t border-primary/10">
         <div className="container">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-heading font-bold text-foreground mb-8">
               Family Bundle Breakdown
             </h2>
             <div className="space-y-6">
-              <div className="p-6 rounded-2xl bg-white border border-primary/10">
+              <div className="p-6 rounded-2xl bg-[#e8f5e9] border border-primary/10">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="font-bold text-foreground">Primary User</h3>
                   <span className="text-primary font-bold">${isAnnual ? (199.99 / 12).toFixed(2) : 19.99}/month</span>
@@ -245,7 +245,7 @@ export default function Pricing() {
               </div>
               
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="p-6 rounded-2xl bg-white border border-primary/10">
+                <div key={i} className="p-6 rounded-2xl bg-[#e8f5e9] border border-primary/10">
                   <div className="flex items-center justify-between mb-2">
                     <h3 className="font-bold text-foreground">Additional Member {i}</h3>
                     <span className="text-primary font-bold">$5/month</span>
@@ -268,7 +268,7 @@ export default function Pricing() {
       </section>
 
       {/* Trust Signals */}
-      <section className="py-24 bg-white border-t border-primary/10">
+      <section className="py-24 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container">
           <h2 className="text-3xl font-heading font-bold text-foreground mb-16 text-center">
             Why Choose MySentry?
@@ -294,7 +294,7 @@ export default function Pricing() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-primary/5 border-t border-primary/10">
+      <section className="py-24 bg-[#d4edda] border-t border-primary/10">
         <div className="container max-w-3xl">
           <h2 className="text-3xl font-heading font-bold text-foreground mb-12 text-center">
             Frequently Asked Questions
@@ -326,7 +326,7 @@ export default function Pricing() {
                 a: "Yes. 7-day free trial with full access to all features. No credit card required to start."
               }
             ].map((item, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-white border border-primary/10">
+              <div key={idx} className="p-6 rounded-2xl bg-[#e8f5e9] border border-primary/10">
                 <h3 className="font-bold text-foreground mb-3">{item.q}</h3>
                 <p className="text-foreground text-sm">{item.a}</p>
               </div>
@@ -344,7 +344,7 @@ export default function Pricing() {
           <p className="text-xl text-white/80 mb-8">
             Start your 7-day free trial today. No credit card. No commitment.
           </p>
-          <Button size="lg" className="h-14 px-12 text-lg rounded-full bg-white text-primary hover:bg-white/90 shadow-xl font-bold">
+          <Button size="lg" className="h-14 px-12 text-lg rounded-full bg-[#e8f5e9] text-primary hover:bg-[#e8f5e9]/90 shadow-xl font-bold">
             Start Free Trial
           </Button>
         </div>

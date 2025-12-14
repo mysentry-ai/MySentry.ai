@@ -19,7 +19,7 @@ export default function Navbar() {
   const isActive = (path: string) => location === path;
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/95 backdrop-blur-sm shadow-sm">
+    <nav className="sticky top-0 z-50 w-full border-b border-primary/10 bg-[#e8f5e9]/95 backdrop-blur-sm shadow-sm" style={{ color: '#1a1a1a' }}>
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/">
@@ -62,7 +62,7 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden border-t border-primary/10 bg-white p-4 shadow-lg animate-in slide-in-from-top-5">
+        <div className="md:hidden border-t border-primary/10 bg-[#e8f5e9] p-4 shadow-lg animate-in slide-in-from-top-5">
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href}>

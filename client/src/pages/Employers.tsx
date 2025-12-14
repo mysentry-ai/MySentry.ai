@@ -46,10 +46,10 @@ export default function Employers() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      <section className="py-24 bg-[#e8f5e9] relative overflow-hidden">
         <div className="container grid lg:grid-cols-2 gap-16 items-center relative z-10">
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c8e6c9] border border-primary/30 text-primary text-xs font-bold uppercase tracking-wider">
               <Shield className="h-3 w-3 fill-current" />
               Enterprise Safety
             </div>
@@ -68,14 +68,14 @@ export default function Employers() {
                 </Button>
               </Link>
             </div>
-            <div className="p-4 rounded-xl bg-primary/10 border border-primary/20">
+            <div className="p-4 rounded-xl bg-[#c8e6c9] border border-primary/20">
               <p className="text-sm text-foreground italic">
                 <strong className="text-primary">Did you know?</strong> The average workplace injury costs $42,000 in direct and indirect costs.
               </p>
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-square rounded-3xl bg-primary/5 border-2 border-primary/20 overflow-hidden relative shadow-lg flex items-center justify-center">
+            <div className="aspect-square rounded-3xl bg-[#d4edda] border-2 border-primary/20 overflow-hidden relative shadow-lg flex items-center justify-center">
                <div className="text-center space-y-6">
                  <TrendingUp className="h-24 w-24 text-primary/30 mx-auto" />
                  <div>
@@ -89,7 +89,7 @@ export default function Employers() {
       </section>
 
       {/* The Problem: Hidden Costs */}
-      <section className="py-24 bg-primary/5 border-t border-primary/10">
+      <section className="py-24 bg-[#d4edda] border-t border-primary/10">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
@@ -122,7 +122,7 @@ export default function Employers() {
                 metric: "15-20% increase"
               }
             ].map((item, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-colors shadow-sm hover:shadow-md">
+              <div key={idx} className="p-8 rounded-3xl bg-[#e8f5e9] border border-primary/10 hover:border-primary/30 transition-colors shadow-sm hover:shadow-md">
                 <item.icon className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
                 <p className="text-foreground mb-4">{item.desc}</p>
@@ -134,7 +134,7 @@ export default function Employers() {
       </section>
 
       {/* Solution: Industry Breakdown */}
-      <section className="py-24 border-t border-primary/10 bg-white">
+      <section className="py-24 border-t border-primary/10 bg-[#e8f5e9]">
         <div className="container">
           <div className="mb-16">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
@@ -147,7 +147,7 @@ export default function Employers() {
 
           <div className="grid gap-6">
             {industries.map((industry, idx) => (
-              <div key={idx} className="group p-8 rounded-3xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md">
+              <div key={idx} className="group p-8 rounded-3xl bg-[#d4edda] border border-primary/10 hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md">
                 <div className="grid md:grid-cols-4 gap-8">
                   <div>
                     <h3 className="text-2xl font-bold text-primary mb-2">{industry.name}</h3>
@@ -172,7 +172,7 @@ export default function Employers() {
       </section>
 
       {/* The Difference: Live Video */}
-      <section className="py-24 bg-primary/5 border-t border-primary/10">
+      <section className="py-24 bg-[#d4edda] border-t border-primary/10">
         <div className="container grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-6">
             <h2 className="text-4xl font-heading font-bold text-foreground">
@@ -196,14 +196,14 @@ export default function Employers() {
                 <span><strong>Better Outcomes:</strong> Immediate medical intervention = fewer permanent injuries.</span>
               </li>
             </ul>
-            <div className="p-4 rounded-xl bg-primary/10 border border-primary/20 mt-6">
+            <div className="p-4 rounded-xl bg-[#c8e6c9] border border-primary/20 mt-6">
               <p className="text-sm text-foreground italic">
                 <strong className="text-primary">💡</strong> Average response time: 12 seconds from alert to agent assessment.
               </p>
             </div>
           </div>
           <div>
-             <div className="aspect-video rounded-3xl bg-white border-2 border-primary/20 overflow-hidden relative shadow-lg flex items-center justify-center">
+             <div className="aspect-video rounded-3xl bg-[#e8f5e9] border-2 border-primary/20 overflow-hidden relative shadow-lg flex items-center justify-center">
                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 flex items-center justify-center">
                  <Briefcase className="h-20 w-20 text-primary/20" />
                </div>
@@ -213,7 +213,7 @@ export default function Employers() {
       </section>
 
       {/* Enterprise Features */}
-      <section className="py-24 border-t border-primary/10 bg-white">
+      <section className="py-24 border-t border-primary/10 bg-[#e8f5e9]">
         <div className="container">
           <h2 className="text-4xl font-heading font-bold text-foreground mb-16 text-center">
             Built for Enterprise
@@ -236,7 +236,7 @@ export default function Employers() {
                 icon: TrendingUp
               }
             ].map((feature, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-colors">
+              <div key={idx} className="p-8 rounded-3xl bg-[#d4edda] border border-primary/10 hover:border-primary/30 transition-colors">
                 <feature.icon className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
                 <p className="text-foreground">{feature.desc}</p>
@@ -257,7 +257,7 @@ export default function Employers() {
             Request a demo and see how MySentry works for your industry.
           </p>
           <Link href="/pricing">
-            <Button size="lg" className="h-14 px-10 text-lg rounded-full bg-white text-primary hover:bg-white/90 shadow-xl font-bold">
+            <Button size="lg" className="h-14 px-10 text-lg rounded-full bg-[#e8f5e9] text-primary hover:bg-[#e8f5e9]/90 shadow-xl font-bold">
               Schedule Enterprise Demo
             </Button>
           </Link>

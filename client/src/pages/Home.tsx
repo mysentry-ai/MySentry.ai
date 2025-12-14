@@ -28,11 +28,11 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section - Zero Cognitive Load */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-white pt-16">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#e8f5e9] pt-16">
         {/* Subtle Background Elements */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-secondary/5 blur-[100px]" />
-          <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-primary/5 blur-[100px]" />
+          <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-[#d4edda] blur-[100px]" />
         </div>
 
         <div className="container relative z-10 grid lg:grid-cols-2 gap-16 items-center">
@@ -67,14 +67,14 @@ export default function Home() {
                 </Button>
               </Link>
               <Link href="/features">
-                <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full border-primary/30 text-primary hover:bg-primary/5 hover:border-primary/50 hover-lift">
+                <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full border-primary/30 text-primary hover:bg-[#d4edda] hover:border-primary/50 hover-lift">
                   See How It Works
                 </Button>
               </Link>
             </div>
             
             {/* Curiosity Sound Bite */}
-            <div className="pt-8 p-4 rounded-2xl bg-primary/5 border border-primary/10 fade-in-up glow-effect" style={{animationDelay: '0.3s'}}>
+            <div className="pt-8 p-4 rounded-2xl bg-[#d4edda] border border-primary/10 fade-in-up glow-effect" style={{animationDelay: '0.3s'}}>
               <p className="text-sm text-foreground italic">
                 <strong className="text-primary">Did you know?</strong> Fall detection works in under 2 seconds. That's faster than you can press a button.
               </p>
@@ -100,7 +100,7 @@ export default function Home() {
                       <h3 className="text-2xl font-bold text-foreground">Fall Detected</h3>
                       <p className="text-foreground mt-2">Connecting to Agent...</p>
                     </div>
-                    <div className="w-full bg-primary/10 rounded-xl p-4 flex items-center gap-4 border border-primary/20">
+                    <div className="w-full bg-[#c8e6c9] rounded-xl p-4 flex items-center gap-4 border border-primary/20">
                       <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
                         <Video className="h-5 w-5 text-primary" />
                       </div>
@@ -112,7 +112,7 @@ export default function Home() {
                  </div>
                </div>
                {/* Watch Mockup Floating */}
-               <div className="absolute top-1/2 -right-10 -translate-y-1/2 w-[200px] h-[200px] bg-white rounded-full border-4 border-primary/20 shadow-2xl z-30 flex items-center justify-center float-animation pulse-glow">
+               <div className="absolute top-1/2 -right-10 -translate-y-1/2 w-[200px] h-[200px] bg-[#e8f5e9] rounded-full border-4 border-primary/20 shadow-2xl z-30 flex items-center justify-center float-animation pulse-glow">
                   <div className="text-center">
                     <HeartPulse className="h-8 w-8 text-primary mx-auto mb-2 animate-pulse" />
                     <p className="text-3xl font-bold text-foreground">120</p>
@@ -125,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* The Problem (Zero Cognitive Load) */}
-      <section className="py-32 bg-primary/5 relative">
+      <section className="py-32 bg-[#d4edda] relative">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-8">
@@ -154,7 +154,7 @@ export default function Home() {
                 icon: Video
               }
             ].map((item, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-md hover-lift fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
+              <div key={idx} className="p-8 rounded-3xl bg-[#e8f5e9] border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-md hover-lift fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
                 <item.icon className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
                 <p className="text-foreground leading-relaxed">{item.desc}</p>
@@ -165,7 +165,7 @@ export default function Home() {
       </section>
 
       {/* The Solution - 5 Core Components */}
-      <section className="py-32 bg-white border-y border-primary/10">
+      <section className="py-32 bg-[#e8f5e9] border-y border-primary/10">
         <div className="container">
           <div className="mb-20">
             <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">
@@ -214,7 +214,7 @@ export default function Home() {
                 curiosity: 'Average response time: 12 seconds.'
               }
             ].map((feature, idx) => (
-              <div key={idx} className="group relative p-8 md:p-12 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md hover-lift fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
+              <div key={idx} className="group relative p-8 md:p-12 rounded-3xl bg-[#e8f5e9] border border-primary/10 hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md hover-lift fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
                 <div className="absolute top-0 right-0 p-8 opacity-5 font-heading font-bold text-8xl text-primary group-hover:opacity-10 transition-opacity">
                   {feature.id}
                 </div>
@@ -243,7 +243,7 @@ export default function Home() {
       </section>
 
       {/* Live Video Differentiator */}
-      <section className="py-32 bg-primary/5 relative overflow-hidden">
+      <section className="py-32 bg-[#d4edda] relative overflow-hidden">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -269,7 +269,7 @@ export default function Home() {
               </ul>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="aspect-video rounded-3xl bg-primary/10 border-2 border-primary/20 overflow-hidden relative shadow-lg flex items-center justify-center">
+              <div className="aspect-video rounded-3xl bg-[#c8e6c9] border-2 border-primary/20 overflow-hidden relative shadow-lg flex items-center justify-center">
                 <Video className="h-24 w-24 text-primary/30" />
               </div>
             </div>
@@ -278,7 +278,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-32 bg-white border-t border-primary/10">
+      <section className="py-32 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
@@ -291,7 +291,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-md hover-lift fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
+              <div key={idx} className="p-8 rounded-3xl bg-[#d4edda] border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-md hover-lift fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="h-5 w-5 fill-primary text-primary" />
@@ -318,7 +318,7 @@ export default function Home() {
             7-day free trial. No credit card. Cancel anytime.
           </p>
           <Link href="/pricing">
-            <Button size="lg" className="h-14 px-12 text-lg rounded-full bg-white text-primary hover:bg-white/90 shadow-xl font-bold">
+            <Button size="lg" className="h-14 px-12 text-lg rounded-full bg-[#e8f5e9] text-primary hover:bg-[#e8f5e9]/90 shadow-xl font-bold">
               Start Free Trial
             </Button>
           </Link>

@@ -130,12 +130,18 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    color: #1a1a1a !important;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold tracking-tight text-foreground;
+    color: #1a1a1a !important;
   }
   p {
     @apply text-foreground;
+    color: #1a1a1a !important;
+  }
+  span, div, li, a {
+    color: #1a1a1a !important;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
