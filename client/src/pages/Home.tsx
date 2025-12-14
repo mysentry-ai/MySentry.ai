@@ -9,25 +9,25 @@ export default function Home() {
     {
       name: "Margaret Chen",
       role: "Daughter of Senior",
-      quote: "I sleep better knowing Mom's watch is watching her 24/7. When she fell last month, help arrived in minutes.",
+      quote: "Mom fell. Help arrived in 3 minutes. That's the difference between recovery and permanent damage.",
       avatar: "MC"
     },
     {
       name: "James Rodriguez",
       role: "Construction Manager",
-      quote: "Our incident reports dropped 40% in the first quarter. MySentry isn't just safety—it's peace of mind.",
+      quote: "We went from hoping someone finds an injured worker to knowing instantly. That's peace of mind.",
       avatar: "JR"
     },
     {
       name: "Sarah Williams",
       role: "Active Senior",
-      quote: "Finally, a safety system that doesn't make me feel old. It's just my watch."
+      quote: "I can hike alone again. My family knows I'm safe. That's freedom."
     }
   ];
 
   return (
     <Layout>
-      {/* Hero Section - StoryBrand: The Hook */}
+      {/* Hero Section - Zero Cognitive Load */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-white pt-16">
         {/* Subtle Background Elements */}
         <div className="absolute inset-0 z-0 overflow-hidden">
@@ -55,8 +55,8 @@ export default function Home() {
               Get help fast in a safety or health emergency.
             </h1>
             
-            <p className="text-xl text-foreground/80 max-w-lg leading-relaxed font-light fade-in-up" style={{animationDelay: '0.1s'}}>
-              Your watch already knows your heart rate. Your phone already has your location. MySentry connects the dots—automatically alerting loved ones and professionals the moment something goes wrong.
+            <p className="text-xl text-foreground max-w-lg leading-relaxed fade-in-up" style={{animationDelay: '0.1s'}}>
+              Your watch detects falls. Your phone detects crashes. Your heart rate triggers alerts. Agents see everything live and dispatch help immediately.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-6 fade-in-up" style={{animationDelay: '0.2s'}}>
@@ -75,8 +75,8 @@ export default function Home() {
             
             {/* Curiosity Sound Bite */}
             <div className="pt-8 p-4 rounded-2xl bg-primary/5 border border-primary/10 fade-in-up glow-effect" style={{animationDelay: '0.3s'}}>
-              <p className="text-sm text-foreground/70 italic">
-                <strong className="text-primary">Did you know?</strong> Fall detection algorithms can identify a hard fall in under 2 seconds—faster than you can press a button.
+              <p className="text-sm text-foreground italic">
+                <strong className="text-primary">Did you know?</strong> Fall detection works in under 2 seconds. That's faster than you can press a button.
               </p>
             </div>
           </motion.div>
@@ -88,8 +88,8 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative h-[700px] w-full hidden lg:block"
           >
-               <div className="absolute inset-0 flex items-center justify-center">
-                 <div className="relative w-[350px] h-[600px] bg-gradient-to-br from-primary/5 to-secondary/5 rounded-[3rem] border-8 border-primary/10 shadow-2xl overflow-hidden hover-lift">
+            <div className="absolute inset-0 flex items-center justify-center">
+               <div className="relative w-[350px] h-[600px] bg-gradient-to-br from-primary/5 to-secondary/5 rounded-[3rem] border-8 border-primary/10 shadow-2xl overflow-hidden hover-lift">
                  <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white opacity-40 z-10"></div>
                  {/* UI Mockup */}
                  <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center space-y-6">
@@ -98,7 +98,7 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-foreground">Fall Detected</h3>
-                      <p className="text-foreground/60 mt-2">Connecting to Agent...</p>
+                      <p className="text-foreground mt-2">Connecting to Agent...</p>
                     </div>
                     <div className="w-full bg-primary/10 rounded-xl p-4 flex items-center gap-4 border border-primary/20">
                       <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
@@ -124,95 +124,94 @@ export default function Home() {
         </div>
       </section>
 
-      {/* The Problem (StoryBrand: Problem & Empathy) */}
+      {/* The Problem (Zero Cognitive Load) */}
       <section className="py-32 bg-primary/5 relative">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center mb-20">
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-8">
-              The Fear Nobody Talks About
+              When seconds matter, you need help fast.
             </h2>
-            <p className="text-xl text-foreground/70 leading-relaxed">
-              Whether it's an aging parent living alone, a spouse with a health condition, or your own safety on a late-night run, the "what if" haunts you. You shouldn't have to choose between independence and safety.
+            <p className="text-xl text-foreground leading-relaxed">
+              A fall. A crash. A heart attack. In emergencies, the first 5 minutes are critical. Most alert systems are too slow.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Delayed Response",
-                desc: "Traditional alarms require you to press a button. But what if you can't?",
+                title: "Button Alerts Are Too Slow",
+                desc: "You have to press a button. But what if you can't?",
                 icon: ShieldAlert
               },
               {
-                title: "Blind Spots",
-                desc: "Most trackers only count steps. They don't know when your heart rate spikes dangerously.",
+                title: "Trackers Don't Know Your Health",
+                desc: "Step counters don't save lives. Heart rate monitoring does.",
                 icon: Activity
               },
               {
-                title: "No Eyes on Scene",
-                desc: "Text alerts aren't enough. In an emergency, help needs to see what's happening.",
+                title: "Text Alerts Aren't Enough",
+                desc: "Agents need to see what's happening. Not guess.",
                 icon: Video
               }
             ].map((item, idx) => (
               <div key={idx} className="p-8 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-md hover-lift fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
                 <item.icon className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-foreground/70 leading-relaxed">{item.desc}</p>
+                <p className="text-foreground leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* The Solution (StoryBrand: Answer) - 5 Core Components */}
+      {/* The Solution - 5 Core Components */}
       <section className="py-32 bg-white border-y border-primary/10">
         <div className="container">
           <div className="mb-20">
             <h2 className="text-4xl md:text-6xl font-heading font-bold text-foreground mb-6">
-              Five Layers of Protection. <br/>
-              <span className="text-primary">One Seamless App.</span>
+              Five ways MySentry saves lives.
             </h2>
-            <p className="text-xl text-foreground/70 max-w-2xl">
-              MySentry transforms the sensors in your watch and phone into a life-saving system that works 24/7.
+            <p className="text-xl text-foreground max-w-2xl">
+              Your watch and phone already have the sensors. MySentry just makes them work together.
             </p>
           </div>
 
           <div className="grid gap-4">
             {[
               {
-                id: "01",
-                title: "Panic Alarm",
-                desc: "Triggered by voice, app, or watch button. Instant connection.",
-                detail: "Works even if your phone is out of reach.",
-                curiosity: "Voice activation works in 6 languages."
+                id: '01',
+                title: 'Panic Alarm',
+                desc: 'Say Help or tap a button. Agents answer instantly.',
+                detail: 'Works even if your phone is out of reach.',
+                curiosity: 'Voice activation works in 6 languages.'
               },
               {
-                id: "02",
-                title: "Fall Detection",
-                desc: "Smart watch sensors detect hard falls and auto-call for help.",
-                detail: "Distinguishes between a stumble and a fall.",
-                curiosity: "Detects falls from any angle in under 2 seconds."
+                id: '02',
+                title: 'Fall Detection',
+                desc: 'Your watch knows when you fall. Calls for help automatically.',
+                detail: 'Distinguishes between a stumble and a fall.',
+                curiosity: 'Detects falls in under 2 seconds.'
               },
               {
-                id: "03",
-                title: "Crash Detection",
-                desc: "Uses accelerometer data to detect vehicle collisions instantly.",
-                detail: "Alerts emergency services with your GPS coordinates.",
-                curiosity: "Recognizes the unique impact signature of a car crash."
+                id: '03',
+                title: 'Crash Detection',
+                desc: 'Car crash? Your phone knows. Help is on the way.',
+                detail: 'Alerts emergency services with your GPS location.',
+                curiosity: 'Recognizes the unique impact of a car crash.'
               },
               {
-                id: "04",
-                title: "Real-Time Health",
-                desc: "Learns your vitals norms. Triggers alarm if thresholds are breached.",
-                detail: "Monitors heart rate, oxygen, and stress levels 24/7.",
-                curiosity: "Understands your personal health baseline—not generic averages."
+                id: '04',
+                title: 'Health Monitoring',
+                desc: 'Your watch learns your normal. Alerts you if something is wrong.',
+                detail: 'Monitors heart rate, oxygen, and stress 24/7.',
+                curiosity: 'Understands YOUR baseline, not generic averages.'
               },
               {
-                id: "05",
-                title: "24/7 Pro Monitoring",
-                desc: "Live agents respond to every alert via video or voice.",
-                detail: "We stay on the line until you are safe.",
-                curiosity: "Average response time: 12 seconds from alert to agent."
+                id: '05',
+                title: '24/7 Live Agents',
+                desc: 'Real people. Real video. Real help. Every time.',
+                detail: 'We stay on the line until you are safe.',
+                curiosity: 'Average response time: 12 seconds.'
               }
             ].map((feature, idx) => (
               <div key={idx} className="group relative p-8 md:p-12 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-all duration-500 overflow-hidden shadow-sm hover:shadow-md hover-lift fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
@@ -224,11 +223,11 @@ export default function Home() {
                     <h3 className="text-3xl font-bold text-primary mb-2">{feature.title}</h3>
                   </div>
                   <div className="md:col-span-1">
-                    <p className="text-lg text-foreground/80">{feature.desc}</p>
+                    <p className="text-lg text-foreground">{feature.desc}</p>
                   </div>
                   <div className="md:col-span-1">
                     <div className="space-y-2">
-                      <p className="text-sm text-foreground/70 font-mono border-l-2 border-primary/20 pl-4">
+                      <p className="text-sm text-foreground font-mono border-l-2 border-primary/20 pl-4">
                         {feature.detail}
                       </p>
                       <p className="text-xs text-primary/70 font-mono border-l-2 border-primary/10 pl-4 italic">
@@ -248,80 +247,60 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <div className="relative rounded-3xl overflow-hidden border-4 border-primary/20 shadow-2xl bg-white aspect-video flex items-center justify-center">
-                {/* Placeholder for Video Call UI */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10">
-                   <div className="absolute top-4 left-4 bg-primary px-3 py-1 rounded-full text-xs font-bold text-white">LIVE EMERGENCY</div>
-                   <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-white to-transparent">
-                      <div className="flex items-center gap-4">
-                        <div className="h-12 w-12 rounded-full bg-primary/20 border-2 border-primary"></div>
-                        <div>
-                          <p className="text-foreground font-bold">Agent Sarah</p>
-                          <p className="text-foreground/60 text-sm">Dispatching EMS to your location...</p>
-                        </div>
-                      </div>
-                   </div>
-                </div>
-              </div>
-            </div>
-            <div className="order-1 lg:order-2 space-y-8">
-              <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground">
-                Eyes on the Scene. <br/>
-                <span className="text-primary">Instantly.</span>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
+                Agents see the scene. Not just the alert.
               </h2>
-              <p className="text-xl text-foreground/70 leading-relaxed">
-                When an alarm triggers, MySentry automatically initiates a <strong>Live Video Call</strong> to our 24/7 monitoring center and your 5 emergency contacts.
+              <p className="text-lg text-foreground mb-8">
+                When you press the panic button, we don't just get a notification. We get a live video feed. We see exactly what's happening. We dispatch the right help.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary shrink-0" />
-                  <span className="text-foreground/80">Agents can see the situation and dispatch the right help.</span>
+                  <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+                  <span className="text-foreground"><strong>Faster help.</strong> Agents see the situation and dispatch the right resources immediately.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary shrink-0" />
-                  <span className="text-foreground/80">Family members can join the call immediately.</span>
+                  <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+                  <span className="text-foreground"><strong>Better outcomes.</strong> Immediate medical intervention means fewer permanent injuries.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle2 className="h-6 w-6 text-primary shrink-0" />
-                  <span className="text-foreground/80">GPS location is shared in real-time.</span>
+                  <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+                  <span className="text-foreground"><strong>Peace of mind.</strong> Your family sees the same video. They know you're getting help.</span>
                 </li>
               </ul>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="aspect-video rounded-3xl bg-primary/10 border-2 border-primary/20 overflow-hidden relative shadow-lg flex items-center justify-center">
+                <Video className="h-24 w-24 text-primary/30" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials (Social Proof) */}
-      <section className="py-32 bg-white">
+      {/* Testimonials */}
+      <section className="py-32 bg-white border-t border-primary/10">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
-              Trusted by Families & Businesses
+              Real people. Real stories.
             </h2>
-            <p className="text-xl text-foreground/70">
-              Real people, real emergencies, real peace of mind.
+            <p className="text-xl text-foreground">
+              This isn't a nice-to-have. This saves lives.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-colors">
-                <div className="flex gap-1 mb-4">
+              <div key={idx} className="p-8 rounded-3xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-md hover-lift fade-in-up" style={{animationDelay: `${idx * 0.1}s`}}>
+                <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-primary text-primary" />
+                    <Star key={i} className="h-5 w-5 fill-primary text-primary" />
                   ))}
                 </div>
-                <p className="text-foreground/80 mb-6 leading-relaxed italic">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-xs font-bold text-primary">
-                    {testimonial.avatar}
-                  </div>
-                  <div>
-                    <p className="font-bold text-foreground">{testimonial.name}</p>
-                    <p className="text-xs text-foreground/60">{testimonial.role}</p>
-                  </div>
+                <p className="text-foreground mb-6 italic">"{testimonial.quote}"</p>
+                <div>
+                  <p className="font-bold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-foreground/60">{testimonial.role}</p>
                 </div>
               </div>
             ))}
@@ -329,24 +308,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA (StoryBrand: Change & End Result) */}
-      <section className="py-32 bg-primary text-white text-center">
-        <div className="container max-w-4xl">
-          <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8">
-            Stop Worrying. <br/>
-            Start Living.
+      {/* CTA */}
+      <section className="py-24 text-center bg-primary text-white">
+        <div className="container max-w-3xl">
+          <h2 className="text-4xl font-heading font-bold mb-6">
+            Don't wait for an emergency to get help.
           </h2>
-          <p className="text-2xl text-white/80 mb-12 leading-relaxed">
-            Equip yourself and your loved ones with the safety system that actually works when it matters most.
+          <p className="text-xl text-white/90 mb-8">
+            7-day free trial. No credit card. Cancel anytime.
           </p>
           <Link href="/pricing">
-            <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-white text-primary hover:bg-white/90 shadow-2xl hover:scale-105 transition-transform font-bold">
-              Start Your 7-Day Free Trial
+            <Button size="lg" className="h-14 px-12 text-lg rounded-full bg-white text-primary hover:bg-white/90 shadow-xl font-bold">
+              Start Free Trial
             </Button>
           </Link>
-          <p className="mt-6 text-sm text-white/60 font-medium">
-            30-Day Money-Back Guarantee • Cancel Anytime • No Credit Card Required
-          </p>
         </div>
       </section>
     </Layout>
