@@ -46,97 +46,82 @@
 }
 
 :root {
-  /* Guardian Tech Aesthetic - Light Mode (Clean, Clinical but Warm) */
-  --primary: oklch(0.25 0.05 260); /* Deep Navy Blue #0A192F approx */
-  --primary-foreground: oklch(0.98 0.02 180); /* Electric Teal tint */
+  /* Premium Software Aesthetic (Oura/Whoop inspired) - Dark Mode Default */
+  --primary: oklch(0.98 0.02 180); /* White/Near White for primary actions */
+  --primary-foreground: oklch(0.1 0.02 260); /* Black text on white buttons */
   
-  --secondary: oklch(0.85 0.12 180); /* Electric Teal #64FFDA approx - softer for light mode */
-  --secondary-foreground: oklch(0.25 0.05 260); /* Deep Navy Blue */
-  
-  --background: oklch(0.98 0.005 260); /* Off-white/Light Grey */
-  --foreground: oklch(0.25 0.05 260); /* Deep Navy Blue text */
-  
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.25 0.05 260);
-  
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0.05 260);
-  
-  --muted: oklch(0.95 0.01 260);
-  --muted-foreground: oklch(0.55 0.05 260);
-  
-  --accent: oklch(0.95 0.02 180); /* Very light teal */
-  --accent-foreground: oklch(0.25 0.05 260);
-  
-  --destructive: oklch(0.6 0.2 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  
-  --border: oklch(0.9 0.02 260);
-  --input: oklch(0.9 0.02 260);
-  --ring: oklch(0.85 0.12 180); /* Electric Teal ring */
-  
-  --radius: 0.75rem;
-  
-  --chart-1: oklch(0.25 0.05 260);
-  --chart-2: oklch(0.85 0.12 180);
-  --chart-3: oklch(0.6 0.1 260);
-  --chart-4: oklch(0.7 0.1 180);
-  --chart-5: oklch(0.4 0.05 260);
-  
-  --sidebar: oklch(0.98 0.005 260);
-  --sidebar-foreground: oklch(0.25 0.05 260);
-  --sidebar-primary: oklch(0.25 0.05 260);
-  --sidebar-primary-foreground: oklch(0.98 0.02 180);
-  --sidebar-accent: oklch(0.95 0.02 180);
-  --sidebar-accent-foreground: oklch(0.25 0.05 260);
-  --sidebar-border: oklch(0.9 0.02 260);
-  --sidebar-ring: oklch(0.85 0.12 180);
-}
-
-.dark {
-  /* Guardian Tech Aesthetic - Dark Mode (Cyber-Minimalism) */
-  --primary: oklch(0.85 0.12 180); /* Electric Teal #64FFDA */
-  --primary-foreground: oklch(0.25 0.05 260); /* Deep Navy Blue */
-  
-  --secondary: oklch(0.35 0.08 260); /* Lighter Navy */
+  --secondary: oklch(0.65 0.2 25); /* Alert Red/Orange for safety features */
   --secondary-foreground: oklch(0.98 0.02 180);
   
-  --background: oklch(0.25 0.05 260); /* Deep Navy Blue #0A192F */
-  --foreground: oklch(0.95 0.02 180); /* Light Teal/White */
+  --background: oklch(0.1 0.01 260); /* Deep Black/Charcoal */
+  --foreground: oklch(0.95 0.01 260); /* White text */
   
-  --card: oklch(0.3 0.06 260); /* Slightly lighter navy for cards */
-  --card-foreground: oklch(0.95 0.02 180);
+  --card: oklch(0.15 0.01 260); /* Slightly lighter black for cards */
+  --card-foreground: oklch(0.95 0.01 260);
   
-  --popover: oklch(0.3 0.06 260);
-  --popover-foreground: oklch(0.95 0.02 180);
+  --popover: oklch(0.15 0.01 260);
+  --popover-foreground: oklch(0.95 0.01 260);
   
-  --muted: oklch(0.35 0.08 260);
-  --muted-foreground: oklch(0.7 0.05 180);
+  --muted: oklch(0.25 0.01 260);
+  --muted-foreground: oklch(0.65 0.01 260);
   
-  --accent: oklch(0.35 0.08 260);
-  --accent-foreground: oklch(0.95 0.02 180);
+  --accent: oklch(0.2 0.01 260);
+  --accent-foreground: oklch(0.98 0.02 180);
   
   --destructive: oklch(0.6 0.2 25);
   --destructive-foreground: oklch(0.98 0 0);
   
-  --border: oklch(0.4 0.05 260);
-  --input: oklch(0.4 0.05 260);
-  --ring: oklch(0.85 0.12 180);
+  --border: oklch(0.25 0.01 260);
+  --input: oklch(0.25 0.01 260);
+  --ring: oklch(0.98 0.02 180);
   
-  --chart-1: oklch(0.85 0.12 180);
-  --chart-2: oklch(0.25 0.05 260);
-  --chart-3: oklch(0.6 0.1 180);
-  --chart-4: oklch(0.5 0.1 260);
-  --chart-5: oklch(0.9 0.05 180);
+  --radius: 0.5rem; /* Sharper, more tech-focused radius */
   
-  --sidebar: oklch(0.25 0.05 260);
-  --sidebar-foreground: oklch(0.95 0.02 180);
-  --sidebar-primary: oklch(0.85 0.12 180);
-  --sidebar-primary-foreground: oklch(0.25 0.05 260);
-  --sidebar-accent: oklch(0.35 0.08 260);
-  --sidebar-accent-foreground: oklch(0.95 0.02 180);
-  --sidebar-border: oklch(0.4 0.05 260);
-  --sidebar-ring: oklch(0.85 0.12 180);
+  --chart-1: oklch(0.65 0.2 25); /* Red */
+  --chart-2: oklch(0.85 0.15 85); /* Orange */
+  --chart-3: oklch(0.7 0.15 140); /* Green */
+  --chart-4: oklch(0.6 0.15 240); /* Blue */
+  --chart-5: oklch(0.5 0.1 280); /* Purple */
+  
+  --sidebar: oklch(0.1 0.01 260);
+  --sidebar-foreground: oklch(0.95 0.01 260);
+  --sidebar-primary: oklch(0.98 0.02 180);
+  --sidebar-primary-foreground: oklch(0.1 0.02 260);
+  --sidebar-accent: oklch(0.2 0.01 260);
+  --sidebar-accent-foreground: oklch(0.98 0.02 180);
+  --sidebar-border: oklch(0.25 0.01 260);
+  --sidebar-ring: oklch(0.98 0.02 180);
+}
+
+.light {
+  /* Optional Light Mode (if user toggles, but default is dark) */
+  --primary: oklch(0.1 0.02 260);
+  --primary-foreground: oklch(0.98 0.02 180);
+  
+  --secondary: oklch(0.65 0.2 25);
+  --secondary-foreground: oklch(0.98 0.02 180);
+  
+  --background: oklch(0.98 0.005 260);
+  --foreground: oklch(0.1 0.01 260);
+  
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.1 0.01 260);
+  
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.1 0.01 260);
+  
+  --muted: oklch(0.95 0.01 260);
+  --muted-foreground: oklch(0.4 0.01 260);
+  
+  --accent: oklch(0.95 0.01 260);
+  --accent-foreground: oklch(0.1 0.01 260);
+  
+  --destructive: oklch(0.6 0.2 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  
+  --border: oklch(0.9 0.01 260);
+  --input: oklch(0.9 0.01 260);
+  --ring: oklch(0.1 0.02 260);
 }
 
 @layer base {
@@ -191,17 +176,16 @@
     }
   }
   
-  /* Glassmorphism Utilities */
-  .glass-panel {
-    @apply bg-background/80 backdrop-blur-md border border-white/20 shadow-lg;
+  /* Premium Tech Utilities */
+  .tech-card {
+    @apply bg-card/40 backdrop-blur-md border border-white/10 shadow-xl hover:border-white/20 transition-all duration-300;
   }
   
-  .glass-card {
-    @apply bg-card/60 backdrop-blur-sm border border-white/10 shadow-md hover:shadow-xl transition-all duration-300;
+  .glow-text {
+    @apply drop-shadow-[0_0_10px_rgba(255,255,255,0.3)];
   }
   
-  /* Text Gradients */
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-linear-to-r from-primary to-secondary;
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60;
   }
 }

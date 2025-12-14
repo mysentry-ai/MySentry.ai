@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle2, Shield, Activity, HeartPulse, Users } from "lucide-react";
+import { ArrowRight, Watch, Smartphone, Activity, HeartPulse, ShieldAlert, Video, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 
@@ -8,284 +8,292 @@ export default function Home() {
   return (
     <Layout>
       {/* Hero Section - StoryBrand: The Hook (Curiosity) */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-background pt-16">
         {/* Abstract Background Elements */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute top-[-10%] right-[-5%] w-[60vw] h-[60vw] rounded-full bg-primary/5 blur-[100px] animate-pulse-slow" />
-          <div className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-secondary/10 blur-[80px]" />
+          <div className="absolute top-[-20%] right-[-10%] w-[70vw] h-[70vw] rounded-full bg-white/5 blur-[120px] animate-pulse-slow" />
+          <div className="absolute bottom-[-20%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-secondary/10 blur-[100px]" />
         </div>
 
-        <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center pt-10 pb-20">
+        <div className="container relative z-10 grid lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-8"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary-foreground text-sm font-semibold backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/80 text-xs font-medium backdrop-blur-md uppercase tracking-wider">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
               </span>
-              Zero Cognitive Load Safety
+              Compatible with Apple & Samsung
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold leading-tight tracking-tight text-primary">
-              Stop Worrying.<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                Start Living.
+            <h1 className="text-5xl md:text-7xl font-heading font-bold leading-tight tracking-tight text-white">
+              The Guardian <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white/80 to-white/40">
+                On Your Wrist.
               </span>
             </h1>
             
-            <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
-              The constant fear of "what if" is stealing your peace. MySentry is your Vital Companion that watches over your loved ones so you don't have to.
+            <p className="text-xl text-white/60 max-w-lg leading-relaxed font-light">
+              You don't need another device. You need a smarter way to use the one you already own. Turn your Apple or Samsung Watch into a 24/7 life-saving companion.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-6">
               <Link href="/pricing">
-                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary hover:bg-primary/90 shadow-lg shadow-primary/25 transition-all hover:scale-105">
-                  Get Peace of Mind
+                <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-white text-black hover:bg-white/90 transition-all hover:scale-105 font-semibold">
+                  Start 7-Day Free Trial
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link href="/seniors">
-                <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full border-2 border-primary/10 hover:bg-primary/5 hover:border-primary/30 text-primary">
-                  How It Works
+              <Link href="/features">
+                <Button variant="outline" size="lg" className="h-14 px-8 text-lg rounded-full border-white/20 text-white hover:bg-white/10 hover:border-white/40">
+                  Explore Features
                 </Button>
               </Link>
             </div>
             
-            <div className="pt-8 flex items-center gap-4 text-sm text-muted-foreground">
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="h-8 w-8 rounded-full border-2 border-background bg-muted flex items-center justify-center overflow-hidden">
-                     <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" className="h-full w-full object-cover" />
-                  </div>
-                ))}
+            <div className="pt-8 flex items-center gap-6 text-sm text-white/40 font-medium">
+              <div className="flex items-center gap-2">
+                <Watch className="h-5 w-5" />
+                <span>Apple Watch</span>
               </div>
-              <p>Trusted by 10,000+ families</p>
+              <div className="h-4 w-px bg-white/10" />
+              <div className="flex items-center gap-2">
+                <Watch className="h-5 w-5" />
+                <span>Samsung Galaxy</span>
+              </div>
+              <div className="h-4 w-px bg-white/10" />
+              <div className="flex items-center gap-2">
+                <Smartphone className="h-5 w-5" />
+                <span>iOS & Android</span>
+              </div>
             </div>
           </motion.div>
 
-          {/* Visual Content - Split Screen Concept */}
+          {/* Visual Content - Device Mockup */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative h-[600px] w-full hidden lg:block"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="relative h-[700px] w-full hidden lg:block"
           >
-            {/* Main Image Card */}
-            <div className="absolute top-0 right-0 w-[90%] h-[85%] rounded-3xl overflow-hidden shadow-2xl border border-white/20 z-10">
-              <img 
-                src="/images/hero-senior-monitoring.png" 
-                alt="Senior Safety Monitoring" 
-                className="w-full h-full object-cover"
-              />
-              {/* Overlay UI Element */}
-              <div className="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl flex items-center gap-4 animate-in slide-in-from-bottom-10 duration-1000 delay-500 fill-mode-forwards opacity-0">
-                <div className="h-12 w-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary">
-                  <HeartPulse className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Vitals Status</p>
-                  <p className="text-lg font-bold text-primary">Normal • 72 BPM</p>
-                </div>
-                <div className="ml-auto">
-                  <CheckCircle2 className="h-6 w-6 text-green-500" />
-                </div>
-              </div>
-            </div>
-            
-            {/* Floating Element - Fall Detection */}
-            <div className="absolute bottom-10 left-0 w-[280px] glass-card p-5 rounded-2xl z-20 animate-bounce-slow">
-              <div className="flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-orange-100 text-orange-600">
-                  <Activity className="h-5 w-5" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-primary">Fall Detected</h3>
-                  <p className="text-xs text-muted-foreground mt-1">Alert sent to emergency contacts in 0.5s</p>
-                </div>
-              </div>
+            {/* Main Device Image Placeholder - To be replaced with generated asset */}
+            <div className="absolute inset-0 flex items-center justify-center">
+               <div className="relative w-[350px] h-[600px] bg-black rounded-[3rem] border-8 border-white/10 shadow-2xl overflow-hidden">
+                 <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black opacity-80 z-10"></div>
+                 {/* UI Mockup */}
+                 <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center space-y-6">
+                    <div className="h-24 w-24 rounded-full bg-red-500/20 flex items-center justify-center animate-pulse">
+                      <ShieldAlert className="h-12 w-12 text-red-500" />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">Fall Detected</h3>
+                      <p className="text-white/60 mt-2">Connecting to Agent...</p>
+                    </div>
+                    <div className="w-full bg-white/10 rounded-xl p-4 flex items-center gap-4">
+                      <div className="h-10 w-10 rounded-full bg-green-500/20 flex items-center justify-center">
+                        <Video className="h-5 w-5 text-green-500" />
+                      </div>
+                      <div className="text-left">
+                        <p className="text-sm font-bold text-white">Live Video Active</p>
+                        <p className="text-xs text-white/50">Sharing location & vitals</p>
+                      </div>
+                    </div>
+                 </div>
+               </div>
+               {/* Watch Mockup Floating */}
+               <div className="absolute top-1/2 -right-10 -translate-y-1/2 w-[200px] h-[200px] bg-black rounded-full border-4 border-white/10 shadow-2xl z-30 flex items-center justify-center">
+                  <div className="text-center">
+                    <HeartPulse className="h-8 w-8 text-red-500 mx-auto mb-2" />
+                    <p className="text-3xl font-bold text-white">120</p>
+                    <p className="text-xs text-white/50 uppercase tracking-widest">BPM Alert</p>
+                  </div>
+               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* The Problem (StoryBrand: The Villain) */}
-      <section className="py-24 bg-muted/30">
+      {/* The Problem (PEACE: Problem & Empathy) */}
+      <section className="py-32 bg-background relative">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary mb-6">
-              The World is Unpredictable. <br/>
-              <span className="text-destructive">Your Safety Shouldn't Be.</span>
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-white mb-8">
+              The Silent Anxiety of <br/>
+              <span className="text-white/40">"What If?"</span>
             </h2>
-            <p className="text-lg text-muted-foreground">
-              We all face the same silent enemy: <strong>Uncertainty</strong>. Whether it's an aging parent living alone, a lone worker in a factory, or your own health, the fear of the unknown creates a heavy cognitive load that drains your energy every day.
+            <p className="text-xl text-white/60 leading-relaxed">
+              Whether it's an aging parent living alone, a spouse with a health condition, or your own safety on a late-night run, the cognitive load of worry is exhausting. You shouldn't have to choose between freedom and safety.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: Users,
-                title: "For Families",
-                problem: "Constant Worry",
-                desc: "Is Mom okay? Did Dad take his meds? The anxiety of not knowing never truly leaves you.",
-                link: "/families"
+                title: "Passive Monitoring",
+                desc: "Traditional alarms require you to press a button. But what if you can't?",
+                icon: ShieldAlert
               },
               {
-                icon: Shield,
-                title: "For Seniors",
-                problem: "Loss of Independence",
-                desc: "The fear of falling or a medical emergency can turn a home into a prison.",
-                link: "/seniors"
+                title: "Blind Spots",
+                desc: "Most trackers only count steps. They don't know when your heart rate spikes dangerously.",
+                icon: Activity
               },
               {
-                icon: Activity,
-                title: "For Employers",
-                problem: "Hidden Risks",
-                desc: "Workplace accidents and health incidents cost billions and destroy lives.",
-                link: "/employers"
+                title: "Slow Response",
+                desc: "Text alerts aren't enough. In an emergency, you need eyes on the scene instantly.",
+                icon: Video
               }
             ].map((item, idx) => (
-              <Link key={idx} href={item.link}>
-                <div className="group relative bg-background border border-border rounded-2xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden">
-                  <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary to-secondary opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="h-12 w-12 rounded-xl bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
-                    <item.icon className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-xl font-bold text-primary mb-2">{item.title}</h3>
-                  <div className="mb-4 inline-block px-3 py-1 rounded-md bg-destructive/10 text-destructive text-xs font-bold uppercase tracking-wide">
-                    Problem: {item.problem}
-                  </div>
-                  <p className="text-muted-foreground mb-6">
-                    {item.desc}
-                  </p>
-                  <div className="flex items-center text-primary font-semibold text-sm group-hover:translate-x-2 transition-transform">
-                    See the Solution <ArrowRight className="ml-2 h-4 w-4" />
-                  </div>
-                </div>
-              </Link>
+              <div key={idx} className="p-8 rounded-3xl bg-white/5 border border-white/5 hover:bg-white/10 transition-colors">
+                <item.icon className="h-10 w-10 text-white/80 mb-6" />
+                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+                <p className="text-white/50 leading-relaxed">{item.desc}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* The Solution (StoryBrand: The Guide) */}
-      <section className="py-24 relative overflow-hidden">
+      {/* The Solution (PEACE: Answer) - 5 Core Components */}
+      <section className="py-32 bg-white/5 border-y border-white/5">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-2 lg:order-1 relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-border">
-                <img src="/images/family-connection.png" alt="Family Connection" className="w-full" />
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl" />
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl" />
-            </div>
-            
-            <div className="order-1 lg:order-2 space-y-8">
-              <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary">
-                We Are Your <span className="text-secondary">Vital Companion</span>.
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                MySentry isn't just a gadget; it's a promise. We understand the weight of responsibility you carry because we've carried it too. We've built the system that lifts that burden off your shoulders.
-              </p>
-              
-              <div className="space-y-6">
-                {[
-                  {
-                    title: "Real-Time Vitals Monitoring",
-                    desc: "Heart rate, oxygen levels, and stress metrics tracked every second."
-                  },
-                  {
-                    title: "Intelligent Fall Detection",
-                    desc: "AI-powered sensors distinguish between a stumble and a fall instantly."
-                  },
-                  {
-                    title: "Zero-Touch Connection",
-                    desc: "No buttons to press. No apps to open. It just works."
-                  }
-                ].map((feature, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="mt-1 h-6 w-6 rounded-full bg-secondary/20 text-secondary flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="h-4 w-4" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-primary">{feature.title}</h3>
-                      <p className="text-muted-foreground">{feature.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              <div className="pt-4">
-                <Link href="/pricing">
-                  <Button size="lg" className="rounded-full px-8">
-                    Start Your Free Plan
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Plan (StoryBrand: The Plan) */}
-      <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div className="container relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-6">
-              Safety in 3 Simple Steps
+          <div className="mb-20">
+            <h2 className="text-4xl md:text-6xl font-heading font-bold text-white mb-6">
+              5 Layers of Protection. <br/>
+              <span className="text-white/40">One Seamless App.</span>
             </h2>
-            <p className="text-lg text-primary-foreground/80">
-              You don't need a manual to feel safe. We've made it effortless.
+            <p className="text-xl text-white/60 max-w-2xl">
+              MySentry transforms the sensors in your watch and phone into a military-grade safety system.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid gap-4">
             {[
               {
-                step: "01",
-                title: "Choose Your Device",
-                desc: "Select the wearable that fits your lifestyle—watch, pendant, or clip."
+                id: "01",
+                title: "Panic Alarm",
+                desc: "Triggered by voice, app, or watch button. Instant connection.",
+                detail: "Works even if your phone is out of reach."
               },
               {
-                step: "02",
-                title: "Connect in Seconds",
-                desc: "Turn it on. It automatically pairs with our secure global network."
+                id: "02",
+                title: "Fall Detection",
+                desc: "Smart watch sensors detect hard falls and auto-call for help.",
+                detail: "Distinguishes between a stumble and a fall."
               },
               {
-                step: "03",
-                title: "Live Fearlessly",
-                desc: "Go about your day. We'll alert your circle only if something happens."
+                id: "03",
+                title: "Crash Detection",
+                desc: "Uses accelerometer data to detect vehicle collisions instantly.",
+                detail: "Alerts emergency services with your GPS coordinates."
+              },
+              {
+                id: "04",
+                title: "Real-Time Health",
+                desc: "Learns your vitals norms. Triggers alarm if thresholds are breached.",
+                detail: "Monitors heart rate, oxygen, and stress levels 24/7."
+              },
+              {
+                id: "05",
+                title: "24/7 Pro Monitoring",
+                desc: "Live agents respond to every alert via video or voice.",
+                detail: "We stay on the line until you are safe."
               }
-            ].map((item, idx) => (
-              <div key={idx} className="relative p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 transition-colors">
-                <div className="text-6xl font-heading font-black text-white/10 absolute top-4 right-4 select-none">
-                  {item.step}
+            ].map((feature, idx) => (
+              <div key={idx} className="group relative p-8 md:p-12 rounded-3xl bg-black border border-white/10 hover:border-white/30 transition-all duration-500 overflow-hidden">
+                <div className="absolute top-0 right-0 p-8 opacity-10 font-heading font-bold text-8xl text-white group-hover:opacity-20 transition-opacity">
+                  {feature.id}
                 </div>
-                <h3 className="text-xl font-bold mb-4 relative z-10">{item.title}</h3>
-                <p className="text-primary-foreground/70 relative z-10">
-                  {item.desc}
-                </p>
+                <div className="relative z-10 grid md:grid-cols-3 gap-8 items-center">
+                  <div className="md:col-span-1">
+                    <h3 className="text-3xl font-bold text-white mb-2">{feature.title}</h3>
+                  </div>
+                  <div className="md:col-span-1">
+                    <p className="text-lg text-white/80">{feature.desc}</p>
+                  </div>
+                  <div className="md:col-span-1">
+                    <p className="text-sm text-white/40 font-mono border-l border-white/20 pl-4">
+                      {feature.detail}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
-          
-          <div className="mt-16 text-center">
-            <Link href="/pricing">
-              <Button size="lg" variant="secondary" className="h-14 px-10 text-lg rounded-full shadow-xl hover:scale-105 transition-transform">
-                Get Started Now
-              </Button>
-            </Link>
-            <p className="mt-4 text-sm text-primary-foreground/60">
-              30-day money-back guarantee. No questions asked.
-            </p>
+        </div>
+      </section>
+
+      {/* The "Live Video" Differentiator */}
+      <section className="py-32 bg-background relative overflow-hidden">
+        <div className="container relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black aspect-video flex items-center justify-center">
+                {/* Placeholder for Video Call UI */}
+                <div className="absolute inset-0 bg-gray-900">
+                   <div className="absolute top-4 left-4 bg-red-500 px-3 py-1 rounded-full text-xs font-bold text-white animate-pulse">LIVE EMERGENCY</div>
+                   <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black to-transparent">
+                      <div className="flex items-center gap-4">
+                        <div className="h-12 w-12 rounded-full bg-blue-500 border-2 border-white"></div>
+                        <div>
+                          <p className="text-white font-bold">Agent Sarah</p>
+                          <p className="text-white/60 text-sm">Dispatching EMS to your location...</p>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+              </div>
+            </div>
+            <div className="order-1 lg:order-2 space-y-8">
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-white">
+                Eyes on the Scene. <br/>
+                <span className="text-white/40">Instantly.</span>
+              </h2>
+              <p className="text-xl text-white/60 leading-relaxed">
+                When an alarm triggers (passive or active), MySentry automatically initiates a <strong>Live Video Call</strong> to our 24/7 monitoring center and your 5 emergency contacts.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-green-500 shrink-0" />
+                  <span className="text-white/80">Agents can see the situation and dispatch the right help.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-green-500 shrink-0" />
+                  <span className="text-white/80">Family members can join the call immediately.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle2 className="h-6 w-6 text-green-500 shrink-0" />
+                  <span className="text-white/80">GPS location is shared in real-time.</span>
+                </li>
+              </ul>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* PEACE: Change & End Result */}
+      <section className="py-32 bg-white text-black text-center">
+        <div className="container max-w-4xl">
+          <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8">
+            From Vulnerable to <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-black to-gray-500">Invincible.</span>
+          </h2>
+          <p className="text-2xl text-black/60 mb-12 leading-relaxed">
+            Stop worrying about the "what ifs." Equip yourself and your loved ones with the most advanced safety software ever built.
+          </p>
+          <Link href="/pricing">
+            <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-black text-white hover:bg-black/80 shadow-2xl hover:scale-105 transition-transform">
+              Start Your 7-Day Free Trial
+            </Button>
+          </Link>
+          <p className="mt-6 text-sm text-black/40 font-medium">
+            30-Day Money-Back Guarantee • Cancel Anytime
+          </p>
         </div>
       </section>
     </Layout>

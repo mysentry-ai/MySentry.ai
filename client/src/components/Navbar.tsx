@@ -9,6 +9,7 @@ export default function Navbar() {
   const [location] = useLocation();
 
   const navLinks = [
+    { name: "Features", href: "/features" },
     { name: "Seniors", href: "/seniors" },
     { name: "Families", href: "/families" },
     { name: "Employers", href: "/employers" },
@@ -18,14 +19,14 @@ export default function Navbar() {
   const isActive = (path: string) => location === path;
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/80 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 w-full border-b border-white/5 bg-background/80 backdrop-blur-xl">
       <div className="container flex h-16 items-center justify-between">
         {/* Logo */}
         <Link href="/">
-          <a className="flex items-center gap-2 font-heading text-xl font-bold text-primary hover:opacity-90 transition-opacity">
-            <ShieldCheck className="h-8 w-8 text-secondary" />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
-              MySentry.ai
+          <a className="flex items-center gap-2 font-heading text-xl font-bold text-foreground hover:opacity-90 transition-opacity">
+            <ShieldCheck className="h-8 w-8 text-white" />
+            <span className="tracking-tight">
+              MySentry<span className="text-white/50">.ai</span>
             </span>
           </a>
         </Link>
@@ -36,10 +37,10 @@ export default function Navbar() {
             <Link key={link.name} href={link.href}>
               <a
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
+                  "text-sm font-medium transition-all hover:text-white",
                   isActive(link.href)
-                    ? "text-primary font-semibold"
-                    : "text-muted-foreground"
+                    ? "text-white font-semibold"
+                    : "text-white/60"
                 )}
               >
                 {link.name}
@@ -47,8 +48,8 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="/pricing">
-            <Button variant="default" className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg shadow-primary/20">
-              Get MySentry
+            <Button variant="default" className="bg-white text-black hover:bg-white/90 font-semibold rounded-full px-6">
+              Start Free Trial
             </Button>
           </Link>
         </div>
@@ -64,14 +65,14 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden border-t border-border bg-background p-4 shadow-lg animate-in slide-in-from-top-5">
+        <div className="md:hidden border-t border-white/10 bg-background p-4 shadow-2xl animate-in slide-in-from-top-5">
           <div className="flex flex-col space-y-4">
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href}>
                 <a
                   className={cn(
-                    "block text-base font-medium transition-colors hover:text-primary",
-                    isActive(link.href) ? "text-primary" : "text-muted-foreground"
+                    "block text-base font-medium transition-colors hover:text-white",
+                    isActive(link.href) ? "text-white" : "text-white/60"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
@@ -80,8 +81,8 @@ export default function Navbar() {
               </Link>
             ))}
             <Link href="/pricing">
-              <Button className="w-full bg-primary text-primary-foreground" onClick={() => setIsOpen(false)}>
-                Get MySentry
+              <Button className="w-full bg-white text-black rounded-full" onClick={() => setIsOpen(false)}>
+                Start Free Trial
               </Button>
             </Link>
           </div>

@@ -9,11 +9,13 @@ import Seniors from "./pages/Seniors";
 import Families from "./pages/Families";
 import Employers from "./pages/Employers";
 import Pricing from "./pages/Pricing";
+import Features from "./pages/Features";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/features" component={Features} />
       <Route path="/seniors" component={Seniors} />
       <Route path="/families" component={Families} />
       <Route path="/employers" component={Employers} />
@@ -28,7 +30,7 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="light">
+      <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <Toaster />
           <Router />
