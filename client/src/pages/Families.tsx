@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Heart, MapPin, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Eye, Smartphone, TrendingDown, Zap, Car } from "lucide-react";
+import { Heart, MapPin, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Eye, Smartphone, TrendingDown, Zap, Car, Activity } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Families() {
@@ -26,14 +26,14 @@ export default function Families() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
               </span>
-              For Mothers
+              For Families
             </div>
 
             <h1 className="text-5xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-6">
-              Know instantly when something's wrong.
+              Keep your family safe, healthy, and connected.
             </h1>
             <p className="text-xl text-[#1a1a1a] mb-8 leading-relaxed">
-              Your child falls. Your parent has a health crisis. Your spouse crashes. You don't hear about it later. You know about it now. In seconds. With video proof. So you can act.
+              One app. Four family members protected. Automatic emergency response. Real-time health alerts. Location updates. Everything you need to keep everyone safe—without hovering.
             </p>
             <Link href="/pricing">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary text-white hover:bg-primary/90 font-semibold shadow-lg">
@@ -46,30 +46,30 @@ export default function Families() {
             <div className="grid grid-cols-3 gap-6 mt-16">
               <div className="fade-in-up">
                 <div className="text-3xl font-bold text-primary">2 sec</div>
-                <p className="text-sm text-[#1a1a1a]">You're alerted</p>
+                <p className="text-sm text-[#1a1a1a]">Emergency alert</p>
               </div>
               <div className="fade-in-up" style={{ animationDelay: "0.1s" }}>
-                <div className="text-3xl font-bold text-primary">12 sec</div>
-                <p className="text-sm text-[#1a1a1a]">Agent responds</p>
+                <div className="text-3xl font-bold text-primary">24/7</div>
+                <p className="text-sm text-[#1a1a1a]">Health monitoring</p>
               </div>
               <div className="fade-in-up" style={{ animationDelay: "0.2s" }}>
-                <div className="text-3xl font-bold text-primary">Live video</div>
-                <p className="text-sm text-[#1a1a1a]">You see everything</p>
+                <div className="text-3xl font-bold text-primary">4 members</div>
+                <p className="text-sm text-[#1a1a1a]">One plan</p>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* The Mother's Burden */}
+      {/* The Mother's Reality */}
       <section className="py-32 bg-[#d4edda] border-t border-primary/10">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6">
-              The weight of responsibility.
+              You can't be everywhere at once.
             </h2>
             <p className="text-lg text-[#1a1a1a]">
-              You can't be everywhere at once. But you're responsible for everyone. That's the mother's burden. MySentry lightens it.
+              Your teenager is driving. Your parent is home alone. Your spouse is traveling. Your child is at school. You're responsible for all of them. MySentry is your safety net.
             </p>
           </div>
 
@@ -82,10 +82,10 @@ export default function Families() {
             >
               <AlertCircle className="h-12 w-12 text-primary mb-4" />
               <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">
-                You worry constantly.
+                Safety happens in seconds.
               </h3>
               <p className="text-[#1a1a1a] leading-relaxed">
-                Is your teenager home safe? Did your parent take a fall? Is your spouse okay on the highway? The "what-ifs" never stop.
+                A fall. A crash. A panic. By the time you hear about it, precious minutes are gone. MySentry alerts you instantly so you can act.
               </p>
             </motion.div>
 
@@ -97,10 +97,10 @@ export default function Families() {
             >
               <Heart className="h-12 w-12 text-primary mb-4" />
               <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">
-                You can't call every hour.
+                Health problems whisper.
               </h3>
               <p className="text-[#1a1a1a] leading-relaxed">
-                They'd resent you for it. But you need to know they're safe. You need proof, not promises.
+                A stroke doesn't announce itself. An irregular heartbeat goes unnoticed. But your watch sees it. And alerts you before it becomes critical.
               </p>
             </motion.div>
 
@@ -110,19 +110,19 @@ export default function Families() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="p-8 rounded-3xl bg-white border border-primary/20 hover:border-primary/40 transition-all"
             >
-              <Eye className="h-12 w-12 text-primary mb-4" />
+              <MapPin className="h-12 w-12 text-primary mb-4" />
               <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">
-                When something happens, you're last to know.
+                Connection without control.
               </h3>
               <p className="text-[#1a1a1a] leading-relaxed">
-                A fall. A crash. A health crisis. Hours pass before you find out. By then, the damage is done.
+                You know where they are. They don't feel tracked. Automatic location updates give you peace of mind without the guilt.
               </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Feature 1: Panic Alarm - Family Activated */}
+      {/* Feature 1: Emergency Response - Panic Alarm */}
       <section className="py-32 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -133,23 +133,23 @@ export default function Families() {
               className="space-y-8"
             >
               <div>
-                <div className="text-primary font-mono text-sm tracking-widest uppercase font-bold mb-4">Feature 01</div>
+                <div className="text-primary font-mono text-sm tracking-widest uppercase font-bold mb-4">Safety Feature 01</div>
                 <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6">
-                  Your child can call for help with one tap.
+                  One tap. Instant help.
                 </h2>
                 <p className="text-lg text-[#1a1a1a] leading-relaxed mb-6">
-                  No need to dial 911. No need to remember numbers. One tap on their watch or phone. You're alerted. A professional agent responds. Emergency services are dispatched. All in seconds.
+                  Your teenager in danger. Your parent needs help. Your child scared. One tap on their watch or phone. You're alerted. An agent responds. Emergency services are dispatched. All in seconds.
                 </p>
               </div>
 
               <div className="space-y-4">
-                <h3 className="text-xl font-bold text-[#1a1a1a]">Perfect for:</h3>
+                <h3 className="text-xl font-bold text-[#1a1a1a]">Who uses this:</h3>
                 <ul className="space-y-3">
                   {[
-                    { title: "New Drivers", desc: "Car trouble. Accident. Unsafe situation. One tap gets help." },
-                    { title: "College Students", desc: "Walking home late. Unsafe situation. One tap alerts you and authorities." },
-                    { title: "Kids Walking Home", desc: "Bullying. Lost. Scared. One tap and you know exactly where they are." },
-                    { title: "Elderly Parents", desc: "Need help but can't reach phone. One tap calls for immediate assistance." }
+                    { title: "New Drivers", desc: "Car trouble, accident, unsafe situation—one tap gets help" },
+                    { title: "College Students", desc: "Walking home late, unsafe situation—one tap alerts you and authorities" },
+                    { title: "Kids Walking Home", desc: "Bullying, lost, scared—one tap and you know exactly where they are" },
+                    { title: "Elderly Parents", desc: "Need help but can't reach phone—one tap calls for immediate assistance" }
                   ].map((item, idx) => (
                     <li key={idx} className="flex gap-3">
                       <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
@@ -164,7 +164,7 @@ export default function Families() {
 
               <div className="p-6 rounded-2xl bg-[#c8e6c9] border border-primary/20">
                 <p className="text-[#1a1a1a] italic">
-                  <strong>Did you know?</strong> Response time is everything in emergencies. The first 5 minutes determine outcomes. MySentry gets help there in seconds, not minutes.
+                  <strong>Did you know?</strong> In emergencies, the first 5 minutes determine outcomes. MySentry gets help there in seconds, not minutes.
                 </p>
               </div>
             </motion.div>
@@ -201,9 +201,9 @@ export default function Families() {
               className="space-y-8 order-1 lg:order-2"
             >
               <div>
-                <div className="text-primary font-mono text-sm tracking-widest uppercase font-bold mb-4">Feature 02</div>
+                <div className="text-primary font-mono text-sm tracking-widest uppercase font-bold mb-4">Safety Feature 02</div>
                 <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6">
-                  Your teenager crashes. You know instantly.
+                  Your teenager crashes. You know in 2 seconds.
                 </h2>
                 <p className="text-lg text-[#1a1a1a] leading-relaxed mb-6">
                   Severe impact detected. You get an alert with their exact location. An agent calls them immediately. If they don't respond, emergency services are dispatched automatically. You're on the call.
@@ -222,7 +222,7 @@ export default function Families() {
                   <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0 text-primary font-bold">2</div>
                   <div>
                     <h4 className="text-[#1a1a1a] font-bold mb-1">You're Alerted</h4>
-                    <p className="text-[#1a1a1a] text-sm">Location, vehicle info, and video stream sent to you immediately.</p>
+                    <p className="text-[#1a1a1a] text-sm">Location, vehicle info, and live video sent to you immediately.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -244,7 +244,7 @@ export default function Families() {
         </div>
       </section>
 
-      {/* Feature 3: Fall & Health Alarms */}
+      {/* Feature 3: Real-Time Health Monitoring */}
       <section className="py-32 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -255,33 +255,39 @@ export default function Families() {
               className="space-y-8"
             >
               <div>
-                <div className="text-primary font-mono text-sm tracking-widest uppercase font-bold mb-4">Feature 03</div>
+                <div className="text-primary font-mono text-sm tracking-widest uppercase font-bold mb-4">Health Feature 01</div>
                 <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6">
-                  Your parent falls. You're on the call in seconds.
+                  See their health. Get alerted when it changes.
                 </h2>
                 <p className="text-lg text-[#1a1a1a] leading-relaxed mb-6">
-                  Fall detected automatically. You get a live video alert. You can see what's happening and talk to them. An agent is already coordinating emergency response. You're not helpless. You're in control.
+                  Your parent's resting heart rate is climbing. Your spouse's oxygen levels are dropping. Your teenager's temperature is rising. You see it happening in real-time. You get alerted before it becomes critical.
                 </p>
               </div>
 
               <div className="space-y-4">
-                <div className="p-4 rounded-xl bg-white border border-primary/10">
-                  <h4 className="text-[#1a1a1a] font-bold mb-2">Fall Detection</h4>
-                  <p className="text-[#1a1a1a] text-sm">Detected in 2 seconds. You get live video. Help is dispatched.</p>
-                </div>
-                <div className="p-4 rounded-xl bg-white border border-primary/10">
-                  <h4 className="text-[#1a1a1a] font-bold mb-2">Health Crisis Alert</h4>
-                  <p className="text-[#1a1a1a] text-sm">Abnormal heart rate or oxygen levels trigger immediate alert to you.</p>
-                </div>
-                <div className="p-4 rounded-xl bg-white border border-primary/10">
-                  <h4 className="text-[#1a1a1a] font-bold mb-2">You're in Control</h4>
-                  <p className="text-[#1a1a1a] text-sm">You see the situation, talk to them, and coordinate with emergency services.</p>
-                </div>
+                <h3 className="text-xl font-bold text-[#1a1a1a]">Real-time health metrics:</h3>
+                <ul className="space-y-3">
+                  {[
+                    { title: "Heart Rate & HRV", desc: "Detects irregular patterns and abnormal variations" },
+                    { title: "Blood Oxygen (SpO₂)", desc: "Immediate alert if oxygen drops dangerously" },
+                    { title: "Temperature", desc: "Early warning of fever or infection" },
+                    { title: "Respiratory Rate", desc: "Monitors breathing patterns for distress" },
+                    { title: "Activity Level", desc: "Know if they're moving and staying active" }
+                  ].map((item, idx) => (
+                    <li key={idx} className="flex gap-3">
+                      <CheckCircle2 className="h-6 w-6 text-primary shrink-0 mt-0.5" />
+                      <div>
+                        <strong className="text-[#1a1a1a]">{item.title}:</strong>
+                        <p className="text-[#1a1a1a] text-sm">{item.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className="p-6 rounded-2xl bg-[#c8e6c9] border border-primary/20">
                 <p className="text-[#1a1a1a] italic">
-                  <strong>Did you know?</strong> Being on a video call during an emergency reduces patient anxiety by 70% and helps paramedics respond faster. Your presence matters.
+                  <strong>Did you know?</strong> 80% of health problems show warning signs in vital signs 24-48 hours before symptoms appear. You'll see them first.
                 </p>
               </div>
             </motion.div>
@@ -292,14 +298,68 @@ export default function Families() {
               transition={{ duration: 0.6 }}
               className="aspect-square rounded-3xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg hover-lift"
             >
-              <AlertCircle className="h-40 w-40 text-primary/30" />
+              <Activity className="h-40 w-40 text-primary/30" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Feature 4: Smart Connectivity */}
+      {/* Feature 4: Fall Detection */}
       <section className="py-32 bg-[#d4edda] border-t border-primary/10">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="aspect-square rounded-3xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg hover-lift order-2 lg:order-1"
+            >
+              <AlertCircle className="h-40 w-40 text-primary/30" />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="space-y-8 order-1 lg:order-2"
+            >
+              <div>
+                <div className="text-primary font-mono text-sm tracking-widest uppercase font-bold mb-4">Safety Feature 03</div>
+                <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6">
+                  Your parent falls. You're on the call in seconds.
+                </h2>
+                <p className="text-lg text-[#1a1a1a] leading-relaxed mb-6">
+                  Fall detected automatically in 2 seconds. You get a live video alert. You can see what's happening and talk to them. An agent is already coordinating emergency response. You're not helpless. You're in control.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                <div className="p-4 rounded-xl bg-white border border-primary/10">
+                  <h4 className="text-[#1a1a1a] font-bold mb-2">2-Second Detection</h4>
+                  <p className="text-[#1a1a1a] text-sm">Faster than they can call for help.</p>
+                </div>
+                <div className="p-4 rounded-xl bg-white border border-primary/10">
+                  <h4 className="text-[#1a1a1a] font-bold mb-2">Live Video Connection</h4>
+                  <p className="text-[#1a1a1a] text-sm">You see what's happening. You talk to them. You're part of the response.</p>
+                </div>
+                <div className="p-4 rounded-xl bg-white border border-primary/10">
+                  <h4 className="text-[#1a1a1a] font-bold mb-2">Immediate Dispatch</h4>
+                  <p className="text-[#1a1a1a] text-sm">Emergency services called with exact location. You're on the call.</p>
+                </div>
+              </div>
+
+              <div className="p-6 rounded-2xl bg-[#c8e6c9] border border-primary/20">
+                <p className="text-[#1a1a1a] italic">
+                  <strong>Did you know?</strong> Lying on the ground for hours after a fall causes serious complications. MySentry gets help there in minutes, not hours.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 5: Smart Connectivity */}
+      <section className="py-32 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -318,7 +378,7 @@ export default function Families() {
               className="space-y-8 order-1 lg:order-2"
             >
               <div>
-                <div className="text-primary font-mono text-sm tracking-widest uppercase font-bold mb-4">Feature 04</div>
+                <div className="text-primary font-mono text-sm tracking-widest uppercase font-bold mb-4">Connectivity Feature</div>
                 <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6">
                   Know where they are. Without asking.
                 </h2>
@@ -346,14 +406,14 @@ export default function Families() {
                   <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center shrink-0 text-primary font-bold">3</div>
                   <div>
                     <h4 className="text-[#1a1a1a] font-bold mb-1">Peace of Mind</h4>
-                    <p className="text-[#1a1a1a] text-sm">You know they're safe without the constant worry or nagging.</p>
+                    <p className="text-[#1a1a1a] text-sm">You know they're safe without constant worry or nagging.</p>
                   </div>
                 </div>
               </div>
 
               <div className="p-6 rounded-2xl bg-[#c8e6c9] border border-primary/20">
                 <p className="text-[#1a1a1a] italic">
-                  <strong>Did you know?</strong> Mothers who use Smart Connectivity report 60% less daily anxiety. That's not just peace of mind. That's freedom.
+                  <strong>Did you know?</strong> Families who use Smart Connectivity report 60% less daily anxiety. That's not just peace of mind. That's freedom.
                 </p>
               </div>
             </motion.div>
@@ -361,39 +421,39 @@ export default function Families() {
         </div>
       </section>
 
-      {/* The Mother's Promise */}
+      {/* Why Families Choose MySentry */}
       <section className="py-32 bg-[#d4edda] border-t border-primary/10">
         <div className="container max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6">
-              You can finally let go.
+              One app. Complete family protection.
             </h2>
             <p className="text-lg text-[#1a1a1a]">
-              Not because you stop caring. But because you stop worrying. MySentry is the safety net that lets your family live freely.
+              Safety. Health. Connectivity. Everything you need in one place.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                icon: Eye,
-                title: "See without hovering",
-                desc: "Know they're safe without constant check-ins. They stay independent. You stay informed."
+                icon: Shield,
+                title: "Safety you can trust",
+                desc: "Fall detection, crash detection, panic alarm. Multiple ways to get help instantly."
               },
               {
                 icon: Heart,
-                title: "Act, don't react",
-                desc: "In emergencies, you're part of the solution. You see it happening. You're on the call. You matter."
+                title: "Health you can see",
+                desc: "Real-time vital signs. Alerts before problems become critical. Peace of mind 24/7."
               },
               {
                 icon: MapPin,
-                title: "Location without tracking",
-                desc: "Automated updates mean you know where they are without asking. They don't feel watched."
+                title: "Connection without control",
+                desc: "Automatic location updates. You know they're safe. They don't feel tracked."
               },
               {
-                icon: Zap,
-                title: "Help arrives in seconds",
-                desc: "Not hours. Not days. Seconds. That's the difference between recovery and permanent damage."
+                icon: Video,
+                title: "You're in the room",
+                desc: "In emergencies, you're on the live video call. You're part of the solution, not just informed after."
               }
             ].map((item, idx) => (
               <motion.div
@@ -417,7 +477,7 @@ export default function Families() {
         <div className="container max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6">
-              What mothers say.
+              What families say.
             </h2>
           </div>
 
@@ -468,15 +528,26 @@ export default function Families() {
         </div>
       </section>
 
-      {/* Family Bundle CTA */}
+      {/* Family Bundle Pricing CTA */}
       <section className="py-32 bg-[#d4edda] border-t border-primary/10">
         <div className="container max-w-3xl text-center">
           <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6">
-            Protect everyone you love.
+            Protect your whole family.
           </h2>
-          <p className="text-lg text-[#1a1a1a] mb-8">
-            Family Bundle: Add up to 4 family members. Just $5 per additional member per month. One app. One peace of mind.
-          </p>
+          <div className="space-y-6 mb-8">
+            <div>
+              <p className="text-lg text-[#1a1a1a] font-bold">Family Bundle: $19.99/month</p>
+              <p className="text-[#1a1a1a]">Includes 4 family members</p>
+            </div>
+            <div>
+              <p className="text-lg text-[#1a1a1a] font-bold">Additional Members: $5/month each</p>
+              <p className="text-[#1a1a1a]">Add up to 5 more family members</p>
+            </div>
+            <div className="p-4 rounded-xl bg-white border border-primary/10">
+              <p className="text-[#1a1a1a] font-bold">Yearly Plan: 2 Months Free</p>
+              <p className="text-[#1a1a1a] text-sm">Pay for 10 months, get 12 months of protection</p>
+            </div>
+          </div>
           <Link href="/pricing">
             <Button size="lg" className="h-14 px-12 text-lg rounded-full bg-primary text-white hover:bg-primary/90 font-bold shadow-xl">
               View Family Plans
@@ -489,10 +560,10 @@ export default function Families() {
       <section className="py-32 text-center bg-primary text-white">
         <div className="container max-w-3xl">
           <h2 className="text-4xl font-heading font-bold mb-6">
-            You can finally let go.
+            Keep your family safe, healthy, and connected.
           </h2>
           <p className="text-xl text-white/90 mb-8">
-            7-day free trial. See for yourself why mothers choose MySentry.
+            7-day free trial. No credit card required. Cancel anytime.
           </p>
           <Link href="/pricing">
             <Button size="lg" className="h-14 px-12 text-lg rounded-full bg-white text-primary hover:bg-white/90 font-bold shadow-xl">
