@@ -117,7 +117,7 @@ export default function Pricing() {
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-6">
               Safety for Every Budget
             </h1>
-            <p className="text-xl text-foreground/70 mb-8">
+            <p className="text-xl text-foreground mb-8">
               7-day free trial. No credit card required. 30-day money-back guarantee.
             </p>
             
@@ -127,7 +127,7 @@ export default function Pricing() {
                 onClick={() => setIsAnnual(false)}
                 className={cn(
                   "px-6 py-2 rounded-full text-sm font-bold transition-all",
-                  !isAnnual ? "bg-primary text-white" : "text-foreground/60 hover:text-foreground"
+                  !isAnnual ? "bg-primary text-white" : "text-foreground hover:text-foreground"
                 )}
               >
                 Monthly
@@ -136,7 +136,7 @@ export default function Pricing() {
                 onClick={() => setIsAnnual(true)}
                 className={cn(
                   "px-6 py-2 rounded-full text-sm font-bold transition-all flex items-center gap-2",
-                  isAnnual ? "bg-primary text-white" : "text-foreground/60 hover:text-foreground"
+                  isAnnual ? "bg-primary text-white" : "text-foreground hover:text-foreground"
                 )}
               >
                 Yearly <span className="text-[10px] bg-secondary text-white px-2 py-0.5 rounded-full font-bold">SAVE 2 MONTHS</span>
@@ -166,16 +166,16 @@ export default function Pricing() {
                 {/* Header */}
                 <div className="p-8 border-b border-primary/10">
                   <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
-                  <p className="text-sm text-foreground/60 mb-6">{plan.tagline}</p>
+                  <p className="text-sm text-foreground mb-6">{plan.tagline}</p>
                   
                   {plan.price !== null ? (
                     <div className="mb-4">
                       <div className="flex items-baseline gap-1">
                         <span className="text-4xl font-bold text-primary">${isAnnual ? (plan.annualPrice / 12).toFixed(2) : plan.price}</span>
-                        <span className="text-foreground/60">/month</span>
+                        <span className="text-foreground">/month</span>
                       </div>
                       {isAnnual && (
-                        <p className="text-xs text-foreground/50 mt-2">
+                        <p className="text-xs text-foreground mt-2">
                           Billed ${plan.annualPrice} annually
                         </p>
                       )}
@@ -183,11 +183,11 @@ export default function Pricing() {
                   ) : (
                     <div className="mb-4">
                       <p className="text-2xl font-bold text-primary">Custom Pricing</p>
-                      <p className="text-xs text-foreground/50 mt-2">Contact for quote</p>
+                      <p className="text-xs text-foreground mt-2">Contact for quote</p>
                     </div>
                   )}
 
-                  <p className="text-sm text-foreground/70 mb-6">{plan.description}</p>
+                  <p className="text-sm text-foreground mb-6">{plan.description}</p>
 
                   <Link href="/pricing">
                     <Button 
@@ -211,11 +211,11 @@ export default function Pricing() {
                       {feature.included ? (
                         <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                       ) : (
-                        <X className="h-5 w-5 text-foreground/20 shrink-0 mt-0.5" />
+                        <X className="h-5 w-5 text-foreground shrink-0 mt-0.5" />
                       )}
                       <span className={cn(
                         "text-sm",
-                        feature.included ? "text-foreground/80" : "text-foreground/40"
+                        feature.included ? "text-foreground" : "text-foreground"
                       )}>
                         {feature.name}
                       </span>
@@ -241,7 +241,7 @@ export default function Pricing() {
                   <h3 className="font-bold text-foreground">Primary User</h3>
                   <span className="text-primary font-bold">${isAnnual ? (199.99 / 12).toFixed(2) : 19.99}/month</span>
                 </div>
-                <p className="text-sm text-foreground/60">Full access to all features</p>
+                <p className="text-sm text-foreground">Full access to all features</p>
               </div>
               
               {[1, 2, 3, 4].map((i) => (
@@ -250,15 +250,15 @@ export default function Pricing() {
                     <h3 className="font-bold text-foreground">Additional Member {i}</h3>
                     <span className="text-primary font-bold">$5/month</span>
                   </div>
-                  <p className="text-sm text-foreground/60">Full access to all features</p>
+                  <p className="text-sm text-foreground">Full access to all features</p>
                 </div>
               ))}
 
               <div className="p-6 rounded-2xl bg-secondary/10 border border-secondary/30">
-                <p className="text-sm text-foreground/70 mb-4">
+                <p className="text-sm text-foreground mb-4">
                   <strong>Example:</strong> Family of 4 = ${isAnnual ? (199.99 / 12 + 15).toFixed(2) : (19.99 + 15)}/month
                 </p>
-                <p className="text-xs text-foreground/60">
+                <p className="text-xs text-foreground">
                   Each member has their own privacy settings and emergency contacts.
                 </p>
               </div>
@@ -277,17 +277,17 @@ export default function Pricing() {
             <div className="text-center">
               <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-foreground mb-2">30-Day Money-Back</h3>
-              <p className="text-foreground/60 text-sm">Not satisfied? Full refund, no questions asked.</p>
+              <p className="text-foreground text-sm">Not satisfied? Full refund, no questions asked.</p>
             </div>
             <div className="text-center">
               <AlertTriangle className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-foreground mb-2">24/7 Monitoring</h3>
-              <p className="text-foreground/60 text-sm">Live agents respond to every alert in seconds.</p>
+              <p className="text-foreground text-sm">Live agents respond to every alert in seconds.</p>
             </div>
             <div className="text-center">
               <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-foreground mb-2">HIPAA Compliant</h3>
-              <p className="text-foreground/60 text-sm">Your health data is encrypted and secure.</p>
+              <p className="text-foreground text-sm">Your health data is encrypted and secure.</p>
             </div>
           </div>
         </div>
@@ -328,7 +328,7 @@ export default function Pricing() {
             ].map((item, idx) => (
               <div key={idx} className="p-6 rounded-2xl bg-white border border-primary/10">
                 <h3 className="font-bold text-foreground mb-3">{item.q}</h3>
-                <p className="text-foreground/70 text-sm">{item.a}</p>
+                <p className="text-foreground text-sm">{item.a}</p>
               </div>
             ))}
           </div>

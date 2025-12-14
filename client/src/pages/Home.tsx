@@ -106,7 +106,7 @@ export default function Home() {
                       </div>
                       <div className="text-left">
                         <p className="text-sm font-bold text-foreground">Live Video Active</p>
-                        <p className="text-xs text-foreground/50">Sharing location & vitals</p>
+                        <p className="text-xs text-foreground">Sharing location & vitals</p>
                       </div>
                     </div>
                  </div>
@@ -116,7 +116,7 @@ export default function Home() {
                   <div className="text-center">
                     <HeartPulse className="h-8 w-8 text-primary mx-auto mb-2 animate-pulse" />
                     <p className="text-3xl font-bold text-foreground">120</p>
-                    <p className="text-xs text-foreground/50 uppercase tracking-widest">BPM Alert</p>
+                    <p className="text-xs text-foreground uppercase tracking-widest">BPM Alert</p>
                   </div>
                </div>
             </div>
@@ -300,7 +300,7 @@ export default function Home() {
                 <p className="text-foreground mb-6 italic">"{testimonial.quote}"</p>
                 <div>
                   <p className="font-bold text-foreground">{testimonial.name}</p>
-                  <p className="text-sm text-foreground/60">{testimonial.role}</p>
+                  <p className="text-sm text-foreground">{testimonial.role}</p>
                 </div>
               </div>
             ))}

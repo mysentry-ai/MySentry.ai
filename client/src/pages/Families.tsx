@@ -18,7 +18,7 @@ export default function Families() {
               Be There When It Matters Most.
             </h1>
             
-            <p className="text-xl text-foreground/70 leading-relaxed">
+            <p className="text-xl text-foreground leading-relaxed">
               When an emergency happens, a text message isn't enough. MySentry connects you to your loved one via <strong>Live Video</strong> the second an alarm is triggered.
             </p>
             <div className="flex gap-4 pt-4">
@@ -29,7 +29,7 @@ export default function Families() {
               </Link>
             </div>
             <div className="p-4 rounded-xl bg-primary/10 border border-primary/20">
-              <p className="text-sm text-foreground/70 italic">
+              <p className="text-sm text-foreground italic">
                 <strong className="text-primary">Did you know?</strong> In emergencies, family presence reduces patient anxiety by 40%.
               </p>
             </div>
@@ -42,7 +42,7 @@ export default function Families() {
                    <div className="h-20 w-20 rounded-full bg-primary/20 mx-auto flex items-center justify-center animate-pulse">
                      <Video className="h-10 w-10 text-primary" />
                    </div>
-                   <p className="text-foreground/40 text-sm">Connecting to Emergency Stream...</p>
+                   <p className="text-foreground text-sm">Connecting to Emergency Stream...</p>
                  </div>
                </div>
                {/* Overlay UI */}
@@ -77,7 +77,7 @@ export default function Families() {
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-6">
               The "Missed Call" Panic
             </h2>
-            <p className="text-lg text-foreground/70">
+            <p className="text-lg text-foreground">
               We've all felt it. Mom doesn't answer. Dad's phone goes to voicemail. Your mind races to the worst-case scenario.
             </p>
           </div>
@@ -103,7 +103,7 @@ export default function Families() {
               <div key={idx} className="p-8 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-colors shadow-sm hover:shadow-md">
                 <item.icon className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-foreground/60">{item.desc}</p>
+                <p className="text-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -118,31 +118,31 @@ export default function Families() {
               One Plan. <br/>
               <span className="text-primary">Whole Family Protected.</span>
             </h2>
-            <p className="text-lg text-foreground/70">
+            <p className="text-lg text-foreground">
               Safety isn't just for seniors. It's for your teenager driving for the first time, your spouse on a business trip, and you on your morning run.
             </p>
             <ul className="space-y-4 pt-4">
-              <li className="flex items-center gap-3 text-foreground/80">
+              <li className="flex items-center gap-3 text-foreground">
                 <CheckCircle2 className="h-5 w-5 text-primary" />
                 <span><strong>Crash Detection</strong> for new drivers.</span>
               </li>
-              <li className="flex items-center gap-3 text-foreground/80">
+              <li className="flex items-center gap-3 text-foreground">
                 <CheckCircle2 className="h-5 w-5 text-primary" />
                 <span><strong>Panic Button</strong> for college students walking home.</span>
               </li>
-              <li className="flex items-center gap-3 text-foreground/80">
+              <li className="flex items-center gap-3 text-foreground">
                 <CheckCircle2 className="h-5 w-5 text-primary" />
                 <span><strong>Health Monitoring</strong> for aging parents.</span>
               </li>
             </ul>
             <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10 mt-6">
               <p className="text-foreground font-bold mb-2">Family Bundle Pricing</p>
-              <p className="text-foreground/60 text-sm">
+              <p className="text-foreground text-sm">
                 Add up to 4 additional members for just <span className="text-primary font-bold">$5/user/month</span>.
               </p>
             </div>
             <div className="p-4 rounded-xl bg-primary/10 border border-primary/20">
-              <p className="text-sm text-foreground/70 italic">
+              <p className="text-sm text-foreground italic">
                 <strong className="text-primary">💡</strong> Each family member has their own privacy settings and emergency contacts.
               </p>
             </div>
@@ -166,24 +166,24 @@ export default function Families() {
             <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-8">
               When Seconds Matter
             </h2>
-            <p className="text-lg text-foreground/70 mb-12">
+            <p className="text-lg text-foreground mb-12">
               Live video response means your family can see what's happening and help coordinate the right response—faster than any text or phone call.
             </p>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-6 rounded-2xl bg-white border border-primary/10">
                 <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4 text-primary font-bold">1</div>
                 <h3 className="font-bold text-foreground mb-2">Alarm Triggered</h3>
-                <p className="text-sm text-foreground/60">Fall, crash, panic, or health alert detected.</p>
+                <p className="text-sm text-foreground">Fall, crash, panic, or health alert detected.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-primary/10">
                 <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4 text-primary font-bold">2</div>
                 <h3 className="font-bold text-foreground mb-2">Live Video Starts</h3>
-                <p className="text-sm text-foreground/60">Agent and family join instantly.</p>
+                <p className="text-sm text-foreground">Agent and family join instantly.</p>
               </div>
               <div className="p-6 rounded-2xl bg-white border border-primary/10">
                 <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-4 text-primary font-bold">3</div>
                 <h3 className="font-bold text-foreground mb-2">Help Dispatched</h3>
-                <p className="text-sm text-foreground/60">EMS or police sent to exact location.</p>
+                <p className="text-sm text-foreground">EMS or police sent to exact location.</p>
               </div>
             </div>
           </div>

@@ -18,7 +18,7 @@ export default function Seniors() {
               Your Safety. Your Way.
             </h1>
             
-            <p className="text-xl text-foreground/70 leading-relaxed">
+            <p className="text-xl text-foreground leading-relaxed">
               Forget the bulky, embarrassing "help" buttons. MySentry runs on the beautiful Apple or Samsung Watch you actually want to wear. Stay independent. Stay protected.
             </p>
             <div className="flex gap-4 pt-4">
@@ -29,7 +29,7 @@ export default function Seniors() {
               </Link>
             </div>
             <div className="p-4 rounded-xl bg-primary/10 border border-primary/20">
-              <p className="text-sm text-foreground/70 italic">
+              <p className="text-sm text-foreground italic">
                 <strong className="text-primary">Did you know?</strong> 80% of seniors say they'd wear a smartwatch, but only 20% would wear a medical alert pendant.
               </p>
             </div>
@@ -44,10 +44,10 @@ export default function Seniors() {
                    </div>
                    <div>
                      <p className="text-foreground font-bold">Apple Watch Series 9</p>
-                     <p className="text-foreground/60 text-sm">Fully Compatible</p>
+                     <p className="text-foreground text-sm">Fully Compatible</p>
                    </div>
                  </div>
-                 <p className="text-foreground/80 italic text-sm">"I love that it just looks like a normal watch. My grandkids don't even know it's keeping me safe."</p>
+                 <p className="text-foreground italic text-sm">"I love that it just looks like a normal watch. My grandkids don't even know it's keeping me safe."</p>
                </div>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function Seniors() {
               The Device You Wear <br/>
               <span className="text-primary">Is the One That Saves You</span>
             </h2>
-            <p className="text-lg text-foreground/70">
+            <p className="text-lg text-foreground">
               Traditional medical alerts end up in a drawer because they make you feel "old." Smart watches are modern, functional, and stylish—meaning you'll actually wear them 24/7.
             </p>
           </div>
@@ -88,7 +88,7 @@ export default function Seniors() {
               <div key={idx} className="p-8 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-colors shadow-sm hover:shadow-md">
                 <item.icon className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-foreground/60">{item.desc}</p>
+                <p className="text-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -121,14 +121,14 @@ export default function Seniors() {
             <h2 className="text-4xl font-heading font-bold text-foreground">
               It Speaks When You Can't.
             </h2>
-            <p className="text-lg text-foreground/70">
+            <p className="text-lg text-foreground">
               The scariest emergencies are the ones where you can't press a button. MySentry's passive monitoring watches your vitals and movement patterns constantly.
             </p>
-            <p className="text-lg text-foreground/70">
+            <p className="text-lg text-foreground">
               If something is wrong, we don't wait for you to ask for help. We call <strong>you</strong>. If you don't answer, we send the cavalry.
             </p>
             <div className="p-4 rounded-xl bg-primary/10 border border-primary/20 mt-6">
-              <p className="text-sm text-foreground/70 italic">
+              <p className="text-sm text-foreground italic">
                 <strong className="text-primary">💡</strong> Your watch learns your normal heart rate and alerts if it spikes dangerously.
               </p>
             </div>
@@ -153,25 +153,25 @@ export default function Seniors() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="p-8 rounded-3xl bg-white border border-primary/10">
                 <h3 className="font-bold text-foreground mb-3">Real-Time Status</h3>
-                <p className="text-foreground/60 text-sm">
+                <p className="text-foreground text-sm">
                   Your family can see you're active and safe without having to call and interrupt your day.
                 </p>
               </div>
               <div className="p-8 rounded-3xl bg-white border border-primary/10">
                 <h3 className="font-bold text-foreground mb-3">Location History</h3>
-                <p className="text-foreground/60 text-sm">
+                <p className="text-foreground text-sm">
                   Know you made it home safely from the doctor's appointment without having to ask.
                 </p>
               </div>
               <div className="p-8 rounded-3xl bg-white border border-primary/10">
                 <h3 className="font-bold text-foreground mb-3">Health Trends</h3>
-                <p className="text-foreground/60 text-sm">
+                <p className="text-foreground text-sm">
                   Spot declining health early. See if your resting heart rate is creeping up over weeks.
                 </p>
               </div>
               <div className="p-8 rounded-3xl bg-white border border-primary/10">
                 <h3 className="font-bold text-foreground mb-3">Live Video Response</h3>
-                <p className="text-foreground/60 text-sm">
+                <p className="text-foreground text-sm">
                   If an emergency happens, your family joins a live video call with you and the agent.
                 </p>
               </div>

@@ -58,7 +58,7 @@ export default function Employers() {
               <span className="text-primary">Your Most Valuable Assets.</span>
             </h1>
             
-            <p className="text-xl text-foreground/80 leading-relaxed fade-in-up" style={{animationDelay: '0.1s'}}>
+            <p className="text-xl text-foreground leading-relaxed fade-in-up" style={{animationDelay: '0.1s'}}>
               Improve productivity. Reduce turnover. Prevent incidents. MySentry detects emergencies before they become disasters—and responds in seconds, not minutes.
             </p>
             <div className="flex gap-4 pt-4">
@@ -69,7 +69,7 @@ export default function Employers() {
               </Link>
             </div>
             <div className="p-4 rounded-xl bg-primary/10 border border-primary/20">
-              <p className="text-sm text-foreground/70 italic">
+              <p className="text-sm text-foreground italic">
                 <strong className="text-primary">Did you know?</strong> The average workplace injury costs $42,000 in direct and indirect costs.
               </p>
             </div>
@@ -80,7 +80,7 @@ export default function Employers() {
                  <TrendingUp className="h-24 w-24 text-primary/30 mx-auto" />
                  <div>
                    <p className="text-3xl font-bold text-primary">40%</p>
-                   <p className="text-foreground/60 text-sm">Avg. Incident Reduction</p>
+                   <p className="text-foreground text-sm">Avg. Incident Reduction</p>
                  </div>
                </div>
             </div>
@@ -96,7 +96,7 @@ export default function Employers() {
               The Real Cost of <br/>
               <span className="text-primary">Workplace Incidents</span>
             </h2>
-            <p className="text-lg text-foreground/70">
+            <p className="text-lg text-foreground">
               It's not just the medical bill. It's lost productivity, worker's comp premiums, regulatory fines, and damaged morale.
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function Employers() {
               <div key={idx} className="p-8 rounded-3xl bg-white border border-primary/10 hover:border-primary/30 transition-colors shadow-sm hover:shadow-md">
                 <item.icon className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-foreground/60 mb-4">{item.desc}</p>
+                <p className="text-foreground mb-4">{item.desc}</p>
                 <p className="text-primary font-bold text-sm">{item.metric}</p>
               </div>
             ))}
@@ -140,7 +140,7 @@ export default function Employers() {
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
               Tailored for Your Industry
             </h2>
-            <p className="text-xl text-foreground/70">
+            <p className="text-xl text-foreground">
               Whether your team works at heights, in vehicles, or in warehouses—MySentry adapts to your specific risks.
             </p>
           </div>
@@ -153,15 +153,15 @@ export default function Employers() {
                     <h3 className="text-2xl font-bold text-primary mb-2">{industry.name}</h3>
                   </div>
                   <div>
-                    <p className="text-sm text-foreground/60 uppercase tracking-widest font-bold mb-2">Challenge</p>
-                    <p className="text-foreground/80">{industry.challenge}</p>
+                    <p className="text-sm text-foreground uppercase tracking-widest font-bold mb-2">Challenge</p>
+                    <p className="text-foreground">{industry.challenge}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-foreground/60 uppercase tracking-widest font-bold mb-2">MySentry Solution</p>
-                    <p className="text-foreground/80">{industry.benefit}</p>
+                    <p className="text-sm text-foreground uppercase tracking-widest font-bold mb-2">MySentry Solution</p>
+                    <p className="text-foreground">{industry.benefit}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-foreground/60 uppercase tracking-widest font-bold mb-2">ROI</p>
+                    <p className="text-sm text-foreground uppercase tracking-widest font-bold mb-2">ROI</p>
                     <p className="text-primary font-bold text-lg">{industry.roi}</p>
                   </div>
                 </div>
@@ -179,25 +179,25 @@ export default function Employers() {
               Agents See the Scene. <br/>
               <span className="text-primary">In Real-Time.</span>
             </h2>
-            <p className="text-lg text-foreground/70">
+            <p className="text-lg text-foreground">
               Traditional panic buttons send a text. MySentry sends a live video stream to our monitoring center AND your emergency team.
             </p>
             <ul className="space-y-4 pt-4">
-              <li className="flex items-start gap-3 text-foreground/80">
+              <li className="flex items-start gap-3 text-foreground">
                 <CheckCircle2 className="h-5 w-5 text-primary mt-1" />
                 <span><strong>Immediate Assessment:</strong> Agents see exactly what happened and dispatch the right resources.</span>
               </li>
-              <li className="flex items-start gap-3 text-foreground/80">
+              <li className="flex items-start gap-3 text-foreground">
                 <CheckCircle2 className="h-5 w-5 text-primary mt-1" />
                 <span><strong>Faster Response:</strong> No guessing. No delays. Help arrives in minutes, not hours.</span>
               </li>
-              <li className="flex items-start gap-3 text-foreground/80">
+              <li className="flex items-start gap-3 text-foreground">
                 <CheckCircle2 className="h-5 w-5 text-primary mt-1" />
                 <span><strong>Better Outcomes:</strong> Immediate medical intervention = fewer permanent injuries.</span>
               </li>
             </ul>
             <div className="p-4 rounded-xl bg-primary/10 border border-primary/20 mt-6">
-              <p className="text-sm text-foreground/70 italic">
+              <p className="text-sm text-foreground italic">
                 <strong className="text-primary">💡</strong> Average response time: 12 seconds from alert to agent assessment.
               </p>
             </div>
@@ -239,7 +239,7 @@ export default function Employers() {
               <div key={idx} className="p-8 rounded-3xl bg-primary/5 border border-primary/10 hover:border-primary/30 transition-colors">
                 <feature.icon className="h-10 w-10 text-primary mb-6" />
                 <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
-                <p className="text-foreground/60">{feature.desc}</p>
+                <p className="text-foreground">{feature.desc}</p>
               </div>
             ))}
           </div>

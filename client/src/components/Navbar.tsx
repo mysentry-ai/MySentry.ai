@@ -37,7 +37,7 @@ export default function Navbar() {
                   "text-sm font-medium transition-all hover:text-primary",
                   isActive(link.href)
                     ? "text-primary font-semibold"
-                    : "text-foreground/60"
+                    : "text-foreground"
                 )}
               >
                 {link.name}
@@ -69,7 +69,7 @@ export default function Navbar() {
                 <a
                   className={cn(
                     "block text-base font-medium transition-colors hover:text-primary",
-                    isActive(link.href) ? "text-primary" : "text-foreground/60"
+                    isActive(link.href) ? "text-primary" : "text-foreground"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
