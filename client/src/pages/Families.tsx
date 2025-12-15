@@ -33,7 +33,7 @@ export default function Families() {
               Keep your family safe, healthy, and connected.
             </h1>
             <p className="text-xl text-[#1a1a1a] mb-8 leading-relaxed">
-              One app. Four family members protected. Automatic emergency response. Real-time health alerts. Location updates. Everything you need to keep everyone safe—without hovering.
+              One app. All family members protected. Automatic emergency response. Real-time health alerts. Location updates. Everything you need to keep everyone safe—without hovering.
             </p>
             <Link href="/pricing">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary text-white hover:bg-primary/90 font-semibold shadow-lg">
@@ -53,7 +53,7 @@ export default function Families() {
                 <p className="text-sm text-[#1a1a1a]">Health monitoring</p>
               </div>
               <div className="fade-in-up" style={{ animationDelay: "0.2s" }}>
-                <div className="text-3xl font-bold text-primary">4 members</div>
+                <div className="text-3xl font-bold text-primary">All members</div>
                 <p className="text-sm text-[#1a1a1a]">One plan</p>
               </div>
             </div>

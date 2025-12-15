@@ -110,14 +110,13 @@ export default function Pricing() {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="py-24 bg-[#e8f5e9]">
+      {/* Pricing Cards */}
+      <section className="py-24 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h1 className="text-5xl md:text-7xl font-heading font-bold text-foreground mb-6">
-              Safety for Every Budget
-            </h1>
-            <p className="text-xl text-foreground mb-8">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-6">
+              Safety and Health Monitoring for Everyone within Every Budget
+            </h1>           <p className="text-xl text-foreground mb-8">
               7-day free trial. No credit card required. 30-day money-back guarantee.
             </p>
             
@@ -228,66 +227,59 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Family Bundle Details */}
-      <section className="py-24 bg-[#d4edda] border-t border-primary/10">
-        <div className="container">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-heading font-bold text-foreground mb-8">
-              Family Bundle Breakdown
-            </h2>
-            <div className="space-y-6">
-              <div className="p-6 rounded-2xl bg-[#e8f5e9] border border-primary/10">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="font-bold text-foreground">Primary User</h3>
-                  <span className="text-primary font-bold">${isAnnual ? (199.99 / 12).toFixed(2) : 19.99}/month</span>
-                </div>
-                <p className="text-sm text-foreground">Full access to all features</p>
-              </div>
-              
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="p-6 rounded-2xl bg-[#e8f5e9] border border-primary/10">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="font-bold text-foreground">Additional Member {i}</h3>
-                    <span className="text-primary font-bold">$5/month</span>
-                  </div>
-                  <p className="text-sm text-foreground">Full access to all features</p>
-                </div>
-              ))}
 
-              <div className="p-6 rounded-2xl bg-secondary/10 border border-secondary/30">
-                <p className="text-sm text-foreground mb-4">
-                  <strong>Example:</strong> Family of 4 = ${isAnnual ? (199.99 / 12 + 15).toFixed(2) : (19.99 + 15)}/month
-                </p>
-                <p className="text-xs text-foreground">
-                  Each member has their own privacy settings and emergency contacts.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Trust Signals */}
       <section className="py-24 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container">
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-16 text-center">
+          <h2 className="text-3xl font-heading font-bold text-[#1a1a1a] mb-16 text-center">
             Why Choose MySentry?
           </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
               <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-foreground mb-2">30-Day Money-Back</h3>
-              <p className="text-foreground text-sm">Not satisfied? Full refund, no questions asked.</p>
+              <h3 className="font-bold text-[#1a1a1a] mb-2">30-Day Money-Back</h3>
+              <p className="text-[#1a1a1a] text-sm">Not satisfied? Full refund, no questions asked.</p>
             </div>
-            <div className="text-center">
+            <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
               <AlertTriangle className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-foreground mb-2">24/7 Monitoring</h3>
-              <p className="text-foreground text-sm">Live agents respond to every alert in seconds.</p>
+              <h3 className="font-bold text-[#1a1a1a] mb-2">24/7 Live Monitoring</h3>
+              <p className="text-[#1a1a1a] text-sm">Real agents respond to every alert in seconds. Not bots.</p>
             </div>
-            <div className="text-center">
+            <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
               <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-foreground mb-2">HIPAA Compliant</h3>
-              <p className="text-foreground text-sm">Your health data is encrypted and secure.</p>
+              <h3 className="font-bold text-[#1a1a1a] mb-2">HIPAA Compliant</h3>
+              <p className="text-[#1a1a1a] text-sm">Your health data is encrypted and secure.</p>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
+              <Zap className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="font-bold text-[#1a1a1a] mb-2">Works with Your Devices</h3>
+              <p className="text-[#1a1a1a] text-sm">Apple Watch, Samsung Galaxy Watch, iPhone, and Android. No special hardware needed.</p>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
+              <Users className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="font-bold text-[#1a1a1a] mb-2">5 Emergency Contacts</h3>
+              <p className="text-[#1a1a1a] text-sm">Your family sees everything live. Video. Location. Vitals. All in real-time.</p>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
+              <Building2 className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="font-bold text-[#1a1a1a] mb-2">Enterprise Ready</h3>
+              <p className="text-[#1a1a1a] text-sm">Scales from individuals to organizations with thousands of employees.</p>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
+              <Check className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="font-bold text-[#1a1a1a] mb-2">7-Day Free Trial</h3>
+              <p className="text-[#1a1a1a] text-sm">No credit card required. Experience full protection risk-free.</p>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
+              <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="font-bold text-[#1a1a1a] mb-2">Video Evidence</h3>
+              <p className="text-[#1a1a1a] text-sm">Every incident is recorded for insurance claims and liability protection.</p>
+            </div>
+            <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
+              <Heart className="h-12 w-12 text-primary mx-auto mb-4" />
+              <h3 className="font-bold text-[#1a1a1a] mb-2">Personalized Health Baselines</h3>
+              <p className="text-[#1a1a1a] text-sm">Learns YOUR normal, not generic averages. Catches problems earlier.</p>
             </div>
           </div>
         </div>

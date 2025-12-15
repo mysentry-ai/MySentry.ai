@@ -284,6 +284,13 @@ export default function Home() {
               },
               {
                 id: '07',
+                title: '5 Emergency Contacts',
+                desc: 'Your family sees everything live. Video. Location. Vitals. All in real-time.',
+                detail: 'Set up to 5 emergency contacts who get instant alerts and live video.',
+                curiosity: 'Your family doesn\'t just hear about an emergency. They see it. They can help. They\'re there.'
+              },
+              {
+                id: '08',
                 title: '24/7 Live Agents',
                 desc: 'Real people. Real video. Real help. Every time.',
                 detail: 'We stay on the line until you are safe.',

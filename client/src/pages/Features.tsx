@@ -25,7 +25,7 @@ export default function Features() {
               Safety. Health. Connectivity.
             </h1>
             <p className="text-xl text-[#1a1a1a] mb-8">
-              MySentry combines three essential pillars to keep you safe, healthy, and connected. Seven integrated features work together 24/7 to detect problems early, respond instantly, and keep your family informed every step of the way.
+              MySentry combines three essential pillars to keep you safe, healthy, and connected. Eight integrated features work together 24/7 to detect problems early, respond instantly, and keep your family informed every step of the way.
             </p>
             <Link href="/pricing">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary text-white hover:bg-primary/90 font-semibold shadow-lg">
