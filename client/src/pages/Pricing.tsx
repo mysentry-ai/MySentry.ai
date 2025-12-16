@@ -1,202 +1,304 @@
-import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
-import { Check, X, Shield, Zap, Users, Building2, Heart, AlertTriangle } from "lucide-react";
+import { Check, X, Shield, Zap, Users, Building2, Heart, AlertTriangle, Lock } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Link } from "wouter";
+import Layout from "@/components/Layout";
+import { motion } from "framer-motion";
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
-  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  const [familyMembers, setFamilyMembers] = useState(1);
+  const [employeeCount, setEmployeeCount] = useState(50);
 
-  const monthlyPrices = {
-    free: 0,
-    individual: 9.99,
-    family: 19.99,
-    enterprise: null
-  };
+  // Calculate family plan price
+  const baseFamilyPrice = 19.99;
+  const additionalMemberPrice = 5;
+  const familyMonthlyPrice = baseFamilyPrice + (familyMembers - 1) * additionalMemberPrice;
+  const familyAnnualPrice = familyMonthlyPrice * 12 * 0.833; // 2 months free
 
-  const annualPrices = {
-    free: 0,
-    individual: isAnnual ? 99.99 : 119.88,
-    family: isAnnual ? 199.99 : 239.88,
-    enterprise: null
-  };
+  // Calculate employer plan price
+  const baseEmployerPrice = 9.99;
+  let employerDiscount = 0;
+  if (employeeCount >= 5000) {
+    employerDiscount = 0.5;
+  } else if (employeeCount >= 500) {
+    employerDiscount = 0.35;
+  }
+  const employerMonthlyPrice = baseEmployerPrice * employeeCount * (1 - employerDiscount);
+  const employerAnnualPrice = employerMonthlyPrice * 12 * 0.833; // 2 months free
 
-  const plans = [
+  const consumerPlans = [
     {
-      id: "free",
-      name: "Free",
-      tagline: "Basic Safety",
-      price: monthlyPrices.free,
-      annualPrice: annualPrices.free,
-      description: "Get started with essential safety features.",
+      id: "essential",
+      name: "Essential Safety",
+      tagline: "Always Protected",
+      price: 0,
+      annualPrice: 0,
+      description: "Core safety features with no professional monitoring.",
       cta: "Start Free",
       highlighted: false,
-      features: [
-        { name: "Panic Alarm (Voice & Button)", included: true },
-        { name: "Fall Detection", included: false },
-        { name: "Crash Detection", included: false },
-        { name: "Health Monitoring", included: false },
-        { name: "24/7 Professional Monitoring", included: false },
-        { name: "Live Video Response", included: false },
-        { name: "5 Emergency Contacts", included: true },
-        { name: "Location Sharing", included: true }
-      ]
-    },
-    {
-      id: "individual",
-      name: "Safety & Health",
-      tagline: "Complete Protection",
-      price: monthlyPrices.individual,
-      annualPrice: annualPrices.individual,
-      description: "Full protection with all safety and health features.",
-      cta: "Start Free Trial",
-      highlighted: true,
-      badge: "Most Popular",
+      comingSoon: false,
       features: [
         { name: "Panic Alarm (Voice, Button, Watch)", included: true },
         { name: "Fall Detection", included: true },
         { name: "Crash Detection", included: true },
-        { name: "Real-Time Health Monitoring", included: true },
+        { name: "Live Video Response", included: true },
+        { name: "2 Emergency Contacts", included: true },
+        { name: "Automated Location Sharing", included: true },
+        { name: "Real-Time Health Monitoring", included: false },
+        { name: "24/7 Professional Monitoring", included: false },
+        { name: "5 Emergency Contacts", included: false },
+        { name: "Advanced Health Insights", included: false }
+      ]
+    },
+    {
+      id: "complete",
+      name: "Complete Care",
+      tagline: "Safety + Health + Monitoring",
+      price: 19.99,
+      annualPrice: 199.99,
+      description: "Full protection with health monitoring and 24/7 agents.",
+      cta: "Start Free Trial",
+      highlighted: true,
+      comingSoon: false,
+      features: [
+        { name: "Panic Alarm (Voice, Button, Watch)", included: true },
+        { name: "Fall Detection", included: true },
+        { name: "Crash Detection", included: true },
+        { name: "Real-Time Personalized Health Monitoring", included: true },
         { name: "24/7 Professional Monitoring", included: true },
         { name: "Live Video Response", included: true },
+        { name: "Automated Location Sharing", included: true },
         { name: "5 Emergency Contacts", included: true },
-        { name: "Location Sharing & History", included: true },
-        { name: "Health Trends & Alerts", included: true }
+        { name: "Optional MeetSafe Integration", included: true },
+        { name: "Optional Automated Call", included: true }
       ]
     },
     {
-      id: "family",
-      name: "Family Bundle",
-      tagline: "Protect Everyone",
-      price: monthlyPrices.family,
-      annualPrice: annualPrices.family,
-      description: "Up to 4 members. Add more for $5/user/month.",
-      cta: "Start Free Trial",
+      id: "advanced",
+      name: "Predictive Care",
+      tagline: "Prevention Through Prediction",
+      price: 49.99,
+      annualPrice: 499.99,
+      description: "Advanced health insights with predictive analytics.",
+      cta: "Coming Soon",
       highlighted: false,
+      comingSoon: true,
       features: [
-        { name: "All Safety & Health Features", included: true },
-        { name: "Up to 4 Family Members", included: true },
-        { name: "Additional Members ($5/user/month)", included: true },
-        { name: "Shared Emergency Contacts", included: true },
-        { name: "Family Dashboard", included: true },
-        { name: "Individual Health Profiles", included: true },
-        { name: "Privacy Controls per Member", included: true },
-        { name: "24/7 Professional Monitoring", included: true }
-      ]
-    },
-    {
-      id: "enterprise",
-      name: "Enterprise",
-      tagline: "Workplace Safety",
-      price: null,
-      annualPrice: null,
-      description: "Custom solutions for teams and organizations.",
-      cta: "Request Demo",
-      highlighted: false,
-      features: [
-        { name: "All Safety & Health Features", included: true },
-        { name: "Unlimited Team Members", included: true },
-        { name: "Team Management Dashboard", included: true },
+        { name: "All Complete Care Features", included: true },
+        { name: "Predictive Health Analytics", included: true },
+        { name: "Physical, Mental & Nutritional Insights", included: true },
+        { name: "Labs Integration", included: true },
+        { name: "Personalized Prevention Plans", included: true },
+        { name: "AI-Powered Health Trends", included: true },
+        { name: "Advanced Baseline Monitoring", included: true },
+        { name: "Priority Support", included: true },
         { name: "Custom Health Thresholds", included: true },
-        { name: "Compliance Reporting (OSHA, HIPAA)", included: true },
+        { name: "Health Coach Access", included: true }
+      ]
+    }
+  ];
+
+  const employerPlans = [
+    {
+      id: "employer-complete",
+      name: "Complete Care for Teams",
+      tagline: "Employee Safety & Health",
+      description: "Protect your workforce with comprehensive safety and health monitoring.",
+      cta: "Request Demo",
+      highlighted: true,
+      comingSoon: false,
+      features: [
+        { name: "All Complete Care Features", included: true },
+        { name: "Unlimited Team Members", included: true },
+        { name: "Team Dashboard", included: true },
+        { name: "Incident Reporting & Analytics", included: true },
+        { name: "OSHA Compliance Reporting", included: true },
+        { name: "Custom Health Thresholds", included: true },
+        { name: "Video Evidence for Claims", included: true },
         { name: "Dedicated Account Manager", included: true },
         { name: "API Integration", included: true },
         { name: "Custom SLA & Support", included: true }
+      ]
+    },
+    {
+      id: "employer-advanced",
+      name: "Predictive Care for Teams",
+      tagline: "Prevention + Prediction",
+      description: "Advanced predictive health for enterprise workforce management.",
+      cta: "Coming Soon",
+      highlighted: false,
+      comingSoon: true,
+      features: [
+        { name: "All Complete Care Features", included: true },
+        { name: "Predictive Health Analytics", included: true },
+        { name: "Workforce Health Trends", included: true },
+        { name: "Preventive Health Programs", included: true },
+        { name: "Mental Health Monitoring", included: true },
+        { name: "Nutritional Insights", included: true },
+        { name: "Labs Integration", included: true },
+        { name: "Advanced Reporting & Insights", included: true },
+        { name: "Dedicated Health Officer", included: true },
+        { name: "Custom Integrations", included: true }
       ]
     }
   ];
 
   return (
     <Layout>
-      {/* Pricing Cards */}
+      {/* Hero */}
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#e8f5e9] pt-16">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-secondary/5 blur-[100px]" />
+          <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-[#d4edda] blur-[100px]" />
+        </div>
+
+        <div className="container relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <h1 className="text-5xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-6">
+              Safety and Health Monitoring for Everyone within Every Budget
+            </h1>
+            <p className="text-xl text-[#1a1a1a] mb-8">
+              7-day free trial. No credit card required. 30-day money-back guarantee.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Pricing Toggle */}
+      <section className="py-12 bg-[#e8f5e9] border-t border-primary/10">
+        <div className="container">
+          <div className="flex items-center justify-center gap-2 p-1 bg-[#c8e6c9] rounded-full inline-flex border border-primary/20 mx-auto">
+            <button 
+              onClick={() => setIsAnnual(false)}
+              className={cn(
+                "px-6 py-2 rounded-full text-sm font-bold transition-all",
+                !isAnnual ? "bg-primary text-white" : "text-[#1a1a1a] hover:text-primary"
+              )}
+            >
+              Monthly
+            </button>
+            <button 
+              onClick={() => setIsAnnual(true)}
+              className={cn(
+                "px-6 py-2 rounded-full text-sm font-bold transition-all",
+                isAnnual ? "bg-primary text-white" : "text-[#1a1a1a] hover:text-primary"
+              )}
+            >
+              Yearly <span className="text-[10px] bg-secondary text-white px-2 py-0.5 rounded-full font-bold ml-1">SAVE 2 MONTHS</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Consumer Plans */}
       <section className="py-24 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-6">
-              Safety and Health Monitoring for Everyone within Every Budget
-            </h1>           <p className="text-xl text-foreground mb-8">
-              7-day free trial. No credit card required. 30-day money-back guarantee.
-            </p>
-            
-            {/* Toggle */}
-            <div className="flex items-center justify-center gap-2 p-1 bg-[#c8e6c9] rounded-full inline-flex border border-primary/20">
-              <button 
-                onClick={() => setIsAnnual(false)}
-                className={cn(
-                  "px-6 py-2 rounded-full text-sm font-bold transition-all",
-                  !isAnnual ? "bg-primary text-white" : "text-foreground hover:text-foreground"
-                )}
-              >
-                Monthly
-              </button>
-              <button 
-                onClick={() => setIsAnnual(true)}
-                className={cn(
-                  "px-6 py-2 rounded-full text-sm font-bold transition-all flex items-center gap-2",
-                  isAnnual ? "bg-primary text-white" : "text-foreground hover:text-foreground"
-                )}
-              >
-                Yearly <span className="text-[10px] bg-secondary text-white px-2 py-0.5 rounded-full font-bold">SAVE 2 MONTHS</span>
-              </button>
-            </div>
+            <h2 className="text-3xl font-heading font-bold text-[#1a1a1a] mb-4">For Individuals & Families</h2>
+            <p className="text-lg text-[#1a1a1a]">Choose the protection that's right for you</p>
           </div>
 
-          {/* Pricing Cards */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {plans.map((plan) => (
-              <div 
+          {/* Family Members Selector for Complete Care Plan */}
+          <div className="max-w-md mx-auto mb-12 p-6 rounded-2xl bg-white border border-primary/10">
+            <label className="block text-sm font-bold text-[#1a1a1a] mb-3">
+              How many family members to protect?
+            </label>
+            <select 
+              value={familyMembers}
+              onChange={(e) => setFamilyMembers(parseInt(e.target.value))}
+              className="w-full p-3 rounded-lg border border-primary/20 text-[#1a1a1a] font-semibold bg-[#e8f5e9]"
+            >
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
+                <option key={num} value={num}>{num} {num === 1 ? 'member' : 'members'}</option>
+              ))}
+            </select>
+          </div>
+
+          {/* Consumer Plans Grid */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {consumerPlans.map((plan, idx) => (
+              <motion.div
                 key={plan.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className={cn(
                   "relative rounded-3xl border transition-all duration-300 overflow-hidden flex flex-col",
-                  plan.highlighted 
+                  plan.comingSoon 
+                    ? "opacity-60 border-primary/10 bg-[#f0f0f0]"
+                    : plan.highlighted 
                     ? "border-primary/50 bg-[#d4edda] shadow-lg" 
-                    : "border-primary/10 bg-[#e8f5e9] hover:border-primary/30 shadow-sm hover:shadow-md"
+                    : "border-primary/10 bg-white hover:border-primary/30 shadow-sm hover:shadow-md"
                 )}
               >
                 {/* Badge */}
-                {plan.badge && (
+                {plan.highlighted && !plan.comingSoon && (
                   <div className="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {plan.badge}
+                    Most Popular
+                  </div>
+                )}
+                {plan.comingSoon && (
+                  <div className="absolute top-4 right-4 bg-gray-400 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                    <Lock className="h-3 w-3" /> Coming Soon
                   </div>
                 )}
 
                 {/* Header */}
                 <div className="p-8 border-b border-primary/10">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
-                  <p className="text-sm text-foreground mb-6">{plan.tagline}</p>
+                  <h3 className="text-2xl font-bold text-[#1a1a1a] mb-2">{plan.name}</h3>
+                  <p className="text-sm text-primary font-semibold mb-6">{plan.tagline}</p>
                   
-                  {plan.price !== null ? (
+                  {plan.id === "complete" ? (
                     <div className="mb-4">
                       <div className="flex items-baseline gap-1">
-                        <span className="text-4xl font-bold text-primary">${isAnnual ? (plan.annualPrice / 12).toFixed(2) : plan.price}</span>
-                        <span className="text-foreground">/month</span>
+                        <span className="text-4xl font-bold text-primary">
+                          ${isAnnual ? (familyAnnualPrice / 12).toFixed(2) : familyMonthlyPrice.toFixed(2)}
+                        </span>
+                        <span className="text-[#1a1a1a]">/month</span>
                       </div>
                       {isAnnual && (
-                        <p className="text-xs text-foreground mt-2">
+                        <p className="text-xs text-[#1a1a1a] mt-2">
+                          Billed ${familyAnnualPrice.toFixed(2)} annually ({familyMembers} member{familyMembers > 1 ? 's' : ''})
+                        </p>
+                      )}
+                      <p className="text-xs text-primary font-semibold mt-1">
+                        ${baseFamilyPrice}/month base + ${(familyMembers - 1) * additionalMemberPrice}/month additional
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="mb-4">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-4xl font-bold text-primary">${plan.price}</span>
+                        <span className="text-[#1a1a1a]">/month</span>
+                      </div>
+                      {isAnnual && plan.price > 0 && (
+                        <p className="text-xs text-[#1a1a1a] mt-2">
                           Billed ${plan.annualPrice} annually
                         </p>
                       )}
                     </div>
-                  ) : (
-                    <div className="mb-4">
-                      <p className="text-2xl font-bold text-primary">Custom Pricing</p>
-                      <p className="text-xs text-foreground mt-2">Contact for quote</p>
-                    </div>
                   )}
 
-                  <p className="text-sm text-foreground mb-6">{plan.description}</p>
+                  <p className="text-sm text-[#1a1a1a] mb-6">{plan.description}</p>
 
                   <Link href="/pricing">
                     <Button 
+                      disabled={plan.comingSoon}
                       className={cn(
                         "w-full h-12 rounded-full font-bold transition-all",
-                        plan.highlighted
+                        plan.comingSoon
+                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          : plan.highlighted
                           ? "bg-primary text-white hover:bg-primary/90"
                           : "bg-[#c8e6c9] text-primary hover:bg-primary/20 border border-primary/20"
                       )}
-                      onClick={() => setSelectedPlan(plan.id)}
                     >
                       {plan.cta}
                     </Button>
@@ -210,24 +312,150 @@ export default function Pricing() {
                       {feature.included ? (
                         <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                       ) : (
-                        <X className="h-5 w-5 text-foreground shrink-0 mt-0.5" />
+                        <X className="h-5 w-5 text-gray-300 shrink-0 mt-0.5" />
                       )}
                       <span className={cn(
                         "text-sm",
-                        feature.included ? "text-foreground" : "text-foreground"
+                        feature.included ? "text-[#1a1a1a]" : "text-gray-400"
                       )}>
                         {feature.name}
                       </span>
                     </div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Employer Plans */}
+      <section className="py-24 bg-[#d4edda] border-t border-primary/10">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-heading font-bold text-[#1a1a1a] mb-4">For Employers</h2>
+            <p className="text-lg text-[#1a1a1a]">Protect your workforce and boost productivity</p>
+          </div>
 
+          {/* Employee Count Selector */}
+          <div className="max-w-md mx-auto mb-12 p-6 rounded-2xl bg-white border border-primary/10">
+            <label className="block text-sm font-bold text-[#1a1a1a] mb-3">
+              How many employees to protect?
+            </label>
+            <input 
+              type="number"
+              value={employeeCount}
+              onChange={(e) => setEmployeeCount(Math.max(1, parseInt(e.target.value) || 1))}
+              className="w-full p-3 rounded-lg border border-primary/20 text-[#1a1a1a] font-semibold bg-[#e8f5e9]"
+              min="1"
+            />
+            {employeeCount >= 500 && (
+              <p className="text-xs text-primary font-semibold mt-2">
+                🎉 You qualify for {employeeCount >= 5000 ? '50%' : '35%'} discount!
+              </p>
+            )}
+          </div>
+
+          {/* Employer Plans Grid */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {employerPlans.map((plan, idx) => (
+              <motion.div
+                key={plan.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className={cn(
+                  "relative rounded-3xl border transition-all duration-300 overflow-hidden flex flex-col",
+                  plan.comingSoon 
+                    ? "opacity-60 border-primary/10 bg-[#f0f0f0]"
+                    : plan.highlighted 
+                    ? "border-primary/50 bg-white shadow-lg" 
+                    : "border-primary/10 bg-white hover:border-primary/30 shadow-sm hover:shadow-md"
+                )}
+              >
+                {/* Badge */}
+                {plan.highlighted && !plan.comingSoon && (
+                  <div className="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                    Recommended
+                  </div>
+                )}
+                {plan.comingSoon && (
+                  <div className="absolute top-4 right-4 bg-gray-400 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                    <Lock className="h-3 w-3" /> Coming Soon
+                  </div>
+                )}
+
+                {/* Header */}
+                <div className="p-8 border-b border-primary/10">
+                  <h3 className="text-2xl font-bold text-[#1a1a1a] mb-2">{plan.name}</h3>
+                  <p className="text-sm text-primary font-semibold mb-6">{plan.tagline}</p>
+                  
+                  {!plan.comingSoon ? (
+                    <div className="mb-4">
+                      <div className="flex items-baseline gap-1">
+                        <span className="text-4xl font-bold text-primary">
+                          ${isAnnual ? (employerAnnualPrice / 12 / employeeCount).toFixed(2) : (employerMonthlyPrice / employeeCount).toFixed(2)}
+                        </span>
+                        <span className="text-[#1a1a1a]">/employee/month</span>
+                      </div>
+                      <p className="text-sm text-[#1a1a1a] mt-2 font-semibold">
+                        Total: ${isAnnual ? (employerAnnualPrice / 12).toFixed(2) : employerMonthlyPrice.toFixed(2)}/month
+                      </p>
+                      {employeeCount >= 500 && (
+                        <p className="text-xs text-primary font-semibold mt-1">
+                          {employeeCount >= 5000 ? '50%' : '35%'} volume discount applied
+                        </p>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="mb-4">
+                      <p className="text-2xl font-bold text-gray-400">Custom Pricing</p>
+                      <p className="text-xs text-gray-400 mt-2">Contact for quote</p>
+                    </div>
+                  )}
+
+                  <p className="text-sm text-[#1a1a1a] mb-6">{plan.description}</p>
+
+                  <Link href="/pricing">
+                    <Button 
+                      disabled={plan.comingSoon}
+                      className={cn(
+                        "w-full h-12 rounded-full font-bold transition-all",
+                        plan.comingSoon
+                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          : plan.highlighted
+                          ? "bg-primary text-white hover:bg-primary/90"
+                          : "bg-[#c8e6c9] text-primary hover:bg-primary/20 border border-primary/20"
+                      )}
+                    >
+                      {plan.cta}
+                    </Button>
+                  </Link>
+                </div>
+
+                {/* Features */}
+                <div className="p-8 space-y-4 flex-1">
+                  {plan.features.map((feature, idx) => (
+                    <div key={idx} className="flex items-start gap-3">
+                      {feature.included ? (
+                        <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      ) : (
+                        <X className="h-5 w-5 text-gray-300 shrink-0 mt-0.5" />
+                      )}
+                      <span className={cn(
+                        "text-sm",
+                        feature.included ? "text-[#1a1a1a]" : "text-gray-400"
+                      )}>
+                        {feature.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Trust Signals */}
       <section className="py-24 bg-[#e8f5e9] border-t border-primary/10">
@@ -282,63 +510,6 @@ export default function Pricing() {
               <p className="text-[#1a1a1a] text-sm">Learns YOUR normal, not generic averages. Catches problems earlier.</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="py-24 bg-[#d4edda] border-t border-primary/10">
-        <div className="container max-w-3xl">
-          <h2 className="text-3xl font-heading font-bold text-foreground mb-12 text-center">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-6">
-            {[
-              {
-                q: "Do I need to buy a new device?",
-                a: "No. MySentry works with Apple Watch Series 4+ and Samsung Galaxy Watch 4+. If you already own one, you're ready to go."
-              },
-              {
-                q: "Can I cancel anytime?",
-                a: "Yes. Cancel your subscription anytime with no penalties. If you're not satisfied within 30 days, we'll refund your money."
-              },
-              {
-                q: "What if I have multiple family members?",
-                a: "Use the Family Bundle. Add up to 4 members for $5/user/month. Each member has their own profile and privacy settings."
-              },
-              {
-                q: "Is my health data private?",
-                a: "Absolutely. All data is encrypted end-to-end and HIPAA compliant. Only you and your emergency contacts can see your information."
-              },
-              {
-                q: "What happens if I don't respond to an alert?",
-                a: "Our 24/7 monitoring team will attempt to contact you. If you don't respond, we dispatch emergency services to your location."
-              },
-              {
-                q: "Do I get a free trial?",
-                a: "Yes. 7-day free trial with full access to all features. No credit card required to start."
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="p-6 rounded-2xl bg-[#e8f5e9] border border-primary/10">
-                <h3 className="font-bold text-foreground mb-3">{item.q}</h3>
-                <p className="text-foreground text-sm">{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="py-24 text-center bg-primary text-white">
-        <div className="container max-w-3xl">
-          <h2 className="text-4xl font-heading font-bold mb-6">
-            Ready to Get Help Fast?
-          </h2>
-          <p className="text-xl text-white/80 mb-8">
-            Start your 7-day free trial today. No credit card. No commitment.
-          </p>
-          <Button size="lg" className="h-14 px-12 text-lg rounded-full bg-[#e8f5e9] text-primary hover:bg-[#e8f5e9]/90 shadow-xl font-bold">
-            Start Free Trial
-          </Button>
         </div>
       </section>
     </Layout>
