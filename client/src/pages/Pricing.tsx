@@ -144,14 +144,14 @@ export default function Pricing() {
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {plans.map((plan) => (
               <div 
                 key={plan.id}
                 className={cn(
                   "relative rounded-3xl border transition-all duration-300 overflow-hidden flex flex-col",
                   plan.highlighted 
-                    ? "border-primary/50 bg-[#d4edda] shadow-lg scale-105 lg:scale-100" 
+                    ? "border-primary/50 bg-[#d4edda] shadow-lg" 
                     : "border-primary/10 bg-[#e8f5e9] hover:border-primary/30 shadow-sm hover:shadow-md"
                 )}
               >
