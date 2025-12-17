@@ -75,8 +75,8 @@ export default function Pricing() {
         { name: "Live Video Response", included: true },
         { name: "Automated Location Sharing", included: true },
         { name: "5 Emergency Contacts", included: true },
-        { name: "Optional MeetSafe Integration", included: true },
-        { name: "Optional Automated Call", included: true },
+        { name: "MeetSafe (Optional)", included: true },
+        { name: "Automated Call (Optional)", included: true },
         { name: "Mental Health Coach Access (DrNur.ai)", included: true, link: "https://drnur.ai" }
       ]
     },
@@ -91,7 +91,7 @@ export default function Pricing() {
       highlighted: false,
       comingSoon: true,
       features: [
-        { name: "All Complete Care Features", included: true },
+        { name: "All Complete Care Features (including MeetSafe & Automated Call)", included: true },
         { name: "Predictive Health Analytics", included: true },
         { name: "Physical, Mental & Nutritional Insights", included: true },
         { name: "Labs Integration", included: true },
@@ -115,7 +115,7 @@ export default function Pricing() {
       highlighted: true,
       comingSoon: false,
       features: [
-        { name: "All Complete Care Features", included: true },
+        { name: "All Complete Care Features (including MeetSafe & Automated Call)", included: true },
         { name: "Unlimited Team Members", included: true },
         { name: "Team Dashboard", included: true },
         { name: "Incident Reporting & Analytics", included: true },
@@ -136,7 +136,7 @@ export default function Pricing() {
       highlighted: false,
       comingSoon: true,
       features: [
-        { name: "All Complete Care Features", included: true },
+        { name: "All Complete Care Features (including MeetSafe & Automated Call)", included: true },
         { name: "Predictive Health Analytics", included: true },
         { name: "Workforce Health Trends", included: true },
         { name: "Preventive Health Programs", included: true },
