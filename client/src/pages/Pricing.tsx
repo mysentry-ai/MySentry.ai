@@ -50,7 +50,7 @@ export default function Pricing() {
         { name: "Live Video Response", included: true },
         { name: "2 Emergency Contacts", included: true },
         { name: "Automated Location Sharing", included: true },
-        { name: "Mental Health Coach Access (DrNur.ai)", included: true },
+        { name: "Mental Health Coach Access (DrNur.ai)", included: true, link: "https://drnur.ai" },
         { name: "Real-Time Health Monitoring", included: false },
         { name: "24/7 Professional Monitoring", included: false },
         { name: "5 Emergency Contacts", included: false }
@@ -77,7 +77,7 @@ export default function Pricing() {
         { name: "5 Emergency Contacts", included: true },
         { name: "Optional MeetSafe Integration", included: true },
         { name: "Optional Automated Call", included: true },
-        { name: "Mental Health Coach Access (DrNur.ai)", included: true }
+        { name: "Mental Health Coach Access (DrNur.ai)", included: true, link: "https://drnur.ai" }
       ]
     },
     {
@@ -100,7 +100,7 @@ export default function Pricing() {
         { name: "Advanced Baseline Monitoring", included: true },
         { name: "Priority Support", included: true },
         { name: "Custom Health Thresholds", included: true },
-        { name: "Mental Health Coach Access (DrNur.ai)", included: true }
+        { name: "Mental Health Coach Access (DrNur.ai)", included: true, link: "https://drnur.ai" }
       ]
     }
   ];
@@ -145,7 +145,7 @@ export default function Pricing() {
         { name: "Labs Integration", included: true },
         { name: "Advanced Reporting & Insights", included: true },
         { name: "Dedicated Health Officer", included: true },
-        { name: "Mental Health Coach Access (DrNur.ai)", included: true }
+        { name: "Mental Health Coach Access (DrNur.ai)", included: true, link: "https://drnur.ai" }
       ]
     }
   ];
@@ -328,12 +328,18 @@ export default function Pricing() {
                       ) : (
                         <X className="h-5 w-5 text-gray-300 shrink-0 mt-0.5" />
                       )}
-                      <span className={cn(
-                        "text-sm",
-                        feature.included ? "text-[#1a1a1a]" : "text-gray-400"
-                      )}>
-                        {feature.name}
-                      </span>
+                      {feature.link ? (
+                        <a href={feature.link} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
+                          {feature.name}
+                        </a>
+                      ) : (
+                        <span className={cn(
+                          "text-sm",
+                          feature.included ? "text-[#1a1a1a]" : "text-gray-400"
+                        )}>
+                          {feature.name}
+                        </span>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -465,12 +471,18 @@ export default function Pricing() {
                       ) : (
                         <X className="h-5 w-5 text-gray-300 shrink-0 mt-0.5" />
                       )}
-                      <span className={cn(
-                        "text-sm",
-                        feature.included ? "text-[#1a1a1a]" : "text-gray-400"
-                      )}>
-                        {feature.name}
-                      </span>
+                      {feature.link ? (
+                        <a href={feature.link} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline">
+                          {feature.name}
+                        </a>
+                      ) : (
+                        <span className={cn(
+                          "text-sm",
+                          feature.included ? "text-[#1a1a1a]" : "text-gray-400"
+                        )}>
+                          {feature.name}
+                        </span>
+                      )}
                     </div>
                   ))}
                 </div>
