@@ -12,10 +12,14 @@ export default function Pricing() {
   const [employeeCount, setEmployeeCount] = useState(50);
 
   // Calculate family plan price
-  const baseFamilyPrice = 19.99;
-  const additionalMemberPrice = 5;
-  const familyMonthlyPrice = baseFamilyPrice + (familyMembers - 1) * additionalMemberPrice;
-  const familyAnnualPrice = familyMonthlyPrice * 12 * 0.833; // 2 months free
+  // 1 user: $9.99/month, family of 4: $19.99/month, additional members: $5/month
+  let familyMonthlyPrice = 9.99; // base price for 1 user
+  if (familyMembers >= 4) {
+    familyMonthlyPrice = 19.99 + (familyMembers - 4) * 5; // family of 4 is $19.99, then $5 per additional
+  } else if (familyMembers > 1) {
+    familyMonthlyPrice = 9.99 + (familyMembers - 1) * 5; // 1 user is $9.99, then $5 per additional
+  }
+  const familyAnnualPrice = familyMonthlyPrice * 12 * 0.8; // 20% discount for yearly
 
   // Calculate employer plan price
   const baseEmployerPrice = 9.99;
@@ -26,7 +30,7 @@ export default function Pricing() {
     employerDiscount = 0.35;
   }
   const employerMonthlyPrice = baseEmployerPrice * employeeCount * (1 - employerDiscount);
-  const employerAnnualPrice = employerMonthlyPrice * 12 * 0.833; // 2 months free
+  const employerAnnualPrice = employerMonthlyPrice * 12 * 0.8; // 20% discount for yearly
 
   const consumerPlans = [
     {
@@ -46,10 +50,10 @@ export default function Pricing() {
         { name: "Live Video Response", included: true },
         { name: "2 Emergency Contacts", included: true },
         { name: "Automated Location Sharing", included: true },
+        { name: "Mental Health Coach Access (DrNur.ai)", included: true },
         { name: "Real-Time Health Monitoring", included: false },
         { name: "24/7 Professional Monitoring", included: false },
-        { name: "5 Emergency Contacts", included: false },
-        { name: "Advanced Health Insights", included: false }
+        { name: "5 Emergency Contacts", included: false }
       ]
     },
     {
@@ -72,15 +76,16 @@ export default function Pricing() {
         { name: "Automated Location Sharing", included: true },
         { name: "5 Emergency Contacts", included: true },
         { name: "Optional MeetSafe Integration", included: true },
-        { name: "Optional Automated Call", included: true }
+        { name: "Optional Automated Call", included: true },
+        { name: "Mental Health Coach Access (DrNur.ai)", included: true }
       ]
     },
     {
       id: "advanced",
       name: "Predictive Care",
       tagline: "Prevention Through Prediction",
-      price: 49.99,
-      annualPrice: 499.99,
+      price: null,
+      annualPrice: null,
       description: "Advanced health insights with predictive analytics.",
       cta: "Coming Soon",
       highlighted: false,
@@ -95,7 +100,7 @@ export default function Pricing() {
         { name: "Advanced Baseline Monitoring", included: true },
         { name: "Priority Support", included: true },
         { name: "Custom Health Thresholds", included: true },
-        { name: "Health Coach Access", included: true }
+        { name: "Mental Health Coach Access (DrNur.ai)", included: true }
       ]
     }
   ];
@@ -119,7 +124,7 @@ export default function Pricing() {
         { name: "Video Evidence for Claims", included: true },
         { name: "Dedicated Account Manager", included: true },
         { name: "API Integration", included: true },
-        { name: "Custom SLA & Support", included: true }
+        { name: "Mental Health Coach Access (DrNur.ai)", included: true }
       ]
     },
     {
@@ -140,7 +145,7 @@ export default function Pricing() {
         { name: "Labs Integration", included: true },
         { name: "Advanced Reporting & Insights", included: true },
         { name: "Dedicated Health Officer", included: true },
-        { name: "Custom Integrations", included: true }
+        { name: "Mental Health Coach Access (DrNur.ai)", included: true }
       ]
     }
   ];
@@ -191,7 +196,7 @@ export default function Pricing() {
                 isAnnual ? "bg-primary text-white" : "text-[#1a1a1a] hover:text-primary"
               )}
             >
-              Yearly <span className="text-[10px] bg-secondary text-white px-2 py-0.5 rounded-full font-bold ml-1">SAVE 2 MONTHS</span>
+              Yearly <span className="text-[10px] bg-secondary text-white px-2 py-0.5 rounded-full font-bold ml-1">SAVE 20%</span>
             </button>
           </div>
         </div>
@@ -265,12 +270,17 @@ export default function Pricing() {
                       </div>
                       {isAnnual && (
                         <p className="text-xs text-[#1a1a1a] mt-2">
-                          Billed ${familyAnnualPrice.toFixed(2)} annually ({familyMembers} member{familyMembers > 1 ? 's' : ''})
+                          Billed ${familyAnnualPrice.toFixed(2)} annually ({familyMembers} member{familyMembers > 1 ? 's' : ''}) - 20% discount
                         </p>
                       )}
                       <p className="text-xs text-primary font-semibold mt-1">
-                        ${baseFamilyPrice}/month base + ${(familyMembers - 1) * additionalMemberPrice}/month additional
+                        {familyMembers === 1 ? '$9.99/month for 1 user' : familyMembers <= 4 ? `$9.99 + $${(familyMembers - 1) * 5}/month` : `$19.99 + $${(familyMembers - 4) * 5}/month`}
                       </p>
+                    </div>
+                  ) : plan.id === "advanced" ? (
+                    <div className="mb-4">
+                      <p className="text-2xl font-bold text-gray-400">Custom Pricing</p>
+                      <p className="text-xs text-gray-400 mt-2">Contact for quote</p>
                     </div>
                   ) : (
                     <div className="mb-4">
@@ -278,7 +288,7 @@ export default function Pricing() {
                         <span className="text-4xl font-bold text-primary">${plan.price}</span>
                         <span className="text-[#1a1a1a]">/month</span>
                       </div>
-                      {isAnnual && plan.price > 0 && (
+                      {isAnnual && plan.price && plan.price > 0 && (
                         <p className="text-xs text-[#1a1a1a] mt-2">
                           Billed ${plan.annualPrice} annually
                         </p>
@@ -288,21 +298,25 @@ export default function Pricing() {
 
                   <p className="text-sm text-[#1a1a1a] mb-6">{plan.description}</p>
 
-                  <Link href="/pricing">
-                    <Button 
-                      disabled={plan.comingSoon}
-                      className={cn(
-                        "w-full h-12 rounded-full font-bold transition-all",
-                        plan.comingSoon
-                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                          : plan.highlighted
-                          ? "bg-primary text-white hover:bg-primary/90"
-                          : "bg-[#c8e6c9] text-primary hover:bg-primary/20 border border-primary/20"
-                      )}
-                    >
+                  {!plan.comingSoon && (
+                    <Link href="/pricing">
+                      <Button 
+                        className={cn(
+                          "w-full h-12 rounded-full font-bold transition-all",
+                          plan.highlighted
+                            ? "bg-primary text-white hover:bg-primary/90"
+                            : "bg-[#c8e6c9] text-primary hover:bg-primary/20 border border-primary/20"
+                        )}
+                      >
+                        {plan.cta}
+                      </Button>
+                    </Link>
+                  )}
+                  {plan.comingSoon && (
+                    <Button disabled className="w-full h-12 rounded-full font-bold bg-gray-300 text-gray-500 cursor-not-allowed">
                       {plan.cta}
                     </Button>
-                  </Link>
+                  )}
                 </div>
 
                 {/* Features */}
@@ -401,6 +415,11 @@ export default function Pricing() {
                       <p className="text-sm text-[#1a1a1a] mt-2 font-semibold">
                         Total: ${isAnnual ? (employerAnnualPrice / 12).toFixed(2) : employerMonthlyPrice.toFixed(2)}/month
                       </p>
+                      {isAnnual && (
+                        <p className="text-xs text-[#1a1a1a] mt-1">
+                          Billed ${employerAnnualPrice.toFixed(2)} annually - 20% discount
+                        </p>
+                      )}
                       {employeeCount >= 500 && (
                         <p className="text-xs text-primary font-semibold mt-1">
                           {employeeCount >= 5000 ? '50%' : '35%'} volume discount applied
@@ -416,21 +435,25 @@ export default function Pricing() {
 
                   <p className="text-sm text-[#1a1a1a] mb-6">{plan.description}</p>
 
-                  <Link href="/pricing">
-                    <Button 
-                      disabled={plan.comingSoon}
-                      className={cn(
-                        "w-full h-12 rounded-full font-bold transition-all",
-                        plan.comingSoon
-                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                          : plan.highlighted
-                          ? "bg-primary text-white hover:bg-primary/90"
-                          : "bg-[#c8e6c9] text-primary hover:bg-primary/20 border border-primary/20"
-                      )}
-                    >
+                  {!plan.comingSoon && (
+                    <Link href="/pricing">
+                      <Button 
+                        className={cn(
+                          "w-full h-12 rounded-full font-bold transition-all",
+                          plan.highlighted
+                            ? "bg-primary text-white hover:bg-primary/90"
+                            : "bg-[#c8e6c9] text-primary hover:bg-primary/20 border border-primary/20"
+                        )}
+                      >
+                        {plan.cta}
+                      </Button>
+                    </Link>
+                  )}
+                  {plan.comingSoon && (
+                    <Button disabled className="w-full h-12 rounded-full font-bold bg-gray-300 text-gray-500 cursor-not-allowed">
                       {plan.cta}
                     </Button>
-                  </Link>
+                  )}
                 </div>
 
                 {/* Features */}
