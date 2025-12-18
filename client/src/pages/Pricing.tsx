@@ -8,29 +8,24 @@ import { motion } from "framer-motion";
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
-  const [familyMembers, setFamilyMembers] = useState(1);
+  const [isFamily, setIsFamily] = useState(false);
   const [employeeCount, setEmployeeCount] = useState(50);
 
-  // Calculate family plan price
+  // Static pricing logic
   // Individual: $12.49/mo (Monthly) or $9.99/mo (Yearly)
   // Family (up to 6): $24.99/mo (Monthly) or $19.99/mo (Yearly)
-  // Additional members (>6): +$5/mo each
   
-  let familyMonthlyPrice = 12.49;
-  let familyYearlyMonthlyRate = 9.99;
+  const individualMonthly = 12.49;
+  const individualYearlyRate = 9.99;
+  const individualAnnualTotal = individualYearlyRate * 12;
 
-  if (familyMembers > 1) {
-    if (familyMembers <= 6) {
-      familyMonthlyPrice = 24.99;
-      familyYearlyMonthlyRate = 19.99;
-    } else {
-      // Base family price + $5 for each additional member beyond 6
-      familyMonthlyPrice = 24.99 + (familyMembers - 6) * 5;
-      familyYearlyMonthlyRate = 19.99 + (familyMembers - 6) * 5;
-    }
-  }
+  const familyMonthly = 24.99;
+  const familyYearlyRate = 19.99;
+  const familyAnnualTotal = familyYearlyRate * 12;
 
-  const familyAnnualPrice = familyYearlyMonthlyRate * 12;
+  const currentMonthlyPrice = isFamily ? familyMonthly : individualMonthly;
+  const currentYearlyRate = isFamily ? familyYearlyRate : individualYearlyRate;
+  const currentAnnualTotal = isFamily ? familyAnnualTotal : individualAnnualTotal;
 
   // Calculate employer plan price (Based on Individual rates)
   // Base: $12.49/mo (Monthly) or $9.99/mo (Yearly) per employee
@@ -225,20 +220,28 @@ export default function Pricing() {
             <p className="text-lg text-[#1a1a1a]">Choose the protection that's right for you</p>
           </div>
 
-          {/* Family Members Selector for Complete Care Plan */}
-          <div className="max-w-md mx-auto mb-12 p-6 rounded-2xl bg-white border border-primary/10">
-            <label className="block text-sm font-bold text-[#1a1a1a] mb-3">
-              How many family members to protect?
-            </label>
-            <select 
-              value={familyMembers}
-              onChange={(e) => setFamilyMembers(parseInt(e.target.value))}
-              className="w-full p-3 rounded-lg border border-primary/20 text-[#1a1a1a] font-semibold bg-[#e8f5e9]"
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => (
-                <option key={num} value={num}>{num} {num === 1 ? 'member' : 'members'}</option>
-              ))}
-            </select>
+          {/* Plan Type Toggle (Individual vs Family) */}
+          <div className="flex justify-center mb-12">
+            <div className="bg-white p-1 rounded-full border border-primary/20 inline-flex">
+              <button
+                onClick={() => setIsFamily(false)}
+                className={cn(
+                  "px-6 py-2 rounded-full text-sm font-bold transition-all",
+                  !isFamily ? "bg-primary text-white shadow-md" : "text-[#1a1a1a] hover:bg-gray-100"
+                )}
+              >
+                Individual
+              </button>
+              <button
+                onClick={() => setIsFamily(true)}
+                className={cn(
+                  "px-6 py-2 rounded-full text-sm font-bold transition-all",
+                  isFamily ? "bg-primary text-white shadow-md" : "text-[#1a1a1a] hover:bg-gray-100"
+                )}
+              >
+                Family (up to 6)
+              </button>
+            </div>
           </div>
 
           {/* Consumer Plans Grid */}
@@ -279,22 +282,17 @@ export default function Pricing() {
                     <div className="mb-4">
                       <div className="flex items-baseline gap-1">
                         <span className="text-4xl font-bold text-primary">
-                          ${isAnnual ? (familyAnnualPrice / 12).toFixed(2) : familyMonthlyPrice.toFixed(2)}
+                          ${isAnnual ? currentYearlyRate.toFixed(2) : currentMonthlyPrice.toFixed(2)}
                         </span>
                         <span className="text-[#1a1a1a]">/month</span>
                       </div>
                       {isAnnual && (
                         <p className="text-xs text-[#1a1a1a] mt-2">
-                          Billed ${familyAnnualPrice.toFixed(2)} annually ({familyMembers} member{familyMembers > 1 ? 's' : ''})
+                          Billed ${currentAnnualTotal.toFixed(2)} annually
                         </p>
                       )}
                       <p className="text-xs text-primary font-semibold mt-1">
-                        {familyMembers === 1 
-                          ? (isAnnual ? '$9.99/mo (billed yearly)' : '$12.49/mo') 
-                          : familyMembers <= 6 
-                            ? (isAnnual ? '$19.99/mo for up to 6 members' : '$24.99/mo for up to 6 members')
-                            : (isAnnual ? `$19.99 + $${(familyMembers - 6) * 5}/mo` : `$24.99 + $${(familyMembers - 6) * 5}/mo`)
-                        }
+                        {isFamily ? 'Covers up to 6 family members' : 'Per user'}
                       </p>
                     </div>
                   ) : plan.id === "advanced" ? (
