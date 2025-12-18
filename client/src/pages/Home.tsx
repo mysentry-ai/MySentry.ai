@@ -89,47 +89,81 @@ export default function Home() {
             className="relative h-[700px] w-full hidden lg:block"
           >
             <div className="absolute inset-0 flex items-center justify-center">
-               {/* Main Visual - Monitoring Center */}
-               <div className="relative w-[500px] h-[400px] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white hover-lift z-20">
+               {/* Main Visual - Rapid Response Monitoring Center */}
+               <div className="relative w-[550px] h-[400px] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white hover-lift z-10">
                  <img 
-                   src="/images/home-monitoring-center.jpg" 
-                   alt="24/7 Professional Monitoring Center" 
+                   src="/images/rapid-response-center.jpg" 
+                   alt="Rapid Response Monitoring Center" 
                    className="w-full h-full object-cover"
                  />
-                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                   <div className="flex items-center gap-3">
-                     <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
-                     <p className="text-white font-bold text-lg">Live Agent Connected</p>
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
+                 <div className="absolute bottom-0 left-0 right-0 p-6">
+                   <div className="flex items-center justify-between">
+                     <div className="flex items-center gap-3">
+                       <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
+                       <div>
+                         <p className="text-white font-bold text-lg">Rapid Response Monitoring</p>
+                         <p className="text-white/70 text-xs">US-Based • TMA Five Diamond Certified</p>
+                       </div>
+                     </div>
+                     <div className="bg-white/10 backdrop-blur-md px-3 py-1 rounded-lg border border-white/20">
+                       <p className="text-white text-xs font-mono">STATUS: ACTIVE</p>
+                     </div>
                    </div>
                  </div>
                </div>
 
-               {/* Floating Elements */}
-               <div className="absolute -top-10 -right-10 w-[220px] bg-white p-4 rounded-2xl shadow-xl border border-primary/10 z-30 float-animation">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center">
-                      <ShieldAlert className="h-5 w-5 text-red-600 animate-pulse" />
-                    </div>
-                    <div>
-                      <p className="font-bold text-[#1a1a1a] text-sm">Fall Detected</p>
-                      <p className="text-xs text-gray-500">2 seconds ago</p>
+               {/* Connection Line */}
+               <svg className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] z-20 pointer-events-none overflow-visible">
+                 <path d="M 100 100 Q 300 50 500 200" fill="none" stroke="#22c55e" strokeWidth="3" strokeDasharray="6 6" className="animate-[dash_20s_linear_infinite]" />
+                 <circle cx="500" cy="200" r="6" fill="#22c55e" className="animate-ping" />
+               </svg>
+
+               {/* User Event Visual - Fall Detection */}
+               <div className="absolute -top-16 -left-12 w-[280px] bg-white p-4 rounded-2xl shadow-2xl border-4 border-red-50 z-30 float-animation">
+                  <div className="relative rounded-xl overflow-hidden h-32 mb-3">
+                    <img src="/images/fall-detection-event.jpg" alt="Fall Detected" className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-red-500/20 flex items-center justify-center">
+                      <ShieldAlert className="h-12 w-12 text-white drop-shadow-lg animate-pulse" />
                     </div>
                   </div>
-                  <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
-                    <div className="bg-primary h-full w-3/4 animate-[shimmer_2s_infinite]"></div>
+                  <div className="flex items-center justify-between mb-2">
+                    <h4 className="font-bold text-[#1a1a1a]">Fall Detected</h4>
+                    <span className="text-xs font-bold text-red-600 bg-red-50 px-2 py-1 rounded-full">CRITICAL</span>
                   </div>
-                  <p className="text-xs text-primary font-bold mt-2 text-right">Dispatching Help...</p>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-xs text-gray-600">
+                      <HeartPulse className="h-3 w-3 text-primary" />
+                      <span>Heart Rate: 120 BPM (Elevated)</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs text-gray-600">
+                      <MapPin className="h-3 w-3 text-primary" />
+                      <span>Location Shared: 123 Main St</span>
+                    </div>
+                  </div>
+                  <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between">
+                     <p className="text-xs text-gray-500">Sending Vitals...</p>
+                     <div className="flex gap-1">
+                       <div className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce"></div>
+                       <div className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce delay-75"></div>
+                       <div className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce delay-150"></div>
+                     </div>
+                  </div>
                </div>
 
-               <div className="absolute -bottom-10 -left-10 w-[200px] bg-white p-4 rounded-2xl shadow-xl border border-primary/10 z-30 float-animation" style={{animationDelay: '1.5s'}}>
-                  <div className="flex items-center gap-3">
+               {/* Agent Response Visual */}
+               <div className="absolute -bottom-8 -right-8 w-[260px] bg-white p-4 rounded-2xl shadow-2xl border border-primary/10 z-30 float-animation" style={{animationDelay: '1.5s'}}>
+                  <div className="flex items-center gap-3 mb-3">
                     <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
                       <Video className="h-5 w-5 text-blue-600" />
                     </div>
                     <div>
-                      <p className="font-bold text-[#1a1a1a] text-sm">Video Feed Live</p>
-                      <p className="text-xs text-gray-500">Sharing with Family</p>
+                      <p className="font-bold text-[#1a1a1a] text-sm">Agent Connected</p>
+                      <p className="text-xs text-gray-500">Response Time: 0:02</p>
                     </div>
+                  </div>
+                  <div className="bg-gray-50 p-3 rounded-xl border border-gray-100">
+                    <p className="text-xs text-[#1a1a1a] italic">"This is Rapid Response. We received a fall alert. Help is on the way."</p>
                   </div>
                </div>
             </div>
