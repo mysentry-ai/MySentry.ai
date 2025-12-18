@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Heart, MapPin, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Eye, Smartphone, TrendingDown, Zap, Car, Activity } from "lucide-react";
+import { Heart, MapPin, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Eye, Smartphone, TrendingDown, Zap, Car, Activity, Watch } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Families() {
@@ -30,10 +30,10 @@ export default function Families() {
             </div>
 
             <h1 className="text-5xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-6">
-              Keep your family safe, healthy, and connected.
+              One Subscription. Any Device. Total Protection.
             </h1>
             <p className="text-xl text-[#1a1a1a] mb-8 leading-relaxed">
-              One app. All family members protected. Automatic emergency response. Real-time health alerts. Location updates. Everything you need to keep everyone safe—without hovering.
+              Your family uses different devices. MySentry protects them all. Whether they have an iPhone or Android, an Apple Watch or Samsung Watch, everyone is connected in one simple app. No one gets left out.
             </p>
             <Link href="/pricing">
               <Button size="lg" className="h-14 px-8 text-lg rounded-full bg-primary text-white hover:bg-primary/90 font-semibold shadow-lg">
@@ -53,8 +53,8 @@ export default function Families() {
                 <p className="text-sm text-[#1a1a1a]">Health monitoring</p>
               </div>
               <div className="fade-in-up" style={{ animationDelay: "0.2s" }}>
-                <div className="text-3xl font-bold text-primary">All members</div>
-                <p className="text-sm text-[#1a1a1a]">One plan</p>
+                <div className="text-3xl font-bold text-primary">iOS & Android</div>
+                <p className="text-sm text-[#1a1a1a]">Works together</p>
               </div>
             </div>
           </motion.div>
@@ -68,22 +68,49 @@ export default function Families() {
           >
             <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white -rotate-2 hover:rotate-0 transition-all duration-500">
               <img 
-                src="/images/family-phone-happy.jpg" 
-                alt="Happy family looking at phone together" 
+                src="/images/family-hero-base.jpg" 
+                alt="Happy family using different devices" 
                 className="w-full h-auto object-cover"
               />
+              
+              {/* Device Compatibility Overlay */}
+              <div className="absolute top-6 right-6 flex gap-2">
+                <div className="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full shadow-lg border border-primary/10 flex items-center gap-2">
+                  <Smartphone className="h-3 w-3 text-[#1a1a1a]" />
+                  <span className="text-xs font-bold text-[#1a1a1a]">iOS & Android</span>
+                </div>
+                <div className="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full shadow-lg border border-primary/10 flex items-center gap-2">
+                  <Watch className="h-3 w-3 text-[#1a1a1a]" />
+                  <span className="text-xs font-bold text-[#1a1a1a]">Apple & Samsung</span>
+                </div>
+              </div>
+
               <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-primary/10">
-                <div className="flex items-center gap-4">
-                  <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
-                    <MapPin className="h-5 w-5 text-blue-600" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="flex -space-x-3">
+                      <div className="h-10 w-10 rounded-full border-2 border-white bg-blue-100 flex items-center justify-center text-xs font-bold">Dad</div>
+                      <div className="h-10 w-10 rounded-full border-2 border-white bg-pink-100 flex items-center justify-center text-xs font-bold">Mom</div>
+                      <div className="h-10 w-10 rounded-full border-2 border-white bg-green-100 flex items-center justify-center text-xs font-bold">Sam</div>
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#1a1a1a]">All Devices Connected</p>
+                      <p className="text-xs text-gray-600">iPhone 15 • Galaxy S24 • Apple Watch</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-bold text-[#1a1a1a]">Family Safe</p>
-                    <p className="text-xs text-gray-600">All 4 members at home/school</p>
+                  <div className="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center">
+                    <CheckCircle2 className="h-5 w-5 text-white" />
                   </div>
                 </div>
               </div>
             </div>
+            
+            {/* Floating Device Icons */}
+            <div className="absolute -right-8 top-1/3 bg-white p-3 rounded-2xl shadow-xl border border-primary/10 animate-bounce delay-700">
+              <img src="/images/watches-mixed.jpg" className="w-16 h-16 rounded-xl object-cover mb-1" />
+              <p className="text-[10px] font-bold text-center">Any Watch</p>
+            </div>
+
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-secondary/20 rounded-full blur-2xl" />
           </motion.div>
@@ -139,12 +166,12 @@ export default function Families() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="p-8 rounded-3xl bg-white border border-primary/20 hover:border-primary/40 transition-all"
             >
-              <MapPin className="h-12 w-12 text-primary mb-4" />
+              <Smartphone className="h-12 w-12 text-primary mb-4" />
               <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">
-                Connection without control.
+                Mixed devices? No problem.
               </h3>
               <p className="text-[#1a1a1a] leading-relaxed">
-                You know where they are. They don't feel tracked. Automatic location updates give you peace of mind without the guilt.
+                Mom has an iPhone. Dad has Android. Kids have Samsung watches. MySentry connects everyone seamlessly. No "green bubble" drama—just safety.
               </p>
             </motion.div>
           </div>
@@ -202,9 +229,15 @@ export default function Families() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
-              className="aspect-square rounded-3xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg hover-lift"
+              className="aspect-square rounded-3xl bg-white border-2 border-primary/20 overflow-hidden shadow-lg hover-lift relative"
             >
-              <Zap className="h-40 w-40 text-primary/30" />
+              <img src="/images/watches-mixed.jpg" alt="Apple and Samsung watches side by side" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                <div className="text-white">
+                  <p className="font-bold text-lg">Works on Both</p>
+                  <p className="text-sm opacity-90">Apple Watch & Samsung Galaxy Watch</p>
+                </div>
+              </div>
             </motion.div>
           </div>
         </div>
@@ -218,9 +251,15 @@ export default function Families() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6 }}
-              className="aspect-square rounded-3xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg hover-lift order-2 lg:order-1"
+              className="aspect-square rounded-3xl bg-white border-2 border-primary/20 overflow-hidden shadow-lg hover-lift order-2 lg:order-1 relative"
             >
-              <Car className="h-40 w-40 text-primary/30" />
+              <img src="/images/teen-driver.jpg" alt="Teen driver safety" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                <div className="text-white">
+                  <p className="font-bold text-lg">Crash Detected</p>
+                  <p className="text-sm opacity-90">Instant alert to parents</p>
+                </div>
+              </div>
             </motion.div>
 
             <motion.div
