@@ -27,10 +27,10 @@ export default function Pricing() {
   const currentYearlyRate = isFamily ? familyYearlyRate : individualYearlyRate;
   const currentAnnualTotal = isFamily ? familyAnnualTotal : individualAnnualTotal;
 
-  // Calculate employer plan price (Based on Individual rates)
-  // Base: $12.49/mo (Monthly) or $9.99/mo (Yearly) per employee
-  const baseEmployerMonthlyRate = 12.49;
-  const baseEmployerYearlyRate = 9.99;
+  // Calculate employer plan price (Based on Family rates)
+  // Base: $24.99/mo (Monthly) or $19.99/mo (Yearly) per employee family
+  const baseEmployerMonthlyRate = 24.99;
+  const baseEmployerYearlyRate = 19.99;
   
   let employerDiscount = 0;
   if (employeeCount >= 5000) {
@@ -378,7 +378,7 @@ export default function Pricing() {
           {/* Employee Count Selector */}
           <div className="max-w-md mx-auto mb-12 p-6 rounded-2xl bg-white border border-primary/10">
             <label className="block text-sm font-bold text-[#1a1a1a] mb-3">
-              How many employees to protect?
+              How many employee families to protect?
             </label>
             <input 
               type="number"
@@ -434,7 +434,7 @@ export default function Pricing() {
                         <span className="text-4xl font-bold text-primary">
                           ${isAnnual ? (employerAnnualPrice / 12 / employeeCount).toFixed(2) : (employerMonthlyPrice / employeeCount).toFixed(2)}
                         </span>
-                        <span className="text-[#1a1a1a]">/employee/month</span>
+                        <span className="text-[#1a1a1a]">/family/month</span>
                       </div>
                       <p className="text-sm text-[#1a1a1a] mt-2 font-semibold">
                         Total: ${isAnnual ? (employerAnnualPrice / 12).toFixed(2) : employerMonthlyPrice.toFixed(2)}/month
