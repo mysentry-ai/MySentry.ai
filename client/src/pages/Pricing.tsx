@@ -12,25 +12,40 @@ export default function Pricing() {
   const [employeeCount, setEmployeeCount] = useState(50);
 
   // Calculate family plan price
-  // 1 user: $9.99/month, family of 4: $19.99/month, additional members: $5/month
-  let familyMonthlyPrice = 9.99; // base price for 1 user
-  if (familyMembers >= 4) {
-    familyMonthlyPrice = 19.99 + (familyMembers - 4) * 5; // family of 4 is $19.99, then $5 per additional
-  } else if (familyMembers > 1) {
-    familyMonthlyPrice = 9.99 + (familyMembers - 1) * 5; // 1 user is $9.99, then $5 per additional
-  }
-  const familyAnnualPrice = familyMonthlyPrice * 12 * 0.8; // 20% discount for yearly
+  // Individual: $12.49/mo (Monthly) or $9.99/mo (Yearly)
+  // Family (up to 6): $24.99/mo (Monthly) or $19.99/mo (Yearly)
+  // Additional members (>6): +$5/mo each
+  
+  let familyMonthlyPrice = 12.49;
+  let familyYearlyMonthlyRate = 9.99;
 
-  // Calculate employer plan price
-  const baseEmployerPrice = 9.99;
+  if (familyMembers > 1) {
+    if (familyMembers <= 6) {
+      familyMonthlyPrice = 24.99;
+      familyYearlyMonthlyRate = 19.99;
+    } else {
+      // Base family price + $5 for each additional member beyond 6
+      familyMonthlyPrice = 24.99 + (familyMembers - 6) * 5;
+      familyYearlyMonthlyRate = 19.99 + (familyMembers - 6) * 5;
+    }
+  }
+
+  const familyAnnualPrice = familyYearlyMonthlyRate * 12;
+
+  // Calculate employer plan price (Based on Individual rates)
+  // Base: $12.49/mo (Monthly) or $9.99/mo (Yearly) per employee
+  const baseEmployerMonthlyRate = 12.49;
+  const baseEmployerYearlyRate = 9.99;
+  
   let employerDiscount = 0;
   if (employeeCount >= 5000) {
     employerDiscount = 0.5;
   } else if (employeeCount >= 500) {
     employerDiscount = 0.35;
   }
-  const employerMonthlyPrice = baseEmployerPrice * employeeCount * (1 - employerDiscount);
-  const employerAnnualPrice = employerMonthlyPrice * 12 * 0.8; // 20% discount for yearly
+
+  const employerMonthlyPrice = baseEmployerMonthlyRate * employeeCount * (1 - employerDiscount);
+  const employerAnnualPrice = baseEmployerYearlyRate * 12 * employeeCount * (1 - employerDiscount);
 
   const consumerPlans = [
     {
@@ -60,8 +75,8 @@ export default function Pricing() {
       id: "complete",
       name: "Complete Care",
       tagline: "Safety + Health + Monitoring",
-      price: 19.99,
-      annualPrice: 199.99,
+      price: 12.49,
+      annualPrice: 119.88,
       description: "Full protection with health monitoring and 24/7 agents.",
       cta: "Start Free Trial",
       highlighted: true,
@@ -270,11 +285,16 @@ export default function Pricing() {
                       </div>
                       {isAnnual && (
                         <p className="text-xs text-[#1a1a1a] mt-2">
-                          Billed ${familyAnnualPrice.toFixed(2)} annually ({familyMembers} member{familyMembers > 1 ? 's' : ''}) - 20% discount
+                          Billed ${familyAnnualPrice.toFixed(2)} annually ({familyMembers} member{familyMembers > 1 ? 's' : ''})
                         </p>
                       )}
                       <p className="text-xs text-primary font-semibold mt-1">
-                        {familyMembers === 1 ? '$9.99/month for 1 user' : familyMembers <= 4 ? `$9.99 + $${(familyMembers - 1) * 5}/month` : `$19.99 + $${(familyMembers - 4) * 5}/month`}
+                        {familyMembers === 1 
+                          ? (isAnnual ? '$9.99/mo (billed yearly)' : '$12.49/mo') 
+                          : familyMembers <= 6 
+                            ? (isAnnual ? '$19.99/mo for up to 6 members' : '$24.99/mo for up to 6 members')
+                            : (isAnnual ? `$19.99 + $${(familyMembers - 6) * 5}/mo` : `$24.99 + $${(familyMembers - 6) * 5}/mo`)
+                        }
                       </p>
                     </div>
                   ) : plan.id === "advanced" ? (
@@ -423,7 +443,7 @@ export default function Pricing() {
                       </p>
                       {isAnnual && (
                         <p className="text-xs text-[#1a1a1a] mt-1">
-                          Billed ${employerAnnualPrice.toFixed(2)} annually - 20% discount
+                          Billed ${employerAnnualPrice.toFixed(2)} annually
                         </p>
                       )}
                       {employeeCount >= 500 && (
