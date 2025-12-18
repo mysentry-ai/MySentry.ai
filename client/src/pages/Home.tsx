@@ -89,34 +89,47 @@ export default function Home() {
             className="relative h-[700px] w-full hidden lg:block"
           >
             <div className="absolute inset-0 flex items-center justify-center">
-               <div className="relative w-[350px] h-[600px] bg-gradient-to-br from-primary/5 to-secondary/5 rounded-[3rem] border-8 border-primary/10 shadow-2xl overflow-hidden hover-lift">
-                 <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white opacity-40 z-10"></div>
-                 {/* UI Mockup */}
-                 <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center space-y-6">
-                    <div className="h-24 w-24 rounded-full bg-primary/20 flex items-center justify-center animate-pulse">
-                      <ShieldAlert className="h-12 w-12 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-[#1a1a1a]">Fall Detected</h3>
-                      <p className="text-[#1a1a1a] mt-2">Connecting to Agent...</p>
-                    </div>
-                    <div className="w-full bg-[#c8e6c9] rounded-xl p-4 flex items-center gap-4 border border-primary/20">
-                      <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center">
-                        <Video className="h-5 w-5 text-primary" />
-                      </div>
-                      <div className="text-left">
-                        <p className="text-sm font-bold text-[#1a1a1a]">Live Video Active</p>
-                        <p className="text-xs text-[#1a1a1a]">Sharing location & vitals</p>
-                      </div>
-                    </div>
+               {/* Main Visual - Monitoring Center */}
+               <div className="relative w-[500px] h-[400px] rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white hover-lift z-20">
+                 <img 
+                   src="/images/home-monitoring-center.jpg" 
+                   alt="24/7 Professional Monitoring Center" 
+                   className="w-full h-full object-cover"
+                 />
+                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                   <div className="flex items-center gap-3">
+                     <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse"></div>
+                     <p className="text-white font-bold text-lg">Live Agent Connected</p>
+                   </div>
                  </div>
                </div>
-               {/* Watch Mockup Floating */}
-               <div className="absolute top-1/2 -right-10 -translate-y-1/2 w-[200px] h-[200px] bg-[#e8f5e9] rounded-full border-4 border-primary/20 shadow-2xl z-30 flex items-center justify-center float-animation pulse-glow">
-                  <div className="text-center">
-                    <HeartPulse className="h-8 w-8 text-primary mx-auto mb-2 animate-pulse" />
-                    <p className="text-3xl font-bold text-[#1a1a1a]">120</p>
-                    <p className="text-xs text-[#1a1a1a] uppercase tracking-widest">BPM Alert</p>
+
+               {/* Floating Elements */}
+               <div className="absolute -top-10 -right-10 w-[220px] bg-white p-4 rounded-2xl shadow-xl border border-primary/10 z-30 float-animation">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center">
+                      <ShieldAlert className="h-5 w-5 text-red-600 animate-pulse" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#1a1a1a] text-sm">Fall Detected</p>
+                      <p className="text-xs text-gray-500">2 seconds ago</p>
+                    </div>
+                  </div>
+                  <div className="w-full bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                    <div className="bg-primary h-full w-3/4 animate-[shimmer_2s_infinite]"></div>
+                  </div>
+                  <p className="text-xs text-primary font-bold mt-2 text-right">Dispatching Help...</p>
+               </div>
+
+               <div className="absolute -bottom-10 -left-10 w-[200px] bg-white p-4 rounded-2xl shadow-xl border border-primary/10 z-30 float-animation" style={{animationDelay: '1.5s'}}>
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                      <Video className="h-5 w-5 text-blue-600" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#1a1a1a] text-sm">Video Feed Live</p>
+                      <p className="text-xs text-gray-500">Sharing with Family</p>
+                    </div>
                   </div>
                </div>
             </div>
