@@ -62,7 +62,7 @@ export default function Females() {
             >
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src="/images/hero-senior-monitoring.png" 
+                  src="/images/hero-female-active.jpg" 
                   alt="Woman jogging safely with smart watch" 
                   className="w-full h-auto object-cover"
                 />
