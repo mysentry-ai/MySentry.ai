@@ -14,12 +14,12 @@ export default function Families() {
           <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-primary/5 blur-[100px]" />
         </div>
 
-        <div className="container relative z-10">
+        <div className="container relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            className="max-w-xl"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#c8e6c9] border border-primary/30 text-primary text-xs font-bold uppercase tracking-wider mb-6">
               <span className="relative flex h-2 w-2">
@@ -57,6 +57,35 @@ export default function Families() {
                 <p className="text-sm text-[#1a1a1a]">One plan</p>
               </div>
             </div>
+          </motion.div>
+
+          {/* Hero Visual */}
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="hidden lg:block relative"
+          >
+            <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white -rotate-2 hover:rotate-0 transition-all duration-500">
+              <img 
+                src="/images/family-phone-happy.jpg" 
+                alt="Happy family looking at phone together" 
+                className="w-full h-auto object-cover"
+              />
+              <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-primary/10">
+                <div className="flex items-center gap-4">
+                  <div className="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                    <MapPin className="h-5 w-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#1a1a1a]">Family Safe</p>
+                    <p className="text-xs text-gray-600">All 4 members at home/school</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl" />
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-secondary/20 rounded-full blur-2xl" />
           </motion.div>
         </div>
       </section>
