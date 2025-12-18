@@ -162,50 +162,50 @@ export default function Females() {
       </section>
 
       {/* The Solution Section */}
-      <section className="py-24 bg-[#1a1a1a] text-white overflow-hidden">
+      <section className="py-24 bg-[#e8f5e9] text-[#1a1a1a] overflow-hidden">
         <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-8 text-white !important">
+              <h2 className="text-3xl md:text-5xl font-heading font-bold mb-8 text-[#1a1a1a] !important">
                 Your Personal Bodyguard. <br/>
                 <span className="text-primary">On Your Wrist.</span>
               </h2>
-              <p className="text-xl text-gray-300 mb-12 !text-gray-300">
+              <p className="text-xl text-[#1a1a1a] mb-12 !text-[#1a1a1a]">
                 MySentry transforms your Apple Watch or Samsung Galaxy Watch into a powerful safety device. No ugly panic buttons. No separate devices to charge. Just you, protected.
               </p>
 
               <div className="space-y-8">
                 <div className="flex gap-6">
-                  <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0 border border-primary/50">
+                  <div className="h-12 w-12 rounded-full bg-white flex items-center justify-center shrink-0 border border-primary/20 shadow-sm">
                     <Zap className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-white !important">Discreet Panic Alarm</h3>
-                    <p className="text-gray-400 !text-gray-400">
+                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a] !important">Discreet Panic Alarm</h3>
+                    <p className="text-[#1a1a1a] !text-[#1a1a1a]">
                       Trigger help silently. A simple tap sequence on your watch alerts 5 contacts and our 24/7 monitoring team instantly. Live video starts streaming automatically.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex gap-6">
-                  <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0 border border-primary/50">
+                  <div className="h-12 w-12 rounded-full bg-white flex items-center justify-center shrink-0 border border-primary/20 shadow-sm">
                     <Heart className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-white !important">Real-Time Health Monitoring</h3>
-                    <p className="text-gray-400 !text-gray-400">
+                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a] !important">Real-Time Health Monitoring</h3>
+                    <p className="text-[#1a1a1a] !text-[#1a1a1a]">
                       We track your vitals 24/7. If your heart rate spikes or drops dangerously while you're sleeping or alone, we send help automatically.
                     </p>
                   </div>
                 </div>
 
                 <div className="flex gap-6">
-                  <div className="h-12 w-12 rounded-full bg-primary/20 flex items-center justify-center shrink-0 border border-primary/50">
+                  <div className="h-12 w-12 rounded-full bg-white flex items-center justify-center shrink-0 border border-primary/20 shadow-sm">
                     <Shield className="h-6 w-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-white !important">MeetSafe Mode</h3>
-                    <p className="text-gray-400 !text-gray-400">
+                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a] !important">MeetSafe Mode</h3>
+                    <p className="text-[#1a1a1a] !text-[#1a1a1a]">
                       Going on a date or run? Set a timer. If you don't check in, we alert your contacts with your last known location and live audio/video.
                     </p>
                   </div>
