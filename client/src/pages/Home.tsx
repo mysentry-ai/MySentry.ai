@@ -57,12 +57,12 @@ export default function Home() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] tracking-tight text-[#1a1a1a]">
-              Live Freedom. <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Protected Everywhere.</span>
+              Don’t face a health or safety emergency alone. <br/>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Get help fast with MySentry.</span>
             </h1>
             
             <p className="text-xl text-gray-700 max-w-lg leading-relaxed">
-              Accidents happen when you least expect them. MySentry turns your <strong>smartwatch and smartphone</strong> into a 24/7 professional lifeline, so you're never truly alone.
+              A <strong>fall</strong>, a <strong>crash</strong>, or a <strong>sudden health scare</strong> can leave you unable to call for help. That’s a scary moment for anyone. MySentry watches for <strong>falls</strong>, <strong>crashes</strong>, and <strong>abnormal vitals</strong> using your <strong>smart watch and phone</strong>. Alerts trigger automatically, <strong>24/7 responders</strong> can act, and your family stays informed. So you live with more confidence every day and fewer what if fears at night.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
