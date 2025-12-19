@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Heart, TrendingUp, Users, DollarSign, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Zap, Car, Activity, BarChart3, Award, AlertTriangle } from "lucide-react";
@@ -10,6 +11,10 @@ export default function Employers() {
   const [activeIndustry, setActiveIndustry] = useState(industries[0]);
   return (
     <Layout>
+      <SEO 
+        title="Employers" 
+        description="Protect your workforce and reduce liability with MySentry. 24/7 monitoring, fall detection, and panic buttons for every industry."
+      />
       {/* Hero Section - PEACE: The Answer */}
       <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-b from-[#e8f5e9] to-white pt-20">
         {/* Modern Animated Background */}

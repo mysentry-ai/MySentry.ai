@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Heart, MapPin, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Eye, Smartphone, TrendingDown, Zap, Car, Activity, Watch, Users, Lock } from "lucide-react";
@@ -7,6 +8,10 @@ import { motion } from "framer-motion";
 export default function Families() {
   return (
     <Layout>
+      <SEO 
+        title="Families" 
+        description="Protect your whole family with one subscription. MySentry works across iOS, Android, Apple Watch, and Samsung Watch."
+      />
       {/* Hero Section - PEACE: The Answer */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#e8f5e9] to-white pt-20">
         {/* Modern Animated Background */}
@@ -36,7 +41,7 @@ export default function Families() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Total Protection.</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Your family is unique. Your devices are mixed. MySentry bridges the gap, connecting iPhones, Androids, Apple Watches, and Samsung Watches into one seamless safety network. No one gets left behind.
+              Your family is unique. Your devices are mixed. MySentry bridges the gap, connecting <strong>smartphones and smartwatches</strong> (iOS, Android, Apple Watch, Samsung Watch) into one seamless safety network. No one gets left behind.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -176,7 +181,7 @@ export default function Families() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Health problems whisper.</h3>
               <p className="text-gray-600 leading-relaxed">
-                A stroke doesn't announce itself. An irregular heartbeat goes unnoticed. But your watch sees it. And alerts you before it becomes critical.
+                A stroke doesn't announce itself. An irregular heartbeat goes unnoticed. But your <strong>watch and phone</strong> see it. And alert you before it becomes critical.
               </p>
             </motion.div>
 
@@ -281,7 +286,7 @@ export default function Families() {
       </section>
 
       {/* PEACE: The Change & End Result */}
-      <section className="py-32 bg-[#1a1a1a] text-white relative overflow-hidden">
+      <section className="py-32 bg-[#064e3b] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/grid-pattern.png')] opacity-5"></div>
         
         <div className="container relative z-10">

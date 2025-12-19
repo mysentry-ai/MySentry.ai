@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Heart, AlertCircle, Activity, TrendingDown, Shield, Clock, CheckCircle2, ArrowRight, Zap, Play, UserCheck, HeartPulse } from "lucide-react";
@@ -7,6 +8,10 @@ import { motion } from "framer-motion";
 export default function Seniors() {
   return (
     <Layout>
+      <SEO 
+        title="Seniors" 
+        description="Stay independent and safe with MySentry. 24/7 fall detection, health monitoring, and emergency response for active seniors."
+      />
       {/* Hero Section - PEACE: The Answer */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#e8f5e9] to-white pt-20">
         {/* Modern Animated Background */}
@@ -35,7 +40,7 @@ export default function Seniors() {
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Stay Safe.</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              You want to live life on your terms, not be limited by "what ifs." MySentry turns the watch you already love into a discreet, powerful safety companion that watches over you 24/7.
+              You want to live life on your terms, not be limited by "what ifs." MySentry turns the <strong>watch and phone</strong> you already love into a discreet, powerful safety companion that watches over you 24/7.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -180,7 +185,7 @@ export default function Seniors() {
                   Proactive Health
                 </div>
                 <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
-                  Your watch knows your body better than you do.
+                  Your devices know your body better than you do.
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
                   MySentry doesn't just wait for an emergency. It learns YOUR baseline. Your normal heart rate. Your normal oxygen levels. Then it watches for changes, 24/7.
@@ -251,7 +256,7 @@ export default function Seniors() {
       </section>
 
       {/* PEACE: The Change & End Result */}
-      <section className="py-32 bg-[#1a1a1a] text-white relative overflow-hidden">
+      <section className="py-32 bg-[#064e3b] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/grid-pattern.png')] opacity-5"></div>
         
         <div className="container relative z-10">

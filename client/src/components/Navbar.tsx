@@ -30,7 +30,7 @@ export default function Navbar() {
             </a>
           </Link>
           <span className="text-[10px] font-bold text-primary tracking-tight mt-1 hidden lg:block">
-            24/7 Safety & Health Monitoring with Emergency Response
+            Live Fearlessly. Protected 24/7.
           </span>
         </div>
 

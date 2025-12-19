@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Watch, Smartphone, Activity, HeartPulse, ShieldAlert, Video, CheckCircle2, Star, AlertTriangle, MapPin, Play, Users, Lock } from "lucide-react";
 import { Link } from "wouter";
@@ -27,6 +28,10 @@ export default function Home() {
 
   return (
     <Layout>
+      <SEO 
+        title="Home" 
+        description="MySentry turns your smartwatch into a 24/7 personal safety device with professional monitoring, fall detection, and health alerts. Live freedom without fear."
+      />
       {/* Hero Section - PEACE: The Answer */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#e8f5e9] to-white pt-20">
         {/* Modern Animated Background */}
@@ -48,16 +53,16 @@ export default function Home() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
               </span>
-              <span className="text-xs font-bold uppercase tracking-wider text-primary">Works with Apple & Samsung Watches</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-primary">Works with Smartwatches & Smartphones</span>
             </div>
             
             <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] tracking-tight text-[#1a1a1a]">
               Live Freedom. <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Without Fear.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Protected Everywhere.</span>
             </h1>
             
             <p className="text-xl text-gray-700 max-w-lg leading-relaxed">
-              The world can be unpredictable. Falls, health crises, and accidents happen when we least expect them. MySentry turns your smartwatch into a 24/7 lifeline, so you're never truly alone.
+              Accidents happen when you least expect them. MySentry turns your <strong>smartwatch and smartphone</strong> into a 24/7 professional lifeline, so you're never truly alone.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
@@ -246,7 +251,7 @@ export default function Home() {
       </section>
 
       {/* PEACE: The Change & End Result */}
-      <section className="py-32 bg-[#1a1a1a] text-white relative overflow-hidden">
+      <section className="py-32 bg-[#064e3b] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('/images/grid-pattern.png')] opacity-5"></div>
         <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent opacity-10"></div>
         

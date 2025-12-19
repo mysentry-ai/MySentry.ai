@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ShieldAlert, Activity, Car, HeartPulse, Video, Smartphone, Watch, Check, ArrowRight, AlertTriangle, MapPin, Zap, CheckCircle2, Lock, Users, TrendingDown } from "lucide-react";
@@ -7,6 +8,10 @@ import { motion } from "framer-motion";
 export default function Features() {
   return (
     <Layout>
+      <SEO 
+        title="Features" 
+        description="Explore the 8 powerful features of MySentry: Panic Alarm, Fall Detection, Health Monitoring, Crash Detection, and more."
+      />
       {/* Hero Section - PEACE: The Answer */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden bg-gradient-to-b from-[#e8f5e9] to-white pt-20">
         {/* Modern Animated Background */}
@@ -140,7 +145,7 @@ export default function Features() {
                 <span className="text-gray-400">Automatically.</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Hard fall? Your watch knows in 2 seconds and calls for help. You don't have to do anything. You don't have to press a button. The system responds for you.
+                Hard fall? Your <strong>watch and phone</strong> know in 2 seconds and call for help. You don't have to do anything. You don't have to press a button. The system responds for you.
               </p>
             </div>
 
