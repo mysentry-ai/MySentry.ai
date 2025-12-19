@@ -495,11 +495,7 @@ export default function Pricing() {
             Why Choose MySentry?
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
-              <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-[#1a1a1a] mb-2">30-Day Money-Back</h3>
-              <p className="text-[#1a1a1a] text-sm">Not satisfied? Full refund, no questions asked.</p>
-            </div>
+
             <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
               <AlertTriangle className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-[#1a1a1a] mb-2">24/7 Live Monitoring</h3>

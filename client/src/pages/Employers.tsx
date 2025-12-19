@@ -292,8 +292,8 @@ export default function Employers() {
             {[
               {
                 icon: Shield,
-                title: "Zero Liability",
-                desc: "Reduce risk exposure with documented, automated safety protocols."
+                title: "24/7 Monitoring",
+                desc: "MySentry takes care of your Employees Safety and Health Monitoring 24/7 and Emergency responses."
               },
               {
                 icon: Award,
