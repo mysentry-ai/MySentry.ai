@@ -2,9 +2,12 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Heart, TrendingUp, Users, DollarSign, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Zap, Car, Activity, BarChart3, Award } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { industries } from "@/data/industries";
 
 export default function Employers() {
+  const [activeIndustry, setActiveIndustry] = useState(industries[0]);
   return (
     <Layout>
       {/* Hero Section */}
@@ -147,6 +150,103 @@ export default function Employers() {
                 More claims = higher premiums. Fewer incidents = lower rates. MySentry reduces both the incidents and the claims.
               </p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industries Section */}
+      <section className="py-32 bg-white border-t border-primary/10">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6">
+              Tailored Protection for Every Industry
+            </h2>
+            <p className="text-lg text-[#1a1a1a]">
+              Every workplace has unique risks. MySentry adapts to yours. Select your industry to see how we solve your specific safety challenges.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-2 mb-12">
+            {industries.map((industry) => (
+              <button
+                key={industry.id}
+                onClick={() => setActiveIndustry(industry)}
+                className={`px-4 py-2 rounded-full text-sm font-bold transition-all flex items-center gap-2 ${
+                  activeIndustry.id === industry.id
+                    ? "bg-primary text-white shadow-lg scale-105"
+                    : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                }`}
+              >
+                <industry.icon className="h-4 w-4" />
+                {industry.title}
+              </button>
+            ))}
+          </div>
+
+          <div className="bg-[#f8fafc] rounded-[2.5rem] p-8 md:p-12 border border-gray-100 shadow-xl overflow-hidden relative min-h-[600px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeIndustry.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+                className="grid lg:grid-cols-2 gap-12 items-center h-full"
+              >
+                <div className="space-y-8 relative z-10">
+                  <div>
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4">
+                      <activeIndustry.icon className="h-3 w-3" />
+                      {activeIndustry.title}
+                    </div>
+                    <h3 className="text-3xl font-bold text-[#1a1a1a] mb-6 leading-tight">
+                      {activeIndustry.peace.problem}
+                    </h3>
+                  </div>
+
+                  <div className="space-y-6">
+                    <div className="bg-white p-6 rounded-2xl border-l-4 border-red-500 shadow-sm">
+                      <p className="text-sm font-bold text-red-500 mb-1 uppercase tracking-wide">The Reality</p>
+                      <p className="text-[#1a1a1a] italic">"{activeIndustry.peace.empathy}"</p>
+                    </div>
+
+                    <div className="bg-white p-6 rounded-2xl border-l-4 border-primary shadow-sm">
+                      <p className="text-sm font-bold text-primary mb-1 uppercase tracking-wide">The Solution</p>
+                      <p className="text-[#1a1a1a] font-medium">{activeIndustry.peace.answer}</p>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-green-50 p-4 rounded-xl">
+                        <p className="text-xs font-bold text-green-700 mb-1 uppercase">The Change</p>
+                        <p className="text-sm text-[#1a1a1a]">{activeIndustry.peace.change}</p>
+                      </div>
+                      <div className="bg-blue-50 p-4 rounded-xl">
+                        <p className="text-xs font-bold text-blue-700 mb-1 uppercase">The Result</p>
+                        <p className="text-sm text-[#1a1a1a]">{activeIndustry.peace.endResult}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl group">
+                  <img 
+                    src={activeIndustry.image} 
+                    alt={`${activeIndustry.title} safety scenario`}
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                  <div className="absolute bottom-8 left-8 right-8 text-white">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                      <p className="text-sm font-bold uppercase tracking-wider">Active Monitoring</p>
+                    </div>
+                    <p className="text-lg font-medium opacity-90">
+                      Protecting your {activeIndustry.title.toLowerCase()} workforce 24/7.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
       </section>
