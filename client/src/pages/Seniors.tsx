@@ -225,7 +225,7 @@ export default function Seniors() {
             >
               <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white">
                 <img 
-                  src="/images/senior-hiking.jpg" 
+                  src="/images/senior-hiking-new.png" 
                   alt="Senior hiking confidently" 
                   className="w-full h-auto object-cover"
                 />
