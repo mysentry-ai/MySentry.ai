@@ -253,7 +253,7 @@ export default function Seniors() {
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">Help follows you.</span>
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Whether you're in the garden, at the grocery store, or on a trail, MySentry goes with you. No base stations. No range limits. Just pure freedom.
+                  Whether you're at home, in the garden, at the grocery store, or walking in a park, MySentry goes with you. No base stations. No range limits. Just pure freedom.
                 </p>
               </div>
 
