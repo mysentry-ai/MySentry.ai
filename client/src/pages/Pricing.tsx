@@ -141,7 +141,7 @@ export default function Pricing() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#e8f5e9] pt-16">
+      <section className="relative min-h-[40vh] flex items-center overflow-hidden bg-[#e8f5e9] pt-16">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-secondary/5 blur-[100px]" />
           <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-[#d4edda] blur-[100px]" />
@@ -158,14 +158,14 @@ export default function Pricing() {
               Safety and Health Monitoring for Everyone within Every Budget
             </h1>
             <p className="text-xl text-[#1a1a1a] mb-8">
-              7-day free trial. No credit card required.
+              
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Pricing Toggle */}
-      <section className="py-12 bg-[#e8f5e9] border-t border-primary/10">
+      <section className="py-6 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container">
           <div className="flex items-center justify-center gap-2 p-1 bg-[#c8e6c9] rounded-full inline-flex border border-primary/20 mx-auto">
             <button 
@@ -191,7 +191,7 @@ export default function Pricing() {
       </section>
 
       {/* Consumer Plans */}
-      <section className="py-24 bg-[#e8f5e9] border-t border-primary/10">
+      <section className="py-12 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-heading font-bold text-[#1a1a1a] mb-4">For Individuals & Families</h2>
@@ -223,7 +223,7 @@ export default function Pricing() {
           </div>
 
           {/* Consumer Plans Grid */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {consumerPlans.map((plan, idx) => (
               <motion.div
                 key={plan.id}
@@ -391,8 +391,8 @@ export default function Pricing() {
               >
                 {/* Badge */}
                 {plan.highlighted && !plan.comingSoon && (
-                  <div className="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
-                    Recommended
+                  <div className="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-xl">
+                    MOST POPULAR
                   </div>
                 )}
                 {plan.comingSoon && (
