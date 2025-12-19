@@ -20,33 +20,37 @@ export default function Navbar() {
   const isActive = (path: string) => location === path;
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-primary/10 bg-[#e8f5e9]/95 backdrop-blur-sm shadow-sm" style={{ color: '#1a1a1a' }}>
-      <div className="container flex h-16 items-center justify-between">
+    <nav className="sticky top-0 z-50 w-full border-b border-white/20 bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300" style={{ color: '#1a1a1a' }}>
+      <div className="container flex h-20 items-center justify-between">
         {/* Logo */}
         <Link href="/">
-          <a className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-            <img src="/images/mysentry-logo.png" alt="MySentry" className="h-8 w-auto" />
+          <a className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
+            <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
           </a>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex md:items-center md:gap-8">
+        <div className="hidden md:flex md:items-center md:gap-10">
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href}>
               <a
                 className={cn(
-                  "text-sm font-medium transition-all hover:text-primary",
+                  "text-base font-semibold transition-all hover:text-primary relative group",
                   isActive(link.href)
-                    ? "text-primary font-semibold"
-                    : "text-foreground"
+                    ? "text-primary"
+                    : "text-gray-700"
                 )}
               >
                 {link.name}
+                <span className={cn(
+                  "absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full",
+                  isActive(link.href) ? "w-full" : ""
+                )} />
               </a>
             </Link>
           ))}
           <Link href="/pricing">
-            <Button className="bg-primary text-white hover:bg-primary/90 font-semibold rounded-full px-6">
+            <Button className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8 py-6 text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
               Start Free Trial
             </Button>
           </Link>
