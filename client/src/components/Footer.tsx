@@ -59,27 +59,54 @@ export default function Footer() {
             <h3 className="font-bold text-foreground mb-4">Company</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-foreground hover:text-primary transition-colors">About Us</a>
+                <Link href="/about">
+                  <a className="text-foreground hover:text-primary transition-colors">About Us</a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-foreground hover:text-primary transition-colors">Contact</a>
+                <Link href="/team">
+                  <a className="text-foreground hover:text-primary transition-colors">Our Team</a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-foreground hover:text-primary transition-colors">Privacy Policy</a>
+                <Link href="/partners">
+                  <a className="text-foreground hover:text-primary transition-colors">Partners</a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="text-foreground hover:text-primary transition-colors">Terms of Service</a>
+                <Link href="/blogs">
+                  <a className="text-foreground hover:text-primary transition-colors">Blog</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  <a className="text-foreground hover:text-primary transition-colors">Contact Us</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/privacy">
+                  <a className="text-foreground hover:text-primary transition-colors">Privacy Policy</a>
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Stay Updated */}
           <div>
-            <h3 className="font-bold text-foreground mb-4">Contact</h3>
-            <ul className="space-y-2 text-sm text-foreground">
-              <li>support@mysentry.ai</li>
-              <li>1-800-SENTRY-AI</li>
-            </ul>
+            <h3 className="font-bold text-foreground mb-4">Stay Updated</h3>
+            <p className="text-sm text-foreground mb-4">
+              Subscribe to our newsletter for the latest safety tips and product updates.
+            </p>
+            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="flex-1 px-3 py-2 rounded-lg bg-white border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm"
+              />
+              <button className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors">
+                Subscribe
+              </button>
+            </form>
           </div>
         </div>
 
