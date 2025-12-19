@@ -52,7 +52,7 @@ export default function Home() {
             
             <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] tracking-tight text-[#1a1a1a]">
               Don’t face a health or safety emergency alone. <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Get help fast with MySentry.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">MySentry automatically alerts and sends help.</span>
             </h1>
             
             <p className="text-xl text-gray-700 max-w-lg leading-relaxed">
@@ -101,8 +101,8 @@ export default function Home() {
                {/* Main Visual - Rapid Response Monitoring Center */}
                <div className="relative w-[550px] h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white z-10 group">
                  <img 
-                   src="/images/rapid-response-center.jpg" 
-                   alt="Rapid Response Monitoring Center" 
+                   src="/images/home-protection-bubble.png" 
+                   alt="MySentry Protection Bubble" 
                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                  />
                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
