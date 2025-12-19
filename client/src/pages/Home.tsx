@@ -95,7 +95,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95, x: 30 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative h-[650px] w-full hidden lg:block perspective-1000"
+            className="relative h-[800px] w-full hidden lg:block perspective-1000"
           >
             <div className="absolute inset-0 flex items-center justify-center transform hover:rotate-y-2 transition-transform duration-700">
                {/* Main Visual - Rapid Response Monitoring Center */}
@@ -141,8 +141,8 @@ export default function Home() {
                </svg>
 
                {/* Event Card - Fall Detection */}
-               <div className="absolute -top-12 -left-8 w-[300px] bg-white/90 backdrop-blur-xl p-5 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_6s_ease-in-out_infinite]">
-                  <div className="flex items-center justify-between mb-4">
+               <div className="absolute -top-12 -left-8 w-[280px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_6s_ease-in-out_infinite]">
+                  <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className="bg-red-100 p-2 rounded-xl">
                         <Activity className="h-5 w-5 text-red-600" />
@@ -154,13 +154,83 @@ export default function Home() {
                     </div>
                     <span className="text-[10px] font-bold text-white bg-red-500 px-2 py-1 rounded-full shadow-red-200 shadow-lg">CRITICAL</span>
                   </div>
-                  <div className="space-y-3 bg-gray-50 p-3 rounded-2xl border border-gray-100">
+                  <div className="space-y-2 bg-gray-50 p-3 rounded-2xl border border-gray-100">
                     <div className="flex items-center justify-between text-xs">
                       <span className="text-gray-500">Heart Rate</span>
                       <span className="font-bold text-gray-900">120 BPM</span>
                     </div>
                     <div className="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
                       <div className="bg-red-500 h-full w-[85%] rounded-full"></div>
+                    </div>
+                  </div>
+               </div>
+
+               {/* Event Card - Crash Detection */}
+               <div className="absolute top-40 -right-12 w-[280px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_5s_ease-in-out_infinite_1s]">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      <div className="bg-orange-100 p-2 rounded-xl">
+                        <AlertTriangle className="h-5 w-5 text-orange-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900 text-sm">Crash Detected</h4>
+                        <p className="text-xs text-gray-500">Today, 5:12 PM</p>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-bold text-white bg-orange-500 px-2 py-1 rounded-full shadow-orange-200 shadow-lg">ALERT</span>
+                  </div>
+                  <div className="space-y-2 bg-gray-50 p-3 rounded-2xl border border-gray-100">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-gray-500">Impact Force</span>
+                      <span className="font-bold text-gray-900">4.5 G</span>
+                    </div>
+                    <div className="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                      <div className="bg-orange-500 h-full w-[60%] rounded-full"></div>
+                    </div>
+                  </div>
+               </div>
+
+               {/* Event Card - Health Scare */}
+               <div className="absolute bottom-32 -left-12 w-[280px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_7s_ease-in-out_infinite_2s]">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-3">
+                      <div className="bg-blue-100 p-2 rounded-xl">
+                        <HeartPulse className="h-5 w-5 text-blue-600" />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900 text-sm">Health Alert</h4>
+                        <p className="text-xs text-gray-500">Today, 9:30 AM</p>
+                      </div>
+                    </div>
+                    <span className="text-[10px] font-bold text-white bg-blue-500 px-2 py-1 rounded-full shadow-blue-200 shadow-lg">INFO</span>
+                  </div>
+                  <div className="space-y-2 bg-gray-50 p-3 rounded-2xl border border-gray-100">
+                    <div className="flex items-center justify-between text-xs">
+                      <span className="text-gray-500">Irregular Rhythm</span>
+                      <span className="font-bold text-gray-900">Detected</span>
+                    </div>
+                  </div>
+               </div>
+
+               {/* Emergency Contacts Card */}
+               <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[320px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_8s_ease-in-out_infinite_0.5s]">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="bg-green-100 p-2 rounded-xl">
+                      <Users className="h-5 w-5 text-green-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-sm">5 Emergency Contacts</h4>
+                      <p className="text-xs text-green-600 font-medium">Notified Instantly</p>
+                    </div>
+                  </div>
+                  <div className="flex -space-x-2 overflow-hidden">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <div key={i} className="inline-block h-8 w-8 rounded-full ring-2 ring-white bg-gray-200 flex items-center justify-center text-[10px] font-bold text-gray-600">
+                        {i}
+                      </div>
+                    ))}
+                    <div className="h-8 w-8 rounded-full ring-2 ring-white bg-green-500 flex items-center justify-center text-white text-[10px] font-bold">
+                      <CheckCircle2 className="h-4 w-4" />
                     </div>
                   </div>
                </div>
