@@ -158,7 +158,7 @@ export default function Seniors() {
                   Proactive Health
                 </div>
                 <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
-                  Your devices know your body better than you do.
+                  Your smart wearables know your body better than you do.
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
                   MySentry doesn't just wait for an emergency. It learns YOUR baseline. Your normal heart rate. Your normal oxygen levels. Then it watches for changes, 24/7.
