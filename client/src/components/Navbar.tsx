@@ -26,10 +26,10 @@ export default function Navbar() {
         <div className="flex flex-col">
           <Link href="/">
             <a className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
-              <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
+              <img src="/images/logo.png" alt="MySentry" className="h-14 w-auto" />
             </a>
           </Link>
-          <span className="text-[10px] font-bold text-primary tracking-tight mt-1 hidden lg:block">
+          <span className="text-xs font-bold text-primary tracking-tight mt-1 hidden lg:block">
             24/7 Safety & Health Monitoring
           </span>
         </div>
@@ -40,7 +40,7 @@ export default function Navbar() {
             <Link key={link.name} href={link.href}>
               <a
                 className={cn(
-                  "text-base font-semibold transition-all hover:text-primary relative group",
+                  "text-lg font-bold transition-all hover:text-primary relative group",
                   isActive(link.href)
                     ? "text-primary"
                     : "text-gray-700"
@@ -55,7 +55,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="/pricing">
-            <Button className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8 py-6 text-base shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+            <Button className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
               Start Free Trial
             </Button>
           </Link>
