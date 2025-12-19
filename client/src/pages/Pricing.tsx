@@ -43,37 +43,15 @@ export default function Pricing() {
   const employerAnnualPrice = baseEmployerYearlyRate * 12 * employeeCount * (1 - employerDiscount);
 
   const consumerPlans = [
-    {
-      id: "essential",
-      name: "Essential Safety",
-      tagline: "Always Protected",
-      price: 0,
-      annualPrice: 0,
-      description: "Core safety features with no professional monitoring.",
-      cta: "Start Free",
-      highlighted: false,
-      comingSoon: false,
-      features: [
-        { name: "Panic Alarm (Voice, Button, Watch)", included: true },
-        { name: "Fall Detection", included: true },
-        { name: "Crash Detection", included: true },
-        { name: "Live Video Response", included: true },
-        { name: "2 Emergency Contacts", included: true },
-        { name: "Automated Location Sharing", included: true },
-        { name: "Mental Health Coach Access (DrNur.ai)", included: true, link: "https://drnur.ai" },
-        { name: "Real-Time Health Monitoring", included: false },
-        { name: "24/7 Professional Monitoring", included: false },
-        { name: "5 Emergency Contacts", included: false }
-      ]
-    },
+
     {
       id: "complete",
-      name: "Complete Care",
+      name: "Complete Protection",
       tagline: "Safety + Health + Monitoring",
       price: 12.49,
       annualPrice: 119.88,
       description: "Full protection with health monitoring and 24/7 agents.",
-      cta: "Start Free Trial",
+      cta: "Start 7-Day Free Trial",
       highlighted: true,
       comingSoon: false,
       features: [
@@ -97,11 +75,11 @@ export default function Pricing() {
       price: null,
       annualPrice: null,
       description: "Advanced health insights with predictive analytics.",
-      cta: "Coming Soon",
+      cta: "Start 7-Day Free Trial",
       highlighted: false,
       comingSoon: true,
       features: [
-        { name: "All Complete Care Features (including MeetSafe & Automated Call)", included: true },
+        { name: "All Complete Protection Features (including MeetSafe & Automated Call)", included: true },
         { name: "Predictive Health Analytics", included: true },
         { name: "Physical, Mental & Nutritional Insights", included: true },
         { name: "Labs Integration", included: true },
@@ -118,14 +96,14 @@ export default function Pricing() {
   const employerPlans = [
     {
       id: "employer-complete",
-      name: "Complete Care for Teams",
+      name: "Complete Protection for Teams",
       tagline: "Employee Safety & Health",
       description: "Protect your workforce with comprehensive safety and health monitoring.",
       cta: "Request Demo",
       highlighted: true,
       comingSoon: false,
       features: [
-        { name: "All Complete Care Features (including MeetSafe & Automated Call)", included: true },
+        { name: "All Complete Protection Features (including MeetSafe & Automated Call)", included: true },
         { name: "Unlimited Team Members", included: true },
         { name: "Team Dashboard", included: true },
         { name: "Incident Reporting & Analytics", included: true },
@@ -142,11 +120,11 @@ export default function Pricing() {
       name: "Predictive Care for Teams",
       tagline: "Prevention + Prediction",
       description: "Advanced predictive health for enterprise workforce management.",
-      cta: "Coming Soon",
+      cta: "Start 7-Day Free Trial",
       highlighted: false,
       comingSoon: true,
       features: [
-        { name: "All Complete Care Features (including MeetSafe & Automated Call)", included: true },
+        { name: "All Complete Protection Features (including MeetSafe & Automated Call)", included: true },
         { name: "Predictive Health Analytics", included: true },
         { name: "Workforce Health Trends", included: true },
         { name: "Preventive Health Programs", included: true },
@@ -180,7 +158,7 @@ export default function Pricing() {
               Safety and Health Monitoring for Everyone within Every Budget
             </h1>
             <p className="text-xl text-[#1a1a1a] mb-8">
-              7-day free trial. No credit card required. 30-day money-back guarantee.
+              7-day free trial. No credit card required.
             </p>
           </motion.div>
         </div>
