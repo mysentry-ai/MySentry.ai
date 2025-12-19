@@ -335,7 +335,7 @@ export default function Home() {
             Join thousands of families who have chosen peace of mind. Try MySentry risk-free today.
           </p>
           <Link href="/pricing">
-            <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-white text-primary hover:bg-gray-100 font-bold shadow-2xl hover:shadow-white/20 transition-all hover:-translate-y-1">
+            <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-white text-[#064e3b] hover:bg-gray-100 font-bold shadow-2xl hover:shadow-white/20 transition-all hover:-translate-y-1">
               Start Your Free Trial
             </Button>
           </Link>
