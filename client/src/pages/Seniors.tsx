@@ -267,10 +267,10 @@ export default function Seniors() {
                 </div>
                 <div className="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-md transition-all">
                   <div className="h-10 w-10 rounded-xl bg-green-100 flex items-center justify-center mb-4">
-                    <Clock className="h-5 w-5 text-green-600" />
+                    <Activity className="h-5 w-5 text-green-600" />
                   </div>
-                  <h4 className="font-bold text-gray-900 mb-2">Check-in Timer</h4>
-                  <p className="text-sm text-gray-600">Set a timer for risky activities (like showering). If you don't stop it, we alert your contacts.</p>
+                  <h4 className="font-bold text-gray-900 mb-2">Near Fall Detection</h4>
+                  <p className="text-sm text-gray-600">Detects sudden drops in heart rate while walking to warn you before a fall happens.</p>
                 </div>
               </div>
             </motion.div>
