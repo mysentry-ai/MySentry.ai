@@ -96,7 +96,7 @@ export default function Pricing() {
   const employerPlans = [
     {
       id: "employer-complete",
-      name: "Complete Protection for Teams",
+      name: "Complete Protection for Employees",
       tagline: "Employee Safety & Health",
       description: "Protect your workforce with comprehensive safety and health monitoring.",
       cta: "Request Demo",
@@ -112,12 +112,12 @@ export default function Pricing() {
         { name: "Video Evidence for Claims", included: true },
         { name: "Dedicated Account Manager", included: true },
         { name: "API Integration", included: true },
-        { name: "Mental Health Coach Access (DrNur.ai)", included: true }
+        { name: "Mental Health Coach Access (DrNur.ai)", included: true, link: "https://drnur.ai" }
       ]
     },
     {
       id: "employer-advanced",
-      name: "Predictive Care for Teams",
+      name: "Predictive Care for Employees",
       tagline: "Prevention + Prediction",
       description: "Advanced predictive health for enterprise workforce management.",
       cta: "Start 7-Day Free Trial",
