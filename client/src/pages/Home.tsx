@@ -179,7 +179,7 @@ export default function Home() {
                </div>
 
                {/* Event Card - Health Scare */}
-               <div className="absolute bottom-32 -left-12 w-[280px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_7s_ease-in-out_infinite_2s]">
+               <div className="absolute bottom-48 -left-12 w-[280px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_7s_ease-in-out_infinite_2s]">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className="bg-blue-100 p-2 rounded-xl">
@@ -201,7 +201,7 @@ export default function Home() {
                </div>
 
                {/* Emergency Contacts Card */}
-               <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 w-[320px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_8s_ease-in-out_infinite_0.5s]">
+               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[320px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_8s_ease-in-out_infinite_0.5s]">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="bg-green-100 p-2 rounded-xl">
                       <Users className="h-5 w-5 text-green-600" />
@@ -224,7 +224,7 @@ export default function Home() {
                </div>
 
                {/* Response Card */}
-               <div className="absolute -bottom-4 -right-4 w-[280px] bg-white/90 backdrop-blur-xl p-5 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_7s_ease-in-out_infinite_1s]">
+               <div className="absolute bottom-12 -right-4 w-[280px] bg-white/90 backdrop-blur-xl p-5 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_7s_ease-in-out_infinite_1s]">
                   <div className="flex items-center gap-4 mb-3">
                     <div className="relative">
                       <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center overflow-hidden border-2 border-white shadow-md">
