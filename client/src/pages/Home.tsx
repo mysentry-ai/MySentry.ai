@@ -97,7 +97,7 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative h-[800px] w-full hidden lg:block perspective-1000"
           >
-            <div className="absolute inset-0 flex items-center justify-center transform hover:rotate-y-2 transition-transform duration-700">
+            <div className="absolute inset-0 flex items-start pt-10 justify-center transform hover:rotate-y-2 transition-transform duration-700">
                {/* Main Visual - Rapid Response Monitoring Center */}
                <div className="relative w-[550px] h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white z-10 group">
                  <img 
@@ -113,19 +113,7 @@ export default function Home() {
                    <span className="text-white text-xs font-bold tracking-wider">LIVE MONITORING</span>
                  </div>
 
-                 <div className="absolute bottom-0 left-0 right-0 p-8">
-                   <div className="flex items-center justify-between">
-                     <div className="flex items-center gap-4">
-                       <div className="h-12 w-12 rounded-2xl bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20">
-                         <ShieldAlert className="h-6 w-6 text-green-400" />
-                       </div>
-                       <div>
-                         <p className="text-white font-bold text-lg leading-none mb-1">Rapid Response</p>
-                         <p className="text-white/70 text-xs font-medium">TMA Five Diamond Certified Center</p>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
+                 
                </div>
 
                {/* Connection Lines */}
@@ -141,7 +129,7 @@ export default function Home() {
                </svg>
 
                {/* Event Card - Fall Detection */}
-               <div className="absolute -top-12 -left-8 w-[280px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_6s_ease-in-out_infinite]">
+               <div className="absolute top-12 -left-8 w-[280px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_6s_ease-in-out_infinite]">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className="bg-red-100 p-2 rounded-xl">
