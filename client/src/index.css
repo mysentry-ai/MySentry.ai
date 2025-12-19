@@ -128,21 +128,42 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    font-size: 18px; /* Increased base font size for better readability */
+  }
   body {
     @apply bg-background text-foreground font-sans antialiased;
     color: #1a1a1a !important;
+    line-height: 1.6;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold tracking-tight text-foreground;
     color: #1a1a1a !important;
+    line-height: 1.2;
   }
+  h1 { font-size: 3.5rem; }
+  h2 { font-size: 2.75rem; }
+  h3 { font-size: 2rem; }
+  
   p {
     @apply text-foreground;
     color: #1a1a1a !important;
+    font-size: 1.125rem; /* 18px */
   }
   span, div, li, a {
     color: #1a1a1a !important;
   }
+  /* Exception for white text on dark/primary backgrounds */
+  .text-white, .text-white * {
+    color: #ffffff !important;
+  }
+  .bg-primary, .bg-primary * {
+    color: #ffffff !important;
+  }
+  .bg-black, .bg-black * {
+    color: #ffffff !important;
+  }
+  
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
@@ -161,8 +182,8 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 
   .flex {
@@ -172,16 +193,16 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      max-width: 1280px;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      max-width: 1400px; /* Wider container for modern look */
     }
   }
   

@@ -5,7 +5,7 @@ export interface IndustryContent {
   title: string;
   icon: LucideIcon;
   peace: {
-    problem: string;
+    problems: string[];
     empathy: string;
     answer: string;
     change: string;
@@ -20,7 +20,11 @@ export const industries: IndustryContent[] = [
     title: "Home Healthcare",
     icon: Stethoscope,
     peace: {
-      problem: "Nurses and caregivers are entering strangers' homes alone, every single day, with zero backup.",
+      problems: [
+        "Nurses entering strangers' homes alone with zero backup.",
+        "Unpredictable patient behavior or aggressive family members.",
+        "Medical emergencies happening to staff in remote locations."
+      ],
       empathy: "We know the anxiety of sending your staff into unpredictable environments where help feels miles away.",
       answer: "MySentry provides a discreet panic button on their watch and automatic check-ins for high-risk visits.",
       change: "Your caregivers go from feeling vulnerable and isolated to being constantly connected to professional protection.",
@@ -33,7 +37,11 @@ export const industries: IndustryContent[] = [
     title: "Healthcare & Pharma",
     icon: Building2,
     peace: {
-      problem: "Hospital staff face rising aggression from patients and visitors in high-stress environments.",
+      problems: [
+        "Rising aggression from patients and visitors in ERs and wards.",
+        "Staff working late shifts in large, empty parking structures.",
+        "High-stress environments leading to unmonitored health incidents."
+      ],
       empathy: "It's unacceptable that those who care for others often fear for their own physical safety at work.",
       answer: "MySentry delivers instant duress alarms that alert security teams with precise indoor location data.",
       change: "Staff move from looking over their shoulders to focusing entirely on saving lives.",
@@ -46,7 +54,11 @@ export const industries: IndustryContent[] = [
     title: "Business Operations",
     icon: Briefcase,
     peace: {
-      problem: "Lone workers in warehouses and late-night offices are invisible when accidents happen.",
+      problems: [
+        "Lone workers in warehouses invisible when accidents happen.",
+        "Late-night office staff leaving buildings unescorted.",
+        "Health emergencies (heart attack, stroke) going unnoticed."
+      ],
       empathy: "You worry that if an employee falls or has a medical emergency, no one will know until it's too late.",
       answer: "MySentry detects falls and health anomalies automatically, dispatching help even if they can't speak.",
       change: "Shift from reactive tragedy management to proactive, real-time workforce protection.",
@@ -59,7 +71,11 @@ export const industries: IndustryContent[] = [
     title: "Gaming & Entertainment",
     icon: Gamepad2,
     peace: {
-      problem: "Casino and venue staff deal with intoxicated patrons and volatile situations in loud, chaotic settings.",
+      problems: [
+        "Intoxicated patrons creating volatile situations.",
+        "Loud environments where radio calls go unheard.",
+        "Cash handling staff targeted for theft or coercion."
+      ],
       empathy: "Managing large crowds shouldn't mean accepting abuse or physical threats as 'part of the job'.",
       answer: "MySentry empowers staff to silently summon security backup without escalating the situation.",
       change: "Transform a chaotic, high-risk floor into a controlled environment with rapid response capabilities.",
@@ -72,7 +88,11 @@ export const industries: IndustryContent[] = [
     title: "Tech & Telecom",
     icon: Wifi,
     peace: {
-      problem: "Field technicians work in remote towers and server farms, often miles from the nearest human.",
+      problems: [
+        "Field techs working in remote towers miles from help.",
+        "High-voltage or height-related accident risks.",
+        "Driving fatigue leading to vehicle accidents."
+      ],
       empathy: "The isolation of field work creates a dangerous gap between an accident and medical attention.",
       answer: "MySentry monitors vitals and location, bridging the gap between remote sites and emergency responders.",
       change: "Technicians stop being 'out of reach' and start being 'always connected' to safety.",
@@ -85,7 +105,11 @@ export const industries: IndustryContent[] = [
     title: "Retail & Hospitality",
     icon: ShoppingBag,
     peace: {
-      problem: "Frontline staff are increasingly targets of theft, harassment, and workplace violence.",
+      problems: [
+        "Frontline staff facing verbal and physical harassment.",
+        "Opening and closing stores alone at vulnerable hours.",
+        "Theft interventions turning violent unexpectedly."
+      ],
       empathy: "Your team shouldn't have to choose between providing great service and protecting themselves.",
       answer: "MySentry puts a security guard on their wrist, ready to intervene the moment a situation turns sour.",
       change: "Employees go from feeling exposed at the counter to feeling secure and supported.",
@@ -98,7 +122,11 @@ export const industries: IndustryContent[] = [
     title: "Real Estate",
     icon: Home,
     peace: {
-      problem: "Agents meet absolute strangers in empty properties, often in secluded areas.",
+      problems: [
+        "Meeting absolute strangers in empty properties.",
+        "Showings in secluded or dead-zone areas.",
+        "Predictable patterns making agents easy targets."
+      ],
       empathy: "The 'open house' shouldn't be a gamble with your personal safety.",
       answer: "MySentry's MeetSafe feature sets automatic timers for showings—if you don't check in, we send help.",
       change: "Agents stop fearing the 'what if' and start showing properties with total confidence.",
@@ -111,7 +139,11 @@ export const industries: IndustryContent[] = [
     title: "Media & Creative",
     icon: Clapperboard,
     peace: {
-      problem: "Journalists and crews cover unpredictable events and work irregular hours in unfamiliar locations.",
+      problems: [
+        "Journalists covering protests or volatile events.",
+        "Crews carrying expensive gear in high-crime areas.",
+        "Irregular hours in unfamiliar locations."
+      ],
       empathy: "Chasing the story shouldn't mean becoming the story due to a safety incident.",
       answer: "MySentry tracks location and health status, ensuring crews are safe even in volatile environments.",
       change: "From high-risk exposure to calculated, monitored safety during every assignment.",
@@ -124,7 +156,11 @@ export const industries: IndustryContent[] = [
     title: "Education",
     icon: GraduationCap,
     peace: {
-      problem: "Teachers and campus staff face everything from medical emergencies to active threats.",
+      problems: [
+        "Active threat scenarios requiring instant lockdown.",
+        "Medical emergencies in classrooms or sports fields.",
+        "Staff facing aggression from students or parents."
+      ],
       empathy: "Educators are there to teach, not to be first responders without support.",
       answer: "MySentry connects every classroom directly to campus security and local police instantly.",
       change: "Schools transform from soft targets into interconnected, responsive safety networks.",
@@ -137,7 +173,11 @@ export const industries: IndustryContent[] = [
     title: "Government",
     icon: Landmark,
     peace: {
-      problem: "Public servants often work in the field or face agitated citizens in government offices.",
+      problems: [
+        "Field workers entering unregulated environments.",
+        "Public counters facing agitated citizens.",
+        "Privacy concerns limiting safety tool options."
+      ],
       empathy: "Serving the public shouldn't come at the cost of personal security.",
       answer: "MySentry provides discreet, reliable duress alarms that comply with strict privacy and security standards.",
       change: "Civil servants move from vulnerability to protected, monitored engagements.",
@@ -150,7 +190,11 @@ export const industries: IndustryContent[] = [
     title: "Banking & Finance",
     icon: Banknote,
     peace: {
-      problem: "Bank staff and financial advisors are high-value targets for robbery and coercion.",
+      problems: [
+        "High-value target for armed robbery.",
+        "Coercion of staff for access to assets.",
+        "Opening/closing procedures with high vulnerability."
+      ],
       empathy: "The responsibility of handling assets brings a constant, underlying threat of violence.",
       answer: "MySentry links silent alarms directly to law enforcement, bypassing delays.",
       change: "Staff shift from hyper-vigilance to trusting the system to handle the threat.",

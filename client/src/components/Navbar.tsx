@@ -22,12 +22,17 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-white/20 bg-white/80 backdrop-blur-md shadow-sm transition-all duration-300" style={{ color: '#1a1a1a' }}>
       <div className="container flex h-20 items-center justify-between">
-        {/* Logo */}
-        <Link href="/">
-          <a className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
-            <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
-          </a>
-        </Link>
+        {/* Logo & Tagline */}
+        <div className="flex flex-col">
+          <Link href="/">
+            <a className="flex items-center gap-2 hover:scale-105 transition-transform duration-300">
+              <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
+            </a>
+          </Link>
+          <span className="text-[10px] font-bold text-primary tracking-tight mt-1 hidden lg:block">
+            24/7 Safety & Health Monitoring with Emergency Response
+          </span>
+        </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex md:items-center md:gap-10">
