@@ -109,8 +109,8 @@ export default function Seniors() {
           >
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform hover:rotate-y-2 transition-transform duration-700 group">
               <img 
-                src="/images/senior-watch-happy.jpg" 
-                alt="Active senior woman checking her smart watch" 
+                src="/images/senior-birdhouse.png" 
+                alt="Senior man building a birdhouse while wearing a smart watch" 
                 className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
