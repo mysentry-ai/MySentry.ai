@@ -154,9 +154,12 @@ export default function Pricing() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            <h1 className="text-5xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-6">
-              Safety and Health Monitoring for Everyone within Every Budget
-            </h1>
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <h1 className="text-5xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-6">
+                Safety and Health Monitoring for Everyone within Every Budget
+              </h1>
+              <img src="/images/safety-dispenser.png" alt="Safety Dispenser" className="w-full md:w-1/2 max-w-[400px] rounded-2xl shadow-xl" />
+            </div>
             <p className="text-xl text-[#1a1a1a] mb-8">
               
             </p>
@@ -300,9 +303,10 @@ export default function Pricing() {
                         className={cn(
                           "w-full h-12 rounded-full font-bold transition-all",
                           plan.highlighted
-                            ? "bg-primary text-white hover:bg-primary/90"
-                            : "bg-[#c8e6c9] text-primary hover:bg-primary/20 border border-primary/20"
+                            ? "bg-primary text-black hover:bg-primary/90"
+                            : "bg-[#c8e6c9] text-black hover:bg-primary/20 border border-primary/20"
                         )}
+                        onClick={() => window.scrollTo(0, 0)}
                       >
                         {plan.cta}
                       </Button>
@@ -443,9 +447,10 @@ export default function Pricing() {
                         className={cn(
                           "w-full h-12 rounded-full font-bold transition-all",
                           plan.highlighted
-                            ? "bg-primary text-white hover:bg-primary/90"
-                            : "bg-[#c8e6c9] text-primary hover:bg-primary/20 border border-primary/20"
+                            ? "bg-primary text-black hover:bg-primary/90"
+                            : "bg-[#c8e6c9] text-black hover:bg-primary/20 border border-primary/20"
                         )}
+                        onClick={() => window.scrollTo(0, 0)}
                       >
                         {plan.cta}
                       </Button>
@@ -524,7 +529,7 @@ export default function Pricing() {
             <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
               <Check className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-[#1a1a1a] mb-2">7-Day Free Trial</h3>
-              <p className="text-[#1a1a1a] text-sm">No credit card required. Experience full protection risk-free.</p>
+              <p className="text-[#1a1a1a] text-sm">Experience full protection risk-free.</p>
             </div>
             <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
               <Shield className="h-12 w-12 text-primary mx-auto mb-4" />

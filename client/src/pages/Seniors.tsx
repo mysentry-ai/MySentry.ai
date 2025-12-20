@@ -36,8 +36,8 @@ export default function Seniors() {
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="/pricing">
-                <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1">
-                  Start Free Trial
+                <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-black hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
+                  Start 7-Day Free Trial
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
@@ -243,14 +243,14 @@ export default function Seniors() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link href="/pricing">
-              <Button size="lg" className="h-16 px-12 text-lg rounded-full bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-primary/20">
-                Start Your Free Trial
+              <Button size="lg" className="h-16 px-12 text-lg rounded-full bg-primary text-black hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-primary/20" onClick={() => window.scrollTo(0, 0)}>
+                Start 7-Day Free Trial
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
           </div>
           <p className="mt-6 text-sm text-gray-500">
-            Try it risk-free for 7 days. No credit card required.
+            Try it risk-free for 7 days.
           </p>
         </div>
       </section>

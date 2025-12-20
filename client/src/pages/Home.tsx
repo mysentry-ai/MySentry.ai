@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Watch, Smartphone, Activity, HeartPulse, ShieldAlert, Video, CheckCircle2, Star, AlertTriangle, MapPin, Play, Users, Lock } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import SafetySimulation from "@/components/SafetySimulation";
 
 export default function Home() {
   const testimonials = [
@@ -60,7 +61,7 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="/pricing">
-                <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-black hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
                   Start 7-Day Free Trial
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -245,6 +246,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Interactive Simulation */}
+      <SafetySimulation />
+
       {/* PEACE: The Problem & Empathy */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="container relative z-10">
@@ -340,7 +344,7 @@ export default function Home() {
               <div className="mt-12">
                 <Link href="/pricing">
                   <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-white text-black hover:bg-gray-100 font-bold shadow-lg hover:shadow-white/20 transition-all" onClick={() => window.scrollTo(0, 0)}>
-                    Get Protected Now
+                    Start 7-Day Free Trial
                   </Button>
                 </Link>
               </div>
@@ -387,7 +391,7 @@ export default function Home() {
           </p>
           <Link href="/pricing">
             <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-white text-black hover:bg-gray-100 font-bold shadow-2xl hover:shadow-white/20 transition-all hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
-              Start Your Free Trial
+              Start 7-Day Free Trial
             </Button>
           </Link>
           <p className="mt-6 text-white/70 text-sm">

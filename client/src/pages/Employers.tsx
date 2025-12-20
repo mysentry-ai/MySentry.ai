@@ -46,7 +46,7 @@ export default function Employers() {
             </p>
             
             <Link href="/pricing">
-              <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1">
+              <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-black hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
                 Get Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -353,8 +353,8 @@ export default function Employers() {
 
           <div className="mt-20 text-center">
             <Link href="/pricing">
-              <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-white text-primary hover:bg-gray-100 font-bold shadow-2xl hover:shadow-white/20 transition-all hover:-translate-y-1">
-                Secure Your Workforce
+              <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-white text-black hover:bg-gray-100 font-bold shadow-2xl hover:shadow-white/20 transition-all hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
+                Start 7-Day Free Trial
               </Button>
             </Link>
           </div>

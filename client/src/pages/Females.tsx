@@ -29,8 +29,8 @@ export default function Females() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/pricing">
-                  <Button className="h-14 px-8 rounded-full text-lg font-bold bg-primary text-white hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all">
-                    Start Free Trial
+                  <Button className="h-14 px-8 rounded-full text-lg font-bold bg-primary text-black hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all" onClick={() => window.scrollTo(0, 0)}>
+                    Start 7-Day Free Trial
                   </Button>
                 </Link>
                 <Link href="/features">
@@ -332,8 +332,8 @@ export default function Females() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link href="/pricing">
-              <Button size="lg" className="h-16 px-10 rounded-full text-xl font-bold bg-white text-primary hover:bg-gray-100 shadow-xl">
-                Start Free Trial
+              <Button size="lg" className="h-16 px-10 rounded-full text-xl font-bold bg-white text-black hover:bg-gray-100 shadow-xl" onClick={() => window.scrollTo(0, 0)}>
+                Start 7-Day Free Trial
               </Button>
             </Link>
             <Link href="/features">
