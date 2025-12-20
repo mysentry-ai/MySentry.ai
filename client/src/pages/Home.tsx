@@ -51,7 +51,7 @@ export default function Home() {
           >
             
             
-            <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] tracking-tight text-[#1a1a1a]">
+            <h1 className="text-4xl md:text-7xl font-heading font-bold leading-[1.1] tracking-tight text-[#1a1a1a]">
               Don’t face a health or safety emergency alone.
             </h1>
             
@@ -59,15 +59,15 @@ export default function Home() {
               MySentry turns your smartwatch and phone into real-time safety and health monitoring. It detects falls, crashes, and abnormal Health Vitals and sends live video, location, and Health Vitals to 24/7 responders so help can be dispatched fast.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href="/pricing">
-                <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-[#000000] hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
+              <Link href="/pricing" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto h-14 sm:h-16 px-6 sm:px-10 text-base sm:text-lg rounded-full bg-primary text-[#000000] hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
                   Start 7-Day Free Trial
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
-              <Link href="/features">
-                <Button variant="outline" size="lg" className="h-16 px-10 text-lg rounded-full border-2 border-primary/20 text-[#1a1a1a] hover:bg-primary/5 hover:border-primary/40 font-semibold backdrop-blur-sm">
+              <Link href="/features" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 sm:h-16 px-6 sm:px-10 text-base sm:text-lg rounded-full border-2 border-primary/20 text-[#1a1a1a] hover:bg-primary/5 hover:border-primary/40 font-semibold backdrop-blur-sm">
                   <Play className="mr-2 h-5 w-5 fill-current" />
                   See How It Works
                 </Button>
@@ -97,9 +97,9 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative h-[600px] lg:h-[800px] w-full block perspective-1000 mt-12 lg:mt-0"
           >
-            <div className="absolute inset-0 flex items-start pt-10 justify-center transform hover:rotate-y-2 transition-transform duration-700">
+            <div className="absolute inset-0 flex items-start pt-10 justify-center transform hover:rotate-y-2 transition-transform duration-700 scale-90 sm:scale-100">
                {/* Main Visual - Rapid Response Monitoring Center */}
-               <div className="relative w-[300px] h-[220px] lg:w-[550px] lg:h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white z-10 group">
+               <div className="relative w-[280px] h-[200px] sm:w-[300px] sm:h-[220px] lg:w-[550px] lg:h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl border-[4px] sm:border-[8px] border-white z-10 group">
                  <img 
                    src="/images/home-protection-bubble.png" 
                    alt="MySentry Protection Bubble" 
