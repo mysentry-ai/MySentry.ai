@@ -51,11 +51,12 @@ export default function Home() {
             
             
             <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] tracking-tight text-[#1a1a1a]">
-              Don't face a health or safety emergency alone.
+              Live freely. <br/>
+              <span className="text-primary">We'll handle the emergencies.</span>
             </h1>
             
             <p className="text-xl text-gray-700 max-w-lg leading-relaxed">
-              MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 responders with live video, location, and Health Vitals so help can be dispatched fast.
+              Falls, crashes, and health scares shouldn't stop you from living your life. MySentry detects emergencies instantly and alerts 24/7 responders with your location and vitals, so you can live with confidence.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">

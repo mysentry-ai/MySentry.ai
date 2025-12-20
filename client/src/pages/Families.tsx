@@ -188,7 +188,7 @@ export default function Families() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">3. Mixed devices? No problem.</h3>
               <p className="text-gray-600 leading-relaxed">
-                Mom has an iPhone. Dad has Android. Kids have Samsung watches. MySentry connects everyone seamlessly. No "green bubble" drama—just safety.
+                Mom has an iPhone. Dad has Android. Grandma has a Samsung Watch. <strong>Smart Connectivity</strong> automatically shares location updates across all devices, keeping everyone connected.
               </p>
             </motion.div>
 

@@ -351,11 +351,11 @@ export default function Features() {
                 Feature 06
               </div>
               <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
-                Always connected. <br/>
-                <span className="text-gray-400">Never alone.</span>
+                Your location shared. <br/>
+                <span className="text-gray-400">Automatically.</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Seamless integration with your existing devices. Works with Apple Watch, Samsung Galaxy Watch, iPhone, and Android. Your safety net travels with you, everywhere.
+                Set intervals for automatic location updates to your emergency contacts. You don't have to remember to check in. MySentry does it for you, ensuring your loved ones always know you're safe.
               </p>
             </div>
           </motion.div>

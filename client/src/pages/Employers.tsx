@@ -190,7 +190,7 @@ export default function Employers() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">5. Liability Concerns.</h3>
               <p className="text-gray-600 leading-relaxed">
-                "Did we do enough?" <strong>Smart Connectivity</strong> provides a digital paper trail of safety checks and rapid response, proving duty of care.
+                "Did we do enough?" <strong>Smart Connectivity</strong> automatically logs location and safety status, providing a digital paper trail that proves your duty of care.
               </p>
             </motion.div>
           </div>
