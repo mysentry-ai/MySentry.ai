@@ -508,7 +508,7 @@ export default function Pricing() {
 
             <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
               <AlertTriangle className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h3 className="font-bold text-[#1a1a1a] mb-2">24/7 Live Monitoring</h3>
+              <h3 className="font-bold text-[#1a1a1a] mb-2">24/7 Professional Monitoring</h3>
               <p className="text-[#1a1a1a] text-sm">Real agents respond to every alert in seconds. Not bots.</p>
             </div>
             <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
@@ -524,12 +524,12 @@ export default function Pricing() {
             <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
               <Users className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-[#1a1a1a] mb-2">5 Emergency Contacts</h3>
-              <p className="text-[#1a1a1a] text-sm">Your family sees everything live. Video. Location. Vitals. All in real-time.</p>
+              <p className="text-[#1a1a1a] text-sm">Your family sees everything live. Video. Location. Health Vitals. All in real-time when a Panic Alarm is triggered.</p>
             </div>
             <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
               <Building2 className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="font-bold text-[#1a1a1a] mb-2">Enterprise Ready</h3>
-              <p className="text-[#1a1a1a] text-sm">Scales from individuals to organizations with thousands of employees.</p>
+              <p className="text-[#1a1a1a] text-sm">Scales from individuals/Families to organizations with thousands of employees.</p>
             </div>
             <div className="text-center p-6 rounded-2xl bg-white border border-primary/10 hover:border-primary/30 transition-all">
               <Check className="h-12 w-12 text-primary mx-auto mb-4" />
