@@ -51,12 +51,11 @@ export default function Home() {
             
             
             <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] tracking-tight text-[#1a1a1a]">
-              Don’t face a health or safety emergency alone. <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">MySentry automatically alerts and sends help.</span>
+              Don’t face a health or safety emergency alone.
             </h1>
             
             <p className="text-xl text-gray-700 max-w-lg leading-relaxed">
-              A <strong>fall</strong>, a <strong>crash</strong>, or a <strong>sudden health scare</strong> can leave you unable to call for help. That’s a scary moment for anyone. MySentry watches for <strong>falls</strong>, <strong>crashes</strong>, and <strong>abnormal vitals</strong> using your <strong>smart watch and phone</strong>. Alerts trigger automatically, <strong>24/7 responders</strong> can act, and your family stays informed. So you live with more confidence every day and fewer what if fears at night.
+              MySentry detects falls, crashes, and abnormal vitals and alerts 24/7 responders with live video, location, and vitals so help can be dispatched fast.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
