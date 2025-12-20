@@ -73,7 +73,7 @@ export default function Families() {
             initial={{ opacity: 0, scale: 0.95, x: 30 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="block relative perspective-1000 mt-12 lg:mt-0"
+            className="block relative perspective-1000 mt-12 lg:mt-0 w-full"
           >
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform hover:rotate-y-2 transition-transform duration-700 group">
               <img 
@@ -84,7 +84,7 @@ export default function Families() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               
               {/* Device Compatibility Overlay */}
-              <div className="absolute top-8 right-8 flex flex-col gap-3">
+              <div className="absolute top-4 right-4 lg:top-8 lg:right-8 flex flex-col gap-2 lg:gap-3 scale-90 lg:scale-100 origin-top-right">
                 <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-white/50 flex items-center gap-3 animate-[slideInRight_1s_ease-out]">
                   <div className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center">
                     <Smartphone className="h-4 w-4 text-gray-900" />
@@ -105,13 +105,13 @@ export default function Families() {
                 </div>
               </div>
 
-              <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-xl p-5 rounded-2xl shadow-lg border border-white/50 animate-[float_6s_ease-in-out_infinite]">
+              <div className="absolute bottom-4 left-4 right-4 lg:bottom-8 lg:left-8 lg:right-8 bg-white/90 backdrop-blur-xl p-3 lg:p-5 rounded-2xl shadow-lg border border-white/50 animate-[float_6s_ease-in-out_infinite]">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2 lg:gap-4">
                     <div className="flex -space-x-3">
-                      <div className="h-10 w-10 rounded-full border-2 border-white bg-blue-100 flex items-center justify-center text-xs font-bold shadow-sm">Dad</div>
-                      <div className="h-10 w-10 rounded-full border-2 border-white bg-pink-100 flex items-center justify-center text-xs font-bold shadow-sm">Mom</div>
-                      <div className="h-10 w-10 rounded-full border-2 border-white bg-green-100 flex items-center justify-center text-xs font-bold shadow-sm">Sam</div>
+                      <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-full border-2 border-white bg-blue-100 flex items-center justify-center text-[10px] lg:text-xs font-bold shadow-sm">Dad</div>
+                      <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-full border-2 border-white bg-pink-100 flex items-center justify-center text-[10px] lg:text-xs font-bold shadow-sm">Mom</div>
+                      <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-full border-2 border-white bg-green-100 flex items-center justify-center text-[10px] lg:text-xs font-bold shadow-sm">Sam</div>
                     </div>
                     <div>
                       <p className="font-bold text-gray-900">All Devices Connected</p>

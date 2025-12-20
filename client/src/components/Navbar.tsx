@@ -29,7 +29,7 @@ export default function Navbar() {
               <img src="/images/logo.png" alt="MySentry" className="h-14 w-auto" />
             </a>
           </Link>
-          <span className="text-xs font-bold text-primary tracking-tight mt-1 hidden lg:block">
+          <span className="text-[10px] lg:text-xs font-bold text-primary tracking-tight mt-1 block">
             24/7 Safety & Health Monitoring
           </span>
         </div>

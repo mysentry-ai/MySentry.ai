@@ -55,7 +55,7 @@ export default function Seniors() {
             initial={{ opacity: 0, scale: 0.95, x: 30 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="block relative perspective-1000 mt-12 lg:mt-0"
+            className="block relative perspective-1000 mt-12 lg:mt-0 w-full"
           >
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform hover:rotate-y-2 transition-transform duration-700 group">
               <img 
@@ -66,14 +66,14 @@ export default function Seniors() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               
               {/* Floating UI Card */}
-              <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-xl p-5 rounded-2xl shadow-lg border border-white/50 animate-[float_6s_ease-in-out_infinite]">
-                <div className="flex items-center gap-4">
-                  <div className="h-12 w-12 rounded-full bg-green-100 flex items-center justify-center border border-green-200">
-                    <Activity className="h-6 w-6 text-green-600" />
+              <div className="absolute bottom-4 left-4 right-4 lg:bottom-8 lg:left-8 lg:right-8 bg-white/90 backdrop-blur-xl p-3 lg:p-5 rounded-2xl shadow-lg border border-white/50 animate-[float_6s_ease-in-out_infinite]">
+                <div className="flex items-center gap-2 lg:gap-4">
+                  <div className="h-10 w-10 lg:h-12 lg:w-12 rounded-full bg-green-100 flex items-center justify-center border border-green-200">
+                    <Activity className="h-5 w-5 lg:h-6 lg:w-6 text-green-600" />
                   </div>
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <p className="font-bold text-gray-900 text-lg">Vitals Normal</p>
+                      <p className="font-bold text-gray-900 text-base lg:text-lg">Vitals Normal</p>
                       <CheckCircle2 className="h-4 w-4 text-green-500" />
                     </div>
                     <div className="flex gap-4 text-xs font-medium text-gray-600">

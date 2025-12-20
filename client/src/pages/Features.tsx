@@ -55,12 +55,12 @@ export default function Features() {
             transition={{ duration: 0.8 }}
             className="order-1 lg:order-1 mb-12 lg:mb-0"
           >
-            <div className="aspect-square rounded-[3rem] bg-gray-50 border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
+            <div className="aspect-[4/3] lg:aspect-square rounded-[2rem] lg:rounded-[3rem] bg-gray-50 border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
               <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-50" />
-              <ShieldAlert className="h-48 w-48 text-red-500/20 group-hover:scale-110 transition-transform duration-700" />
+              <ShieldAlert className="h-32 w-32 lg:h-48 lg:w-48 text-red-500/20 group-hover:scale-110 transition-transform duration-700" />
               
               {/* Floating UI */}
-              <div className="absolute bottom-12 left-12 right-12 bg-white/90 backdrop-blur-xl p-6 rounded-2xl shadow-lg border border-white/50 animate-[float_5s_ease-in-out_infinite]">
+              <div className="absolute bottom-6 left-6 right-6 lg:bottom-12 lg:left-12 lg:right-12 bg-white/90 backdrop-blur-xl p-4 lg:p-6 rounded-2xl shadow-lg border border-white/50 animate-[float_5s_ease-in-out_infinite]">
                 <div className="flex items-center gap-4">
                   <div className="h-12 w-12 rounded-full bg-red-100 flex items-center justify-center animate-pulse">
                     <AlertTriangle className="h-6 w-6 text-red-600" />
@@ -168,12 +168,12 @@ export default function Features() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="aspect-square rounded-[3rem] bg-white border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
+            <div className="aspect-[4/3] lg:aspect-square rounded-[2rem] lg:rounded-[3rem] bg-white border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
               <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-transparent opacity-50" />
-              <Activity className="h-48 w-48 text-orange-500/20 group-hover:scale-110 transition-transform duration-700" />
+              <Activity className="h-32 w-32 lg:h-48 lg:w-48 text-orange-500/20 group-hover:scale-110 transition-transform duration-700" />
               
               {/* Floating UI */}
-              <div className="absolute top-1/3 right-12 bg-white/90 backdrop-blur-xl p-4 rounded-2xl shadow-lg border border-white/50 animate-[float_6s_ease-in-out_infinite]">
+              <div className="absolute top-1/3 right-6 lg:right-12 bg-white/90 backdrop-blur-xl p-3 lg:p-4 rounded-2xl shadow-lg border border-white/50 animate-[float_6s_ease-in-out_infinite]">
                 <div className="flex items-center gap-3">
                   <div className="h-10 w-10 rounded-full bg-orange-100 flex items-center justify-center">
                     <Zap className="h-5 w-5 text-orange-600" />
@@ -198,9 +198,9 @@ export default function Features() {
             transition={{ duration: 0.8 }}
             className="order-1 lg:order-1 mb-12 lg:mb-0"
           >
-            <div className="aspect-square rounded-[3rem] bg-gray-50 border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
+            <div className="aspect-[4/3] lg:aspect-square rounded-[2rem] lg:rounded-[3rem] bg-gray-50 border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-transparent opacity-50" />
-              <AlertTriangle className="h-48 w-48 text-yellow-500/20 group-hover:scale-110 transition-transform duration-700" />
+              <AlertTriangle className="h-32 w-32 lg:h-48 lg:w-48 text-yellow-500/20 group-hover:scale-110 transition-transform duration-700" />
             </div>
           </motion.div>
 
@@ -278,7 +278,7 @@ export default function Features() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="aspect-square rounded-[3rem] bg-white border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
+            <div className="aspect-[4/3] lg:aspect-square rounded-[2rem] lg:rounded-[3rem] bg-white border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-50" />
               <Car className="h-48 w-48 text-blue-500/20 group-hover:scale-110 transition-transform duration-700" />
             </div>

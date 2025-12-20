@@ -94,11 +94,11 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95, x: 30 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative h-[500px] lg:h-[800px] w-full block perspective-1000 mt-12 lg:mt-0"
+            className="relative h-[600px] lg:h-[800px] w-full block perspective-1000 mt-12 lg:mt-0"
           >
             <div className="absolute inset-0 flex items-start pt-10 justify-center transform hover:rotate-y-2 transition-transform duration-700">
                {/* Main Visual - Rapid Response Monitoring Center */}
-               <div className="relative w-[550px] h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white z-10 group">
+               <div className="relative w-[300px] h-[220px] lg:w-[550px] lg:h-[400px] rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white z-10 group">
                  <img 
                    src="/images/home-protection-bubble.png" 
                    alt="MySentry Protection Bubble" 
@@ -128,7 +128,7 @@ export default function Home() {
                </svg>
 
                {/* Event Card - Fall Detection */}
-               <div className="absolute top-12 -left-8 w-[280px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_6s_ease-in-out_infinite]">
+               <div className="absolute top-0 left-0 lg:top-12 lg:-left-8 w-[240px] lg:w-[280px] bg-white/90 backdrop-blur-xl p-3 lg:p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_6s_ease-in-out_infinite] scale-90 lg:scale-100 origin-top-left">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className="bg-red-100 p-2 rounded-xl">
@@ -153,7 +153,7 @@ export default function Home() {
                </div>
 
                {/* Event Card - Crash Detection */}
-               <div className="absolute top-40 -right-12 w-[280px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_5s_ease-in-out_infinite_1s]">
+               <div className="absolute top-24 -right-4 lg:top-40 lg:-right-12 w-[240px] lg:w-[280px] bg-white/90 backdrop-blur-xl p-3 lg:p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_5s_ease-in-out_infinite_1s] scale-90 lg:scale-100 origin-top-right">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className="bg-orange-100 p-2 rounded-xl">
@@ -178,7 +178,7 @@ export default function Home() {
                </div>
 
                {/* Event Card - Health Scare */}
-               <div className="absolute bottom-48 -left-12 w-[280px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_7s_ease-in-out_infinite_2s]">
+               <div className="absolute bottom-32 -left-4 lg:bottom-48 lg:-left-12 w-[240px] lg:w-[280px] bg-white/90 backdrop-blur-xl p-3 lg:p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_7s_ease-in-out_infinite_2s] scale-90 lg:scale-100 origin-bottom-left">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className="bg-blue-100 p-2 rounded-xl">
@@ -200,7 +200,7 @@ export default function Home() {
                </div>
 
                {/* Emergency Contacts Card */}
-               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[320px] bg-white/90 backdrop-blur-xl p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_8s_ease-in-out_infinite_0.5s]">
+               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[280px] lg:w-[320px] bg-white/90 backdrop-blur-xl p-3 lg:p-4 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-white/50 z-30 animate-[float_8s_ease-in-out_infinite_0.5s] scale-90 lg:scale-100 origin-bottom">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="bg-green-100 p-2 rounded-xl">
                       <Users className="h-5 w-5 text-green-600" />

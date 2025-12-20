@@ -57,7 +57,7 @@ export default function Females() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="relative mt-12 lg:mt-0"
+              className="relative mt-12 lg:mt-0 w-full"
             >
               <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 <img 
@@ -71,17 +71,17 @@ export default function Females() {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 1, duration: 0.5 }}
-                  className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-lg border border-primary/10"
+                  className="absolute bottom-4 left-4 right-4 lg:bottom-6 lg:left-6 lg:right-6 bg-white/95 backdrop-blur-md p-3 lg:p-4 rounded-xl shadow-lg border border-primary/10"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="h-10 w-10 rounded-full bg-red-100 flex items-center justify-center">
+                  <div className="flex items-center gap-2 lg:gap-4">
+                    <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-full bg-red-100 flex items-center justify-center shrink-0">
                       <Bell className="h-5 w-5 text-red-600 animate-pulse" />
                     </div>
                     <div>
-                      <p className="font-bold text-[#1a1a1a]">Panic Alarm Activated</p>
-                      <p className="text-xs text-gray-600">Live video shared with 5 contacts + 911</p>
+                      <p className="font-bold text-[#1a1a1a] text-sm lg:text-base">Panic Alarm Activated</p>
+                      <p className="text-[10px] lg:text-xs text-gray-600">Live video shared with 5 contacts + 911</p>
                     </div>
-                    <Button size="sm" className="ml-auto bg-red-600 hover:bg-red-700 text-white rounded-full px-4">
+                    <Button size="sm" className="ml-auto bg-red-600 hover:bg-red-700 text-white rounded-full px-3 lg:px-4 text-xs lg:text-sm h-8 lg:h-9">
                       Help Arriving
                     </Button>
                   </div>
