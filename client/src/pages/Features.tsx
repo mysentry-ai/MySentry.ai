@@ -30,11 +30,10 @@ export default function Features() {
             
 
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 leading-[1.1] tracking-tight">
-              Safety. Health. <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Connectivity.</span>
+              Everything you need for real time safety and health monitoring.
             </h1>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-              MySentry combines three essential pillars to keep you safe, healthy, and connected. Eight integrated features work together 24/7 to detect problems early, respond instantly, and keep your family informed.
+              MySentry detects falls, crashes, and abnormal Health Vitals using your smartwatch and phone, then alerts 24/7 responders with live video, location, and Health Vitals so help can be dispatched fast.
             </p>
             
             <Link href="/pricing">

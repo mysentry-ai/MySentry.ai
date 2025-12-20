@@ -39,11 +39,10 @@ export default function Employers() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 leading-[1.1] tracking-tight">
-              Protect your employees. <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Boost your bottom line.</span>
+              Protect your people when minutes matter and they cannot call for help.
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              When employees feel safe and healthy, they're more productive, more loyal, and less likely to leave. MySentry handles all the safety monitoring. You get the results: reduced downtime, lower insurance costs, and increased revenue.
+              Workplace accidents and health emergencies happen fast. Often, the employee cannot call for help. MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 responders with live video, location, and Health Vitals so help can be dispatched fast and you stay informed.
             </p>
             
             <Link href="/pricing">

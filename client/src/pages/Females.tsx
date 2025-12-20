@@ -22,11 +22,10 @@ export default function Females() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] leading-tight mb-6">
-                Live Freedom. <br/>
-                <span className="text-primary">Without Fear.</span>
+                Feel safer wherever you go, even when you cannot speak up.
               </h1>
               <p className="text-xl text-[#1a1a1a] mb-8 max-w-xl leading-relaxed">
-                The world can feel unsafe. Walking to your car. Living alone. Going for a run. MySentry turns the watch you already wear into a 24/7 personal bodyguard and health guardian. So you can live your life on your terms.
+                Unsafe moments can escalate quickly and calling for help is not always possible. MySentry detects emergencies and abnormal Health Vitals and alerts 24/7 responders with live video, location, and Health Vitals so help can be dispatched fast and your trusted contacts stay updated.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/pricing">

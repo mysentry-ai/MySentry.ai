@@ -28,61 +28,11 @@ export default function Seniors() {
             className="max-w-xl"
           >
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 leading-[1.1] tracking-tight">
-              Stay Independent. <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">With help ready when you can't call.</span>
+              Stay independent with help ready when you cannot call.
             </h1>
-            
-            <div className="space-y-6 mb-8">
-              <div className="flex gap-4">
-                <div className="mt-1 h-8 w-8 rounded-full bg-red-100 flex items-center justify-center shrink-0">
-                  <AlertCircle className="h-5 w-5 text-red-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 text-lg">The Problem</h3>
-                  <p className="text-gray-600 leading-relaxed">Falls and sudden health events can leave seniors unable to reach a phone or press a button.</p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="mt-1 h-8 w-8 rounded-full bg-orange-100 flex items-center justify-center shrink-0">
-                  <Heart className="h-5 w-5 text-orange-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 text-lg">The Fear</h3>
-                  <p className="text-gray-600 leading-relaxed">That vulnerability is frightening for seniors and the people who love them.</p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="mt-1 h-8 w-8 rounded-full bg-green-100 flex items-center justify-center shrink-0">
-                  <Shield className="h-5 w-5 text-green-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 text-lg">The Answer</h3>
-                  <p className="text-gray-600 leading-relaxed">MySentry watches for falls, crashes, and abnormal vitals using your watch and phone.</p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="mt-1 h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center shrink-0">
-                  <Zap className="h-5 w-5 text-blue-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 text-lg">The Change</h3>
-                  <p className="text-gray-600 leading-relaxed">Alerts trigger automatically, 24/7 responders can dispatch help, and family stays informed.</p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="mt-1 h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center shrink-0">
-                  <UserCheck className="h-5 w-5 text-purple-600" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-gray-900 text-lg">The Result</h3>
-                  <p className="text-gray-600 leading-relaxed">More independence for seniors and more peace of mind for families.</p>
-                </div>
-              </div>
-            </div>
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              Falls and sudden health events can leave seniors unable to reach a phone or press a button. MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 responders with live video, location, and Health Vitals so help can be dispatched fast and loved ones stay informed.
+            </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Link href="/pricing">

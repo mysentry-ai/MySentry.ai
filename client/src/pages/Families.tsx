@@ -30,12 +30,10 @@ export default function Families() {
             
 
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 leading-[1.1] tracking-tight">
-              One Subscription. <br/>
-              Any Device. <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Total Protection.</span>
+              Protect your loved ones when you cannot be there.
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Your family is unique. Your devices are mixed. MySentry bridges the gap, connecting <strong>smartphones and smartwatches</strong> (iOS, Android, Apple Watch, Samsung Watch) into one seamless safety network. No one gets left behind.
+              One subscription works across devices to protect your whole family. A fall, a crash, or a sudden health scare can leave your loved one unable to call for help. MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 responders with live video, location, and Health Vitals so help can be dispatched fast and your family stays informed.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
