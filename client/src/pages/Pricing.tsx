@@ -141,7 +141,7 @@ export default function Pricing() {
   return (
     <Layout>
       {/* Hero */}
-      <section className="relative min-h-[40vh] flex items-center overflow-hidden bg-[#e8f5e9] pt-16">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-[#e8f5e9] pt-16">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-secondary/5 blur-[100px]" />
           <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-[#d4edda] blur-[100px]" />
@@ -152,17 +152,22 @@ export default function Pricing() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl"
+            className="max-w-7xl mx-auto"
           >
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <h1 className="text-5xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-6">
-                Safety and Health Monitoring for Everyone within Every Budget
-              </h1>
-              <img src="/images/safety-dispenser.png" alt="Safety Dispenser" className="w-full md:w-1/2 max-w-[400px] rounded-2xl shadow-xl" />
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+              <div className="lg:w-1/2">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
+                  Safety and Health Monitoring for Everyone within Every Budget
+                </h1>
+              </div>
+              <div className="lg:w-1/2 flex justify-center lg:justify-end">
+                <img 
+                  src="/images/safety-dispenser.png" 
+                  alt="Safety Dispenser" 
+                  className="w-full max-w-[600px] rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500" 
+                />
+              </div>
             </div>
-            <p className="text-xl text-[#1a1a1a] mb-8">
-              
-            </p>
           </motion.div>
         </div>
       </section>

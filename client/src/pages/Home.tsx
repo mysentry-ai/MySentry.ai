@@ -395,7 +395,7 @@ export default function Home() {
             </Button>
           </Link>
           <p className="mt-6 text-white/70 text-sm">
-            No credit card required for demo • Cancel anytime
+            Cancel anytime
           </p>
         </div>
       </section>

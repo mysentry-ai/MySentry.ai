@@ -4,14 +4,16 @@ import { Activity, AlertTriangle, Phone, CheckCircle2, MapPin, Video, Shield, He
 import { Button } from "@/components/ui/button";
 
 export default function SafetySimulation() {
-  const [status, setStatus] = useState<"idle" | "detecting" | "alerting" | "connected">("idle");
-  const [activeScenario, setActiveScenario] = useState<"fall" | "panic" | null>(null);
+  const [status, setStatus] = useState<"idle" | "detecting" | "verifying" | "alerting" | "connected">("idle");
+  const [activeScenario, setActiveScenario] = useState<"fall" | "panic" | "health" | null>(null);
   const [progress, setProgress] = useState(0);
+  const [countdown, setCountdown] = useState(30);
 
-  const startSimulation = (scenario: "fall" | "panic") => {
+  const startSimulation = (scenario: "fall" | "panic" | "health") => {
     setStatus("detecting");
     setActiveScenario(scenario);
     setProgress(0);
+    setCountdown(30);
   };
 
   const resetSimulation = () => {
@@ -22,13 +24,30 @@ export default function SafetySimulation() {
 
   useEffect(() => {
     let timer: NodeJS.Timeout;
+    let interval: NodeJS.Timeout;
 
     if (status === "detecting") {
       timer = setTimeout(() => {
-        setStatus("alerting");
+        if (activeScenario === "fall" || activeScenario === "health") {
+          setStatus("verifying");
+        } else {
+          setStatus("alerting");
+        }
       }, 1500);
+    } else if (status === "verifying") {
+      interval = setInterval(() => {
+        setCountdown((prev) => {
+          if (prev <= 1) {
+            clearInterval(interval);
+            setStatus("alerting");
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 100); // Speed up countdown for demo purposes (100ms instead of 1000ms)
+      return () => clearInterval(interval);
     } else if (status === "alerting") {
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         setProgress((prev) => {
           if (prev >= 100) {
             clearInterval(interval);
@@ -41,8 +60,11 @@ export default function SafetySimulation() {
       return () => clearInterval(interval);
     }
 
-    return () => clearTimeout(timer);
-  }, [status]);
+    return () => {
+      clearTimeout(timer);
+      clearInterval(interval);
+    };
+  }, [status, activeScenario]);
 
   return (
     <section className="py-24 bg-white overflow-hidden">
@@ -70,41 +92,59 @@ export default function SafetySimulation() {
             <div className="space-y-8">
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold text-[#1a1a1a]">1. Choose a Scenario</h3>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-3 gap-4">
                   <button
                     onClick={() => startSimulation("fall")}
                     disabled={status !== "idle"}
-                    className={`p-6 rounded-2xl border-2 text-left transition-all duration-300 group ${
+                    className={`p-4 rounded-2xl border-2 text-left transition-all duration-300 group ${
                       activeScenario === "fall"
                         ? "border-red-500 bg-red-50"
                         : "border-gray-200 bg-white hover:border-red-200 hover:shadow-lg"
                     } ${status !== "idle" && activeScenario !== "fall" ? "opacity-50 cursor-not-allowed" : ""}`}
                   >
-                    <div className={`h-12 w-12 rounded-full flex items-center justify-center mb-4 transition-colors ${
+                    <div className={`h-10 w-10 rounded-full flex items-center justify-center mb-3 transition-colors ${
                       activeScenario === "fall" ? "bg-red-100 text-red-600" : "bg-gray-100 text-gray-600 group-hover:bg-red-50 group-hover:text-red-500"
                     }`}>
-                      <Activity className="h-6 w-6" />
+                      <Activity className="h-5 w-5" />
                     </div>
-                    <div className="font-bold text-lg text-[#1a1a1a] mb-1">Simulate Fall</div>
-                    <div className="text-sm text-gray-500">Hard impact detected</div>
+                    <div className="font-bold text-base text-[#1a1a1a] mb-1">Fall</div>
+                    <div className="text-xs text-gray-500">Impact detected</div>
+                  </button>
+
+                  <button
+                    onClick={() => startSimulation("health")}
+                    disabled={status !== "idle"}
+                    className={`p-4 rounded-2xl border-2 text-left transition-all duration-300 group ${
+                      activeScenario === "health"
+                        ? "border-blue-500 bg-blue-50"
+                        : "border-gray-200 bg-white hover:border-blue-200 hover:shadow-lg"
+                    } ${status !== "idle" && activeScenario !== "health" ? "opacity-50 cursor-not-allowed" : ""}`}
+                  >
+                    <div className={`h-10 w-10 rounded-full flex items-center justify-center mb-3 transition-colors ${
+                      activeScenario === "health" ? "bg-blue-100 text-blue-600" : "bg-gray-100 text-gray-600 group-hover:bg-blue-50 group-hover:text-blue-500"
+                    }`}>
+                      <HeartPulse className="h-5 w-5" />
+                    </div>
+                    <div className="font-bold text-base text-[#1a1a1a] mb-1">Health</div>
+                    <div className="text-xs text-gray-500">Vitals alert</div>
                   </button>
 
                   <button
                     onClick={() => startSimulation("panic")}
                     disabled={status !== "idle"}
-                    className={`p-6 rounded-2xl border-2 text-left transition-all duration-300 group ${
+                    className={`p-4 rounded-2xl border-2 text-left transition-all duration-300 group ${
                       activeScenario === "panic"
                         ? "border-orange-500 bg-orange-50"
                         : "border-gray-200 bg-white hover:border-orange-200 hover:shadow-lg"
                     } ${status !== "idle" && activeScenario !== "panic" ? "opacity-50 cursor-not-allowed" : ""}`}
                   >
-                    <div className={`h-12 w-12 rounded-full flex items-center justify-center mb-4 transition-colors ${
+                    <div className={`h-10 w-10 rounded-full flex items-center justify-center mb-3 transition-colors ${
                       activeScenario === "panic" ? "bg-orange-100 text-orange-600" : "bg-gray-100 text-gray-600 group-hover:bg-orange-50 group-hover:text-orange-500"
                     }`}>
-                      <AlertTriangle className="h-6 w-6" />
+                      <AlertTriangle className="h-5 w-5" />
                     </div>
-                    <div className="font-bold text-lg text-[#1a1a1a] mb-1">Panic Alert</div>
-                    <div className="text-sm text-gray-500">Manual SOS trigger</div>
+                    <div className="font-bold text-base text-[#1a1a1a] mb-1">Panic</div>
+                    <div className="text-xs text-gray-500">SOS trigger</div>
                   </button>
                 </div>
               </div>
@@ -114,11 +154,20 @@ export default function SafetySimulation() {
                 <div className="space-y-3">
                   <ResponseStep 
                     active={status !== "idle"} 
-                    completed={status === "alerting" || status === "connected"}
+                    completed={status === "verifying" || status === "alerting" || status === "connected"}
                     icon={Shield}
                     label="Event Detected"
                     desc="Sensors identify emergency instantly"
                   />
+                  {(activeScenario === "fall" || activeScenario === "health") && (
+                    <ResponseStep 
+                      active={status === "verifying" || status === "alerting" || status === "connected"} 
+                      completed={status === "alerting" || status === "connected"}
+                      icon={CheckCircle2}
+                      label="User Verification"
+                      desc={`Waiting for user response (${status === "verifying" ? countdown : 0}s)`}
+                    />
+                  )}
                   <ResponseStep 
                     active={status === "alerting" || status === "connected"} 
                     completed={status === "connected"}
@@ -177,7 +226,7 @@ export default function SafetySimulation() {
                     </motion.div>
                   )}
 
-                  {status === "detecting" && (
+                  {(status === "detecting" || status === "verifying") && (
                     <motion.div
                       key="detecting"
                       initial={{ scale: 1.5, opacity: 0 }}
@@ -186,22 +235,32 @@ export default function SafetySimulation() {
                       className="text-center"
                     >
                       <div className={`h-32 w-32 rounded-full flex items-center justify-center mx-auto mb-6 ${
-                        activeScenario === "fall" ? "bg-red-500/20" : "bg-orange-500/20"
+                        activeScenario === "fall" ? "bg-red-500/20" : activeScenario === "health" ? "bg-blue-500/20" : "bg-orange-500/20"
                       }`}>
-                        <div className={`h-24 w-24 rounded-full flex items-center justify-center animate-ping ${
-                          activeScenario === "fall" ? "bg-red-500" : "bg-orange-500"
+                        <div className={`h-24 w-24 rounded-full flex items-center justify-center ${status === "verifying" ? "animate-pulse" : "animate-ping"} ${
+                          activeScenario === "fall" ? "bg-red-500" : activeScenario === "health" ? "bg-blue-500" : "bg-orange-500"
                         }`}>
                           {activeScenario === "fall" ? (
                             <Activity className="h-10 w-10 text-white" />
+                          ) : activeScenario === "health" ? (
+                            <HeartPulse className="h-10 w-10 text-white" />
                           ) : (
                             <AlertTriangle className="h-10 w-10 text-white" />
                           )}
                         </div>
                       </div>
                       <h3 className="text-2xl font-bold text-white mb-2">
-                        {activeScenario === "fall" ? "FALL DETECTED" : "PANIC ALERT"}
+                        {activeScenario === "fall" ? "FALL DETECTED" : activeScenario === "health" ? "VITALS ALERT" : "PANIC ALERT"}
                       </h3>
-                      <p className="text-white/60">Analyzing sensor data...</p>
+                      {status === "verifying" ? (
+                        <div className="space-y-2">
+                          <p className="text-white/80">Waiting for user response...</p>
+                          <div className="text-4xl font-mono font-bold text-white">{countdown}s</div>
+                          <p className="text-white/40 text-sm">Alert sent if no response</p>
+                        </div>
+                      ) : (
+                        <p className="text-white/60">Analyzing sensor data...</p>
+                      )}
                     </motion.div>
                   )}
 
