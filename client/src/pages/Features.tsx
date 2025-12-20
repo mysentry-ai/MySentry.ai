@@ -87,7 +87,7 @@ export default function Features() {
               </div>
               <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
                 Help with one tap. <br/>
-                <span className="text-gray-400">Or one word.</span>
+                <span className="text-gray-400">Or just words.</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Panic button on your phone or watch. Voice activation works even when your screen is locked. An agent answers in seconds. No waiting. No confusion. Just help.
@@ -97,9 +97,9 @@ export default function Features() {
             <ul className="space-y-4">
               {[
                 "One-tap panic button on phone and watch",
-                "Voice activation ('Help' or 'MySentry') in 6 languages",
-                "Instant live video connection with agent",
-                "Automatic location sent to emergency contacts"
+                "Voice activation ('Hey Siri Need Help')",
+                "Instant live video connection with emergency contacts and agent",
+                "Automatic location and health vitals sent to emergency contacts and agent"
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-4">
                   <div className="h-8 w-8 rounded-full bg-red-50 flex items-center justify-center shrink-0">
@@ -145,7 +145,7 @@ export default function Features() {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { title: "2 Second Detection", desc: "Faster than you can press a button." },
-                { title: "15 Second Countdown", desc: "Cancel if it was a false alarm." },
+                { title: "30 Second Countdown", desc: "Cancel if it was a false alarm." },
                 { title: "Works at Any Angle", desc: "Standing, sitting, or lying down." },
                 { title: "Live Video Instantly", desc: "Agent sees exactly what happened." }
               ].map((item, i) => (
@@ -220,7 +220,7 @@ export default function Features() {
                 <span className="text-gray-400">before they happen.</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Your watch detects a sudden drop in heart rate while you're walking—a sign you might lose balance. MySentry alerts you immediately so you can steady yourself.
+                Your watch detects a sudden drop in heart rate while you're walking, a sign you might lose balance. MySentry alerts you immediately so you can steady yourself.
               </p>
             </div>
 
@@ -228,7 +228,7 @@ export default function Features() {
               {[
                 "Real-Time Heart Rate Monitoring while walking",
                 "Immediate Alert to steady yourself",
-                "Monitoring Team alerted and standing by",
+                "Emergency Contacts alerted and standing by",
                 "Proactive prevention, not just reaction"
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-4">
@@ -274,7 +274,7 @@ export default function Features() {
                 <span className="text-gray-400">Monitored 24/7.</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Continuous monitoring of heart rate and oxygen levels. Abnormal readings trigger instant alerts to you and your safety network. Stay ahead of potential health issues.
+                Continuous monitoring of heart rate and oxygen levels. Abnormal readings trigger instant alerts to you and your emergency contacts and agent. Stay ahead of potential health issues.
               </p>
             </div>
           </motion.div>
@@ -300,7 +300,7 @@ export default function Features() {
                 <span className="text-gray-400">for every driver.</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Your phone detects high-speed impacts. If you don't respond, it sends your location to emergency services and your family. Works for teen drivers, elderly parents, and everyone in between.
+                Your phone detects high-speed impacts. If you don't respond, it sends your location and health vitals to emergency services and your emergency contacts. Works for teen drivers, elderly parents, and everyone in between.
               </p>
             </div>
 
@@ -351,11 +351,11 @@ export default function Features() {
                 Feature 06
               </div>
               <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
-                Your location shared. <br/>
+                Share your location. <br/>
                 <span className="text-gray-400">Automatically.</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Set intervals for automatic location updates to your emergency contacts. You don't have to remember to check in. MySentry does it for you, ensuring your loved ones always know you're safe.
+                Set intervals for automatic location updates to your emergency contacts. You don't have to remember to check in. MySentry does it for you, ensuring your loved ones always know where you are.
               </p>
             </div>
           </motion.div>
@@ -381,7 +381,7 @@ export default function Features() {
                 <span className="text-gray-400">Do it safely.</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Set a timer before meeting strangers or going on dates. If you don't check in, we automatically alert your emergency contacts with your last known location and live audio.
+                Tell MySentry before meeting strangers or going on dates. It will send you notification 10 minutes after your meeting finishes. If you don't react, MySentry automatically alerts your emergency contacts and agent with your last known location and health vitals.
               </p>
             </div>
           </motion.div>
@@ -430,7 +430,7 @@ export default function Features() {
                 <span className="text-gray-400">Automated peace of mind.</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Schedule automated check-in calls for elderly parents or lone workers. If they don't answer, we escalate to emergency contacts immediately.
+                Schedule automated check-in calls to get out of bizarre situations.
               </p>
             </div>
           </motion.div>
@@ -455,8 +455,8 @@ export default function Features() {
                 24/7 Professional Monitoring. <br/>
                 <span className="text-gray-400">Real humans. Real help.</span>
               </h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Our certified emergency response agents are standing by 24/7/365. When an alert is triggered, they assess the situation via live audio/video and dispatch police, fire, or EMS immediately.
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Our certified emergency response agents are standing by 24/7/365. When a panic alarm is triggered directly or indirectly, they assess the situation via live audio/video and dispatch police, fire, or EMS immediately.
               </p>
             </div>
           </motion.div>
@@ -503,7 +503,7 @@ export default function Features() {
                 <span className="text-gray-400">Your personal safety net.</span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Add up to 5 trusted family members or friends. They receive instant alerts with your location and live status whenever you need help. Keep your loved ones in the loop, automatically.
+                Add up to 5 trusted family members or friends. They receive instant alerts with your location and health vitals whenever you need help. Keep your loved ones in the loop, automatically.
               </p>
             </div>
           </motion.div>
@@ -521,7 +521,7 @@ export default function Features() {
             Experience all 8 features risk-free. No contracts. Cancel anytime.
           </p>
           <Link href="/pricing">
-            <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-white text-black hover:bg-gray-100 font-bold shadow-2xl hover:shadow-white/20 transition-all hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
+            <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-white text-[#000000] hover:bg-gray-100 font-bold shadow-2xl hover:shadow-white/20 transition-all hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
               Start 7-Day Free Trial
             </Button>
           </Link>

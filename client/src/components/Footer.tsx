@@ -14,7 +14,7 @@ export default function Footer() {
               </a>
             </Link>
             <p className="text-sm text-foreground leading-relaxed">
-              Your Vital Companion. Safety and health monitoring for everyone.
+              24/7 Safety and Health Monitoring for everyone with Emergency Response.
             </p>
             <div className="flex gap-4 pt-2">
               <a href="#" className="text-foreground hover:text-primary transition-colors">
