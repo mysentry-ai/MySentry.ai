@@ -164,7 +164,7 @@ export default function Pricing() {
                 <img 
                   src="/images/safety-dispenser.png" 
                   alt="Safety Dispenser" 
-                  className="w-full max-w-[600px] rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500" 
+                  className="w-full max-w-[800px] rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500" 
                 />
               </div>
             </div>
@@ -174,8 +174,8 @@ export default function Pricing() {
 
       {/* Pricing Toggle */}
       <section className="py-6 bg-[#e8f5e9] border-t border-primary/10">
-        <div className="container">
-          <div className="flex items-center justify-center gap-2 p-1 bg-[#c8e6c9] rounded-full inline-flex border border-primary/20 mx-auto">
+        <div className="container flex justify-center">
+          <div className="flex items-center justify-center gap-2 p-1 bg-[#c8e6c9] rounded-full inline-flex border border-primary/20">
             <button 
               onClick={() => setIsAnnual(false)}
               className={cn(
