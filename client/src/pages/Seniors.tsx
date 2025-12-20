@@ -55,7 +55,7 @@ export default function Seniors() {
             initial={{ opacity: 0, scale: 0.95, x: 30 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="hidden lg:block relative perspective-1000"
+            className="block relative perspective-1000 mt-12 lg:mt-0"
           >
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform hover:rotate-y-2 transition-transform duration-700 group">
               <img 
@@ -171,7 +171,7 @@ export default function Seniors() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="relative order-2 lg:order-1"
+              className="relative order-1 lg:order-1 mb-12 lg:mb-0"
             >
               <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white">
                 <img 
@@ -191,7 +191,7 @@ export default function Seniors() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8 order-1 lg:order-2"
+              className="space-y-8 order-2 lg:order-2"
             >
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-bold uppercase tracking-wider mb-6">

@@ -74,7 +74,7 @@ export default function Employers() {
             initial={{ opacity: 0, scale: 0.95, x: 30 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="hidden lg:block relative perspective-1000"
+            className="block relative perspective-1000 mt-12 lg:mt-0"
           >
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform hover:rotate-y-2 transition-transform duration-700 group">
               <img 

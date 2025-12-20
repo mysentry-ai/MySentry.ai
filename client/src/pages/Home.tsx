@@ -94,7 +94,7 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95, x: 30 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="relative h-[800px] w-full hidden lg:block perspective-1000"
+            className="relative h-[500px] lg:h-[800px] w-full block perspective-1000 mt-12 lg:mt-0"
           >
             <div className="absolute inset-0 flex items-start pt-10 justify-center transform hover:rotate-y-2 transition-transform duration-700">
                {/* Main Visual - Rapid Response Monitoring Center */}

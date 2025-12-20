@@ -53,7 +53,7 @@ export default function Features() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="order-2 lg:order-1"
+            className="order-1 lg:order-1 mb-12 lg:mb-0"
           >
             <div className="aspect-square rounded-[3rem] bg-gray-50 border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
               <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-50" />
@@ -78,7 +78,7 @@ export default function Features() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="order-1 lg:order-2 space-y-8"
+            className="order-2 lg:order-2 space-y-8"
           >
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wider mb-6">
@@ -196,7 +196,7 @@ export default function Features() {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="order-2 lg:order-1"
+            className="order-1 lg:order-1 mb-12 lg:mb-0"
           >
             <div className="aspect-square rounded-[3rem] bg-gray-50 border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
               <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-transparent opacity-50" />
@@ -208,7 +208,7 @@ export default function Features() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="order-1 lg:order-2 space-y-8"
+            className="order-2 lg:order-2 space-y-8"
           >
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-bold uppercase tracking-wider mb-6">
