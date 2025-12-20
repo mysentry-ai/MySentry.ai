@@ -51,12 +51,11 @@ export default function Home() {
             
             
             <h1 className="text-5xl md:text-7xl font-heading font-bold leading-[1.1] tracking-tight text-[#1a1a1a]">
-              Live freely. <br/>
-              <span className="text-primary">We'll handle the emergencies.</span>
+              Don’t face a health or safety emergency alone.
             </h1>
             
             <p className="text-xl text-gray-700 max-w-lg leading-relaxed">
-              Falls, crashes, and health scares shouldn't stop you from living your life. MySentry detects emergencies instantly and alerts 24/7 responders with your location and vitals, so you can live with confidence.
+              MySentry turns your smartwatch and phone into real-time safety and health monitoring. It detects falls, crashes, and abnormal Health Vitals and sends live video, location, and Health Vitals to 24/7 responders so help can be dispatched fast.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
