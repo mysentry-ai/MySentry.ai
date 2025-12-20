@@ -243,7 +243,45 @@ export default function Features() {
         </div>
       </section>
 
-      {/* Feature 4: Crash Detection */}
+      {/* Feature 4: Real-time Health Monitoring */}
+      <section className="py-24 border-t border-gray-100 bg-white relative overflow-hidden">
+        <div className="container grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="order-1 lg:order-1 mb-12 lg:mb-0"
+          >
+            <div className="aspect-[4/3] lg:aspect-square rounded-[2rem] lg:rounded-[3rem] bg-gray-50 border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-50" />
+              <HeartPulse className="h-32 w-32 lg:h-48 lg:w-48 text-green-500/20 group-hover:scale-110 transition-transform duration-700" />
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="order-2 lg:order-2 space-y-8"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider mb-6">
+                <HeartPulse className="h-3 w-3" />
+                Feature 04
+              </div>
+              <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
+                Your heart health. <br/>
+                <span className="text-gray-400">Monitored 24/7.</span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Continuous monitoring of heart rate and oxygen levels. Abnormal readings trigger instant alerts to you and your safety network. Stay ahead of potential health issues.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Feature 5: Crash Detection */}
       <section className="py-24 border-t border-gray-100 bg-[#f8fafc] relative overflow-hidden">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <motion.div 
@@ -255,7 +293,7 @@ export default function Features() {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
                 <Car className="h-3 w-3" />
-                Feature 04
+                Feature 05
               </div>
               <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
                 Crash detection <br/>
@@ -281,6 +319,192 @@ export default function Features() {
             <div className="aspect-[4/3] lg:aspect-square rounded-[2rem] lg:rounded-[3rem] bg-white border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-50" />
               <Car className="h-48 w-48 text-blue-500/20 group-hover:scale-110 transition-transform duration-700" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Feature 6: Smart Connectivity */}
+      <section className="py-24 border-t border-gray-100 bg-white relative overflow-hidden">
+        <div className="container grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="order-1 lg:order-1 mb-12 lg:mb-0"
+          >
+            <div className="aspect-[4/3] lg:aspect-square rounded-[2rem] lg:rounded-[3rem] bg-gray-50 border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent opacity-50" />
+              <Smartphone className="h-32 w-32 lg:h-48 lg:w-48 text-purple-500/20 group-hover:scale-110 transition-transform duration-700" />
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="order-2 lg:order-2 space-y-8"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-bold uppercase tracking-wider mb-6">
+                <Smartphone className="h-3 w-3" />
+                Feature 06
+              </div>
+              <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
+                Always connected. <br/>
+                <span className="text-gray-400">Never alone.</span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Seamless integration with your existing devices. Works with Apple Watch, Samsung Galaxy Watch, iPhone, and Android. Your safety net travels with you, everywhere.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Feature 7: Meet Safe */}
+      <section className="py-24 border-t border-gray-100 bg-[#f8fafc] relative overflow-hidden">
+        <div className="container grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-100 text-pink-700 text-xs font-bold uppercase tracking-wider mb-6">
+                <Lock className="h-3 w-3" />
+                Feature 07
+              </div>
+              <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
+                Meeting someone new? <br/>
+                <span className="text-gray-400">Do it safely.</span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Set a timer before meeting strangers or going on dates. If you don't check in, we automatically alert your emergency contacts with your last known location and live audio.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="aspect-[4/3] lg:aspect-square rounded-[2rem] lg:rounded-[3rem] bg-white border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-50 to-transparent opacity-50" />
+              <Lock className="h-32 w-32 lg:h-48 lg:w-48 text-pink-500/20 group-hover:scale-110 transition-transform duration-700" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Feature 8: Automated Call */}
+      <section className="py-24 border-t border-gray-100 bg-white relative overflow-hidden">
+        <div className="container grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="order-1 lg:order-1 mb-12 lg:mb-0"
+          >
+            <div className="aspect-[4/3] lg:aspect-square rounded-[2rem] lg:rounded-[3rem] bg-gray-50 border border-gray-100 flex items-center justify-center relative overflow-hidden shadow-2xl group">
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 to-transparent opacity-50" />
+              <Smartphone className="h-32 w-32 lg:h-48 lg:w-48 text-indigo-500/20 group-hover:scale-110 transition-transform duration-700" />
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="order-2 lg:order-2 space-y-8"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wider mb-6">
+                <Smartphone className="h-3 w-3" />
+                Feature 08
+              </div>
+              <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
+                Check-in calls. <br/>
+                <span className="text-gray-400">Automated peace of mind.</span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Schedule automated check-in calls for elderly parents or lone workers. If they don't answer, we escalate to emergency contacts immediately.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Component 1: 24/7 Professional Monitoring */}
+      <section className="py-24 bg-[#1a1a1a] text-white relative overflow-hidden">
+        <div className="container grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="space-y-8"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white text-xs font-bold uppercase tracking-wider mb-6 border border-white/20">
+                <Users className="h-3 w-3" />
+                Premium Component
+              </div>
+              <h2 className="text-4xl font-heading font-bold mb-6 leading-tight">
+                24/7 Professional Monitoring. <br/>
+                <span className="text-gray-400">Real humans. Real help.</span>
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                Our certified emergency response agents are standing by 24/7/365. When an alert is triggered, they assess the situation via live audio/video and dispatch police, fire, or EMS immediately.
+              </p>
+            </div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="aspect-video rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent opacity-30" />
+               <Users className="h-32 w-32 text-white/20" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Component 2: 5 Emergency Contacts */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="container grid lg:grid-cols-2 gap-20 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="order-2 lg:order-1"
+          >
+            <div className="aspect-video rounded-3xl bg-gray-50 border border-gray-100 flex items-center justify-center relative overflow-hidden">
+               <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-50" />
+               <Users className="h-32 w-32 text-green-500/20" />
+            </div>
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="order-1 lg:order-2 space-y-8"
+          >
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold uppercase tracking-wider mb-6">
+                <Users className="h-3 w-3" />
+                Core Component
+              </div>
+              <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
+                5 Emergency Contacts. <br/>
+                <span className="text-gray-400">Your personal safety net.</span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Add up to 5 trusted family members or friends. They receive instant alerts with your location and live status whenever you need help. Keep your loved ones in the loop, automatically.
+              </p>
             </div>
           </motion.div>
         </div>

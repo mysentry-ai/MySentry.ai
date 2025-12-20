@@ -128,7 +128,7 @@ export default function Employers() {
               <div className="h-14 w-14 rounded-2xl bg-red-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <DollarSign className="h-7 w-7 text-red-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Downtime costs explode.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">1. Downtime costs explode.</h3>
               <p className="text-gray-600 leading-relaxed">
                 One workplace injury = lost productivity, medical costs, workers' comp claims, and replacement worker expenses. Average cost: $47,000 per incident.
               </p>
@@ -143,7 +143,7 @@ export default function Employers() {
               <div className="h-14 w-14 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Users className="h-7 w-7 text-orange-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Retention plummets.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">2. Retention plummets.</h3>
               <p className="text-gray-600 leading-relaxed">
                 Employees who don't feel protected leave. Replacing a single employee costs 50-200% of their salary. Your best people walk out the door.
               </p>
@@ -158,9 +158,39 @@ export default function Employers() {
               <div className="h-14 w-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <TrendingUp className="h-7 w-7 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Insurance premiums rise.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">3. Insurance premiums rise.</h3>
               <p className="text-gray-600 leading-relaxed">
                 More claims = higher premiums. Fewer incidents = lower rates. MySentry reduces both the incidents and the claims.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="h-14 w-14 rounded-2xl bg-purple-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Clock className="h-7 w-7 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">4. Lone Worker Risks.</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Employees working alone are vulnerable. <strong>Automated Check-ins</strong> ensure they are safe without constant supervision.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="h-14 w-14 rounded-2xl bg-indigo-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Shield className="h-7 w-7 text-indigo-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">5. Liability Concerns.</h3>
+              <p className="text-gray-600 leading-relaxed">
+                "Did we do enough?" <strong>Smart Connectivity</strong> provides a digital paper trail of safety checks and rapid response, proving duty of care.
               </p>
             </motion.div>
           </div>

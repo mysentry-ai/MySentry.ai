@@ -156,7 +156,7 @@ export default function Families() {
               <div className="h-14 w-14 rounded-2xl bg-red-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <AlertCircle className="h-7 w-7 text-red-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Safety happens in seconds.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">1. Safety happens in seconds.</h3>
               <p className="text-gray-600 leading-relaxed">
                 A fall. A crash. A panic. By the time you hear about it, precious minutes are gone. MySentry alerts you instantly so you can act.
               </p>
@@ -171,7 +171,7 @@ export default function Families() {
               <div className="h-14 w-14 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Heart className="h-7 w-7 text-orange-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Health problems whisper.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">2. Health problems whisper.</h3>
               <p className="text-gray-600 leading-relaxed">
                 A stroke doesn't announce itself. An irregular heartbeat goes unnoticed. But your <strong>watch and phone</strong> see it. And alert you before it becomes critical.
               </p>
@@ -186,9 +186,39 @@ export default function Families() {
               <div className="h-14 w-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Smartphone className="h-7 w-7 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Mixed devices? No problem.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">3. Mixed devices? No problem.</h3>
               <p className="text-gray-600 leading-relaxed">
                 Mom has an iPhone. Dad has Android. Kids have Samsung watches. MySentry connects everyone seamlessly. No "green bubble" drama—just safety.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="h-14 w-14 rounded-2xl bg-purple-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Users className="h-7 w-7 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">4. Who are they meeting?</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Teens meeting friends? Parents meeting contractors? <strong>Meet Safe</strong> sets a timer. If they don't check in, you get their location and live audio instantly.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
+            >
+              <div className="h-14 w-14 rounded-2xl bg-indigo-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Clock className="h-7 w-7 text-indigo-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">5. Did they get home?</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Don't be the nagging parent. <strong>Automated Check-ins</strong> ask "Are you safe?" for you. If they don't answer, we escalate to you immediately.
               </p>
             </motion.div>
           </div>

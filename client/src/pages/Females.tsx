@@ -113,7 +113,7 @@ export default function Females() {
               <div className="h-14 w-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                 <Lock className="h-7 w-7 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">The "Keys in Hand" Walk</h3>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">1. The "Keys in Hand" Walk</h3>
               <p className="text-[#1a1a1a] mb-4">
                 Walking to your car at night with keys between your fingers isn't freedom. It's survival mode.
               </p>
@@ -129,7 +129,7 @@ export default function Females() {
               <div className="h-14 w-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                 <Activity className="h-7 w-7 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">Health Emergencies Alone</h3>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">2. Health Emergencies Alone</h3>
               <p className="text-[#1a1a1a] mb-4">
                 Living alone means if you faint, fall, or have a medical event, no one might know for days.
               </p>
@@ -145,7 +145,7 @@ export default function Females() {
               <div className="h-14 w-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
                 <Smartphone className="h-7 w-7 text-primary" />
               </div>
-              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">The Dating App Risk</h3>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">3. The Dating App Risk</h3>
               <p className="text-[#1a1a1a] mb-4">
                 Meeting a stranger from an app? Sending your location to 3 friends shouldn't be your only safety net.
               </p>
@@ -153,6 +153,38 @@ export default function Females() {
                 <p className="text-sm font-bold text-primary mb-1">Did you know?</p>
                 <p className="text-xs text-[#1a1a1a]">
                   MySentry's "MeetSafe" feature automatically alerts contacts if you don't check in after a date.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-[#e8f5e9] border border-primary/10 hover:shadow-lg transition-all">
+              <div className="h-14 w-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                <Bell className="h-7 w-7 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">4. Harassment & Stalking</h3>
+              <p className="text-[#1a1a1a] mb-4">
+                Unwanted attention can escalate fast. You need a way to signal for help without escalating the situation.
+              </p>
+              <div className="bg-white p-4 rounded-xl border border-primary/10">
+                <p className="text-sm font-bold text-primary mb-1">Discreet Alert</p>
+                <p className="text-xs text-[#1a1a1a]">
+                  Trigger a silent alarm from your watch. No one needs to know you've called for help until it arrives.
+                </p>
+              </div>
+            </div>
+
+            <div className="p-8 rounded-3xl bg-[#e8f5e9] border border-primary/10 hover:shadow-lg transition-all">
+              <div className="h-14 w-14 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm">
+                <Check className="h-7 w-7 text-primary" />
+              </div>
+              <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">5. "Did You Get Home?"</h3>
+              <p className="text-[#1a1a1a] mb-4">
+                Forgetting to text your friends you're safe causes panic. Automate your safety checks.
+              </p>
+              <div className="bg-white p-4 rounded-xl border border-primary/10">
+                <p className="text-sm font-bold text-primary mb-1">Automated Call</p>
+                <p className="text-xs text-[#1a1a1a]">
+                  Schedule a check-in call. If you don't answer, we alert your friends automatically.
                 </p>
               </div>
             </div>

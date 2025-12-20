@@ -116,13 +116,14 @@ export default function Seniors() {
               </div>
 
               <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">What MySentry monitors:</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-6">Top 5 Senior Safety Challenges Solved:</h3>
                 <ul className="space-y-4">
                   {[
-                    { title: "Resting Heart Rate", desc: "Detects irregular patterns that signal heart problems" },
-                    { title: "Heart Rate Variability (HRV)", desc: "Measures your heart's ability to adapt—a key health indicator" },
-                    { title: "Blood Oxygen (SpO₂)", desc: "Alerts if oxygen levels drop, indicating respiratory distress" },
-                    { title: "Wrist Temperature", desc: "Detects fever and inflammation before you feel sick" }
+                    { title: "1. The Fear of Falling Alone", desc: "Automatic Fall Detection calls for help even if you can't reach the phone." },
+                    { title: "2. Silent Health Issues", desc: "24/7 Heart & Oxygen monitoring catches problems before they become emergencies." },
+                    { title: "3. Losing Independence", desc: "No need for a caregiver to watch you 24/7. MySentry is your silent guardian." },
+                    { title: "4. Forgetting to Check In", desc: "Automated Calls check on you daily. If you don't answer, we alert your family." },
+                    { title: "5. Confusing Technology", desc: "Smart Connectivity works with the watch you already own. No new gadgets to learn." }
                   ].map((item, idx) => (
                     <li key={idx} className="flex gap-4 items-start">
                       <div className="mt-1 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
