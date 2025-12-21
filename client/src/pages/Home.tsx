@@ -56,7 +56,7 @@ export default function Home() {
             </h1>
             
             <p className="text-xl text-gray-700 max-w-lg leading-relaxed">
-              MySentry turns your smartwatch and phone into real-time safety and health monitoring. It detects falls, crashes, and abnormal Health Vitals and sends live video, location, and Health Vitals to 24/7 responders so help can be dispatched fast.
+              MySentry turns your smartwatch and phone into real-time safety and health monitoring. It detects falls, crashes, and abnormal Health Vitals and sends live video, location, and Health Vitals to 24/7 professional monitoring so help can be dispatched fast.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
