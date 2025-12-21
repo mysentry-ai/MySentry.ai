@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ArrowRight, Watch, Smartphone, Activity, HeartPulse, ShieldAlert, Video, CheckCircle2, Star, AlertTriangle, MapPin, Play, Users, Lock } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -60,17 +61,13 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
-              <Link href="/pricing" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto h-14 sm:h-16 px-6 sm:px-10 text-base sm:text-lg rounded-full bg-primary text-[#000000] hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
-                  Start 7-Day Free Trial
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
+              <Link href="/pricing" className={cn(buttonVariants({ size: "lg" }), "w-full sm:w-auto h-14 sm:h-16 px-6 sm:px-10 text-base sm:text-lg rounded-full bg-primary text-[#000000] hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1")} onClick={() => window.scrollTo(0, 0)}>
+                Start 7-Day Free Trial
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
-              <Link href="/features" className="w-full sm:w-auto">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto h-14 sm:h-16 px-6 sm:px-10 text-base sm:text-lg rounded-full border-2 border-primary/20 text-[#1a1a1a] hover:bg-primary/5 hover:border-primary/40 font-semibold backdrop-blur-sm">
-                  <Play className="mr-2 h-5 w-5 fill-current" />
-                  See How It Works
-                </Button>
+              <Link href="/features" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "w-full sm:w-auto h-14 sm:h-16 px-6 sm:px-10 text-base sm:text-lg rounded-full border-2 border-primary/20 text-[#1a1a1a] hover:bg-primary/5 hover:border-primary/40 font-semibold backdrop-blur-sm")}>
+                <Play className="mr-2 h-5 w-5 fill-current" />
+                See How It Works
               </Link>
             </div>
             
