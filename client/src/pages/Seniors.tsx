@@ -31,7 +31,7 @@ export default function Seniors() {
               Stay independent with help ready when you cannot call.
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Falls and sudden health events can leave seniors unable to reach a phone or press a button. MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 responders with live video, location, and Health Vitals so help can be dispatched fast and loved ones stay informed.
+              Falls and sudden health events can leave seniors unable to reach a phone or press a button. MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 professional monitoring with live video, location, and Health Vitals so help can be dispatched fast and loved ones stay informed.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">

@@ -25,7 +25,7 @@ export default function Females() {
                 Feel safer wherever you go, even when you cannot speak up.
               </h1>
               <p className="text-xl text-[#1a1a1a] mb-8 max-w-xl leading-relaxed">
-                Unsafe moments can escalate quickly and calling for help is not always possible. MySentry detects emergencies and abnormal Health Vitals and alerts 24/7 responders with live video, location, and Health Vitals so help can be dispatched fast and your trusted contacts stay updated.
+                Unsafe moments can escalate quickly and calling for help is not always possible. MySentry detects emergencies and abnormal Health Vitals and alerts 24/7 professional monitoring with live video, location, and Health Vitals so help can be dispatched fast and your trusted contacts stay updated.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/pricing">

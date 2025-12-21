@@ -42,7 +42,7 @@ export default function Employers() {
               Protect your people when minutes matter and they cannot call for help.
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Workplace accidents and health emergencies happen fast. Often, the employee cannot call for help. MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 responders with live video, location, and Health Vitals so help can be dispatched fast and you stay informed.
+              Workplace accidents and health emergencies happen fast. Often, the employee cannot call for help. MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 professional monitoring with live video, location, and Health Vitals so help can be dispatched fast and you stay informed.
             </p>
             
             <Link href="/pricing">

@@ -33,7 +33,7 @@ export default function Families() {
               Protect your loved ones when you cannot be there.
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              One subscription works across devices to protect your whole family. A fall, a crash, or a sudden health scare can leave your loved one unable to call for help. MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 responders with live video, location, and Health Vitals so help can be dispatched fast and your family stays informed.
+              One subscription works across devices to protect your whole family. A fall, a crash, or a sudden health scare can leave your loved one unable to call for help. MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 professional monitoring with live video, location, and Health Vitals so help can be dispatched fast and your family stays informed.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

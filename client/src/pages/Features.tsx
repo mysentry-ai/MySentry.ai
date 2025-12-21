@@ -33,7 +33,7 @@ export default function Features() {
               Everything you need for real time safety and health monitoring.
             </h1>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-              MySentry detects falls, crashes, and abnormal Health Vitals using your smartwatch and phone, then alerts 24/7 responders with live video, location, and Health Vitals so help can be dispatched fast.
+              MySentry detects falls, crashes, and abnormal Health Vitals using your smartwatch and phone, then alerts 24/7 professional monitoring with live video, location, and Health Vitals so help can be dispatched fast.
             </p>
             
             <Link href="/pricing">
