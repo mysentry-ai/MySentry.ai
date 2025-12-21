@@ -56,7 +56,7 @@ export default function Navbar() {
           ))}
           <Link href="/pricing">
             <Button className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8 py-6 text-lg shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-              Start Free Trial
+              Start 7-Day Free Trial
             </Button>
           </Link>
         </div>
@@ -89,7 +89,7 @@ export default function Navbar() {
             ))}
             <Link href="/pricing">
               <Button className="w-full bg-primary text-white rounded-full" onClick={() => setIsOpen(false)}>
-                Start Free Trial
+                Start 7-Day Free Trial
               </Button>
             </Link>
           </div>
