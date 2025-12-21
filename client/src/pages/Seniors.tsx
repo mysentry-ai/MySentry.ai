@@ -122,8 +122,8 @@ export default function Seniors() {
                     { title: "1. The Fear of Falling Alone", desc: "Automatic Fall Detection calls for help even if you can't reach the phone." },
                     { title: "2. Silent Health Issues", desc: "24/7 Heart & Oxygen monitoring catches problems before they become emergencies." },
                     { title: "3. Losing Independence", desc: "No need for a caregiver to watch you 24/7. MySentry is your silent guardian." },
-                    { title: "4. Forgetting to Check In", desc: "Automated Calls check on you daily. If you don't answer, we alert your family." },
-                    { title: "5. Confusing Technology", desc: "Smart Connectivity automatically shares your location. No complex setup, just peace of mind." }
+                    { title: "4. Near Fall Detection", desc: "Detects sudden drops in heart rate while walking to warn you before a fall happens." },
+                    { title: "5. Panic Alarm Trigger", desc: "Voice or tap activation instantly alerts 24/7 professional monitoring if you need any kind of help." }
                   ].map((item, idx) => (
                     <li key={idx} className="flex gap-4 items-start">
                       <div className="mt-1 h-6 w-6 rounded-full bg-green-100 flex items-center justify-center shrink-0">
