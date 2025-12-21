@@ -30,8 +30,6 @@ export default function Employers() {
             transition={{ duration: 0.8 }}
             className="max-w-xl"
           >
-
-
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 leading-[1.1] tracking-tight">
               Protect your people when minutes matter and they cannot call for help.
             </h1>
