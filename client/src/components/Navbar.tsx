@@ -45,7 +45,15 @@ export default function Navbar() {
           <Link href="/">
             <a className="flex items-center gap-3 group">
               {/* Only show the image logo, remove text duplication if logo contains text */}
-              <img src="/images/logo.png" alt="MySentry" className="h-14 w-auto transition-transform duration-300 group-hover:scale-105" />
+              {/* Apply brightness-0 invert filter when on transparent background (home) to make logo white */}
+              <img 
+                src="/images/logo.png" 
+                alt="MySentry" 
+                className={cn(
+                  "h-14 w-auto transition-all duration-300 group-hover:scale-105",
+                  !scrolled && isHome ? "brightness-0 invert" : ""
+                )} 
+              />
             </a>
           </Link>
         </div>
@@ -56,7 +64,7 @@ export default function Navbar() {
             <Link key={link.name} href={link.href}>
               <a
                 className={cn(
-                  "text-base font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
+                  "text-lg font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
                   // Logic for text color: 
                   // If scrolled -> Dark text
                   // If NOT scrolled AND on Home page -> White text (for video background)
