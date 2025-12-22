@@ -325,6 +325,91 @@ export default function Features() {
         </div>
       </section>
 
+      {/* COMPARISON TABLE SECTION */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Why Choose MySentry</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-6 text-[#1a1a1a]">
+              See How We Stack Up
+            </h2>
+            <p className="text-xl text-gray-600">
+              Compare MySentry against traditional medical alert systems and standard smartwatches.
+            </p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[800px] border-collapse">
+              <thead>
+                <tr>
+                  <th className="p-6 text-left w-1/3"></th>
+                  <th className="p-6 text-center bg-[#e8f5e9] rounded-t-2xl border-b-4 border-primary w-1/4">
+                    <div className="flex flex-col items-center gap-2">
+                      <img src="/images/logo.png" alt="MySentry" className="h-8 w-auto" />
+                      <span className="font-bold text-xl text-[#1a1a1a]">MySentry</span>
+                    </div>
+                  </th>
+                  <th className="p-6 text-center w-1/4">
+                    <span className="font-bold text-lg text-gray-500">Traditional<br/>Medical Alerts</span>
+                  </th>
+                  <th className="p-6 text-center w-1/4">
+                    <span className="font-bold text-lg text-gray-500">Standard<br/>Smartwatches</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { feature: "Device Required", mySentry: "Your Own Watch/Phone", trad: "Bulky Pendant", watch: "Smartwatch" },
+                  { feature: "24/7 Professional Monitoring", mySentry: true, trad: true, watch: false },
+                  { feature: "Live Video Evidence", mySentry: true, trad: false, watch: false },
+                  { feature: "Real-Time Health Vitals", mySentry: true, trad: false, watch: "Basic" },
+                  { feature: "Fall Detection", mySentry: "Advanced AI", trad: "Basic (Extra Cost)", watch: "Basic" },
+                  { feature: "Crash Detection", mySentry: true, trad: false, watch: "Some Models" },
+                  { feature: "Near-Fall Prediction", mySentry: true, trad: false, watch: false },
+                  { feature: "Family App Dashboard", mySentry: true, trad: "Limited", watch: "Limited" },
+                ].map((row, i) => (
+                  <tr key={i} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                    <td className="p-6 font-bold text-lg text-[#1a1a1a]">{row.feature}</td>
+                    <td className="p-6 text-center bg-[#e8f5e9]/30 border-x border-green-100">
+                      {row.mySentry === true ? (
+                        <CheckCircle2 className="h-8 w-8 text-primary mx-auto fill-green-100" />
+                      ) : (
+                        <span className="font-bold text-primary text-lg">{row.mySentry}</span>
+                      )}
+                    </td>
+                    <td className="p-6 text-center text-gray-500">
+                      {row.trad === true ? (
+                        <Check className="h-6 w-6 text-gray-400 mx-auto" />
+                      ) : row.trad === false ? (
+                        <span className="text-gray-300 font-bold text-xl">×</span>
+                      ) : (
+                        <span className="text-sm font-medium">{row.trad}</span>
+                      )}
+                    </td>
+                    <td className="p-6 text-center text-gray-500">
+                      {row.watch === true ? (
+                        <Check className="h-6 w-6 text-gray-400 mx-auto" />
+                      ) : row.watch === false ? (
+                        <span className="text-gray-300 font-bold text-xl">×</span>
+                      ) : (
+                        <span className="text-sm font-medium">{row.watch}</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+                {/* Last row for rounded corners background */}
+                <tr>
+                  <td></td>
+                  <td className="bg-[#e8f5e9]/30 rounded-b-2xl h-4"></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
       {/* CTA SECTION */}
       <section className="py-32 bg-primary text-white text-center">
         <div className="container max-w-4xl">
