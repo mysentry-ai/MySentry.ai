@@ -102,7 +102,7 @@ export default function Home() {
             </div>
             <div className="space-y-4 border-t-4 border-primary pt-8">
               <Activity className="h-12 w-12 text-primary" />
-              <h3 className="text-2xl font-heading font-bold uppercase tracking-wide text-[#1a1a1a]">24/7 Professional Response</h3>
+              <h3 className="text-2xl font-heading font-bold uppercase tracking-wide text-[#1a1a1a]">24/7 Professional Monitoring</h3>
               <p className="text-gray-600 leading-relaxed font-medium">
                 Our certified monitoring center is always watching. We dispatch police, fire, or EMS with your exact location and health data.
               </p>
