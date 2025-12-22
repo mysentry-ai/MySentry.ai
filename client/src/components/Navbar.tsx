@@ -1,6 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
@@ -28,50 +28,46 @@ export default function Navbar() {
   ];
 
   const isActive = (path: string) => location === path;
+  const isHome = location === "/";
 
   return (
     <nav 
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300 border-b",
         scrolled 
-          ? "bg-white/95 backdrop-blur-md border-gray-200 py-2 shadow-sm" 
-          : "bg-transparent border-transparent py-4"
+          ? "bg-white/95 backdrop-blur-md border-gray-200 py-3 shadow-sm" 
+          : "bg-transparent border-transparent py-6"
       )}
     >
       <div className="container flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo - Cleaned up to remove duplication */}
         <div className="flex items-center gap-4">
           <Link href="/">
-            <a className="flex items-center gap-2 group">
-              <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto transition-transform duration-300 group-hover:scale-105" />
-              <div className="flex flex-col">
-                <span className={cn(
-                  "font-heading font-bold text-2xl tracking-tighter leading-none",
-                  scrolled ? "text-gray-900" : "text-gray-900" // Always dark for visibility unless on dark hero
-                )}>
-                  MYSENTRY
-                </span>
-                <span className="text-[10px] font-bold tracking-widest uppercase text-primary">
-                  24/7 MONITORING
-                </span>
-              </div>
+            <a className="flex items-center gap-3 group">
+              {/* Only show the image logo, remove text duplication if logo contains text */}
+              <img src="/images/logo.png" alt="MySentry" className="h-14 w-auto transition-transform duration-300 group-hover:scale-105" />
             </a>
           </Link>
         </div>
 
-        {/* Desktop Nav - Whoop Style: Uppercase, Bold, Condensed */}
-        <div className="hidden lg:flex items-center gap-8">
+        {/* Desktop Nav - Increased Size & Visibility */}
+        <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href}>
               <a
                 className={cn(
-                  "text-sm font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
-                  isActive(link.href) ? "text-primary" : "text-gray-800"
+                  "text-base font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
+                  // Logic for text color: 
+                  // If scrolled -> Dark text
+                  // If NOT scrolled AND on Home page -> White text (for video background)
+                  // If NOT scrolled AND NOT on Home page -> Dark text (default)
+                  scrolled ? "text-gray-900" : (isHome ? "text-white hover:text-white/80" : "text-gray-900"),
+                  isActive(link.href) ? "text-primary" : ""
                 )}
               >
                 {link.name}
                 <span className={cn(
-                  "absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full",
+                  "absolute -bottom-2 left-0 w-0 h-[3px] bg-primary transition-all duration-300 group-hover:w-full",
                   isActive(link.href) ? "w-full" : ""
                 )} />
               </a>
@@ -83,7 +79,12 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center">
           <Link href="/pricing">
             <Button 
-              className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-8 h-12 text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+              className={cn(
+                "font-bold uppercase tracking-wider rounded-full px-8 h-12 text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300",
+                scrolled 
+                  ? "bg-primary text-white hover:bg-primary/90" 
+                  : (isHome ? "bg-white text-black hover:bg-gray-100" : "bg-primary text-white hover:bg-primary/90")
+              )}
             >
               Start 7-Day Free Trial
             </Button>
@@ -92,10 +93,13 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="lg:hidden p-2 text-gray-900"
+          className={cn(
+            "lg:hidden p-2 transition-colors",
+            scrolled ? "text-gray-900" : (isHome ? "text-white" : "text-gray-900")
+          )}
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X className="h-8 w-8" /> : <Menu className="h-8 w-8" />}
+          {isOpen ? <X className="h-8 w-8 text-gray-900" /> : <Menu className="h-8 w-8" />}
         </button>
       </div>
 
