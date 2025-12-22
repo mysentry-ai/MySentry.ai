@@ -10,10 +10,10 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/">
               <a className="flex items-center gap-2">
-                <img src="/images/mysentry-logo.png" alt="MySentry" className="h-8 w-auto" />
+                <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
               </a>
             </Link>
-            <p className="text-sm text-foreground leading-relaxed">
+            <p className="text-base text-foreground leading-relaxed font-medium">
               24/7 Safety and Health Monitoring for everyone with Emergency Response.
             </p>
             <div className="flex gap-4 pt-2">
@@ -34,8 +34,8 @@ export default function Footer() {
 
           {/* Solutions */}
           <div>
-            <h3 className="font-bold text-foreground mb-4">Solutions</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-bold text-lg text-foreground mb-4 uppercase tracking-wide">Solutions</h3>
+            <ul className="space-y-3 text-base font-medium">
               <li>
                 <Link href="/seniors">
                   <a className="text-foreground hover:text-primary transition-colors">For Seniors</a>
@@ -56,8 +56,8 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-bold text-foreground mb-4">Company</h3>
-            <ul className="space-y-2 text-sm">
+            <h3 className="font-bold text-lg text-foreground mb-4 uppercase tracking-wide">Company</h3>
+            <ul className="space-y-3 text-base font-medium">
               <li>
                 <Link href="/about">
                   <a className="text-foreground hover:text-primary transition-colors">About Us</a>
@@ -93,8 +93,8 @@ export default function Footer() {
 
           {/* Stay Updated */}
           <div>
-            <h3 className="font-bold text-foreground mb-4">Stay Updated</h3>
-            <p className="text-sm text-foreground mb-4">
+            <h3 className="font-bold text-lg text-foreground mb-4 uppercase tracking-wide">Stay Updated</h3>
+            <p className="text-base text-foreground mb-4 font-medium">
               Subscribe to our newsletter for the latest safety tips and product updates.
             </p>
             <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>

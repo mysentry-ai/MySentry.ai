@@ -3,6 +3,7 @@ import SEO from "@/components/SEO";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Activity, HeartPulse, ShieldAlert, CheckCircle2, Play, Star } from "lucide-react";
+import HowItWorksDemo from "@/components/HowItWorksDemo";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 
@@ -62,6 +63,22 @@ export default function Home() {
               </Link>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS DEMO */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Simple & Effective</span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold uppercase tracking-tight mb-6 text-[#1a1a1a]">
+              Protection in Motion
+            </h2>
+            <p className="text-xl text-gray-600">
+              See how MySentry protects you from the moment an incident occurs to the arrival of help.
+            </p>
+          </div>
+          <HowItWorksDemo />
         </div>
       </section>
 
