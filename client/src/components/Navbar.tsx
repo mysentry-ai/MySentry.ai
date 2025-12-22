@@ -28,7 +28,7 @@ export default function Navbar() {
   ];
 
   const isActive = (path: string) => location === path;
-  const isHome = location === "/";
+  const isHome = location === "/" || location === "/features";
 
   return (
     <nav 
