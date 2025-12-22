@@ -28,7 +28,8 @@ export default function Navbar() {
   ];
 
   const isActive = (path: string) => location === path;
-  const isHome = location === "/" || location === "/features";
+  const isHome = location === "/";
+  const isFeatures = location === "/features";
 
   return (
     <nav 
@@ -89,7 +90,7 @@ export default function Navbar() {
             <Button 
               className={cn(
                 "font-bold uppercase tracking-wider rounded-full px-8 h-12 text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300",
-                scrolled 
+                  scrolled 
                   ? "bg-primary text-white hover:bg-primary/90" 
                   : (isHome ? "bg-white text-black hover:bg-gray-100" : "bg-primary text-white hover:bg-primary/90")
               )}
