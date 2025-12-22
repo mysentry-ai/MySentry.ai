@@ -3,6 +3,7 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ShieldAlert, Activity, Car, HeartPulse, Video, Smartphone, Watch, Check, ArrowRight, AlertTriangle, MapPin, Zap, CheckCircle2, Lock, Users, TrendingDown, Play, Phone, Heart } from "lucide-react";
+import AlertDemo from "@/components/AlertDemo";
 import { motion } from "framer-motion";
 
 export default function Features() {
@@ -83,8 +84,9 @@ export default function Features() {
             </ul>
           </div>
           <div className="order-1 lg:order-2 relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100">
+            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
               <img src="/images/feature-panic.jpg" alt="Panic Alarm" className="w-full h-full object-cover" />
+              <AlertDemo type="panic" className="absolute inset-0" />
             </div>
           </div>
         </div>
@@ -94,8 +96,9 @@ export default function Features() {
       <section className="py-24 bg-[#e8f5e9]">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200">
+            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
               <img src="/images/feature-fall.jpg" alt="Fall Detection" className="w-full h-full object-cover" />
+              <AlertDemo type="fall" className="absolute inset-0" />
             </div>
           </div>
           <div>
@@ -163,8 +166,9 @@ export default function Features() {
       <section className="py-24 bg-[#e8f5e9]">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200">
+            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
               <img src="/images/feature-crash.png" alt="Crash Detection" className="w-full h-full object-cover" />
+              <AlertDemo type="crash" className="absolute inset-0" />
             </div>
           </div>
           <div>
@@ -236,8 +240,9 @@ export default function Features() {
       <section className="py-24 bg-[#e8f5e9]">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200">
+            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
               <img src="/images/feature-health.jpg" alt="Health Monitoring" className="w-full h-full object-cover" />
+              <AlertDemo type="health" className="absolute inset-0" />
             </div>
           </div>
           <div>
@@ -367,6 +372,7 @@ export default function Features() {
                   { feature: "Crash Detection", mySentry: true, trad: false, watch: "Some Models" },
                   { feature: "Near-Fall Prediction", mySentry: true, trad: false, watch: false },
                   { feature: "Family App Dashboard", mySentry: true, trad: "Limited", watch: "Limited" },
+                  { feature: "Smart Connectivity", mySentry: "Works with Your Devices", trad: "Requires New Hardware", watch: "Limited Compatibility" },
                 ].map((row, i) => (
                   <tr key={i} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
                     <td className="p-6 font-bold text-lg text-[#1a1a1a]">{row.feature}</td>
