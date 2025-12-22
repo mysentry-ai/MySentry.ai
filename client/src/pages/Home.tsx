@@ -82,28 +82,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VALUE PROPOSITION - High Contrast Section */}
-      <section className="py-24 bg-black text-white">
+      {/* VALUE PROPOSITION - Light Green Theme */}
+      <section className="py-24 bg-[#e8f5e9] text-[#1a1a1a]">
         <div className="container">
           <div className="grid md:grid-cols-3 gap-12">
-            <div className="space-y-4 border-t border-white/20 pt-8">
-              <ShieldAlert className="h-10 w-10 text-primary" />
-              <h3 className="text-2xl font-heading font-bold uppercase tracking-wide">Fall & Crash Detection</h3>
-              <p className="text-gray-400 leading-relaxed">
+            <div className="space-y-4 border-t-4 border-primary pt-8">
+              <ShieldAlert className="h-12 w-12 text-primary" />
+              <h3 className="text-2xl font-heading font-bold uppercase tracking-wide text-[#1a1a1a]">Fall & Crash Detection</h3>
+              <p className="text-gray-600 leading-relaxed font-medium">
                 Advanced algorithms detect hard falls and car crashes instantly, alerting our monitoring center even if you can't speak.
               </p>
             </div>
-            <div className="space-y-4 border-t border-white/20 pt-8">
-              <HeartPulse className="h-10 w-10 text-primary" />
-              <h3 className="text-2xl font-heading font-bold uppercase tracking-wide">Health Vitals Monitoring</h3>
-              <p className="text-gray-400 leading-relaxed">
+            <div className="space-y-4 border-t-4 border-primary pt-8">
+              <HeartPulse className="h-12 w-12 text-primary" />
+              <h3 className="text-2xl font-heading font-bold uppercase tracking-wide text-[#1a1a1a]">Health Vitals Monitoring</h3>
+              <p className="text-gray-600 leading-relaxed font-medium">
                 Continuous monitoring of heart rate and vital signs. We detect abnormalities before they become emergencies.
               </p>
             </div>
-            <div className="space-y-4 border-t border-white/20 pt-8">
-              <Activity className="h-10 w-10 text-primary" />
-              <h3 className="text-2xl font-heading font-bold uppercase tracking-wide">24/7 Professional Response</h3>
-              <p className="text-gray-400 leading-relaxed">
+            <div className="space-y-4 border-t-4 border-primary pt-8">
+              <Activity className="h-12 w-12 text-primary" />
+              <h3 className="text-2xl font-heading font-bold uppercase tracking-wide text-[#1a1a1a]">24/7 Professional Response</h3>
+              <p className="text-gray-600 leading-relaxed font-medium">
                 Our certified monitoring center is always watching. We dispatch police, fire, or EMS with your exact location and health data.
               </p>
             </div>
