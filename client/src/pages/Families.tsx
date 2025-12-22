@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Heart, MapPin, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Eye, Smartphone, TrendingDown, Zap, Car, Activity, Watch, Users, Lock } from "lucide-react";
+import { Heart, Shield, Users, Smartphone, MapPin, Bell, CheckCircle2, ArrowRight, Activity, Watch, Lock, Home, Car, Clock, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Families() {
@@ -10,14 +10,14 @@ export default function Families() {
     <Layout>
       <SEO 
         title="Families" 
-        description="Protect your whole family with one subscription. MySentry works across iOS, Android, Apple Watch, and Samsung Watch."
+        description="Protect your whole family with MySentry. Real-time location, crash detection, and health alerts for everyone you love."
       />
       {/* Hero Section - PEACE: The Answer */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-b from-[#e8f5e9] to-white pt-20">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#e8f5e9] pt-20">
         {/* Modern Animated Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-br from-blue-100/30 to-primary/5 blur-[100px] animate-pulse" style={{animationDuration: '8s'}} />
-          <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-gradient-to-tr from-purple-100/30 to-primary/5 blur-[100px] animate-pulse" style={{animationDuration: '10s'}} />
+          <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-gradient-to-tr from-green-100/30 to-primary/5 blur-[100px] animate-pulse" style={{animationDuration: '10s'}} />
         </div>
 
         <div className="container relative z-10 grid lg:grid-cols-2 gap-16 items-center">
@@ -27,43 +27,47 @@ export default function Families() {
             transition={{ duration: 0.8 }}
             className="max-w-xl"
           >
-            
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
+              <Users className="h-3 w-3" />
+              For Modern Families
+            </div>
 
             <h1 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 leading-[1.1] tracking-tight">
-              Protect your loved ones when you cannot be there.
+              One app to protect <br/>
+              <span className="text-primary">everyone you love.</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              One subscription works across devices to protect your whole family. A fall, a crash, or a sudden health scare can leave your loved one unable to call for help. MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 professional monitoring with live video, location, and Health Vitals so help can be dispatched fast and your family stays informed.
+              Kids at school? Parents at home? Teenager driving? MySentry connects your whole family. See real-time locations, get crash alerts, and know instantly if a loved one needs help.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/pricing">
-                <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-black hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
+                <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
                   Start 7-Day Free Trial
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link href="/features">
-                <Button variant="outline" size="lg" className="h-16 px-10 text-lg rounded-full border-2 border-primary/20 text-primary hover:bg-primary/5 hover:border-primary/40 font-semibold backdrop-blur-sm">
-                  <Users className="mr-2 h-5 w-5" />
-                  Family Features
+                <Button variant="outline" size="lg" className="h-16 px-10 text-lg rounded-full border-2 border-primary/20 text-primary hover:bg-primary/5 hover:border-primary/40 font-semibold backdrop-blur-sm bg-white/50">
+                  <Smartphone className="mr-2 h-5 w-5" />
+                  See Features
                 </Button>
               </Link>
             </div>
 
             {/* Trust Indicators */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200">
+            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200/50">
               <div className="fade-in-up">
-                <div className="text-3xl font-bold text-primary">2 sec</div>
-                <p className="text-sm text-gray-600 font-medium">Emergency alert</p>
+                <div className="text-3xl font-bold text-primary">All</div>
+                <p className="text-sm text-gray-600 font-medium">Family Members</p>
               </div>
               <div className="fade-in-up" style={{ animationDelay: "0.1s" }}>
-                <div className="text-3xl font-bold text-primary">24/7</div>
-                <p className="text-sm text-gray-600 font-medium">Health monitoring</p>
+                <div className="text-3xl font-bold text-primary">Real-Time</div>
+                <p className="text-sm text-gray-600 font-medium">Location Sharing</p>
               </div>
               <div className="fade-in-up" style={{ animationDelay: "0.2s" }}>
-                <div className="text-3xl font-bold text-primary">All OS</div>
-                <p className="text-sm text-gray-600 font-medium">iOS & Android</p>
+                <div className="text-3xl font-bold text-primary">24/7</div>
+                <p className="text-sm text-gray-600 font-medium">Emergency Response</p>
               </div>
             </div>
           </motion.div>
@@ -77,57 +81,28 @@ export default function Families() {
           >
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform hover:rotate-y-2 transition-transform duration-700 group">
               <img 
-                src="/images/family-hero-base.jpg" 
-                alt="Happy family using different devices" 
+                src="/images/families-hero.jpg" 
+                alt="Happy family outdoors" 
                 className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               
-              {/* Device Compatibility Overlay */}
-              <div className="absolute top-4 right-4 lg:top-8 lg:right-8 flex flex-col gap-2 lg:gap-3 scale-90 lg:scale-100 origin-top-right">
-                <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-white/50 flex items-center gap-3 animate-[slideInRight_1s_ease-out]">
-                  <div className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center">
-                    <Smartphone className="h-4 w-4 text-gray-900" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-gray-900">iOS & Android</p>
-                    <p className="text-[10px] text-gray-500">Fully Compatible</p>
-                  </div>
-                </div>
-                <div className="bg-white/90 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-white/50 flex items-center gap-3 animate-[slideInRight_1s_ease-out_0.2s]">
-                  <div className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center">
-                    <Watch className="h-4 w-4 text-gray-900" />
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-gray-900">Apple & Samsung</p>
-                    <p className="text-[10px] text-gray-500">Smart Watches</p>
-                  </div>
-                </div>
-              </div>
-
               <div className="absolute bottom-4 left-4 right-4 lg:bottom-8 lg:left-8 lg:right-8 bg-white/90 backdrop-blur-xl p-3 lg:p-5 rounded-2xl shadow-lg border border-white/50 animate-[float_6s_ease-in-out_infinite]">
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2 lg:gap-4">
-                    <div className="flex -space-x-3">
-                      <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-full border-2 border-white bg-blue-100 flex items-center justify-center text-[10px] lg:text-xs font-bold shadow-sm">Dad</div>
-                      <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-full border-2 border-white bg-pink-100 flex items-center justify-center text-[10px] lg:text-xs font-bold shadow-sm">Mom</div>
-                      <div className="h-8 w-8 lg:h-10 lg:w-10 rounded-full border-2 border-white bg-green-100 flex items-center justify-center text-[10px] lg:text-xs font-bold shadow-sm">Sam</div>
-                    </div>
-                    <div>
-                      <p className="font-bold text-gray-900">All Devices Connected</p>
-                      <p className="text-xs text-gray-600">iPhone 15 • Galaxy S24 • Apple Watch</p>
-                    </div>
+                <div className="flex items-center gap-2 lg:gap-4">
+                  <div className="h-10 w-10 lg:h-12 lg:w-12 rounded-full bg-blue-100 flex items-center justify-center">
+                    <MapPin className="h-5 w-5 lg:h-6 lg:w-6 text-blue-600" />
                   </div>
-                  <div className="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center shadow-green-200 shadow-lg">
-                    <CheckCircle2 className="h-5 w-5 text-white" />
+                  <div>
+                    <p className="font-bold text-gray-900 text-base lg:text-lg">Family Safe</p>
+                    <p className="text-sm text-gray-600">Dad arrived at Home • Mom at Work</p>
                   </div>
                 </div>
               </div>
             </div>
             
             {/* Decorative Elements */}
-            <div className="absolute -top-12 -right-12 w-40 h-40 bg-blue-400/10 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse delay-1000" />
+            <div className="absolute -top-12 -right-12 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000" />
           </motion.div>
         </div>
       </section>
@@ -138,11 +113,11 @@ export default function Families() {
           <div className="max-w-3xl mx-auto text-center mb-20">
             <span className="text-red-500 font-bold tracking-wider uppercase text-sm mb-4 block">The Reality</span>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-8 leading-tight">
-              You can't be everywhere <br/>
-              <span className="text-gray-400">at once.</span>
+              Worrying about family <br/>
+              <span className="text-gray-400">is exhausting.</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Your teenager is driving. Your parent is home alone. Your spouse is traveling. The worry is constant. "Are they safe?" "Did they get there?" "Why aren't they answering?" It's exhausting.
+              "Did they get there safe?" "Why aren't they answering?" "Is Dad okay alone?" The constant check-ins and anxiety take a toll on everyone.
             </p>
           </div>
 
@@ -153,12 +128,12 @@ export default function Families() {
               transition={{ duration: 0.6 }}
               className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="h-14 w-14 rounded-2xl bg-red-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <AlertCircle className="h-7 w-7 text-red-600" />
+              <div className="h-14 w-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <MapPin className="h-7 w-7 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">1. Safety happens in seconds.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">1. Where are they?</h3>
               <p className="text-gray-600 leading-relaxed">
-                A fall. A crash. A panic. By the time you hear about it, precious minutes are gone. MySentry alerts you instantly so you can act.
+                Texting "where are you" is annoying for teens and stressful for parents. You need a way to know they're safe without nagging.
               </p>
             </motion.div>
 
@@ -168,12 +143,12 @@ export default function Families() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="h-14 w-14 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Heart className="h-7 w-7 text-orange-600" />
+              <div className="h-14 w-14 rounded-2xl bg-red-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Car className="h-7 w-7 text-red-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">2. Health problems whisper.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">2. Driving is dangerous.</h3>
               <p className="text-gray-600 leading-relaxed">
-                A stroke doesn't announce itself. An irregular heartbeat goes unnoticed. But your <strong>watch and phone</strong> see it. And alert you before it becomes critical.
+                Car accidents are the #1 cause of death for teens. If a crash happens, you need to know instantly, not hours later.
               </p>
             </motion.div>
 
@@ -183,42 +158,12 @@ export default function Families() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="h-14 w-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Smartphone className="h-7 w-7 text-blue-600" />
+              <div className="h-14 w-14 rounded-2xl bg-green-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Heart className="h-7 w-7 text-green-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">3. Mixed devices? No problem.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">3. Aging parents.</h3>
               <p className="text-gray-600 leading-relaxed">
-                Mom has an iPhone. Dad has Android. Grandma has a Samsung Watch. <strong>Smart Connectivity</strong> automatically shares location updates across all devices, keeping everyone connected.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
-            >
-              <div className="h-14 w-14 rounded-2xl bg-purple-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Users className="h-7 w-7 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">4. Who are they meeting?</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Teens meeting friends? Parents meeting contractors? <strong>Meet Safe</strong> sets a timer. If they don't check in, you get their location and live audio instantly.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
-            >
-              <div className="h-14 w-14 rounded-2xl bg-indigo-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Clock className="h-7 w-7 text-indigo-600" />
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">5. Did they get home?</h3>
-              <p className="text-gray-600 leading-relaxed">
-                Don't be the nagging parent. <strong>Automated Check-ins</strong> ask "Are you safe?" for you. If they don't answer, we escalate to you immediately.
+                You can't be with your elderly parents 24/7. You need to know if they fall or have a health issue, even when you're at work.
               </p>
             </motion.div>
           </div>
@@ -236,35 +181,35 @@ export default function Families() {
               className="space-y-8"
             >
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wider mb-6">
-                  <Shield className="h-3 w-3" />
-                  Instant Response
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
+                  <Users className="h-3 w-3" />
+                  Connected Safety
                 </div>
                 <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
-                  One tap. <br/>
-                  Instant help.
+                  Stay connected <br/>
+                  without the nagging.
                 </h2>
                 <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  Your teenager in danger. Your parent needs help. Your child scared. One tap on their watch or phone. You're alerted. An agent responds. Emergency services are dispatched. All in seconds.
+                  See everyone's location on a private family map. Get notified when they arrive at school or home. And if anyone needs help, the whole family is alerted instantly.
                 </p>
               </div>
 
               <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="h-12 w-12 rounded-full bg-red-100 flex items-center justify-center animate-pulse">
-                    <AlertCircle className="h-6 w-6 text-red-600" />
+                  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center animate-pulse">
+                    <MapPin className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">Panic Alarm</h3>
-                    <p className="text-sm text-gray-500">Activated via Watch or Phone</p>
+                    <h3 className="text-xl font-bold text-gray-900">Family Map</h3>
+                    <p className="text-sm text-gray-500">Real-Time Location</p>
                   </div>
                 </div>
                 <div className="space-y-4">
                   {[
-                    "Live audio/video connection to agents",
-                    "GPS location sent to family instantly",
-                    "Silent mode for discreet alerts",
-                    "Works even if phone is out of reach"
+                    "See real-time location of all family members",
+                    "Get alerts for arrival/departure (Geofencing)",
+                    "Check battery levels of family devices",
+                    "Navigate directly to family members"
                   ].map((feature, i) => (
                     <div key={i} className="flex items-center gap-3">
                       <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
@@ -282,10 +227,10 @@ export default function Families() {
               className="relative"
             >
               <div className="aspect-square rounded-[3rem] bg-white border border-gray-100 shadow-2xl flex items-center justify-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-50" />
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-50" />
                 <img 
-                  src="/images/panic-alarm-watch.jpg" 
-                  alt="Panic alarm on watch" 
+                  src="/images/family-map-phone.jpg" 
+                  alt="Family location map on phone" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 
@@ -293,13 +238,13 @@ export default function Families() {
                 <div className="absolute bottom-12 left-12 right-12 bg-white/90 backdrop-blur-xl p-5 rounded-2xl shadow-lg border border-white/50 animate-[float_5s_ease-in-out_infinite]">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <div className="h-2 w-2 rounded-full bg-red-500 animate-ping"></div>
-                      <span className="font-bold text-red-600 text-sm uppercase tracking-wider">Emergency Alert</span>
+                      <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
+                      <span className="font-bold text-green-600 text-sm uppercase tracking-wider">Safe Arrival</span>
                     </div>
                     <span className="text-xs text-gray-500">Now</span>
                   </div>
-                  <p className="font-bold text-gray-900 text-lg">Panic Button Pressed</p>
-                  <p className="text-sm text-gray-600">Location shared with family & EMS</p>
+                  <p className="font-bold text-gray-900 text-lg">Sarah arrived at School</p>
+                  <p className="text-sm text-gray-600">123 Education Lane</p>
                 </div>
               </div>
             </motion.div>
@@ -308,37 +253,35 @@ export default function Families() {
       </section>
 
       {/* PEACE: The Change & End Result */}
-      <section className="py-32 bg-[#064e3b] text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/grid-pattern.png')] opacity-5"></div>
-        
+      <section className="py-32 bg-[#e8f5e9] relative overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">The Transformation</span>
-            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight">
-              From constant worry to <br/>
-              <span className="text-primary">total peace of mind.</span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-8 leading-tight">
+              From anxious to <br/>
+              <span className="text-primary">assured.</span>
             </h2>
-            <p className="text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
-              Imagine knowing your family is safe without having to ask. Imagine sleeping soundly knowing you'll be alerted if anything happens. MySentry gives you that freedom.
+            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              Replace the constant worry with the comfort of knowing your family is safe. Whether they're in the next room or across the country, MySentry keeps you connected.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: Lock,
-                title: "Secure Connection",
-                desc: "Bank-level encryption keeps your family's data private and safe."
+                icon: Shield,
+                title: "Total Protection",
+                desc: "Crash detection, fall alerts, and panic button for every family member."
               },
               {
                 icon: Users,
-                title: "Everyone Included",
-                desc: "Add grandparents, kids, and partners. One plan covers the whole family."
+                title: "Family Circle",
+                desc: "Private, secure group for your family to share location and status."
               },
               {
-                icon: Zap,
-                title: "Always On",
-                desc: "24/7 monitoring means you never have to worry about missing an alert."
+                icon: Heart,
+                title: "Peace of Mind",
+                desc: "Know instantly if anyone needs help, so you can act fast."
               }
             ].map((item, i) => (
               <motion.div
@@ -346,20 +289,20 @@ export default function Families() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-all duration-300"
+                className="bg-white p-8 rounded-3xl shadow-sm border border-primary/10 hover:shadow-md transition-all duration-300"
               >
-                <div className="h-12 w-12 rounded-xl bg-primary/20 flex items-center justify-center mb-6">
+                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
                   <item.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-gray-400 leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
 
           <div className="mt-20 text-center">
             <Link href="/pricing">
-              <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-white text-black hover:bg-gray-100 font-bold shadow-lg hover:shadow-white/20 transition-all hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
+              <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-primary text-white hover:bg-primary/90 font-bold shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
                 Start 7-Day Free Trial
               </Button>
             </Link>

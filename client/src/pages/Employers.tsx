@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Heart, TrendingUp, Users, DollarSign, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Zap, Car, Activity, BarChart3, Award, AlertTriangle } from "lucide-react";
+import { Heart, TrendingUp, Users, DollarSign, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Zap, Car, Activity, BarChart3, Award, AlertTriangle, Building2 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { industries } from "@/data/industries";
@@ -16,7 +16,7 @@ export default function Employers() {
         description="Protect your workforce and reduce liability with MySentry. 24/7 monitoring, fall detection, and panic buttons for every industry."
       />
       {/* Hero Section - PEACE: The Answer */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-gradient-to-b from-[#e8f5e9] to-white pt-20">
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-[#e8f5e9] pt-20">
         {/* Modern Animated Background */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-br from-primary/10 to-green-200/20 blur-[100px] animate-pulse" style={{animationDuration: '8s'}} />
@@ -38,14 +38,14 @@ export default function Employers() {
             </p>
             
             <Link href="/pricing">
-              <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-black hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
+              <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
                 Get Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
 
             {/* Trust Indicators */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200">
+            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200/50">
               <div className="fade-in-up">
                 <div className="text-3xl font-bold text-primary">$47K</div>
                 <p className="text-sm text-gray-600 font-medium">Avg. cost per injury</p>
@@ -280,10 +280,17 @@ export default function Employers() {
                     alt={activeIndustry.title} 
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute bottom-8 left-8 right-8 z-20">
-                    <div className="bg-white/90 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/50 inline-flex items-center gap-3">
-                      <Shield className="h-5 w-5 text-primary" />
-                      <span className="font-bold text-gray-900 text-sm">Protected by MySentry</span>
+                  
+                  {/* Floating Stat Card */}
+                  <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-xl p-5 rounded-2xl shadow-lg border border-white/50 z-20 animate-[float_5s_ease-in-out_infinite]">
+                    <div className="flex items-center gap-4">
+                      <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                        <Shield className="h-6 w-6 text-primary" />
+                      </div>
+                      <div>
+                        <p className="font-bold text-gray-900 text-lg">Protected 24/7</p>
+                        <p className="text-sm text-gray-600">Zero incidents this month</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -294,18 +301,16 @@ export default function Employers() {
       </section>
 
       {/* PEACE: The Change & End Result */}
-      <section className="py-32 bg-primary text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-10 mix-blend-overlay"></div>
-        
+      <section className="py-32 bg-[#e8f5e9] relative overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center mb-16">
-            <span className="text-white/80 font-bold tracking-wider uppercase text-sm mb-4 block">The Transformation</span>
-            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8 leading-tight">
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">The Transformation</span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-8 leading-tight">
               From liability to <br/>
-              <span className="text-green-200">leadership.</span>
+              <span className="text-primary">leadership.</span>
             </h2>
-            <p className="text-xl text-white/90 leading-relaxed max-w-2xl mx-auto">
-              Imagine a workplace where safety isn't just a policy—it's a guarantee. Where every employee knows they are valued and protected. That's the MySentry standard.
+            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
+              Show your employees you care about their safety. Reduce insurance costs, minimize liability, and ensure everyone goes home safe at the end of the day.
             </p>
           </div>
 
@@ -313,18 +318,18 @@ export default function Employers() {
             {[
               {
                 icon: Shield,
-                title: "24/7 Monitoring",
-                desc: "MySentry takes care of your Employees Safety and Health Monitoring 24/7 and Emergency responses."
+                title: "Duty of Care",
+                desc: "Meet legal and ethical obligations to protect lone workers."
               },
               {
-                icon: Award,
-                title: "Top Employer",
-                desc: "Attract the best talent by proving you care about their well-being."
+                icon: Building2,
+                title: "Enterprise Ready",
+                desc: "Scalable solution for teams of 5 to 5,000. Easy deployment."
               },
               {
-                icon: BarChart3,
-                title: "Higher Profits",
-                desc: "Lower costs + higher productivity = a healthier bottom line."
+                icon: Heart,
+                title: "Employee Trust",
+                desc: "Build a culture of safety where employees feel valued and protected."
               }
             ].map((item, i) => (
               <motion.div
@@ -332,21 +337,21 @@ export default function Employers() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-3xl hover:bg-white/20 transition-all duration-300"
+                className="bg-white p-8 rounded-3xl shadow-sm border border-primary/10 hover:shadow-md transition-all duration-300"
               >
-                <div className="h-12 w-12 rounded-xl bg-white/20 flex items-center justify-center mb-6">
-                  <item.icon className="h-6 w-6 text-white" />
+                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                  <item.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-white/80 leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
 
           <div className="mt-20 text-center">
-            <Link href="/pricing">
-              <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-white text-black hover:bg-gray-100 font-bold shadow-2xl hover:shadow-white/20 transition-all hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
-                Start 7-Day Free Trial
+            <Link href="/contact">
+              <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-primary text-white hover:bg-primary/90 font-bold shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
+                Contact Sales
               </Button>
             </Link>
           </div>
