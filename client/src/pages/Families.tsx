@@ -167,13 +167,13 @@ export default function Families() {
                 ctaText: "Learn More"
               },
               {
-                id: "family-map",
-                title: "Family Map",
-                subtitle: "See everyone in one place",
-                description: "View your entire family's location on a private, secure map. Coordinate pickups, check ins, and ensure everyone is where they're supposed to be.",
-                image: "/images/family-map-app.jpg",
-                icon: MapPin,
-                tag: "Live Location",
+                id: "voice-panic",
+                title: "Voice Panic Alarm",
+                subtitle: "Help is just a word away",
+                description: "In an emergency, your child or teen can simply say a safe word to trigger an immediate alert. No need to reach for a phone or press a button.",
+                image: "/images/challenge-family-voice-panic.jpg",
+                icon: Smartphone,
+                tag: "Voice Activation",
                 link: "/features",
                 ctaText: "Explore Features"
               },
@@ -184,7 +184,7 @@ export default function Families() {
                 description: "If one family member triggers an alert, everyone is notified instantly. Coordinate help and stay connected during any emergency situation.",
                 image: "/images/feature-emergency-contacts.jpg",
                 icon: Users,
-                tag: "Family Circle",
+                tag: "Emergency Contacts",
                 link: "/features",
                 ctaText: "Learn More"
               }
