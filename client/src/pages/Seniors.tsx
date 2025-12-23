@@ -182,7 +182,7 @@ export default function Seniors() {
                 title: "Voice Panic Alarm",
                 subtitle: "Help is just a word away",
                 description: "In an emergency, just say the word or tap your watch. You're instantly connected to our 24/7 monitoring center, no phone required.",
-                image: "/images/challenge-senior-panic.jpg",
+                image: "/images/watch-sos-lifestyle.png",
                 icon: AlertCircle,
                 tag: "Instant Help",
                 link: "/features",

@@ -85,7 +85,7 @@ export default function Features() {
           </div>
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
-              <img src="/images/feature-panic.jpg" alt="Panic Alarm" className="w-full h-full object-cover" />
+              <img src="/images/watch-sos-lifestyle.png" alt="Panic Alarm" className="w-full h-full object-cover" />
               <AlertDemo type="panic" className="absolute inset-0" />
             </div>
           </div>
@@ -241,7 +241,7 @@ export default function Features() {
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
-              <img src="/images/feature-health.jpg" alt="Health Monitoring" className="w-full h-full object-cover" />
+              <img src="/images/watch-vitals.png" alt="Health Monitoring" className="w-full h-full object-cover" />
               <AlertDemo type="health" className="absolute inset-0" />
             </div>
           </div>
@@ -294,7 +294,7 @@ export default function Features() {
           </div>
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100">
-              <img src="/images/feature-monitoring.jpg" alt="Professional Monitoring" className="w-full h-full object-cover" />
+              <img src="/images/watch-notifications.png" alt="Professional Monitoring" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
