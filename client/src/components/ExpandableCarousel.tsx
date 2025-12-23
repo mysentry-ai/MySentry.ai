@@ -72,8 +72,8 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
                 <div className={cn(
                   "absolute inset-0 transition-opacity duration-500",
                   isExpanded 
-                    ? "bg-gradient-to-r from-black/80 via-black/40 to-transparent" 
-                    : "bg-gradient-to-t from-black/80 via-transparent to-transparent"
+                    ? "bg-gradient-to-r from-black/90 via-black/60 to-transparent" 
+                    : "bg-gradient-to-t from-black/90 via-black/40 to-transparent"
                 )} />
               </div>
 
@@ -93,7 +93,12 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
                   e.stopPropagation();
                   handleExpand(item.id);
                 }}
-                className="absolute top-6 right-6 z-30 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+                className={cn(
+                  "absolute top-6 right-6 z-30 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg",
+                  isExpanded 
+                    ? "bg-white text-black hover:bg-gray-200" 
+                    : "bg-black/30 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black"
+                )}
               >
                 {isExpanded ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
               </button>

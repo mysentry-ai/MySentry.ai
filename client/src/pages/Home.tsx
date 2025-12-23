@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowRight, Activity, HeartPulse, ShieldAlert, CheckCircle2, Play, Star } from "lucide-react";
+import { ArrowRight, Activity, HeartPulse, ShieldAlert, CheckCircle2, Play, Star, MapPin, Droplets, Battery } from "lucide-react";
 import ExpandableCarousel from "@/components/ExpandableCarousel";
 import HowItWorksDemo from "@/components/HowItWorksDemo";
 import { Link } from "wouter";
@@ -130,6 +130,39 @@ export default function Home() {
                 tag: "Live Response",
                 link: "/features",
                 ctaText: "Meet Our Team"
+              },
+              {
+                id: "gps-location",
+                title: "Real-Time GPS Location",
+                subtitle: "Pinpoint accuracy",
+                description: "Whether you're hiking in the woods or walking in the city, we know exactly where you are. In an emergency, we guide first responders to your precise coordinates.",
+                image: "/images/family-map-app.jpg",
+                icon: MapPin,
+                tag: "Precision Tracking",
+                link: "/features",
+                ctaText: "See Coverage"
+              },
+              {
+                id: "water-resistant",
+                title: "Water Resistant",
+                subtitle: "Protection everywhere",
+                description: "Wear it in the shower, pool, or rain. Falls often happen in the bathroom, so we built MySentry to be fully water-resistant and ready for anything.",
+                image: "/images/hero-female-active.jpg",
+                icon: Droplets,
+                tag: "IP68 Rated",
+                link: "/features",
+                ctaText: "View Specs"
+              },
+              {
+                id: "battery-life",
+                title: "Long Battery Life",
+                subtitle: "Ready when you are",
+                description: "With up to 48 hours of battery life on a single charge, MySentry keeps watching over you day and night without constant recharging anxiety.",
+                image: "/images/fall-detection-watch.jpg",
+                icon: Battery,
+                tag: "48-Hour Power",
+                link: "/features",
+                ctaText: "Learn More"
               }
             ]} 
           />
