@@ -68,12 +68,12 @@ export default function PricingSection() {
           {plans.map((plan, index) => (
             <div 
               key={index}
-              className={`relative bg-white rounded-3xl p-8 shadow-xl border ${
-                plan.popular ? "border-primary ring-4 ring-primary/10" : "border-gray-100"
+              className={`relative bg-white rounded-3xl p-8 shadow-xl border transition-all duration-300 hover:shadow-2xl ${
+                plan.popular ? "border-[#66d48f] ring-4 ring-[#66d48f]/20 scale-105 z-10" : "border-gray-100 hover:border-gray-200"
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#66d48f] text-white px-6 py-1.5 rounded-full text-sm font-bold uppercase tracking-wide shadow-lg">
                   Most Popular
                 </div>
               )}
@@ -90,7 +90,7 @@ export default function PricingSection() {
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                    <CheckCircle2 className={`h-5 w-5 shrink-0 mt-0.5 ${plan.popular ? "text-[#66d48f]" : "text-[#66d48f]"}`} />
                     <span className="text-gray-700 font-medium">{feature}</span>
                   </li>
                 ))}
@@ -98,9 +98,9 @@ export default function PricingSection() {
               
               <Link href="/pricing">
                 <Button 
-                  className={`w-full h-12 rounded-full font-bold uppercase tracking-wide ${
+                  className={`w-full h-12 rounded-full font-bold uppercase tracking-wide transition-all ${
                     plan.popular 
-                      ? "bg-primary text-white hover:bg-primary/90" 
+                      ? "bg-[#66d48f] text-white hover:bg-[#5bc482] shadow-lg hover:shadow-xl" 
                       : "bg-gray-100 text-[#1a1a1a] hover:bg-gray-200"
                   }`}
                 >
