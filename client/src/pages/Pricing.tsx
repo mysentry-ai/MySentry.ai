@@ -51,7 +51,7 @@ export default function Pricing() {
       price: 12.49,
       annualPrice: 119.88,
       description: "Full protection with health monitoring and 24/7 agents.",
-      cta: "Start 7-Day Free Trial",
+      cta: "START 7-DAY FREE TRIAL",
       highlighted: true,
       comingSoon: false,
       features: [
@@ -75,7 +75,7 @@ export default function Pricing() {
       price: null,
       annualPrice: null,
       description: "Advanced health insights with predictive analytics.",
-      cta: "Start 7-Day Free Trial",
+      cta: "START 7-DAY FREE TRIAL",
       highlighted: false,
       comingSoon: true,
       features: [
@@ -99,7 +99,7 @@ export default function Pricing() {
       name: "Complete Protection for Employees",
       tagline: "Employee Safety & Health",
       description: "Protect your workforce with comprehensive safety and health monitoring.",
-      cta: "Request Demo",
+      cta: "START 7-DAY FREE TRIAL",
       highlighted: true,
       comingSoon: false,
       features: [
@@ -120,7 +120,7 @@ export default function Pricing() {
       name: "Predictive Care for Employees",
       tagline: "Prevention + Prediction",
       description: "Advanced predictive health for enterprise workforce management.",
-      cta: "Start 7-Day Free Trial",
+      cta: "START 7-DAY FREE TRIAL",
       highlighted: false,
       comingSoon: true,
       features: [
@@ -175,7 +175,7 @@ export default function Pricing() {
                 onClick={() => document.getElementById('pricing-plans')?.scrollIntoView({ behavior: 'smooth' })}
                 className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center"
               >
-                View Plans
+                START 7-DAY FREE TRIAL
               </button>
             </div>
           </motion.div>

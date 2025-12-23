@@ -46,8 +46,8 @@ export default function Features() {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/pricing">
-                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl">
-                  Start 7-Day Free Trial
+                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl" onClick={() => window.scrollTo(0, 0)}>
+                  START 7-DAY FREE TRIAL
                 </Button>
               </Link>
             </div>
@@ -425,9 +425,9 @@ export default function Features() {
           <p className="text-2xl text-white/90 mb-12 max-w-2xl mx-auto">
             Join thousands who trust MySentry for their safety and independence.
           </p>
-          <Link href="/pricing">
-            <Button className="bg-white text-primary hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl shadow-2xl hover:scale-105 transition-all">
-              Start 7-Day Free Trial
+<Link href="/pricing">
+            <Button className="bg-white text-primary hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl shadow-2xl hover:scale-105 transition-all" onClick={() => window.scrollTo(0, 0)}>
+              START 7-DAY FREE TRIAL
             </Button>
           </Link>
         </div>

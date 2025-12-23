@@ -45,8 +45,8 @@ export default function Females() {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/pricing">
-                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center">
-                  Start 7-Day Free Trial
+                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" onClick={() => window.scrollTo(0, 0)}>
+                  START 7-DAY FREE TRIAL
                 </Button>
               </Link>
             </div>
@@ -265,8 +265,8 @@ export default function Females() {
                 Start your 7-day free trial. Safety that fits your lifestyle.
               </p>
               <Link href="/pricing">
-                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl">
-                  Start My Free Trial
+                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl" onClick={() => window.scrollTo(0, 0)}>
+                  START 7-DAY FREE TRIAL
                 </Button>
               </Link>
             </div>

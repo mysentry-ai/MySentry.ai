@@ -49,8 +49,8 @@ export default function Employers() {
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/pricing">
-                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center">
-                  Get Demo
+                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" onClick={() => window.scrollTo(0, 0)}>
+                  START 7-DAY FREE TRIAL
                 </Button>
               </Link>
             </div>
@@ -203,8 +203,8 @@ export default function Employers() {
                 Reduce liability, improve morale, and keep your workforce safe.
               </p>
               <Link href="/pricing">
-                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl">
-                  View Employer Plans
+                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl" onClick={() => window.scrollTo(0, 0)}>
+                  START 7-DAY FREE TRIAL
                 </Button>
               </Link>
             </div>
