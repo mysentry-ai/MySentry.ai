@@ -17,7 +17,7 @@ export default function Home() {
       />
       
       {/* HERO SECTION - Whoop Style: Full Screen Video Background */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative min-h-screen w-full overflow-hidden">
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/50 z-10" /> {/* Darker overlay for better text readability */}
@@ -33,14 +33,14 @@ export default function Home() {
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-20 container h-full flex flex-col justify-center items-start pt-20">
+        <div className="relative z-20 container h-full flex flex-col justify-center items-start pt-32 pb-20 md:pt-20 md:pb-0">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-4xl space-y-8"
           >
-            <h1 className="text-5xl md:text-8xl font-heading font-bold leading-[0.9] tracking-tighter text-white uppercase drop-shadow-lg">
+            <h1 className="text-4xl sm:text-5xl md:text-8xl font-heading font-bold leading-[0.95] md:leading-[0.9] tracking-tighter text-white uppercase drop-shadow-lg">
               Don't Face a<br/>
               <span className="text-primary drop-shadow-md">Health or Safety</span><br/>
               Emergency Alone.
@@ -50,14 +50,14 @@ export default function Home() {
               MySentry turns your smartwatch and phone into real-time safety and health monitoring. 24/7 professional monitoring dispatch help fast when you need it most.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 pt-8">
+            <div className="flex flex-col w-full sm:w-auto sm:flex-row gap-4 pt-8">
 <Link href="/pricing">
-                <Button className="bg-white text-black hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl" onClick={() => window.scrollTo(0, 0)}>
+                <Button className="w-full sm:w-auto bg-white text-black hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-8 md:px-10 h-14 md:h-16 text-base md:text-lg transition-all hover:scale-105 shadow-xl" onClick={() => window.scrollTo(0, 0)}>
                   START 7-DAY FREE TRIAL
                 </Button>
               </Link>
               <Link href="/features">
-                <Button variant="outline" className="border-2 border-white text-white hover:bg-white/10 hover:text-white font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg backdrop-blur-sm shadow-lg">
+                <Button variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 hover:text-white font-bold uppercase tracking-wider rounded-full px-8 md:px-10 h-14 md:h-16 text-base md:text-lg backdrop-blur-sm shadow-lg">
                   <Play className="mr-2 h-5 w-5 fill-current" />
                   See How It Works
                 </Button>

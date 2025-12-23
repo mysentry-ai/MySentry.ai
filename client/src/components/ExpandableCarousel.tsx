@@ -45,7 +45,7 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
 
   return (
     <div ref={containerRef} className={cn("w-full py-10", className)}>
-      <div className="flex flex-col lg:flex-row gap-6 overflow-x-auto pb-8 lg:pb-0 snap-x snap-mandatory scrollbar-hide">
+      <div className="flex flex-row gap-4 lg:gap-6 overflow-x-auto pb-8 lg:pb-0 snap-x snap-mandatory scrollbar-hide px-4 lg:px-0 -mx-4 lg:mx-0">
         {items.map((item) => {
           const isExpanded = expandedId === item.id;
           
@@ -57,8 +57,8 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
               className={cn(
                 "relative rounded-[2rem] overflow-hidden cursor-pointer shrink-0 snap-center transition-all duration-500 ease-in-out group",
                 isExpanded 
-                  ? "w-full lg:w-[900px] h-[600px] lg:h-[700px] z-20" 
-                  : "w-[320px] lg:w-[400px] h-[500px] lg:h-[600px] hover:w-[340px] lg:hover:w-[420px] z-10 opacity-95 hover:opacity-100"
+                  ? "w-[85vw] lg:w-[900px] h-[500px] lg:h-[700px] z-20" 
+                  : "w-[280px] lg:w-[400px] h-[400px] lg:h-[600px] hover:w-[300px] lg:hover:w-[420px] z-10 opacity-95 hover:opacity-100"
               )}
               initial={{ borderRadius: "2rem" }}
             >
@@ -107,14 +107,14 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
               <div className={cn(
                 "absolute z-20 flex flex-col justify-end transition-all duration-500",
                 isExpanded 
-                  ? "inset-0 p-8 lg:p-12 items-start justify-center max-w-2xl" 
-                  : "bottom-0 left-0 right-0 p-8"
+                  ? "inset-0 p-6 lg:p-12 items-start justify-center max-w-2xl" 
+                  : "bottom-0 left-0 right-0 p-6 lg:p-8"
               )}>
                 <motion.h3 
                   layout="position"
                   className={cn(
                     "font-heading font-bold text-white mb-2 leading-tight",
-                    isExpanded ? "text-4xl lg:text-5xl mb-6" : "text-2xl lg:text-3xl"
+                    isExpanded ? "text-3xl lg:text-5xl mb-4 lg:mb-6" : "text-xl lg:text-3xl"
                   )}
                 >
                   {item.title}
