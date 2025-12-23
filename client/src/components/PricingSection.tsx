@@ -75,7 +75,7 @@ export default function PricingSection() {
         "API Integration",
         "Dedicated Support"
       ],
-      cta: "Contact Sales",
+      cta: "Book a Demo Today",
       popular: false,
       highlightColor: "primary",
       isEmployer: true

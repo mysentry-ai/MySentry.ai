@@ -426,7 +426,7 @@ export default function Features() {
             Join thousands who trust MySentry for their safety and independence.
           </p>
 <Link href="/pricing">
-            <Button className="bg-white hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl shadow-2xl hover:scale-105 transition-all" style={{ color: '#000000' }} onClick={() => window.scrollTo(0, 0)}>
+            <Button className="w-full sm:w-auto bg-white hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-6 md:px-12 h-auto py-4 md:h-20 text-lg md:text-xl shadow-2xl hover:scale-105 transition-all whitespace-normal leading-tight" style={{ color: '#000000' }} onClick={() => window.scrollTo(0, 0)}>
               START 7-DAY FREE TRIAL
             </Button>
             <p className="text-sm text-white/80 mt-4 font-medium">
