@@ -21,7 +21,7 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
     company: "",
     employees: "",
     phone: "",
-    message: ""
+    message: "1. Employee Safety Monitoring\n2. Health & Wellness Tracking\n3. Emergency Response Coordination"
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -33,7 +33,9 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
+    // Simulate API call to sales@mysentry.ai
+    console.log("Sending email to sales@mysentry.ai", formData);
+    
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSuccess(true);
@@ -44,7 +46,7 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
         company: "",
         employees: "",
         phone: "",
-        message: ""
+        message: "1. Employee Safety Monitoring\n2. Health & Wellness Tracking\n3. Emergency Response Coordination"
       });
     }, 1500);
   };
@@ -152,19 +154,19 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                 <Textarea 
                   id="message" 
                   name="message" 
-                  placeholder="Tell us about your safety and health monitoring needs..." 
+                  placeholder="Tell us a bit about your Workforce Safety challenges." 
                   className="min-h-[100px]"
                   value={formData.message}
                   onChange={handleChange}
                 />
               </div>
               
-              <DialogFooter className="pt-4">
+              <DialogFooter className="pt-4 flex flex-col sm:flex-row gap-2">
                 <Button 
                   type="button" 
                   variant="outline" 
                   onClick={handleClose}
-                  className="w-full sm:w-auto mt-2 sm:mt-0"
+                  className="w-full sm:w-auto mt-2 sm:mt-0 border-gray-300 text-gray-700 hover:bg-gray-100"
                 >
                   Cancel
                 </Button>

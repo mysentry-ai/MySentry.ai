@@ -7,9 +7,12 @@ import ExpandableCarousel from "@/components/ExpandableCarousel";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { industries } from "@/data/industries";
+import EmployerDemoModal from "@/components/EmployerDemoModal";
 
 export default function Employers() {
   const [activeIndustry, setActiveIndustry] = useState(industries[0]);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+
   return (
     <Layout>
       <SEO 
@@ -48,11 +51,12 @@ export default function Employers() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/pricing">
-                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" onClick={() => window.scrollTo(0, 0)}>
-                  START 7-DAY FREE TRIAL
-                </Button>
-              </Link>
+              <Button 
+                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
+                onClick={() => setIsDemoModalOpen(true)}
+              >
+                BOOK A DEMO TODAY
+              </Button>
             </div>
           </motion.div>
         </div>
@@ -260,15 +264,22 @@ export default function Employers() {
               <p className="text-xl text-gray-300 mb-12 leading-relaxed">
                 Reduce liability, improve morale, and keep your workforce safe.
               </p>
-              <Link href="/pricing">
-                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl" onClick={() => window.scrollTo(0, 0)}>
-                  START 7-DAY FREE TRIAL
-                </Button>
-              </Link>
+              <Button 
+                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl" 
+                onClick={() => setIsDemoModalOpen(true)}
+              >
+                BOOK A DEMO TODAY
+              </Button>
             </div>
           </div>
         </div>
       </section>
+
+      <EmployerDemoModal 
+        isOpen={isDemoModalOpen} 
+        onClose={() => setIsDemoModalOpen(false)} 
+        planName="Employer Plan"
+      />
     </Layout>
   );
 }
