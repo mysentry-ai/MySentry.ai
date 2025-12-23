@@ -88,7 +88,7 @@ export default function HowItWorksDemo() {
       <div className="grid lg:grid-cols-2">
         {/* Left Side: Steps List */}
         <div className="p-6 md:p-12 bg-white flex flex-col justify-center relative z-10 order-2 lg:order-1">
-          <div className="space-y-8">
+          <div className="space-y-8 mb-10">
             {steps.map((step, index) => (
               <div 
                 key={index}
@@ -130,6 +130,21 @@ export default function HowItWorksDemo() {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* App Store Badges */}
+          <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start pt-6 border-t border-gray-100">
+            <p className="text-sm font-medium text-gray-500 mb-2 sm:mb-0 sm:mr-auto flex items-center h-10">
+              Available on WatchOS & WearOS
+            </p>
+            <div className="flex gap-3">
+              <a href="#" className="transition-transform hover:scale-105">
+                <img src="/images/app-store-badge.png" alt="Download on the App Store" className="h-10 w-auto" />
+              </a>
+              <a href="#" className="transition-transform hover:scale-105">
+                <img src="/images/google-play-badge.png" alt="Get it on Google Play" className="h-10 w-auto" />
+              </a>
+            </div>
           </div>
         </div>
 
