@@ -79,10 +79,10 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
           <>
             <div className="bg-[#e8f5e9] p-8 text-center border-b border-primary/10">
               <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-3 uppercase tracking-tight leading-tight">
-                Stop Risking Your Business on Workplace Safety
+                24/7 monitored safety and health for your workforce.
               </h2>
-              <p className="text-gray-700 text-lg font-medium max-w-md mx-auto">
-                Get the 24/7 monitoring you need to protect your team and reduce liability costs.
+              <p className="text-gray-700 text-lg font-medium max-w-xl mx-auto">
+                Detect near-falls, falls, crashes, and abnormal Health Vitals, then escalate fast with live location and incident data.
               </p>
             </div>
             
