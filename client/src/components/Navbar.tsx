@@ -29,7 +29,6 @@ export default function Navbar() {
 
   const isActive = (path: string) => location === path;
   const isHome = location === "/";
-  const isFeatures = location === "/features";
 
   return (
     <nav 
@@ -41,25 +40,24 @@ export default function Navbar() {
       )}
     >
       <div className="container flex items-center justify-between">
-        {/* Logo - Cleaned up to remove duplication */}
+        {/* Logo */}
         <div className="flex items-center gap-4">
           <Link href="/">
             <a className="flex items-center gap-3 group">
-              {/* Only show the image logo, remove text duplication if logo contains text */}
-              {/* Apply brightness-0 invert filter when on transparent background (home) to make logo white */}
               <img 
                 src="/images/logo.png" 
                 alt="MySentry" 
                 className={cn(
                   "h-14 w-auto transition-all duration-300 group-hover:scale-105",
-                  !scrolled && isHome ? "brightness-0 invert" : ""
+                  // Logo logic: Keep original colors unless specifically needed otherwise
+                  ""
                 )} 
               />
             </a>
           </Link>
         </div>
 
-        {/* Desktop Nav - Increased Size & Visibility */}
+        {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link key={link.name} href={link.href}>
@@ -67,10 +65,10 @@ export default function Navbar() {
                 className={cn(
                   "text-lg font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
                   // Logic for text color: 
-                  // If scrolled -> Dark text
+                  // If scrolled -> Dark text (foreground)
                   // If NOT scrolled AND on Home page -> White text (for video background)
-                  // If NOT scrolled AND NOT on Home page -> Dark text (default)
-                  scrolled ? "text-gray-900" : (isHome ? "text-white hover:text-white/80" : "text-gray-900"),
+                  // If NOT scrolled AND NOT on Home page -> Dark text (foreground)
+                  scrolled ? "text-foreground" : (isHome ? "text-white hover:text-white/80" : "text-foreground"),
                   isActive(link.href) ? "text-primary" : ""
                 )}
               >
@@ -104,15 +102,15 @@ export default function Navbar() {
         <button
           className={cn(
             "lg:hidden p-2 transition-colors",
-            scrolled ? "text-gray-900" : (isHome ? "text-white" : "text-gray-900")
+            scrolled ? "text-foreground" : (isHome ? "text-white" : "text-foreground")
           )}
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X className="h-8 w-8 text-gray-900" /> : <Menu className="h-8 w-8" />}
+          {isOpen ? <X className="h-8 w-8 text-foreground" /> : <Menu className="h-8 w-8" />}
         </button>
       </div>
 
-      {/* Mobile Nav Overlay - Full Screen Style */}
+      {/* Mobile Nav Overlay */}
       {isOpen && (
         <div className="fixed inset-0 z-40 bg-white flex flex-col pt-24 px-6 animate-in slide-in-from-right duration-300 lg:hidden">
           <div className="flex flex-col space-y-6">
@@ -121,7 +119,7 @@ export default function Navbar() {
                 <a
                   className={cn(
                     "block text-3xl font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4",
-                    isActive(link.href) ? "text-primary" : "text-gray-900"
+                    isActive(link.href) ? "text-primary" : "text-foreground"
                   )}
                   onClick={() => setIsOpen(false)}
                 >
