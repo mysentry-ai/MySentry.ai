@@ -77,12 +77,12 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
           </div>
         ) : (
           <>
-            <div className="bg-primary p-8 text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 uppercase tracking-tight">
-                Transform Your Workforce Safety
+            <div className="bg-[#e8f5e9] p-8 text-center border-b border-primary/10">
+              <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-3 uppercase tracking-tight leading-tight">
+                Stop Risking Your Business on Workplace Safety
               </h2>
-              <p className="text-white/90 text-lg font-medium">
-                See how MySentry can reduce liability and protect your team.
+              <p className="text-gray-700 text-lg font-medium max-w-md mx-auto">
+                Get the 24/7 monitoring you need to protect your team and reduce liability costs.
               </p>
             </div>
             
