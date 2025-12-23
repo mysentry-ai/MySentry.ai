@@ -1,94 +1,79 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Watch, Smartphone, Server, Phone, CheckCircle2, AlertTriangle, Activity, Car, Bell, HeartPulse, Video, MapPin } from "lucide-react";
+import { Watch, Smartphone, Phone, CheckCircle2, AlertTriangle, Bell, Timer, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-type ScenarioType = "fall" | "crash" | "panic" | "health";
-
 export default function HowItWorksDemo() {
-  const [activeScenario, setActiveScenario] = useState<ScenarioType>("fall");
   const [activeStep, setActiveStep] = useState(0);
-
-  const scenarios = [
-    { id: "fall", label: "Fall Detection", icon: AlertTriangle },
-    { id: "crash", label: "Crash Detection", icon: Car },
-    { id: "panic", label: "Panic Alarm", icon: Bell },
-    { id: "health", label: "Health Alert", icon: HeartPulse },
-  ];
+  const [timer, setTimer] = useState(30);
 
   const steps = [
     {
       id: 0,
-      title: "Detection",
-      description: activeScenario === "fall" ? "Smartwatch detects a hard fall instantly." :
-                   activeScenario === "crash" ? "Sensors detect high-impact collision." :
-                   activeScenario === "panic" ? "You press the SOS button on Watch or Phone." :
-                   "Abnormal heart rate or vitals detected.",
-      icon: activeScenario === "fall" || activeScenario === "health" ? Watch : Smartphone,
+      title: "Step 1: Fall Detected",
+      description: "MySentry detects a fall and starts a 30-second timer.",
+      icon: AlertTriangle,
       color: "text-orange-500",
       bgColor: "bg-orange-100"
     },
     {
       id: 1,
-      title: "Analysis",
-      description: "AI confirms emergency severity in milliseconds.",
-      icon: Activity,
+      title: "Step 2: User Response",
+      description: "You have 30 seconds to confirm you're okay. If you're not, help will be triggered.",
+      icon: Timer,
       color: "text-blue-500",
       bgColor: "bg-blue-100"
     },
     {
       id: 2,
-      title: "Transmission",
-      description: "Sending Live Video, GPS Location & Health Vitals.",
-      icon: Server,
-      color: "text-purple-500",
-      bgColor: "bg-purple-100"
+      title: "Step 3: Panic Alarm Triggered",
+      description: "If no response, the panic alarm is automatically activated.",
+      icon: Bell,
+      color: "text-red-500",
+      bgColor: "bg-red-100"
     },
     {
       id: 3,
-      title: "Response",
-      description: "Agent speaks to you & dispatches help.",
-      icon: Phone,
+      title: "Step 4: Help Dispatched",
+      description: "Your location, battery status, & live audio/video are shared with emergency contacts & the monitoring team.",
+      icon: ShieldCheck,
       color: "text-green-600",
       bgColor: "bg-green-100"
     }
   ];
 
-  // Auto-advance steps
+  // Auto-advance steps logic
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [activeScenario]);
+    let interval: NodeJS.Timeout;
+    
+    if (activeStep === 1) {
+      // Countdown timer for Step 2
+      interval = setInterval(() => {
+        setTimer((prev) => {
+          if (prev <= 1) {
+            setActiveStep(2);
+            return 30;
+          }
+          return prev - 1;
+        });
+      }, 100); // Speed up timer for demo purposes (100ms = 1s real time)
+    } else {
+      // Normal step transition
+      interval = setInterval(() => {
+        setActiveStep((prev) => (prev + 1) % steps.length);
+        if (activeStep === 0) setTimer(30); // Reset timer when loop restarts
+      }, 4000);
+    }
 
-  const showPhone = activeScenario === "crash" || activeScenario === "panic";
-  const showWatch = true; // Watch is always involved or primary
+    return () => clearInterval(interval);
+  }, [activeStep]);
 
   return (
     <div className="w-full max-w-6xl mx-auto bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-gray-100">
-      {/* Scenario Tabs */}
-      <div className="flex flex-wrap justify-center gap-4 p-8 border-b border-gray-100 bg-gray-50/50">
-        {scenarios.map((scenario) => (
-          <button
-            key={scenario.id}
-            onClick={() => { setActiveScenario(scenario.id as ScenarioType); setActiveStep(0); }}
-            className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm uppercase tracking-wide transition-all ${
-              activeScenario === scenario.id 
-                ? "bg-primary text-white shadow-lg scale-105" 
-                : "bg-white text-gray-500 hover:bg-gray-100 border border-gray-200"
-            }`}
-          >
-            <scenario.icon className="h-4 w-4" />
-            {scenario.label}
-          </button>
-        ))}
-      </div>
-
       <div className="grid lg:grid-cols-2">
         {/* Left Side: Steps List */}
         <div className="p-6 md:p-12 bg-white flex flex-col justify-center relative z-10 order-2 lg:order-1">
-          <div className="space-y-8 mb-10">
+          <div className="space-y-8">
             {steps.map((step, index) => (
               <div 
                 key={index}
@@ -108,43 +93,9 @@ export default function HowItWorksDemo() {
                   <p className="text-base text-gray-600 leading-relaxed">
                     {step.description}
                   </p>
-                  
-                  {/* Step 2 Extra Details */}
-                  {index === 2 && activeStep === 2 && (
-                    <motion.div 
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      className="flex gap-3 mt-3"
-                    >
-                      <span className="flex items-center gap-1 text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded-md">
-                        <Video className="h-3 w-3" /> Video
-                      </span>
-                      <span className="flex items-center gap-1 text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded-md">
-                        <MapPin className="h-3 w-3" /> GPS
-                      </span>
-                      <span className="flex items-center gap-1 text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded-md">
-                        <HeartPulse className="h-3 w-3" /> Vitals
-                      </span>
-                    </motion.div>
-                  )}
                 </div>
               </div>
             ))}
-          </div>
-
-          {/* App Store Badges */}
-          <div className="flex flex-col sm:flex-row gap-4 items-center sm:items-start pt-6 border-t border-gray-100">
-            <p className="text-sm font-medium text-gray-500 mb-2 sm:mb-0 sm:mr-auto flex items-center h-10">
-              Available on WatchOS & WearOS
-            </p>
-            <div className="flex gap-3">
-              <a href="#" className="transition-transform hover:scale-105">
-                <img src="/images/app-store-badge.png" alt="Download on the App Store" className="h-10 w-auto" />
-              </a>
-              <a href="#" className="transition-transform hover:scale-105">
-                <img src="/images/google-play-badge.png" alt="Get it on Google Play" className="h-10 w-auto" />
-              </a>
-            </div>
           </div>
         </div>
 
@@ -165,11 +116,7 @@ export default function HowItWorksDemo() {
           <div className="flex items-center justify-center gap-8 relative z-10">
             {/* WATCH DEVICE */}
             <motion.div 
-              animate={{ 
-                x: showPhone ? -10 : 0,
-                scale: showPhone ? 0.8 : 1
-              }}
-              className="relative w-36 h-44 md:w-48 md:h-56 bg-gray-900 rounded-[2rem] md:rounded-[2.5rem] border-4 border-gray-800 shadow-2xl flex items-center justify-center overflow-hidden shrink-0"
+              className="relative w-48 h-56 bg-gray-900 rounded-[2.5rem] border-4 border-gray-800 shadow-2xl flex items-center justify-center overflow-hidden shrink-0"
             >
               {/* Watch Strap Hints */}
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-16 bg-gray-800 rounded-t-xl -z-10" />
@@ -177,102 +124,41 @@ export default function HowItWorksDemo() {
               
               <AnimatePresence mode="wait">
                 <motion.div
-                  key={`${activeScenario}-${activeStep}-watch`}
+                  key={activeStep}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="w-full h-full"
+                  className="w-full h-full flex flex-col items-center justify-center text-center p-4 bg-black text-white"
                 >
                   {activeStep === 0 && (
-                    <img 
-                      src={activeScenario === "panic" ? "/images/watch-panic.png" : "/images/watch-home.png"} 
-                      alt="Watch Screen" 
-                      className="w-full h-full object-cover"
-                    />
+                    <>
+                      <AlertTriangle className="h-12 w-12 text-orange-500 mb-2 animate-bounce" />
+                      <h3 className="font-bold text-lg">FALL DETECTED</h3>
+                    </>
                   )}
                   {activeStep === 1 && (
-                    <img 
-                      src="/images/watch-notifications.png" 
-                      alt="Analyzing" 
-                      className="w-full h-full object-cover"
-                    />
+                    <>
+                      <div className="text-4xl font-bold text-blue-500 mb-2">{timer}s</div>
+                      <p className="text-sm text-gray-300">I'm OK</p>
+                      <Button size="sm" className="mt-2 bg-gray-700 hover:bg-gray-600 text-xs h-8">Cancel</Button>
+                    </>
                   )}
-                  {activeStep >= 2 && (
-                    <img 
-                      src="/images/watch-vitals.png" 
-                      alt="Vitals" 
-                      className="w-full h-full object-cover"
-                    />
+                  {activeStep === 2 && (
+                    <>
+                      <Bell className="h-12 w-12 text-red-500 mb-2 animate-pulse" />
+                      <h3 className="font-bold text-lg text-red-500">ALARM ACTIVE</h3>
+                    </>
+                  )}
+                  {activeStep === 3 && (
+                    <>
+                      <Phone className="h-12 w-12 text-green-500 mb-2" />
+                      <h3 className="font-bold text-lg text-green-500">HELP ON WAY</h3>
+                      <p className="text-xs text-gray-400 mt-1">Agent Connected</p>
+                    </>
                   )}
                 </motion.div>
               </AnimatePresence>
             </motion.div>
-
-            {/* PHONE DEVICE (Conditional) */}
-            <AnimatePresence>
-              {showPhone && (
-                <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  className="relative w-48 h-[380px] md:w-64 md:h-[500px] bg-gray-900 rounded-[2rem] md:rounded-[3rem] border-4 md:border-8 border-gray-800 shadow-2xl overflow-hidden flex flex-col shrink-0"
-                >
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-xl z-20" />
-                  
-                  <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
-                    <AnimatePresence mode="wait">
-                      <motion.div
-                        key={`${activeScenario}-${activeStep}-phone`}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        className="w-full"
-                      >
-                        {activeStep === 0 && (
-                          <>
-                            <div className="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                              <Bell className="h-10 w-10 text-red-500" />
-                            </div>
-                            <h3 className="text-white font-bold text-xl">SOS Triggered</h3>
-                            <p className="text-gray-400 text-sm mt-2">Connecting...</p>
-                          </>
-                        )}
-                        
-                        {activeStep === 2 && (
-                          <div className="space-y-4">
-                            <div className="bg-gray-800 rounded-xl p-3 flex items-center gap-3">
-                              <Video className="h-5 w-5 text-purple-400" />
-                              <div className="text-left">
-                                <div className="text-xs text-gray-400">Camera</div>
-                                <div className="text-sm text-white font-bold">Streaming</div>
-                              </div>
-                              <div className="ml-auto w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                            </div>
-                            <div className="bg-gray-800 rounded-xl p-3 flex items-center gap-3">
-                              <MapPin className="h-5 w-5 text-blue-400" />
-                              <div className="text-left">
-                                <div className="text-xs text-gray-400">Location</div>
-                                <div className="text-sm text-white font-bold">Sent to EMS</div>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
-                        {activeStep === 3 && (
-                          <>
-                            <div className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6 border-4 border-green-500/30">
-                              <Phone className="h-10 w-10 text-white" />
-                            </div>
-                            <h3 className="text-white font-bold text-xl mb-1">Agent Active</h3>
-                            <p className="text-green-400 text-sm">Help dispatched</p>
-                          </>
-                        )}
-                      </motion.div>
-                    </AnimatePresence>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
           </div>
         </div>
       </div>

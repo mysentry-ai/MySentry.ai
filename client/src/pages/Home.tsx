@@ -5,6 +5,9 @@ import { cn } from "@/lib/utils";
 import { ArrowRight, Activity, HeartPulse, ShieldAlert, CheckCircle2, Play, Star, MapPin, Mic, Wifi, Users, Phone } from "lucide-react";
 import ExpandableCarousel from "@/components/ExpandableCarousel";
 import HowItWorksDemo from "@/components/HowItWorksDemo";
+import PricingSection from "@/components/PricingSection";
+import UGCSection from "@/components/UGCSection";
+import WhatWeProvide from "@/components/WhatWeProvide";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 
@@ -47,7 +50,7 @@ export default function Home() {
             </h1>
             
             <p className="text-xl md:text-2xl text-white max-w-2xl font-medium leading-relaxed drop-shadow-md">
-              MySentry turns your smartwatch and phone into real-time safety and health monitoring. 24/7 professional monitoring dispatch help fast when you need it most.
+              MySentry turns your phone and smartwatch into a 24/7 safety and health companion. We monitor, detect, and respond so help reaches you fast, even if you can't ask for it.
             </p>
             
             <div className="flex flex-col w-full sm:w-auto sm:flex-row gap-4 pt-8">
@@ -76,10 +79,10 @@ export default function Home() {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Simple & Effective</span>
             <h2 className="text-4xl md:text-6xl font-heading font-bold uppercase tracking-tight mb-6 text-[#1a1a1a]">
-              Protection in Motion
+              Test Your Safety and See How It Works
             </h2>
             <p className="text-xl text-gray-600">
-              See how MySentry protects you from the moment an incident occurs to the arrival of help.
+              Experience it for yourself: Test the protection and monitoring features in real time.
             </p>
           </div>
           <HowItWorksDemo />
@@ -90,12 +93,12 @@ export default function Home() {
       <section className="py-24 bg-[#e8f5e9] text-[#1a1a1a] overflow-hidden">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Comprehensive Safety</span>
+            <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Real Life Scenarios</span>
             <h2 className="text-4xl md:text-6xl font-heading font-bold uppercase tracking-tight mb-6 text-[#1a1a1a]">
-              Protection Reimagined
+              Who Is MySentry For?
             </h2>
             <p className="text-xl text-gray-600">
-              Explore how MySentry keeps you safe with advanced technology and human care.
+              See how MySentry fits into the lives of families, seniors, and professionals.
             </p>
           </div>
           
@@ -193,6 +196,12 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <PricingSection />
+      
+      <UGCSection />
+
+      <WhatWeProvide />
 
       {/* FEATURE HIGHLIGHT - Split Layout */}
       <section className="py-0 bg-white">
