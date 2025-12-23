@@ -12,97 +12,44 @@ export default function Families() {
         title="Families" 
         description="Protect your whole family with MySentry. Real-time location, crash detection, and health alerts for everyone you love."
       />
-      {/* Hero Section - PEACE: The Answer */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-[#e8f5e9] pt-20">
-        {/* Modern Animated Background */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-br from-blue-100/30 to-primary/5 blur-[100px] animate-pulse" style={{animationDuration: '8s'}} />
-          <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-gradient-to-tr from-green-100/30 to-primary/5 blur-[100px] animate-pulse" style={{animationDuration: '10s'}} />
+      
+      {/* HERO SECTION - Standardized with Features Page Style */}
+      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+           {/* Relatable Hero Image */}
+           <img 
+             src="/images/families-hero.jpg" 
+             alt="Happy family outdoors" 
+             className="absolute inset-0 w-full h-full object-cover opacity-60"
+           />
+           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
         </div>
 
-        <div className="container relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container relative z-20">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-xl"
+            className="max-w-4xl"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/80 backdrop-blur-sm border border-primary/20 text-primary text-xs font-bold uppercase tracking-wider mb-6 shadow-sm">
-              <Users className="h-3 w-3" />
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
               For Modern Families
-            </div>
-
-            <h1 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 leading-[1.1] tracking-tight">
-              One app to protect <br/>
-              <span className="text-primary">everyone you love.</span>
+            </span>
+            <h1 className="text-6xl md:text-8xl font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
+              Protect Everyone<br/>
+              <span className="text-gray-600">You Love.</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
               Kids at school? Parents at home? Teenager driving? MySentry connects your whole family. See real-time locations, get crash alerts, and know instantly if a loved one needs help.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/pricing">
-                <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
+                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center">
                   Start 7-Day Free Trial
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link href="/features">
-                <Button variant="outline" size="lg" className="h-16 px-10 text-lg rounded-full border-2 border-primary/20 text-primary hover:bg-primary/5 hover:border-primary/40 font-semibold backdrop-blur-sm bg-white/50">
-                  <Smartphone className="mr-2 h-5 w-5" />
-                  See Features
                 </Button>
               </Link>
             </div>
-
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200/50">
-              <div className="fade-in-up">
-                <div className="text-3xl font-bold text-primary">All</div>
-                <p className="text-sm text-gray-600 font-medium">Family Members</p>
-              </div>
-              <div className="fade-in-up" style={{ animationDelay: "0.1s" }}>
-                <div className="text-3xl font-bold text-primary">Real-Time</div>
-                <p className="text-sm text-gray-600 font-medium">Location Sharing</p>
-              </div>
-              <div className="fade-in-up" style={{ animationDelay: "0.2s" }}>
-                <div className="text-3xl font-bold text-primary">24/7</div>
-                <p className="text-sm text-gray-600 font-medium">Emergency Response</p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Hero Visual */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95, x: 30 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="block relative perspective-1000 mt-12 lg:mt-0 w-full"
-          >
-            <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform hover:rotate-y-2 transition-transform duration-700 group">
-              <img 
-                src="/images/families-hero.jpg" 
-                alt="Happy family outdoors" 
-                className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              
-              <div className="absolute bottom-4 left-4 right-4 lg:bottom-8 lg:left-8 lg:right-8 bg-white/90 backdrop-blur-xl p-3 lg:p-5 rounded-2xl shadow-lg border border-white/50 animate-[float_6s_ease-in-out_infinite]">
-                <div className="flex items-center gap-2 lg:gap-4">
-                  <div className="h-10 w-10 lg:h-12 lg:w-12 rounded-full bg-blue-100 flex items-center justify-center">
-                    <MapPin className="h-5 w-5 lg:h-6 lg:w-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900 text-base lg:text-lg">Family Safe</p>
-                    <p className="text-sm text-gray-600">Dad arrived at Home • Mom at Work</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Decorative Elements */}
-            <div className="absolute -top-12 -right-12 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000" />
           </motion.div>
         </div>
       </section>
@@ -229,8 +176,8 @@ export default function Families() {
               <div className="aspect-square rounded-[3rem] bg-white border border-gray-100 shadow-2xl flex items-center justify-center relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-50" />
                 <img 
-                  src="/images/family-map-phone.jpg" 
-                  alt="Family location map on phone" 
+                  src="/images/family-map-app.jpg" 
+                  alt="Family map interface" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 
@@ -238,13 +185,13 @@ export default function Families() {
                 <div className="absolute bottom-12 left-12 right-12 bg-white/90 backdrop-blur-xl p-5 rounded-2xl shadow-lg border border-white/50 animate-[float_5s_ease-in-out_infinite]">
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
-                      <span className="font-bold text-green-600 text-sm uppercase tracking-wider">Safe Arrival</span>
+                      <div className="h-2 w-2 rounded-full bg-blue-500"></div>
+                      <span className="font-bold text-blue-600 text-sm uppercase tracking-wider">Location Alert</span>
                     </div>
                     <span className="text-xs text-gray-500">Now</span>
                   </div>
                   <p className="font-bold text-gray-900 text-lg">Sarah arrived at School</p>
-                  <p className="text-sm text-gray-600">123 Education Lane</p>
+                  <p className="text-sm text-gray-600">Battery: 85%</p>
                 </div>
               </div>
             </motion.div>
@@ -262,7 +209,7 @@ export default function Families() {
               <span className="text-primary">assured.</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Replace the constant worry with the comfort of knowing your family is safe. Whether they're in the next room or across the country, MySentry keeps you connected.
+              Stop worrying about where everyone is or if they're safe. MySentry gives you the peace of mind to let your family live their lives, knowing you're always connected.
             </p>
           </div>
 
@@ -271,17 +218,17 @@ export default function Families() {
               {
                 icon: Shield,
                 title: "Total Protection",
-                desc: "Crash detection, fall alerts, and panic button for every family member."
+                desc: "Crash detection, fall detection, and panic button for every family member."
               },
               {
-                icon: Users,
-                title: "Family Circle",
-                desc: "Private, secure group for your family to share location and status."
+                icon: MapPin,
+                title: "Always Connected",
+                desc: "See where everyone is at a glance without having to call or text."
               },
               {
                 icon: Heart,
-                title: "Peace of Mind",
-                desc: "Know instantly if anyone needs help, so you can act fast."
+                title: "Health Insights",
+                desc: "Monitor vital signs for elderly parents or family members with health conditions."
               }
             ].map((item, i) => (
               <motion.div
@@ -289,23 +236,40 @@ export default function Families() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white p-8 rounded-3xl shadow-sm border border-primary/10 hover:shadow-md transition-all duration-300"
+                className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 hover:shadow-2xl transition-all hover:-translate-y-2"
               >
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <item.icon className="h-6 w-6 text-primary" />
+                <div className="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8">
+                  <item.icon className="h-8 w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
+                <p className="text-lg text-gray-600 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-20 text-center">
-            <Link href="/pricing">
-              <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-primary text-white hover:bg-primary/90 font-bold shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
-                Start 7-Day Free Trial
-              </Button>
-            </Link>
+      {/* CTA */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="bg-[#1a1a1a] rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+              <div className="absolute top-[-50%] left-[-20%] w-[80%] h-[80%] rounded-full bg-primary blur-[150px]" />
+            </div>
+            
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <h2 className="text-5xl md:text-7xl font-heading font-bold text-white mb-8 uppercase tracking-tight">
+                Protect Your Family Today.
+              </h2>
+              <p className="text-xl text-gray-300 mb-12 leading-relaxed">
+                Start your 7-day free trial. One subscription covers the whole family.
+              </p>
+              <Link href="/pricing">
+                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl">
+                  Start My Free Trial
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

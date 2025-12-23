@@ -16,83 +16,44 @@ export default function Employers() {
         title="Employers" 
         description="Protect your workforce and reduce liability with MySentry. 24/7 monitoring, fall detection, and panic buttons for every industry."
       />
-      {/* Hero Section - PEACE: The Answer */}
-      <section className="relative min-h-[80vh] flex items-center overflow-hidden bg-[#e8f5e9] pt-20">
-        {/* Modern Animated Background */}
-        <div className="absolute inset-0 z-0 overflow-hidden">
-          <div className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-br from-primary/10 to-green-200/20 blur-[100px] animate-pulse" style={{animationDuration: '8s'}} />
-          <div className="absolute bottom-[-10%] left-[-5%] w-[40vw] h-[40vw] rounded-full bg-gradient-to-tr from-blue-100/30 to-primary/5 blur-[100px] animate-pulse" style={{animationDuration: '10s'}} />
+      
+      {/* HERO SECTION - Standardized with Features Page Style */}
+      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+           {/* Relatable Hero Image */}
+           <img 
+             src="/images/business-meeting-happy.jpg" 
+             alt="Diverse team having a productive meeting" 
+             className="absolute inset-0 w-full h-full object-cover opacity-60"
+           />
+           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
         </div>
 
-        <div className="container relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="container relative z-20">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-xl"
+            className="max-w-4xl"
           >
-            <h1 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 leading-[1.1] tracking-tight">
-              Protect your people when minutes matter and they cannot call for help.
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
+              Workforce Protection
+            </span>
+            <h1 className="text-6xl md:text-8xl font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
+              Protect Your<br/>
+              <span className="text-gray-600">Greatest Asset.</span>
             </h1>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Workplace accidents and health emergencies happen fast. Often, the employee cannot call for help. MySentry detects falls, crashes, and abnormal Health Vitals and alerts 24/7 professional monitoring with live video, location, and Health Vitals so help can be dispatched fast and you stay informed.
+            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+              Workplace accidents happen fast. MySentry detects falls, crashes, and health emergencies instantly, alerting 24/7 professional monitoring with live video so help arrives fast.
             </p>
             
-            <Link href="/pricing">
-              <Button size="lg" className="h-16 px-10 text-lg rounded-full bg-primary text-white hover:bg-primary/90 transition-all hover:scale-105 font-bold shadow-xl hover:shadow-2xl hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
-                Get Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-
-            {/* Trust Indicators */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200/50">
-              <div className="fade-in-up">
-                <div className="text-3xl font-bold text-primary">$47K</div>
-                <p className="text-sm text-gray-600 font-medium">Avg. cost per injury</p>
-              </div>
-              <div className="fade-in-up" style={{ animationDelay: "0.1s" }}>
-                <div className="text-3xl font-bold text-primary">2 sec</div>
-                <p className="text-sm text-gray-600 font-medium">Emergency detection</p>
-              </div>
-              <div className="fade-in-up" style={{ animationDelay: "0.2s" }}>
-                <div className="text-3xl font-bold text-primary">100%</div>
-                <p className="text-sm text-gray-600 font-medium">Hands-off for you</p>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/pricing">
+                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center">
+                  Get Demo
+                </Button>
+              </Link>
             </div>
-          </motion.div>
-
-          {/* Hero Visual */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95, x: 30 }}
-            animate={{ opacity: 1, scale: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="block relative perspective-1000 mt-12 lg:mt-0 w-full"
-          >
-            <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl border-[8px] border-white transform hover:rotate-y-2 transition-transform duration-700 group">
-              <img 
-                src="/images/business-meeting-happy.jpg" 
-                alt="Diverse team having a productive meeting" 
-                className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              
-              <div className="absolute bottom-4 left-4 right-4 lg:bottom-8 lg:left-8 lg:right-8 bg-white/90 backdrop-blur-xl p-3 lg:p-5 rounded-2xl shadow-lg border border-white/50 animate-[float_6s_ease-in-out_infinite]">
-                <div className="flex items-center gap-2 lg:gap-4">
-                  <div className="h-10 w-10 lg:h-12 lg:w-12 rounded-full bg-green-100 flex items-center justify-center">
-                    <TrendingUp className="h-5 w-5 lg:h-6 lg:w-6 text-green-600" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-gray-900 text-base lg:text-lg">Workforce Protected</p>
-                    <p className="text-sm text-gray-600">Safety Score: 98/100 • Incidents: 0</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            {/* Decorative Elements */}
-            <div className="absolute -top-12 -right-12 w-40 h-40 bg-primary/10 rounded-full blur-3xl animate-pulse" />
-            <div className="absolute -bottom-12 -left-12 w-40 h-40 bg-blue-400/10 rounded-full blur-3xl animate-pulse delay-1000" />
           </motion.div>
         </div>
       </section>
@@ -226,60 +187,27 @@ export default function Employers() {
         </div>
       </section>
 
-      {/* PEACE: The Change & End Result */}
-      <section className="py-32 bg-[#e8f5e9] relative overflow-hidden">
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">The Transformation</span>
-            <h2 className="text-4xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-8 leading-tight">
-              From liability to <br/>
-              <span className="text-primary">leadership.</span>
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Show your employees you care about their safety. Reduce insurance costs, minimize liability, and ensure everyone goes home safe at the end of the day.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Shield,
-                title: "Duty of Care",
-                desc: "Meet legal and ethical obligations to protect lone workers."
-              },
-              {
-                icon: Building2,
-                title: "Enterprise Ready",
-                desc: "Scalable solution for teams of 5 to 5,000. Easy deployment."
-              },
-              {
-                icon: Heart,
-                title: "Employee Trust",
-                desc: "Build a culture of safety where employees feel valued and protected."
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white p-8 rounded-3xl shadow-sm border border-primary/10 hover:shadow-md transition-all duration-300"
-              >
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <item.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="mt-20 text-center">
-            <Link href="/contact">
-              <Button size="lg" className="h-16 px-12 text-xl rounded-full bg-primary text-white hover:bg-primary/90 font-bold shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1" onClick={() => window.scrollTo(0, 0)}>
-                Contact Sales
-              </Button>
-            </Link>
+      {/* CTA */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="bg-[#1a1a1a] rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+              <div className="absolute top-[-50%] left-[-20%] w-[80%] h-[80%] rounded-full bg-primary blur-[150px]" />
+            </div>
+            
+            <div className="relative z-10 max-w-3xl mx-auto">
+              <h2 className="text-5xl md:text-7xl font-heading font-bold text-white mb-8 uppercase tracking-tight">
+                Protect Your Team Today.
+              </h2>
+              <p className="text-xl text-gray-300 mb-12 leading-relaxed">
+                Reduce liability, improve morale, and keep your workforce safe.
+              </p>
+              <Link href="/pricing">
+                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl">
+                  View Employer Plans
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
