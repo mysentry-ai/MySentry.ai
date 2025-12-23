@@ -166,29 +166,28 @@ export default function HowItWorksDemo() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="text-center p-2"
+                  className="w-full h-full"
                 >
                   {activeStep === 0 && (
-                    <div className="flex flex-col items-center">
-                      <AlertTriangle className="h-10 w-10 text-red-500 animate-pulse mb-2" />
-                      <span className="text-white font-bold text-sm uppercase">
-                        {activeScenario === "fall" ? "Fall Detected" : 
-                         activeScenario === "health" ? "High HR" : "Alert Sent"}
-                      </span>
-                    </div>
+                    <img 
+                      src={activeScenario === "panic" ? "/images/watch-panic.png" : "/images/watch-home.png"} 
+                      alt="Watch Screen" 
+                      className="w-full h-full object-cover"
+                    />
                   )}
                   {activeStep === 1 && (
-                    <div className="flex flex-col items-center">
-                      <Activity className="h-10 w-10 text-blue-500 animate-bounce mb-2" />
-                      <span className="text-white font-bold text-sm">Analyzing...</span>
-                    </div>
+                    <img 
+                      src="/images/watch-notifications.png" 
+                      alt="Analyzing" 
+                      className="w-full h-full object-cover"
+                    />
                   )}
                   {activeStep >= 2 && (
-                    <div className="flex flex-col items-center">
-                      <HeartPulse className="h-8 w-8 text-green-500 animate-pulse mb-1" />
-                      <span className="text-green-400 text-xs font-mono">82 BPM</span>
-                      <span className="text-white text-[10px] mt-1">Sending Data</span>
-                    </div>
+                    <img 
+                      src="/images/watch-vitals.png" 
+                      alt="Vitals" 
+                      className="w-full h-full object-cover"
+                    />
                   )}
                 </motion.div>
               </AnimatePresence>
