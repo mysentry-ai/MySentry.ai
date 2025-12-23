@@ -123,9 +123,9 @@ export default function Employers() {
                 title: "Productivity & Morale",
                 subtitle: "Focus on the job",
                 description: "When employees feel safe, they focus better. Reduce anxiety and turnover by showing your team that their safety is your top priority.",
-                image: "/images/feature-smart-connectivity.jpg",
+                image: "/images/challenge-employer-productivity.jpg",
                 icon: TrendingUp,
-                tag: "Efficiency",
+                tag: "Productivity",
                 link: "/pricing",
                 ctaText: "Learn More"
               }
