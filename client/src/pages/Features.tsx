@@ -429,6 +429,9 @@ export default function Features() {
             <Button className="bg-white text-primary hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl shadow-2xl hover:scale-105 transition-all" onClick={() => window.scrollTo(0, 0)}>
               START 7-DAY FREE TRIAL
             </Button>
+            <p className="text-sm text-white/80 mt-4 font-medium">
+              Credit card needed for 7-day free trial, but not charged for the first 7 days.
+            </p>
           </Link>
         </div>
       </section>
