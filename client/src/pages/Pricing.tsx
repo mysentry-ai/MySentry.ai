@@ -173,7 +173,7 @@ export default function Pricing() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
                 onClick={() => document.getElementById('pricing-plans')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center"
+                className="w-full sm:w-auto bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center"
               >
                 START 7-DAY FREE TRIAL
               </button>
@@ -185,11 +185,11 @@ export default function Pricing() {
       {/* Pricing Toggle */}
       <section id="pricing-plans" className="py-12 bg-[#e8f5e9] border-t border-primary/10">
         <div className="container flex justify-center">
-          <div className="flex items-center justify-center gap-2 p-1 bg-[#c8e6c9] rounded-full inline-flex border border-primary/20">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 p-1 bg-[#c8e6c9] rounded-3xl sm:rounded-full inline-flex border border-primary/20 w-full sm:w-auto">
             <button 
               onClick={() => setIsAnnual(false)}
               className={cn(
-                "px-6 py-2 rounded-full text-sm font-bold transition-all",
+                "w-full sm:w-auto px-6 py-3 sm:py-2 rounded-full text-sm font-bold transition-all",
                 !isAnnual ? "bg-primary text-white" : "text-[#1a1a1a] hover:text-primary"
               )}
             >
@@ -198,7 +198,7 @@ export default function Pricing() {
             <button 
               onClick={() => setIsAnnual(true)}
               className={cn(
-                "px-6 py-2 rounded-full text-sm font-bold transition-all",
+                "w-full sm:w-auto px-6 py-3 sm:py-2 rounded-full text-sm font-bold transition-all",
                 isAnnual ? "bg-primary text-white" : "text-[#1a1a1a] hover:text-primary"
               )}
             >
@@ -218,11 +218,11 @@ export default function Pricing() {
 
           {/* Plan Type Toggle (Individual vs Family) */}
           <div className="flex justify-center mb-12">
-            <div className="bg-white p-1 rounded-full border border-primary/20 inline-flex shadow-sm">
+            <div className="bg-white p-1 rounded-3xl sm:rounded-full border border-primary/20 inline-flex flex-col sm:flex-row shadow-sm w-full sm:w-auto">
               <button
                 onClick={() => setIsFamily(false)}
                 className={cn(
-                  "px-8 py-3 rounded-full text-base font-bold transition-all",
+                  "w-full sm:w-auto px-8 py-3 rounded-full text-base font-bold transition-all",
                   !isFamily ? "bg-primary text-white shadow-md" : "text-[#1a1a1a] hover:bg-gray-50"
                 )}
               >
@@ -231,7 +231,7 @@ export default function Pricing() {
               <button
                 onClick={() => setIsFamily(true)}
                 className={cn(
-                  "px-8 py-3 rounded-full text-base font-bold transition-all",
+                  "w-full sm:w-auto px-8 py-3 rounded-full text-base font-bold transition-all",
                   isFamily ? "bg-primary text-white shadow-md" : "text-[#1a1a1a] hover:bg-gray-50"
                 )}
               >

@@ -87,7 +87,7 @@ export default function HowItWorksDemo() {
 
       <div className="grid lg:grid-cols-2">
         {/* Left Side: Steps List */}
-        <div className="p-12 bg-white flex flex-col justify-center relative z-10">
+        <div className="p-6 md:p-12 bg-white flex flex-col justify-center relative z-10 order-2 lg:order-1">
           <div className="space-y-8">
             {steps.map((step, index) => (
               <div 
@@ -134,7 +134,7 @@ export default function HowItWorksDemo() {
         </div>
 
         {/* Right Side: Visual Simulation */}
-        <div className="relative bg-[#e8f5e9] p-12 flex items-center justify-center overflow-hidden min-h-[600px]">
+        <div className="relative bg-[#e8f5e9] p-8 md:p-12 flex items-center justify-center overflow-hidden min-h-[400px] md:min-h-[600px] order-1 lg:order-2">
           {/* Background Pulse */}
           <div className="absolute inset-0 flex items-center justify-center">
             <motion.div
@@ -151,10 +151,10 @@ export default function HowItWorksDemo() {
             {/* WATCH DEVICE */}
             <motion.div 
               animate={{ 
-                x: showPhone ? -20 : 0,
-                scale: showPhone ? 0.9 : 1.2
+                x: showPhone ? -10 : 0,
+                scale: showPhone ? 0.8 : 1
               }}
-              className="relative w-48 h-56 bg-gray-900 rounded-[2.5rem] border-4 border-gray-800 shadow-2xl flex items-center justify-center overflow-hidden"
+              className="relative w-36 h-44 md:w-48 md:h-56 bg-gray-900 rounded-[2rem] md:rounded-[2.5rem] border-4 border-gray-800 shadow-2xl flex items-center justify-center overflow-hidden shrink-0"
             >
               {/* Watch Strap Hints */}
               <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-16 bg-gray-800 rounded-t-xl -z-10" />
@@ -198,10 +198,10 @@ export default function HowItWorksDemo() {
             <AnimatePresence>
               {showPhone && (
                 <motion.div 
-                  initial={{ opacity: 0, x: 50 }}
+                  initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 50 }}
-                  className="relative w-64 h-[500px] bg-gray-900 rounded-[3rem] border-8 border-gray-800 shadow-2xl overflow-hidden flex flex-col"
+                  exit={{ opacity: 0, x: 20 }}
+                  className="relative w-48 h-[380px] md:w-64 md:h-[500px] bg-gray-900 rounded-[2rem] md:rounded-[3rem] border-4 md:border-8 border-gray-800 shadow-2xl overflow-hidden flex flex-col shrink-0"
                 >
                   <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-xl z-20" />
                   
