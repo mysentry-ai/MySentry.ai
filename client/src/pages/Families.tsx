@@ -3,6 +3,7 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Heart, Shield, Users, Smartphone, MapPin, Bell, CheckCircle2, ArrowRight, Activity, Watch, Lock, Home, Car, Clock, AlertCircle } from "lucide-react";
+import ExpandableCarousel from "@/components/ExpandableCarousel";
 import { motion } from "framer-motion";
 
 export default function Families() {
@@ -117,85 +118,56 @@ export default function Families() {
         </div>
       </section>
 
-      {/* PEACE: The Solution (Feature 1) */}
+      {/* PEACE: The Solution (Expandable Carousel) */}
       <section className="py-32 bg-[#f8fafc] relative overflow-hidden">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
-            >
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
-                  <Users className="h-3 w-3" />
-                  Connected Safety
-                </div>
-                <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
-                  Stay connected <br/>
-                  without the nagging.
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  See everyone's location on a private family map. Get notified when they arrive at school or home. And if anyone needs help, the whole family is alerted instantly.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center animate-pulse">
-                    <MapPin className="h-6 w-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Family Map</h3>
-                    <p className="text-sm text-gray-500">Real-Time Location</p>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  {[
-                    "See real-time location of all family members",
-                    "Get alerts for arrival/departure (Geofencing)",
-                    "Check battery levels of family devices",
-                    "Navigate directly to family members"
-                  ].map((feature, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
-                      <span className="text-gray-700 font-medium">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="aspect-square rounded-[3rem] bg-white border border-gray-100 shadow-2xl flex items-center justify-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-50" />
-                <img 
-                  src="/images/family-map-app.jpg" 
-                  alt="Family map interface" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                
-                {/* Floating Alert Card */}
-                <div className="absolute bottom-12 left-12 right-12 bg-white/90 backdrop-blur-xl p-5 rounded-2xl shadow-lg border border-white/50 animate-[float_5s_ease-in-out_infinite]">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-                      <span className="font-bold text-blue-600 text-sm uppercase tracking-wider">Location Alert</span>
-                    </div>
-                    <span className="text-xs text-gray-500">Now</span>
-                  </div>
-                  <p className="font-bold text-gray-900 text-lg">Sarah arrived at School</p>
-                  <p className="text-sm text-gray-600">Battery: 85%</p>
-                </div>
-              </div>
-            </motion.div>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-blue-600 font-bold tracking-wider uppercase text-sm mb-4 block">Family Safety</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
+              Connected & Protected
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              See how MySentry brings your family closer and keeps everyone safe, no matter where they are.
+            </p>
           </div>
+
+          <ExpandableCarousel 
+            items={[
+              {
+                id: "family-map",
+                title: "Family Map",
+                subtitle: "Real-time location sharing",
+                description: "See everyone's location on a private family map. Get notified when they arrive at school or home. And if anyone needs help, the whole family is alerted instantly.",
+                image: "/images/family-map-app.jpg",
+                icon: MapPin,
+                tag: "Live Location",
+                link: "/features",
+                ctaText: "See How It Works"
+              },
+              {
+                id: "crash-detection",
+                title: "Crash Detection",
+                subtitle: "Driving safety for everyone",
+                description: "Car accidents are the #1 cause of death for teens. If a crash happens, MySentry detects the impact and calls for help instantly, sending the exact GPS location to first responders.",
+                image: "/images/feature-crash.png",
+                icon: Car,
+                tag: "Auto-Response",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "health-alerts",
+                title: "Health Alerts",
+                subtitle: "Care for aging parents",
+                description: "Monitor vital signs for elderly parents or family members with health conditions. Get alerts for falls or abnormal heart rates so you can check in immediately.",
+                image: "/images/feature-health.jpg",
+                icon: Heart,
+                tag: "Remote Care",
+                link: "/seniors",
+                ctaText: "For Seniors"
+              }
+            ]} 
+          />
         </div>
       </section>
 

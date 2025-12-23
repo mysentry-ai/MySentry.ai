@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Heart, TrendingUp, Users, DollarSign, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Zap, Car, Activity, BarChart3, Award, AlertTriangle, Building2 } from "lucide-react";
-import WhyChooseCarousel from "@/components/WhyChooseCarousel";
+import ExpandableCarousel from "@/components/ExpandableCarousel";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { industries } from "@/data/industries";
@@ -72,7 +72,43 @@ export default function Employers() {
             </p>
           </div>
 
-          <WhyChooseCarousel />
+          <ExpandableCarousel 
+            items={[
+              {
+                id: "reduce-liability",
+                title: "Reduce Liability",
+                subtitle: "Protect your business",
+                description: "Workplace accidents can cost millions in lawsuits and insurance premiums. MySentry provides objective video evidence and instant response, mitigating risk and protecting your bottom line.",
+                image: "/images/business-meeting-happy.jpg",
+                icon: Shield,
+                tag: "Risk Management",
+                link: "/pricing",
+                ctaText: "View Plans"
+              },
+              {
+                id: "boost-morale",
+                title: "Boost Morale",
+                subtitle: "Show them you care",
+                description: "When employees know their safety is a priority, engagement and retention soar. MySentry is a tangible benefit that shows your team you value their well-being above all else.",
+                image: "/images/hero-female-active.jpg",
+                icon: Heart,
+                tag: "Employee Retention",
+                link: "/pricing",
+                ctaText: "Get Started"
+              },
+              {
+                id: "increase-productivity",
+                title: "Increase Productivity",
+                subtitle: "Focus on the work",
+                description: "Safety concerns distract from the job at hand. With MySentry's automated protection, your team can focus on their tasks with confidence, knowing help is always there if needed.",
+                image: "/images/feature-panic.jpg",
+                icon: TrendingUp,
+                tag: "Operational Efficiency",
+                link: "/pricing",
+                ctaText: "See Pricing"
+              }
+            ]} 
+          />
         </div>
       </section>
 

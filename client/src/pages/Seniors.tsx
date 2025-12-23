@@ -3,6 +3,7 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Heart, AlertCircle, Activity, TrendingDown, Shield, Clock, CheckCircle2, ArrowRight, Zap, Play, UserCheck, HeartPulse, Watch } from "lucide-react";
+import ExpandableCarousel from "@/components/ExpandableCarousel";
 import { motion } from "framer-motion";
 
 export default function Seniors() {
@@ -117,85 +118,56 @@ export default function Seniors() {
         </div>
       </section>
 
-      {/* PEACE: The Solution (Feature 1) */}
+      {/* PEACE: The Solution (Expandable Carousel) */}
       <section className="py-32 bg-[#f8fafc] relative overflow-hidden">
         <div className="container">
-          <div className="grid lg:grid-cols-2 gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
-            >
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold uppercase tracking-wider mb-6">
-                  <Shield className="h-3 w-3" />
-                  Automatic Protection
-                </div>
-                <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
-                  Help is called <br/>
-                  even if you can't speak.
-                </h2>
-                <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                  If you fall and can't get up, MySentry speaks for you. Our 24/7 monitoring center receives your location, health vitals, and live video instantly. We stay on the line until help arrives.
-                </p>
-              </div>
-
-              <div className="bg-white p-8 rounded-3xl shadow-lg border border-gray-100">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="h-12 w-12 rounded-full bg-red-100 flex items-center justify-center animate-pulse">
-                    <Activity className="h-6 w-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900">Fall Detection</h3>
-                    <p className="text-sm text-gray-500">Automatic & Instant</p>
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  {[
-                    "Detects hard falls automatically",
-                    "Connects to 24/7 agent in seconds",
-                    "Shares GPS location with EMS",
-                    "Notifies family members instantly"
-                  ].map((feature, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" />
-                      <span className="text-gray-700 font-medium">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
-              <div className="aspect-square rounded-[3rem] bg-white border border-gray-100 shadow-2xl flex items-center justify-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent opacity-50" />
-                <img 
-                  src="/images/fall-detection-watch.jpg" 
-                  alt="Fall detection alert on watch" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                
-                {/* Floating Alert Card */}
-                <div className="absolute bottom-12 left-12 right-12 bg-white/90 backdrop-blur-xl p-5 rounded-2xl shadow-lg border border-white/50 animate-[float_5s_ease-in-out_infinite]">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <div className="h-2 w-2 rounded-full bg-red-500 animate-ping"></div>
-                      <span className="font-bold text-red-600 text-sm uppercase tracking-wider">Emergency Alert</span>
-                    </div>
-                    <span className="text-xs text-gray-500">Now</span>
-                  </div>
-                  <p className="font-bold text-gray-900 text-lg">Hard Fall Detected</p>
-                  <p className="text-sm text-gray-600">Connecting to Agent...</p>
-                </div>
-              </div>
-            </motion.div>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-red-500 font-bold tracking-wider uppercase text-sm mb-4 block">Complete Protection</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
+              Safety Without Compromise
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Discover how MySentry keeps you safe and independent with advanced features designed for your lifestyle.
+            </p>
           </div>
+
+          <ExpandableCarousel 
+            items={[
+              {
+                id: "fall-detection",
+                title: "Automatic Fall Detection",
+                subtitle: "Help when you can't ask for it",
+                description: "If you fall and can't get up, MySentry speaks for you. Our 24/7 monitoring center receives your location, health vitals, and live video instantly. We stay on the line until help arrives.",
+                image: "/images/fall-detection-watch.jpg",
+                icon: Activity,
+                tag: "Automatic Alert",
+                link: "/features",
+                ctaText: "See How It Works"
+              },
+              {
+                id: "health-monitoring",
+                title: "Health Monitoring",
+                subtitle: "Know before it's an emergency",
+                description: "High heart rate? Low oxygen? Irregular rhythm? Your watch sees it before you feel it. We alert you and your family instantly so you can take action.",
+                image: "/images/feature-health.jpg",
+                icon: HeartPulse,
+                tag: "Proactive Care",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "family-connection",
+                title: "Family Connection",
+                subtitle: "Peace of mind for everyone",
+                description: "Your family stays in the loop with real-time notifications and location sharing. They'll know you're safe, and you'll know they're just a tap away.",
+                image: "/images/family-couch.jpg",
+                icon: Heart,
+                tag: "Stay Connected",
+                link: "/families",
+                ctaText: "For Families"
+              }
+            ]} 
+          />
         </div>
       </section>
 

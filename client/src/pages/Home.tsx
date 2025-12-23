@@ -3,6 +3,7 @@ import SEO from "@/components/SEO";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Activity, HeartPulse, ShieldAlert, CheckCircle2, Play, Star } from "lucide-react";
+import ExpandableCarousel from "@/components/ExpandableCarousel";
 import HowItWorksDemo from "@/components/HowItWorksDemo";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
@@ -82,32 +83,56 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VALUE PROPOSITION - Light Green Theme */}
-      <section className="py-24 bg-[#e8f5e9] text-[#1a1a1a]">
+      {/* VALUE PROPOSITION - Expandable Carousel */}
+      <section className="py-24 bg-[#e8f5e9] text-[#1a1a1a] overflow-hidden">
         <div className="container">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="space-y-4 border-t-4 border-primary pt-8">
-              <ShieldAlert className="h-12 w-12 text-primary" />
-              <h3 className="text-2xl font-heading font-bold uppercase tracking-wide text-[#1a1a1a]">Fall & Crash Detection</h3>
-              <p className="text-gray-600 leading-relaxed font-medium">
-                Advanced algorithms detect hard falls and car crashes instantly, alerting our monitoring center even if you can't speak.
-              </p>
-            </div>
-            <div className="space-y-4 border-t-4 border-primary pt-8">
-              <HeartPulse className="h-12 w-12 text-primary" />
-              <h3 className="text-2xl font-heading font-bold uppercase tracking-wide text-[#1a1a1a]">Health Vitals Monitoring</h3>
-              <p className="text-gray-600 leading-relaxed font-medium">
-                Continuous monitoring of heart rate and vital signs. We detect abnormalities before they become emergencies.
-              </p>
-            </div>
-            <div className="space-y-4 border-t-4 border-primary pt-8">
-              <Activity className="h-12 w-12 text-primary" />
-              <h3 className="text-2xl font-heading font-bold uppercase tracking-wide text-[#1a1a1a]">24/7 Professional Monitoring</h3>
-              <p className="text-gray-600 leading-relaxed font-medium">
-                Our certified monitoring center is always watching. We dispatch police, fire, or EMS with your exact location and health data.
-              </p>
-            </div>
+          <div className="text-center max-w-3xl mx-auto mb-12">
+            <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Comprehensive Safety</span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold uppercase tracking-tight mb-6 text-[#1a1a1a]">
+              Protection Reimagined
+            </h2>
+            <p className="text-xl text-gray-600">
+              Explore how MySentry keeps you safe with advanced technology and human care.
+            </p>
           </div>
+          
+          <ExpandableCarousel 
+            items={[
+              {
+                id: "fall-crash",
+                title: "Fall & Crash Detection",
+                subtitle: "Instant alerts when it matters most",
+                description: "Advanced algorithms detect hard falls and car crashes instantly, alerting our monitoring center even if you can't speak. We send help to your exact location immediately.",
+                image: "/images/feature-fall.jpg",
+                icon: ShieldAlert,
+                tag: "Automatic Detection",
+                link: "/features",
+                ctaText: "See How It Works"
+              },
+              {
+                id: "health-vitals",
+                title: "Health Vitals Monitoring",
+                subtitle: "Proactive health insights",
+                description: "Continuous monitoring of heart rate and vital signs. We detect abnormalities before they become emergencies, giving you and your loved ones peace of mind.",
+                image: "/images/feature-health.jpg",
+                icon: HeartPulse,
+                tag: "Real-Time Health",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "professional-monitoring",
+                title: "24/7 Professional Monitoring",
+                subtitle: "Always there for you",
+                description: "Our certified monitoring center is always watching. We dispatch police, fire, or EMS with your exact location and health data, ensuring the fastest possible response.",
+                image: "/images/feature-panic.jpg",
+                icon: Activity,
+                tag: "Live Response",
+                link: "/features",
+                ctaText: "Meet Our Team"
+              }
+            ]} 
+          />
         </div>
       </section>
 
