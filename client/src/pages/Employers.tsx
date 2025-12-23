@@ -97,6 +97,17 @@ export default function Employers() {
                 ctaText: "Get Started"
               },
               {
+                id: "driver-safety",
+                title: "Driver Safety",
+                subtitle: "Protect your fleet",
+                description: "Automatic crash detection for delivery drivers and field agents. We alert emergency services instantly if a severe impact is detected.",
+                image: "/images/challenge-senior-crash.jpg",
+                icon: Car,
+                tag: "Fleet Safety",
+                link: "/pricing",
+                ctaText: "Learn More"
+              },
+              {
                 id: "liability-protection",
                 title: "Liability Protection",
                 subtitle: "Objective evidence",

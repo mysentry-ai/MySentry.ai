@@ -57,8 +57,8 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
               className={cn(
                 "relative rounded-[2rem] overflow-hidden cursor-pointer shrink-0 snap-center transition-all duration-500 ease-in-out group",
                 isExpanded 
-                  ? "w-full lg:w-[800px] h-[500px] lg:h-[600px] z-20" 
-                  : "w-[300px] lg:w-[350px] h-[400px] lg:h-[500px] hover:w-[320px] lg:hover:w-[370px] z-10 opacity-90 hover:opacity-100"
+                  ? "w-full lg:w-[900px] h-[600px] lg:h-[700px] z-20" 
+                  : "w-[320px] lg:w-[400px] h-[500px] lg:h-[600px] hover:w-[340px] lg:hover:w-[420px] z-10 opacity-95 hover:opacity-100"
               )}
               initial={{ borderRadius: "2rem" }}
             >
@@ -94,10 +94,10 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
                   handleExpand(item.id);
                 }}
                 className={cn(
-                  "absolute top-6 right-6 z-30 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg",
+                  "absolute top-6 right-6 z-30 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 shadow-xl border-2 border-white/20",
                   isExpanded 
-                    ? "bg-white text-black hover:bg-gray-200" 
-                    : "bg-black/30 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black"
+                    ? "bg-white text-black hover:bg-gray-100 scale-110" 
+                    : "bg-black/40 backdrop-blur-md text-white hover:bg-white hover:text-black"
                 )}
               >
                 {isExpanded ? <X className="w-5 h-5" /> : <Plus className="w-5 h-5" />}
@@ -133,9 +133,11 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
                       exit={{ opacity: 0, y: 10 }}
                       transition={{ duration: 0.4, delay: 0.1 }}
                     >
-                      <p className="text-lg lg:text-xl text-gray-200 mb-8 leading-relaxed max-w-lg">
-                        {item.description}
-                      </p>
+                      <div className="bg-black/40 backdrop-blur-sm p-6 rounded-xl border-l-4 border-primary mb-8 max-w-lg">
+                        <p className="text-lg lg:text-xl text-white font-medium leading-relaxed shadow-black drop-shadow-md">
+                          {item.description}
+                        </p>
+                      </div>
                       
                       {item.link && (
                         <Button 

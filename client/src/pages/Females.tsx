@@ -176,6 +176,17 @@ export default function Females() {
                 tag: "Silent Panic",
                 link: "/features",
                 ctaText: "Learn More"
+              },
+              {
+                id: "campus-safety",
+                title: "Campus Safety",
+                subtitle: "Walk home safely",
+                description: "Late night study session? Walking back to your dorm? MySentry is your virtual companion, ensuring you get home safe every time.",
+                image: "/images/feature-emergency-contacts.jpg",
+                icon: MapPin,
+                tag: "Student Safety",
+                link: "/features",
+                ctaText: "Learn More"
               }
             ]} 
           />

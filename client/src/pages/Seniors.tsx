@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Heart, AlertCircle, Activity, TrendingDown, Shield, Clock, CheckCircle2, ArrowRight, Zap, Play, UserCheck, HeartPulse, Watch, Pill, Home } from "lucide-react";
+import { Heart, AlertCircle, Activity, TrendingDown, Shield, Clock, CheckCircle2, ArrowRight, Zap, Play, UserCheck, HeartPulse, Watch, Pill, Home, Car } from "lucide-react";
 import ExpandableCarousel from "@/components/ExpandableCarousel";
 import { motion } from "framer-motion";
 
@@ -134,48 +134,59 @@ export default function Seniors() {
           <ExpandableCarousel 
             items={[
               {
-                id: "living-alone",
-                title: "Living Independently",
-                subtitle: "Stay in your own home",
-                description: "Enjoy the comfort of your own home without the worry. MySentry provides 24/7 monitoring that respects your privacy but is always there when you need it.",
-                image: "/images/challenge-senior-living-alone.jpg",
-                icon: Home,
-                tag: "Independence",
-                link: "/features",
-                ctaText: "Learn More"
-              },
-              {
-                id: "medication-reminders",
-                title: "Medication Management",
-                subtitle: "Never miss a dose",
-                description: "Set reminders for your medications directly on your wrist. We help you stay on track with your health routine so you can focus on enjoying life.",
-                image: "/images/challenge-senior-medication.jpg",
-                icon: Pill,
-                tag: "Health Routine",
-                link: "/features",
-                ctaText: "See How It Works"
-              },
-              {
                 id: "fall-detection",
                 title: "Fall Detection",
                 subtitle: "Automatic help when you fall",
                 description: "If you fall and can't get up, MySentry speaks for you. Our 24/7 monitoring center receives your location and sends help immediately.",
-                image: "/images/fall-detection-watch.jpg",
+                image: "/images/challenge-senior-fall.jpg",
                 icon: Activity,
                 tag: "Automatic Alert",
                 link: "/features",
                 ctaText: "See How It Works"
               },
               {
+                id: "crash-detection",
+                title: "Crash Detection",
+                subtitle: "Safety on the road",
+                description: "Driving is key to independence. MySentry detects severe car crashes and automatically connects you to emergency services, even if you can't respond.",
+                image: "/images/challenge-senior-crash.jpg",
+                icon: Car,
+                tag: "Road Safety",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "near-fall",
+                title: "Near-Fall Detection",
+                subtitle: "Prevent future accidents",
+                description: "We track stability and near-falls to identify balance issues before a serious injury occurs, helping you stay proactive about your mobility.",
+                image: "/images/challenge-senior-near-fall.jpg",
+                icon: TrendingDown,
+                tag: "Prevention",
+                link: "/features",
+                ctaText: "View Features"
+              },
+              {
                 id: "health-monitoring",
-                title: "Health Monitoring",
+                title: "Live Health Monitoring",
                 subtitle: "Know before it's an emergency",
                 description: "High heart rate? Low oxygen? Irregular rhythm? Your watch sees it before you feel it. We alert you and your family instantly so you can take action.",
-                image: "/images/feature-health.jpg",
+                image: "/images/challenge-senior-health-monitoring.jpg",
                 icon: HeartPulse,
                 tag: "Proactive Care",
                 link: "/features",
                 ctaText: "Learn More"
+              },
+              {
+                id: "panic-alarm",
+                title: "Voice Panic Alarm",
+                subtitle: "Help is just a word away",
+                description: "In an emergency, just say the word or tap your watch. You're instantly connected to our 24/7 monitoring center, no phone required.",
+                image: "/images/challenge-senior-panic.jpg",
+                icon: AlertCircle,
+                tag: "Instant Help",
+                link: "/features",
+                ctaText: "See How It Works"
               }
             ]} 
           />

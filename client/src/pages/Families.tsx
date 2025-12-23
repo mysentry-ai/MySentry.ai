@@ -156,6 +156,17 @@ export default function Families() {
                 ctaText: "See How It Works"
               },
               {
+                id: "elderly-parents",
+                title: "Elderly Parents",
+                subtitle: "Care from a distance",
+                description: "Keep an eye on aging parents who live alone. Receive alerts for falls or health issues so you can intervene quickly, even from miles away.",
+                image: "/images/challenge-senior-living-alone.jpg",
+                icon: Heart,
+                tag: "Senior Care",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
                 id: "family-map",
                 title: "Family Map",
                 subtitle: "See everyone in one place",
