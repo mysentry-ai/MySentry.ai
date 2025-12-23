@@ -52,7 +52,7 @@ export default function Home() {
             
             <div className="flex flex-col w-full sm:w-auto sm:flex-row gap-4 pt-8">
 <Link href="/pricing">
-                <Button className="w-full sm:w-auto bg-white text-primary hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-8 md:px-10 h-14 md:h-16 text-base md:text-lg transition-all hover:scale-105 shadow-xl" onClick={() => window.scrollTo(0, 0)}>
+                <Button className="w-full sm:w-auto bg-white hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-8 md:px-10 h-14 md:h-16 text-base md:text-lg transition-all hover:scale-105 shadow-xl" style={{ color: '#004F7B' }} onClick={() => window.scrollTo(0, 0)}>
                   START 7-DAY FREE TRIAL
                 </Button>
                 <p className="text-xs text-white/80 mt-2 text-center font-medium drop-shadow-sm">
@@ -60,7 +60,7 @@ export default function Home() {
                 </p>
               </Link>
               <Link href="/features">
-                <Button variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-primary font-bold uppercase tracking-wider rounded-full px-8 md:px-10 h-14 md:h-16 text-base md:text-lg backdrop-blur-sm shadow-lg transition-colors">
+                <Button variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white font-bold uppercase tracking-wider rounded-full px-8 md:px-10 h-14 md:h-16 text-base md:text-lg backdrop-blur-sm shadow-lg transition-colors hover:text-[#004F7B]" onClick={() => window.scrollTo(0, 0)}>
                   <Play className="mr-2 h-5 w-5 fill-current" />
                   See How It Works
                 </Button>
