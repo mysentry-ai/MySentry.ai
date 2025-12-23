@@ -55,7 +55,7 @@ export default function Home() {
             
             <div className="flex flex-col w-full sm:w-auto sm:flex-row gap-4 pt-8">
 <Link href="/pricing">
-                <Button className="w-full sm:w-auto bg-white hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-8 md:px-10 h-14 md:h-16 text-base md:text-lg transition-all hover:scale-105 shadow-xl" style={{ color: '#004F7B' }} onClick={() => window.scrollTo(0, 0)}>
+                <Button className="w-full sm:w-auto bg-white hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-8 md:px-10 h-14 md:h-16 text-base md:text-lg transition-all hover:scale-105 shadow-xl text-black" onClick={() => window.scrollTo(0, 0)}>
                   START 7-DAY FREE TRIAL
                 </Button>
                 <p className="text-xs text-white/80 mt-2 text-center font-medium drop-shadow-sm">
@@ -304,7 +304,7 @@ export default function Home() {
             Experience the peace of mind that comes with 24/7 professional protection. No contracts, cancel anytime.
           </p>
 <Link href="/pricing">
-            <Button className="bg-white text-primary hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl shadow-2xl hover:scale-105 transition-all" onClick={() => window.scrollTo(0, 0)}>
+            <Button className="bg-white text-black hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl shadow-2xl hover:scale-105 transition-all" onClick={() => window.scrollTo(0, 0)}>
               START 7-DAY FREE TRIAL
             </Button>
           </Link>
