@@ -19,7 +19,7 @@ export default function Features() {
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
            <img 
-             src="/images/happy-senior-watch.jpg" 
+             src="/images/flyer-main.png" 
              alt="Happy senior checking smartwatch" 
              className="absolute inset-0 w-full h-full object-cover opacity-60"
            />
@@ -85,7 +85,7 @@ export default function Features() {
           </div>
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
-              <img src="/images/watch-sos-lifestyle.png" alt="Panic Alarm" className="w-full h-full object-cover" />
+              <img src="/images/panic-feature.jpg" alt="Panic Alarm" className="w-full h-full object-cover" />
               <AlertDemo type="panic" className="absolute inset-0" />
             </div>
           </div>
@@ -97,7 +97,7 @@ export default function Features() {
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
-              <img src="/images/feature-fall.jpg" alt="Fall Detection" className="w-full h-full object-cover" />
+              <img src="/images/frame-1.png" alt="Fall Detection" className="w-full h-full object-cover" />
               <AlertDemo type="fall" className="absolute inset-0" />
             </div>
           </div>
@@ -156,7 +156,7 @@ export default function Features() {
           </div>
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100">
-              <img src="/images/feature-near-fall.jpg" alt="Near-Fall Detection" className="w-full h-full object-cover" />
+              <img src="/images/frame-8.png" alt="Near-Fall Detection" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@ export default function Features() {
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
-              <img src="/images/feature-crash.png" alt="Crash Detection" className="w-full h-full object-cover" />
+              <img src="/images/frame-6.png" alt="Crash Detection" className="w-full h-full object-cover" />
               <AlertDemo type="crash" className="absolute inset-0" />
             </div>
           </div>
@@ -230,7 +230,7 @@ export default function Features() {
           </div>
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100">
-              <img src="/images/feature-connectivity.webp" alt="Smart Connectivity" className="w-full h-full object-cover" />
+              <img src="/images/iphone-175.png" alt="Smart Connectivity" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -241,7 +241,7 @@ export default function Features() {
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
-              <img src="/images/watch-vitals.png" alt="Health Monitoring" className="w-full h-full object-cover" />
+              <img src="/images/iphone-173.jpg" alt="Health Monitoring" className="w-full h-full object-cover" />
               <AlertDemo type="health" className="absolute inset-0" />
             </div>
           </div>
@@ -294,7 +294,7 @@ export default function Features() {
           </div>
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100">
-              <img src="/images/watch-notifications.png" alt="Professional Monitoring" className="w-full h-full object-cover" />
+              <img src="/images/app-home.png" alt="Professional Monitoring" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>
@@ -305,7 +305,7 @@ export default function Features() {
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200">
-              <img src="/images/feature-video.jpg" alt="Video Evidence" className="w-full h-full object-cover" />
+              <img src="/images/news-clip.png" alt="Video Evidence" className="w-full h-full object-cover" />
             </div>
           </div>
           <div>

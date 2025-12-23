@@ -106,7 +106,7 @@ export default function Home() {
                 title: "Fall Detection",
                 subtitle: "Automatic help when you fall",
                 description: "Advanced sensors detect hard falls instantly. If you don't respond, we automatically alert our monitoring center and send help to your location.",
-                image: "/images/feature-fall.jpg",
+                image: "/images/frame-1.png",
                 icon: ShieldAlert,
                 tag: "Automatic Safety",
                 link: "/features",
@@ -117,7 +117,7 @@ export default function Home() {
                 title: "Crash Detection",
                 subtitle: "Protection on the road",
                 description: "MySentry detects severe car crashes and automatically connects you to emergency services, sharing your location even if you can't speak.",
-                image: "/images/feature-crash-detection.jpg",
+                image: "/images/frame-6.png",
                 icon: ShieldAlert,
                 tag: "Driving Safety",
                 link: "/features",
@@ -128,7 +128,7 @@ export default function Home() {
                 title: "Real-Time Health Monitoring",
                 subtitle: "Proactive wellness tracking",
                 description: "Continuous monitoring of heart rate and vital signs. We detect abnormalities before they become emergencies, giving you peace of mind.",
-                image: "/images/feature-health.jpg",
+                image: "/images/frame-8.png",
                 icon: HeartPulse,
                 tag: "Health Insights",
                 link: "/features",
@@ -139,7 +139,7 @@ export default function Home() {
                 title: "Voice Activated Panic Alarm",
                 subtitle: "Help is just a word away",
                 description: "In an emergency, simply say your safe word to trigger a silent alarm. Our agents will listen in and dispatch help immediately.",
-                image: "/images/feature-voice-panic.jpg",
+                image: "/images/panic-feature.jpg",
                 icon: Mic,
                 tag: "Hands-Free",
                 link: "/features",
@@ -150,7 +150,7 @@ export default function Home() {
                 title: "Smart Connectivity",
                 subtitle: "Seamless integration",
                 description: "MySentry works with your existing smartwatch and smartphone, creating a powerful safety network without needing extra bulky devices.",
-                image: "/images/feature-smart-connectivity.jpg",
+                image: "/images/iphone-175.png",
                 icon: Wifi,
                 tag: "Always Connected",
                 link: "/features",
@@ -161,7 +161,7 @@ export default function Home() {
                 title: "MeetSafe",
                 subtitle: "Date and meet with confidence",
                 description: "Set a check-in timer before meeting someone new. If you don't check in, we'll alert your emergency contacts and monitoring center.",
-                image: "/images/feature-meetsafe.jpg",
+                image: "/images/iphone-168.png",
                 icon: Users,
                 tag: "Personal Safety",
                 link: "/features",
@@ -172,7 +172,7 @@ export default function Home() {
                 title: "5 Emergency Contacts",
                 subtitle: "Keep loved ones in the loop",
                 description: "Designate up to 5 family members or friends to be notified instantly during an emergency, keeping your support network informed.",
-                image: "/images/feature-emergency-contacts.jpg",
+                image: "/images/emergency-contacts.png",
                 icon: Phone,
                 tag: "Family Circle",
                 link: "/features",
@@ -183,7 +183,7 @@ export default function Home() {
                 title: "24/7 Professional Monitoring",
                 subtitle: "Expert help, always ready",
                 description: "Our certified monitoring center is always watching. We dispatch police, fire, or EMS with your exact location and health data.",
-                image: "/images/feature-panic.jpg",
+                image: "/images/app-home.png",
                 icon: Activity,
                 tag: "Live Response",
                 link: "/features",
@@ -199,7 +199,7 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 min-h-[80vh]">
           <div className="bg-gray-100 relative overflow-hidden group">
             <img 
-              src="/images/home-protection-bubble.png" 
+              src="/images/marketing-main.png" 
               alt="Live Monitoring" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
