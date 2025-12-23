@@ -134,37 +134,48 @@ export default function Females() {
           <ExpandableCarousel 
             items={[
               {
-                id: "meetsafe",
-                title: "MeetSafe Mode",
-                subtitle: "For dates & meetings",
-                description: "Set a safety timer before a meeting. If you don't check in, we alert your contacts and start recording. Live audio/video streams to our monitoring center for evidence.",
-                image: "/images/meetsafe-app.jpg",
-                icon: Eye,
-                tag: "Smart Check-In",
-                link: "/features",
-                ctaText: "See How It Works"
-              },
-              {
-                id: "panic-button",
-                title: "Discreet Panic Button",
-                subtitle: "Help without drawing attention",
-                description: "Feel unsafe? Tap your watch or phone discreetly. No loud alarms. No obvious calls. Just an instant connection to a professional who can see what's happening.",
-                image: "/images/feature-panic.jpg",
-                icon: Shield,
-                tag: "Silent Alert",
+                id: "jogging-safety",
+                title: "Jogging Alone",
+                subtitle: "Run with confidence",
+                description: "Feel safe on your evening runs. Our GPS tracking and instant panic button mean you're never truly alone, even on secluded paths.",
+                image: "/images/challenge-female-jogging-night.jpg",
+                icon: Activity,
+                tag: "Active Safety",
                 link: "/features",
                 ctaText: "Learn More"
               },
               {
-                id: "location-sharing",
-                title: "Live Location Sharing",
-                subtitle: "Never walk alone",
-                description: "Share your real-time location with trusted contacts or our monitoring center. Whether you're running, traveling, or just walking home, someone is always watching over you.",
-                image: "/images/hero-female-active.jpg",
-                icon: MapPin,
-                tag: "Real-Time GPS",
+                id: "dating-safety",
+                title: "Dating Safety",
+                subtitle: "Meet new people securely",
+                description: "Use MeetSafe mode to set check-in timers for dates. If you don't check in, we automatically alert your emergency contacts and monitoring center.",
+                image: "/images/challenge-female-dating.jpg",
+                icon: Heart,
+                tag: "MeetSafe",
                 link: "/features",
-                ctaText: "Explore Features"
+                ctaText: "See How It Works"
+              },
+              {
+                id: "rideshare-safety",
+                title: "Rideshare Safety",
+                subtitle: "Travel without fear",
+                description: "Share your live trip status with loved ones. If your ride goes off-route or stops unexpectedly, we can intervene immediately.",
+                image: "/images/feature-smart-connectivity.jpg",
+                icon: Car,
+                tag: "Travel Safe",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "discreet-alert",
+                title: "Discreet Alerts",
+                subtitle: "Call for help silently",
+                description: "In uncomfortable situations, trigger a silent alarm without raising suspicion. Our agents listen in and send help while you stay safe.",
+                image: "/images/feature-voice-panic.jpg",
+                icon: Shield,
+                tag: "Silent Panic",
+                link: "/features",
+                ctaText: "Learn More"
               }
             ]} 
           />

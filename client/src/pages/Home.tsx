@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { ArrowRight, Activity, HeartPulse, ShieldAlert, CheckCircle2, Play, Star, MapPin, Droplets, Battery } from "lucide-react";
+import { ArrowRight, Activity, HeartPulse, ShieldAlert, CheckCircle2, Play, Star, MapPin, Mic, Wifi, Users, Phone } from "lucide-react";
 import ExpandableCarousel from "@/components/ExpandableCarousel";
 import HowItWorksDemo from "@/components/HowItWorksDemo";
 import { Link } from "wouter";
@@ -99,68 +99,90 @@ export default function Home() {
           <ExpandableCarousel 
             items={[
               {
-                id: "fall-crash",
-                title: "Fall & Crash Detection",
-                subtitle: "Instant alerts when it matters most",
-                description: "Advanced algorithms detect hard falls and car crashes instantly, alerting our monitoring center even if you can't speak. We send help to your exact location immediately.",
+                id: "fall-detection",
+                title: "Fall Detection",
+                subtitle: "Automatic help when you fall",
+                description: "Advanced sensors detect hard falls instantly. If you don't respond, we automatically alert our monitoring center and send help to your location.",
                 image: "/images/feature-fall.jpg",
                 icon: ShieldAlert,
-                tag: "Automatic Detection",
+                tag: "Automatic Safety",
                 link: "/features",
-                ctaText: "See How It Works"
+                ctaText: "Learn More"
               },
               {
-                id: "health-vitals",
-                title: "Health Vitals Monitoring",
-                subtitle: "Proactive health insights",
-                description: "Continuous monitoring of heart rate and vital signs. We detect abnormalities before they become emergencies, giving you and your loved ones peace of mind.",
+                id: "crash-detection",
+                title: "Crash Detection",
+                subtitle: "Protection on the road",
+                description: "MySentry detects severe car crashes and automatically connects you to emergency services, sharing your location even if you can't speak.",
+                image: "/images/feature-crash-detection.jpg",
+                icon: ShieldAlert,
+                tag: "Driving Safety",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "health-monitoring",
+                title: "Real-Time Health Monitoring",
+                subtitle: "Proactive wellness tracking",
+                description: "Continuous monitoring of heart rate and vital signs. We detect abnormalities before they become emergencies, giving you peace of mind.",
                 image: "/images/feature-health.jpg",
                 icon: HeartPulse,
-                tag: "Real-Time Health",
+                tag: "Health Insights",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "voice-panic",
+                title: "Voice Activated Panic Alarm",
+                subtitle: "Help is just a word away",
+                description: "In an emergency, simply say your safe word to trigger a silent alarm. Our agents will listen in and dispatch help immediately.",
+                image: "/images/feature-voice-panic.jpg",
+                icon: Mic,
+                tag: "Hands-Free",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "smart-connectivity",
+                title: "Smart Connectivity",
+                subtitle: "Seamless integration",
+                description: "MySentry works with your existing smartwatch and smartphone, creating a powerful safety network without needing extra bulky devices.",
+                image: "/images/feature-smart-connectivity.jpg",
+                icon: Wifi,
+                tag: "Always Connected",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "meetsafe",
+                title: "MeetSafe",
+                subtitle: "Date and meet with confidence",
+                description: "Set a check-in timer before meeting someone new. If you don't check in, we'll alert your emergency contacts and monitoring center.",
+                image: "/images/feature-meetsafe.jpg",
+                icon: Users,
+                tag: "Personal Safety",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "emergency-contacts",
+                title: "5 Emergency Contacts",
+                subtitle: "Keep loved ones in the loop",
+                description: "Designate up to 5 family members or friends to be notified instantly during an emergency, keeping your support network informed.",
+                image: "/images/feature-emergency-contacts.jpg",
+                icon: Phone,
+                tag: "Family Circle",
                 link: "/features",
                 ctaText: "Learn More"
               },
               {
                 id: "professional-monitoring",
                 title: "24/7 Professional Monitoring",
-                subtitle: "Always there for you",
-                description: "Our certified monitoring center is always watching. We dispatch police, fire, or EMS with your exact location and health data, ensuring the fastest possible response.",
+                subtitle: "Expert help, always ready",
+                description: "Our certified monitoring center is always watching. We dispatch police, fire, or EMS with your exact location and health data.",
                 image: "/images/feature-panic.jpg",
                 icon: Activity,
                 tag: "Live Response",
-                link: "/features",
-                ctaText: "Meet Our Team"
-              },
-              {
-                id: "gps-location",
-                title: "Real-Time GPS Location",
-                subtitle: "Pinpoint accuracy",
-                description: "Whether you're hiking in the woods or walking in the city, we know exactly where you are. In an emergency, we guide first responders to your precise coordinates.",
-                image: "/images/family-map-app.jpg",
-                icon: MapPin,
-                tag: "Precision Tracking",
-                link: "/features",
-                ctaText: "See Coverage"
-              },
-              {
-                id: "water-resistant",
-                title: "Water Resistant",
-                subtitle: "Protection everywhere",
-                description: "Wear it in the shower, pool, or rain. Falls often happen in the bathroom, so we built MySentry to be fully water-resistant and ready for anything.",
-                image: "/images/hero-female-active.jpg",
-                icon: Droplets,
-                tag: "IP68 Rated",
-                link: "/features",
-                ctaText: "View Specs"
-              },
-              {
-                id: "battery-life",
-                title: "Long Battery Life",
-                subtitle: "Ready when you are",
-                description: "With up to 48 hours of battery life on a single charge, MySentry keeps watching over you day and night without constant recharging anxiety.",
-                image: "/images/fall-detection-watch.jpg",
-                icon: Battery,
-                tag: "48-Hour Power",
                 link: "/features",
                 ctaText: "Learn More"
               }

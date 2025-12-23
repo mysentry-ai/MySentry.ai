@@ -75,37 +75,48 @@ export default function Employers() {
           <ExpandableCarousel 
             items={[
               {
-                id: "reduce-liability",
-                title: "Reduce Liability",
-                subtitle: "Protect your business",
-                description: "Workplace accidents can cost millions in lawsuits and insurance premiums. MySentry provides objective video evidence and instant response, mitigating risk and protecting your bottom line.",
-                image: "/images/business-meeting-happy.jpg",
-                icon: Shield,
-                tag: "Risk Management",
+                id: "lone-worker",
+                title: "Lone Worker Safety",
+                subtitle: "Never truly alone",
+                description: "Protect employees who work alone or in remote locations. Automated check-ins and fall detection ensure they're safe even when no one else is around.",
+                image: "/images/challenge-employer-lone-worker.jpg",
+                icon: Users,
+                tag: "Remote Safety",
                 link: "/pricing",
                 ctaText: "View Plans"
               },
               {
-                id: "boost-morale",
-                title: "Boost Morale",
-                subtitle: "Show them you care",
-                description: "When employees know their safety is a priority, engagement and retention soar. MySentry is a tangible benefit that shows your team you value their well-being above all else.",
-                image: "/images/hero-female-active.jpg",
+                id: "health-incidents",
+                title: "Health Incidents",
+                subtitle: "Immediate medical response",
+                description: "Detect heart attacks, heat exhaustion, or other health crises instantly. Our monitoring center dispatches EMS with precise location data to save precious minutes.",
+                image: "/images/challenge-employer-health.jpg",
                 icon: Heart,
-                tag: "Employee Retention",
+                tag: "Medical Response",
                 link: "/pricing",
                 ctaText: "Get Started"
               },
               {
-                id: "increase-productivity",
-                title: "Increase Productivity",
-                subtitle: "Focus on the work",
-                description: "Safety concerns distract from the job at hand. With MySentry's automated protection, your team can focus on their tasks with confidence, knowing help is always there if needed.",
-                image: "/images/feature-panic.jpg",
-                icon: TrendingUp,
-                tag: "Operational Efficiency",
+                id: "liability-protection",
+                title: "Liability Protection",
+                subtitle: "Objective evidence",
+                description: "In the event of an incident, MySentry automatically records video and audio, providing clear evidence to protect your business from false claims.",
+                image: "/images/business-meeting-happy.jpg",
+                icon: Shield,
+                tag: "Risk Management",
                 link: "/pricing",
                 ctaText: "See Pricing"
+              },
+              {
+                id: "productivity",
+                title: "Productivity & Morale",
+                subtitle: "Focus on the job",
+                description: "When employees feel safe, they focus better. Reduce anxiety and turnover by showing your team that their safety is your top priority.",
+                image: "/images/feature-smart-connectivity.jpg",
+                icon: TrendingUp,
+                tag: "Efficiency",
+                link: "/pricing",
+                ctaText: "Learn More"
               }
             ]} 
           />

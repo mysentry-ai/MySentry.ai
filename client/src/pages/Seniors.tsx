@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Heart, AlertCircle, Activity, TrendingDown, Shield, Clock, CheckCircle2, ArrowRight, Zap, Play, UserCheck, HeartPulse, Watch } from "lucide-react";
+import { Heart, AlertCircle, Activity, TrendingDown, Shield, Clock, CheckCircle2, ArrowRight, Zap, Play, UserCheck, HeartPulse, Watch, Pill, Home } from "lucide-react";
 import ExpandableCarousel from "@/components/ExpandableCarousel";
 import { motion } from "framer-motion";
 
@@ -134,10 +134,32 @@ export default function Seniors() {
           <ExpandableCarousel 
             items={[
               {
+                id: "living-alone",
+                title: "Living Independently",
+                subtitle: "Stay in your own home",
+                description: "Enjoy the comfort of your own home without the worry. MySentry provides 24/7 monitoring that respects your privacy but is always there when you need it.",
+                image: "/images/challenge-senior-living-alone.jpg",
+                icon: Home,
+                tag: "Independence",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "medication-reminders",
+                title: "Medication Management",
+                subtitle: "Never miss a dose",
+                description: "Set reminders for your medications directly on your wrist. We help you stay on track with your health routine so you can focus on enjoying life.",
+                image: "/images/challenge-senior-medication.jpg",
+                icon: Pill,
+                tag: "Health Routine",
+                link: "/features",
+                ctaText: "See How It Works"
+              },
+              {
                 id: "fall-detection",
-                title: "Automatic Fall Detection",
-                subtitle: "Help when you can't ask for it",
-                description: "If you fall and can't get up, MySentry speaks for you. Our 24/7 monitoring center receives your location, health vitals, and live video instantly. We stay on the line until help arrives.",
+                title: "Fall Detection",
+                subtitle: "Automatic help when you fall",
+                description: "If you fall and can't get up, MySentry speaks for you. Our 24/7 monitoring center receives your location and sends help immediately.",
                 image: "/images/fall-detection-watch.jpg",
                 icon: Activity,
                 tag: "Automatic Alert",
@@ -154,17 +176,6 @@ export default function Seniors() {
                 tag: "Proactive Care",
                 link: "/features",
                 ctaText: "Learn More"
-              },
-              {
-                id: "family-connection",
-                title: "Family Connection",
-                subtitle: "Peace of mind for everyone",
-                description: "Your family stays in the loop with real-time notifications and location sharing. They'll know you're safe, and you'll know they're just a tap away.",
-                image: "/images/family-couch.jpg",
-                icon: Heart,
-                tag: "Stay Connected",
-                link: "/families",
-                ctaText: "For Families"
               }
             ]} 
           />

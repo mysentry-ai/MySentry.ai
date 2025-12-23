@@ -2,7 +2,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Heart, Shield, Users, Smartphone, MapPin, Bell, CheckCircle2, ArrowRight, Activity, Watch, Lock, Home, Car, Clock, AlertCircle } from "lucide-react";
+import { Heart, Shield, Users, Smartphone, MapPin, Bell, CheckCircle2, ArrowRight, Activity, Watch, Lock, Home, Car, Clock, AlertCircle, School } from "lucide-react";
 import ExpandableCarousel from "@/components/ExpandableCarousel";
 import { motion } from "framer-motion";
 
@@ -134,37 +134,48 @@ export default function Families() {
           <ExpandableCarousel 
             items={[
               {
-                id: "family-map",
-                title: "Family Map",
-                subtitle: "Real-time location sharing",
-                description: "See everyone's location on a private family map. Get notified when they arrive at school or home. And if anyone needs help, the whole family is alerted instantly.",
-                image: "/images/family-map-app.jpg",
-                icon: MapPin,
-                tag: "Live Location",
-                link: "/features",
-                ctaText: "See How It Works"
-              },
-              {
-                id: "crash-detection",
-                title: "Crash Detection",
-                subtitle: "Driving safety for everyone",
-                description: "Car accidents are the #1 cause of death for teens. If a crash happens, MySentry detects the impact and calls for help instantly, sending the exact GPS location to first responders.",
-                image: "/images/feature-crash.png",
-                icon: Car,
-                tag: "Auto-Response",
+                id: "kids-school",
+                title: "Kids at School",
+                subtitle: "Safe arrival notifications",
+                description: "Get notified automatically when your kids arrive at school or return home. Know they're safe without needing to text or call them constantly.",
+                image: "/images/challenge-family-kids-school.jpg",
+                icon: School,
+                tag: "School Safety",
                 link: "/features",
                 ctaText: "Learn More"
               },
               {
-                id: "health-alerts",
-                title: "Health Alerts",
-                subtitle: "Care for aging parents",
-                description: "Monitor vital signs for elderly parents or family members with health conditions. Get alerts for falls or abnormal heart rates so you can check in immediately.",
-                image: "/images/feature-health.jpg",
-                icon: Heart,
-                tag: "Remote Care",
-                link: "/seniors",
-                ctaText: "For Seniors"
+                id: "teen-driving",
+                title: "Teen Drivers",
+                subtitle: "Peace of mind on the road",
+                description: "Monitor your teen's driving habits and get instant alerts if a crash occurs. We send help immediately, even if they can't call for it themselves.",
+                image: "/images/challenge-family-teen-driving.jpg",
+                icon: Car,
+                tag: "Driving Safety",
+                link: "/features",
+                ctaText: "See How It Works"
+              },
+              {
+                id: "family-map",
+                title: "Family Map",
+                subtitle: "See everyone in one place",
+                description: "View your entire family's location on a private, secure map. Coordinate pickups, check ins, and ensure everyone is where they're supposed to be.",
+                image: "/images/family-map-app.jpg",
+                icon: MapPin,
+                tag: "Live Location",
+                link: "/features",
+                ctaText: "Explore Features"
+              },
+              {
+                id: "emergency-contacts",
+                title: "Emergency Network",
+                subtitle: "Connected protection",
+                description: "If one family member triggers an alert, everyone is notified instantly. Coordinate help and stay connected during any emergency situation.",
+                image: "/images/feature-emergency-contacts.jpg",
+                icon: Users,
+                tag: "Family Circle",
+                link: "/features",
+                ctaText: "Learn More"
               }
             ]} 
           />
