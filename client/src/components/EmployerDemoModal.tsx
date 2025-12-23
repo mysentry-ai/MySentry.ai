@@ -61,9 +61,9 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DialogContent className="sm:max-w-[500px] max-h-[90vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-[#e8f5e9] border-primary/20 p-0 gap-0">
         {isSuccess ? (
-          <div className="flex flex-col items-center justify-center py-10 text-center space-y-4">
+          <div className="flex flex-col items-center justify-center py-16 px-8 text-center space-y-6 bg-white m-1 rounded-lg">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-2">
               <CheckCircle2 className="h-10 w-10 text-green-600" />
             </div>
@@ -77,17 +77,27 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
           </div>
         ) : (
           <>
-            <DialogHeader>
-              <DialogTitle className="text-2xl font-bold text-[#1a1a1a]">Book a Demo</DialogTitle>
-              <DialogDescription>
-                Fill out the form below to schedule a personalized demo of {planName} for your workforce.
-              </DialogDescription>
-            </DialogHeader>
+            <div className="bg-primary p-8 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 uppercase tracking-tight">
+                Transform Your Workforce Safety
+              </h2>
+              <p className="text-white/90 text-lg font-medium">
+                See how MySentry can reduce liability and protect your team.
+              </p>
+            </div>
             
-            <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+            <div className="p-8 bg-white">
+              <DialogHeader className="mb-6">
+                <DialogTitle className="text-xl font-bold text-[#1a1a1a]">Schedule Your Personalized Demo</DialogTitle>
+                <DialogDescription className="text-gray-600">
+                  Fill out the form below to see {planName} in action.
+                </DialogDescription>
+              </DialogHeader>
+            
+              <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="name">Full Name *</Label>
+                  <Label htmlFor="name" className="text-[#1a1a1a] font-bold">Full Name *</Label>
                   <Input 
                     id="name" 
                     name="name" 
@@ -95,10 +105,11 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                     required 
                     value={formData.name}
                     onChange={handleChange}
+                    className="bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="phone">Phone Number</Label>
+                  <Label htmlFor="phone" className="text-[#1a1a1a] font-bold">Phone Number</Label>
                   <Input 
                     id="phone" 
                     name="phone" 
@@ -106,12 +117,13 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                     placeholder="(555) 123-4567" 
                     value={formData.phone}
                     onChange={handleChange}
+                    className="bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
                   />
                 </div>
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="email">Work Email *</Label>
+                <Label htmlFor="email" className="text-[#1a1a1a] font-bold">Work Email *</Label>
                 <Input 
                   id="email" 
                   name="email" 
@@ -120,12 +132,13 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                   required 
                   value={formData.email}
                   onChange={handleChange}
+                  className="bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
                 />
               </div>
               
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="company">Company Name *</Label>
+                  <Label htmlFor="company" className="text-[#1a1a1a] font-bold">Company Name *</Label>
                   <Input 
                     id="company" 
                     name="company" 
@@ -133,10 +146,11 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                     required 
                     value={formData.company}
                     onChange={handleChange}
+                    className="bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="employees">Employee Count *</Label>
+                  <Label htmlFor="employees" className="text-[#1a1a1a] font-bold">Employee Count *</Label>
                   <Input 
                     id="employees" 
                     name="employees" 
@@ -145,47 +159,49 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                     required 
                     value={formData.employees}
                     onChange={handleChange}
+                    className="bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
                   />
                 </div>
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="message">Specific Requirements (Optional)</Label>
+                <Label htmlFor="message" className="text-[#1a1a1a] font-bold">Specific Requirements (Optional)</Label>
                 <Textarea 
                   id="message" 
                   name="message" 
                   placeholder="Tell us a bit about your Workforce Safety challenges." 
-                  className="min-h-[100px]"
+                  className="min-h-[100px] bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
                   value={formData.message}
                   onChange={handleChange}
                 />
               </div>
               
-              <DialogFooter className="pt-4 flex flex-col sm:flex-row gap-2">
+              <DialogFooter className="pt-6 flex flex-col sm:flex-row gap-3">
                 <Button 
                   type="button" 
                   variant="outline" 
                   onClick={handleClose}
-                  className="w-full sm:w-auto mt-2 sm:mt-0 border-gray-300 text-gray-700 hover:bg-gray-100"
+                  className="w-full sm:w-auto h-12 text-base border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                 >
                   Cancel
                 </Button>
                 <Button 
                   type="submit" 
-                  className="bg-primary text-white hover:bg-primary/90 w-full sm:w-auto"
+                  className="bg-primary text-white hover:bg-primary/90 w-full sm:w-auto h-12 text-base font-bold shadow-md hover:shadow-lg transition-all"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
                       Submitting...
                     </>
                   ) : (
-                    "Request Demo"
+                    "REQUEST DEMO"
                   )}
                 </Button>
               </DialogFooter>
             </form>
+            </div>
           </>
         )}
       </DialogContent>
