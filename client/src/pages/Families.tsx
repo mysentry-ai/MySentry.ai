@@ -18,7 +18,7 @@ export default function Families() {
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
            <img 
-             src="/images/families-hero.jpg" 
+             src="/images/family-hero-base.jpg" 
              alt="Happy family outdoors" 
              className="absolute inset-0 w-full h-full object-cover opacity-60"
            />

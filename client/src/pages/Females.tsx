@@ -18,7 +18,7 @@ export default function Females() {
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
            <img 
-             src="/images/females-hero.jpg" 
+             src="/images/hero-female-active.jpg" 
              alt="Confident woman walking in city" 
              className="absolute inset-0 w-full h-full object-cover opacity-60"
            />
