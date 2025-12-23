@@ -8,7 +8,7 @@ export default function PricingSection() {
       name: "Individual",
       price: "$29",
       period: "/month",
-      description: "Complete protection for one person.",
+      description: "Complete Protection\nSafety + Health + Monitoring",
       features: [
         "24/7 Professional Monitoring",
         "Automatic Fall Detection",
@@ -23,7 +23,7 @@ export default function PricingSection() {
       name: "Family",
       price: "$49",
       period: "/month",
-      description: "Safety for up to 4 family members.",
+      description: "Complete Protection\nSafety + Health + Monitoring",
       features: [
         "Everything in Individual",
         "Up to 4 Accounts",
@@ -35,10 +35,10 @@ export default function PricingSection() {
       popular: true
     },
     {
-      name: "Business",
+      name: "Employers",
       price: "Custom",
       period: "",
-      description: "Scalable safety for your workforce.",
+      description: "Complete Protection for Employees\nEmployee Safety & Health",
       features: [
         "Centralized Admin Dashboard",
         "Employee Safety Reports",
@@ -83,7 +83,9 @@ export default function PricingSection() {
                 <span className="text-4xl font-bold text-[#1a1a1a]">{plan.price}</span>
                 <span className="text-gray-500 font-medium">{plan.period}</span>
               </div>
-              <p className="text-gray-600 mb-8 min-h-[3rem]">{plan.description}</p>
+              <p className="text-gray-600 mb-8 min-h-[4.5rem] whitespace-pre-line font-medium leading-relaxed">
+                {plan.description}
+              </p>
               
               <ul className="space-y-4 mb-8">
                 {plan.features.map((feature, i) => (
