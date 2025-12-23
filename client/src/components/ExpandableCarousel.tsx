@@ -129,7 +129,8 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
                 {items[activeIndex].link && (
                   <div className="pt-4 pointer-events-auto">
                     <Button 
-                      className="bg-white text-black hover:bg-gray-200 rounded-full px-8 h-14 text-lg font-bold uppercase tracking-wider shadow-xl transition-transform hover:scale-105"
+                      className="bg-white hover:bg-gray-200 rounded-full px-8 h-14 text-lg font-bold uppercase tracking-wider shadow-xl transition-transform hover:scale-105"
+                      style={{ color: '#000000' }}
                       onClick={() => window.location.href = items[activeIndex].link!}
                     >
                       {items[activeIndex].ctaText || "Learn More"}

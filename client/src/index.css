@@ -208,6 +208,13 @@
       max-width: 1400px; /* Wider container for modern look */
     }
   }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 2.5rem !important; }
+    h2 { font-size: 2rem !important; }
+    h3 { font-size: 1.75rem !important; }
+    .container { padding-left: 1rem; padding-right: 1rem; }
+  }
   
   /* MySentry Brand Utilities */
   .brand-card {
