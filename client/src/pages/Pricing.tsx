@@ -5,11 +5,14 @@ import { cn } from "@/lib/utils";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
+import EmployerDemoModal from "@/components/EmployerDemoModal";
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
   const [isFamily, setIsFamily] = useState(false);
   const [employeeCount, setEmployeeCount] = useState(50);
+  const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [selectedEmployerPlan, setSelectedEmployerPlan] = useState("");
 
   // Static pricing logic
   // Individual: $12.49/mo (Monthly) or $9.99/mo (Yearly)
@@ -99,7 +102,7 @@ export default function Pricing() {
       name: "Complete Protection for Employees",
       tagline: "Employee Safety & Health",
       description: "Protect your workforce with comprehensive safety and health monitoring.",
-      cta: "START 7-DAY FREE TRIAL",
+      cta: "BOOK A DEMO",
       highlighted: true,
       comingSoon: false,
       features: [
@@ -120,7 +123,7 @@ export default function Pricing() {
       name: "Predictive Care for Employees",
       tagline: "Prevention + Prediction",
       description: "Advanced predictive health for enterprise workforce management.",
-      cta: "START 7-DAY FREE TRIAL",
+      cta: "BOOK A DEMO",
       highlighted: false,
       comingSoon: true,
       features: [
@@ -438,6 +441,10 @@ export default function Pricing() {
                       : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                   )}
                   disabled={plan.comingSoon}
+                  onClick={() => {
+                    setSelectedEmployerPlan(plan.name);
+                    setIsDemoModalOpen(true);
+                  }}
                 >
                   {plan.cta}
                 </Button>
@@ -446,6 +453,12 @@ export default function Pricing() {
           </div>
         </div>
       </section>
+
+      <EmployerDemoModal 
+        isOpen={isDemoModalOpen} 
+        onClose={() => setIsDemoModalOpen(false)} 
+        planName={selectedEmployerPlan}
+      />
     </Layout>
   );
 }
