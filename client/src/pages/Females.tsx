@@ -160,7 +160,7 @@ export default function Females() {
                 title: "Rideshare Safety",
                 subtitle: "Travel without fear",
                 description: "Share your live trip status with loved ones. If your ride goes off-route or stops unexpectedly, we can intervene immediately.",
-                image: "/images/feature-smart-connectivity.jpg",
+                image: "/images/challenge-female-rideshare.jpg",
                 icon: Car,
                 tag: "Travel Safe",
                 link: "/features",
