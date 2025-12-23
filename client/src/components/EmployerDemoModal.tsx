@@ -61,7 +61,7 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-[#e8f5e9] border-primary/20 p-0 gap-0">
+      <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto bg-white border-primary/20 p-0 gap-0">
         {isSuccess ? (
           <div className="flex flex-col items-center justify-center py-16 px-8 text-center space-y-6 bg-white m-1 rounded-lg">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-2">
@@ -77,11 +77,11 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
           </div>
         ) : (
           <>
-            <div className="bg-[#e8f5e9] p-8 text-center border-b border-primary/10">
-              <h2 className="text-2xl md:text-3xl font-bold text-[#1a1a1a] mb-3 uppercase tracking-tight leading-tight">
+            <div className="bg-primary p-8 text-center border-b border-primary/10">
+              <h2 className="text-2xl md:text-3xl font-bold text-white mb-3 uppercase tracking-tight leading-tight">
                 24/7 monitored safety and health for your workforce.
               </h2>
-              <p className="text-gray-700 text-lg font-medium max-w-xl mx-auto">
+              <p className="text-white/90 text-lg font-medium max-w-xl mx-auto">
                 Detect near-falls, falls, crashes, and abnormal Health Vitals, then escalate fast with live location and incident data.
               </p>
             </div>
@@ -105,7 +105,7 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                     required 
                     value={formData.name}
                     onChange={handleChange}
-                    className="bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
+                    className="bg-white border-input text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary"
                   />
                 </div>
                 <div className="space-y-2">
@@ -117,7 +117,7 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                     placeholder="(555) 123-4567" 
                     value={formData.phone}
                     onChange={handleChange}
-                    className="bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
+                    className="bg-white border-input text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary"
                   />
                 </div>
               </div>
@@ -132,7 +132,7 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                   required 
                   value={formData.email}
                   onChange={handleChange}
-                  className="bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
+                  className="bg-white border-input text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary"
                 />
               </div>
               
@@ -146,7 +146,7 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                     required 
                     value={formData.company}
                     onChange={handleChange}
-                    className="bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
+                    className="bg-white border-input text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary"
                   />
                 </div>
                 <div className="space-y-2">
@@ -159,7 +159,7 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                     required 
                     value={formData.employees}
                     onChange={handleChange}
-                    className="bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
+                    className="bg-white border-input text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary"
                   />
                 </div>
               </div>
@@ -170,7 +170,7 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                   id="message" 
                   name="message" 
                   placeholder="Tell us a bit about your Workforce Safety challenges." 
-                  className="min-h-[100px] bg-gray-50 border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:border-primary focus:ring-primary"
+                  className="min-h-[100px] bg-white border-input text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary"
                   value={formData.message}
                   onChange={handleChange}
                 />
@@ -187,7 +187,7 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
                 </Button>
                 <Button 
                   type="submit" 
-                  className="bg-primary text-white hover:bg-primary/90 w-full sm:w-auto h-12 text-base font-bold shadow-md hover:shadow-lg transition-all"
+                  className="bg-primary text-white hover:bg-primary/90 w-full sm:w-auto h-12 text-base font-bold shadow-md hover:shadow-lg transition-all uppercase tracking-wider"
                   disabled={isSubmitting}
                 >
                   {isSubmitting ? (
