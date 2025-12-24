@@ -301,7 +301,17 @@ export default function Home() {
       </section>
 
       {/* How It Works Demo Section */}
-      <HowItWorksDemo />
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
+          <h2 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 uppercase tracking-tighter">
+            How It Works
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Advanced protection that's simple to use. See how MySentry responds in real-time.
+          </p>
+        </div>
+        <HowItWorksDemo />
+      </section>
 
 
 

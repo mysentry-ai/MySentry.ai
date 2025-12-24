@@ -182,9 +182,8 @@ export default function HowItWorksDemo() {
   };
 
   return (
-    <section className="py-24 bg-white">
-      <div className="container max-w-7xl mx-auto px-4">
-        <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-gray-100">
+    <div className="container max-w-7xl mx-auto px-4">
+      <div className="bg-white rounded-[3rem] shadow-2xl overflow-hidden border border-gray-100">
           {/* Scenario Tabs */}
           <div className="flex flex-wrap justify-center gap-4 p-8 border-b border-gray-100 bg-white">
             {scenarios.map((scenario) => (
@@ -402,8 +401,7 @@ export default function HowItWorksDemo() {
               </div>
             </div>
           </div>
-        </div>
       </div>
-    </section>
+    </div>
   );
 }
