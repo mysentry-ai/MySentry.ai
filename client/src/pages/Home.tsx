@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Shield, Activity, Users, Building2, Heart, AlertTriangle, Phone, MapPin, Video, Lock, Clock, Smartphone, Watch } from "lucide-react";
+import { ArrowRight, Check, Shield, Activity, Users, Building2, Heart, AlertTriangle, Phone, MapPin, Video, Lock, Clock, Smartphone, Watch, Menu } from "lucide-react";
 import { motion } from "framer-motion";
 import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
 import HowItWorksDemo from "@/components/HowItWorksDemo";
@@ -181,6 +181,34 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Navigation Header */}
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-transparent">
+        <div className="flex items-center gap-2">
+          <Shield className="w-8 h-8 text-white fill-current" />
+          <span className="text-2xl font-bold text-white tracking-tight">MySentry</span>
+        </div>
+        
+        <div className="hidden md:flex items-center gap-8">
+          <Link href="/features" className="text-white/90 hover:text-white font-medium transition-colors">Features</Link>
+          <Link href="/females" className="text-white/90 hover:text-white font-medium transition-colors">For Females</Link>
+          <Link href="/seniors" className="text-white/90 hover:text-white font-medium transition-colors">For Seniors</Link>
+          <Link href="/families" className="text-white/90 hover:text-white font-medium transition-colors">For Families</Link>
+          <Link href="/employers" className="text-white/90 hover:text-white font-medium transition-colors">For Employers</Link>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <Button variant="ghost" className="text-white hover:bg-white/10 hidden md:inline-flex">
+            Log in
+          </Button>
+          <Button className="bg-white text-[#386758] hover:bg-white/90 font-semibold">
+            Get Started
+          </Button>
+          <Button variant="ghost" size="icon" className="md:hidden text-white">
+            <Menu className="w-6 h-6" />
+          </Button>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden">
         <video 
@@ -190,7 +218,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_30fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/3129402/3129402-sd_640_360_25fps.mp4" type="video/mp4" />
         </video>
         
         <div className="absolute inset-0 bg-[#386758]/40" />
