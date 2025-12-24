@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Plus, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import HeartRateWidget from "./HeartRateWidget";
 
 export interface CarouselItem {
   id: string;
@@ -14,6 +15,7 @@ export interface CarouselItem {
   tag?: string;
   link?: string;
   ctaText?: string;
+  widget?: "heart-rate" | "none";
 }
 
 interface ExpandableCarouselProps {
@@ -26,13 +28,13 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
 
   return (
     <div className={cn("w-full py-10", className)}>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-[600px] md:h-[700px] max-w-7xl mx-auto px-4">
-        {items.slice(0, 3).map((item) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 h-[600px] md:h-[700px] max-w-[1400px] mx-auto px-4">
+        {items.map((item) => (
           <motion.div
             key={item.id}
             layoutId={`card-${item.id}`}
             onClick={() => setSelectedId(item.id)}
-            className="relative group cursor-pointer overflow-hidden rounded-3xl bg-gray-900 shadow-xl"
+            className="relative group cursor-pointer overflow-hidden rounded-3xl bg-gray-900 shadow-xl min-h-[400px]"
             whileHover={{ scale: 0.98 }}
             transition={{ duration: 0.3 }}
           >
@@ -45,37 +47,37 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
             />
             
             {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
 
             {/* Top UI Elements */}
             <div className="absolute top-6 left-6 right-6 flex justify-between items-start z-10">
               {item.tag && (
                 <motion.span 
                   layoutId={`tag-${item.id}`}
-                  className="px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/10 text-white text-xs font-medium uppercase tracking-wider"
+                  className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/10 text-white text-[10px] font-bold uppercase tracking-wider"
                 >
                   {item.tag}
                 </motion.span>
               )}
               <motion.div 
                 layoutId={`btn-${item.id}`}
-                className="w-10 h-10 rounded-full bg-[#f3f1eb] flex items-center justify-center text-black shadow-lg"
+                className="w-8 h-8 rounded-full bg-[#f3f1eb] flex items-center justify-center text-black shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
               >
-                <Plus className="w-5 h-5" />
+                <Plus className="w-4 h-4" />
               </motion.div>
             </div>
 
             {/* Bottom Content */}
-            <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
+            <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
               <motion.h3 
                 layoutId={`title-${item.id}`}
-                className="text-3xl md:text-4xl font-heading font-light text-[#f3f1eb] leading-tight"
+                className="text-2xl font-heading font-bold text-[#f3f1eb] leading-tight mb-1"
               >
                 {item.title}
               </motion.h3>
               <motion.p 
                 layoutId={`subtitle-${item.id}`}
-                className="text-white/70 mt-2 font-serif italic text-lg"
+                className="text-white/70 font-serif italic text-sm line-clamp-2"
               >
                 {item.subtitle}
               </motion.p>
@@ -93,12 +95,12 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedId(null)}
-              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
             />
             
             <motion.div
               layoutId={`card-${selectedId}`}
-              className="relative w-full max-w-5xl h-[85vh] bg-[#f3f1eb] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row"
+              className="relative w-full max-w-6xl h-[90vh] bg-[#f3f1eb] rounded-[2.5rem] overflow-hidden shadow-2xl flex flex-col md:flex-row"
             >
               {/* Close Button */}
               <button
@@ -106,7 +108,7 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
                   e.stopPropagation();
                   setSelectedId(null);
                 }}
-                className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-black/10 hover:bg-black/20 flex items-center justify-center transition-colors"
+                className="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/20 hover:bg-white/40 backdrop-blur-md flex items-center justify-center transition-colors shadow-lg border border-white/20"
               >
                 <X className="w-6 h-6 text-black" />
               </button>
@@ -119,11 +121,23 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
                   alt="Feature"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent md:hidden" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent md:hidden" />
+                
+                {/* Widget Overlay */}
+                {items.find(i => i.id === selectedId)?.widget === "heart-rate" && (
+                  <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                    className="absolute bottom-8 left-8 right-8 md:right-auto md:w-80 z-20"
+                  >
+                    <HeartRateWidget />
+                  </motion.div>
+                )}
               </div>
 
               {/* Right: Content Section */}
-              <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-[#f3f1eb] text-[#1a1a1a]">
+              <div className="w-full md:w-1/2 p-8 md:p-16 flex flex-col justify-center bg-[#f3f1eb] text-[#1a1a1a] overflow-y-auto">
                 <motion.div layoutId={`tag-${selectedId}`} className="self-start mb-6">
                   <span className="px-4 py-1.5 rounded-full bg-black/5 border border-black/10 text-black/60 text-xs font-bold uppercase tracking-wider">
                     {items.find(i => i.id === selectedId)?.tag}
@@ -132,14 +146,14 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
 
                 <motion.h3 
                   layoutId={`title-${selectedId}`}
-                  className="text-4xl md:text-6xl font-heading font-light text-[#1a1a1a] leading-[0.95] mb-2"
+                  className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-[#1a1a1a] leading-[0.95] mb-4"
                 >
                   {items.find(i => i.id === selectedId)?.title}
                 </motion.h3>
 
                 <motion.p 
                   layoutId={`subtitle-${selectedId}`}
-                  className="text-2xl font-serif italic text-gray-500 mb-8"
+                  className="text-xl md:text-2xl font-serif italic text-gray-500 mb-8"
                 >
                   {items.find(i => i.id === selectedId)?.subtitle}
                 </motion.p>
@@ -149,12 +163,12 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-10">
-                    {items.find(i => i.id === selectedId)?.description}
-                  </p>
+                  <div className="prose prose-lg text-gray-700 leading-relaxed mb-10">
+                    <p>{items.find(i => i.id === selectedId)?.description}</p>
+                  </div>
 
                   <Button 
-                    className="bg-[#1a1a1a] text-white hover:bg-black rounded-full px-8 h-14 text-lg font-bold uppercase tracking-wider w-full md:w-auto shadow-xl"
+                    className="bg-[#1a1a1a] text-white hover:bg-black rounded-full px-8 h-14 text-lg font-bold uppercase tracking-wider w-full md:w-auto shadow-xl transition-transform hover:scale-105"
                     onClick={() => window.location.href = items.find(i => i.id === selectedId)?.link || '#'}
                   >
                     {items.find(i => i.id === selectedId)?.ctaText || "Learn More"}
