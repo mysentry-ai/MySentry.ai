@@ -181,30 +181,54 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation Header */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
-        <div className="flex items-center gap-2">
-          <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
-        </div>
-        
-        <div className="hidden md:flex items-center gap-8">
-          <Link href="/features" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Features</Link>
-          <Link href="/females" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Females</Link>
-          <Link href="/seniors" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Seniors</Link>
-          <Link href="/families" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Families</Link>
-          <Link href="/employers" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Employers</Link>
-          <Link href="/pricing" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Pricing</Link>
-        </div>
+      {/* Navigation Header - Cloned from Features page */}
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-6 bg-transparent border-transparent transition-all duration-300">
+        <div className="container flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center gap-4">
+            <Link href="/">
+              <a className="flex items-center gap-3 group">
+                <img 
+                  src="/images/logo.png" 
+                  alt="MySentry" 
+                  className="h-14 w-auto transition-all duration-300 group-hover:scale-105" 
+                />
+              </a>
+            </Link>
+          </div>
 
-        <div className="flex items-center gap-4">
-          <Link href="/pricing">
-            <Button className="bg-[#66D48F] hover:bg-[#55C37E] text-white font-bold tracking-wide uppercase px-6 py-2 rounded-full shadow-md transition-all transform hover:scale-105">
-              Start 7-Day Free Trial
-            </Button>
-          </Link>
-          <Button variant="ghost" size="icon" className="md:hidden text-gray-800">
-            <Menu className="w-6 h-6" />
-          </Button>
+          {/* Desktop Nav */}
+          <div className="hidden lg:flex items-center gap-10">
+            {[
+              { name: "FEATURES", href: "/features" },
+              { name: "FEMALES", href: "/females" },
+              { name: "SENIORS", href: "/seniors" },
+              { name: "FAMILIES", href: "/families" },
+              { name: "EMPLOYERS", href: "/employers" },
+              { name: "PRICING", href: "/pricing" },
+            ].map((link) => (
+              <Link key={link.name} href={link.href}>
+                <a className="text-lg font-bold tracking-widest transition-all hover:text-white/80 relative group font-heading uppercase text-white">
+                  {link.name}
+                  <span className="absolute -bottom-2 left-0 w-0 h-[3px] bg-primary transition-all duration-300 group-hover:w-full" />
+                </a>
+              </Link>
+            ))}
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden lg:flex items-center">
+            <Link href="/pricing">
+              <Button className="bg-white text-black hover:bg-gray-100 font-bold uppercase tracking-wider rounded-full px-8 h-12 text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                Start 7-Day Free Trial
+              </Button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button className="lg:hidden p-2 text-white">
+            <Menu className="h-8 w-8" />
+          </button>
         </div>
       </nav>
 

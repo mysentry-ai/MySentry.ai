@@ -61,23 +61,23 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
               )}
               <motion.div 
                 layoutId={`btn-${item.id}`}
-                className="w-8 h-8 rounded-full bg-[#f3f1eb] flex items-center justify-center text-black shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="w-10 h-10 rounded-full bg-white flex items-center justify-center text-black shadow-lg"
               >
-                <Plus className="w-4 h-4" />
+                <Plus className="w-5 h-5" />
               </motion.div>
             </div>
 
             {/* Bottom Content */}
-            <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+            <div className="absolute bottom-0 left-0 right-0 p-8 z-10">
               <motion.h3 
                 layoutId={`title-${item.id}`}
-                className="text-2xl font-heading font-bold text-[#f3f1eb] leading-tight mb-1"
+                className="text-3xl font-heading font-bold text-white leading-[0.9] mb-3 drop-shadow-lg"
               >
                 {item.title}
               </motion.h3>
               <motion.p 
                 layoutId={`subtitle-${item.id}`}
-                className="text-white/70 font-serif italic text-sm line-clamp-2"
+                className="text-white/80 font-serif italic text-base leading-snug drop-shadow-md"
               >
                 {item.subtitle}
               </motion.p>
