@@ -182,29 +182,27 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation Header */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black/20 backdrop-blur-sm border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div className="flex items-center gap-2">
           <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
         </div>
         
         <div className="hidden md:flex items-center gap-8">
-          <Link href="/features" className="text-white/90 hover:text-white font-medium transition-colors">Features</Link>
-          <Link href="/females" className="text-white/90 hover:text-white font-medium transition-colors">For Females</Link>
-          <Link href="/seniors" className="text-white/90 hover:text-white font-medium transition-colors">For Seniors</Link>
-          <Link href="/families" className="text-white/90 hover:text-white font-medium transition-colors">For Families</Link>
-          <Link href="/employers" className="text-white/90 hover:text-white font-medium transition-colors">For Employers</Link>
+          <Link href="/features" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Features</Link>
+          <Link href="/females" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Females</Link>
+          <Link href="/seniors" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Seniors</Link>
+          <Link href="/families" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Families</Link>
+          <Link href="/employers" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Employers</Link>
+          <Link href="/pricing" className="text-gray-800 hover:text-[#386758] font-bold tracking-wide text-sm uppercase transition-colors">Pricing</Link>
         </div>
 
         <div className="flex items-center gap-4">
-          <Button variant="ghost" className="text-white hover:bg-white/10 hidden md:inline-flex">
-            Log in
-          </Button>
           <Link href="/pricing">
-            <Button className="bg-white text-[#386758] hover:bg-white/90 font-semibold">
-              Get Started
+            <Button className="bg-[#66D48F] hover:bg-[#55C37E] text-white font-bold tracking-wide uppercase px-6 py-2 rounded-full shadow-md transition-all transform hover:scale-105">
+              Start 7-Day Free Trial
             </Button>
           </Link>
-          <Button variant="ghost" size="icon" className="md:hidden text-white">
+          <Button variant="ghost" size="icon" className="md:hidden text-gray-800">
             <Menu className="w-6 h-6" />
           </Button>
         </div>
@@ -320,7 +318,9 @@ export default function Home() {
           </p>
         </div>
         
-        <ExpandableCarousel items={peaceChallenges} />
+        <div className="w-full">
+          <ExpandableCarousel items={peaceChallenges} />
+        </div>
       </section>
 
       {/* How It Works Demo Section */}
