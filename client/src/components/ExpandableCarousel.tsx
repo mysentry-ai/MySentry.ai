@@ -28,7 +28,7 @@ export default function ExpandableCarousel({ items, className }: ExpandableCarou
 
   return (
     <div className={cn("w-full py-10", className)}>
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 h-[600px] md:h-[700px] max-w-[1400px] mx-auto px-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-[1400px] mx-auto px-4">
         {items.map((item) => (
           <motion.div
             key={item.id}
