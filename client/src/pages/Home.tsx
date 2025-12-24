@@ -9,7 +9,7 @@ import HowItWorksDemo from "@/components/HowItWorksDemo";
 import PricingSection from "@/components/PricingSection";
 import UGCSection from "@/components/UGCSection";
 import WhatWeProvide from "@/components/WhatWeProvide";
-import SafetySimulation from "@/components/SafetySimulation";
+
 
 export default function Home() {
   const scrollToPricing = () => {
@@ -303,8 +303,7 @@ export default function Home() {
       {/* How It Works Demo Section */}
       <HowItWorksDemo />
 
-      {/* Safety Simulation Section */}
-      <SafetySimulation />
+
 
       {/* UGC / Testimonials Section */}
       <UGCSection />
