@@ -193,7 +193,7 @@ export default function Home() {
           <source src="https://videos.pexels.com/video-files/5502677/5502677-uhd_2560_1440_25fps.mp4" type="video/mp4" />
         </video>
         
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-[#386758]/60 mix-blend-multiply" />
         
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 max-w-7xl mx-auto">
           <motion.h1 
