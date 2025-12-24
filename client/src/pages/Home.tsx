@@ -182,9 +182,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation Header */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-transparent">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-black/20 backdrop-blur-sm border-b border-white/10">
         <div className="flex items-center gap-2">
-          <img src="/images/logo-white.svg" alt="MySentry" className="h-8 w-auto" />
+          <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
         </div>
         
         <div className="hidden md:flex items-center gap-8">
@@ -219,7 +219,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="https://videos.pexels.com/video-files/35307150/14958646_360_640_30fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/8637185/8637185-sd_640_360_25fps.mp4" type="video/mp4" />
         </video>
         
         <div className="absolute inset-0 bg-[#386758]/40" />
