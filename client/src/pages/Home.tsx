@@ -184,8 +184,7 @@ export default function Home() {
       {/* Navigation Header */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-transparent">
         <div className="flex items-center gap-2">
-          <Shield className="w-8 h-8 text-white fill-current" />
-          <span className="text-2xl font-bold text-white tracking-tight">MySentry</span>
+          <img src="/images/logo-white.svg" alt="MySentry" className="h-8 w-auto" />
         </div>
         
         <div className="hidden md:flex items-center gap-8">
@@ -200,9 +199,11 @@ export default function Home() {
           <Button variant="ghost" className="text-white hover:bg-white/10 hidden md:inline-flex">
             Log in
           </Button>
-          <Button className="bg-white text-[#386758] hover:bg-white/90 font-semibold">
-            Get Started
-          </Button>
+          <Link href="/pricing">
+            <Button className="bg-white text-[#386758] hover:bg-white/90 font-semibold">
+              Get Started
+            </Button>
+          </Link>
           <Button variant="ghost" size="icon" className="md:hidden text-white">
             <Menu className="w-6 h-6" />
           </Button>
@@ -218,7 +219,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="https://videos.pexels.com/video-files/3129402/3129402-sd_640_360_25fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/35307150/14958646_360_640_30fps.mp4" type="video/mp4" />
         </video>
         
         <div className="absolute inset-0 bg-[#386758]/40" />
