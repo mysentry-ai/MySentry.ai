@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
 import HowItWorksDemo from "@/components/HowItWorksDemo";
 import PricingSection from "@/components/PricingSection";
-import UGCSection from "@/components/UGCSection";
+import TestimonialSection from "@/components/TestimonialSection";
 import WhatWeProvide from "@/components/WhatWeProvide";
 
 
@@ -316,7 +316,7 @@ export default function Home() {
 
 
       {/* UGC / Testimonials Section */}
-      <UGCSection />
+      <TestimonialSection />
 
       {/* What We Provide Section */}
       <WhatWeProvide />
