@@ -8,34 +8,34 @@ export default function ComparisonSection() {
     {
       category: "Safety & Security",
       items: [
-        { name: "Voice-Activated Panic Alarm", life360: false, senior: "Button Only", wearable: false, mysentry: true },
-        { name: "One-Tap Panic Button", life360: true, senior: true, wearable: false, mysentry: true },
-        { name: "24/7 Professional Monitoring", life360: "Premium Only", senior: true, wearable: false, mysentry: true },
-        { name: "Live Video Evidence", life360: false, senior: false, wearable: false, mysentry: true },
-        { name: "Crash & Fall Detection", life360: "Crash Only", senior: "Fall Only", wearable: "Limited", mysentry: true },
+        { name: "Voice-Activated Panic Alarm", mysentry: true, life360: false, senior: "Button Only", wearable: false },
+        { name: "One-Tap Panic Button", mysentry: true, life360: true, senior: true, wearable: false },
+        { name: "24/7 Professional Monitoring", mysentry: true, life360: "Premium Only", senior: true, wearable: false },
+        { name: "Live Video Evidence", mysentry: true, life360: false, senior: false, wearable: false },
+        { name: "Crash & Fall Detection", mysentry: true, life360: "Crash Only", senior: "Fall Only", wearable: "Limited" },
       ]
     },
     {
       category: "Connectivity & Response",
       items: [
-        { name: "Automated Location Sharing", life360: true, senior: false, wearable: false, mysentry: true },
-        { name: "Up to 5 Emergency Contacts", life360: false, senior: "Limited", wearable: false, mysentry: true },
-        { name: "Real-Time Health Response", life360: false, senior: false, wearable: false, mysentry: true },
+        { name: "Automated Location Sharing", mysentry: true, life360: true, senior: false, wearable: false },
+        { name: "Up to 5 Emergency Contacts", mysentry: true, life360: false, senior: "Limited", wearable: false },
+        { name: "Real-Time Health Response", mysentry: true, life360: false, senior: false, wearable: false },
       ]
     },
     {
       category: "Health & Vitals",
       items: [
-        { name: "Real-Time Vitals (HR, SpO2)", life360: false, senior: false, wearable: true, mysentry: true },
-        { name: "Critical Health Alerts", life360: false, senior: false, wearable: "Passive", mysentry: "Active" },
+        { name: "Real-Time Vitals (HR, SpO2)", mysentry: true, life360: false, senior: false, wearable: true },
+        { name: "Critical Health Alerts", mysentry: "Active", life360: false, senior: false, wearable: "Passive" },
       ]
     },
     {
       category: "Longevity & Wellness (Coming Soon)",
       items: [
-        { name: "AI Health Predictions", life360: false, senior: false, wearable: "Score Only", mysentry: "coming_soon" },
-        { name: "Labs & Nutrition Integration", life360: false, senior: false, wearable: false, mysentry: "coming_soon" },
-        { name: "Mental Wellness Guide", life360: false, senior: false, wearable: "Stress Only", mysentry: "coming_soon" },
+        { name: "AI Health Predictions", mysentry: "coming_soon", life360: false, senior: false, wearable: "Score Only" },
+        { name: "Labs & Nutrition Integration", mysentry: "coming_soon", life360: false, senior: false, wearable: false },
+        { name: "Mental Wellness Guide", mysentry: "coming_soon", life360: false, senior: false, wearable: "Stress Only" },
       ]
     }
   ];
@@ -117,6 +117,21 @@ export default function ComparisonSection() {
                   </h3>
                 </div>
                 
+                {/* MySentry Header - The Hero (Now First) */}
+                <div className="col-span-1 relative">
+                  <div className="absolute inset-x-0 -top-12 -bottom-4 bg-[#386758]/5 rounded-t-3xl border-t border-x border-[#386758]/10 -z-10" />
+                  <div className="text-center pb-4">
+                    <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#386758] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg whitespace-nowrap">
+                      The Vital Companion
+                    </div>
+                    <div className="w-16 h-16 mx-auto bg-[#386758] rounded-2xl flex items-center justify-center mb-3 shadow-lg shadow-[#386758]/20">
+                      <img src="/images/mysentry-logo.png" alt="MySentry" className="w-10 h-10 object-contain" />
+                    </div>
+                    <div className="font-heading font-bold text-xl text-[#1a1a1a]">MySentry</div>
+                    <div className="text-xs font-bold text-[#386758] mt-1 uppercase tracking-wide">All-in-One</div>
+                  </div>
+                </div>
+
                 {/* Competitor Headers */}
                 <div className="col-span-1 text-center pb-4 opacity-60 grayscale transition-all hover:grayscale-0 hover:opacity-100">
                   <div className="w-12 h-12 mx-auto bg-gray-100 rounded-2xl flex items-center justify-center mb-3">
@@ -141,21 +156,6 @@ export default function ComparisonSection() {
                   <div className="font-bold text-gray-600">Wearables</div>
                   <div className="text-xs text-gray-400 mt-1">e.g. Oura, Whoop</div>
                 </div>
-
-                {/* MySentry Header - The Hero */}
-                <div className="col-span-1 relative">
-                  <div className="absolute inset-x-0 -top-12 -bottom-4 bg-[#386758]/5 rounded-t-3xl border-t border-x border-[#386758]/10 -z-10" />
-                  <div className="text-center pb-4">
-                    <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#386758] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg whitespace-nowrap">
-                      The Vital Companion
-                    </div>
-                    <div className="w-16 h-16 mx-auto bg-[#386758] rounded-2xl flex items-center justify-center mb-3 shadow-lg shadow-[#386758]/20">
-                      <img src="/logo.svg" alt="MySentry" className="w-10 h-10 invert brightness-0" />
-                    </div>
-                    <div className="font-heading font-bold text-xl text-[#1a1a1a]">MySentry</div>
-                    <div className="text-xs font-bold text-[#386758] mt-1 uppercase tracking-wide">All-in-One</div>
-                  </div>
-                </div>
               </div>
 
               {/* Table Body */}
@@ -170,21 +170,25 @@ export default function ComparisonSection() {
                       <div className="h-px flex-1 bg-gray-100" />
                     </div>
                     
-                    <div className="space-y-3">
+                    <div className="space-y-1">
                       {section.items.map((item, i) => (
-                        <div key={i} className="grid grid-cols-5 gap-6 items-center py-3 rounded-xl hover:bg-gray-50 transition-colors group">
+                        <div key={i} className={cn(
+                          "grid grid-cols-5 gap-6 items-center py-4 rounded-xl transition-colors group",
+                          i % 2 === 0 ? "bg-gray-50/50" : "bg-white"
+                        )}>
                           <div className="col-span-1 pl-4 font-medium text-gray-700 text-sm group-hover:text-[#1a1a1a] transition-colors">
                             {item.name}
                           </div>
-                          <div className="col-span-1 text-center">{renderCell(item.life360)}</div>
-                          <div className="col-span-1 text-center">{renderCell(item.senior)}</div>
-                          <div className="col-span-1 text-center">{renderCell(item.wearable)}</div>
                           
                           {/* MySentry Column Background Highlight */}
                           <div className="col-span-1 text-center relative">
-                            <div className="absolute inset-0 bg-[#386758]/5 -mx-4 rounded-lg -z-10 opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute inset-0 bg-[#386758]/5 -mx-4 rounded-lg -z-10" />
                             {renderCell(item.mysentry, true)}
                           </div>
+
+                          <div className="col-span-1 text-center">{renderCell(item.life360)}</div>
+                          <div className="col-span-1 text-center">{renderCell(item.senior)}</div>
+                          <div className="col-span-1 text-center">{renderCell(item.wearable)}</div>
                         </div>
                       ))}
                     </div>
