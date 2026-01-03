@@ -28,7 +28,6 @@ export default function Navbar() {
   ];
 
   const isActive = (path: string) => location === path;
-  const isHome = location === "/";
 
   return (
     <nav 
@@ -63,11 +62,8 @@ export default function Navbar() {
               href={link.href}
               className={cn(
                 "text-lg font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
-                // Logic for text color: 
-                // If scrolled -> Dark text (foreground)
-                // If NOT scrolled AND on Home page -> White text (for video background)
-                // If NOT scrolled AND NOT on Home page -> Dark text (foreground)
-                scrolled ? "text-foreground" : (isHome ? "text-white hover:text-white/80" : "text-foreground"),
+                // Logic for text color: Always dark text (foreground) to match other pages
+                "text-foreground",
                 isActive(link.href) ? "text-primary" : ""
               )}
             >
@@ -86,9 +82,8 @@ export default function Navbar() {
             <Button 
               className={cn(
                 "font-bold uppercase tracking-wider rounded-full px-8 h-12 text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300",
-                  scrolled 
-                  ? "bg-primary text-white hover:bg-primary/90" 
-                  : (isHome ? "bg-white text-black hover:bg-gray-100" : "bg-primary text-white hover:bg-primary/90")
+                // Button logic: Always primary (greenish) background with white text
+                "bg-primary text-white hover:bg-primary/90"
               )}
             >
               Start 7-Day Free Trial
@@ -100,7 +95,7 @@ export default function Navbar() {
         <button
           className={cn(
             "lg:hidden p-2 transition-colors",
-            scrolled ? "text-foreground" : (isHome ? "text-white" : "text-foreground")
+            "text-foreground"
           )}
           onClick={() => setIsOpen(!isOpen)}
         >
