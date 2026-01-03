@@ -124,8 +124,8 @@ export default function ComparisonSection() {
                     <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#386758] text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg whitespace-nowrap">
                       The Vital Companion
                     </div>
-                    <div className="w-16 h-16 mx-auto bg-[#386758] rounded-2xl flex items-center justify-center mb-3 shadow-lg shadow-[#386758]/20">
-                      <img src="/images/mysentry-logo.png" alt="MySentry" className="w-10 h-10 object-contain" />
+                    <div className="w-20 h-20 mx-auto bg-white rounded-2xl flex items-center justify-center mb-3 shadow-lg shadow-gray-200 border border-gray-100 p-3">
+                      <img src="/images/mysentry-shield-logo.png" alt="MySentry" className="w-full h-full object-contain" />
                     </div>
                     <div className="font-heading font-bold text-xl text-[#1a1a1a]">MySentry</div>
                     <div className="text-xs font-bold text-[#386758] mt-1 uppercase tracking-wide">All-in-One</div>
