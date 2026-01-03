@@ -137,10 +137,8 @@ export default function ComparisonSection() {
               
               {/* MySentry Complete CTA */}
               <div className="col-span-1 px-2">
-                <Link href="/pricing">
-                  <Button className="w-full bg-[#386758] hover:bg-[#2d5246] text-white font-bold uppercase tracking-wider py-6 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-                    Start Free Trial
-                  </Button>
+                <Link href="/pricing" className="inline-flex items-center justify-center w-full bg-[#386758] hover:bg-[#2d5246] text-white font-bold uppercase tracking-wider py-6 rounded-md shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 h-14">
+                  Start Free Trial
                 </Link>
                 <p className="text-center text-xs text-gray-500 mt-2 font-medium">
                   7-Day Free Trial
