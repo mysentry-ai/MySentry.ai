@@ -78,16 +78,15 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <div className="hidden lg:flex items-center">
-          <Link href="/pricing">
-            <Button 
-              className={cn(
-                "font-bold uppercase tracking-wider rounded-full px-8 h-12 text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300",
-                // Button logic: Always primary (greenish) background with white text
-                "bg-primary text-white hover:bg-primary/90"
-              )}
-            >
-              Start 7-Day Free Trial
-            </Button>
+          <Link 
+            href="/pricing"
+            className={cn(
+              "inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-8 h-12 text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300",
+              // Button logic: Always primary (greenish) background with white text
+              "bg-primary text-white hover:bg-primary/90"
+            )}
+          >
+            Start 7-Day Free Trial
           </Link>
         </div>
 
@@ -121,10 +120,12 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="pt-8">
-              <Link href="/pricing">
-                <Button className="w-full bg-primary text-white rounded-full h-14 text-lg font-bold uppercase tracking-wider" onClick={() => setIsOpen(false)}>
-                  Start 7-Day Free Trial
-                </Button>
+              <Link 
+                href="/pricing" 
+                className="inline-flex items-center justify-center w-full bg-primary text-white rounded-full h-14 text-lg font-bold uppercase tracking-wider" 
+                onClick={() => setIsOpen(false)}
+              >
+                Start 7-Day Free Trial
               </Link>
             </div>
           </div>

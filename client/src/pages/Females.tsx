@@ -214,10 +214,12 @@ export default function Females() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/pricing">
-                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" onClick={() => window.scrollTo(0, 0)}>
-                  START 7-DAY FREE TRIAL
-                </Button>
+              <Link 
+                href="/pricing"
+                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                START 7-DAY FREE TRIAL
               </Link>
             </div>
           </motion.div>
