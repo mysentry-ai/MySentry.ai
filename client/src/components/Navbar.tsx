@@ -42,42 +42,40 @@ export default function Navbar() {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-4">
-          <Link href="/">
-            <a className="flex items-center gap-3 group">
-              <img 
-                src="/images/logo.png" 
-                alt="MySentry" 
-                className={cn(
-                  "h-14 w-auto transition-all duration-300 group-hover:scale-105",
-                  // Logo logic: Keep original colors unless specifically needed otherwise
-                  ""
-                )} 
-              />
-            </a>
+          <Link href="/" className="flex items-center gap-3 group">
+            <img 
+              src="/images/logo.png" 
+              alt="MySentry" 
+              className={cn(
+                "h-14 w-auto transition-all duration-300 group-hover:scale-105",
+                // Logo logic: Keep original colors unless specifically needed otherwise
+                ""
+              )} 
+            />
           </Link>
         </div>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-10">
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.href}>
-              <a
-                className={cn(
-                  "text-lg font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
-                  // Logic for text color: 
-                  // If scrolled -> Dark text (foreground)
-                  // If NOT scrolled AND on Home page -> White text (for video background)
-                  // If NOT scrolled AND NOT on Home page -> Dark text (foreground)
-                  scrolled ? "text-foreground" : (isHome ? "text-white hover:text-white/80" : "text-foreground"),
-                  isActive(link.href) ? "text-primary" : ""
-                )}
-              >
-                {link.name}
-                <span className={cn(
-                  "absolute -bottom-2 left-0 w-0 h-[3px] bg-primary transition-all duration-300 group-hover:w-full",
-                  isActive(link.href) ? "w-full" : ""
-                )} />
-              </a>
+            <Link 
+              key={link.name} 
+              href={link.href}
+              className={cn(
+                "text-lg font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
+                // Logic for text color: 
+                // If scrolled -> Dark text (foreground)
+                // If NOT scrolled AND on Home page -> White text (for video background)
+                // If NOT scrolled AND NOT on Home page -> Dark text (foreground)
+                scrolled ? "text-foreground" : (isHome ? "text-white hover:text-white/80" : "text-foreground"),
+                isActive(link.href) ? "text-primary" : ""
+              )}
+            >
+              {link.name}
+              <span className={cn(
+                "absolute -bottom-2 left-0 w-0 h-[3px] bg-primary transition-all duration-300 group-hover:w-full",
+                isActive(link.href) ? "w-full" : ""
+              )} />
             </Link>
           ))}
         </div>
@@ -115,16 +113,16 @@ export default function Navbar() {
         <div className="fixed inset-0 z-40 bg-white flex flex-col pt-24 px-6 animate-in slide-in-from-right duration-300 lg:hidden">
           <div className="flex flex-col space-y-6">
             {navLinks.map((link) => (
-              <Link key={link.name} href={link.href}>
-                <a
-                  className={cn(
-                    "block text-3xl font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4",
-                    isActive(link.href) ? "text-primary" : "text-foreground"
-                  )}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.name}
-                </a>
+              <Link 
+                key={link.name} 
+                href={link.href}
+                className={cn(
+                  "block text-3xl font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4",
+                  isActive(link.href) ? "text-primary" : "text-foreground"
+                )}
+                onClick={() => setIsOpen(false)}
+              >
+                {link.name}
               </Link>
             ))}
             <div className="pt-8">

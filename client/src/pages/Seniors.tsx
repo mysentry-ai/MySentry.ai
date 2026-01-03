@@ -183,7 +183,7 @@ export default function Seniors() {
         description="Stay independent and safe with MySentry. 24/7 fall detection, health monitoring, and emergency response for active seniors."
       />
       
-      {/* HERO SECTION - Standardized with Features Page Style */}
+      {/* HERO SECTION - Standardized with Females Page Style */}
       <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
@@ -250,7 +250,7 @@ export default function Seniors() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">1. Falls happen fast.</h3>
               <p className="text-gray-600 leading-relaxed">
-                1 in 4 seniors falls every year. If you can't get up, you can't call for help. MySentry detects the fall automatically and calls for you.
+                One slip in the bathroom or garden can leave you unable to get up. If your phone is in another room, you're stranded.
               </p>
             </motion.div>
 
@@ -263,9 +263,9 @@ export default function Seniors() {
               <div className="h-14 w-14 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 <Heart className="h-7 w-7 text-orange-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">2. Health changes silently.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">2. Silent health risks.</h3>
               <p className="text-gray-600 leading-relaxed">
-                High heart rate? Low oxygen? Irregular rhythm? Your watch sees it before you feel it. We alert you and your family instantly.
+                Heart issues and infections often start silently. Without monitoring, you might not know something is wrong until it's an emergency.
               </p>
             </motion.div>
 
@@ -276,111 +276,41 @@ export default function Seniors() {
               className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
             >
               <div className="h-14 w-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Watch className="h-7 w-7 text-blue-600" />
+                <Shield className="h-7 w-7 text-blue-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">3. No ugly pendants.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">3. The burden worry.</h3>
               <p className="text-gray-600 leading-relaxed">
-                Traditional medical alerts are stigmatizing and often left on the nightstand. MySentry works on the Apple or Samsung watch you already love to wear.
+                You hide health concerns because you don't want to worry your kids. But this lack of information actually increases their anxiety.
               </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* PEACE: The Solution (Expandable Carousel) */}
-      <section className="py-32 bg-[#f8fafc] relative overflow-hidden">
+      {/* 15-Card Carousel Section */}
+      <section className="py-24 bg-gray-50">
         <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-red-500 font-bold tracking-wider uppercase text-sm mb-4 block">Complete Protection</span>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6 leading-tight">
-              Safety Without Compromise
+          <div className="text-center mb-16">
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Comprehensive Protection</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6">
+              Top 15 Senior Safety Challenges Solved
             </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
-              Discover how MySentry keeps you safe and independent with advanced features designed for your lifestyle.
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              From fall detection to medication reminders, see how MySentry supports every aspect of independent living.
             </p>
           </div>
-
+          
           <ExpandableCarousel items={seniorChallenges} />
         </div>
       </section>
 
       {/* Get Started Section */}
-      <GetStartedSection />
-
-      {/* PEACE: The Change & End Result */}
-      <section className="py-32 bg-[#e8f5e9] relative overflow-hidden">
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">The Transformation</span>
-            <h2 className="text-4xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-8 leading-tight">
-              From worry to <br/>
-              <span className="text-primary">confidence.</span>
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Imagine going for a walk, gardening, or just living your life without the fear of "what if." MySentry gives you the confidence to live independently, knowing help is always on your wrist.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Shield,
-                title: "Total Protection",
-                desc: "Falls, crashes, health issues, and panic button. All covered."
-              },
-              {
-                icon: Watch,
-                title: "Use Your Own Watch",
-                desc: "No need to buy or wear a stigmatizing medical alert pendant."
-              },
-              {
-                icon: Heart,
-                title: "Peace of Mind",
-                desc: "Your family knows you're safe, and you know help is always there."
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 hover:shadow-2xl transition-all hover:-translate-y-2"
-              >
-                <div className="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8">
-                  <item.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
-                <p className="text-lg text-gray-600 leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 bg-white">
-        <div className="container">
-          <div className="bg-[#1a1a1a] rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-              <div className="absolute top-[-50%] left-[-20%] w-[80%] h-[80%] rounded-full bg-primary blur-[150px]" />
-            </div>
-            
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-5xl md:text-7xl font-heading font-bold text-white mb-8 uppercase tracking-tight">
-                Try It Risk-Free.
-              </h2>
-              <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-                Experience the freedom of MySentry with our 7-day free trial. No contracts, cancel anytime.
-              </p>
-              <Link href="/pricing">
-                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl" onClick={() => window.scrollTo(0, 0)}>
-                  START 7-DAY FREE TRIAL
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <GetStartedSection 
+        title="Ready to maintain your independence?"
+        subtitle="Join thousands of seniors who are living life on their own terms with MySentry."
+        ctaText="Start Your 7-Day Free Trial"
+        ctaLink="/pricing"
+      />
     </Layout>
   );
 }

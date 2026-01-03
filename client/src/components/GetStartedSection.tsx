@@ -1,8 +1,21 @@
 import { motion } from "framer-motion";
 import { Check, Smartphone, ShieldCheck, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
-export default function GetStartedSection() {
+interface GetStartedSectionProps {
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaLink?: string;
+}
+
+export default function GetStartedSection({ 
+  title = "Get Started in Minutes", 
+  subtitle = "Three simple steps to 24/7 peace of mind.",
+  ctaText = "Start Your Free Trial",
+  ctaLink = "/pricing"
+}: GetStartedSectionProps) {
   const steps = [
     {
       icon: Check,
@@ -29,10 +42,10 @@ export default function GetStartedSection() {
       <div className="container max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-6 uppercase tracking-tighter">
-            Get Started in Minutes
+            {title}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto font-serif italic">
-            Three simple steps to 24/7 peace of mind.
+            {subtitle}
           </p>
         </div>
 
@@ -69,14 +82,16 @@ export default function GetStartedSection() {
         </div>
 
         <div className="mt-16 text-center">
-          <Button 
-            size="lg" 
-            className="bg-[#1a1a1a] text-white hover:bg-black text-xl px-12 py-8 h-auto font-bold uppercase tracking-wider rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          >
-            Start Your Free Trial
-            <ArrowRight className="ml-3 w-6 h-6" />
-          </Button>
+          <Link href={ctaLink}>
+            <Button 
+              size="lg" 
+              className="bg-[#1a1a1a] text-white hover:bg-black text-xl px-12 py-8 h-auto font-bold uppercase tracking-wider rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
+              {ctaText}
+              <ArrowRight className="ml-3 w-6 h-6" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

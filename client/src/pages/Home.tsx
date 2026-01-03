@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Shield, Activity, Users, Building2, Heart, AlertTriangle, Phone, MapPin, Video, Lock, Clock, Smartphone, Watch, Menu } from "lucide-react";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
+import Layout from "@/components/Layout";
 import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
 import HowItWorksDemo from "@/components/HowItWorksDemo";
 import PricingSection from "@/components/PricingSection";
@@ -181,171 +181,87 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Shared Navbar Component */}
-      <Navbar />
+    <Layout>
+      {/* HERO SECTION - Standardized with Females Page Style */}
+      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+           {/* Relatable Hero Image */}
+           <img 
+             src="/images/families-hero.jpg" 
+             alt="Family safety and connection" 
+             className="absolute inset-0 w-full h-full object-cover opacity-60"
+           />
+           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
+        </div>
 
-      {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          <source src="https://videos.pexels.com/video-files/8637185/8637185-sd_640_360_25fps.mp4" type="video/mp4" />
-        </video>
-        
-        <div className="absolute inset-0 bg-[#386758]/40" />
-        
-        <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 max-w-7xl mx-auto">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+        <div className="container relative z-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-6xl md:text-8xl lg:text-9xl font-heading font-bold text-white uppercase tracking-tighter mb-6 drop-shadow-2xl"
+            className="max-w-4xl"
           >
-            DON'T FACE A<br />
-            HEALTH OR SAFETY<br />
-            EMERGENCY<br />
-            ALONE.
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-white/90 max-w-3xl font-medium leading-relaxed drop-shadow-lg mb-10"
-          >
-            MySentry turns your phone and smartwatch into a 24/7 safety and health companion. 
-            We monitor, detect, and respond so help reaches you fast, even if you can't ask for it.
-          </motion.p>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 w-full max-w-md sm:max-w-none justify-center"
-          >
-            <Button 
-              size="lg" 
-              className="bg-white text-black hover:bg-gray-100 text-lg px-8 py-6 h-auto font-bold uppercase tracking-wider w-full sm:w-auto whitespace-normal text-center"
-              style={{ color: '#000000' }}
-              onClick={scrollToPricing}
-            >
-              Start 7-Day Free Trial
-            </Button>
-            <Link href="/how-it-works" className="w-full sm:w-auto">
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="bg-transparent border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-6 h-auto font-bold uppercase tracking-wider w-full sm:w-auto"
-              >
-                See How It Works
-              </Button>
-            </Link>
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
+              24/7 Safety & Health Monitoring
+            </span>
+            <h1 className="text-6xl md:text-8xl font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
+              Don't Face A<br/>
+              Health Or Safety<br/>
+              <span className="text-gray-600">Emergency Alone.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+              MySentry turns your phone and smartwatch into a 24/7 safety and health companion. We monitor, detect, and respond so help reaches you fast.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/pricing">
+                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" onClick={() => window.scrollTo(0, 0)}>
+                  START 7-DAY FREE TRIAL
+                </Button>
+              </Link>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Value Proposition Section */}
-      <section className="py-24 bg-[#e8f5e9]">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div className="flex flex-col items-center text-center">
-              <div className="w-20 h-20 bg-[#386758]/10 rounded-full flex items-center justify-center mb-6">
-                <Shield className="w-10 h-10 text-[#386758]" />
-              </div>
-              <h3 className="text-2xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-wide">Safety</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Panic Alarm, Fall Detection, Crash Detection, and Live Video Evidence protect you in any emergency.
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="w-20 h-20 bg-[#386758]/10 rounded-full flex items-center justify-center mb-6">
-                <Activity className="w-10 h-10 text-[#386758]" />
-              </div>
-              <h3 className="text-2xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-wide">Health</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Real-Time Monitoring, Personalized Baselines, and Near-Fall Detection keep you ahead of health risks.
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center">
-              <div className="w-20 h-20 bg-[#386758]/10 rounded-full flex items-center justify-center mb-6">
-                <Users className="w-10 h-10 text-[#386758]" />
-              </div>
-              <h3 className="text-2xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-wide">Connectivity</h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Smart Alerts, 5 Emergency Contacts, and Location Updates keep your loved ones informed and connected.
-              </p>
-            </div>
+      {/* How It Works Demo */}
+      <section className="py-20 bg-white">
+        <div className="container">
+          <div className="text-center mb-16">
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">How It Works</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a]">
+              Protection in 4 Simple Steps
+            </h2>
           </div>
+          <HowItWorksDemo />
         </div>
       </section>
 
-      {/* Who Is MySentry For? Section */}
-      <section className="py-24 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
-          <h2 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 uppercase tracking-tighter">
-            Who Is MySentry For?
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Tailored protection for every stage of life. Select a challenge below to see how MySentry solves it.
-          </p>
-        </div>
-        
-        <div className="w-full">
+      {/* Who Is MySentry For? (Expandable Carousel) */}
+      <section className="py-24 bg-gray-50">
+        <div className="container">
+          <div className="text-center mb-16">
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Who We Protect</span>
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6">
+              Safety for Every Stage of Life
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Whether you're an active senior, a concerned parent, or an employer, MySentry adapts to your specific safety needs.
+            </p>
+          </div>
+          
           <ExpandableCarousel items={peaceChallenges} />
         </div>
       </section>
 
-      {/* How It Works Demo Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
-          <h2 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 uppercase tracking-tighter">
-            How It Works
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Advanced protection that's simple to use. See how MySentry responds in real-time.
-          </p>
-        </div>
-        <HowItWorksDemo />
-      </section>
-
-
-
-      {/* UGC / Testimonials Section */}
-      <TestimonialSection />
-
-      {/* What We Provide Section */}
+      {/* What We Provide */}
       <WhatWeProvide />
+
+      {/* Testimonials */}
+      <TestimonialSection />
 
       {/* Pricing Section */}
       <PricingSection />
-
-      {/* Final CTA Section */}
-      <section className="py-24 bg-[#1a1a1a] text-white text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-5xl md:text-7xl font-heading font-bold mb-8 uppercase tracking-tighter">
-            Ready to Protect What Matters Most?
-          </h2>
-          <p className="text-xl md:text-2xl text-gray-400 mb-12 max-w-2xl mx-auto">
-            Join thousands of families who trust MySentry for 24/7 safety and health monitoring.
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-white text-black hover:bg-gray-200 text-xl px-12 py-8 h-auto font-bold uppercase tracking-wider rounded-full"
-            style={{ color: '#000000' }}
-            onClick={scrollToPricing}
-          >
-            Start 7-Day Free Trial
-          </Button>
-          <p className="mt-6 text-sm text-gray-500">
-            No commitment. Cancel anytime. Credit card needed for trial but not charged for first 7 days.
-          </p>
-        </div>
-      </section>
-    </div>
+    </Layout>
   );
 }
