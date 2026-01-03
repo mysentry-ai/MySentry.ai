@@ -17,7 +17,7 @@ export default function Seniors() {
       image: "/images/challenge-senior-fall.jpg",
       icon: Activity,
       tag: "Automatic Alert",
-      link: "/features",
+      link: "/features#fall-detection",
       ctaText: "See How It Works"
     },
     {
@@ -28,7 +28,7 @@ export default function Seniors() {
       image: "/images/challenge-senior-crash.jpg",
       icon: Car,
       tag: "Road Safety",
-      link: "/features",
+      link: "/features#crash-detection",
       ctaText: "Learn More"
     },
     {
@@ -39,7 +39,7 @@ export default function Seniors() {
       image: "/images/challenge-senior-near-fall.jpg",
       icon: TrendingDown,
       tag: "Prevention",
-      link: "/features",
+      link: "/features#health-monitoring",
       ctaText: "View Features"
     },
     {
@@ -50,7 +50,7 @@ export default function Seniors() {
       image: "/images/challenge-senior-health-monitoring.jpg",
       icon: HeartPulse,
       tag: "Proactive Care",
-      link: "/features",
+      link: "/features#health-monitoring",
       ctaText: "Learn More"
     },
     {
@@ -61,7 +61,7 @@ export default function Seniors() {
       image: "/images/watch-sos-lifestyle.png",
       icon: AlertCircle,
       tag: "Instant Help",
-      link: "/features",
+      link: "/features#voice-panic",
       ctaText: "See How It Works"
     },
     {
@@ -72,7 +72,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=2630&auto=format&fit=crop",
       icon: Pill,
       tag: "Health Routine",
-      link: "/features",
+      link: "/features#medication-reminders",
       ctaText: "Stay Healthy"
     },
     {
@@ -83,7 +83,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2670&auto=format&fit=crop",
       icon: MapPin,
       tag: "Memory Care",
-      link: "/features",
+      link: "/features#geo-fencing",
       ctaText: "Stay Safe"
     },
     {
@@ -94,7 +94,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1516307365426-bea591f05011?q=80&w=2670&auto=format&fit=crop",
       icon: Home,
       tag: "Home Safety",
-      link: "/features",
+      link: "/features#voice-panic",
       ctaText: "Live Freely"
     },
     {
@@ -105,7 +105,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=2669&auto=format&fit=crop",
       icon: CheckCircle2,
       tag: "Family Peace",
-      link: "/features",
+      link: "/features#check-in",
       ctaText: "Connect"
     },
     {
@@ -116,7 +116,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2670&auto=format&fit=crop",
       icon: Shield,
       tag: "Security",
-      link: "/features",
+      link: "/features#voice-panic",
       ctaText: "Verify"
     },
     {
@@ -127,7 +127,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=2676&auto=format&fit=crop",
       icon: Zap,
       tag: "Active Life",
-      link: "/features",
+      link: "/features#geo-fencing",
       ctaText: "Go Outside"
     },
     {
@@ -138,7 +138,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2568&auto=format&fit=crop",
       icon: UserPlus,
       tag: "Care Team",
-      link: "/features",
+      link: "/features#family-dashboard",
       ctaText: "Share Access"
     },
     {
@@ -149,7 +149,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2680&auto=format&fit=crop",
       icon: Battery,
       tag: "System Health",
-      link: "/features",
+      link: "/features#health-monitoring",
       ctaText: "Stay Charged"
     },
     {
@@ -160,7 +160,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=2670&auto=format&fit=crop",
       icon: Bell,
       tag: "Safety Alerts",
-      link: "/features",
+      link: "/features#health-monitoring",
       ctaText: "Be Ready"
     },
     {
@@ -171,7 +171,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2670&auto=format&fit=crop",
       icon: Phone,
       tag: "Medical Data",
-      link: "/features",
+      link: "/features#health-monitoring",
       ctaText: "Share Data"
     }
   ];
@@ -260,12 +260,12 @@ export default function Seniors() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="h-14 w-14 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Heart className="h-7 w-7 text-orange-600" />
+              <div className="h-14 w-14 rounded-2xl bg-red-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Heart className="h-7 w-7 text-red-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">2. Silent health risks.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">2. Silent health issues.</h3>
               <p className="text-gray-600 leading-relaxed">
-                Heart issues and infections often start silently. Without monitoring, you might not know something is wrong until it's an emergency.
+                Heart rate spikes or low oxygen levels can signal trouble before you feel symptoms. Without monitoring, you might miss the warning signs.
               </p>
             </motion.div>
 
@@ -275,41 +275,42 @@ export default function Seniors() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="h-14 w-14 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                <Shield className="h-7 w-7 text-blue-600" />
+              <div className="h-14 w-14 rounded-2xl bg-red-100 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                <Clock className="h-7 w-7 text-red-600" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">3. The burden worry.</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">3. Every second counts.</h3>
               <p className="text-gray-600 leading-relaxed">
-                You hide health concerns because you don't want to worry your kids. But this lack of information actually increases their anxiety.
+                In an emergency, fumbling for a phone or dialing 911 takes too long. You need a way to get help instantly, hands-free.
               </p>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 15-Card Carousel Section */}
-      <section className="py-24 bg-gray-50">
+      {/* CAROUSEL: The Solution */}
+      <section className="py-32 bg-[#1a1a1a] text-white overflow-hidden">
         <div className="container">
-          <div className="text-center mb-16">
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Comprehensive Protection</span>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6">
-              Top 15 Senior Safety Challenges Solved
+          <div className="max-w-3xl mb-16">
+            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Complete Protection</span>
+            <h2 className="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+              Safety for Every<br/>
+              <span className="text-gray-400">Part of Your Day.</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              From fall detection to medication reminders, see how MySentry supports every aspect of independent living.
+            <p className="text-xl text-gray-400 leading-relaxed max-w-2xl">
+              From your morning walk to your evening routine, MySentry adapts to your life, providing discreet protection without changing your lifestyle.
             </p>
           </div>
-          
-          <ExpandableCarousel items={seniorChallenges} />
         </div>
+        
+        <ExpandableCarousel items={seniorChallenges} />
       </section>
 
-      {/* Get Started Section */}
+      {/* CTA SECTION */}
       <GetStartedSection 
-        title="Ready to maintain your independence?"
-        subtitle="Join thousands of seniors who are living life on their own terms with MySentry."
+        title="Ready to Live Fearlessly?"
+        subtitle="Join thousands of seniors who have reclaimed their independence with MySentry."
         ctaText="Start Your 7-Day Free Trial"
-        ctaLink="/pricing"
+        image="/images/senior-couple-walking.jpg"
       />
     </Layout>
   );

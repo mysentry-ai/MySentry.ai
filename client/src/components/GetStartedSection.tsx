@@ -8,6 +8,7 @@ interface GetStartedSectionProps {
   subtitle?: string;
   ctaText?: string;
   ctaLink?: string;
+  image?: string;
 }
 
 export default function GetStartedSection({ 

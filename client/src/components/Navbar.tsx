@@ -95,11 +95,11 @@ export default function Navbar() {
         <button
           className={cn(
             "lg:hidden p-2 transition-colors",
-            "text-foreground"
+            "text-black"
           )}
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X className="h-8 w-8 text-foreground" /> : <Menu className="h-8 w-8" />}
+          {isOpen ? <X className="h-8 w-8 text-black" /> : <Menu className="h-8 w-8 text-black" />}
         </button>
       </div>
 
