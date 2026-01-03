@@ -8,9 +8,19 @@ export default function ComparisonSection() {
     {
       category: "Safety & Security",
       items: [
-        { name: "24/7 Professional Monitoring", life360: false, senior: true, wearable: false, mysentry: true },
+        { name: "Voice-Activated Panic Alarm", life360: false, senior: "Button Only", wearable: false, mysentry: true },
+        { name: "One-Tap Panic Button", life360: true, senior: true, wearable: false, mysentry: true },
+        { name: "24/7 Professional Monitoring", life360: "Premium Only", senior: true, wearable: false, mysentry: true },
         { name: "Live Video Evidence", life360: false, senior: false, wearable: false, mysentry: true },
         { name: "Crash & Fall Detection", life360: "Crash Only", senior: "Fall Only", wearable: "Limited", mysentry: true },
+      ]
+    },
+    {
+      category: "Connectivity & Response",
+      items: [
+        { name: "Automated Location Sharing", life360: true, senior: false, wearable: false, mysentry: true },
+        { name: "Up to 5 Emergency Contacts", life360: false, senior: "Limited", wearable: false, mysentry: true },
+        { name: "Real-Time Health Response", life360: false, senior: false, wearable: false, mysentry: true },
       ]
     },
     {
