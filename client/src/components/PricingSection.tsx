@@ -41,7 +41,7 @@ export default function PricingSection() {
         "Real-time Health Alerts",
         "Live Video Evidence"
       ],
-      cta: "Start 7-Day Free Trial",
+      cta: "Start Free Trial",
       popular: false,
       highlightColor: "primary"
     },
@@ -58,7 +58,7 @@ export default function PricingSection() {
         "Location Sharing",
         "Check-in Alerts"
       ],
-      cta: "Start 7-Day Free Trial",
+      cta: "Start Free Trial",
       popular: true,
       highlightColor: "#66d48f"
     },

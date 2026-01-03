@@ -2,9 +2,8 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Heart, TrendingUp, Users, DollarSign, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Zap, Car, Activity, BarChart3, Award, AlertTriangle, Building2, HardHat, Truck, Stethoscope, Briefcase, Warehouse, Home, Hotel, Utensils, Plane, School, Landmark, Factory } from "lucide-react";
-import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
-import GetStartedSection from "@/components/GetStartedSection";
+import { Heart, TrendingUp, Users, DollarSign, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Zap, Car, Activity, BarChart3, Award, AlertTriangle, Building2 } from "lucide-react";
+import ExpandableCarousel from "@/components/ExpandableCarousel";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { industries } from "@/data/industries";
@@ -13,174 +12,6 @@ import EmployerDemoModal from "@/components/EmployerDemoModal";
 export default function Employers() {
   const [activeIndustry, setActiveIndustry] = useState(industries[0]);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-
-  const employerChallenges: CarouselItem[] = [
-    {
-      id: "lone-worker",
-      title: "Lone Worker Safety",
-      subtitle: "Never truly alone",
-      description: "Protect employees who work alone or in remote locations. Automated check-ins and fall detection ensure they're safe even when no one else is around.",
-      image: "/images/challenge-employer-lone-worker.jpg",
-      icon: Users,
-      tag: "Remote Safety",
-      link: "/pricing",
-      ctaText: "View Plans"
-    },
-    {
-      id: "health-incidents",
-      title: "Health Incidents",
-      subtitle: "Immediate medical response",
-      description: "Detect heart attacks, heat exhaustion, or other health crises instantly. Our monitoring center dispatches EMS with precise location data to save precious minutes.",
-      image: "/images/challenge-employer-health.jpg",
-      icon: Heart,
-      tag: "Medical Response",
-      link: "/pricing",
-      ctaText: "Get Started"
-    },
-    {
-      id: "driver-safety",
-      title: "Driver Safety",
-      subtitle: "Protect your fleet",
-      description: "Automatic crash detection for delivery drivers and field agents. We alert emergency services instantly if a severe impact is detected.",
-      image: "/images/challenge-senior-crash.jpg",
-      icon: Car,
-      tag: "Fleet Safety",
-      link: "/pricing",
-      ctaText: "Learn More"
-    },
-    {
-      id: "liability-protection",
-      title: "Liability Protection",
-      subtitle: "Objective evidence",
-      description: "In the event of an incident, MySentry automatically records video and audio, providing clear evidence to protect your business from false claims.",
-      image: "/images/business-meeting-happy.jpg",
-      icon: Shield,
-      tag: "Risk Management",
-      link: "/pricing",
-      ctaText: "See Pricing"
-    },
-    {
-      id: "productivity",
-      title: "Productivity & Morale",
-      subtitle: "Focus on the job",
-      description: "When employees feel safe, they focus better. Reduce anxiety and turnover by showing your team that their safety is your top priority.",
-      image: "/images/challenge-employer-productivity.jpg",
-      icon: TrendingUp,
-      tag: "Productivity",
-      link: "/pricing",
-      ctaText: "Learn More"
-    },
-    {
-      id: "construction",
-      title: "Construction Safety",
-      subtitle: "High-risk protection",
-      description: "Monitor workers on dangerous sites. Fall detection and panic buttons provide an immediate lifeline in case of accidents.",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2670&auto=format&fit=crop",
-      icon: HardHat,
-      tag: "Construction",
-      link: "/pricing",
-      ctaText: "Site Safety"
-    },
-    {
-      id: "healthcare",
-      title: "Healthcare Workers",
-      subtitle: "Protecting the protectors",
-      description: "Nurses and home health aides often face risks from patients or environments. Give them a discreet way to call for help.",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
-      icon: Stethoscope,
-      tag: "Healthcare",
-      link: "/pricing",
-      ctaText: "Staff Safety"
-    },
-    {
-      id: "real-estate",
-      title: "Real Estate Agents",
-      subtitle: "Safe showings",
-      description: "Meeting strangers in empty homes carries risk. Agents can trigger a silent alarm if they feel threatened during a showing.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2573&auto=format&fit=crop",
-      icon: Home,
-      tag: "Real Estate",
-      link: "/pricing",
-      ctaText: "Agent Safety"
-    },
-    {
-      id: "warehouse",
-      title: "Warehouse Safety",
-      subtitle: "Industrial monitoring",
-      description: "In noisy, busy warehouses, accidents happen. Ensure workers can signal for help even if they can't be heard over machinery.",
-      image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2670&auto=format&fit=crop",
-      icon: Warehouse,
-      tag: "Industrial",
-      link: "/pricing",
-      ctaText: "Warehouse Safety"
-    },
-    {
-      id: "hospitality",
-      title: "Hotel Staff",
-      subtitle: "Room service safety",
-      description: "Housekeepers and room service staff entering guest rooms alone need protection. Panic buttons provide instant security backup.",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2670&auto=format&fit=crop",
-      icon: Hotel,
-      tag: "Hospitality",
-      link: "/pricing",
-      ctaText: "Staff Protect"
-    },
-    {
-      id: "retail",
-      title: "Retail Security",
-      subtitle: "Store safety",
-      description: "Protect staff during opening/closing times or from aggressive customers. A discreet way to summon security or police.",
-      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2670&auto=format&fit=crop",
-      icon: Briefcase,
-      tag: "Retail",
-      link: "/pricing",
-      ctaText: "Store Safety"
-    },
-    {
-      id: "utilities",
-      title: "Utility Workers",
-      subtitle: "Field operations",
-      description: "Workers repairing lines or meters often face environmental hazards. Ensure they're monitored and connected at all times.",
-      image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2670&auto=format&fit=crop",
-      icon: Zap,
-      tag: "Utilities",
-      link: "/pricing",
-      ctaText: "Field Safety"
-    },
-    {
-      id: "logistics",
-      title: "Logistics & Trucking",
-      subtitle: "Road safety",
-      description: "Monitor driver fatigue and health on long hauls. Crash detection automatically alerts emergency services on remote highways.",
-      image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2670&auto=format&fit=crop",
-      icon: Truck,
-      tag: "Logistics",
-      link: "/pricing",
-      ctaText: "Driver Safety"
-    },
-    {
-      id: "education",
-      title: "School Staff",
-      subtitle: "Campus security",
-      description: "Teachers and administrators can instantly alert security during campus emergencies or lockdowns with a single tap.",
-      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2670&auto=format&fit=crop",
-      icon: School,
-      tag: "Education",
-      link: "/pricing",
-      ctaText: "Campus Safety"
-    },
-    {
-      id: "government",
-      title: "Public Sector",
-      subtitle: "Civil servant safety",
-      description: "Protect social workers, inspectors, and other government employees who interact with the public in uncontrolled environments.",
-      image: "https://images.unsplash.com/photo-1555848962-6e79363ec58f?q=80&w=2666&auto=format&fit=crop",
-      icon: Landmark,
-      tag: "Government",
-      link: "/pricing",
-      ctaText: "Public Safety"
-    }
-  ];
 
   return (
     <Layout>
@@ -245,7 +76,65 @@ export default function Employers() {
             </p>
           </div>
 
-          <ExpandableCarousel items={employerChallenges} />
+          <ExpandableCarousel 
+            items={[
+              {
+                id: "lone-worker",
+                title: "Lone Worker Safety",
+                subtitle: "Never truly alone",
+                description: "Protect employees who work alone or in remote locations. Automated check-ins and fall detection ensure they're safe even when no one else is around.",
+                image: "/images/challenge-employer-lone-worker.jpg",
+                icon: Users,
+                tag: "Remote Safety",
+                link: "/pricing",
+                ctaText: "View Plans"
+              },
+              {
+                id: "health-incidents",
+                title: "Health Incidents",
+                subtitle: "Immediate medical response",
+                description: "Detect heart attacks, heat exhaustion, or other health crises instantly. Our monitoring center dispatches EMS with precise location data to save precious minutes.",
+                image: "/images/challenge-employer-health.jpg",
+                icon: Heart,
+                tag: "Medical Response",
+                link: "/pricing",
+                ctaText: "Get Started"
+              },
+              {
+                id: "driver-safety",
+                title: "Driver Safety",
+                subtitle: "Protect your fleet",
+                description: "Automatic crash detection for delivery drivers and field agents. We alert emergency services instantly if a severe impact is detected.",
+                image: "/images/challenge-senior-crash.jpg",
+                icon: Car,
+                tag: "Fleet Safety",
+                link: "/pricing",
+                ctaText: "Learn More"
+              },
+              {
+                id: "liability-protection",
+                title: "Liability Protection",
+                subtitle: "Objective evidence",
+                description: "In the event of an incident, MySentry automatically records video and audio, providing clear evidence to protect your business from false claims.",
+                image: "/images/business-meeting-happy.jpg",
+                icon: Shield,
+                tag: "Risk Management",
+                link: "/pricing",
+                ctaText: "See Pricing"
+              },
+              {
+                id: "productivity",
+                title: "Productivity & Morale",
+                subtitle: "Focus on the job",
+                description: "When employees feel safe, they focus better. Reduce anxiety and turnover by showing your team that their safety is your top priority.",
+                image: "/images/challenge-employer-productivity.jpg",
+                icon: TrendingUp,
+                tag: "Productivity",
+                link: "/pricing",
+                ctaText: "Learn More"
+              }
+            ]} 
+          />
         </div>
       </section>
 
@@ -344,73 +233,18 @@ export default function Employers() {
                   {/* Floating Stat Card */}
                   <div className="absolute bottom-8 left-8 right-8 bg-white/90 backdrop-blur-xl p-5 rounded-2xl shadow-lg border border-white/50 z-20 animate-[float_5s_ease-in-out_infinite]">
                     <div className="flex items-center gap-4">
-                      <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                      <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <Shield className="h-6 w-6 text-primary" />
                       </div>
                       <div>
-                        <p className="text-xs text-gray-500 uppercase font-bold mb-1">Safety Impact</p>
-                        <p className="text-gray-900 font-bold leading-tight">
-                          Reduced incident response time by 90%
-                        </p>
+                        <p className="font-bold text-gray-900 text-lg">Protected 24/7</p>
+                        <p className="text-sm text-gray-600">Zero incidents this month</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </motion.div>
             </AnimatePresence>
-          </div>
-        </div>
-      </section>
-
-      {/* Get Started Section */}
-      <GetStartedSection />
-
-      {/* PEACE: The Change & End Result */}
-      <section className="py-32 bg-[#e8f5e9] relative overflow-hidden">
-        <div className="container relative z-10">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">The Transformation</span>
-            <h2 className="text-4xl md:text-6xl font-heading font-bold text-[#1a1a1a] mb-8 leading-tight">
-              From liability to <br/>
-              <span className="text-primary">leadership.</span>
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Transform safety from a compliance headache into a competitive advantage. Show your employees you care, and watch productivity and retention soar.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: DollarSign,
-                title: "Reduce Costs",
-                desc: "Lower insurance premiums and workers' comp claims with proactive safety."
-              },
-              {
-                icon: Shield,
-                title: "Mitigate Risk",
-                desc: "Objective video evidence protects your business from false liability claims."
-              },
-              {
-                icon: Users,
-                title: "Retain Talent",
-                desc: "Employees stay where they feel safe and valued. Boost morale instantly."
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white p-10 rounded-[2.5rem] shadow-xl border border-gray-100 hover:shadow-2xl transition-all hover:-translate-y-2"
-              >
-                <div className="h-16 w-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-8">
-                  <item.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h3>
-                <p className="text-lg text-gray-600 leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
@@ -425,16 +259,16 @@ export default function Employers() {
             
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-5xl md:text-7xl font-heading font-bold text-white mb-8 uppercase tracking-tight">
-                Secure Your Workforce.
+                Protect Your Team Today.
               </h2>
               <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-                Schedule a demo to see how MySentry can protect your team and your bottom line.
+                Reduce liability, improve morale, and keep your workforce safe.
               </p>
               <Button 
                 className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl" 
                 onClick={() => setIsDemoModalOpen(true)}
               >
-                BOOK A DEMO
+                BOOK A DEMO TODAY
               </Button>
             </div>
           </div>
@@ -444,6 +278,7 @@ export default function Employers() {
       <EmployerDemoModal 
         isOpen={isDemoModalOpen} 
         onClose={() => setIsDemoModalOpen(false)} 
+        planName="Employer Plan"
       />
     </Layout>
   );

@@ -2,180 +2,11 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Heart, MapPin, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Eye, Smartphone, TrendingDown, Zap, Car, Activity, Watch, Users, Lock, Building2 } from "lucide-react";
-import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
-import GetStartedSection from "@/components/GetStartedSection";
+import { Heart, MapPin, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Eye, Smartphone, TrendingDown, Zap, Car, Activity, Watch, Users, Lock } from "lucide-react";
+import ExpandableCarousel from "@/components/ExpandableCarousel";
 import { motion } from "framer-motion";
 
 export default function Females() {
-  const femaleChallenges: CarouselItem[] = [
-    {
-      id: "jogging-safety",
-      title: "Jogging Alone",
-      subtitle: "Run with confidence",
-      description: "Feel safe on your evening runs. Our GPS tracking and instant panic button mean you're never truly alone, even on secluded paths.",
-      image: "/images/challenge-female-jogging-night.jpg",
-      icon: Activity,
-      tag: "Active Safety",
-      link: "/features",
-      ctaText: "Learn More"
-    },
-    {
-      id: "dating-safety",
-      title: "Dating Safety",
-      subtitle: "Meet new people securely",
-      description: "Use MeetSafe mode to set check-in timers for dates. If you don't check in, we automatically alert your emergency contacts and monitoring center.",
-      image: "/images/challenge-female-dating.jpg",
-      icon: Heart,
-      tag: "MeetSafe",
-      link: "/features",
-      ctaText: "See How It Works"
-    },
-    {
-      id: "rideshare-safety",
-      title: "Rideshare Safety",
-      subtitle: "Travel without fear",
-      description: "Share your live trip status with loved ones. If your ride goes off-route or stops unexpectedly, we can intervene immediately.",
-      image: "/images/challenge-female-rideshare.jpg",
-      icon: Car,
-      tag: "Travel Safe",
-      link: "/features",
-      ctaText: "Learn More"
-    },
-    {
-      id: "discreet-alert",
-      title: "Discreet Alerts",
-      subtitle: "Call for help silently",
-      description: "In uncomfortable situations, trigger a silent alarm without raising suspicion. Our agents listen in and send help while you stay safe.",
-      image: "/images/feature-voice-panic.jpg",
-      icon: Shield,
-      tag: "Silent Panic",
-      link: "/features",
-      ctaText: "Learn More"
-    },
-    {
-      id: "campus-safety",
-      title: "Campus Safety",
-      subtitle: "Walk home safely",
-      description: "Late night study session? Walking back to your dorm? MySentry is your virtual companion, ensuring you get home safe every time.",
-      image: "/images/feature-emergency-contacts.jpg",
-      icon: MapPin,
-      tag: "Student Safety",
-      link: "/features",
-      ctaText: "Learn More"
-    },
-    {
-      id: "solo-travel",
-      title: "Solo Travel",
-      subtitle: "Explore the world freely",
-      description: "Traveling alone is empowering but comes with risks. MySentry works globally, providing you with 24/7 protection wherever your adventures take you.",
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2574&auto=format&fit=crop",
-      icon: MapPin,
-      tag: "Travel Freedom",
-      link: "/features",
-      ctaText: "Travel Safe"
-    },
-    {
-      id: "night-shift",
-      title: "Night Shift",
-      subtitle: "Safe commute home",
-      description: "Leaving work late at night? Our 'Walk With Me' feature lets agents virtually escort you to your car or front door via live video.",
-      image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=2669&auto=format&fit=crop",
-      icon: Clock,
-      tag: "Work Safety",
-      link: "/features",
-      ctaText: "Commute Safe"
-    },
-    {
-      id: "domestic-violence",
-      title: "Domestic Safety",
-      subtitle: "Discreet help at home",
-      description: "If you're in a volatile situation at home, use a voice code or silent button press to summon police without alerting the aggressor.",
-      image: "https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=2671&auto=format&fit=crop",
-      icon: Shield,
-      tag: "Home Protection",
-      link: "/features",
-      ctaText: "Get Help"
-    },
-    {
-      id: "online-meeting",
-      title: "Online Marketplace",
-      subtitle: "Safe transactions",
-      description: "Meeting someone to buy or sell items? Set a safety timer and share your location so friends know exactly where you are and when you should be done.",
-      image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2670&auto=format&fit=crop",
-      icon: Users,
-      tag: "Transaction Safety",
-      link: "/features",
-      ctaText: "Trade Safely"
-    },
-    {
-      id: "parking-garage",
-      title: "Parking Garages",
-      subtitle: "Navigate dark spaces",
-      description: "Parking garages can be intimidating. Keep MySentry active on your wrist, ready to trigger a loud siren or silent alarm instantly.",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop",
-      icon: Car,
-      tag: "Urban Safety",
-      link: "/features",
-      ctaText: "Stay Alert"
-    },
-    {
-      id: "hotel-safety",
-      title: "Hotel Safety",
-      subtitle: "Secure your room",
-      description: "Staying in a hotel alone? Use MySentry as a portable panic button by your bedside for added peace of mind while you sleep.",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2670&auto=format&fit=crop",
-      icon: Lock,
-      tag: "Travel Security",
-      link: "/features",
-      ctaText: "Sleep Soundly"
-    },
-    {
-      id: "public-transit",
-      title: "Public Transit",
-      subtitle: "Ride with confidence",
-      description: "Subways and buses can be unpredictable. With MySentry, you have a direct line to security professionals who can see what you see.",
-      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2670&auto=format&fit=crop",
-      icon: MapPin,
-      tag: "Commuter Safety",
-      link: "/features",
-      ctaText: "Ride Safe"
-    },
-    {
-      id: "real-estate",
-      title: "Real Estate Agents",
-      subtitle: "Show homes safely",
-      description: "Showing properties to strangers? MySentry provides a safety net, allowing you to signal for help discreetly if a client makes you uncomfortable.",
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2573&auto=format&fit=crop",
-      icon: Building2,
-      tag: "Professional Safety",
-      link: "/features",
-      ctaText: "Work Safe"
-    },
-    {
-      id: "health-emergency",
-      title: "Health Emergencies",
-      subtitle: "Sudden illness response",
-      description: "If you have a medical condition or severe allergy, MySentry can speak for you when you can't, sending your medical info to first responders.",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
-      icon: Heart,
-      tag: "Medical Alert",
-      link: "/features",
-      ctaText: "Be Prepared"
-    },
-    {
-      id: "stalking",
-      title: "Stalking Protection",
-      subtitle: "Document and deter",
-      description: "Feeling followed? Activate MySentry to record video evidence and log your location, building a case while summoning immediate help.",
-      image: "https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=2670&auto=format&fit=crop",
-      icon: Eye,
-      tag: "Personal Security",
-      link: "/features",
-      ctaText: "Get Protection"
-    }
-  ];
-
   return (
     <Layout>
       <SEO 
@@ -300,12 +131,67 @@ export default function Females() {
             </p>
           </div>
 
-          <ExpandableCarousel items={femaleChallenges} />
+          <ExpandableCarousel 
+            items={[
+              {
+                id: "jogging-safety",
+                title: "Jogging Alone",
+                subtitle: "Run with confidence",
+                description: "Feel safe on your evening runs. Our GPS tracking and instant panic button mean you're never truly alone, even on secluded paths.",
+                image: "/images/challenge-female-jogging-night.jpg",
+                icon: Activity,
+                tag: "Active Safety",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "dating-safety",
+                title: "Dating Safety",
+                subtitle: "Meet new people securely",
+                description: "Use MeetSafe mode to set check-in timers for dates. If you don't check in, we automatically alert your emergency contacts and monitoring center.",
+                image: "/images/challenge-female-dating.jpg",
+                icon: Heart,
+                tag: "MeetSafe",
+                link: "/features",
+                ctaText: "See How It Works"
+              },
+              {
+                id: "rideshare-safety",
+                title: "Rideshare Safety",
+                subtitle: "Travel without fear",
+                description: "Share your live trip status with loved ones. If your ride goes off-route or stops unexpectedly, we can intervene immediately.",
+                image: "/images/challenge-female-rideshare.jpg",
+                icon: Car,
+                tag: "Travel Safe",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "discreet-alert",
+                title: "Discreet Alerts",
+                subtitle: "Call for help silently",
+                description: "In uncomfortable situations, trigger a silent alarm without raising suspicion. Our agents listen in and send help while you stay safe.",
+                image: "/images/feature-voice-panic.jpg",
+                icon: Shield,
+                tag: "Silent Panic",
+                link: "/features",
+                ctaText: "Learn More"
+              },
+              {
+                id: "campus-safety",
+                title: "Campus Safety",
+                subtitle: "Walk home safely",
+                description: "Late night study session? Walking back to your dorm? MySentry is your virtual companion, ensuring you get home safe every time.",
+                image: "/images/feature-emergency-contacts.jpg",
+                icon: MapPin,
+                tag: "Student Safety",
+                link: "/features",
+                ctaText: "Learn More"
+              }
+            ]} 
+          />
         </div>
       </section>
-
-      {/* Get Started Section */}
-      <GetStartedSection />
 
       {/* PEACE: The Change & End Result */}
       <section className="py-32 bg-[#e8f5e9] relative overflow-hidden">

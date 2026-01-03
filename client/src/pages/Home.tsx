@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Check, Shield, Activity, Users, Building2, Heart, AlertTriangle, Phone, MapPin, Video, Lock, Clock, Smartphone, Watch, Menu } from "lucide-react";
+import { ArrowRight, Check, Shield, Activity, Users, Building2, Heart, AlertTriangle, Phone, MapPin, Video, Lock, Clock, Smartphone, Watch } from "lucide-react";
 import { motion } from "framer-motion";
-import Navbar from "@/components/Navbar";
 import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
 import HowItWorksDemo from "@/components/HowItWorksDemo";
 import PricingSection from "@/components/PricingSection";
-import TestimonialSection from "@/components/TestimonialSection";
+import UGCSection from "@/components/UGCSection";
 import WhatWeProvide from "@/components/WhatWeProvide";
-
+import SafetySimulation from "@/components/SafetySimulation";
 
 export default function Home() {
   const scrollToPricing = () => {
@@ -182,9 +181,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Shared Navbar Component */}
-      <Navbar />
-
       {/* Hero Section */}
       <section className="relative h-screen w-full overflow-hidden">
         <video 
@@ -194,10 +190,10 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="https://videos.pexels.com/video-files/8637185/8637185-sd_640_360_25fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/5502677/5502677-uhd_2560_1440_25fps.mp4" type="video/mp4" />
         </video>
         
-        <div className="absolute inset-0 bg-[#386758]/40" />
+        <div className="absolute inset-0 bg-[#386758]/60 mix-blend-multiply" />
         
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 max-w-7xl mx-auto">
           <motion.h1 
@@ -295,28 +291,17 @@ export default function Home() {
           </p>
         </div>
         
-        <div className="w-full">
-          <ExpandableCarousel items={peaceChallenges} />
-        </div>
+        <ExpandableCarousel items={peaceChallenges} />
       </section>
 
       {/* How It Works Demo Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 mb-12 text-center">
-          <h2 className="text-5xl md:text-7xl font-heading font-bold text-[#1a1a1a] mb-6 uppercase tracking-tighter">
-            How It Works
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Advanced protection that's simple to use. See how MySentry responds in real-time.
-          </p>
-        </div>
-        <HowItWorksDemo />
-      </section>
+      <HowItWorksDemo />
 
-
+      {/* Safety Simulation Section */}
+      <SafetySimulation />
 
       {/* UGC / Testimonials Section */}
-      <TestimonialSection />
+      <UGCSection />
 
       {/* What We Provide Section */}
       <WhatWeProvide />
