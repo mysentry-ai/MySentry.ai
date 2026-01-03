@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Plus, X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "wouter";
+import { useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import HeartRateWidget from "./HeartRateWidget";
 
@@ -28,6 +28,7 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
+  const [, setLocation] = useLocation();
 
   // Check scroll position to toggle arrow visibility
   const checkScroll = () => {
@@ -67,6 +68,30 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
 
   const handleCardClick = (id: string) => {
     setExpandedId(expandedId === id ? null : id);
+  };
+
+  const handleLinkClick = (e: React.MouseEvent, link: string) => {
+    e.stopPropagation();
+    e.preventDefault();
+    
+    // Parse the link to check for hash
+    const [path, hash] = link.split('#');
+    
+    // Navigate to the path
+    setLocation(path);
+    
+    // If there's a hash, we need to handle scrolling after navigation
+    if (hash) {
+      // Small timeout to allow page transition to complete
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      window.scrollTo(0, 0);
+    }
   };
 
   return (
@@ -178,15 +203,13 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
                       )}
 
                       {item.link && (
-                        <Link href={item.link}>
-                          <Button 
-                            className="bg-white text-black hover:bg-gray-100 rounded-full px-8 font-bold uppercase tracking-wider"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            {item.ctaText || "Learn More"}
-                            <ArrowRight className="ml-2 w-4 h-4" />
-                          </Button>
-                        </Link>
+                        <Button 
+                          className="bg-white text-black hover:bg-gray-100 rounded-full px-8 font-bold uppercase tracking-wider"
+                          onClick={(e) => handleLinkClick(e, item.link!)}
+                        >
+                          {item.ctaText || "Learn More"}
+                          <ArrowRight className="ml-2 w-4 h-4" />
+                        </Button>
                       )}
                     </motion.div>
                   ) : (
