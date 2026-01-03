@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" fill="none">
+  <path d="M25 5L10 12V25C10 35 25 45 25 45C25 45 40 35 40 25V12L25 5Z" fill="white"/>
+  <text x="55" y="35" font-family="Proxima Nova, sans-serif" font-weight="bold" font-size="28" fill="white">MySentry</text>
+</svg>
