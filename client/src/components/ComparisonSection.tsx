@@ -49,7 +49,7 @@ export default function ComparisonSection() {
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
             Life360 tracks location. Oura tracks sleep. Medical alerts track falls. <br className="hidden md:block" />
-            <strong>MySentry does it all—and saves your life.</strong>
+            <strong>MySentry does it all, saves your life and helps you live longer & healthier.</strong>
           </p>
         </div>
 
