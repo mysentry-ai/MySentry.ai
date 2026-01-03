@@ -46,11 +46,11 @@ export default function PricingSection() {
       highlightColor: "primary"
     },
     {
-      name: "Family",
+      name: "Family (up to 6)",
       price: isAnnual ? `$${familyYearlyRate}` : `$${familyMonthly}`,
-      period: "/month",
+      period: "/family/mo",
       billing: isAnnual ? "Billed annually" : "Billed monthly",
-      description: "Complete Protection\nSafety + Health + Monitoring\n(Up to 6 members)",
+      description: "Complete Protection\nSafety + Health + Monitoring",
       features: [
         "Everything in Individual",
         "Up to 6 Accounts",
