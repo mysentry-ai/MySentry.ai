@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
 import HowItWorksDemo from "@/components/HowItWorksDemo";
-import PricingSection from "@/components/PricingSection";
+import ComparisonSection from "@/components/ComparisonSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import WhatWeProvide from "@/components/WhatWeProvide";
 
@@ -262,8 +262,8 @@ export default function Home() {
       {/* Testimonials */}
       <TestimonialSection />
 
-      {/* Pricing Section */}
-      <PricingSection />
+      {/* Comparison Section */}
+      <ComparisonSection />
     </Layout>
   );
 }
