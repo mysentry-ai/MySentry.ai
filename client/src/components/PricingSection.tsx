@@ -182,7 +182,7 @@ export default function PricingSection() {
                 className={`inline-flex items-center justify-center w-full h-12 rounded-full font-bold uppercase tracking-wide transition-all ${
                   plan.popular 
                     ? "bg-[#66d48f] text-white hover:bg-[#5bc482] shadow-lg hover:shadow-xl" 
-                    : "bg-gray-100 text-[#1a1a1a] hover:bg-gray-200"
+                    : "bg-gray-100 text-[#000000] hover:bg-gray-200"
                 }`}
               >
                 {plan.cta}
