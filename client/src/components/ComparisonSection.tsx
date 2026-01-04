@@ -290,7 +290,7 @@ export default function ComparisonSection() {
             Start Your 7-Day Free Trial
           </Link>
           <p className="mt-4 text-gray-500 text-sm">
-            No credit card required for trial. Cancel anytime.
+            Cancel anytime.
           </p>
         </div>
       </div>
