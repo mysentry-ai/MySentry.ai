@@ -95,7 +95,7 @@ export const Partner = () => {
     
     // Validate Step 3
     if (!formData.taxId || !formData.taxState) {
-      setFormError("Please provide at least one State Sales Tax ID.");
+      setFormError("Please fill in all required licensing information.");
       return;
     }
 
@@ -337,7 +337,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
               )}
             </AnimatePresence>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} noValidate>
               {/* Step 1: Company Information */}
               <div className="border-b border-gray-100">
                 <StepHeader 
