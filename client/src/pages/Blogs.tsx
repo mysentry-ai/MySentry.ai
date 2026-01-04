@@ -77,7 +77,7 @@ export const Blogs = () => {
           <div className="absolute inset-0 bg-black/40" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
+        <div className="relative z-10 container mx-auto px-4 text-center text-white pt-20 md:pt-0">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
