@@ -82,56 +82,71 @@ export default function Features() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            <div className="relative order-2 lg:order-1">
-              <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
-                <img 
-                  src="/images/supported-devices-hero.jpg" 
-                  alt="Supported Devices Ecosystem" 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60" />
-                <div className="absolute bottom-8 left-8 text-white">
-                  <p className="font-bold text-lg mb-1">Your Ecosystem</p>
-                  <p className="text-sm opacity-90">Connected & Protected</p>
+          <div className="space-y-20 mb-16">
+            {/* Smartphones Section */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-1 lg:order-1">
+                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col justify-center">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="bg-black text-white p-3 rounded-xl">
+                      <Smartphone className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-3xl font-bold text-[#1a1a1a]">Smartphones</h3>
+                  </div>
+                  <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+                    Full support for both major platforms. Your phone is the hub of your safety network, connecting you to help instantly.
+                  </p>
+                  <div className="flex gap-3">
+                    <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-4 w-4" /> iOS
+                    </span>
+                    <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android" className="h-4 w-4" /> Android
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="order-2 lg:order-2">
+                <div className="aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
+                  <img 
+                    src="/images/smartphones-display.jpg" 
+                    alt="Supported Smartphones" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
                 </div>
               </div>
             </div>
-            
-            <div className="order-1 lg:order-2 space-y-8">
-              <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="bg-black text-white p-3 rounded-xl">
-                    <Smartphone className="h-6 w-6" />
+
+            {/* Smartwatches Section */}
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="order-1 lg:order-2">
+                <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col justify-center">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="bg-black text-white p-3 rounded-xl">
+                      <Watch className="h-6 w-6" />
+                    </div>
+                    <h3 className="text-3xl font-bold text-[#1a1a1a]">Smartwatches</h3>
                   </div>
-                  <h3 className="text-2xl font-bold text-[#1a1a1a]">Smartphones</h3>
-                </div>
-                <p className="text-gray-600 mb-4">Full support for both major platforms. Your phone is the hub of your safety network.</p>
-                <div className="flex gap-3">
-                  <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 flex items-center gap-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-3 w-3" /> iOS
-                  </span>
-                  <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 flex items-center gap-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android" className="h-3 w-3" /> Android
-                  </span>
+                  <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+                    Advanced health monitoring and fall detection right on your wrist. Works independently or with your phone.
+                  </p>
+                  <div className="flex gap-3">
+                    <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-4 w-4" /> Apple Watch
+                    </span>
+                    <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" className="h-4 w-auto" /> Galaxy Watch
+                    </span>
+                  </div>
                 </div>
               </div>
-
-              <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="bg-black text-white p-3 rounded-xl">
-                    <Watch className="h-6 w-6" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-[#1a1a1a]">Smartwatches</h3>
-                </div>
-                <p className="text-gray-600 mb-4">Advanced health monitoring and fall detection right on your wrist.</p>
-                <div className="flex gap-3">
-                  <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 flex items-center gap-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-3 w-3" /> Apple Watch
-                  </span>
-                  <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 flex items-center gap-2">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" className="h-3 w-auto" /> Galaxy Watch
-                  </span>
+              <div className="order-2 lg:order-1">
+                <div className="aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
+                  <img 
+                    src="/images/smartwatches-display.jpg" 
+                    alt="Supported Smartwatches" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
                 </div>
               </div>
             </div>
@@ -167,6 +182,46 @@ export default function Features() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* SECTION SEPARATOR - Wave */}
+      <div className="w-full overflow-hidden leading-[0]">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[60px] fill-white">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+      </div>
+
+      {/* FEATURES HERO SECTION */}
+      <section className="relative min-h-[60vh] flex items-center bg-[#f8fafc] overflow-hidden">
+        <div className="absolute inset-0 z-0">
+           <img 
+             src="/images/features-hero.jpg" 
+             alt="Active senior lifestyle" 
+             className="absolute inset-0 w-full h-full object-cover"
+           />
+           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent z-10" />
+        </div>
+
+        <div className="container relative z-20 py-20">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
+              Comprehensive Protection
+            </span>
+            <h2 className="text-5xl md:text-7xl font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-white">
+              Advanced Features<br/>
+              <span className="text-gray-300">For Peace of Mind.</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed max-w-2xl font-medium">
+              Explore the powerful technology that keeps you safe, connected, and independent every single day.
+            </p>
+          </motion.div>
         </div>
       </section>
 
