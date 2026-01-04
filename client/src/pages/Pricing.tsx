@@ -46,10 +46,9 @@ export default function Pricing() {
   const employerTotalPrice = currentEmployerRate * employeeCount * (1 - employerDiscount);
 
   const consumerPlans = [
-
     {
       id: "complete",
-      name: "Complete Protection",
+      name: "Essential Safety",
       tagline: "Safety + Health + Monitoring",
       price: 12.49,
       annualPrice: 119.88,
@@ -68,7 +67,7 @@ export default function Pricing() {
         { name: "5 Emergency Contacts", included: true },
         { name: "MeetSafe (Optional)", included: true },
         { name: "Automated Call (Optional)", included: true },
-        { name: "Mental Health Coach Access (DrNur.ai)", included: true, link: "https://drnur.ai" }
+        { name: "Mental Health Coach Access (StressGuru.ai)", included: true, link: "https://stressguru.ai" }
       ]
     },
     {
@@ -82,16 +81,16 @@ export default function Pricing() {
       highlighted: false,
       comingSoon: true,
       features: [
-        { name: "All Complete Protection Features (including MeetSafe & Automated Call)", included: true },
-        { name: "Predictive Health Analytics", included: true },
-        { name: "Physical, Mental & Nutritional Insights", included: true },
+        { name: "All Essential Safety Features", included: true },
         { name: "Labs Integration", included: true },
+        { name: "Predictive Health Assessments", included: true },
+        { name: "Nutrition Guide", included: true },
+        { name: "Physical Activity Guide", included: true },
+        { name: "Mental Wellness Guide", included: true },
+        { name: "Mental Wellness Coaching (StressGuru.ai)", included: true, link: "https://stressguru.ai" },
         { name: "Personalized Prevention Plans", included: true },
         { name: "AI-Powered Health Trends", included: true },
-        { name: "Advanced Baseline Monitoring", included: true },
-        { name: "Priority Support", included: true },
-        { name: "Custom Health Thresholds", included: true },
-        { name: "Mental Health Coach Access (DrNur.ai)", included: true, link: "https://drnur.ai" }
+        { name: "Priority Support", included: true }
       ]
     }
   ];
@@ -106,7 +105,7 @@ export default function Pricing() {
       highlighted: true,
       comingSoon: false,
       features: [
-        { name: "All Complete Protection Features (including MeetSafe & Automated Call)", included: true },
+        { name: "All Essential Safety Features", included: true },
         { name: "Unlimited Team Members", included: true },
         { name: "Team Dashboard", included: true },
         { name: "Incident Reporting & Analytics", included: true },
@@ -115,7 +114,7 @@ export default function Pricing() {
         { name: "Video Evidence for Claims", included: true },
         { name: "Dedicated Account Manager", included: true },
         { name: "API Integration", included: true },
-        { name: "Mental Health Coach Access (DrNur.ai)", included: true, link: "https://drnur.ai" }
+        { name: "Mental Health Coach Access (StressGuru.ai)", included: true, link: "https://stressguru.ai" }
       ]
     },
     {
@@ -127,16 +126,16 @@ export default function Pricing() {
       highlighted: false,
       comingSoon: true,
       features: [
-        { name: "All Complete Protection Features (including MeetSafe & Automated Call)", included: true },
-        { name: "Predictive Health Analytics", included: true },
+        { name: "All Complete Protection Features", included: true },
+        { name: "Labs Integration", included: true },
+        { name: "Predictive Health Assessments", included: true },
+        { name: "Nutrition Guide", included: true },
+        { name: "Physical Activity Guide", included: true },
+        { name: "Mental Wellness Guide", included: true },
+        { name: "Mental Wellness Coaching (StressGuru.ai)", included: true, link: "https://stressguru.ai" },
         { name: "Workforce Health Trends", included: true },
         { name: "Preventive Health Programs", included: true },
-        { name: "Mental Health Monitoring", included: true },
-        { name: "Nutritional Insights", included: true },
-        { name: "Labs Integration", included: true },
-        { name: "Advanced Reporting & Insights", included: true },
-        { name: "Dedicated Health Officer", included: true },
-        { name: "Mental Health Coach Access (DrNur.ai)", included: true, link: "https://drnur.ai" }
+        { name: "Dedicated Health Officer", included: true }
       ]
     }
   ];
@@ -166,7 +165,7 @@ export default function Pricing() {
               Flexible Plans
             </span>
             <h1 className="text-6xl md:text-8xl font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
-              Safety For Everyone<br/>
+              Pricing and Plans<br/>
               <span className="text-gray-600">Within Every Budget.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
@@ -355,17 +354,8 @@ export default function Pricing() {
             />
             <div className="flex justify-between text-sm text-gray-500 mt-4 font-medium">
               <span>10</span>
-              <span>500 (35% OFF)</span>
-              <span>5,000+ (50% OFF)</span>
+              <span>10,000+</span>
             </div>
-            
-            {employerDiscount > 0 && (
-              <div className="mt-6 text-center bg-white py-2 px-4 rounded-full inline-block shadow-sm border border-green-100 mx-auto block w-fit">
-                <span className="text-green-600 font-bold">
-                  Volume Discount Applied: {employerDiscount * 100}% OFF
-                </span>
-              </div>
-            )}
           </div>
 
           {/* Employer Plans Grid */}
@@ -379,8 +369,8 @@ export default function Pricing() {
                 className={cn(
                   "relative p-8 rounded-[2.5rem] border transition-all duration-300 flex flex-col h-full",
                   plan.highlighted 
-                    ? "bg-[#e8f5e9] border-primary shadow-xl" 
-                    : "bg-white border-gray-200 hover:border-primary/30 hover:shadow-lg"
+                    ? "bg-white border-primary shadow-2xl scale-105 z-10" 
+                    : "bg-white/50 border-gray-200 hover:border-primary/30 hover:shadow-xl"
                 )}
               >
                 <div className="mb-8">
@@ -388,23 +378,15 @@ export default function Pricing() {
                   <p className="text-primary font-medium mb-6">{plan.tagline}</p>
                   
                   <div className="flex items-baseline gap-1 mb-2">
-                    {plan.comingSoon ? (
-                      <span className="text-4xl font-bold text-[#1a1a1a]">Coming Soon</span>
-                    ) : (
-                      <>
-                        <span className="text-5xl font-bold text-[#1a1a1a]">
-                          ${(employerTotalPrice / employeeCount).toFixed(2)}
-                        </span>
-                        <span className="text-gray-500 font-medium">/family/mo</span>
-                      </>
-                    )}
+                    <span className="text-5xl font-bold text-[#1a1a1a]">
+                      ${(employerTotalPrice / employeeCount).toFixed(2)}
+                    </span>
+                    <span className="text-gray-500 font-medium">/user/mo</span>
                   </div>
                   
-                  {!plan.comingSoon && (
-                    <p className="text-sm text-gray-500 font-medium">
-                      Total: ${employerTotalPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}/mo
-                    </p>
-                  )}
+                  <p className="text-sm text-green-600 font-medium mb-4">
+                    Total: ${employerTotalPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {isAnnual ? 'yearly' : 'monthly'}
+                  </p>
                   
                   <p className="mt-4 text-gray-600 leading-relaxed">{plan.description}</p>
                 </div>
@@ -440,11 +422,11 @@ export default function Pricing() {
                       ? "bg-primary text-white hover:bg-primary/90 shadow-lg hover:shadow-xl hover:-translate-y-1" 
                       : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                   )}
-                  disabled={plan.comingSoon}
                   onClick={() => {
                     setSelectedEmployerPlan(plan.name);
                     setIsDemoModalOpen(true);
                   }}
+                  disabled={plan.comingSoon}
                 >
                   {plan.cta}
                 </Button>
