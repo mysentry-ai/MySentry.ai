@@ -49,6 +49,21 @@ export const Partner = () => {
       setFormError("Please fill in all required company information.");
       return false;
     }
+
+    // Website validation
+    const urlRegex = /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/;
+    if (!urlRegex.test(formData.website)) {
+      setFormError("Please enter a valid website URL (e.g., mysentry.ai).");
+      return false;
+    }
+
+    // Zip code validation (US 5 digit or 5+4, or generic alphanumeric for international)
+    const zipRegex = /^\d{5}(-\d{4})?$|^[A-Za-z0-9\s-]{3,10}$/;
+    if (!zipRegex.test(formData.zip)) {
+      setFormError("Please enter a valid Zip/Postal Code.");
+      return false;
+    }
+
     return true;
   };
 
@@ -132,8 +147,8 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
     <div 
       className={cn(
         "flex items-center justify-between p-6 cursor-pointer transition-colors",
-        isActive ? "bg-[#386758] text-white" : "bg-gray-50 text-gray-600 hover:bg-gray-100",
-        isCompleted ? "bg-[#e8f5e9] text-[#386758]" : ""
+        isActive ? "bg-[#004F7B] text-white" : "bg-gray-50 text-gray-600 hover:bg-gray-100",
+        isCompleted ? "bg-[#e0f2fe] text-[#004F7B]" : ""
       )}
       onClick={() => {
         // Only allow clicking if step is completed or it's a previous step
@@ -146,7 +161,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
         <div className={cn(
           "w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-2 transition-all duration-300",
           isActive ? "border-[#4ADE80] bg-[#4ADE80] text-[#022c22]" : "border-current",
-          isCompleted ? "border-[#386758] bg-[#386758] text-white" : ""
+          isCompleted ? "border-[#004F7B] bg-[#004F7B] text-white" : ""
         )}>
           {isCompleted ? <Check className="w-5 h-5" /> : step}
         </div>
@@ -210,7 +225,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-black font-barlow uppercase text-[#386758] mb-4">Why Become an Authorized Dealer?</h2>
+            <h2 className="text-4xl font-black font-barlow uppercase text-[#004F7B] mb-4">Why Become an Authorized Dealer?</h2>
             <p className="text-xl text-gray-600">Position yourself as a leader in AI-driven safety solutions.</p>
           </div>
 
@@ -240,7 +255,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                 transition={{ delay: index * 0.2 }}
                 className="bg-gray-50 p-8 rounded-3xl border border-gray-100 hover:shadow-lg transition-all duration-300"
               >
-                <div className="w-16 h-16 bg-[#e8f5e9] rounded-2xl flex items-center justify-center mb-6 text-[#386758]">
+                <div className="w-16 h-16 bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-6 text-[#004F7B]">
                   <item.icon className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold font-barlow uppercase text-[#1a1a1a] mb-4">{item.title}</h3>
@@ -252,7 +267,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
       </section>
 
       {/* 3-Step Process (The Plan) */}
-      <section className="py-24 bg-[#386758] text-white overflow-hidden">
+      <section className="py-24 bg-[#004F7B] text-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -318,7 +333,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
             <div className="p-8 md:p-12 border-b border-gray-100 text-center">
-              <h2 className="text-3xl md:text-4xl font-black font-barlow uppercase text-[#386758] mb-4">Join Our Dealer Network</h2>
+              <h2 className="text-3xl md:text-4xl font-black font-barlow uppercase text-[#004F7B] mb-4">Join Our Dealer Network</h2>
               <p className="text-gray-600">Complete the application below to get started.</p>
             </div>
 
@@ -329,7 +344,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                   initial={{ height: 0, opacity: 0 }}
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
-                  className="bg-[#386758] text-white px-8 py-4 flex items-center gap-3"
+                  className="bg-[#004F7B] text-white px-8 py-4 flex items-center gap-3"
                 >
                   <AlertCircle className="w-5 h-5 flex-shrink-0 text-[#4ADE80]" />
                   <p className="font-medium">{formError}</p>
@@ -358,42 +373,42 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label htmlFor="companyName" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Company Name *</Label>
-                            <Input id="companyName" value={formData.companyName} onChange={handleInputChange} required placeholder="Enter company name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="companyName" value={formData.companyName} onChange={handleInputChange} required placeholder="Enter company name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="website" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Company Website *</Label>
-                            <Input id="website" value={formData.website} onChange={handleInputChange} required placeholder="https://" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="website" value={formData.website} onChange={handleInputChange} required placeholder="https://" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                           </div>
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="address" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Company Address *</Label>
-                          <Input id="address" value={formData.address} onChange={handleInputChange} required placeholder="Street address" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="address" value={formData.address} onChange={handleInputChange} required placeholder="Street address" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label htmlFor="city" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">City *</Label>
-                            <Input id="city" value={formData.city} onChange={handleInputChange} required placeholder="City" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="city" value={formData.city} onChange={handleInputChange} required placeholder="City" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="state" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State/Province *</Label>
-                            <Input id="state" value={formData.state} onChange={handleInputChange} required placeholder="State" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="state" value={formData.state} onChange={handleInputChange} required placeholder="State" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                           </div>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label htmlFor="zip" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Zip/Postal Code *</Label>
-                            <Input id="zip" value={formData.zip} onChange={handleInputChange} required placeholder="Zip code" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="zip" value={formData.zip} onChange={handleInputChange} required placeholder="Zip code" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="country" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Country *</Label>
-                            <Input id="country" value={formData.country} onChange={handleInputChange} required placeholder="Country" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="country" value={formData.country} onChange={handleInputChange} required placeholder="Country" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                           </div>
                         </div>
                         <div className="flex justify-end pt-4">
                           <Button 
                             type="button" 
                             onClick={handleNextStep}
-                            className="bg-[#386758] text-white px-8 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#2d5246]"
+                            className="bg-[#004F7B] text-white px-8 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#2d5246]"
                           >
                             Next Step
                           </Button>
@@ -424,20 +439,20 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label htmlFor="firstName" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">First Name *</Label>
-                            <Input id="firstName" value={formData.firstName} onChange={handleInputChange} required placeholder="First name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="firstName" value={formData.firstName} onChange={handleInputChange} required placeholder="First name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="lastName" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Last Name *</Label>
-                            <Input id="lastName" value={formData.lastName} onChange={handleInputChange} required placeholder="Last name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="lastName" value={formData.lastName} onChange={handleInputChange} required placeholder="Last name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                           </div>
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="email" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Email Address *</Label>
-                          <Input id="email" value={formData.email} onChange={handleInputChange} required type="email" placeholder="name@company.com" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="email" value={formData.email} onChange={handleInputChange} required type="email" placeholder="name@company.com" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="phone" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Phone Number *</Label>
-                          <Input id="phone" value={formData.phone} onChange={handleInputChange} required type="tel" placeholder="+1 (555) 000-0000" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="phone" value={formData.phone} onChange={handleInputChange} required type="tel" placeholder="+1 (555) 000-0000" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                         </div>
                         <div className="flex justify-between pt-4">
                           <Button 
@@ -451,7 +466,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                           <Button 
                             type="button" 
                             onClick={handleNextStep}
-                            className="bg-[#386758] text-white px-8 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#2d5246]"
+                            className="bg-[#004F7B] text-white px-8 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#2d5246]"
                           >
                             Next Step
                           </Button>
@@ -483,22 +498,22 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                         
                         <div className="space-y-2">
                           <Label htmlFor="taxId" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State Sales Tax ID *</Label>
-                          <Input id="taxId" value={formData.taxId} onChange={handleInputChange} required placeholder="Enter Tax ID" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="taxId" value={formData.taxId} onChange={handleInputChange} required placeholder="Enter Tax ID" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                         </div>
                         
                         <div className="space-y-2">
                           <Label htmlFor="taxState" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State/Province *</Label>
-                          <Input id="taxState" value={formData.taxState} onChange={handleInputChange} required placeholder="State/Province" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="taxState" value={formData.taxState} onChange={handleInputChange} required placeholder="State/Province" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                         </div>
 
                         <div className="space-y-2">
                           <Label htmlFor="licenseNum" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State Security License #</Label>
-                          <Input id="licenseNum" value={formData.licenseNum} onChange={handleInputChange} placeholder="Optional" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="licenseNum" value={formData.licenseNum} onChange={handleInputChange} placeholder="Optional" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                         </div>
 
                         <div className="space-y-2">
                           <Label htmlFor="licenseState" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State/Province</Label>
-                          <Input id="licenseState" value={formData.licenseState} onChange={handleInputChange} placeholder="State/Province" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="licenseState" value={formData.licenseState} onChange={handleInputChange} placeholder="State/Province" className="h-12 bg-gray-50 border-gray-200 focus:border-[#004F7B] focus:ring-2 focus:ring-[#004F7B]/20" />
                         </div>
 
                         <div className="flex justify-between pt-8">
@@ -513,7 +528,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                           <Button 
                             type="submit" 
                             disabled={isSubmitting}
-                            className="bg-[#386758] text-white px-12 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#2d5246]"
+                            className="bg-[#004F7B] text-white px-12 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#2d5246]"
                           >
                             {isSubmitting ? "Submitting..." : "Submit Application"}
                           </Button>
