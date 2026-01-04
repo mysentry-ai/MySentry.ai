@@ -10,8 +10,18 @@ import {
 export default function ComparisonSection() {
   const features = [
     {
-      category: "SAFETY & SECURITY",
+      category: "SAFETY, HEALTH & MONITORING",
+      color: "bg-blue-50",
+      headerColor: "text-blue-900",
       items: [
+        {
+          name: "Real-Time Health Monitoring",
+          mysentry: true,
+          life360: false,
+          medical: false,
+          wearables: true,
+          tooltip: "Continuously tracks vital signs like heart rate and alerts you to irregularities."
+        },
         {
           name: "Voice-Activated Panic Alarm",
           mysentry: true,
@@ -56,6 +66,8 @@ export default function ComparisonSection() {
     },
     {
       category: "CONNECTIVITY",
+      color: "bg-purple-50",
+      headerColor: "text-purple-900",
       items: [
         {
           name: "Bring Your Own Device (Apple/Samsung)",
@@ -92,16 +104,10 @@ export default function ComparisonSection() {
       ]
     },
     {
-      category: "HEALTH & WELLNESS",
+      category: "LONGEVITY & WELLNESS",
+      color: "bg-green-50",
+      headerColor: "text-green-900",
       items: [
-        {
-          name: "Real-Time Health Monitoring",
-          mysentry: true,
-          life360: false,
-          medical: false,
-          wearables: true,
-          tooltip: "Continuously tracks vital signs like heart rate and alerts you to irregularities."
-        },
         {
           name: "Labs Integration",
           mysentry: "COMING SOON",
@@ -227,22 +233,20 @@ export default function ComparisonSection() {
             {/* Feature Rows */}
             <div className="space-y-12">
               {features.map((section, sIdx) => (
-                <div key={sIdx}>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="h-px bg-gray-200 flex-1"></div>
-                    <h5 className="text-sm font-bold text-gray-500 uppercase tracking-widest">
+                <div key={sIdx} className={`rounded-3xl p-6 ${section.color}`}>
+                  <div className="flex items-center gap-4 mb-8">
+                    <div className="h-1 bg-gray-900/10 flex-1 rounded-full"></div>
+                    <h5 className={`text-2xl font-black uppercase tracking-widest ${section.headerColor}`}>
                       {section.category}
                     </h5>
-                    <div className="h-px bg-gray-200 flex-1"></div>
+                    <div className="h-1 bg-gray-900/10 flex-1 rounded-full"></div>
                   </div>
 
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {section.items.map((item, idx) => (
                       <div 
                         key={idx} 
-                        className={`grid grid-cols-5 gap-4 items-center py-6 px-4 rounded-xl transition-colors ${
-                          idx % 2 === 0 ? "bg-[#e8f5e9]/30" : "bg-white"
-                        }`}
+                        className="grid grid-cols-5 gap-4 items-center py-6 px-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all border border-gray-100"
                       >
                         <div className="col-span-1 flex items-center gap-2">
                           <span className="font-bold text-gray-800 text-lg">{item.name}</span>
@@ -259,9 +263,7 @@ export default function ComparisonSection() {
                         </div>
 
                         {/* MySentry Cell */}
-                        <div className={`col-span-1 text-center py-2 -my-2 rounded-lg ${
-                          idx % 2 === 0 ? "bg-[#e8f5e9]/50" : "bg-[#e8f5e9]/30"
-                        }`}>
+                        <div className="col-span-1 text-center py-2 rounded-lg bg-[#e8f5e9]/50 border border-primary/10">
                           {renderCell(item.mysentry)}
                         </div>
 
