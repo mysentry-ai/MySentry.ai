@@ -1,15 +1,28 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, Building2, Users, ShieldCheck, BarChart3 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { CheckCircle, ArrowRight, Building2, Users, ShieldCheck, BarChart3, ChevronDown, Check } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { cn } from "@/lib/utils";
 
 export const Partner = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [completedSteps, setCompletedSteps] = useState<number[]>([]);
+
+  const handleNextStep = (e: React.FormEvent) => {
+    e.preventDefault();
+    setCompletedSteps([...completedSteps, currentStep]);
+    setCurrentStep(currentStep + 1);
+  };
+
+  const handleBackStep = () => {
+    setCurrentStep(currentStep - 1);
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -20,8 +33,34 @@ export const Partner = () => {
     
     toast.success("Application submitted successfully! We'll be in touch soon.");
     setIsSubmitting(false);
-    (e.target as HTMLFormElement).reset();
+    // Reset form logic would go here
+    window.location.href = "mailto:support@MySentry.ai?subject=New Partner Application";
   };
+
+  const StepHeader = ({ step, title, isActive, isCompleted }: { step: number, title: string, isActive: boolean, isCompleted: boolean }) => (
+    <div 
+      className={cn(
+        "flex items-center justify-between p-6 cursor-pointer transition-colors",
+        isActive ? "bg-[#004F7B] text-white" : "bg-gray-50 text-gray-600 hover:bg-gray-100",
+        isCompleted ? "bg-[#e8f5e9] text-[#386758]" : ""
+      )}
+      onClick={() => {
+        if (isCompleted || step < currentStep) setCurrentStep(step);
+      }}
+    >
+      <div className="flex items-center gap-4">
+        <div className={cn(
+          "w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-2",
+          isActive ? "border-white bg-white text-[#004F7B]" : "border-current",
+          isCompleted ? "border-[#386758] bg-[#386758] text-white" : ""
+        )}>
+          {isCompleted ? <Check className="w-4 h-4" /> : step}
+        </div>
+        <h3 className="text-lg font-bold uppercase tracking-wide">{title}</h3>
+      </div>
+      <ChevronDown className={cn("w-5 h-5 transition-transform", isActive ? "rotate-180" : "")} />
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
@@ -181,79 +220,199 @@ export const Partner = () => {
 
       {/* Application Form */}
       <section id="partner-form" className="py-24 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12 border border-gray-100">
-            <div className="text-center mb-12">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="p-8 md:p-12 border-b border-gray-100 text-center">
               <h2 className="text-3xl md:text-4xl font-black font-barlow uppercase text-[#004F7B] mb-4">Join Our Dealer Network</h2>
-              <p className="text-gray-600">Fill in the form below, and our experts will guide you through your journey with MySentry.ai</p>
+              <p className="text-gray-600">Complete the application below to get started.</p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="companyName">Company Name *</Label>
-                  <Input id="companyName" required placeholder="Enter company name" className="h-12 bg-gray-50" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="website">Company Website *</Label>
-                  <Input id="website" required placeholder="https://" className="h-12 bg-gray-50" />
-                </div>
+            <form onSubmit={handleSubmit}>
+              {/* Step 1: Company Information */}
+              <div className="border-b border-gray-100">
+                <StepHeader 
+                  step={1} 
+                  title="Company Information" 
+                  isActive={currentStep === 1} 
+                  isCompleted={completedSteps.includes(1)} 
+                />
+                <AnimatePresence>
+                  {currentStep === 1 && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-8 space-y-6">
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <Label htmlFor="companyName">Company Name *</Label>
+                            <Input id="companyName" required placeholder="Enter company name" className="h-12 bg-gray-50" />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="website">Company Website *</Label>
+                            <Input id="website" required placeholder="https://" className="h-12 bg-gray-50" />
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="address">Company Address *</Label>
+                          <Input id="address" required placeholder="Street address" className="h-12 bg-gray-50" />
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <Label htmlFor="city">City *</Label>
+                            <Input id="city" required placeholder="City" className="h-12 bg-gray-50" />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="state">State/Province *</Label>
+                            <Input id="state" required placeholder="State" className="h-12 bg-gray-50" />
+                          </div>
+                        </div>
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <Label htmlFor="zip">Zip/Postal Code *</Label>
+                            <Input id="zip" required placeholder="Zip code" className="h-12 bg-gray-50" />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="country">Country *</Label>
+                            <Input id="country" required placeholder="Country" className="h-12 bg-gray-50" />
+                          </div>
+                        </div>
+                        <div className="flex justify-end pt-4">
+                          <Button 
+                            type="button" 
+                            onClick={handleNextStep}
+                            className="bg-[#004F7B] text-white px-8 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#003855]"
+                          >
+                            Next Step
+                          </Button>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="address">Company Address *</Label>
-                <Input id="address" required placeholder="Street address" className="h-12 bg-gray-50" />
+              {/* Step 2: Primary Contact Information */}
+              <div className="border-b border-gray-100">
+                <StepHeader 
+                  step={2} 
+                  title="Primary Contact Information" 
+                  isActive={currentStep === 2} 
+                  isCompleted={completedSteps.includes(2)} 
+                />
+                <AnimatePresence>
+                  {currentStep === 2 && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-8 space-y-6">
+                        <div className="grid md:grid-cols-2 gap-6">
+                          <div className="space-y-2">
+                            <Label htmlFor="firstName">First Name *</Label>
+                            <Input id="firstName" required placeholder="First name" className="h-12 bg-gray-50" />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="lastName">Last Name *</Label>
+                            <Input id="lastName" required placeholder="Last name" className="h-12 bg-gray-50" />
+                          </div>
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="email">Email Address *</Label>
+                          <Input id="email" required type="email" placeholder="name@company.com" className="h-12 bg-gray-50" />
+                        </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="phone">Phone Number *</Label>
+                          <Input id="phone" required type="tel" placeholder="+1 (555) 000-0000" className="h-12 bg-gray-50" />
+                        </div>
+                        <div className="flex justify-between pt-4">
+                          <Button 
+                            type="button" 
+                            variant="outline"
+                            onClick={handleBackStep}
+                            className="px-8 h-12 rounded-xl font-bold uppercase tracking-wide"
+                          >
+                            Back
+                          </Button>
+                          <Button 
+                            type="button" 
+                            onClick={handleNextStep}
+                            className="bg-[#004F7B] text-white px-8 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#003855]"
+                          >
+                            Next Step
+                          </Button>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="city">City *</Label>
-                  <Input id="city" required placeholder="City" className="h-12 bg-gray-50" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="state">State/Province *</Label>
-                  <Input id="state" required placeholder="State" className="h-12 bg-gray-50" />
-                </div>
-              </div>
+              {/* Step 3: Licensing Information */}
+              <div>
+                <StepHeader 
+                  step={3} 
+                  title="Licensing Information" 
+                  isActive={currentStep === 3} 
+                  isCompleted={completedSteps.includes(3)} 
+                />
+                <AnimatePresence>
+                  {currentStep === 3 && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="p-8 space-y-6">
+                        <p className="text-sm text-gray-500 italic">* At least one State Sales Tax ID is required</p>
+                        
+                        <div className="space-y-2">
+                          <Label htmlFor="taxId">State Sales Tax ID *</Label>
+                          <Input id="taxId" required placeholder="Enter Tax ID" className="h-12 bg-gray-50" />
+                        </div>
+                        
+                        <div className="space-y-2">
+                          <Label htmlFor="taxState">State/Province *</Label>
+                          <Input id="taxState" required placeholder="State/Province" className="h-12 bg-gray-50" />
+                        </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="zip">Zip/Postal Code *</Label>
-                  <Input id="zip" required placeholder="Zip code" className="h-12 bg-gray-50" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="country">Country *</Label>
-                  <Input id="country" required placeholder="Country" className="h-12 bg-gray-50" />
-                </div>
-              </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="licenseNum">Additional License Number</Label>
+                          <Input id="licenseNum" placeholder="Optional" className="h-12 bg-gray-50" />
+                        </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="contactName">Contact Name *</Label>
-                  <Input id="contactName" required placeholder="Full name" className="h-12 bg-gray-50" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">Main Phone *</Label>
-                  <Input id="phone" required type="tel" placeholder="+1 (555) 000-0000" className="h-12 bg-gray-50" />
-                </div>
-              </div>
+                        <div className="space-y-2">
+                          <Label htmlFor="licenseState">State/Province</Label>
+                          <Input id="licenseState" placeholder="State/Province" className="h-12 bg-gray-50" />
+                        </div>
 
-              <div className="space-y-2">
-                <Label htmlFor="email">Email Address *</Label>
-                <Input id="email" required type="email" placeholder="name@company.com" className="h-12 bg-gray-50" />
+                        <div className="flex justify-between pt-8">
+                          <Button 
+                            type="button" 
+                            variant="outline"
+                            onClick={handleBackStep}
+                            className="px-8 h-12 rounded-xl font-bold uppercase tracking-wide"
+                          >
+                            Back
+                          </Button>
+                          <Button 
+                            type="submit" 
+                            disabled={isSubmitting}
+                            className="bg-[#004F7B] text-white px-12 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#003855]"
+                          >
+                            {isSubmitting ? "Submitting..." : "Submit Application"}
+                          </Button>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-
-              <Button 
-                type="submit" 
-                disabled={isSubmitting}
-                className="w-full h-14 text-lg font-bold uppercase tracking-wider bg-[#004F7B] hover:bg-[#003855] text-white rounded-xl transition-all"
-              >
-                {isSubmitting ? "Submitting..." : "Submit Application"}
-              </Button>
-              
-              <p className="text-center text-sm text-gray-400">
-                By submitting this form, you agree to be contacted by MySentry.ai regarding your application.
-              </p>
             </form>
           </div>
         </div>
