@@ -57,7 +57,7 @@ export const Contact = () => {
                     <Phone className="w-6 h-6 text-[#386758]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a]">Call Us</h3>
+                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a] font-barlow uppercase">Call Us</h3>
                     <p className="text-gray-600 mb-1">Andrew Caldwell, Chief Revenue Officer</p>
                     <a href="tel:+16143615073" className="text-lg font-medium text-[#004F7B] hover:underline">
                       +1 (614) 361-5073
@@ -70,7 +70,7 @@ export const Contact = () => {
                     <Mail className="w-6 h-6 text-[#386758]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a]">Email Us</h3>
+                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a] font-barlow uppercase">Email Us</h3>
                     <p className="text-gray-600 mb-1">For general inquiries and support:</p>
                     <a href="mailto:support@MySentry.ai" className="text-lg font-medium text-[#004F7B] hover:underline">
                       support@MySentry.ai
@@ -83,7 +83,7 @@ export const Contact = () => {
                     <MapPin className="w-6 h-6 text-[#386758]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a]">Headquarters</h3>
+                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a] font-barlow uppercase">Headquarters</h3>
                     <p className="text-gray-600">
                       MySentry.ai<br />
                       Columbus, Ohio, USA
@@ -94,32 +94,32 @@ export const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-[#f8fafc] p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100">
+            <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
               <div className="flex items-center gap-4 mb-8">
                 <MessageSquare className="w-8 h-8 text-[#386758]" />
-                <h3 className="text-2xl font-bold text-[#1a1a1a]">Send a Message</h3>
+                <h3 className="text-2xl font-bold text-[#1a1a1a] font-barlow uppercase">Send a Message</h3>
               </div>
               
               <form className="space-y-6" action="mailto:support@MySentry.ai" method="post" encType="text/plain">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-2">Name</label>
+                    <label htmlFor="name" className="block text-sm font-bold text-[#1a1a1a] mb-2 uppercase tracking-wide">Name</label>
                     <input 
                       type="text" 
                       id="name" 
                       name="name"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all bg-gray-50"
                       placeholder="Your Name"
                       required
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-2">Email</label>
+                    <label htmlFor="email" className="block text-sm font-bold text-[#1a1a1a] mb-2 uppercase tracking-wide">Email</label>
                     <input 
                       type="email" 
                       id="email" 
                       name="email"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all bg-gray-50"
                       placeholder="your@email.com"
                       required
                     />
@@ -127,24 +127,24 @@ export const Contact = () => {
                 </div>
                 
                 <div>
-                  <label htmlFor="subject" className="block text-sm font-bold text-gray-700 mb-2">Subject</label>
+                  <label htmlFor="subject" className="block text-sm font-bold text-[#1a1a1a] mb-2 uppercase tracking-wide">Subject</label>
                   <input 
                     type="text" 
                     id="subject" 
                     name="subject"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all bg-gray-50"
                     placeholder="How can we help?"
                     required
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-2">Message</label>
+                  <label htmlFor="message" className="block text-sm font-bold text-[#1a1a1a] mb-2 uppercase tracking-wide">Message</label>
                   <textarea 
                     id="message" 
                     name="message"
                     rows={5}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all resize-none bg-gray-50"
                     placeholder="Tell us more about your inquiry..."
                     required
                   ></textarea>
@@ -152,7 +152,7 @@ export const Contact = () => {
 
                 <button 
                   type="submit"
-                  className="w-full bg-[#386758] text-white font-bold py-4 rounded-xl hover:bg-[#2c5246] transition-colors shadow-lg uppercase tracking-wide"
+                  className="w-full bg-[#386758] text-white font-bold py-4 rounded-lg hover:bg-[#2c5246] transition-colors shadow-lg uppercase tracking-widest text-sm"
                 >
                   Send Message
                 </button>
