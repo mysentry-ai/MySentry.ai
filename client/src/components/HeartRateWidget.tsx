@@ -42,15 +42,15 @@ export default function HeartRateWidget() {
   };
 
   return (
-    <div className="bg-[#e8f5e9] backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-green-200 w-full max-w-xs">
+    <div className="bg-primary backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-primary/20 w-full max-w-xs">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          <div className="p-2 bg-red-100 rounded-full">
-            <Heart className="w-4 h-4 text-red-600 fill-red-600 animate-pulse" />
+          <div className="p-2 bg-white/20 rounded-full">
+            <Heart className="w-4 h-4 text-white fill-white animate-pulse" />
           </div>
-          <span className="text-sm font-bold text-black !text-black" style={{ color: 'black' }}>Live Heart Rate</span>
+          <span className="text-sm font-bold text-white !text-white" style={{ color: 'white' }}>Live Heart Rate</span>
         </div>
-        <span className="text-2xl font-mono font-bold text-black !text-black" style={{ color: 'black' }}>{heartRate} <span className="text-xs text-black !text-black font-sans font-bold" style={{ color: 'black' }}>BPM</span></span>
+        <span className="text-2xl font-mono font-bold text-white !text-white" style={{ color: 'white' }}>{heartRate} <span className="text-xs text-white !text-white font-sans font-bold" style={{ color: 'white' }}>BPM</span></span>
       </div>
       
       <div className="relative h-12 w-full overflow-hidden">
@@ -58,7 +58,7 @@ export default function HeartRateWidget() {
           <path
             d={getPath()}
             fill="none"
-            stroke="#ef4444"
+            stroke="#ffffff"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -67,18 +67,18 @@ export default function HeartRateWidget() {
           <path
             d={`${getPath()} L 100,40 L 0,40 Z`}
             fill="url(#gradient)"
-            opacity="0.2"
+            opacity="0.3"
           />
           <defs>
             <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stopColor="#ef4444" />
-              <stop offset="100%" stopColor="#ffffff" />
+              <stop offset="0%" stopColor="#ffffff" />
+              <stop offset="100%" stopColor="transparent" />
             </linearGradient>
           </defs>
         </svg>
       </div>
       
-      <div className="flex justify-between mt-2 text-[10px] text-black !text-black font-bold uppercase tracking-wider" style={{ color: 'black' }}>
+      <div className="flex justify-between mt-2 text-[10px] text-white/80 !text-white/80 font-bold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.8)' }}>
         <span>Resting</span>
         <span>Active</span>
       </div>
