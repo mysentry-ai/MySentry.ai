@@ -145,7 +145,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
       <div className="flex items-center gap-4">
         <div className={cn(
           "w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-2 transition-all duration-300",
-          isActive ? "border-white bg-white text-black" : "border-current",
+          isActive ? "border-[#4ADE80] bg-[#4ADE80] text-[#022c22]" : "border-current",
           isCompleted ? "border-[#386758] bg-[#386758] text-white" : ""
         )}>
           {isCompleted ? <Check className="w-5 h-5" /> : step}
