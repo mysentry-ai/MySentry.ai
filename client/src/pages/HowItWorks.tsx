@@ -218,7 +218,7 @@ export default function Features() {
               Advanced Features<br/>
               <span className="text-gray-300">For Peace of Mind.</span>
             </h2>
-            <p className="text-xl md:text-2xl text-gray-200 mb-10 leading-relaxed max-w-2xl font-medium">
+            <p className="text-xl md:text-2xl text-white mb-10 leading-relaxed max-w-2xl font-medium">
               Explore the powerful technology that keeps you safe, connected, and independent every single day.
             </p>
           </motion.div>
