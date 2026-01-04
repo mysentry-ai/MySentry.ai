@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle, ArrowRight, Building2, Users, ShieldCheck, BarChart3, ChevronDown, Check } from 'lucide-react';
+import { CheckCircle, ArrowRight, Building2, Users, ShieldCheck, BarChart3, ChevronDown, Check, AlertCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,6 +13,7 @@ export const Partner = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
+  const [formError, setFormError] = useState<string | null>(null);
   
   // Form State
   const [formData, setFormData] = useState({
@@ -36,6 +37,8 @@ export const Partner = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target;
     setFormData(prev => ({ ...prev, [id]: value }));
+    // Clear error when user starts typing
+    if (formError) setFormError(null);
   };
 
   const validateStep1 = () => {
@@ -43,7 +46,7 @@ export const Partner = () => {
     const missing = required.filter(field => !formData[field as keyof typeof formData]);
     
     if (missing.length > 0) {
-      toast.error("Please fill in all required company information.");
+      setFormError("Please fill in all required company information.");
       return false;
     }
     return true;
@@ -54,14 +57,14 @@ export const Partner = () => {
     const missing = required.filter(field => !formData[field as keyof typeof formData]);
     
     if (missing.length > 0) {
-      toast.error("Please fill in all required contact information.");
+      setFormError("Please fill in all required contact information.");
       return false;
     }
     
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      toast.error("Please enter a valid email address.");
+      setFormError("Please enter a valid email address.");
       return false;
     }
     
@@ -70,6 +73,7 @@ export const Partner = () => {
 
   const handleNextStep = (e: React.FormEvent) => {
     e.preventDefault();
+    setFormError(null);
     
     if (currentStep === 1 && !validateStep1()) return;
     if (currentStep === 2 && !validateStep2()) return;
@@ -81,15 +85,17 @@ export const Partner = () => {
   };
 
   const handleBackStep = () => {
+    setFormError(null);
     setCurrentStep(currentStep - 1);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setFormError(null);
     
     // Validate Step 3
     if (!formData.taxId || !formData.taxState) {
-      toast.error("Please provide at least one State Sales Tax ID.");
+      setFormError("Please provide at least one State Sales Tax ID.");
       return;
     }
 
@@ -126,7 +132,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
     <div 
       className={cn(
         "flex items-center justify-between p-6 cursor-pointer transition-colors",
-        isActive ? "bg-[#004F7B] text-white" : "bg-gray-50 text-gray-600 hover:bg-gray-100",
+        isActive ? "bg-[#386758] text-white" : "bg-gray-50 text-gray-600 hover:bg-gray-100",
         isCompleted ? "bg-[#e8f5e9] text-[#386758]" : ""
       )}
       onClick={() => {
@@ -138,11 +144,11 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
     >
       <div className="flex items-center gap-4">
         <div className={cn(
-          "w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-2",
-          isActive ? "border-white bg-white text-[#004F7B]" : "border-current",
+          "w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-2 transition-all duration-300",
+          isActive ? "border-white bg-white text-[#386758]" : "border-current",
           isCompleted ? "border-[#386758] bg-[#386758] text-white" : ""
         )}>
-          {isCompleted ? <Check className="w-4 h-4" /> : step}
+          {isCompleted ? <Check className="w-5 h-5" /> : step}
         </div>
         <h3 className="text-lg font-bold uppercase tracking-wide font-barlow">{title}</h3>
       </div>
@@ -204,7 +210,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-black font-barlow uppercase text-[#004F7B] mb-4">Why Become an Authorized Dealer?</h2>
+            <h2 className="text-4xl font-black font-barlow uppercase text-[#386758] mb-4">Why Become an Authorized Dealer?</h2>
             <p className="text-xl text-gray-600">Position yourself as a leader in AI-driven safety solutions.</p>
           </div>
 
@@ -246,7 +252,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
       </section>
 
       {/* 3-Step Process (The Plan) */}
-      <section className="py-24 bg-[#004F7B] text-white overflow-hidden">
+      <section className="py-24 bg-[#386758] text-white overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -264,7 +270,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                   {
                     step: "02",
                     title: "License Allocation",
-                    description: "Easily grant or revoke access to MySentry and track allocated licenses in real time."
+                    description: "Easily distribute and manage licenses across your client portfolio."
                   },
                   {
                     step: "03",
@@ -312,9 +318,24 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
         <div className="container mx-auto px-4 max-w-3xl">
           <div className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
             <div className="p-8 md:p-12 border-b border-gray-100 text-center">
-              <h2 className="text-3xl md:text-4xl font-black font-barlow uppercase text-[#004F7B] mb-4">Join Our Dealer Network</h2>
+              <h2 className="text-3xl md:text-4xl font-black font-barlow uppercase text-[#386758] mb-4">Join Our Dealer Network</h2>
               <p className="text-gray-600">Complete the application below to get started.</p>
             </div>
+
+            {/* Error Message Display - Top of Form */}
+            <AnimatePresence>
+              {formError && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  className="bg-[#386758] text-white px-8 py-4 flex items-center gap-3"
+                >
+                  <AlertCircle className="w-5 h-5 flex-shrink-0 text-[#4ADE80]" />
+                  <p className="font-medium">{formError}</p>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             <form onSubmit={handleSubmit}>
               {/* Step 1: Company Information */}
@@ -372,7 +393,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                           <Button 
                             type="button" 
                             onClick={handleNextStep}
-                            className="bg-[#004F7B] text-white px-8 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#003855]"
+                            className="bg-[#386758] text-white px-8 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#2d5246]"
                           >
                             Next Step
                           </Button>
@@ -430,7 +451,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                           <Button 
                             type="button" 
                             onClick={handleNextStep}
-                            className="bg-[#004F7B] text-white px-8 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#003855]"
+                            className="bg-[#386758] text-white px-8 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#2d5246]"
                           >
                             Next Step
                           </Button>
@@ -471,7 +492,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="licenseNum" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Additional License Number</Label>
+                          <Label htmlFor="licenseNum" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State Security License #</Label>
                           <Input id="licenseNum" value={formData.licenseNum} onChange={handleInputChange} placeholder="Optional" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
 
@@ -492,7 +513,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                           <Button 
                             type="submit" 
                             disabled={isSubmitting}
-                            className="bg-[#004F7B] text-white px-12 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#003855]"
+                            className="bg-[#386758] text-white px-12 h-12 rounded-xl font-bold uppercase tracking-wide hover:bg-[#2d5246]"
                           >
                             {isSubmitting ? "Submitting..." : "Submit Application"}
                           </Button>
