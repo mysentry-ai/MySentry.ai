@@ -9,14 +9,14 @@ import Seniors from "./pages/Seniors";
 import Families from "./pages/Families";
 import Employers from "./pages/Employers";
 import Pricing from "./pages/Pricing";
-import Features from "./pages/Features";
+import HowItWorks from "./pages/HowItWorks";
 import Females from "./pages/Females";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/features" component={Features} />
+      <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/females" component={Females} />
       <Route path="/seniors" component={Seniors} />
       <Route path="/families" component={Families} />

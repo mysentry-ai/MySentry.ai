@@ -5,6 +5,7 @@ import { Link } from "wouter";
 import { ShieldAlert, Activity, Car, HeartPulse, Video, Smartphone, Watch, Check, ArrowRight, AlertTriangle, MapPin, Zap, CheckCircle2, Lock, Users, TrendingDown, Play, Phone, Heart } from "lucide-react";
 import AlertDemo from "@/components/AlertDemo";
 import { motion } from "framer-motion";
+import ActivationSteps from "@/components/ActivationSteps";
 
 export default function Features() {
   return (
@@ -54,6 +55,9 @@ export default function Features() {
           </motion.div>
         </div>
       </section>
+
+      {/* ACTIVATION STEPS - 3-Step Process */}
+      <ActivationSteps />
 
       {/* FEATURE 1: PANIC ALARM */}
       <section id="panic-alarm" className="py-24 bg-white scroll-mt-20">
