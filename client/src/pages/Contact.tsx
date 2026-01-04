@@ -1,10 +1,91 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, MessageSquare, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { cn } from "@/lib/utils";
 
 export const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const [touched, setTouched] = useState({
+    name: false,
+    email: false,
+    subject: false,
+    message: false
+  });
+
+  const [isFormValid, setIsFormValid] = useState(false);
+
+  const validateEmail = (email: string) => {
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  useEffect(() => {
+    const newErrors = {
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    };
+    let isValid = true;
+
+    if (formData.name.trim().length < 2) {
+      newErrors.name = 'Name must be at least 2 characters long';
+      isValid = false;
+    }
+
+    if (!formData.email) {
+      newErrors.email = 'Email is required';
+      isValid = false;
+    } else if (!validateEmail(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+      isValid = false;
+    }
+
+    if (formData.subject.trim().length < 5) {
+      newErrors.subject = 'Subject must be at least 5 characters long';
+      isValid = false;
+    }
+
+    if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters long';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    setIsFormValid(isValid);
+  }, [formData]);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name } = e.target;
+    setTouched(prev => ({
+      ...prev,
+      [name]: true
+    }));
+  };
+
   return (
     <div className="min-h-screen bg-[#e8f5e9] font-sans text-[#1a1a1a]">
       <Navbar />
@@ -104,55 +185,137 @@ export const Contact = () => {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-bold text-[#1a1a1a] mb-2 uppercase tracking-wide">Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      name="name"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all bg-gray-50"
-                      placeholder="Your Name"
-                      required
-                    />
+                    <div className="relative">
+                      <input 
+                        type="text" 
+                        id="name" 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={cn(
+                          "w-full px-4 py-3 rounded-lg border outline-none transition-all bg-gray-50",
+                          touched.name && errors.name 
+                            ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20" 
+                            : "border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20",
+                          touched.name && !errors.name && "border-green-500"
+                        )}
+                        placeholder="Your Name"
+                        required
+                      />
+                      {touched.name && !errors.name && (
+                        <CheckCircle2 className="absolute right-3 top-3.5 w-5 h-5 text-green-500" />
+                      )}
+                    </div>
+                    {touched.name && errors.name && (
+                      <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" /> {errors.name}
+                      </p>
+                    )}
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-bold text-[#1a1a1a] mb-2 uppercase tracking-wide">Email</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      name="email"
-                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all bg-gray-50"
-                      placeholder="your@email.com"
-                      required
-                    />
+                    <div className="relative">
+                      <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={cn(
+                          "w-full px-4 py-3 rounded-lg border outline-none transition-all bg-gray-50",
+                          touched.email && errors.email 
+                            ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20" 
+                            : "border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20",
+                          touched.email && !errors.email && "border-green-500"
+                        )}
+                        placeholder="your@email.com"
+                        required
+                      />
+                      {touched.email && !errors.email && (
+                        <CheckCircle2 className="absolute right-3 top-3.5 w-5 h-5 text-green-500" />
+                      )}
+                    </div>
+                    {touched.email && errors.email && (
+                      <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
+                        <AlertCircle className="w-3 h-3" /> {errors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
                 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-bold text-[#1a1a1a] mb-2 uppercase tracking-wide">Subject</label>
-                  <input 
-                    type="text" 
-                    id="subject" 
-                    name="subject"
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all bg-gray-50"
-                    placeholder="How can we help?"
-                    required
-                  />
+                  <div className="relative">
+                    <input 
+                      type="text" 
+                      id="subject" 
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={cn(
+                        "w-full px-4 py-3 rounded-lg border outline-none transition-all bg-gray-50",
+                        touched.subject && errors.subject 
+                          ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20" 
+                          : "border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20",
+                        touched.subject && !errors.subject && "border-green-500"
+                      )}
+                      placeholder="How can we help?"
+                      required
+                    />
+                    {touched.subject && !errors.subject && (
+                      <CheckCircle2 className="absolute right-3 top-3.5 w-5 h-5 text-green-500" />
+                    )}
+                  </div>
+                  {touched.subject && errors.subject && (
+                    <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" /> {errors.subject}
+                    </p>
+                  )}
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block text-sm font-bold text-[#1a1a1a] mb-2 uppercase tracking-wide">Message</label>
-                  <textarea 
-                    id="message" 
-                    name="message"
-                    rows={5}
-                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20 outline-none transition-all resize-none bg-gray-50"
-                    placeholder="Tell us more about your inquiry..."
-                    required
-                  ></textarea>
+                  <div className="relative">
+                    <textarea 
+                      id="message" 
+                      name="message"
+                      rows={5}
+                      value={formData.message}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      className={cn(
+                        "w-full px-4 py-3 rounded-lg border outline-none transition-all resize-none bg-gray-50",
+                        touched.message && errors.message 
+                          ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20" 
+                          : "border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20",
+                        touched.message && !errors.message && "border-green-500"
+                      )}
+                      placeholder="Tell us more about your inquiry..."
+                      required
+                    ></textarea>
+                    {touched.message && !errors.message && (
+                      <CheckCircle2 className="absolute right-3 top-3.5 w-5 h-5 text-green-500" />
+                    )}
+                  </div>
+                  {touched.message && errors.message && (
+                    <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" /> {errors.message}
+                    </p>
+                  )}
                 </div>
 
                 <button 
                   type="submit"
-                  className="w-full bg-[#386758] text-white font-bold py-4 rounded-lg hover:bg-[#2c5246] transition-colors shadow-lg uppercase tracking-widest text-sm"
+                  disabled={!isFormValid}
+                  className={cn(
+                    "w-full font-bold py-4 rounded-lg transition-all shadow-lg uppercase tracking-widest text-sm",
+                    isFormValid 
+                      ? "bg-[#386758] text-white hover:bg-[#2c5246] cursor-pointer" 
+                      : "bg-gray-300 text-gray-500 cursor-not-allowed shadow-none"
+                  )}
                 >
                   Send Message
                 </button>
