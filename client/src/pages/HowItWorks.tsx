@@ -59,6 +59,124 @@ export default function Features() {
       {/* ACTIVATION STEPS - 3-Step Process */}
       <ActivationSteps />
 
+      {/* SECTION SEPARATOR - Wave */}
+      <div className="w-full overflow-hidden leading-[0] rotate-180">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[60px] fill-white">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+      </div>
+
+      {/* SUPPORTED DEVICES SECTION */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="container relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
+              Universal Compatibility
+            </span>
+            <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase leading-none tracking-tight mb-6 text-[#1a1a1a]">
+              Use The Devices<br/>
+              <span className="text-gray-500">You Already Own.</span>
+            </h2>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              No need to buy expensive, stigmatizing medical alert hardware. MySentry works seamlessly with the technology you use every day.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div className="relative order-2 lg:order-1">
+              <div className="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
+                <img 
+                  src="/images/supported-devices-hero.jpg" 
+                  alt="Supported Devices Ecosystem" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60" />
+                <div className="absolute bottom-8 left-8 text-white">
+                  <p className="font-bold text-lg mb-1">Your Ecosystem</p>
+                  <p className="text-sm opacity-90">Connected & Protected</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="order-1 lg:order-2 space-y-8">
+              <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="bg-black text-white p-3 rounded-xl">
+                    <Smartphone className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#1a1a1a]">Smartphones</h3>
+                </div>
+                <p className="text-gray-600 mb-4">Full support for both major platforms. Your phone is the hub of your safety network.</p>
+                <div className="flex gap-3">
+                  <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 flex items-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-3 w-3" /> iOS
+                  </span>
+                  <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 flex items-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android" className="h-3 w-3" /> Android
+                  </span>
+                </div>
+              </div>
+
+              <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="bg-black text-white p-3 rounded-xl">
+                    <Watch className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-[#1a1a1a]">Smartwatches</h3>
+                </div>
+                <p className="text-gray-600 mb-4">Advanced health monitoring and fall detection right on your wrist.</p>
+                <div className="flex gap-3">
+                  <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 flex items-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-3 w-3" /> Apple Watch
+                  </span>
+                  <span className="px-3 py-1 bg-white border border-gray-200 rounded-full text-sm font-medium text-gray-700 flex items-center gap-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" className="h-3 w-auto" /> Galaxy Watch
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Future Support Banner */}
+          <div className="bg-gradient-to-r from-[#1a1a1a] to-[#2a2a2a] rounded-2xl p-8 md:p-12 text-white relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+            
+            <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+              <div>
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="px-3 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full text-xs font-bold uppercase tracking-wider">Coming Soon</span>
+                </div>
+                <h3 className="text-3xl font-bold mb-2">Expanding Our Ecosystem</h3>
+                <p className="text-gray-400 max-w-xl">
+                  We are actively developing support for smart rings and fitness bands to give you even more ways to stay protected.
+                </p>
+              </div>
+              <div className="flex gap-4 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                 <div className="text-center">
+                    <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-2 mx-auto border border-white/10">
+                      <div className="w-8 h-8 rounded-full border-4 border-white/40" />
+                    </div>
+                    <span className="text-xs font-medium tracking-wider uppercase">Smart Rings</span>
+                 </div>
+                 <div className="text-center">
+                    <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mb-2 mx-auto border border-white/10">
+                      <div className="w-10 h-6 rounded-full border-2 border-white/40" />
+                    </div>
+                    <span className="text-xs font-medium tracking-wider uppercase">Fit Bands</span>
+                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION SEPARATOR - Wave */}
+      <div className="w-full overflow-hidden leading-[0]">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[60px] fill-white">
+          <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+        </svg>
+      </div>
+
       {/* FEATURE 1: PANIC ALARM */}
       <section id="panic-alarm" className="py-24 bg-white scroll-mt-20">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
