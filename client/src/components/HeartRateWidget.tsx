@@ -48,9 +48,9 @@ export default function HeartRateWidget() {
           <div className="p-2 bg-red-100 rounded-full">
             <Heart className="w-4 h-4 text-red-600 fill-red-600 animate-pulse" />
           </div>
-          <span className="text-sm font-bold text-[#1a1a1a]">Live Heart Rate</span>
+          <span className="text-sm font-bold text-black !text-black" style={{ color: 'black' }}>Live Heart Rate</span>
         </div>
-        <span className="text-2xl font-mono font-bold text-[#1a1a1a]">{heartRate} <span className="text-xs text-[#1a1a1a]/70 font-sans font-bold">BPM</span></span>
+        <span className="text-2xl font-mono font-bold text-black !text-black" style={{ color: 'black' }}>{heartRate} <span className="text-xs text-black !text-black font-sans font-bold" style={{ color: 'black' }}>BPM</span></span>
       </div>
       
       <div className="relative h-12 w-full overflow-hidden">
@@ -78,7 +78,7 @@ export default function HeartRateWidget() {
         </svg>
       </div>
       
-      <div className="flex justify-between mt-2 text-[10px] text-[#1a1a1a]/70 font-bold uppercase tracking-wider">
+      <div className="flex justify-between mt-2 text-[10px] text-black !text-black font-bold uppercase tracking-wider" style={{ color: 'black' }}>
         <span>Resting</span>
         <span>Active</span>
       </div>

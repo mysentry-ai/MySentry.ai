@@ -104,8 +104,8 @@ export default function Navbar() {
 
       {/* Mobile Nav Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-[100] bg-white flex flex-col animate-in slide-in-from-right duration-300 lg:hidden overflow-y-auto">
-          <div className="container py-6 flex items-center justify-between border-b border-gray-100">
+        <div className="fixed inset-0 z-[9999] bg-white flex flex-col animate-in slide-in-from-right duration-300 lg:hidden overflow-y-auto h-[100dvh] w-screen">
+          <div className="container py-6 flex items-center justify-between border-b border-gray-100 bg-white sticky top-0 z-10">
              <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
                 <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
              </Link>
