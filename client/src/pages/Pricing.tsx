@@ -99,7 +99,7 @@ export default function Pricing() {
     {
       id: "employer-complete",
       name: "Complete Protection for Employees",
-      tagline: "Employee Safety & Health",
+      tagline: "Employee Safety & Health Monitoring",
       description: "Protect your workforce with comprehensive safety and health monitoring.",
       cta: "BOOK A DEMO",
       highlighted: true,
@@ -381,7 +381,7 @@ export default function Pricing() {
                     <span className="text-5xl font-bold text-[#1a1a1a]">
                       ${(employerTotalPrice / employeeCount).toFixed(2)}
                     </span>
-                    <span className="text-gray-500 font-medium">/user/mo</span>
+                    <span className="text-gray-500 font-medium">/family/mo</span>
                   </div>
                   
                   <p className="text-sm text-green-600 font-medium mb-4">
