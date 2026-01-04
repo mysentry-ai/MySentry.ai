@@ -13,10 +13,70 @@ export const Partner = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
+  
+  // Form State
+  const [formData, setFormData] = useState({
+    companyName: '',
+    website: '',
+    address: '',
+    city: '',
+    state: '',
+    zip: '',
+    country: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    taxId: '',
+    taxState: '',
+    licenseNum: '',
+    licenseState: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
+
+  const validateStep1 = () => {
+    const required = ['companyName', 'website', 'address', 'city', 'state', 'zip', 'country'];
+    const missing = required.filter(field => !formData[field as keyof typeof formData]);
+    
+    if (missing.length > 0) {
+      toast.error("Please fill in all required company information.");
+      return false;
+    }
+    return true;
+  };
+
+  const validateStep2 = () => {
+    const required = ['firstName', 'lastName', 'email', 'phone'];
+    const missing = required.filter(field => !formData[field as keyof typeof formData]);
+    
+    if (missing.length > 0) {
+      toast.error("Please fill in all required contact information.");
+      return false;
+    }
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address.");
+      return false;
+    }
+    
+    return true;
+  };
 
   const handleNextStep = (e: React.FormEvent) => {
     e.preventDefault();
-    setCompletedSteps([...completedSteps, currentStep]);
+    
+    if (currentStep === 1 && !validateStep1()) return;
+    if (currentStep === 2 && !validateStep2()) return;
+
+    if (!completedSteps.includes(currentStep)) {
+      setCompletedSteps([...completedSteps, currentStep]);
+    }
     setCurrentStep(currentStep + 1);
   };
 
@@ -26,6 +86,13 @@ export const Partner = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // Validate Step 3
+    if (!formData.taxId || !formData.taxState) {
+      toast.error("Please provide at least one State Sales Tax ID.");
+      return;
+    }
+
     setIsSubmitting(true);
     
     // Simulate API call
@@ -33,8 +100,26 @@ export const Partner = () => {
     
     toast.success("Application submitted successfully! We'll be in touch soon.");
     setIsSubmitting(false);
-    // Reset form logic would go here
-    window.location.href = "mailto:support@MySentry.ai?subject=New Partner Application";
+    
+    // Construct mailto link with form data
+    const subject = encodeURIComponent(`New Partner Application: ${formData.companyName}`);
+    const body = encodeURIComponent(`
+Company Information:
+Name: ${formData.companyName}
+Website: ${formData.website}
+Address: ${formData.address}, ${formData.city}, ${formData.state} ${formData.zip}, ${formData.country}
+
+Primary Contact:
+Name: ${formData.firstName} ${formData.lastName}
+Email: ${formData.email}
+Phone: ${formData.phone}
+
+Licensing:
+Tax ID: ${formData.taxId} (${formData.taxState})
+License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
+    `);
+    
+    window.location.href = `mailto:support@MySentry.ai?subject=${subject}&body=${body}`;
   };
 
   const StepHeader = ({ step, title, isActive, isCompleted }: { step: number, title: string, isActive: boolean, isCompleted: boolean }) => (
@@ -45,7 +130,10 @@ export const Partner = () => {
         isCompleted ? "bg-[#e8f5e9] text-[#386758]" : ""
       )}
       onClick={() => {
-        if (isCompleted || step < currentStep) setCurrentStep(step);
+        // Only allow clicking if step is completed or it's a previous step
+        if (completedSteps.includes(step) || step < currentStep) {
+          setCurrentStep(step);
+        }
       }}
     >
       <div className="flex items-center gap-4">
@@ -91,7 +179,7 @@ export const Partner = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-gray-200 mb-8 font-light leading-relaxed"
+              className="text-xl md:text-2xl text-white mb-8 font-light leading-relaxed"
             >
               Expand your business with the world's first AI-powered personal assistant for employee safety, security, and wellness.
             </motion.p>
@@ -249,35 +337,35 @@ export const Partner = () => {
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label htmlFor="companyName" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Company Name *</Label>
-                            <Input id="companyName" required placeholder="Enter company name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="companyName" value={formData.companyName} onChange={handleInputChange} required placeholder="Enter company name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="website" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Company Website *</Label>
-                            <Input id="website" required placeholder="https://" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="website" value={formData.website} onChange={handleInputChange} required placeholder="https://" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="address" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Company Address *</Label>
-                          <Input id="address" required placeholder="Street address" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="address" value={formData.address} onChange={handleInputChange} required placeholder="Street address" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label htmlFor="city" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">City *</Label>
-                            <Input id="city" required placeholder="City" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="city" value={formData.city} onChange={handleInputChange} required placeholder="City" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="state" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State/Province *</Label>
-                            <Input id="state" required placeholder="State" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="state" value={formData.state} onChange={handleInputChange} required placeholder="State" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label htmlFor="zip" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Zip/Postal Code *</Label>
-                            <Input id="zip" required placeholder="Zip code" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="zip" value={formData.zip} onChange={handleInputChange} required placeholder="Zip code" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="country" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Country *</Label>
-                            <Input id="country" required placeholder="Country" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="country" value={formData.country} onChange={handleInputChange} required placeholder="Country" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                         </div>
                         <div className="flex justify-end pt-4">
@@ -315,20 +403,20 @@ export const Partner = () => {
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
                             <Label htmlFor="firstName" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">First Name *</Label>
-                            <Input id="firstName" required placeholder="First name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="firstName" value={formData.firstName} onChange={handleInputChange} required placeholder="First name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                           <div className="space-y-2">
                             <Label htmlFor="lastName" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Last Name *</Label>
-                            <Input id="lastName" required placeholder="Last name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                            <Input id="lastName" value={formData.lastName} onChange={handleInputChange} required placeholder="Last name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="email" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Email Address *</Label>
-                          <Input id="email" required type="email" placeholder="name@company.com" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="email" value={formData.email} onChange={handleInputChange} required type="email" placeholder="name@company.com" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
                         <div className="space-y-2">
                           <Label htmlFor="phone" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Phone Number *</Label>
-                          <Input id="phone" required type="tel" placeholder="+1 (555) 000-0000" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="phone" value={formData.phone} onChange={handleInputChange} required type="tel" placeholder="+1 (555) 000-0000" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
                         <div className="flex justify-between pt-4">
                           <Button 
@@ -374,22 +462,22 @@ export const Partner = () => {
                         
                         <div className="space-y-2">
                           <Label htmlFor="taxId" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State Sales Tax ID *</Label>
-                          <Input id="taxId" required placeholder="Enter Tax ID" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="taxId" value={formData.taxId} onChange={handleInputChange} required placeholder="Enter Tax ID" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
                         
                         <div className="space-y-2">
                           <Label htmlFor="taxState" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State/Province *</Label>
-                          <Input id="taxState" required placeholder="State/Province" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="taxState" value={formData.taxState} onChange={handleInputChange} required placeholder="State/Province" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
 
                         <div className="space-y-2">
                           <Label htmlFor="licenseNum" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Additional License Number</Label>
-                          <Input id="licenseNum" placeholder="Optional" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="licenseNum" value={formData.licenseNum} onChange={handleInputChange} placeholder="Optional" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
 
                         <div className="space-y-2">
                           <Label htmlFor="licenseState" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State/Province</Label>
-                          <Input id="licenseState" placeholder="State/Province" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
+                          <Input id="licenseState" value={formData.licenseState} onChange={handleInputChange} placeholder="State/Province" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
 
                         <div className="flex justify-between pt-8">
