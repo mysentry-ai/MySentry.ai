@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import Team from "./pages/Team";
 import Blogs from "./pages/Blogs";
 import Privacy from "./pages/Privacy";
+import Partner from "./pages/Partner";
 
 function Router() {
   return (
@@ -34,6 +35,7 @@ function Router() {
       <Route path="/team" component={Team} />
       <Route path="/blogs" component={Blogs} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/partner" component={Partner} />
 
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}

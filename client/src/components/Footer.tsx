@@ -49,6 +49,11 @@ export default function Footer() {
                   For Employers
                 </Link>
               </li>
+              <li>
+                <Link href="/females" className="text-foreground hover:text-primary transition-colors">
+                  For Females
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -67,7 +72,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/partners" className="text-foreground hover:text-primary transition-colors">
+                <Link href="/partner" className="text-foreground hover:text-primary transition-colors">
                   Partners
                 </Link>
               </li>
