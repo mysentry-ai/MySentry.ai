@@ -204,8 +204,8 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
 
                       {item.link && (
                           <Button 
-                          className="bg-white hover:bg-gray-100 rounded-full px-8 font-bold uppercase tracking-wider text-black"
-                          style={{ color: "#000000" }}
+                          className="bg-white hover:bg-gray-100 rounded-full px-8 font-bold uppercase tracking-wider text-black !text-black"
+                          style={{ color: "#000000", opacity: 1 }}
                           onClick={(e) => handleLinkClick(e, item.link!)}
                         >
                           {item.ctaText || "Learn More"}
