@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Check, ArrowRight, User, Users, Building2, Smartphone, Mail, CreditCard, ShieldCheck, Bell, RefreshCw } from "lucide-react";
+import { Check, ArrowRight, User, Users, Building2, Smartphone, Mail, CreditCard, ShieldCheck, Bell, RefreshCw, Heart } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type UserType = "families" | "seniors" | "employers";
+type UserType = "families" | "seniors" | "females" | "employers";
 
 export default function ActivationSteps() {
   const [activeTab, setActiveTab] = useState<UserType>("families");
@@ -11,6 +11,7 @@ export default function ActivationSteps() {
   const tabs = [
     { id: "families", label: "Families & Individuals", icon: Users },
     { id: "seniors", label: "Seniors", icon: User },
+    { id: "females", label: "Females", icon: Heart },
     { id: "employers", label: "Employers", icon: Building2 },
   ];
 
@@ -25,7 +26,7 @@ export default function ActivationSteps() {
           "Visit Pricing & Plans page",
           "Choose 'Individuals & Families' tab",
           "Select Monthly or Yearly (Save 20%) billing",
-          "Pick the plan that suits your needs"
+          "Choose 'Essential Safety' or 'Longevity & Wellness'"
         ]
       },
       {
@@ -63,7 +64,7 @@ export default function ActivationSteps() {
           "Visit Pricing & Plans page",
           "Choose 'Individuals & Families' tab",
           "Select Monthly or Yearly (Save 20%) billing",
-          "Choose the plan with Fall Detection"
+          "Choose 'Essential Safety' or 'Longevity & Wellness'"
         ]
       },
       {
@@ -88,6 +89,44 @@ export default function ActivationSteps() {
           "Pair your smartwatch (optional)",
           "Add emergency contacts",
           "Enjoy 24/7 professional monitoring"
+        ]
+      }
+    ],
+    females: [
+      {
+        step: "01",
+        title: "Choose Safety Plan",
+        description: "Empower yourself with 24/7 protection.",
+        icon: CreditCard,
+        details: [
+          "Visit Pricing & Plans page",
+          "Choose 'Individuals & Families' tab",
+          "Select Monthly or Yearly (Save 20%) billing",
+          "Choose 'Essential Safety' or 'Longevity & Wellness'"
+        ]
+      },
+      {
+        step: "02",
+        title: "Secure Signup",
+        description: "Create your private, secure account.",
+        icon: User,
+        details: [
+          "Enter your personal details",
+          "Set up secure payment",
+          "Review privacy policy",
+          "Get instant access credentials"
+        ]
+      },
+      {
+        step: "03",
+        title: "Go Anywhere",
+        description: "Activate features like MeetSafe and Panic.",
+        icon: ShieldCheck,
+        details: [
+          "Download the MySentry app",
+          "Set up your safety network",
+          "Enable location services",
+          "Test your panic button (Test Mode)"
         ]
       }
     ],
@@ -118,8 +157,8 @@ export default function ActivationSteps() {
       },
       {
         step: "03",
-        title: "Deploy & Manage",
-        description: "Roll out protection to your team.",
+        title: "Start Protecting",
+        description: "Protect your most valuable assets.",
         icon: Users,
         details: [
           "Log in to Admin Dashboard",
@@ -148,7 +187,7 @@ export default function ActivationSteps() {
 
         {/* Tabs */}
         <div className="flex justify-center mb-16">
-          <div className="inline-flex bg-gray-100 p-1 rounded-full border border-gray-200">
+          <div className="inline-flex flex-wrap justify-center gap-2 bg-gray-100 p-1 rounded-[2rem] border border-gray-200">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               return (
