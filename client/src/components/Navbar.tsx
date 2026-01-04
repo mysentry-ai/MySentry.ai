@@ -96,16 +96,34 @@ export default function Navbar() {
             "lg:hidden p-2 transition-colors",
             "text-black"
           )}
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen(true)}
         >
-          {isOpen ? <X className="h-8 w-8 text-black" /> : <Menu className="h-8 w-8 text-black" />}
+          <Menu className="h-8 w-8 text-black" />
         </button>
       </div>
 
       {/* Mobile Nav Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-white flex flex-col pt-24 px-6 animate-in slide-in-from-right duration-300 lg:hidden">
-          <div className="flex flex-col space-y-6">
+        <div className="fixed inset-0 z-40 bg-white flex flex-col animate-in slide-in-from-right duration-300 lg:hidden overflow-y-auto">
+          <div className="container py-6 flex items-center justify-between border-b border-gray-100">
+             <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
+                <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
+             </Link>
+             <button onClick={() => setIsOpen(false)} className="p-2">
+               <X className="h-8 w-8 text-black" />
+             </button>
+          </div>
+          <div className="flex flex-col p-6 space-y-6">
+            <Link 
+              href="/"
+              className={cn(
+                "block text-3xl font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4",
+                isActive("/") ? "text-primary" : "text-foreground"
+              )}
+              onClick={() => setIsOpen(false)}
+            >
+              HOME
+            </Link>
             {navLinks.map((link) => (
               <Link 
                 key={link.name} 
