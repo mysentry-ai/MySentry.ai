@@ -349,7 +349,7 @@ export default function Features() {
             Join thousands of users who trust MySentry for their safety and health monitoring.
           </p>
           <Link href="/pricing">
-            <Button className="bg-white text-black hover:bg-gray-200 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-2xl">
+            <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-8 md:px-12 h-16 md:h-20 text-lg md:text-xl transition-all hover:scale-105 shadow-2xl w-full md:w-auto whitespace-normal md:whitespace-nowrap">
               Start Your 7-Day Free Trial
             </Button>
           </Link>
