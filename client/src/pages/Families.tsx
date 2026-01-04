@@ -17,7 +17,7 @@ export default function Families() {
       image: "/images/challenge-family-kids-school.jpg",
       icon: School,
       tag: "School Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Learn More"
     },
     {
@@ -28,7 +28,7 @@ export default function Families() {
       image: "/images/challenge-family-teen-driving.jpg",
       icon: Car,
       tag: "Driving Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "See How It Works"
     },
     {
@@ -39,7 +39,7 @@ export default function Families() {
       image: "/images/challenge-senior-living-alone.jpg",
       icon: Heart,
       tag: "Senior Care",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Learn More"
     },
     {
@@ -50,7 +50,7 @@ export default function Families() {
       image: "/images/challenge-family-voice-panic.jpg",
       icon: Smartphone,
       tag: "Voice Activation",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Explore Features"
     },
     {
@@ -61,7 +61,7 @@ export default function Families() {
       image: "/images/feature-emergency-contacts.jpg",
       icon: Users,
       tag: "Emergency Contacts",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Learn More"
     },
     {
@@ -72,7 +72,7 @@ export default function Families() {
       image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=2670&auto=format&fit=crop",
       icon: MapPin,
       tag: "Travel Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Travel Safe"
     },
     {
@@ -83,7 +83,7 @@ export default function Families() {
       image: "https://images.unsplash.com/photo-1484820540004-14229fe36ca4?q=80&w=2574&auto=format&fit=crop",
       icon: Home,
       tag: "Home Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Monitor Home"
     },
     {
@@ -94,7 +94,7 @@ export default function Families() {
       image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2670&auto=format&fit=crop",
       icon: Car,
       tag: "Driver Coaching",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Drive Safe"
     },
     {
@@ -105,7 +105,7 @@ export default function Families() {
       image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2670&auto=format&fit=crop",
       icon: School,
       tag: "Campus Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Stay Safe"
     },
     {
@@ -116,7 +116,7 @@ export default function Families() {
       image: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=2640&auto=format&fit=crop",
       icon: Heart,
       tag: "Special Care",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Get Support"
     },
     {
@@ -127,7 +127,7 @@ export default function Families() {
       image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=2670&auto=format&fit=crop",
       icon: Dog,
       tag: "Pet Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Walk Safe"
     },
     {
@@ -138,7 +138,7 @@ export default function Families() {
       image: "https://images.unsplash.com/photo-1541625602330-2277a4c46182?q=80&w=2670&auto=format&fit=crop",
       icon: Bike,
       tag: "Active Family",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Ride Safe"
     },
     {
@@ -149,7 +149,7 @@ export default function Families() {
       image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=2670&auto=format&fit=crop",
       icon: Baby,
       tag: "Childcare",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Secure Home"
     },
     {
@@ -160,7 +160,7 @@ export default function Families() {
       image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2670&auto=format&fit=crop",
       icon: Shield,
       tag: "Digital Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Learn More"
     },
     {
@@ -171,7 +171,7 @@ export default function Families() {
       image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2669&auto=format&fit=crop",
       icon: Users,
       tag: "Community",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Connect"
     }
   ];

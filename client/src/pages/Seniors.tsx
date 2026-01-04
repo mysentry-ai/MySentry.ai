@@ -17,7 +17,7 @@ export default function Seniors() {
       image: "/images/challenge-senior-fall.jpg",
       icon: Activity,
       tag: "Automatic Alert",
-      link: "/features#fall-detection",
+      link: "/how-it-works#fall-detection",
       ctaText: "See How It Works"
     },
     {
@@ -28,7 +28,7 @@ export default function Seniors() {
       image: "/images/challenge-senior-crash.jpg",
       icon: Car,
       tag: "Road Safety",
-      link: "/features#crash-detection",
+      link: "/how-it-works#crash-detection",
       ctaText: "Learn More"
     },
     {
@@ -39,7 +39,7 @@ export default function Seniors() {
       image: "/images/challenge-senior-near-fall.jpg",
       icon: TrendingDown,
       tag: "Prevention",
-      link: "/features#health-monitoring",
+      link: "/how-it-works#health-monitoring",
       ctaText: "View Features"
     },
     {
@@ -50,7 +50,7 @@ export default function Seniors() {
       image: "/images/challenge-senior-health-monitoring.jpg",
       icon: HeartPulse,
       tag: "Proactive Care",
-      link: "/features#health-monitoring",
+      link: "/how-it-works#health-monitoring",
       ctaText: "Learn More"
     },
     {
@@ -61,7 +61,7 @@ export default function Seniors() {
       image: "/images/watch-sos-lifestyle.png",
       icon: AlertCircle,
       tag: "Instant Help",
-      link: "/features#voice-panic",
+      link: "/how-it-works#voice-panic",
       ctaText: "See How It Works"
     },
     {
@@ -72,7 +72,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=2630&auto=format&fit=crop",
       icon: Pill,
       tag: "Health Routine",
-      link: "/features#medication-reminders",
+      link: "/how-it-works#medication-reminders",
       ctaText: "Stay Healthy"
     },
     {
@@ -83,7 +83,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2670&auto=format&fit=crop",
       icon: MapPin,
       tag: "Memory Care",
-      link: "/features#geo-fencing",
+      link: "/how-it-works#geo-fencing",
       ctaText: "Stay Safe"
     },
     {
@@ -94,7 +94,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1516307365426-bea591f05011?q=80&w=2670&auto=format&fit=crop",
       icon: Home,
       tag: "Home Safety",
-      link: "/features#voice-panic",
+      link: "/how-it-works#voice-panic",
       ctaText: "Live Freely"
     },
     {
@@ -105,7 +105,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=2669&auto=format&fit=crop",
       icon: CheckCircle2,
       tag: "Family Peace",
-      link: "/features#check-in",
+      link: "/how-it-works#check-in",
       ctaText: "Connect"
     },
     {
@@ -116,7 +116,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2670&auto=format&fit=crop",
       icon: Shield,
       tag: "Security",
-      link: "/features#voice-panic",
+      link: "/how-it-works#voice-panic",
       ctaText: "Verify"
     },
     {
@@ -127,7 +127,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=2676&auto=format&fit=crop",
       icon: Zap,
       tag: "Active Life",
-      link: "/features#geo-fencing",
+      link: "/how-it-works#geo-fencing",
       ctaText: "Go Outside"
     },
     {
@@ -138,7 +138,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2568&auto=format&fit=crop",
       icon: UserPlus,
       tag: "Care Team",
-      link: "/features#family-dashboard",
+      link: "/how-it-works#family-dashboard",
       ctaText: "Share Access"
     },
     {
@@ -149,7 +149,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2680&auto=format&fit=crop",
       icon: Battery,
       tag: "System Health",
-      link: "/features#health-monitoring",
+      link: "/how-it-works#health-monitoring",
       ctaText: "Stay Charged"
     },
     {
@@ -160,7 +160,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=2670&auto=format&fit=crop",
       icon: Bell,
       tag: "Safety Alerts",
-      link: "/features#health-monitoring",
+      link: "/how-it-works#health-monitoring",
       ctaText: "Be Ready"
     },
     {
@@ -171,7 +171,7 @@ export default function Seniors() {
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2670&auto=format&fit=crop",
       icon: Phone,
       tag: "Medical Data",
-      link: "/features#health-monitoring",
+      link: "/how-it-works#health-monitoring",
       ctaText: "Share Data"
     }
   ];

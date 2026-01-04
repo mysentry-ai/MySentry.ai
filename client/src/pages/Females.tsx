@@ -17,7 +17,7 @@ export default function Females() {
       image: "/images/challenge-female-jogging-night.jpg",
       icon: Activity,
       tag: "Active Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Learn More"
     },
     {
@@ -28,7 +28,7 @@ export default function Females() {
       image: "/images/challenge-female-dating.jpg",
       icon: Heart,
       tag: "MeetSafe",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "See How It Works"
     },
     {
@@ -39,7 +39,7 @@ export default function Females() {
       image: "/images/challenge-female-rideshare.jpg",
       icon: Car,
       tag: "Travel Safe",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Learn More"
     },
     {
@@ -50,7 +50,7 @@ export default function Females() {
       image: "/images/feature-voice-panic.jpg",
       icon: Shield,
       tag: "Silent Panic",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Learn More"
     },
     {
@@ -61,7 +61,7 @@ export default function Females() {
       image: "/images/feature-emergency-contacts.jpg",
       icon: MapPin,
       tag: "Student Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Learn More"
     },
     {
@@ -72,7 +72,7 @@ export default function Females() {
       image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2574&auto=format&fit=crop",
       icon: MapPin,
       tag: "Travel Freedom",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Travel Safe"
     },
     {
@@ -83,7 +83,7 @@ export default function Females() {
       image: "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?q=80&w=2669&auto=format&fit=crop",
       icon: Clock,
       tag: "Work Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Commute Safe"
     },
     {
@@ -94,7 +94,7 @@ export default function Females() {
       image: "https://images.unsplash.com/photo-1590650516494-0c8e4a4dd67e?q=80&w=2671&auto=format&fit=crop",
       icon: Shield,
       tag: "Home Protection",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Get Help"
     },
     {
@@ -105,7 +105,7 @@ export default function Females() {
       image: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2670&auto=format&fit=crop",
       icon: Users,
       tag: "Transaction Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Trade Safely"
     },
     {
@@ -116,7 +116,7 @@ export default function Females() {
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop",
       icon: Car,
       tag: "Urban Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Stay Alert"
     },
     {
@@ -127,7 +127,7 @@ export default function Females() {
       image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2670&auto=format&fit=crop",
       icon: Lock,
       tag: "Travel Security",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Sleep Soundly"
     },
     {
@@ -138,7 +138,7 @@ export default function Females() {
       image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=2670&auto=format&fit=crop",
       icon: MapPin,
       tag: "Commuter Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Ride Safe"
     },
     {
@@ -149,7 +149,7 @@ export default function Females() {
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2573&auto=format&fit=crop",
       icon: Building2,
       tag: "Professional Safety",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Work Safe"
     },
     {
@@ -160,7 +160,7 @@ export default function Females() {
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
       icon: Heart,
       tag: "Medical Alert",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Be Prepared"
     },
     {
@@ -171,7 +171,7 @@ export default function Females() {
       image: "https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=2670&auto=format&fit=crop",
       icon: Eye,
       tag: "Personal Security",
-      link: "/features",
+      link: "/how-it-works",
       ctaText: "Get Protection"
     }
   ];
