@@ -223,7 +223,7 @@ export default function Features() {
               </div>
               <div className="p-6 bg-purple-50 rounded-2xl border border-purple-100">
                 <Users className="h-8 w-8 text-purple-600 mb-4" />
-                <h4 className="font-bold text-[#1a1a1a] mb-2">Family Circle</h4>
+                <h4 className="font-bold text-[#1a1a1a] mb-2">Emergency Contacts</h4>
                 <p className="text-sm text-gray-600">Share status with loved ones.</p>
               </div>
             </div>
