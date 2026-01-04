@@ -56,7 +56,7 @@ export const Partner = () => {
         )}>
           {isCompleted ? <Check className="w-4 h-4" /> : step}
         </div>
-        <h3 className="text-lg font-bold uppercase tracking-wide">{title}</h3>
+        <h3 className="text-lg font-bold uppercase tracking-wide font-barlow">{title}</h3>
       </div>
       <ChevronDown className={cn("w-5 h-5 transition-transform", isActive ? "rotate-180" : "")} />
     </div>
@@ -247,36 +247,36 @@ export const Partner = () => {
                       <div className="p-8 space-y-6">
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
-                            <Label htmlFor="companyName">Company Name *</Label>
-                            <Input id="companyName" required placeholder="Enter company name" className="h-12 bg-gray-50" />
+                            <Label htmlFor="companyName" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Company Name *</Label>
+                            <Input id="companyName" required placeholder="Enter company name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="website">Company Website *</Label>
-                            <Input id="website" required placeholder="https://" className="h-12 bg-gray-50" />
+                            <Label htmlFor="website" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Company Website *</Label>
+                            <Input id="website" required placeholder="https://" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="address">Company Address *</Label>
-                          <Input id="address" required placeholder="Street address" className="h-12 bg-gray-50" />
+                          <Label htmlFor="address" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Company Address *</Label>
+                          <Input id="address" required placeholder="Street address" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
-                            <Label htmlFor="city">City *</Label>
-                            <Input id="city" required placeholder="City" className="h-12 bg-gray-50" />
+                            <Label htmlFor="city" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">City *</Label>
+                            <Input id="city" required placeholder="City" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="state">State/Province *</Label>
-                            <Input id="state" required placeholder="State" className="h-12 bg-gray-50" />
+                            <Label htmlFor="state" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State/Province *</Label>
+                            <Input id="state" required placeholder="State" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                         </div>
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
-                            <Label htmlFor="zip">Zip/Postal Code *</Label>
-                            <Input id="zip" required placeholder="Zip code" className="h-12 bg-gray-50" />
+                            <Label htmlFor="zip" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Zip/Postal Code *</Label>
+                            <Input id="zip" required placeholder="Zip code" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="country">Country *</Label>
-                            <Input id="country" required placeholder="Country" className="h-12 bg-gray-50" />
+                            <Label htmlFor="country" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Country *</Label>
+                            <Input id="country" required placeholder="Country" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                         </div>
                         <div className="flex justify-end pt-4">
@@ -313,21 +313,21 @@ export const Partner = () => {
                       <div className="p-8 space-y-6">
                         <div className="grid md:grid-cols-2 gap-6">
                           <div className="space-y-2">
-                            <Label htmlFor="firstName">First Name *</Label>
-                            <Input id="firstName" required placeholder="First name" className="h-12 bg-gray-50" />
+                            <Label htmlFor="firstName" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">First Name *</Label>
+                            <Input id="firstName" required placeholder="First name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                           <div className="space-y-2">
-                            <Label htmlFor="lastName">Last Name *</Label>
-                            <Input id="lastName" required placeholder="Last name" className="h-12 bg-gray-50" />
+                            <Label htmlFor="lastName" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Last Name *</Label>
+                            <Input id="lastName" required placeholder="Last name" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                           </div>
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="email">Email Address *</Label>
-                          <Input id="email" required type="email" placeholder="name@company.com" className="h-12 bg-gray-50" />
+                          <Label htmlFor="email" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Email Address *</Label>
+                          <Input id="email" required type="email" placeholder="name@company.com" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
                         <div className="space-y-2">
-                          <Label htmlFor="phone">Phone Number *</Label>
-                          <Input id="phone" required type="tel" placeholder="+1 (555) 000-0000" className="h-12 bg-gray-50" />
+                          <Label htmlFor="phone" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Phone Number *</Label>
+                          <Input id="phone" required type="tel" placeholder="+1 (555) 000-0000" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
                         <div className="flex justify-between pt-4">
                           <Button 
@@ -372,23 +372,23 @@ export const Partner = () => {
                         <p className="text-sm text-gray-500 italic">* At least one State Sales Tax ID is required</p>
                         
                         <div className="space-y-2">
-                          <Label htmlFor="taxId">State Sales Tax ID *</Label>
-                          <Input id="taxId" required placeholder="Enter Tax ID" className="h-12 bg-gray-50" />
+                          <Label htmlFor="taxId" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State Sales Tax ID *</Label>
+                          <Input id="taxId" required placeholder="Enter Tax ID" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
                         
                         <div className="space-y-2">
-                          <Label htmlFor="taxState">State/Province *</Label>
-                          <Input id="taxState" required placeholder="State/Province" className="h-12 bg-gray-50" />
+                          <Label htmlFor="taxState" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State/Province *</Label>
+                          <Input id="taxState" required placeholder="State/Province" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="licenseNum">Additional License Number</Label>
-                          <Input id="licenseNum" placeholder="Optional" className="h-12 bg-gray-50" />
+                          <Label htmlFor="licenseNum" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">Additional License Number</Label>
+                          <Input id="licenseNum" placeholder="Optional" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
 
                         <div className="space-y-2">
-                          <Label htmlFor="licenseState">State/Province</Label>
-                          <Input id="licenseState" placeholder="State/Province" className="h-12 bg-gray-50" />
+                          <Label htmlFor="licenseState" className="text-sm font-bold text-[#1a1a1a] uppercase tracking-wide">State/Province</Label>
+                          <Input id="licenseState" placeholder="State/Province" className="h-12 bg-gray-50 border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20" />
                         </div>
 
                         <div className="flex justify-between pt-8">
