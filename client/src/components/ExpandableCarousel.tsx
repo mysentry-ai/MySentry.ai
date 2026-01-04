@@ -154,7 +154,10 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
             </div>
 
             {/* Content Container */}
-                <div className="absolute inset-0 p-6 md:p-8 flex flex-col justify-between text-white">
+                <div className={cn(
+                  "absolute inset-0 p-6 md:p-8 flex flex-col justify-between text-white",
+                  expandedId === item.id ? "overflow-y-auto scrollbar-hide" : "overflow-hidden"
+                )}>
               {/* Top Section */}
               <div className="flex justify-between items-start mb-4">
                 {item.tag && (
