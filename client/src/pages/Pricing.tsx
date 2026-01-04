@@ -149,7 +149,7 @@ export default function Pricing() {
   return (
     <Layout>
       {/* HERO SECTION - Standardized with Features Page Style */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-20 overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
            <img 

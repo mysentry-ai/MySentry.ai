@@ -4,16 +4,21 @@ import Footer from '../components/Footer';
 
 export const Privacy = () => {
   return (
-    <div className="min-h-screen bg-[#f8fafc] font-sans text-[#1a1a1a]">
+    <div className="min-h-screen bg-gray-50 font-sans text-[#1a1a1a]">
       <Navbar />
       
-      <div className="container mx-auto px-4 py-24 max-w-4xl">
-        <h1 className="text-4xl md:text-5xl font-black mb-4 font-barlow uppercase text-[#004F7B]">Privacy Policy</h1>
-        <p className="text-gray-500 mb-12">Last Updated: January 4, 2026</p>
+      <div className="container mx-auto px-4 pt-32 pb-24 max-w-4xl">
+        <div className="text-center mb-12">
+          <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
+            Legal
+          </span>
+          <h1 className="text-5xl md:text-6xl font-black mb-4 font-barlow uppercase text-[#1a1a1a]">Privacy Policy</h1>
+          <p className="text-gray-500 text-lg">Last Updated: January 4, 2026</p>
+        </div>
         
-        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:text-[#004F7B] prose-a:text-[#386758]">
+        <div className="bg-white p-8 md:p-16 rounded-3xl shadow-xl border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:font-bold prose-headings:text-[#1a1a1a] prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-p:text-gray-600 prose-li:text-gray-600">
           
-          <p>
+          <p className="lead text-xl text-gray-700 font-medium">
             At MySentry.ai ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
           </p>
 
@@ -47,9 +52,11 @@ export const Privacy = () => {
           <p>
             We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information unless we provide users with advance notice. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or serving our users, so long as those parties agree to keep this information confidential. We may also release information when it's release is appropriate to comply with the law, enforce our site policies, or protect ours or others' rights, property or safety.
           </p>
-          <p>
-            <strong>Emergency Situations:</strong> In the event of an emergency detected by our system, we may share your location and relevant health information with emergency responders and your designated emergency contacts to facilitate immediate assistance.
-          </p>
+          <div className="bg-[#e8f5e9] p-6 rounded-xl border border-[#386758]/20 my-6">
+            <p className="m-0 text-[#386758] font-medium">
+              <strong>Emergency Situations:</strong> In the event of an emergency detected by our system, we may share your location and relevant health information with emergency responders and your designated emergency contacts to facilitate immediate assistance.
+            </p>
+          </div>
 
           <h3>4. Data Security</h3>
           <p>

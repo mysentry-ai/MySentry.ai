@@ -60,8 +60,8 @@ const TeamSection = ({ title, subtitle, members, bgColor = "bg-white" }: { title
     <div className="container mx-auto px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="text-4xl font-bold mb-6 font-barlow uppercase text-[#004F7B]">{title}</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-black mb-6 font-barlow uppercase text-[#386758]">{title}</h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {subtitle}
           </p>
         </div>
@@ -76,21 +76,21 @@ const TeamSection = ({ title, subtitle, members, bgColor = "bg-white" }: { title
               transition={{ delay: index * 0.1 }}
               className="group"
             >
-              <div className="relative overflow-hidden rounded-2xl mb-6 aspect-[4/5] shadow-lg">
+              <div className="relative overflow-hidden rounded-3xl mb-6 aspect-[4/5] shadow-lg">
                 <img 
                   src={member.image} 
                   alt={member.name} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#6AD990] transition-colors">
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#4ADE80] transition-colors">
                     <Linkedin className="w-6 h-6" />
                   </a>
                 </div>
               </div>
               
-              <h3 className="text-2xl font-bold text-[#1a1a1a] mb-1">{member.name}</h3>
-              <p className="text-[#004F7B] font-bold uppercase text-sm tracking-wider mb-4">{member.role}</p>
+              <h3 className="text-2xl font-bold text-[#1a1a1a] mb-1 font-barlow uppercase">{member.name}</h3>
+              <p className="text-[#386758] font-bold uppercase text-sm tracking-wider mb-4">{member.role}</p>
               <p className="text-gray-600 leading-relaxed text-sm">
                 {member.bio}
               </p>
@@ -104,36 +104,38 @@ const TeamSection = ({ title, subtitle, members, bgColor = "bg-white" }: { title
 
 export const Team = () => {
   return (
-    <div className="min-h-screen bg-[#e8f5e9] font-sans text-[#1a1a1a]">
+    <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Standardized */}
+      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/team-hero.jpg" 
             alt="MySentry Team" 
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+        <div className="relative z-20 container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-black mb-6 font-barlow uppercase tracking-wide"
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl"
           >
-            The Right Team for a Safer Tomorrow
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed"
-          >
-            At MySentry.ai, safety begins with empathy. Our team brings together innovators, AI experts, and wellness advocates driven by one shared purpose: to make safety and well-being accessible for everyone.
-          </motion.p>
+            <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
+              Our Team
+            </span>
+            <h1 className="text-6xl md:text-8xl font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+              The Right Team<br/>
+              <span className="text-gray-600">For A Safer Tomorrow.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+              At MySentry.ai, safety begins with empathy. Our team brings together innovators, AI experts, and wellness advocates driven by one shared purpose: to make safety and well-being accessible for everyone.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -147,7 +149,7 @@ export const Team = () => {
         title="Board of Advisors: Guided by Experience"
         subtitle="Industry pioneer who help us grow responsibly, stay people-first, and think beyond technology."
         members={advisors}
-        bgColor="bg-[#f8fafc]"
+        bgColor="bg-gray-50"
       />
 
       <TeamSection 

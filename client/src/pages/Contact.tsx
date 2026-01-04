@@ -87,36 +87,38 @@ export const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#e8f5e9] font-sans text-[#1a1a1a]">
+    <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Standardized */}
+      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/contact-hero.jpg" 
             alt="Contact MySentry Support" 
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 text-center text-white pt-20 md:pt-0">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+        <div className="relative z-20 container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-black mb-6 font-barlow uppercase tracking-wide"
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl"
           >
-            We're Here to Help
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed"
-          >
-            Whether you have a question about our technology, need support, or just want to say hello, our team is ready to listen.
-          </motion.p>
+            <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
+              Contact Us
+            </span>
+            <h1 className="text-6xl md:text-8xl font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+              We're Here<br/>
+              <span className="text-gray-600">To Help.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+              Whether you have a question about our technology, need support, or just want to say hello, our team is ready to listen.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -127,45 +129,45 @@ export const Contact = () => {
             
             {/* Contact Details */}
             <div>
-              <h2 className="text-4xl font-bold mb-8 font-barlow uppercase text-[#004F7B]">Get in Touch</h2>
-              <p className="text-lg text-gray-600 mb-12">
+              <h2 className="text-4xl md:text-5xl font-black mb-8 font-barlow uppercase text-[#386758]">Get in Touch</h2>
+              <p className="text-xl text-gray-600 mb-12 leading-relaxed">
                 Our dedicated support team is available to assist you with any inquiries. We pride ourselves on quick, helpful responses.
               </p>
               
-              <div className="space-y-8">
+              <div className="space-y-10">
                 <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 bg-[#e8f5e9] rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-[#386758]" />
+                  <div className="w-14 h-14 bg-[#e8f5e9] rounded-full flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-7 h-7 text-[#386758]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a] font-barlow uppercase">Call Us</h3>
-                    <p className="text-gray-600 mb-1">Andrew Caldwell, Chief Revenue Officer</p>
-                    <a href="tel:+16143615073" className="text-lg font-medium text-[#004F7B] hover:underline">
+                    <h3 className="text-2xl font-bold mb-2 text-[#1a1a1a] font-barlow uppercase">Call Us</h3>
+                    <p className="text-gray-600 mb-1 text-lg">Andrew Caldwell, Chief Revenue Officer</p>
+                    <a href="tel:+16143615073" className="text-xl font-bold text-[#386758] hover:underline">
                       +1 (614) 361-5073
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 bg-[#e8f5e9] rounded-full flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-6 h-6 text-[#386758]" />
+                  <div className="w-14 h-14 bg-[#e8f5e9] rounded-full flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-7 h-7 text-[#386758]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a] font-barlow uppercase">Email Us</h3>
-                    <p className="text-gray-600 mb-1">For general inquiries and support:</p>
-                    <a href="mailto:support@MySentry.ai" className="text-lg font-medium text-[#004F7B] hover:underline">
+                    <h3 className="text-2xl font-bold mb-2 text-[#1a1a1a] font-barlow uppercase">Email Us</h3>
+                    <p className="text-gray-600 mb-1 text-lg">For general inquiries and support:</p>
+                    <a href="mailto:support@MySentry.ai" className="text-xl font-bold text-[#386758] hover:underline">
                       support@MySentry.ai
                     </a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 bg-[#e8f5e9] rounded-full flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-[#386758]" />
+                  <div className="w-14 h-14 bg-[#e8f5e9] rounded-full flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-7 h-7 text-[#386758]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-[#1a1a1a] font-barlow uppercase">Headquarters</h3>
-                    <p className="text-gray-600">
+                    <h3 className="text-2xl font-bold mb-2 text-[#1a1a1a] font-barlow uppercase">Headquarters</h3>
+                    <p className="text-gray-600 text-lg">
                       MySentry.ai<br />
                       Columbus, Ohio, USA
                     </p>
@@ -178,7 +180,7 @@ export const Contact = () => {
             <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
               <div className="flex items-center gap-4 mb-8">
                 <MessageSquare className="w-8 h-8 text-[#386758]" />
-                <h3 className="text-2xl font-bold text-[#1a1a1a] font-barlow uppercase">Send a Message</h3>
+                <h3 className="text-3xl font-black text-[#1a1a1a] font-barlow uppercase">Send a Message</h3>
               </div>
               
               <form className="space-y-6" action="mailto:support@MySentry.ai" method="post" encType="text/plain">
@@ -194,7 +196,7 @@ export const Contact = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border outline-none transition-all bg-gray-50",
+                          "w-full px-4 py-3 rounded-xl border outline-none transition-all bg-gray-50 h-12",
                           touched.name && errors.name 
                             ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20" 
                             : "border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20",
@@ -224,7 +226,7 @@ export const Contact = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         className={cn(
-                          "w-full px-4 py-3 rounded-lg border outline-none transition-all bg-gray-50",
+                          "w-full px-4 py-3 rounded-xl border outline-none transition-all bg-gray-50 h-12",
                           touched.email && errors.email 
                             ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20" 
                             : "border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20",
@@ -256,7 +258,7 @@ export const Contact = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       className={cn(
-                        "w-full px-4 py-3 rounded-lg border outline-none transition-all bg-gray-50",
+                        "w-full px-4 py-3 rounded-xl border outline-none transition-all bg-gray-50 h-12",
                         touched.subject && errors.subject 
                           ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20" 
                           : "border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20",
@@ -275,19 +277,19 @@ export const Contact = () => {
                     </p>
                   )}
                 </div>
-
+                
                 <div>
                   <label htmlFor="message" className="block text-sm font-bold text-[#1a1a1a] mb-2 uppercase tracking-wide">Message</label>
                   <div className="relative">
                     <textarea 
                       id="message" 
                       name="message"
-                      rows={5}
                       value={formData.message}
                       onChange={handleChange}
                       onBlur={handleBlur}
+                      rows={5}
                       className={cn(
-                        "w-full px-4 py-3 rounded-lg border outline-none transition-all resize-none bg-gray-50",
+                        "w-full px-4 py-3 rounded-xl border outline-none transition-all bg-gray-50 resize-none",
                         touched.message && errors.message 
                           ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20" 
                           : "border-gray-200 focus:border-[#386758] focus:ring-2 focus:ring-[#386758]/20",
@@ -295,7 +297,7 @@ export const Contact = () => {
                       )}
                       placeholder="Tell us more about your inquiry..."
                       required
-                    ></textarea>
+                    />
                     {touched.message && !errors.message && (
                       <CheckCircle2 className="absolute right-3 top-3.5 w-5 h-5 text-green-500" />
                     )}
@@ -306,25 +308,21 @@ export const Contact = () => {
                     </p>
                   )}
                 </div>
-
+                
                 <button 
-                  type="submit"
+                  type="submit" 
                   disabled={!isFormValid}
                   className={cn(
-                    "w-full font-bold py-4 rounded-lg transition-all shadow-lg uppercase tracking-widest text-sm",
+                    "w-full py-4 rounded-xl font-bold uppercase tracking-wide transition-all duration-300",
                     isFormValid 
-                      ? "bg-[#386758] text-white hover:bg-[#2c5246] cursor-pointer" 
-                      : "bg-gray-300 text-gray-500 cursor-not-allowed shadow-none"
+                      ? "bg-[#386758] text-white hover:bg-[#2d5246] shadow-lg hover:shadow-xl transform hover:-translate-y-1" 
+                      : "bg-gray-200 text-gray-400 cursor-not-allowed"
                   )}
                 >
                   Send Message
                 </button>
-                <p className="text-xs text-center text-gray-500 mt-4">
-                  By sending this message, you agree to our Privacy Policy. We'll get back to you as soon as possible.
-                </p>
               </form>
             </div>
-
           </div>
         </div>
       </section>

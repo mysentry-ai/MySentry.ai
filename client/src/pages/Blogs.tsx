@@ -63,36 +63,38 @@ const blogPosts = [
 
 export const Blogs = () => {
   return (
-    <div className="min-h-screen bg-[#e8f5e9] font-sans text-[#1a1a1a]">
+    <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Standardized */}
+      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/blog-hero.jpg" 
             alt="MySentry Safety Insights" 
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4 text-center text-white pt-20 md:pt-0">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
+        <div className="relative z-20 container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-black mb-6 font-barlow uppercase tracking-wide"
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl"
           >
-            Safety Insights
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed"
-          >
-            Expert advice, industry trends, and stories about living fearlessly.
-          </motion.p>
+            <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
+              Safety Insights
+            </span>
+            <h1 className="text-6xl md:text-8xl font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+              Latest News<br/>
+              <span className="text-gray-600">& Articles.</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+              Expert advice, industry trends, and stories about living fearlessly.
+            </p>
+          </motion.div>
         </div>
       </section>
 
@@ -107,7 +109,7 @@ export const Blogs = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img 
@@ -115,7 +117,7 @@ export const Blogs = () => {
                     alt={post.title} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#004F7B]">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#386758]">
                     {post.category}
                   </div>
                 </div>
@@ -132,7 +134,7 @@ export const Blogs = () => {
                     </div>
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 group-hover:text-[#004F7B] transition-colors leading-tight">
+                  <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 group-hover:text-[#386758] transition-colors leading-tight font-barlow uppercase">
                     {post.title}
                   </h3>
                   
