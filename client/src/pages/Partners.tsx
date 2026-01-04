@@ -66,7 +66,7 @@ const Partners = () => {
               >
                 <h3 className="text-xl font-bold text-primary mb-3">The Opportunity</h3>
                 <p className="text-muted-foreground">
-                  MySentry integrates with the devices they already love—Apple and Samsung watches. This means higher engagement, better retention, and real value.
+                  MySentry integrates with the devices they already love, Apple and Samsung watches. This means higher engagement, better retention, and real value.
                 </p>
               </motion.div>
             </div>

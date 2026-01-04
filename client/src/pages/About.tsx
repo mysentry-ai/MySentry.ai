@@ -77,7 +77,7 @@ export const About = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2 text-[#6AD990]">We respect your privacy.</h3>
-                  <p className="text-lg opacity-90">Your health and location data is yours. We only share it when it matters most—during an emergency.</p>
+                  <p className="text-lg opacity-90">Your health and location data is yours. We only share it when it matters most, during an emergency.</p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-2 text-[#6AD990]">We innovate for you.</h3>
