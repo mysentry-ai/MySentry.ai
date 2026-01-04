@@ -156,7 +156,7 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
             {/* Content Container */}
                 <div className={cn(
                   "absolute inset-0 p-6 md:p-8 flex flex-col justify-between text-white",
-                  expandedId === item.id ? "overflow-y-auto scrollbar-hide" : "overflow-hidden"
+                  expandedId === item.id ? "overflow-y-auto scrollbar-thin scrollbar-thumb-white/30 scrollbar-track-transparent pr-2" : "overflow-hidden"
                 )}>
               {/* Top Section */}
               <div className="flex justify-between items-start mb-4">
@@ -195,7 +195,7 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <p className="text-lg text-gray-200 mb-6 leading-relaxed">
+                      <p className="text-lg text-gray-200 mb-6 leading-relaxed pb-4">
                         {item.description}
                       </p>
                       
