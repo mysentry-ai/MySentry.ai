@@ -1,177 +1,102 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
-import { Shield, Heart, Users, Award, CheckCircle } from 'lucide-react';
-import SEO from '../components/SEO';
 
-const About = () => {
+export const About = () => {
   return (
-    <div className="min-h-screen bg-background pt-24">
-      <SEO 
-        title="About Us | MySentry" 
-        description="Learn about the mission, vision, and team behind MySentry - the world's first AI companion for personal safety and health monitoring."
-      />
+    <div className="min-h-screen bg-[#e8f5e9] font-sans text-[#1a1a1a]">
+      <Navbar />
       
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl font-bold text-primary mb-6"
-            >
-              Our Mission: <br/>
-              <span className="text-foreground">Safety Without Limits</span>
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-muted-foreground leading-relaxed"
-            >
-              We believe everyone deserves to live fearlessly. MySentry was born from a simple yet powerful idea: technology should be the guardian that allows you to embrace life fully, knowing help is always just a heartbeat away.
-            </motion.p>
-          </div>
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/about-hero.jpg" 
+            alt="MySentry Vision" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-center text-white">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-black mb-6 font-barlow uppercase tracking-wide"
+          >
+            Our Vision
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed"
+          >
+            A world where safety is proactive, health is understood, and no one ever has to face an emergency alone.
+          </motion.p>
         </div>
       </section>
 
-      {/* The Problem & Empathy */}
-      <section className="py-20 bg-secondary/30">
+      {/* Mission Section */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <img 
-                src="/images/senior-hiking.jpg" 
-                alt="Senior hiking with confidence" 
-                className="rounded-2xl shadow-2xl"
-              />
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="text-3xl font-bold text-primary mb-6">Why We Started</h2>
-              <p className="text-lg text-muted-foreground mb-6">
-                In a world that can be unpredictable, the fear of "what if" often holds us back. What if I fall? What if I have a health crisis alone? What if my loved one needs help and I'm not there?
-              </p>
-              <p className="text-lg text-muted-foreground mb-6">
-                We understood that traditional medical alert buttons were stigmatizing and limited. You shouldn't have to choose between your dignity and your safety. You shouldn't have to wear a "help button" that screams vulnerability.
-              </p>
-              <div className="flex items-center gap-4 text-primary font-semibold">
-                <Heart className="w-6 h-6 fill-current" />
-                <span>We built MySentry to change the narrative.</span>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Solution & Change */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Redefining Personal Protection</h2>
-            <p className="text-lg text-muted-foreground">
-              MySentry isn't just an app; it's a comprehensive safety ecosystem. By leveraging the devices you already wear and love—your Apple or Samsung watch—we've created a discreet, powerful, and intelligent guardian.
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold mb-8 font-barlow uppercase text-[#004F7B]">Our Mission</h2>
+            <p className="text-2xl leading-relaxed text-gray-700 mb-12">
+              To empower individuals, families, and workforces with intelligent, 24/7 safety and health monitoring that bridges the gap between detection and response.
             </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Shield,
-                title: "Proactive Protection",
-                desc: "We don't just react to emergencies; we help prevent them with health monitoring and predictive alerts."
-              },
-              {
-                icon: Users,
-                title: "Family Connection",
-                desc: "Bridging the gap between independence and care, keeping families connected without being intrusive."
-              },
-              {
-                icon: Award,
-                title: "Professional Response",
-                desc: "Partnered with Rapid Response Monitoring to provide 24/7 expert assistance when it matters most."
-              }
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card p-8 rounded-2xl shadow-lg border border-border/50 hover:border-primary/50 transition-colors"
-              >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                  <item.icon className="w-6 h-6 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Our Team */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Meet The Team</h2>
-            <p className="text-lg text-muted-foreground">The innovators and caregivers behind MySentry.</p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {/* Placeholder for team members - can be updated with real data later */}
-            {[1, 2, 3].map((_, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="bg-background rounded-2xl overflow-hidden shadow-lg text-center group"
-              >
-                <div className="h-64 bg-muted relative overflow-hidden">
-                  <div className="absolute inset-0 bg-primary/10 flex items-center justify-center text-primary/40">
-                    <Users className="w-20 h-20" />
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-1">Team Member {i + 1}</h3>
-                  <p className="text-primary text-sm font-medium mb-4">Position Title</p>
-                  <p className="text-muted-foreground text-sm">
-                    Dedicated to bringing safety and peace of mind to families everywhere.
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="bg-primary rounded-3xl p-12 text-center text-primary-foreground relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('/images/pattern.png')] opacity-10" />
-            <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Our Mission</h2>
-              <p className="text-lg text-primary-foreground/90 mb-8">
-                Experience the freedom of being protected everywhere. Start your journey with MySentry today.
-              </p>
-              <button className="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg">
-                Get Started Now
-              </button>
+            <div className="grid md:grid-cols-3 gap-8 mt-16">
+              <div className="p-8 bg-[#e8f5e9] rounded-2xl">
+                <h3 className="text-xl font-bold mb-4 text-[#386758]">Protect</h3>
+                <p className="text-gray-600">Advanced detection for falls, crashes, and health anomalies.</p>
+              </div>
+              <div className="p-8 bg-[#e8f5e9] rounded-2xl">
+                <h3 className="text-xl font-bold mb-4 text-[#386758]">Connect</h3>
+                <p className="text-gray-600">Seamless communication with loved ones and emergency services.</p>
+              </div>
+              <div className="p-8 bg-[#e8f5e9] rounded-2xl">
+                <h3 className="text-xl font-bold mb-4 text-[#386758]">Empower</h3>
+                <p className="text-gray-600">Data-driven insights to live longer, healthier, and more independent lives.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Our Promise Section */}
+      <section className="py-24 bg-[#004F7B] text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-bold mb-8 font-barlow uppercase">Our Promise</h2>
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-2xl font-bold mb-2 text-[#6AD990]">We are always there.</h3>
+                  <p className="text-lg opacity-90">24/7 professional monitoring means you never have to worry about "what if."</p>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2 text-[#6AD990]">We respect your privacy.</h3>
+                  <p className="text-lg opacity-90">Your health and location data is yours. We only share it when it matters most—during an emergency.</p>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold mb-2 text-[#6AD990]">We innovate for you.</h3>
+                  <p className="text-lg opacity-90">Continuously evolving our AI to detect more, predict better, and respond faster.</p>
+                </div>
+              </div>
+            </div>
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+               <img 
+                src="/images/blog-senior-care.jpg" 
+                alt="MySentry Promise" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };

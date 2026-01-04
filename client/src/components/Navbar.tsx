@@ -1,13 +1,15 @@
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [location] = useLocation();
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Handle scroll effect for transparent to solid transition
   useEffect(() => {
@@ -18,6 +20,17 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setMoreOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const navLinks = [
     { name: "HOW IT WORKS", href: "/how-it-works" },
     { name: "FEMALES", href: "/females" },
@@ -25,6 +38,14 @@ export default function Navbar() {
     { name: "FAMILIES", href: "/families" },
     { name: "EMPLOYERS", href: "/employers" },
     { name: "PRICING", href: "/pricing" },
+  ];
+
+  const moreLinks = [
+    { name: "About Us", href: "/about" },
+    { name: "Our Team", href: "/team" },
+    { name: "Blogs", href: "/blogs" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Privacy Policy", href: "/privacy" },
   ];
 
   const isActive = (path: string) => location === path;
@@ -47,7 +68,6 @@ export default function Navbar() {
               alt="MySentry" 
               className={cn(
                 "h-14 w-auto transition-all duration-300 group-hover:scale-105",
-                // Logo logic: Keep original colors unless specifically needed otherwise
                 ""
               )} 
             />
@@ -55,14 +75,13 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-8 xl:gap-10">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
               className={cn(
                 "text-lg font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
-                // Logic for text color: Always dark text (foreground) to match other pages
                 "text-foreground",
                 isActive(link.href) ? "text-primary" : ""
               )}
@@ -74,6 +93,40 @@ export default function Navbar() {
               )} />
             </Link>
           ))}
+
+          {/* More Dropdown */}
+          <div className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setMoreOpen(!moreOpen)}
+              className={cn(
+                "flex items-center gap-1 text-lg font-bold tracking-widest transition-all hover:text-primary font-heading uppercase",
+                "text-foreground",
+                moreLinks.some(link => isActive(link.href)) ? "text-primary" : ""
+              )}
+            >
+              MORE <ChevronDown className={cn("w-4 h-4 transition-transform", moreOpen ? "rotate-180" : "")} />
+            </button>
+            
+            {moreOpen && (
+              <div className="absolute top-full right-0 mt-4 w-56 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+                <div className="py-2">
+                  {moreLinks.map((link) => (
+                    <Link 
+                      key={link.name}
+                      href={link.href}
+                      className={cn(
+                        "block px-6 py-3 text-base font-medium transition-colors hover:bg-gray-50 hover:text-primary",
+                        isActive(link.href) ? "text-primary bg-gray-50" : "text-gray-700"
+                      )}
+                      onClick={() => setMoreOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* CTA Button */}
@@ -82,7 +135,6 @@ export default function Navbar() {
             href="/pricing"
             className={cn(
               "inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-8 h-12 text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300",
-              // Button logic: Always primary (greenish) background with white text
               "bg-primary text-white hover:bg-primary/90"
             )}
           >
@@ -137,7 +189,25 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <div className="pt-8">
+            
+            <div className="border-t border-gray-100 pt-6">
+              <p className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">More</p>
+              {moreLinks.map((link) => (
+                <Link 
+                  key={link.name} 
+                  href={link.href}
+                  className={cn(
+                    "block text-2xl font-heading font-bold transition-colors hover:text-primary py-2",
+                    isActive(link.href) ? "text-primary" : "text-gray-600"
+                  )}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
+
+            <div className="pt-8 pb-12">
               <Link 
                 href="/pricing" 
                 className="inline-flex items-center justify-center w-full bg-primary text-white rounded-full h-14 text-lg font-bold uppercase tracking-wider" 

@@ -11,6 +11,11 @@ import Employers from "./pages/Employers";
 import Pricing from "./pages/Pricing";
 import HowItWorks from "./pages/HowItWorks";
 import Females from "./pages/Females";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Team from "./pages/Team";
+import Blogs from "./pages/Blogs";
+import Privacy from "./pages/Privacy";
 
 function Router() {
   return (
@@ -22,6 +27,14 @@ function Router() {
       <Route path="/families" component={Families} />
       <Route path="/employers" component={Employers} />
       <Route path="/pricing" component={Pricing} />
+      
+      {/* New Pages */}
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/team" component={Team} />
+      <Route path="/blogs" component={Blogs} />
+      <Route path="/privacy" component={Privacy} />
+
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

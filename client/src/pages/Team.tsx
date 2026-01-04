@@ -1,122 +1,136 @@
 import React from 'react';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
-import { Users, Linkedin, Mail } from 'lucide-react';
-import SEO from '../components/SEO';
+import { Linkedin } from 'lucide-react';
 
-const Team = () => {
+const teamMembers = [
+  {
+    name: "Qasim Mueen",
+    role: "Chief Executive Officer (CEO)",
+    bio: "Co-Founder & CEO of Zigron (Multi-million-dollar IT Services company) & FraudLens and DentaLens (Medical and Dental FWA Solutions) – acquired. Fmr. Partner Abode Systems (Smart Home Security sold to NICE S.P.A. for $50M). Co-Founder TransparentHands.org.",
+    image: "/images/team-hero.jpg", // Placeholder, ideally would be individual headshot
+    linkedin: "#"
+  },
+  {
+    name: "Kashif Mueen",
+    role: "Chief Technology Officer (CTO)",
+    bio: "Co-founder & CTO of Zigron and FraudLens, 25+ years experience in enterprise architecture, cloud, AI & ML and analytics. Former Partner and Tech Lead Abode Systems. Co-Founder of FraudLens, WhereverTV (IPTV) and TransparentHands.org.",
+    image: "/images/team-hero.jpg",
+    linkedin: "#"
+  },
+  {
+    name: "Andrew Caldwell",
+    role: "Chief Revenue Officer (CRO)",
+    bio: "CRO at Shmoop, with previous leadership roles as CEO of Invigulus, CRO at Proctorio, CEO of ProctorFree, and VP of Business Development at ProctorU. A seasoned executive with a track record of driving growth and innovation in the tech and education sectors.",
+    image: "/images/team-hero.jpg",
+    linkedin: "#"
+  },
+  {
+    name: "Peter Michel",
+    role: "Business Advisor",
+    bio: "Experienced senior executive and CEO with a track record in leading companies like ISECURETRAC, Brink's Home Security, and NEP Broadcasting. Board member, strategic advisor, and investing partner at NextGen Venture Partners. Former federal service in the White House and US Dept of HUD. Specializes in turnaround leadership and marketing.",
+    image: "/images/team-hero.jpg",
+    linkedin: "#"
+  },
+  {
+    name: "Muhammad Fayyaz",
+    role: "Product Lead",
+    bio: "Experienced in Agile methodologies and product development, specializing in bridging the gap between business objectives and technical execution. Skilled in leading cross-functional teams to build and enhance digital products that align with user needs and business goals.",
+    image: "/images/team-hero.jpg",
+    linkedin: "#"
+  },
+  {
+    name: "Saleha Usman",
+    role: "Product Marketing Lead",
+    bio: "Experienced in digital marketing with a background in social sciences and eCommerce, having worked on platforms such as Amazon. Represented Pakistan at the 2022 Clinton Global Initiative, connecting with global leaders to drive impactful marketing strategies.",
+    image: "/images/team-hero.jpg",
+    linkedin: "#"
+  }
+];
+
+export const Team = () => {
   return (
-    <div className="min-h-screen bg-background pt-24">
-      <SEO 
-        title="Our Team | MySentry" 
-        description="Meet the dedicated professionals behind MySentry, working tirelessly to redefine personal safety."
-      />
-
+    <div className="min-h-screen bg-[#e8f5e9] font-sans text-[#1a1a1a]">
+      <Navbar />
+      
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl font-bold text-primary mb-6"
-            >
-              The People Behind the Protection
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-muted-foreground leading-relaxed"
-            >
-              We are a diverse team of engineers, designers, and safety experts united by a single purpose: to empower you to live fearlessly.
-            </motion.p>
-          </div>
+      <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/images/team-hero.jpg" 
+            alt="MySentry Team" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4 text-center text-white">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-5xl md:text-7xl font-black mb-6 font-barlow uppercase tracking-wide"
+          >
+            The Right Team for a Safer Tomorrow
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-xl md:text-2xl max-w-3xl mx-auto font-light leading-relaxed"
+          >
+            At MySentry.ai, safety begins with empathy. Our team brings together innovators, AI experts, and wellness advocates driven by one shared purpose: to make safety and well-being accessible for everyone.
+          </motion.p>
         </div>
       </section>
 
-      {/* Team Grid */}
-      <section className="py-20">
+      {/* Team Grid Section */}
+      <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                name: "Founder Name",
-                role: "CEO & Founder",
-                bio: "Driven by a personal mission to make safety accessible to everyone, everywhere."
-              },
-              {
-                name: "CTO Name",
-                role: "Chief Technology Officer",
-                bio: "Architecting the intelligent systems that keep watch when you can't."
-              },
-              {
-                name: "Head of Safety",
-                role: "Director of Safety Operations",
-                bio: "Ensuring every alert is handled with speed, precision, and care."
-              },
-              {
-                name: "Lead Designer",
-                role: "Head of Product Design",
-                bio: "Crafting intuitive experiences that make safety feel natural, not burdensome."
-              },
-              {
-                name: "Medical Advisor",
-                role: "Chief Medical Officer",
-                bio: "Guiding our health monitoring features with clinical expertise."
-              },
-              {
-                name: "Customer Success",
-                role: "Head of Customer Experience",
-                bio: "Dedicated to supporting our community at every step of their journey."
-              }
-            ].map((member, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card rounded-2xl overflow-hidden shadow-lg border border-border/50 hover:border-primary/50 transition-all group"
-              >
-                <div className="h-64 bg-muted relative overflow-hidden">
-                  <div className="absolute inset-0 bg-primary/10 flex items-center justify-center text-primary/40 group-hover:bg-primary/20 transition-colors">
-                    <Users className="w-24 h-24" />
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-20">
+              <h2 className="text-4xl font-bold mb-6 font-barlow uppercase text-[#004F7B]">Leadership: Vision with Heart</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Our leaders drive MySentry’s mission forward, building technology that protects, empowers, and connects.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+              {teamMembers.map((member, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group"
+                >
+                  <div className="relative overflow-hidden rounded-2xl mb-6 aspect-[4/5] shadow-lg">
+                    <img 
+                      src={member.image} 
+                      alt={member.name} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                      <a href={member.linkedin} className="text-white hover:text-[#6AD990] transition-colors">
+                        <Linkedin className="w-6 h-6" />
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-1">{member.name}</h3>
-                  <p className="text-primary text-sm font-medium mb-3">{member.role}</p>
-                  <p className="text-muted-foreground text-sm mb-4">
+                  
+                  <h3 className="text-2xl font-bold text-[#1a1a1a] mb-1">{member.name}</h3>
+                  <p className="text-[#004F7B] font-bold uppercase text-sm tracking-wider mb-4">{member.role}</p>
+                  <p className="text-gray-600 leading-relaxed text-sm">
                     {member.bio}
                   </p>
-                  <div className="flex gap-3">
-                    <button className="p-2 rounded-full bg-secondary hover:bg-primary/10 text-primary transition-colors">
-                      <Linkedin className="w-4 h-4" />
-                    </button>
-                    <button className="p-2 rounded-full bg-secondary hover:bg-primary/10 text-primary transition-colors">
-                      <Mail className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Join Us CTA */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-primary mb-6">Join Our Team</h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            We're always looking for passionate individuals who want to make a real difference in people's lives. If you're ready to build the future of safety, we want to hear from you.
-          </p>
-          <button className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg">
-            View Open Positions
-          </button>
-        </div>
-      </section>
+      <Footer />
     </div>
   );
 };

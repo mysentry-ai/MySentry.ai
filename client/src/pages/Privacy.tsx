@@ -1,86 +1,84 @@
 import React from 'react';
-import SEO from '../components/SEO';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
-const Privacy = () => {
+export const Privacy = () => {
   return (
-    <div className="min-h-screen bg-background pt-24">
-      <SEO 
-        title="Privacy Policy | MySentry" 
-        description="Read our Privacy Policy to understand how MySentry collects, uses, and protects your personal information."
-      />
-
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
-        <h1 className="text-4xl font-bold text-primary mb-8">Privacy Policy</h1>
+    <div className="min-h-screen bg-[#f8fafc] font-sans text-[#1a1a1a]">
+      <Navbar />
+      
+      <div className="container mx-auto px-4 py-24 max-w-4xl">
+        <h1 className="text-4xl md:text-5xl font-black mb-4 font-barlow uppercase text-[#004F7B]">Privacy Policy</h1>
+        <p className="text-gray-500 mb-12">Last Updated: January 4, 2026</p>
         
-        <div className="prose prose-lg dark:prose-invert max-w-none">
-          <p className="lead text-xl text-muted-foreground mb-8">
-            At MySentry.ai, our dedication to user privacy and security is paramount. In this Privacy Policy, we explain the types of personal information that may be collected through the MySentry app (referred to as "the App"), how this information might be used and shared, and the choices available to users with respect to their personal information.
+        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:text-[#004F7B] prose-a:text-[#386758]">
+          
+          <p>
+            At MySentry.ai ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
           </p>
 
-          <h2 className="text-2xl font-bold text-foreground mt-12 mb-6">Collection of User Information</h2>
-          <p className="text-muted-foreground mb-4">In the course of app usage, we gather various types of personal data from users, including:</p>
-          <ul className="list-disc pl-6 space-y-4 text-muted-foreground mb-8">
-            <li>
-              <strong className="text-foreground">User-Provided Information:</strong> When users register for an account, create a profile, or engage with specific features of the App, they may voluntarily give us personal information. This can encompass details like their name, email address, phone number, location information, emergency contacts, and other relevant data.
-            </li>
-            <li>
-              <strong className="text-foreground">Automated Data Collection:</strong> When users access or use the App, certain information is automatically gathered. This includes device specifics (like type of device, operating system, and unique identifiers), log details (such as IP address, app usage statistics, and crash reports), and location data (obtained through GPS or other methods).
-            </li>
-            <li>
-              <strong className="text-foreground">Usage of Cookies and Related Technologies:</strong> To gather information about how users interact with the App, enhance their experience, and assess usage patterns, we employ cookies, beacons, and similar technologies. Users have the option to disable cookies via their device settings, though doing so may impact the App's functionality.
-            </li>
-          </ul>
-
-          <h2 className="text-2xl font-bold text-foreground mt-12 mb-6">Utilization of Collected Information</h2>
-          <p className="text-muted-foreground mb-4">The information we collect from users is utilized for various purposes, including:</p>
-          <ul className="list-disc pl-6 space-y-4 text-muted-foreground mb-8">
-            <li>
-              <strong className="text-foreground">Enhancing App Services:</strong> We use the data to provide and refine the App's services, such as personalized safety features, location sharing capabilities, and emergency response services.
-            </li>
-            <li>
-              <strong className="text-foreground">User Communication:</strong> We communicate with users about their accounts, updates to the App, promotional offers, and other relevant information pertaining to the App.
-            </li>
-            <li>
-              <strong className="text-foreground">Analysis and Improvement:</strong> The information aids in analyzing app usage trends and user preferences, which helps in enhancing the App's functionality, performance, and overall user experience.
-            </li>
-            <li>
-              <strong className="text-foreground">Legal and Security Compliance:</strong> We use the information to adhere to legal requirements, enforce our terms of use, and safeguard the rights, safety, and security of MySentry, its users, and the public.
-            </li>
-          </ul>
-
-          <h2 className="text-2xl font-bold text-foreground mt-12 mb-6">Sharing of Information</h2>
-          <p className="text-muted-foreground mb-4">We might share personal information of users with these entities:</p>
-          <ul className="list-disc pl-6 space-y-4 text-muted-foreground mb-8">
-            <li>
-              <strong className="text-foreground">Third-Party Service Providers:</strong> We collaborate with external service providers who help us deliver the App's services. This may include sharing personal information for purposes such as hosting, data analysis, customer support, and other relevant functions.
-            </li>
-            <li>
-              <strong className="text-foreground">Emergency responders:</strong> In emergency situations, we may disclose users' location and pertinent details to emergency response teams. This includes law enforcement, medical staff, or other authorized individuals, as needed to offer assistance and guarantee the safety of our users.
-            </li>
-            <li>
-              <strong className="text-foreground">Compliance with Legal Requests:</strong> We may provide personal information to law enforcement, governmental bodies, or other authorized organizations in response to legal demands, such as court orders, or to adhere to relevant laws and regulations.
-            </li>
-          </ul>
-
-          <h2 className="text-2xl font-bold text-foreground mt-12 mb-6">Permission to Access Contacts</h2>
-          <div className="bg-secondary/30 p-6 rounded-xl mb-8">
-            <p className="text-muted-foreground mb-4">
-              MySentry Vital Companion requires access to your contact list to allow you to designate emergency contacts who can be alerted in case of an emergency. When you grant permission, we upload your contact list to our secure servers.
-            </p>
-            <p className="text-muted-foreground mb-4">
-              This allows the app to quickly identify and notify your chosen emergency contacts. Your contact information is used solely for this purpose: identifying and contacting your designated emergency contacts in an emergency situation initiated by you.
-            </p>
-            <p className="text-muted-foreground">
-              We do not share your contact information with any third parties, and we retain this data only as long as you use the app and maintain your list of emergency contacts. You can remove your consent and delete your contact information from our servers at any time within the app settings.
-            </p>
-          </div>
-
-          <h2 className="text-2xl font-bold text-foreground mt-12 mb-6">Contact Us</h2>
-          <p className="text-muted-foreground mb-8">
-            For inquiries, concerns, or requests related to this Privacy Policy or the privacy practices of the MySentry App, users can reach us at <a href="mailto:support@mysentry.ai" className="text-primary hover:underline">support@mysentry.ai</a>.
+          <h3>1. Information We Collect</h3>
+          <p>
+            We collect information that you provide directly to us, such as when you create an account, subscribe to our newsletter, or contact us for support. This may include:
           </p>
+          <ul>
+            <li>Personal identification information (Name, email address, phone number, etc.)</li>
+            <li>Health and safety data necessary for our monitoring services (only with your explicit consent)</li>
+            <li>Location data for emergency response services</li>
+            <li>Payment information for subscription services</li>
+          </ul>
+
+          <h3>2. How We Use Your Information</h3>
+          <p>
+            We use the information we collect to:
+          </p>
+          <ul>
+            <li>Provide, operate, and maintain our services</li>
+            <li>Improve, personalize, and expand our website and app</li>
+            <li>Understand and analyze how you use our services</li>
+            <li>Develop new products, services, features, and functionality</li>
+            <li>Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes</li>
+            <li>Process your transactions and manage your orders</li>
+            <li>Send you emails</li>
+            <li>Find and prevent fraud</li>
+          </ul>
+
+          <h3>3. Sharing Your Information</h3>
+          <p>
+            We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information unless we provide users with advance notice. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or serving our users, so long as those parties agree to keep this information confidential. We may also release information when it's release is appropriate to comply with the law, enforce our site policies, or protect ours or others' rights, property or safety.
+          </p>
+          <p>
+            <strong>Emergency Situations:</strong> In the event of an emergency detected by our system, we may share your location and relevant health information with emergency responders and your designated emergency contacts to facilitate immediate assistance.
+          </p>
+
+          <h3>4. Data Security</h3>
+          <p>
+            We implement a variety of security measures to maintain the safety of your personal information when you place an order or enter, submit, or access your personal information. We use encryption technology to protect sensitive information transmitted online. We also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information.
+          </p>
+
+          <h3>5. Your Rights</h3>
+          <p>
+            You have the right to access, correct, or delete your personal information. You may also object to the processing of your personal data, request restriction of processing, and request data portability. To exercise these rights, please contact us at <a href="mailto:support@MySentry.ai">support@MySentry.ai</a>.
+          </p>
+
+          <h3>6. Changes to This Privacy Policy</h3>
+          <p>
+            We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+          </p>
+
+          <h3>7. Contact Us</h3>
+          <p>
+            If you have any questions about this Privacy Policy, please contact us:
+          </p>
+          <ul>
+            <li>By email: <a href="mailto:support@MySentry.ai">support@MySentry.ai</a></li>
+            <li>By phone: +1 (614) 361-5073</li>
+          </ul>
+
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
