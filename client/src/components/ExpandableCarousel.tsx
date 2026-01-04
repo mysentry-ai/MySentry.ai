@@ -207,11 +207,11 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
 
                       {item.link && (
                         <button 
-                          className="bg-white hover:bg-gray-100 rounded-full px-8 py-3 font-bold uppercase tracking-wider text-black !text-black flex items-center gap-2 transition-colors mt-4"
+                          className="bg-primary hover:bg-primary/90 rounded-full px-8 py-3 font-bold uppercase tracking-wider text-white !text-white flex items-center gap-2 transition-colors mt-4"
                           onClick={(e) => handleLinkClick(e, item.link!)}
                         >
-                          <span className="text-black !text-black font-bold">{item.ctaText || "Learn More"}</span>
-                          <ArrowRight className="ml-2 w-4 h-4 text-black !text-black" />
+                          <span className="text-white !text-white font-bold">{item.ctaText || "Learn More"}</span>
+                          <ArrowRight className="ml-2 w-4 h-4 text-white !text-white" />
                         </button>
                       )}
                     </motion.div>
