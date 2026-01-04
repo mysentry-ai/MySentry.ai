@@ -209,7 +209,7 @@ export default function HowItWorksDemo() {
                 {currentSteps.map((step, index) => (
                   <div 
                     key={index}
-                    className={`flex items-start gap-6 p-6 rounded-3xl transition-all duration-500 ${
+                    className={`flex flex-col sm:flex-row items-start gap-4 sm:gap-6 p-6 rounded-3xl transition-all duration-500 ${
                       activeStep === index 
                         ? "bg-white shadow-lg border border-gray-100 transform scale-100 z-10" 
                         : "opacity-40 scale-95"
@@ -218,11 +218,11 @@ export default function HowItWorksDemo() {
                     <div className={`p-4 rounded-2xl ${step.bgColor} shrink-0`}>
                       <step.icon className={`h-8 w-8 ${step.color}`} />
                     </div>
-                    <div>
-                      <h4 className={`font-bold text-xl mb-2 ${activeStep === index ? "text-[#1a1a1a]" : "text-gray-500"}`}>
+                    <div className="w-full min-w-0">
+                      <h4 className={`font-bold text-xl mb-2 break-words ${activeStep === index ? "text-[#1a1a1a]" : "text-gray-500"}`}>
                         {step.title}
                       </h4>
-                      <p className="text-base text-gray-600 leading-relaxed">
+                      <p className="text-base text-gray-600 leading-relaxed break-words">
                         {step.description}
                       </p>
                     </div>
