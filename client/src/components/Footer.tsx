@@ -8,10 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <Link href="/">
-              <a className="flex items-center gap-2">
-                <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
-              </a>
+            <Link href="/" className="flex items-center gap-2">
+              <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
             </Link>
             <p className="text-base text-foreground leading-relaxed font-medium">
               24/7 Safety and Health Monitoring for everyone with Emergency Response.
@@ -37,18 +35,18 @@ export default function Footer() {
             <h3 className="font-bold text-lg text-foreground mb-4 uppercase tracking-wide">Solutions</h3>
             <ul className="space-y-3 text-base font-medium">
               <li>
-                <Link href="/seniors">
-                  <a className="text-foreground hover:text-primary transition-colors">For Seniors</a>
+                <Link href="/seniors" className="text-foreground hover:text-primary transition-colors">
+                  For Seniors
                 </Link>
               </li>
               <li>
-                <Link href="/families">
-                  <a className="text-foreground hover:text-primary transition-colors">For Families</a>
+                <Link href="/families" className="text-foreground hover:text-primary transition-colors">
+                  For Families
                 </Link>
               </li>
               <li>
-                <Link href="/employers">
-                  <a className="text-foreground hover:text-primary transition-colors">For Employers</a>
+                <Link href="/employers" className="text-foreground hover:text-primary transition-colors">
+                  For Employers
                 </Link>
               </li>
             </ul>
@@ -59,33 +57,33 @@ export default function Footer() {
             <h3 className="font-bold text-lg text-foreground mb-4 uppercase tracking-wide">Company</h3>
             <ul className="space-y-3 text-base font-medium">
               <li>
-                <Link href="/about">
-                  <a className="text-foreground hover:text-primary transition-colors">About Us</a>
+                <Link href="/about" className="text-foreground hover:text-primary transition-colors">
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="/team">
-                  <a className="text-foreground hover:text-primary transition-colors">Our Team</a>
+                <Link href="/team" className="text-foreground hover:text-primary transition-colors">
+                  Our Team
                 </Link>
               </li>
               <li>
-                <Link href="/partners">
-                  <a className="text-foreground hover:text-primary transition-colors">Partners</a>
+                <Link href="/partners" className="text-foreground hover:text-primary transition-colors">
+                  Partners
                 </Link>
               </li>
               <li>
-                <Link href="/blogs">
-                  <a className="text-foreground hover:text-primary transition-colors">Blog</a>
+                <Link href="/blogs" className="text-foreground hover:text-primary transition-colors">
+                  Blog
                 </Link>
               </li>
               <li>
-                <Link href="/contact">
-                  <a className="text-foreground hover:text-primary transition-colors">Contact Us</a>
+                <Link href="/contact" className="text-foreground hover:text-primary transition-colors">
+                  Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/privacy">
-                  <a className="text-foreground hover:text-primary transition-colors">Privacy Policy</a>
+                <Link href="/privacy" className="text-foreground hover:text-primary transition-colors">
+                  Privacy Policy
                 </Link>
               </li>
             </ul>
