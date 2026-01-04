@@ -42,8 +42,8 @@ export default function Pricing() {
     employerDiscount = 0.35;
   }
 
-  const employerMonthlyPrice = baseEmployerMonthlyRate * employeeCount * (1 - employerDiscount);
-  const employerAnnualPrice = baseEmployerYearlyRate * 12 * employeeCount * (1 - employerDiscount);
+  const currentEmployerRate = isAnnual ? baseEmployerYearlyRate : baseEmployerMonthlyRate;
+  const employerTotalPrice = currentEmployerRate * employeeCount * (1 - employerDiscount);
 
   const consumerPlans = [
 
@@ -73,7 +73,7 @@ export default function Pricing() {
     },
     {
       id: "advanced",
-      name: "Predictive Care",
+      name: "Longevity & Wellness",
       tagline: "Prevention Through Prediction",
       price: null,
       annualPrice: null,
@@ -120,7 +120,7 @@ export default function Pricing() {
     },
     {
       id: "employer-advanced",
-      name: "Predictive Care for Employees",
+      name: "Longevity & Wellness for Employees",
       tagline: "Prevention + Prediction",
       description: "Advanced predictive health for enterprise workforce management.",
       cta: "BOOK A DEMO",
@@ -393,16 +393,16 @@ export default function Pricing() {
                     ) : (
                       <>
                         <span className="text-5xl font-bold text-[#1a1a1a]">
-                          ${(employerMonthlyPrice / employeeCount).toFixed(2)}
+                          ${(employerTotalPrice / employeeCount).toFixed(2)}
                         </span>
-                        <span className="text-gray-500 font-medium">/user/mo</span>
+                        <span className="text-gray-500 font-medium">/family/mo</span>
                       </>
                     )}
                   </div>
                   
                   {!plan.comingSoon && (
                     <p className="text-sm text-gray-500 font-medium">
-                      Total: ${(employerMonthlyPrice).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}/mo
+                      Total: ${employerTotalPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}/mo
                     </p>
                   )}
                   
