@@ -31,9 +31,8 @@ export default function Pricing() {
   const currentAnnualTotal = isFamily ? familyAnnualTotal : individualAnnualTotal;
 
   // Calculate employer plan price (Based on Family rates)
-  // Base: $24.99/mo (Monthly) or $19.99/mo (Yearly) per employee family
-  const baseEmployerMonthlyRate = 24.99;
-  const baseEmployerYearlyRate = 19.99;
+  // Complete: $24.99/mo (Monthly) or $19.99/mo (Yearly)
+  // Longevity: $49.99/mo (Monthly) or $39.99/mo (Yearly)
   
   let employerDiscount = 0;
   if (employeeCount >= 5000) {
@@ -42,8 +41,13 @@ export default function Pricing() {
     employerDiscount = 0.35;
   }
 
-  const currentEmployerRate = isAnnual ? baseEmployerYearlyRate : baseEmployerMonthlyRate;
-  const employerTotalPrice = currentEmployerRate * employeeCount * (1 - employerDiscount);
+  const discountMultiplier = 1 - employerDiscount;
+
+  const completeBaseRate = isAnnual ? 19.99 : 24.99;
+  const longevityBaseRate = isAnnual ? 39.99 : 49.99;
+
+  const completeTotalPrice = completeBaseRate * employeeCount * discountMultiplier;
+  const longevityTotalPrice = longevityBaseRate * employeeCount * discountMultiplier;
 
   const consumerPlans = [
     {
@@ -104,6 +108,7 @@ export default function Pricing() {
       cta: "BOOK A DEMO",
       highlighted: true,
       comingSoon: false,
+      totalPrice: completeTotalPrice,
       features: [
         { name: "All Essential Safety Features", included: true },
         { name: "Unlimited Team Members", included: true },
@@ -125,6 +130,7 @@ export default function Pricing() {
       cta: "BOOK A DEMO",
       highlighted: false,
       comingSoon: true,
+      totalPrice: longevityTotalPrice,
       features: [
         { name: "All Complete Protection Features", included: true },
         { name: "Labs Integration", included: true },
@@ -379,13 +385,13 @@ export default function Pricing() {
                   
                   <div className="flex items-baseline gap-1 mb-2">
                     <span className="text-5xl font-bold text-[#1a1a1a]">
-                      ${(employerTotalPrice / employeeCount).toFixed(2)}
+                      ${(plan.totalPrice / employeeCount).toFixed(2)}
                     </span>
                     <span className="text-gray-500 font-medium">/family/mo</span>
                   </div>
                   
                   <p className="text-sm text-green-600 font-medium mb-4">
-                    Total: ${employerTotalPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {isAnnual ? 'yearly' : 'monthly'}
+                    Total: ${plan.totalPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {isAnnual ? 'yearly' : 'monthly'}
                   </p>
                   
                   <p className="mt-4 text-gray-600 leading-relaxed">{plan.description}</p>
