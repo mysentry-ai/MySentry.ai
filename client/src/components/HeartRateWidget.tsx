@@ -42,15 +42,15 @@ export default function HeartRateWidget() {
   };
 
   return (
-    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-red-100 w-full max-w-xs">
+    <div className="bg-[#e8f5e9] backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-green-200 w-full max-w-xs">
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
           <div className="p-2 bg-red-100 rounded-full">
             <Heart className="w-4 h-4 text-red-600 fill-red-600 animate-pulse" />
           </div>
-          <span className="text-sm font-bold text-black">Live Heart Rate</span>
+          <span className="text-sm font-bold text-[#1a1a1a]">Live Heart Rate</span>
         </div>
-        <span className="text-2xl font-mono font-bold text-black">{heartRate} <span className="text-xs text-gray-600 font-sans font-bold">BPM</span></span>
+        <span className="text-2xl font-mono font-bold text-[#1a1a1a]">{heartRate} <span className="text-xs text-[#1a1a1a]/70 font-sans font-bold">BPM</span></span>
       </div>
       
       <div className="relative h-12 w-full overflow-hidden">
@@ -78,7 +78,7 @@ export default function HeartRateWidget() {
         </svg>
       </div>
       
-      <div className="flex justify-between mt-2 text-[10px] text-gray-500 font-bold uppercase tracking-wider">
+      <div className="flex justify-between mt-2 text-[10px] text-[#1a1a1a]/70 font-bold uppercase tracking-wider">
         <span>Resting</span>
         <span>Active</span>
       </div>
