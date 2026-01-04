@@ -74,7 +74,8 @@ export const Partner = () => {
             alt="MySentry Partner Network" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
+          {/* Darker overlay for better text visibility */}
+          <div className="absolute inset-0 bg-black/60" />
         </div>
         
         <div className="relative z-10 container mx-auto px-4">
