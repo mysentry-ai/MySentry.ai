@@ -146,7 +146,7 @@ export default function ActivationSteps() {
       {
         step: "02",
         title: "Company Setup",
-        description: "Streamlined onboarding for your business.",
+        description: "Streamlined onboarding employees.",
         icon: Mail,
         details: [
           "Enter company & billing details",
