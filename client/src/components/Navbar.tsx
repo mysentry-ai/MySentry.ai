@@ -83,7 +83,7 @@ export default function Navbar() {
               href={link.href}
               className={cn(
                 "text-lg font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
-                scrolled ? "text-foreground" : "text-foreground lg:text-white",
+                scrolled ? "text-black" : "text-black lg:text-white",
                 isActive(link.href) ? "text-primary" : ""
               )}
             >
@@ -101,7 +101,7 @@ export default function Navbar() {
               onClick={() => setMoreOpen(!moreOpen)}
               className={cn(
                 "flex items-center gap-1 text-lg font-bold tracking-widest transition-all hover:text-primary font-heading uppercase",
-                scrolled ? "text-foreground" : "text-foreground lg:text-white",
+                scrolled ? "text-black" : "text-black lg:text-white",
                 moreLinks.some(link => isActive(link.href)) ? "text-primary" : ""
               )}
             >
