@@ -31,7 +31,7 @@ const testimonials: Testimonial[] = [
     quote: "It detected my irregular heart rate before I even felt it.",
     fullStory: "During a long training run, my watch alerted me to an unusually high heart rate. I stopped, and within minutes, I felt dizzy. MySentry's health monitoring potentially saved me from a serious cardiac event. I never run without it now.",
     image: "https://images.unsplash.com/photo-1452626038306-9aae5e071dd3?q=80&w=2674&auto=format&fit=crop",
-    video: "https://videos.pexels.com/video-files/4761603/4761603-sd_640_360_25fps.mp4",
+    video: "/videos/marathon-runner-safety.mp4",
     type: "video"
   },
   {
