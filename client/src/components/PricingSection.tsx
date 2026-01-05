@@ -9,11 +9,11 @@ export default function PricingSection() {
   const [employeeCount, setEmployeeCount] = useState(50);
 
   // Pricing Constants
-  const individualMonthly = 12.49;
-  const individualYearlyRate = 9.99;
+  const individualMonthly = 24.99;
+  const individualYearlyRate = 19.99;
   
-  const familyMonthly = 24.99;
-  const familyYearlyRate = 19.99;
+  const familyMonthly = 49.99;
+  const familyYearlyRate = 39.99;
 
   // Employer Pricing Logic
   const baseEmployerMonthlyRate = 24.99;

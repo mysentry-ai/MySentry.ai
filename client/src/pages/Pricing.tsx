@@ -18,12 +18,12 @@ export default function Pricing() {
   // Individual: $12.49/mo (Monthly) or $9.99/mo (Yearly)
   // Family (up to 6): $24.99/mo (Monthly) or $19.99/mo (Yearly)
   
-  const individualMonthly = 12.49;
-  const individualYearlyRate = 9.99;
+  const individualMonthly = 24.99;
+  const individualYearlyRate = 19.99;
   const individualAnnualTotal = individualYearlyRate * 12;
 
-  const familyMonthly = 24.99;
-  const familyYearlyRate = 19.99;
+  const familyMonthly = 49.99;
+  const familyYearlyRate = 39.99;
   const familyAnnualTotal = familyYearlyRate * 12;
 
   const currentMonthlyPrice = isFamily ? familyMonthly : individualMonthly;
@@ -54,8 +54,8 @@ export default function Pricing() {
       id: "complete",
       name: "Essential Safety",
       tagline: "Safety + Health + Monitoring",
-      price: 12.49,
-      annualPrice: 119.88,
+      price: 24.99,
+      annualPrice: 239.88,
       description: "Full protection with health monitoring and 24/7 agents.",
       cta: "START 7-DAY FREE TRIAL",
       highlighted: true,
