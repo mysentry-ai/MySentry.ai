@@ -284,7 +284,7 @@ export default function Pricing() {
                     {plan.price !== null ? (
                       <>
                         <span className="text-5xl font-bold text-[#1a1a1a]">
-                          ${isAnnual ? currentYearlyRate : currentMonthlyPrice}
+                          ${isAnnual ? (plan.id === "advanced" ? longevityYearlyRate : currentYearlyRate) : plan.price}
                         </span>
                         <span className="text-gray-500 font-medium">/mo</span>
                       </>
@@ -295,7 +295,7 @@ export default function Pricing() {
                   
                   {plan.price !== null && isAnnual && (
                     <p className="text-sm text-green-600 font-medium">
-                      Billed ${currentAnnualTotal.toFixed(2)} yearly
+                      Billed ${plan.annualPrice.toFixed(2)} yearly
                     </p>
                   )}
                   
