@@ -30,6 +30,13 @@ export default function Pricing() {
   const currentYearlyRate = isFamily ? familyYearlyRate : individualYearlyRate;
   const currentAnnualTotal = isFamily ? familyAnnualTotal : individualAnnualTotal;
 
+  // Longevity Plan Pricing (Double the Essential Safety Plan)
+  // Individual: $24.99/mo (Monthly) or $19.99/mo (Yearly)
+  // Family: $49.99/mo (Monthly) or $39.99/mo (Yearly)
+  const longevityMonthly = isFamily ? 49.99 : 24.99;
+  const longevityYearlyRate = isFamily ? 39.99 : 19.99;
+  const longevityAnnualTotal = longevityYearlyRate * 12;
+
   // Calculate employer plan price (Based on Family rates)
   // Complete: $24.99/mo (Monthly) or $19.99/mo (Yearly)
   // Longevity: $49.99/mo (Monthly) or $39.99/mo (Yearly)
@@ -54,8 +61,8 @@ export default function Pricing() {
       id: "complete",
       name: "Essential Safety",
       tagline: "Safety + Health + Monitoring",
-      price: 12.49,
-      annualPrice: 119.88,
+      price: currentMonthlyPrice,
+      annualPrice: currentAnnualTotal,
       description: "Full protection with health monitoring and 24/7 agents.",
       cta: "START 7-DAY FREE TRIAL",
       highlighted: true,
@@ -78,8 +85,8 @@ export default function Pricing() {
       id: "advanced",
       name: "Longevity & Wellness",
       tagline: "Prevention Through Prediction",
-      price: isFamily ? 49.98 : 24.98,
-      annualPrice: isFamily ? 479.76 : 239.76,
+      price: longevityMonthly,
+      annualPrice: longevityAnnualTotal,
       description: "Advanced health insights with predictive analytics.",
       cta: "START 7-DAY FREE TRIAL",
       highlighted: false,
