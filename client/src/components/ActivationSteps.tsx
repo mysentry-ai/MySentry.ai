@@ -275,9 +275,9 @@ export default function ActivationSteps() {
             <p className="text-blue-800/80 mb-4">
               We ensure you're fully protected. If you haven't activated within 3 days, we'll reach out with a care call and "how-to" guide.
             </p>
-            <div className="flex gap-2 text-sm font-bold text-blue-700">
-              <span className="bg-white/50 px-3 py-1 rounded-full">T+3 Care Call</span>
-              <span className="bg-white/50 px-3 py-1 rounded-full">T+7 Feedback</span>
+            <div className="flex flex-wrap gap-2 text-sm font-bold text-blue-700">
+              <span className="bg-white/50 px-3 py-1 rounded-full">Day 3 Care Call</span>
+              <span className="bg-white/50 px-3 py-1 rounded-full">Day 7 Feedback</span>
             </div>
           </div>
 
@@ -291,9 +291,9 @@ export default function ActivationSteps() {
             <p className="text-green-800/80 mb-4">
               No surprises. We send renewal notices well in advance so you always know the status of your protection.
             </p>
-            <div className="flex gap-2 text-sm font-bold text-green-700">
-              <span className="bg-white/50 px-3 py-1 rounded-full">T-10 Monthly Notice</span>
-              <span className="bg-white/50 px-3 py-1 rounded-full">T-30 Yearly Notice</span>
+            <div className="flex flex-wrap gap-2 text-sm font-bold text-green-700">
+              <span className="bg-white/50 px-3 py-1 rounded-full">10 Days Before Renewal</span>
+              <span className="bg-white/50 px-3 py-1 rounded-full">30 Days Before Renewal</span>
             </div>
           </div>
         </div>
