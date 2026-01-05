@@ -10,6 +10,7 @@ export default function Navbar() {
   const [moreOpen, setMoreOpen] = useState(false);
   const [location] = useLocation();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const isHome = location === "/";
 
   // Handle scroll effect for transparent to solid transition
   useEffect(() => {
@@ -55,7 +56,7 @@ export default function Navbar() {
     <nav 
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300 border-b",
-        scrolled 
+        (scrolled || !isHome)
           ? "bg-white/95 backdrop-blur-md border-gray-200 py-3 shadow-sm" 
           : "bg-white/95 backdrop-blur-md border-gray-200 py-3 shadow-sm lg:bg-transparent lg:border-transparent lg:py-6"
       )}
@@ -83,7 +84,7 @@ export default function Navbar() {
               href={link.href}
               className={cn(
                 "text-lg font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
-                scrolled ? "text-black" : "text-black lg:text-white",
+                (scrolled || !isHome) ? "text-black" : "text-black lg:text-white",
                 isActive(link.href) ? "text-primary" : ""
               )}
             >
@@ -101,7 +102,7 @@ export default function Navbar() {
               onClick={() => setMoreOpen(!moreOpen)}
               className={cn(
                 "flex items-center gap-1 text-lg font-bold tracking-widest transition-all hover:text-primary font-heading uppercase",
-                scrolled ? "text-black" : "text-black lg:text-white",
+                (scrolled || !isHome) ? "text-black" : "text-black lg:text-white",
                 moreLinks.some(link => isActive(link.href)) ? "text-primary" : ""
               )}
             >
