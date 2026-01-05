@@ -82,7 +82,7 @@ const TeamSection = ({ title, subtitle, members, bgColor = "bg-white" }: { title
                   alt={member.name} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                   <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-white hover:text-[#4ADE80] transition-colors">
                     <Linkedin className="w-6 h-6" />
                   </a>
