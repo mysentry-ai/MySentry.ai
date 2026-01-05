@@ -169,7 +169,7 @@ export const Contact = () => {
                     <h3 className="text-2xl font-bold mb-2 text-[#1a1a1a] font-barlow uppercase">Headquarters</h3>
                     <p className="text-gray-600 text-lg">
                       MySentry.ai<br />
-                      Columbus, Ohio, USA
+                      Alexandria, Virginia, USA
                     </p>
                   </div>
                 </div>
