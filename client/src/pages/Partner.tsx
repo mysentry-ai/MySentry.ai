@@ -175,49 +175,41 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
       
-      {/* Hero Section */}
-      <section className="relative h-[70vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+      {/* Hero Section - Standardized */}
+      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/partner-hero.jpg" 
             alt="MySentry Partner Network" 
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
-          {/* Darker overlay for better text visibility */}
-          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
         </div>
         
-        <div className="relative z-10 container mx-auto px-4">
-          <div className="max-w-3xl">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-5xl md:text-7xl font-black mb-6 font-barlow uppercase tracking-wide text-white leading-tight"
-            >
-              Join the <span className="text-[#4ADE80]">Dealer Network</span>
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-white mb-8 font-light leading-relaxed"
-            >
+        <div className="relative z-20 container mx-auto px-4">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-4xl"
+          >
+            <span className="text-[#004F7B] font-bold tracking-widest uppercase text-sm mb-4 block">
+              Partner Program
+            </span>
+            <h1 className="text-6xl md:text-8xl font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+              Join the <br/><span className="text-[#004F7B]">Dealer Network</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
               Expand your business with the world's first AI-powered personal assistant for employee safety, security, and wellness.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+            </p>
+            <Button 
+              size="lg"
+              className="bg-[#004F7B] text-white hover:bg-[#003d60] font-bold uppercase tracking-wider text-lg h-14 px-8 rounded-full shadow-lg hover:shadow-xl transition-all"
+              onClick={() => document.getElementById('partner-form')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <Button 
-                size="lg"
-                className="bg-[#4ADE80] text-[#022c22] hover:bg-[#22c55e] font-bold uppercase tracking-wider text-lg h-14 px-8 rounded-full"
-                onClick={() => document.getElementById('partner-form')?.scrollIntoView({ behavior: 'smooth' })}
-              >
-                Become a Partner
-              </Button>
-            </motion.div>
-          </div>
+              Become a Partner
+            </Button>
+          </motion.div>
         </div>
       </section>
 
