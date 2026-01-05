@@ -67,7 +67,7 @@ export default function PricingSection() {
       price: `$${employerPricePerUser.toFixed(2)}`,
       period: "/user/mo",
       billing: isAnnual ? "Billed annually" : "Billed monthly",
-      description: "Complete Protection for Employees\nEmployee Safety & Health",
+      description: "Essential Safety for Employees\nEmployee Safety & Health",
       features: [
         "Centralized Admin Dashboard",
         "Employee Safety Reports",
