@@ -102,7 +102,7 @@ export default function Pricing() {
   const employerPlans = [
     {
       id: "employer-complete",
-      name: "Complete Protection for Employees",
+      name: "Essential Safety for Employees",
       tagline: "Employee Safety & Health Monitoring",
       description: "Protect your workforce with comprehensive safety and health monitoring.",
       cta: "BOOK A DEMO",
