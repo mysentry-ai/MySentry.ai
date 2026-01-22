@@ -12,7 +12,7 @@ export const Privacy = () => {
       <section className="relative min-h-[60vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/privacy-hero.jpg" 
+            src="/images/smartwatches-display.jpg" 
             alt="Privacy Policy" 
             className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
