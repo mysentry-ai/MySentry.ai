@@ -87,7 +87,7 @@ export const Blogs = () => {
             <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
               Safety Insights
             </span>
-            <h1 className="text-[36px] md:text-[45px] font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+            <h1 className="text-[36px] md:text-[45px] font-normal mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
               Latest News<br/>
               <span className="text-gray-600">& Articles.</span>
             </h1>

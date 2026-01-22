@@ -128,7 +128,7 @@ export const Team = () => {
             <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
               Our Team
             </span>
-            <h1 className="text-[55px] font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+            <h1 className="text-[55px] font-normal mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
               The Right Team<br/>
               <span className="text-gray-600">For A Safer Tomorrow.</span>
             </h1>
