@@ -111,7 +111,7 @@ export const Contact = () => {
             <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
               Contact Us
             </span>
-            <h1 className="text-6xl md:text-8xl font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+            <h1 className="text-[55px] font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
               We're Here<br/>
               <span className="text-gray-600">To Help.</span>
             </h1>

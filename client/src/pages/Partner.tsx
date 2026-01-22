@@ -196,7 +196,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
             <span className="text-[#004F7B] font-bold tracking-widest uppercase text-sm mb-4 block">
               Partner Program
             </span>
-            <h1 className="text-6xl md:text-8xl font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+            <h1 className="text-[55px] font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
               Join the <br/><span className="text-[#004F7B]">Dealer Network</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">

@@ -177,7 +177,7 @@ export default function Pricing() {
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
               Flexible Plans
             </span>
-            <h1 className="text-6xl md:text-8xl font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
+            <h1 className="text-[55px] font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
               Pricing and Plans<br/>
               <span className="text-gray-600">Within Every Budget.</span>
             </h1>
