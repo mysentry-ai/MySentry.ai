@@ -101,9 +101,7 @@ export default function Navbar() {
             <button
               onClick={() => setMoreOpen(!moreOpen)}
               className={cn(
-                "flex items-center gap-1 text-[20px] font-bold tracking-widest transition-all hover:text-primary font-heading uppercase",
-                (scrolled || !isHome) ? "!text-black" : "text-black lg:text-white",
-                moreLinks.some(link => isActive(link.href)) ? "text-primary" : ""
+                "flex items-center gap-1 text-[20px] font-bold tracking-widest transition-all font-heading uppercase !text-black"
               )}
             >
               MORE <ChevronDown className={cn("w-4 h-4 transition-transform", moreOpen ? "rotate-180" : "")} />
