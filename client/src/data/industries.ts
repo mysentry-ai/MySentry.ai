@@ -128,7 +128,7 @@ export const industries: IndustryContent[] = [
         "Predictable patterns making agents easy targets."
       ],
       empathy: "The 'open house' shouldn't be a gamble with your personal safety.",
-      answer: "MySentry's MeetSafe feature sets automatic timers for showings—if you don't check in, we send help.",
+      answer: "MySentry's MeetSafe feature sets automatic timers for showings -if you don't check in, we send help.",
       change: "Agents stop fearing the 'what if' and start showing properties with total confidence.",
       endResult: "More showings, more sales, and zero safety compromises."
     },

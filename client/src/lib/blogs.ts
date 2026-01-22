@@ -25,7 +25,7 @@ export const blogs: BlogPost[] = [
       <p class="lead">You have spent a lifetime building your independence. You have your own home, your own routine, and your own way of doing things. There is a deep satisfaction in brewing your own coffee in the morning and tending to your garden in the afternoon. But as we get older, a nagging worry can start to creep in. It starts as a whisper: "What if I slip on the stairs?" or "What if I feel dizzy while I'm out walking?"</p>
       <br />
       <h3>The Conflict Between Freedom and Fear</h3>
-      <p>It is a terrible choice to have to make. On one hand, you want to live your life freely—go for walks, visit friends, or just enjoy a quiet evening at home. On the other hand, family members might be pushing for "safer" living arrangements. They mean well, but their concern can feel like a cage. You shouldn't have to trade your dignity for their peace of mind.</p>
+      <p>It is a terrible choice to have to make. On one hand, you want to live your life freely -go for walks, visit friends, or just enjoy a quiet evening at home. On the other hand, family members might be pushing for "safer" living arrangements. They mean well, but their concern can feel like a cage. You shouldn't have to trade your dignity for their peace of mind.</p>
       <br />
       <p>For years, the only solution offered to seniors was a clunky plastic pendant. You know the one. It screams, "I'm old and frail!" Many seniors refuse to wear them because of the stigma attached. They end up leaving them on the nightstand or in a drawer, which renders them useless in an actual emergency. You need a solution that respects your dignity and fits your lifestyle, not a badge of vulnerability.</p>
       <br />
@@ -55,7 +55,7 @@ export const blogs: BlogPost[] = [
     date: 'Jan 12, 2026',
     readTime: '4 min read',
     content: `
-      <p class="lead">They call it the "Sandwich Generation," but that sounds too polite for what it actually feels like. It feels more like a pressure cooker. You are squeezed between raising your children—who need rides, help with homework, and emotional support—and caring for your aging parents, who are facing new health challenges. You are exhausted, and you are running on fumes.</p>
+      <p class="lead">They call it the "Sandwich Generation," but that sounds too polite for what it actually feels like. It feels more like a pressure cooker. You are squeezed between raising your children -who need rides, help with homework, and emotional support -and caring for your aging parents, who are facing new health challenges. You are exhausted, and you are running on fumes.</p>
       <br />
       <h3>The Impossible Balancing Act</h3>
       <p>You worry when your mom doesn't answer the phone. Is she okay? Did she fall? At the same time, you have to get your son to soccer practice and finish a presentation for work. The guilt is constant. You feel like you are failing someone every single day because you simply cannot be in two places at once.</p>
@@ -65,7 +65,7 @@ export const blogs: BlogPost[] = [
       <h3>Technology as Your Partner</h3>
       <p>You don't need to be a superhero; you just need better tools. MySentry acts as your eyes and ears when you can't be there physically. We understand the weight on your shoulders, and we have built a system designed to lift it.</p>
       <br />
-      <p>MySentry allows you to equip your parent with a device that keeps them safe without being intrusive. It connects directly to a <strong>Care Circle</strong> app on your phone, giving you real-time updates without you having to nag them.</p>
+      <p>MySentry allows you to equip your parent with a device that keeps them safe without being intrusive. It connects directly to the <strong>MySentry</strong> app on your phone, giving you real-time updates without you having to nag them.</p>
       <br />
       <h3>Automated Caregiving in Action</h3>
       <p>Here is how MySentry helps you find balance again. First, the <strong>GPS Location Tracking</strong> lets you know that Mom is safely at home or that Dad made it to his doctor's appointment. You can check the app quickly and get back to your day.</p>
@@ -93,7 +93,7 @@ export const blogs: BlogPost[] = [
       <p class="lead">We often focus on falls as the biggest danger for seniors. It makes sense; falls are visible and dramatic. But there is a silent threat that is often ignored until it is too late: your heart health. Many serious medical events start quietly, with subtle changes that are easy to miss.</p>
       <br />
       <h3>The Danger of Invisible Emergencies</h3>
-      <p>You might feel "just a little off" or unusually tired one afternoon. You might think it's nothing—maybe you just didn't sleep well. But for seniors, a sudden spike or drop in heart rate can be a precursor to a stroke, heart attack, or fainting spell. The problem is, you can't see your heart rate, and you often can't feel it until the emergency is already happening.</p>
+      <p>You might feel "just a little off" or unusually tired one afternoon. You might think it's nothing -maybe you just didn't sleep well. But for seniors, a sudden spike or drop in heart rate can be a precursor to a stroke, heart attack, or fainting spell. The problem is, you can't see your heart rate, and you often can't feel it until the emergency is already happening.</p>
       <br />
       <p>By the time you realize something is wrong, you might be unable to call for help. This uncertainty can make you hesitant to exert yourself or travel, shrinking your world unnecessarily.</p>
       <br />
@@ -105,7 +105,7 @@ export const blogs: BlogPost[] = [
       <br />
       <p>When an irregularity is detected, the watch sends a <strong>Smart Alert</strong> to you and your designated family members. This isn't just data; it's an early warning system. It allows you to say, "I need to sit down," or "I should call my doctor," <em>before</em> a catastrophic event occurs.</p>
       <br />
-      <p>We have heard stories of users who went to the doctor because their watch alerted them, only to find out they needed immediate intervention. They avoided a hospital stay—or worse—because they had the data.</p>
+      <p>We have heard stories of users who went to the doctor because their watch alerted them, only to find out they needed immediate intervention. They avoided a hospital stay -or worse -because they had the data.</p>
       <br />
       <h3>Catching It Early</h3>
       <p>Don't wait for an emergency to reveal itself. Your body is constantly sending signals, and MySentry helps you listen to them. With continuous health monitoring, you can take control of your well-being and live with the confidence that you are looking out for your future self.</p>
@@ -141,7 +141,7 @@ export const blogs: BlogPost[] = [
       <p>And if the worst happens and you are injured or attacked, the <strong>One-Touch SOS</strong> connects you instantly to our 24/7 monitoring agents. They can dispatch police to your exact GPS coordinates immediately.</p>
       <br />
       <h3>The Joy of the Run</h3>
-      <p>Imagine hitting the trail and getting lost in the music, knowing that you have a professional security team right there with you. When you remove the fear, you get your run back. You get your headspace back. Lace up your shoes and go—we’ve got your back.</p>
+      <p>Imagine hitting the trail and getting lost in the music, knowing that you have a professional security team right there with you. When you remove the fear, you get your run back. You get your headspace back. Lace up your shoes and go -we’ve got your back.</p>
     `
   },
   {
@@ -262,7 +262,7 @@ export const blogs: BlogPost[] = [
       <h3>Seamless Safety for Kids</h3>
       <p>With MySentry, you can set up <strong>Geofencing</strong> around your home and their school. You get an automatic notification the moment your child enters the "Home" zone. No more nagging them to text you; the app tells you they are safe.</p>
       <br />
-      <p>If there is ever an emergency—like a stranger at the door or a kitchen accident—your child has a <strong>Panic Button</strong> on their watch or phone. A simple press summons help immediately and alerts you instantly.</p>
+      <p>If there is ever an emergency -like a stranger at the door or a kitchen accident -your child has a <strong>Panic Button</strong> on their watch or phone. A simple press summons help immediately and alerts you instantly.</p>
       <br />
       <p>You can also check their <strong>Real-Time Location</strong> on a map if they aren't where they are supposed to be. This gives you the information you need to make decisions, like calling a neighbor or leaving work early.</p>
       <br />
@@ -371,10 +371,10 @@ export const blogs: BlogPost[] = [
     date: 'Jan 07, 2026',
     readTime: '6 min read',
     content: `
-      <p class="lead">In business, risk is inevitable. But <em>unmanaged</em> risk is a choice. Accidents, lawsuits, and insurance claims can drain your resources and distract you from your mission. Many companies view safety as a cost center—something they have to pay for but get no return on.</p>
+      <p class="lead">In business, risk is inevitable. But <em>unmanaged</em> risk is a choice. Accidents, lawsuits, and insurance claims can drain your resources and distract you from your mission. Many companies view safety as a cost center -something they have to pay for but get no return on.</p>
       <br />
       <h3>The High Cost of "What If"</h3>
-      <p>One accident can bankrupt a small business. One lawsuit can destroy a reputation. Traditional safety measures are often just paperwork—boxes checked after the fact. They don't prevent the accident; they just document it. You need a system that works in real-time.</p>
+      <p>One accident can bankrupt a small business. One lawsuit can destroy a reputation. Traditional safety measures are often just paperwork -boxes checked after the fact. They don't prevent the accident; they just document it. You need a system that works in real-time.</p>
       <br />
       <h3>Proactive Risk Management</h3>
       <p>MySentry shifts your safety strategy from reactive to proactive. We help you stop accidents from becoming disasters. By integrating smart monitoring into your operations, you gain a strategic advantage.</p>
