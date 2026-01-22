@@ -204,7 +204,7 @@ export default function Home() {
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
               24/7 Safety & Health Monitoring
             </span>
-            <h1 className="text-6xl md:text-8xl font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
+            <h1 className="text-[40px] md:text-[55px] font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
               Don't Face A<br/>
               Health Or Safety<br/>
               <span className="text-gray-600">Emergency Alone.</span>
