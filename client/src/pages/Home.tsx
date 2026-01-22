@@ -202,7 +202,7 @@ export default function Home() {
             className="max-w-4xl"
           >
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
-              24/7 Safety & Health Monitoring
+              24/7 Safety & Health Monitoring with Emergency Response
             </span>
             <h1 className="text-[55px] font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
               Don't Face A<br/>
@@ -210,7 +210,7 @@ export default function Home() {
               <span className="text-gray-600">Emergency Alone.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              MySentry turns your phone and smartwatch into a 24/7 safety and health companion. We monitor, detect, and respond so help reaches you fast.
+              MySentry turns your smart phone and smart watch into a 24/7 safety and health monitoring companion. We monitor, detect, and respond so help reaches you fast.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
