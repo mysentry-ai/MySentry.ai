@@ -83,7 +83,7 @@ export default function Navbar() {
               key={link.name} 
               href={link.href}
               className={cn(
-                "text-[28px] font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
+                "text-sm font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
                 (scrolled || !isHome) ? "!text-black" : "text-black lg:text-white",
                 isActive(link.href) ? "text-primary" : ""
               )}
@@ -101,7 +101,7 @@ export default function Navbar() {
             <button
               onClick={() => setMoreOpen(!moreOpen)}
               className={cn(
-                "flex items-center gap-1 text-[28px] font-bold tracking-widest transition-all hover:text-primary font-heading uppercase",
+                "flex items-center gap-1 text-sm font-bold tracking-widest transition-all hover:text-primary font-heading uppercase",
                 (scrolled || !isHome) ? "!text-black" : "text-black lg:text-white",
                 moreLinks.some(link => isActive(link.href)) ? "text-primary" : ""
               )}
