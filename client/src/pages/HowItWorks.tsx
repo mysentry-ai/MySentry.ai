@@ -37,7 +37,7 @@ export default function Features() {
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
               Advanced Protection System
             </span>
-            <h1 className="text-6xl md:text-8xl font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
+            <h1 className="text-6xl md:text-8xl font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]" style={{fontSize: '36px'}}>
               Everything You Need<br/>
               <span className="text-gray-600">For Total Safety.</span>
             </h1>
