@@ -29,7 +29,7 @@ export const About = () => {
             <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
               About Us
             </span>
-            <h1 className="text-6xl md:text-8xl font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+            <h1 className="text-[40px] md:text-[55px] font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
               Our Vision
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
