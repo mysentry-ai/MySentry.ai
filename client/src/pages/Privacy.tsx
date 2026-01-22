@@ -12,7 +12,7 @@ export const Privacy = () => {
       <section className="relative min-h-[60vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/blog-hero.jpg" 
+            src="/images/privacy-hero.jpg" 
             alt="Privacy Policy" 
             className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
@@ -33,7 +33,7 @@ export const Privacy = () => {
               Privacy Policy
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              Last Updated: January 4, 2026
+              Last Updated: January 22, 2026
             </p>
           </motion.div>
         </div>
@@ -43,68 +43,129 @@ export const Privacy = () => {
         <div className="bg-white p-8 md:p-16 rounded-3xl shadow-xl border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:font-bold prose-headings:text-[#1a1a1a] prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-p:text-gray-600 prose-li:text-gray-600">
           
           <p className="lead text-xl text-gray-700 font-medium">
-            At MySentry.ai ("we," "our," or "us"), we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+            At MySentry.ai, our dedication to user privacy and security is paramount. In this Privacy Policy, we explain the types of personal information that may be collected through the MySentry app (referred to as "the App"), how this information might be used and shared, and the choices available to users with respect to their personal information.
           </p>
 
-          <h3>1. Information We Collect</h3>
+          <h3>Collection of User Information</h3>
           <p>
-            We collect information that you provide directly to us, such as when you create an account, subscribe to our newsletter, or contact us for support. This may include:
+            During app usage, we gather various types of personal data from users, including:
           </p>
-          <ul>
-            <li>Personal identification information (Name, email address, phone number, etc.)</li>
-            <li>Health and safety data necessary for our monitoring services (only with your explicit consent)</li>
-            <li>Location data for emergency response services</li>
-            <li>Payment information for subscription services</li>
-          </ul>
+          <ol>
+            <li>
+              <strong>User-Provided Information:</strong> When users register for an account, create a profile, or engage with specific features of the App, they may voluntarily give us personal information. This can encompass details like their name, email address, phone number, location information, emergency contacts, and other relevant data.
+            </li>
+            <li>
+              <strong>Automated Data Collection:</strong> When users access or use the App, certain information is automatically gathered. This includes device specifics (like type of device, operating system, and unique identifiers), log details (such as IP address, app usage statistics, and crash reports), and location data (obtained through GPS or other methods).
+            </li>
+            <li>
+              <strong>Usage of Cookies and Related Technologies:</strong> To gather information about how users interact with the App, enhance their experience, and assess usage patterns, we employ cookies, beacons, and similar technologies. Users have the option to disable cookies via their device settings, though doing so may impact on the App's functionality.
+            </li>
+          </ol>
 
-          <h3>2. How We Use Your Information</h3>
+          <h3>Utilization of Collected Information</h3>
           <p>
-            We use the information we collect to:
+            The information we collect from users is utilized for various purposes, including:
           </p>
-          <ul>
-            <li>Provide, operate, and maintain our services</li>
-            <li>Improve, personalize, and expand our website and app</li>
-            <li>Understand and analyze how you use our services</li>
-            <li>Develop new products, services, features, and functionality</li>
-            <li>Communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes</li>
-            <li>Process your transactions and manage your orders</li>
-            <li>Send you emails</li>
-            <li>Find and prevent fraud</li>
-          </ul>
+          <ol>
+            <li>
+              <strong>Enhancing App Services:</strong> We use the data to provide and refine the App's services, such as personalized safety features, location sharing capabilities, and emergency response services.
+            </li>
+            <li>
+              <strong>User Communication:</strong> We communicate with users about their accounts, updates to the App, promotional offers, and other relevant information pertaining to the App.
+            </li>
+            <li>
+              <strong>Analysis and Improvement:</strong> The information aids in analyzing app usage trends and user preferences, which helps in enhancing the App's functionality, performance, and overall user experience.
+            </li>
+            <li>
+              <strong>Legal and Security Compliance:</strong> We use the information to adhere to legal requirements, enforce our terms of use, and safeguard the rights, safety, and security of MySentry, its users, and the public.
+            </li>
+          </ol>
 
-          <h3>3. Sharing Your Information</h3>
+          <h3>Sharing of Information</h3>
           <p>
-            We do not sell, trade, or otherwise transfer to outside parties your Personally Identifiable Information unless we provide users with advance notice. This does not include website hosting partners and other parties who assist us in operating our website, conducting our business, or serving our users, so long as those parties agree to keep this information confidential. We may also release information when it's release is appropriate to comply with the law, enforce our site policies, or protect ours or others' rights, property or safety.
+            We might share personal information of users with these entities:
           </p>
+          <ol>
+            <li>
+              <strong>Third-Party Service Providers:</strong> We collaborate with external service providers who help us deliver the App's services. This may include sharing personal information for purposes such as hosting, data analysis, customer support, and other relevant functions.
+            </li>
+            <li>
+              <strong>Emergency responders:</strong> In emergency situations, we may disclose users' location and pertinent details to emergency response teams. This includes law enforcement, medical staff, and other authorized individuals, as needed to offer assistance and guarantee the safety of our users.
+            </li>
+            <li>
+              <strong>Compliance with Legal Requests:</strong> We may provide personal information to law enforcement, governmental bodies, or other authorized organizations in response to legal demands, such as court orders, or to adhere to relevant laws and regulations.
+            </li>
+            <li>
+              <strong>Business Transactions:</strong> In events like a merger, acquisition, or asset sale involving MySentry, personal information may be transferred to the third party involved as a component of the transaction.
+            </li>
+            <li>
+              <strong>Use of Non-Personal Data:</strong> We might share data that is aggregated or anonymized, ensuring it does not personally identify users, for various purposes including marketing, analytics, and research.
+            </li>
+          </ol>
+
+          <h3>Permission to Access Contacts</h3>
           <div className="bg-[#e8f5e9] p-6 rounded-xl border border-[#386758]/20 my-6">
-            <p className="m-0 text-[#386758] font-medium">
-              <strong>Emergency Situations:</strong> In the event of an emergency detected by our system, we may share your location and relevant health information with emergency responders and your designated emergency contacts to facilitate immediate assistance.
-            </p>
+            <ul className="m-0">
+              <li>
+                <strong>Mysentry Vital Companion</strong> requires access to your contact list to allow you to designate emergency contacts who can be alerted in case of an emergency. When you grant permission, we will upload your contact list to our secure servers.
+              </li>
+              <li>
+                This allows the app to quickly identify and notify your chosen emergency contacts. Your contact information is used solely for this purpose: identifying and contacting your designated emergency contacts in an emergency situation initiated by you.
+              </li>
+              <li>
+                We do not share your contact information with any third parties, and we retain this data only as long as you use the app and maintain your list of emergency contacts. You can remove your consent and delete your contact information from our servers at any time within the app settings.
+              </li>
+            </ul>
           </div>
 
-          <h3>4. Data Security</h3>
+          <h3>Data Retention</h3>
           <p>
-            We implement a variety of security measures to maintain the safety of your personal information when you place an order or enter, submit, or access your personal information. We use encryption technology to protect sensitive information transmitted online. We also protect your information offline. Only employees who need the information to perform a specific job (for example, billing or customer service) are granted access to personally identifiable information.
+            We maintain users' personal data for the duration necessary to achieve the purposes for which it was gathered, comply with legal obligations, settle disputes, uphold our rights, or support other legitimate business needs.
           </p>
 
-          <h3>5. Your Rights</h3>
+          <h3>Data Security</h3>
           <p>
-            You have the right to access, correct, or delete your personal information. You may also object to the processing of your personal data, request restriction of processing, and request data portability. To exercise these rights, please contact us at <a href="mailto:support@MySentry.ai">support@MySentry.ai</a>.
+            Our approach involves employing suitable technical and organizational safeguards to protect users' personal data. Nonetheless, it's important to understand that no system of data transmission or storage is entirely foolproof. As such, we cannot provide an absolute guarantee of the security of personal information.
           </p>
 
-          <h3>6. Changes to This Privacy Policy</h3>
+          <h3>Rights and Choices for Users</h3>
           <p>
-            We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page. You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+            Users are entitled to specific rights and choices concerning their personal data, including the following:
+          </p>
+          <ol>
+            <li>
+              <strong>Access and Update:</strong> Users can access and modify their personal information by logging into their account on the App and adjusting their profile settings.
+            </li>
+            <li>
+              <strong>Opt-Out Choices:</strong> Users can choose not to receive our promotional communications by adhering to the opt-out instructions provided in each message or by reaching out to us directly.
+            </li>
+            <li>
+              <strong>Location Sharing Preferences:</strong> Users have the choice to turn on or off the location sharing function in the App at any time.
+            </li>
+            <li>
+              <strong>Cookie Preferences:</strong> Users can change their device's settings to block cookies or similar technologies utilized by the App, though this may impact the App's performance.
+            </li>
+          </ol>
+
+          <h3>Requesting Data Deletion</h3>
+          <p>
+            Users can ask for the removal of their personal information from our records by reaching out to us. Note that certain data may be retained as required by law or for valid business reasons.
           </p>
 
-          <h3>7. Contact Us</h3>
+          <h3>Privacy for Children</h3>
           <p>
-            If you have any questions about this Privacy Policy, please contact us:
+            Our App is not designed for children below 13 years. We do not intentionally gather personal data from children under 13. If it comes to our attention that such information has been collected without parental consent, we will promptly take measures to remove it.
           </p>
-          <ul>
-            <li>By email: <a href="mailto:support@MySentry.ai">support@MySentry.ai</a></li>
-            <li>By phone: +1 (614) 361-5073</li>
-          </ul>
+
+          <h3>Updates to Our Privacy Policy</h3>
+          <p>
+            We reserve the right to modify our Privacy Policy as needed. Any updates will be reflected on this page, along with the revision date. We advise users to regularly check this policy for any changes. Continued use of the App following any policy updates implies acceptance of the new terms.
+          </p>
+
+          <h3>Contact Us</h3>
+          <p>
+            For inquiries, concerns, or requests related to this Privacy Policy or the privacy practices of the MySentry App, users can reach us at <a href="mailto:support@mysentry.ai">support@mysentry.ai</a>. By utilizing the MySentry App, users agree to and authorize the gathering, utilization, and disclosure of their personal information as outlined in this Privacy Policy.
+          </p>
 
         </div>
       </div>
