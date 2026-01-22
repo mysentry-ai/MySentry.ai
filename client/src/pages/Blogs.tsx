@@ -1,77 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, User } from 'lucide-react';
+import SEO from '../components/SEO';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'wouter';
+import { ArrowRight, Clock, Calendar } from 'lucide-react';
+import { blogs } from '../lib/blogs';
 
-const blogPosts = [
-  {
-    id: 1,
-    title: "Why Smartwatches Are the Future of Personal Safety",
-    excerpt: "Traditional medical alert buttons are outdated. Discover how modern smartwatches are revolutionizing how we protect our loved ones.",
-    author: "Dr. Sarah Chen",
-    date: "Dec 15, 2025",
-    category: "Technology",
-    image: "/images/blog-smartwatch.jpg"
-  },
-  {
-    id: 2,
-    title: "5 Signs Your Aging Parent Might Need Extra Support",
-    excerpt: "Recognizing the subtle changes in your parent's routine can help you intervene before a crisis occurs. Here's what to look for.",
-    author: "James Wilson",
-    date: "Dec 10, 2025",
-    category: "Senior Care",
-    image: "/images/blog-senior-care.jpg"
-  },
-  {
-    id: 3,
-    title: "The Hidden Cost of Workplace Accidents",
-    excerpt: "Beyond the immediate medical bills, workplace injuries can have a devastating long-term impact on your business. Learn how to mitigate the risk.",
-    author: "Michael Ross",
-    date: "Dec 05, 2025",
-    category: "Business",
-    image: "/images/blog-workplace.jpg"
-  },
-  {
-    id: 4,
-    title: "Understanding Fall Detection Technology",
-    excerpt: "How does your watch know you've fallen? We dive deep into the sensors and algorithms that power this life-saving feature.",
-    author: "Tech Team",
-    date: "Nov 28, 2025",
-    category: "Innovation",
-    image: "/images/blog-hero.jpg"
-  },
-  {
-    id: 5,
-    title: "How to Talk to Your Parents About Safety Monitoring",
-    excerpt: "It's a sensitive conversation. Here are practical tips for discussing safety monitoring without making them feel like they're losing independence.",
-    author: "Lisa Thompson",
-    date: "Nov 20, 2025",
-    category: "Family",
-    image: "/images/blog-senior-care.jpg"
-  },
-  {
-    id: 6,
-    title: "Real Estate Safety: A Guide for Agents",
-    excerpt: "Meeting new clients alone carries inherent risks. Here are essential safety protocols every real estate agent should follow.",
-    author: "Robert Martinez",
-    date: "Nov 15, 2025",
-    category: "Industry",
-    image: "/images/blog-workplace.jpg"
-  }
-];
+const Blogs = () => {
+  const [filter, setFilter] = useState<'All' | 'Senior Care' | 'Females' | 'Families' | 'Business'>('All');
 
-export const Blogs = () => {
+  const filteredBlogs = filter === 'All' 
+    ? blogs 
+    : blogs.filter(blog => blog.category === filter);
+
+  const categories = ['All', 'Senior Care', 'Females', 'Families', 'Business'];
+
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
+      <SEO 
+        title="Latest News & Articles | MySentry" 
+        description="Expert advice, safety tips, and stories about protecting what matters most. Explore our articles on senior care, family safety, and personal security."
+      />
       <Navbar />
-      
-      {/* Hero Section - Standardized */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
+
+      {/* Hero Section */}
+      <section className="relative min-h-[50vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/blog-hero.jpg" 
-            alt="MySentry Safety Insights" 
+            alt="MySentry Blog" 
             className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
@@ -85,70 +43,102 @@ export const Blogs = () => {
             className="max-w-4xl"
           >
             <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
-              Safety Insights
+              The Vital Companion Blog
             </span>
-            <h1 className="text-[36px] md:text-[45px] font-normal mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
-              Latest News<br/>
-              <span className="text-gray-600">& Articles.</span>
+            <h1 className="text-[55px] font-normal mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+              Latest News & Articles
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              Expert advice, industry trends, and stories about living fearlessly.
+              Insights, guides, and stories to help you live freely and safely.
             </p>
+
+            {/* Filter Controls */}
+            <div className="flex flex-wrap gap-3 mt-8">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setFilter(cat as any)}
+                  className={`px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 border-2 ${
+                    filter === cat 
+                      ? 'bg-[#386758] text-white border-[#386758] shadow-lg transform scale-105' 
+                      : 'bg-white/50 text-gray-600 border-gray-300 hover:border-[#386758] hover:text-[#386758]'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Blog Grid Section */}
+      {/* Blog Grid */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {blogPosts.map((post, index) => (
-              <motion.article 
-                key={post.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group flex flex-col h-full bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+          <AnimatePresence mode='wait'>
+            <motion.div 
+              key={filter}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
+            >
+              {filteredBlogs.map((blog) => (
+                <Link key={blog.id} href={`/blog/${blog.slug}`}>
+                  <div className="group cursor-pointer h-full flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
+                    {/* Image Container */}
+                    <div className="relative h-64 overflow-hidden">
+                      <img 
+                        src={blog.image} 
+                        alt={blog.title} 
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#386758]">
+                        {blog.category}
+                      </div>
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-8 flex flex-col flex-grow">
+                      <div className="flex items-center gap-4 text-gray-400 text-xs font-medium uppercase tracking-wider mb-4">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="w-3 h-3" /> {blog.date}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-3 h-3" /> {blog.readTime}
+                        </span>
+                      </div>
+
+                      <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 leading-tight group-hover:text-[#386758] transition-colors font-barlow">
+                        {blog.title}
+                      </h3>
+                      
+                      <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
+                        {blog.excerpt}
+                      </p>
+
+                      <div className="flex items-center text-[#386758] font-bold uppercase tracking-wider text-sm group-hover:translate-x-2 transition-transform duration-300">
+                        Read Article <ArrowRight className="w-4 h-4 ml-2" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+
+          {filteredBlogs.length === 0 && (
+            <div className="text-center py-20">
+              <p className="text-xl text-gray-500">No articles found in this category.</p>
+              <button 
+                onClick={() => setFilter('All')}
+                className="mt-4 text-[#386758] font-bold hover:underline"
               >
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#386758]">
-                    {post.category}
-                  </div>
-                </div>
-                
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
-                    <div className="flex items-center gap-1">
-                      <Calendar className="w-4 h-4" />
-                      <span>{post.date}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <User className="w-4 h-4" />
-                      <span>{post.author}</span>
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 group-hover:text-[#386758] transition-colors leading-tight font-barlow uppercase">
-                    {post.title}
-                  </h3>
-                  
-                  <p className="text-gray-600 mb-6 flex-grow leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                  
-                  <button className="flex items-center gap-2 text-[#386758] font-bold uppercase tracking-wide text-sm group-hover:gap-3 transition-all">
-                    Read Article <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-              </motion.article>
-            ))}
-          </div>
+                View all articles
+              </button>
+            </div>
+          )}
         </div>
       </section>
 

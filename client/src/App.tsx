@@ -16,6 +16,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Team from "./pages/Team";
 import Blogs from "./pages/Blogs";
+import BlogPost from "./pages/BlogPost";
 import Privacy from "./pages/Privacy";
 import Partner from "./pages/Partner";
 
@@ -35,6 +36,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/team" component={Team} />
       <Route path="/blogs" component={Blogs} />
+      <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/partner" component={Partner} />
 
