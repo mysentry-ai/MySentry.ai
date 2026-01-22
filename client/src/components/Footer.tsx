@@ -54,6 +54,16 @@ export default function Footer() {
                   For Females
                 </Link>
               </li>
+              <li>
+                <Link href="/how-it-works" className="text-foreground hover:text-primary transition-colors">
+                  How It Works
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing" className="text-foreground hover:text-primary transition-colors">
+                  Pricing
+                </Link>
+              </li>
             </ul>
           </div>
 
