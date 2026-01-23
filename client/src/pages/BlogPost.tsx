@@ -46,7 +46,7 @@ const BlogPost = () => {
           <img 
             src={blog.image} 
             alt={blog.title} 
-            className="absolute inset-0 w-full h-full object-cover object-[center_20%]"
+            className="absolute inset-0 w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10" />
         </div>
@@ -60,7 +60,7 @@ const BlogPost = () => {
           >
             <Link href="/blogs" className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors group">
               <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-              Back to Articles
+              Back to Blogs
             </Link>
             
             <div className="flex items-center gap-4 text-white/80 mb-6 text-sm font-medium tracking-wider uppercase">
