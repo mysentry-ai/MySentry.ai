@@ -88,7 +88,7 @@ export default function Features() {
               <div className="order-1 lg:order-1">
                 <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-black text-white p-3 rounded-xl">
+                    <div className="bg-primary text-white p-3 rounded-xl">
                       <Smartphone className="h-6 w-6" />
                     </div>
                     <h3 className="text-3xl font-bold text-[#1a1a1a]">Smartphones</h3>
@@ -122,7 +122,7 @@ export default function Features() {
               <div className="order-1 lg:order-2">
                 <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow h-full flex flex-col justify-center">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="bg-black text-white p-3 rounded-xl">
+                    <div className="bg-primary text-white p-3 rounded-xl">
                       <Watch className="h-6 w-6" />
                     </div>
                     <h3 className="text-3xl font-bold text-[#1a1a1a]">Smartwatches</h3>
@@ -513,7 +513,7 @@ export default function Features() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-[#1a1a1a] text-white text-center">
+      <section className="py-32 bg-primary text-white text-center">
         <div className="container max-w-4xl">
           <h2 className="text-5xl md:text-7xl font-heading font-bold uppercase tracking-tighter mb-8">
             Ready for Total Protection?

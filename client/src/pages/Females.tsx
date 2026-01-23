@@ -362,7 +362,7 @@ export default function Females() {
       {/* CTA */}
       <section className="py-24 bg-white">
         <div className="container">
-          <div className="bg-[#1a1a1a] rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
+          <div className="bg-primary rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
               <div className="absolute top-[-50%] left-[-20%] w-[80%] h-[80%] rounded-full bg-primary blur-[150px]" />
             </div>
