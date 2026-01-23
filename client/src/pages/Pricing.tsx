@@ -224,7 +224,7 @@ export default function Pricing() {
       </section>
 
       {/* Consumer Plans */}
-      <section className="py-12 bg-[#e8f5e9]">
+      <section id="individuals" className="py-12 bg-[#e8f5e9]">
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-tight">For Individuals & Families</h2>

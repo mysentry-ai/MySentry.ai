@@ -107,14 +107,12 @@ const BlogPost = () => {
           <p className="text-gray-600 mb-8 max-w-xl mx-auto">
             Don't let worry hold you back. Experience the freedom and safety of MySentry today.
           </p>
-          <a 
-            href="https://buy.stripe.com/test_7sI01c2H82hQ4QEaEE" 
-            target="_blank" 
-            rel="noopener noreferrer"
+          <Link 
+            href="/pricing#individuals" 
             className="inline-block bg-[#386758] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2d5246] transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
           >
             Start Your 7-Day Free Trial
-          </a>
+          </Link>
         </div>
       </article>
 
