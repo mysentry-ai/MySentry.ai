@@ -281,7 +281,7 @@ export default function Pricing() {
                   <p className="text-primary font-medium mb-6">{plan.tagline}</p>
                   
                   <div className="flex items-baseline gap-1 mb-2">
-                    {plan.price !== null ? (
+                    {!plan.comingSoon ? (
                       <>
                         <span className="text-5xl font-bold text-[#1a1a1a]">
                           ${isAnnual ? (plan.id === "advanced" ? longevityYearlyRate : currentYearlyRate) : plan.price}
@@ -293,7 +293,7 @@ export default function Pricing() {
                     )}
                   </div>
                   
-                  {plan.price !== null && isAnnual && (
+                  {!plan.comingSoon && isAnnual && (
                     <p className="text-sm text-green-600 font-medium">
                       Billed ${plan.annualPrice.toFixed(2)} yearly
                     </p>
@@ -391,15 +391,23 @@ export default function Pricing() {
                   <p className="text-primary font-medium mb-6">{plan.tagline}</p>
                   
                   <div className="flex items-baseline gap-1 mb-2">
-                    <span className="text-5xl font-bold text-[#1a1a1a]">
-                      ${(plan.totalPrice / employeeCount).toFixed(2)}
-                    </span>
-                    <span className="text-gray-500 font-medium">/family/mo</span>
+                    {!plan.comingSoon ? (
+                      <>
+                        <span className="text-5xl font-bold text-[#1a1a1a]">
+                          ${(plan.totalPrice / employeeCount).toFixed(2)}
+                        </span>
+                        <span className="text-gray-500 font-medium">/family/mo</span>
+                      </>
+                    ) : (
+                      <span className="text-4xl font-bold text-[#1a1a1a]">Coming Soon</span>
+                    )}
                   </div>
                   
-                  <p className="text-sm text-green-600 font-medium mb-4">
-                    Total: ${plan.totalPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {isAnnual ? 'yearly' : 'monthly'}
-                  </p>
+                  {!plan.comingSoon && (
+                    <p className="text-sm text-green-600 font-medium mb-4">
+                      Total: ${plan.totalPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {isAnnual ? 'yearly' : 'monthly'}
+                    </p>
+                  )}
                   
                   <p className="mt-4 text-gray-600 leading-relaxed">{plan.description}</p>
                 </div>
