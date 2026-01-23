@@ -210,7 +210,7 @@ export default function Families() {
               <span className="text-gray-600">You Love.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              Kids at school? Parents at home? Teenager driving? MySentry connects your whole family. See real-time locations, get crash alerts, and know instantly if a loved one needs help.
+              Kids at school? Parents at home? Teenager driving? MySentry connects your whole family. See real-time locations, get crash alerts, and know instantly if a loved one needs help. We restrict real-time health data visibility to ensure privacy—you only get alerted when it matters.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

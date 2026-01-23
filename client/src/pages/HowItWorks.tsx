@@ -6,6 +6,7 @@ import { ShieldAlert, Activity, Car, HeartPulse, Video, Smartphone, Watch, Check
 import AlertDemo from "@/components/AlertDemo";
 import { motion } from "framer-motion";
 import ActivationSteps from "@/components/ActivationSteps";
+import FAQs from "@/components/FAQs";
 
 export default function Features() {
   return (
@@ -38,11 +39,11 @@ export default function Features() {
               Advanced Protection System
             </span>
             <h1 className="text-[55px] font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
-              Everything You Need<br/>
-              <span className="text-gray-600">For Total Safety.</span>
+              Your Smartwatch Collects Data.<br/>
+              <span className="text-gray-600">MySentry Gives You Answers.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              MySentry detects falls, crashes, and abnormal Health Vitals using your smartwatch and phone, then alerts 24/7 professional monitoring with live video, location, and Health Vitals so help can be dispatched fast.
+              MySentry transforms raw wearable data into personalized insights, real-time safety alerts, and proactive health guidance—all from your Apple Watch or Samsung Watch.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
@@ -423,13 +424,16 @@ export default function Features() {
               <span className="text-pink-600 font-bold uppercase tracking-widest text-sm">Feature 06</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase leading-none tracking-tight mb-8 text-[#1a1a1a]">
-              Health Vitals<br/>Monitoring.
+              Personalized<br/>Health Insights.
             </h2>
+            <p className="text-xl text-gray-700 leading-relaxed mb-6">
+              MySentry establishes your unique "normal" for key vitals using AI. Instead of generic ranges, you get insights tailored to YOUR body.
+            </p>
             <p className="text-xl text-gray-700 leading-relaxed mb-10">
-              Your heart tells a story. We listen. Continuous monitoring of heart rate, oxygen levels, and HRV detects silent issues before they become emergencies.
+              <strong>Heart Rate Anomaly Detection:</strong> We continuously compare your live heart rate against your baseline. If we detect a "Risky Zone" pattern, you get an alert. If it hits the "Critical Zone," we notify emergency contacts immediately.
             </p>
             <div className="flex flex-wrap gap-3">
-              {["Heart Rate", "SpO2 Oxygen", "HRV Stress", "Sleep Quality", "Activity"].map((tag, i) => (
+              {["Personalized Baselines", "Anomaly Detection", "SpO2 Oxygen", "HRV Stress", "Sleep Quality"].map((tag, i) => (
                 <span key={i} className="px-4 py-2 bg-white rounded-full border border-green-200 text-sm font-bold text-gray-700 shadow-sm">
                   {tag}
                 </span>
@@ -511,6 +515,9 @@ export default function Features() {
           </div>
         </div>
       </section>
+
+      {/* FAQs Section */}
+      <FAQs />
 
       {/* CTA Section */}
       <section className="py-32 bg-[#003d60] text-white text-center">

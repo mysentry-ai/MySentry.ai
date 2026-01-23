@@ -123,10 +123,16 @@ export const Privacy = () => {
             We maintain users' personal data for the duration necessary to achieve the purposes for which it was gathered, comply with legal obligations, settle disputes, uphold our rights, or support other legitimate business needs.
           </p>
 
-          <h3 className="text-2xl border-b border-gray-100 pb-4">Data Security</h3>
-          <p className="mb-12">
-            Our approach involves employing suitable technical and organizational safeguards to protect users' personal data. Nonetheless, it's important to understand that no system of data transmission or storage is entirely foolproof. As such, we cannot provide an absolute guarantee of the security of personal information.
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Data Security & Compliance</h3>
+          <p className="mb-6">
+            MySentry is committed to the highest standards of data security and regulatory compliance. We employ enterprise-grade encryption and strict access controls to protect your sensitive health and location data.
           </p>
+          <ul className="space-y-4 mb-12 list-disc pl-6">
+            <li><strong>HIPAA Compliance:</strong> We adhere to HIPAA standards to ensure the confidentiality, integrity, and availability of protected health information (PHI).</li>
+            <li><strong>GDPR Compliance:</strong> For users in the European Union, we fully comply with the General Data Protection Regulation (GDPR), guaranteeing your rights to data access, rectification, and erasure.</li>
+            <li><strong>SOC 2 Type II:</strong> Our infrastructure and processes are audited to meet SOC 2 Type II standards for security, availability, and confidentiality.</li>
+            <li><strong>End-to-End Encryption:</strong> All data transmitted between your device and our servers is encrypted using TLS 1.3. Data at rest is encrypted using AES-256.</li>
+          </ul>
 
           <h3 className="text-2xl border-b border-gray-100 pb-4">Rights and Choices for Users</h3>
           <p>

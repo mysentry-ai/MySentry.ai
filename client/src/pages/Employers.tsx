@@ -216,7 +216,7 @@ export default function Employers() {
               <span className="text-gray-600">Greatest Asset.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              Workplace accidents happen fast. MySentry detects falls, crashes, and health emergencies instantly, alerting 24/7 professional monitoring with live video so help arrives fast.
+              Workplace accidents happen fast. MySentry detects falls, crashes, and health emergencies instantly, alerting 24/7 professional monitoring with live video so help arrives fast. We provide objective evidence to protect your business from liability while ensuring your team gets home safe.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

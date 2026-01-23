@@ -210,7 +210,7 @@ export default function Seniors() {
               <span className="text-gray-600">Your Own Terms.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              No bulky pendants. No stigma. Just a stylish smartwatch that protects you 24/7 with fall detection, health monitoring, and instant access to help.
+              No bulky pendants. No stigma. Just a stylish smartwatch that protects you 24/7 with fall detection, health monitoring, and instant access to help. MySentry transforms raw wearable data into personalized insights and real-time safety alerts.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

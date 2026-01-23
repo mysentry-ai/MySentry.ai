@@ -210,7 +210,7 @@ export default function Females() {
               <span className="text-gray-600">Anywhere.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              Walking alone at night? Meeting someone new? Traveling solo? MySentry is your silent guardian. Detects threats, shares your location, and alerts 24/7 professional monitoring with live video so help can be dispatched fast.
+              Walking alone at night? Meeting someone new? Traveling solo? MySentry is your silent guardian. We detect threats, share your location, and alert 24/7 professional monitoring with live video so help can be dispatched fast.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
