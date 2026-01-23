@@ -513,7 +513,7 @@ export default function Features() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-primary text-white text-center">
+      <section className="py-32 bg-[#003d60] text-white text-center">
         <div className="container max-w-4xl">
           <h2 className="text-5xl md:text-7xl font-heading font-bold uppercase tracking-tighter mb-8">
             Ready for Total Protection?

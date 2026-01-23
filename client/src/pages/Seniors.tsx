@@ -290,7 +290,7 @@ export default function Seniors() {
       </section>
 
       {/* CAROUSEL: The Solution */}
-      <section className="py-32 bg-primary text-white overflow-hidden">
+      <section className="py-32 bg-[#003d60] text-white overflow-hidden">
         <div className="container">
           <div className="max-w-3xl mb-16">
             <span className="text-primary font-bold tracking-wider uppercase text-sm mb-4 block">Complete Protection</span>
