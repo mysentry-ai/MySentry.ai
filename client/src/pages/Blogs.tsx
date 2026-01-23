@@ -22,7 +22,7 @@ const Blogs = () => {
   return (
     <div className="min-h-screen bg-[#fcfbf9] font-sans text-[#1a1a1a]">
       <SEO 
-        title="The Pulse Blog | MySentry" 
+        title="Safety & Health Hub | MySentry" 
         description="Expert advice, safety tips, and stories about protecting what matters most. Explore our articles on senior care, family safety, and personal security."
       />
       <Navbar />
@@ -36,7 +36,7 @@ const Blogs = () => {
           className="mb-16"
         >
           <h1 className="text-[60px] md:text-[80px] lg:text-[100px] font-light leading-[0.9] tracking-tight text-[#1a1a1a] mb-6 font-barlow">
-            The Pulse
+            Safety & Health Hub
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl font-light">
             Stories, science, and strategies for living a safer, freer life.

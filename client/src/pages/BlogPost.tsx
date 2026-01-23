@@ -24,7 +24,7 @@ const BlogPost = () => {
         <div className="text-center">
           <h1 className="text-4xl font-medium text-[#1a1a1a] mb-4">Article Not Found</h1>
           <Link href="/blogs" className="text-[#386758] hover:underline">
-            Return to The Pulse
+            Return to Safety & Health Hub
           </Link>
         </div>
       </div>
@@ -39,7 +39,7 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-[#fcfbf9] font-sans text-[#1a1a1a]">
       <SEO 
-        title={`${blog.title} | MySentry Pulse`}
+        title={`${blog.title} | MySentry Safety & Health Hub`}
         description={blog.excerpt}
         image={blog.image}
       />
@@ -49,7 +49,7 @@ const BlogPost = () => {
       <header className="pt-32 pb-12 px-4 md:px-8 max-w-4xl mx-auto text-center">
         <Link href="/blogs" className="inline-flex items-center text-gray-500 hover:text-[#386758] mb-8 transition-colors text-sm font-bold uppercase tracking-widest">
           <ArrowLeft className="w-4 h-4 mr-2" />
-          The Pulse
+          Safety & Health Hub
         </Link>
         
         <div className="mb-6">
@@ -138,24 +138,24 @@ const BlogPost = () => {
           </div>
 
           {/* CTA Section - Integrated */}
-          <div className="mt-16 relative overflow-hidden rounded-3xl bg-[#1a1a1a] text-white p-10 md:p-16 text-center">
+          <div className="mt-16 relative overflow-hidden rounded-3xl bg-[#386758] text-white p-10 md:p-16 text-center">
             <div className="relative z-10">
               <h3 className="text-3xl font-medium mb-4 font-barlow">
                 Experience True Peace of Mind
               </h3>
-              <p className="text-white/70 mb-8 max-w-xl mx-auto text-lg font-light">
+              <p className="text-white/90 mb-8 max-w-xl mx-auto text-lg font-light">
                 Join thousands of others who have reclaimed their independence with MySentry.
               </p>
               <Link 
                 href="/pricing" 
-                className="inline-block bg-white text-[#1a1a1a] px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#386758] hover:text-white transition-all duration-300"
+                className="inline-block bg-white text-[#386758] px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-gray-100 transition-all duration-300 shadow-lg"
               >
                 Start Free Trial
               </Link>
             </div>
             {/* Abstract Background Pattern */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-              <div className="absolute top-[-50%] left-[-20%] w-[80%] h-[200%] bg-[#386758] rounded-full blur-[100px]" />
+            <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+              <div className="absolute top-[-50%] left-[-20%] w-[80%] h-[200%] bg-white rounded-full blur-[100px]" />
             </div>
           </div>
         </article>
