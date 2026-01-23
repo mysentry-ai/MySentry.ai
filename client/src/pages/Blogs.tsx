@@ -16,130 +16,146 @@ const Blogs = () => {
 
   const categories = ['All', 'Senior Care', 'Females', 'Families', 'Business'];
 
+  // Featured blog (first one or random)
+  const featuredBlog = blogs[0];
+
   return (
-    <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
+    <div className="min-h-screen bg-[#fcfbf9] font-sans text-[#1a1a1a]">
       <SEO 
-        title="Latest News & Articles | MySentry" 
+        title="The Pulse Blog | MySentry" 
         description="Expert advice, safety tips, and stories about protecting what matters most. Explore our articles on senior care, family safety, and personal security."
       />
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/blog-hero.jpg" 
-            alt="MySentry Blog" 
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-        
-        <div className="relative z-20 container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
-              The Vital Companion Blog
-            </span>
-            <h1 className="text-[55px] font-normal mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
-              Latest News & Articles
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              Insights, guides, and stories to help you live freely and safely.
-            </p>
+      {/* Hero Section - Minimalist & Editorial */}
+      <section className="pt-32 pb-16 px-4 md:px-8 lg:px-16 max-w-[1400px] mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-16"
+        >
+          <h1 className="text-[60px] md:text-[80px] lg:text-[100px] font-light leading-[0.9] tracking-tight text-[#1a1a1a] mb-6 font-barlow">
+            The Pulse
+          </h1>
+          <p className="text-xl text-gray-600 max-w-2xl font-light">
+            Stories, science, and strategies for living a safer, freer life.
+          </p>
+        </motion.div>
 
-            {/* Filter Controls */}
-            <div className="flex flex-wrap gap-3 mt-8">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setFilter(cat as any)}
-                  className={`px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 border-2 ${
-                    filter === cat 
-                      ? 'bg-[#386758] text-white border-[#386758] shadow-lg transform scale-105' 
-                      : 'bg-white/50 text-gray-600 border-gray-300 hover:border-[#386758] hover:text-[#386758]'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
-          </motion.div>
+        {/* Filter Navigation - Underlined Style */}
+        <div className="flex flex-wrap gap-8 border-b border-gray-200 pb-4 mb-16">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat as any)}
+              className={`text-sm font-medium uppercase tracking-widest transition-all duration-300 pb-4 -mb-4 border-b-2 ${
+                filter === cat 
+                  ? 'text-[#1a1a1a] border-[#1a1a1a]' 
+                  : 'text-gray-400 border-transparent hover:text-[#1a1a1a]'
+              }`}
+            >
+              {cat}
+            </button>
+          ))}
         </div>
+
+        {/* Featured Article (Only show on 'All' view) */}
+        {filter === 'All' && (
+          <Link href={`/blog/${featuredBlog.slug}`}>
+            <div className="group cursor-pointer grid lg:grid-cols-2 gap-8 mb-24 items-center">
+              <div className="relative overflow-hidden rounded-2xl aspect-[4/3] lg:aspect-[16/10]">
+                <img 
+                  src={featuredBlog.image} 
+                  alt={featuredBlog.title} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="flex flex-col justify-center lg:pl-8">
+                <span className="text-[#386758] font-bold tracking-widest uppercase text-xs mb-4">
+                  Featured Story
+                </span>
+                <h2 className="text-4xl md:text-5xl font-medium text-[#1a1a1a] mb-6 leading-tight group-hover:underline decoration-1 underline-offset-4">
+                  {featuredBlog.title}
+                </h2>
+                <p className="text-xl text-gray-600 mb-8 leading-relaxed line-clamp-3">
+                  {featuredBlog.excerpt}
+                </p>
+                <div className="flex items-center text-sm font-medium text-gray-500 uppercase tracking-wider">
+                  <span>{featuredBlog.date}</span>
+                  <span className="mx-2">•</span>
+                  <span>{featuredBlog.readTime}</span>
+                </div>
+              </div>
+            </div>
+          </Link>
+        )}
       </section>
 
-      {/* Blog Grid */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <AnimatePresence mode='wait'>
-            <motion.div 
-              key={filter}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
-            >
-              {filteredBlogs.map((blog) => (
-                <Link key={blog.id} href={`/blog/${blog.slug}`}>
-                  <div className="group cursor-pointer h-full flex flex-col bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2">
-                    {/* Image Container */}
-                    <div className="relative h-64 overflow-hidden">
-                      <img 
-                        src={blog.image} 
-                        alt={blog.title} 
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-[#386758]">
-                        {blog.category}
-                      </div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-8 flex flex-col flex-grow">
-                      <div className="flex items-center gap-4 text-gray-400 text-xs font-medium uppercase tracking-wider mb-4">
-                        <span className="flex items-center gap-1">
-                          <Calendar className="w-3 h-3" /> {blog.date}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-3 h-3" /> {blog.readTime}
-                        </span>
-                      </div>
-
-                      <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4 leading-tight group-hover:text-[#386758] transition-colors font-barlow">
-                        {blog.title}
-                      </h3>
-                      
-                      <p className="text-gray-600 mb-6 line-clamp-3 flex-grow">
-                        {blog.excerpt}
-                      </p>
-
-                      <div className="flex items-center text-[#386758] font-bold uppercase tracking-wider text-sm group-hover:translate-x-2 transition-transform duration-300">
-                        Read Article <ArrowRight className="w-4 h-4 ml-2" />
-                      </div>
+      {/* Blog Grid - Clean & Spacious */}
+      <section className="pb-32 px-4 md:px-8 lg:px-16 max-w-[1400px] mx-auto">
+        <AnimatePresence mode='wait'>
+          <motion.div 
+            key={filter}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16"
+          >
+            {filteredBlogs.filter(b => filter !== 'All' || b.id !== featuredBlog.id).map((blog) => (
+              <Link key={blog.id} href={`/blog/${blog.slug}`}>
+                <div className="group cursor-pointer flex flex-col h-full">
+                  {/* Image */}
+                  <div className="relative overflow-hidden rounded-xl aspect-[3/2] mb-6 bg-gray-100">
+                    <img 
+                      src={blog.image} 
+                      alt={blog.title} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#1a1a1a]">
+                      {blog.category}
                     </div>
                   </div>
-                </Link>
-              ))}
-            </motion.div>
-          </AnimatePresence>
 
-          {filteredBlogs.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-xl text-gray-500">No articles found in this category.</p>
-              <button 
-                onClick={() => setFilter('All')}
-                className="mt-4 text-[#386758] font-bold hover:underline"
-              >
-                View all articles
-              </button>
-            </div>
-          )}
-        </div>
+                  {/* Content */}
+                  <div className="flex flex-col flex-grow">
+                    <h3 className="text-2xl font-medium text-[#1a1a1a] mb-3 leading-tight group-hover:underline decoration-1 underline-offset-4">
+                      {blog.title}
+                    </h3>
+                    
+                    <p className="text-gray-600 mb-4 line-clamp-2 text-base leading-relaxed">
+                      {blog.excerpt}
+                    </p>
+
+                    <div className="mt-auto pt-4 flex items-center justify-between border-t border-gray-100">
+                      <div className="flex items-center gap-3 text-gray-400 text-[11px] font-bold uppercase tracking-wider">
+                        <span>{blog.date}</span>
+                        <span>•</span>
+                        <span>{blog.readTime}</span>
+                      </div>
+                      <span className="text-[#386758] opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-x-[-10px] group-hover:translate-x-0">
+                        <ArrowRight className="w-5 h-5" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {filteredBlogs.length === 0 && (
+          <div className="text-center py-20">
+            <p className="text-xl text-gray-500 font-light">No articles found in this category.</p>
+            <button 
+              onClick={() => setFilter('All')}
+              className="mt-4 text-[#386758] font-medium hover:underline"
+            >
+              View all articles
+            </button>
+          </div>
+        )}
       </section>
 
       <Footer />

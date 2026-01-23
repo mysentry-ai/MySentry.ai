@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Clock, Calendar } from 'lucide-react';
+import { ArrowLeft, Clock, Calendar, Share2, Facebook, Twitter, Linkedin } from 'lucide-react';
 import { Link } from 'wouter';
 
 const BlogPost = () => {
@@ -20,103 +20,178 @@ const BlogPost = () => {
 
   if (!blog) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="min-h-screen bg-[#fcfbf9] flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Article Not Found</h1>
+          <h1 className="text-4xl font-medium text-[#1a1a1a] mb-4">Article Not Found</h1>
           <Link href="/blogs" className="text-[#386758] hover:underline">
-            Return to Blogs
+            Return to The Pulse
           </Link>
         </div>
       </div>
     );
   }
 
+  // Find related posts (same category, excluding current)
+  const relatedPosts = blogs
+    .filter(b => b.category === blog.category && b.id !== blog.id)
+    .slice(0, 3);
+
   return (
-    <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
+    <div className="min-h-screen bg-[#fcfbf9] font-sans text-[#1a1a1a]">
       <SEO 
-        title={`${blog.title} | MySentry Blog`}
+        title={`${blog.title} | MySentry Pulse`}
         description={blog.excerpt}
         image={blog.image}
       />
       <Navbar />
 
-      {/* Split Hero Section */}
-      <section className="relative min-h-[600px] lg:h-[80vh] flex flex-col lg:flex-row pt-20 lg:pt-0">
-        {/* Left Content Side */}
-        <div className="w-full lg:w-1/2 bg-[#1a1a1a] flex items-center justify-center p-8 lg:p-16 xl:p-24 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-xl w-full pt-12 lg:pt-0"
-          >
-            <Link href="/blogs" className="inline-flex items-center text-white/60 hover:text-white mb-8 transition-colors group">
-              <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
-              Back to Blogs
-            </Link>
-            
-            <div className="flex flex-wrap items-center gap-4 text-white/80 mb-8 text-sm font-medium tracking-wider uppercase">
-              <span className="bg-[#386758] px-3 py-1 rounded-full text-white">
-                {blog.category}
-              </span>
-              <span className="flex items-center gap-1">
-                <Calendar className="w-4 h-4" /> {blog.date}
-              </span>
-              <span className="flex items-center gap-1">
-                <Clock className="w-4 h-4" /> {blog.readTime}
-              </span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
-              {blog.title}
-            </h1>
-            
-            <p className="text-xl text-white/80 leading-relaxed border-l-4 border-[#386758] pl-6">
-              {blog.excerpt}
-            </p>
-          </motion.div>
+      {/* Article Header - Centered & Editorial */}
+      <header className="pt-32 pb-12 px-4 md:px-8 max-w-4xl mx-auto text-center">
+        <Link href="/blogs" className="inline-flex items-center text-gray-500 hover:text-[#386758] mb-8 transition-colors text-sm font-bold uppercase tracking-widest">
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          The Pulse
+        </Link>
+        
+        <div className="mb-6">
+          <span className="bg-[#e8f5e9] text-[#386758] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">
+            {blog.category}
+          </span>
         </div>
 
-        {/* Right Image Side */}
-        <div className="w-full lg:w-1/2 h-[400px] lg:h-auto relative">
-          <div className="absolute inset-0 bg-[#1a1a1a]/10 z-10" /> {/* Subtle overlay for better integration */}
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#1a1a1a] mb-8 leading-tight font-barlow">
+          {blog.title}
+        </h1>
+
+        <div className="flex items-center justify-center gap-6 text-gray-500 text-sm font-medium uppercase tracking-wider border-t border-b border-gray-200 py-6">
+          <span className="flex items-center gap-2">
+            <Calendar className="w-4 h-4" /> {blog.date}
+          </span>
+          <span className="w-1 h-1 bg-gray-300 rounded-full" />
+          <span className="flex items-center gap-2">
+            <Clock className="w-4 h-4" /> {blog.readTime}
+          </span>
+        </div>
+      </header>
+
+      {/* Hero Image - Wide & Cinematic */}
+      <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 mb-16">
+        <div className="relative aspect-[21/9] md:aspect-[2/1] overflow-hidden rounded-2xl">
           <img 
             src={blog.image} 
             alt={blog.title} 
-            className="absolute inset-0 w-full h-full object-cover object-center"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         </div>
-      </section>
+      </div>
 
-      {/* Content Section */}
-      <article className="container mx-auto px-4 py-24 max-w-3xl">
-        <div 
-          className="prose prose-lg max-w-none 
-            prose-headings:font-barlow prose-headings:font-bold prose-headings:text-[#1a1a1a] 
-            prose-p:text-gray-600 prose-p:leading-relaxed
-            prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline
-            prose-li:text-gray-600
-            prose-strong:text-[#1a1a1a] prose-strong:font-bold
-            prose-lead:text-xl prose-lead:text-gray-700 prose-lead:font-medium"
-          dangerouslySetInnerHTML={{ __html: blog.content }}
-        />
+      {/* Main Content Layout */}
+      <div className="container mx-auto px-4 max-w-[1200px] flex flex-col lg:flex-row gap-16 relative">
+        
+        {/* Sidebar - Share & Progress (Sticky) */}
+        <aside className="hidden lg:block w-48 relative">
+          <div className="sticky top-32 flex flex-col gap-8">
+            <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Share</div>
+            <div className="flex flex-col gap-4">
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
+                <Facebook className="w-4 h-4" />
+              </button>
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
+                <Twitter className="w-4 h-4" />
+              </button>
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
+                <Linkedin className="w-4 h-4" />
+              </button>
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
+                <Share2 className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </aside>
 
-        {/* CTA Section */}
-        <div className="mt-20 p-10 bg-[#e8f5e9] rounded-3xl border border-[#386758]/20 text-center">
-          <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">
-            Ready to take the next step?
-          </h3>
-          <p className="text-gray-600 mb-8 max-w-xl mx-auto">
-            Don't let worry hold you back. Experience the freedom and safety of MySentry today.
+        {/* Article Content */}
+        <article className="flex-1 max-w-3xl mx-auto lg:mx-0">
+          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12 font-light border-l-4 border-[#386758] pl-6 italic">
+            {blog.excerpt}
           </p>
-          <Link 
-            href="/pricing#individuals" 
-            className="inline-block bg-[#386758] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#2d5246] transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-          >
-            Start Your 7-Day Free Trial
-          </Link>
-        </div>
-      </article>
+
+          <div 
+            className="prose prose-lg max-w-none 
+              prose-headings:font-barlow prose-headings:font-medium prose-headings:text-[#1a1a1a] prose-headings:mt-12 prose-headings:mb-6
+              prose-p:text-gray-600 prose-p:leading-8 prose-p:mb-6 prose-p:font-light
+              prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-a:font-medium
+              prose-li:text-gray-600 prose-li:leading-8
+              prose-strong:text-[#1a1a1a] prose-strong:font-semibold
+              prose-blockquote:border-l-4 prose-blockquote:border-[#386758] prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700 prose-blockquote:bg-gray-50 prose-blockquote:py-4 prose-blockquote:pr-4 prose-blockquote:rounded-r-lg"
+            dangerouslySetInnerHTML={{ __html: blog.content }}
+          />
+
+          {/* Author Bio Box */}
+          <div className="mt-16 p-8 bg-white rounded-2xl border border-gray-100 flex items-center gap-6 shadow-sm">
+            <div className="w-16 h-16 bg-[#e8f5e9] rounded-full flex items-center justify-center text-[#386758] font-bold text-xl">
+              MS
+            </div>
+            <div>
+              <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Written By</div>
+              <div className="text-lg font-bold text-[#1a1a1a]">MySentry Editorial Team</div>
+              <p className="text-gray-500 text-sm mt-1">Dedicated to bringing you the latest insights on safety, health, and independence.</p>
+            </div>
+          </div>
+
+          {/* CTA Section - Integrated */}
+          <div className="mt-16 relative overflow-hidden rounded-3xl bg-[#1a1a1a] text-white p-10 md:p-16 text-center">
+            <div className="relative z-10">
+              <h3 className="text-3xl font-medium mb-4 font-barlow">
+                Experience True Peace of Mind
+              </h3>
+              <p className="text-white/70 mb-8 max-w-xl mx-auto text-lg font-light">
+                Join thousands of others who have reclaimed their independence with MySentry.
+              </p>
+              <Link 
+                href="/pricing" 
+                className="inline-block bg-white text-[#1a1a1a] px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#386758] hover:text-white transition-all duration-300"
+              >
+                Start Free Trial
+              </Link>
+            </div>
+            {/* Abstract Background Pattern */}
+            <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+              <div className="absolute top-[-50%] left-[-20%] w-[80%] h-[200%] bg-[#386758] rounded-full blur-[100px]" />
+            </div>
+          </div>
+        </article>
+      </div>
+
+      {/* Related Articles Section */}
+      {relatedPosts.length > 0 && (
+        <section className="bg-white py-24 mt-24 border-t border-gray-100">
+          <div className="container mx-auto px-4 max-w-[1400px]">
+            <h3 className="text-3xl font-medium text-[#1a1a1a] mb-12 text-center font-barlow">
+              More from {blog.category}
+            </h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              {relatedPosts.map((post) => (
+                <Link key={post.id} href={`/blog/${post.slug}`}>
+                  <div className="group cursor-pointer">
+                    <div className="relative overflow-hidden rounded-xl aspect-[3/2] mb-6 bg-gray-100">
+                      <img 
+                        src={post.image} 
+                        alt={post.title} 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <h4 className="text-xl font-medium text-[#1a1a1a] mb-2 leading-tight group-hover:underline decoration-1 underline-offset-4">
+                      {post.title}
+                    </h4>
+                    <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mt-3">
+                      {post.readTime}
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <Footer />
     </div>
