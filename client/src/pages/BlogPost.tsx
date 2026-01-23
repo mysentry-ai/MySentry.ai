@@ -40,30 +40,22 @@ const BlogPost = () => {
       />
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative h-[500px] flex items-center pt-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={blog.image} 
-            alt={blog.title} 
-            className="absolute inset-0 w-full h-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10" />
-        </div>
-        
-        <div className="relative z-20 container mx-auto px-4">
+      {/* Split Hero Section */}
+      <section className="relative min-h-[600px] lg:h-[80vh] flex flex-col lg:flex-row pt-20 lg:pt-0">
+        {/* Left Content Side */}
+        <div className="w-full lg:w-1/2 bg-[#1a1a1a] flex items-center justify-center p-8 lg:p-16 xl:p-24 relative z-10">
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-4xl"
+            className="max-w-xl w-full pt-12 lg:pt-0"
           >
-            <Link href="/blogs" className="inline-flex items-center text-white/80 hover:text-white mb-8 transition-colors group">
+            <Link href="/blogs" className="inline-flex items-center text-white/60 hover:text-white mb-8 transition-colors group">
               <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform" />
               Back to Blogs
             </Link>
             
-            <div className="flex items-center gap-4 text-white/80 mb-6 text-sm font-medium tracking-wider uppercase">
+            <div className="flex flex-wrap items-center gap-4 text-white/80 mb-8 text-sm font-medium tracking-wider uppercase">
               <span className="bg-[#386758] px-3 py-1 rounded-full text-white">
                 {blog.category}
               </span>
@@ -75,14 +67,24 @@ const BlogPost = () => {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight">
               {blog.title}
             </h1>
             
-            <p className="text-xl text-white/90 max-w-2xl leading-relaxed">
+            <p className="text-xl text-white/80 leading-relaxed border-l-4 border-[#386758] pl-6">
               {blog.excerpt}
             </p>
           </motion.div>
+        </div>
+
+        {/* Right Image Side */}
+        <div className="w-full lg:w-1/2 h-[400px] lg:h-auto relative">
+          <div className="absolute inset-0 bg-[#1a1a1a]/10 z-10" /> {/* Subtle overlay for better integration */}
+          <img 
+            src={blog.image} 
+            alt={blog.title} 
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
         </div>
       </section>
 
