@@ -41,12 +41,12 @@ const BlogPost = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center pt-32 overflow-hidden">
+      <section className="relative h-[500px] flex items-center pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={blog.image} 
             alt={blog.title} 
-            className="absolute inset-0 w-full h-full object-cover object-top"
+            className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10" />
         </div>
