@@ -210,7 +210,7 @@ export default function Home() {
               <span className="text-gray-600">Emergency Alone.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              MySentry turns your smart phone and smart watch into a 24/7 safety and health monitoring companion. We monitor, detect, and respond so help reaches you fast.
+              MySentry turns your smart phone and smart wearables into a 24/7 safety and health monitoring companion. We monitor, detect, and respond so help reaches you fast.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
