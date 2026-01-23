@@ -209,7 +209,7 @@ export default function Home() {
               <span className="text-gray-600">Into A Health Guardian.</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              MySentry transforms raw wearable data into personalized insights, real-time safety alerts, and proactive health guidance—all from your Apple Watch or Samsung Watch.
+              MySentry transforms raw wearable data into personalized insights, real-time safety alerts, and proactive health guidance, all from your Apple Watch or Samsung Watch.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">

@@ -9,7 +9,7 @@ export default function FAQs() {
   const faqs = [
     {
       question: "How is MySentry different from the health tracking my Apple Watch or Samsung Watch already does?",
-      answer: "Your watch collects vitals—MySentry explains what they mean and alerts you when something's wrong. While standard tracking shows you data, MySentry uses AI to learn your personal baseline and detects anomalies in real-time. Plus, we connect that data to 24/7 professional monitoring, so if a critical event like a fall or heart anomaly occurs, we can send help even if you can't call for it."
+      answer: "Your watch collects vitals. MySentry explains what they mean and alerts you when something's wrong. While standard tracking shows you data, MySentry uses AI to learn your personal baseline and detects anomalies in real-time. Plus, we connect that data to 24/7 professional monitoring, so if a critical event like a fall or heart anomaly occurs, we can send help even if you can't call for it."
     },
     {
       question: "Do I need to buy a new device to use MySentry?",
