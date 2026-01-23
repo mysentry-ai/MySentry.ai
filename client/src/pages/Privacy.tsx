@@ -40,17 +40,17 @@ export const Privacy = () => {
       </section>
 
       <div className="container mx-auto px-4 py-24 max-w-4xl">
-        <div className="bg-white p-8 md:p-16 rounded-3xl shadow-xl border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:font-bold prose-headings:text-[#1a1a1a] prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-p:text-gray-600 prose-li:text-gray-600">
+        <div className="bg-white p-8 md:p-16 rounded-3xl shadow-xl border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:font-bold prose-headings:text-[#1a1a1a] prose-headings:mt-16 prose-headings:mb-8 prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-8 prose-li:text-gray-600 prose-li:mb-4">
           
-          <p className="lead text-xl text-gray-700 font-medium">
+          <p className="lead text-xl text-gray-700 font-medium mb-12">
             At MySentry.ai, our dedication to user privacy and security is paramount. In this Privacy Policy, we explain the types of personal information that may be collected through the MySentry app (referred to as "the App"), how this information might be used and shared, and the choices available to users with respect to their personal information.
           </p>
 
-          <h3>Collection of User Information</h3>
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Collection of User Information</h3>
           <p>
             During app usage, we gather various types of personal data from users, including:
           </p>
-          <ol>
+          <ol className="space-y-6 mb-12">
             <li>
               <strong>User-Provided Information:</strong> When users register for an account, create a profile, or engage with specific features of the App, they may voluntarily give us personal information. This can encompass details like their name, email address, phone number, location information, emergency contacts, and other relevant data.
             </li>
@@ -62,11 +62,11 @@ export const Privacy = () => {
             </li>
           </ol>
 
-          <h3>Utilization of Collected Information</h3>
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Utilization of Collected Information</h3>
           <p>
             The information we collect from users is utilized for various purposes, including:
           </p>
-          <ol>
+          <ol className="space-y-6 mb-12">
             <li>
               <strong>Enhancing App Services:</strong> We use the data to provide and refine the App's services, such as personalized safety features, location sharing capabilities, and emergency response services.
             </li>
@@ -81,11 +81,11 @@ export const Privacy = () => {
             </li>
           </ol>
 
-          <h3>Sharing of Information</h3>
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Sharing of Information</h3>
           <p>
             We might share personal information of users with these entities:
           </p>
-          <ol>
+          <ol className="space-y-6 mb-12">
             <li>
               <strong>Third-Party Service Providers:</strong> We collaborate with external service providers who help us deliver the App's services. This may include sharing personal information for purposes such as hosting, data analysis, customer support, and other relevant functions.
             </li>
@@ -103,9 +103,9 @@ export const Privacy = () => {
             </li>
           </ol>
 
-          <h3>Permission to Access Contacts</h3>
-          <div className="bg-[#e8f5e9] p-6 rounded-xl border border-[#386758]/20 my-6">
-            <ul className="m-0">
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Permission to Access Contacts</h3>
+          <div className="bg-[#e8f5e9] p-8 rounded-2xl border border-[#386758]/20 my-10 shadow-sm">
+            <ul className="m-0 space-y-4">
               <li>
                 <strong>Mysentry Vital Companion</strong> requires access to your contact list to allow you to designate emergency contacts who can be alerted in case of an emergency. When you grant permission, we will upload your contact list to our secure servers.
               </li>
@@ -118,21 +118,21 @@ export const Privacy = () => {
             </ul>
           </div>
 
-          <h3>Data Retention</h3>
-          <p>
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Data Retention</h3>
+          <p className="mb-12">
             We maintain users' personal data for the duration necessary to achieve the purposes for which it was gathered, comply with legal obligations, settle disputes, uphold our rights, or support other legitimate business needs.
           </p>
 
-          <h3>Data Security</h3>
-          <p>
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Data Security</h3>
+          <p className="mb-12">
             Our approach involves employing suitable technical and organizational safeguards to protect users' personal data. Nonetheless, it's important to understand that no system of data transmission or storage is entirely foolproof. As such, we cannot provide an absolute guarantee of the security of personal information.
           </p>
 
-          <h3>Rights and Choices for Users</h3>
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Rights and Choices for Users</h3>
           <p>
             Users are entitled to specific rights and choices concerning their personal data, including the following:
           </p>
-          <ol>
+          <ol className="space-y-6 mb-12">
             <li>
               <strong>Access and Update:</strong> Users can access and modify their personal information by logging into their account on the App and adjusting their profile settings.
             </li>
@@ -147,23 +147,23 @@ export const Privacy = () => {
             </li>
           </ol>
 
-          <h3>Requesting Data Deletion</h3>
-          <p>
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Requesting Data Deletion</h3>
+          <p className="mb-12">
             Users can ask for the removal of their personal information from our records by reaching out to us. Note that certain data may be retained as required by law or for valid business reasons.
           </p>
 
-          <h3>Privacy for Children</h3>
-          <p>
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Privacy for Children</h3>
+          <p className="mb-12">
             Our App is not designed for children below 13 years. We do not intentionally gather personal data from children under 13. If it comes to our attention that such information has been collected without parental consent, we will promptly take measures to remove it.
           </p>
 
-          <h3>Updates to Our Privacy Policy</h3>
-          <p>
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Updates to Our Privacy Policy</h3>
+          <p className="mb-12">
             We reserve the right to modify our Privacy Policy as needed. Any updates will be reflected on this page, along with the revision date. We advise users to regularly check this policy for any changes. Continued use of the App following any policy updates implies acceptance of the new terms.
           </p>
 
-          <h3>Contact Us</h3>
-          <p>
+          <h3 className="text-2xl border-b border-gray-100 pb-4">Contact Us</h3>
+          <p className="mb-12">
             For inquiries, concerns, or requests related to this Privacy Policy or the privacy practices of the MySentry App, users can reach us at <a href="mailto:support@mysentry.ai">support@mysentry.ai</a>. By utilizing the MySentry App, users agree to and authorize the gathering, utilization, and disclosure of their personal information as outlined in this Privacy Policy.
           </p>
 
