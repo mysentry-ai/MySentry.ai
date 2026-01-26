@@ -60,7 +60,7 @@ export default function Pricing() {
     {
       id: "complete",
       name: "Essential Safety",
-      tagline: "Safety + Health + Monitoring",
+      tagline: "24x7 Safety & Health Monitoring with Emergency Response",
       price: currentMonthlyPrice,
       annualPrice: currentAnnualTotal,
       description: "Full protection with health monitoring and 24/7 agents.",
