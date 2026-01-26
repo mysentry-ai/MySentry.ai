@@ -15,16 +15,16 @@ export default function Pricing() {
   const [selectedEmployerPlan, setSelectedEmployerPlan] = useState("");
 
   // Static pricing logic
-  // Individual: $12.49/mo (Monthly) or $9.99/mo (Yearly)
-  // Family (up to 6): $24.99/mo (Monthly) or $19.99/mo (Yearly)
+  // Individual: $15/mo (Monthly) or $150/yr (Yearly - 2 months free)
+  // Family (up to 6): $30/mo (Monthly) or $300/yr (Yearly - 2 months free)
   
-  const individualMonthly = 12.49;
-  const individualYearlyRate = 9.99;
-  const individualAnnualTotal = individualYearlyRate * 12;
+  const individualMonthly = 15.00;
+  const individualYearlyRate = 12.50; // $150 / 12
+  const individualAnnualTotal = 150.00;
 
-  const familyMonthly = 24.99;
-  const familyYearlyRate = 19.99;
-  const familyAnnualTotal = familyYearlyRate * 12;
+  const familyMonthly = 30.00;
+  const familyYearlyRate = 25.00; // $300 / 12
+  const familyAnnualTotal = 300.00;
 
   const currentMonthlyPrice = isFamily ? familyMonthly : individualMonthly;
   const currentYearlyRate = isFamily ? familyYearlyRate : individualYearlyRate;
@@ -50,7 +50,7 @@ export default function Pricing() {
 
   const discountMultiplier = 1 - employerDiscount;
 
-  const completeBaseRate = isAnnual ? 19.99 : 24.99;
+  const completeBaseRate = isAnnual ? 25.00 : 30.00;
   const longevityBaseRate = isAnnual ? 39.99 : 49.99;
 
   const completeTotalPrice = completeBaseRate * employeeCount * discountMultiplier;
@@ -217,7 +217,7 @@ export default function Pricing() {
                 isAnnual ? "bg-primary text-white" : "text-[#1a1a1a] hover:text-primary"
               )}
             >
-              Yearly <span className="text-[10px] bg-secondary text-white px-2 py-0.5 rounded-full font-bold ml-1">SAVE 20%</span>
+              Yearly <span className="text-[10px] bg-secondary text-white px-2 py-0.5 rounded-full font-bold ml-1">2 MONTHS FREE</span>
             </button>
           </div>
         </div>
