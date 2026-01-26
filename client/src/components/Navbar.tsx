@@ -83,7 +83,7 @@ export default function Navbar() {
               key={link.name} 
               href={link.href}
               className={cn(
-                "text-[20px] font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
+                "text-[16px] font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
                 (scrolled || !isHome) ? "!text-black" : "text-black lg:text-white",
                 isActive(link.href) ? "text-primary" : ""
               )}
@@ -101,7 +101,7 @@ export default function Navbar() {
             <button
               onClick={() => setMoreOpen(!moreOpen)}
               className={cn(
-                "flex items-center gap-1 text-[20px] font-bold tracking-widest transition-all font-heading uppercase !text-black"
+                "flex items-center gap-1 text-[16px] font-bold tracking-widest transition-all font-heading uppercase !text-black"
               )}
             >
               MORE <ChevronDown className={cn("w-4 h-4 transition-transform", moreOpen ? "rotate-180" : "")} />
@@ -169,7 +169,7 @@ export default function Navbar() {
             <Link 
               href="/"
               className={cn(
-                "block text-[20px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4",
+                "block text-[18px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4",
                 isActive("/") ? "text-primary" : "text-foreground"
               )}
               onClick={() => setIsOpen(false)}
@@ -181,7 +181,7 @@ export default function Navbar() {
                 key={link.name} 
                 href={link.href}
                 className={cn(
-                  "block text-[20px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4",
+                  "block text-[18px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4",
                   isActive(link.href) ? "text-primary" : "text-foreground"
                 )}
                 onClick={() => setIsOpen(false)}
@@ -197,7 +197,7 @@ export default function Navbar() {
                   key={link.name} 
                   href={link.href}
                   className={cn(
-                    "block text-[20px] font-heading font-bold transition-colors hover:text-primary py-2",
+                    "block text-[18px] font-heading font-bold transition-colors hover:text-primary py-2",
                     isActive(link.href) ? "text-primary" : "text-gray-600"
                   )}
                   onClick={() => setIsOpen(false)}

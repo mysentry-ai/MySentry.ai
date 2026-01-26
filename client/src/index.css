@@ -129,7 +129,7 @@
     @apply border-border outline-ring/50;
   }
   html {
-    font-size: 18px; /* Increased base font size for better readability */
+    font-size: 16px; /* Standard base font size for refined look */
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
@@ -141,14 +141,14 @@
     color: #232020 !important;
     line-height: 1.2;
   }
-  h1 { font-size: 3.5rem; }
-  h2 { font-size: 2.75rem; }
-  h3 { font-size: 2rem; }
+  h1 { font-size: 3rem; }
+  h2 { font-size: 2.25rem; }
+  h3 { font-size: 1.75rem; }
   
   p {
     @apply text-foreground;
     color: #232020 !important;
-    font-size: 1.125rem; /* 18px */
+    font-size: 1rem; /* 16px */
   }
   span, div, li, a {
     color: #232020 !important;
@@ -210,9 +210,9 @@
   }
 
   @media (max-width: 640px) {
-    h1 { font-size: 2.5rem !important; }
-    h2 { font-size: 2rem !important; }
-    h3 { font-size: 1.75rem !important; }
+    h1 { font-size: 2.25rem !important; }
+    h2 { font-size: 1.75rem !important; }
+    h3 { font-size: 1.5rem !important; }
     .container { padding-left: 1rem; padding-right: 1rem; }
   }
   

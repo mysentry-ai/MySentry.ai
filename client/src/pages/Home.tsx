@@ -204,18 +204,18 @@ export default function Home() {
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
               24/7 Safety & Health Monitoring with Emergency Response
             </span>
-            <h1 className="text-[55px] font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
+            <h1 className="text-[48px] font-heading font-bold uppercase leading-[1.1] tracking-tight mb-6 text-[#1a1a1a]">
               Turn Your Smartwatch<br/>
               <span className="text-gray-600">Into A Health Guardian.</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+            <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed max-w-2xl font-normal">
               MySentry transforms raw wearable data into personalized insights, real-time safety alerts, and proactive health guidance, all from your Apple Watch or Samsung Watch.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href="/pricing"
-                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
+                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-8 h-14 text-base transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
                 onClick={() => window.scrollTo(0, 0)}
               >
                 START 7-DAY FREE TRIAL
