@@ -19,6 +19,83 @@
       defer
       src="%VITE_ANALYTICS_ENDPOINT%/umami"
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+    <script type="module">
+      import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+      Chatbot.init({
+        chatflowid: "343c9ce8-205b-434d-9c95-68737d97752e",
+        apiHost: "https://flowise.zigron.com",
+        theme: {
+          button: {
+            backgroundColor: '#004F7B',
+            right: 20,
+            bottom: 20,
+            size: 60,
+            dragAndDrop: true,
+            iconColor: 'white',
+            customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+            autoWindowOpen: {
+              autoOpen: true,
+              openDelay: 2,
+              autoOpenOnMobile: false
+            }
+          },
+          tooltip: {
+            showTooltip: true,
+            tooltipMessage: 'Hi! Need Help?',
+            tooltipBackgroundColor: '#004F7B',
+            tooltipTextColor: 'white',
+            tooltipFontSize: 16
+          },
+          chatWindow: {
+            showTitle: true,
+            showAgentMessages: true,
+            title: 'MySentry Assistant',
+            titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+            welcomeMessage: 'Hello! I can help you with questions about MySentry plans, features, and how to get started. How can I assist you today?',
+            errorMessage: 'I am having trouble connecting. Please try again later.',
+            backgroundColor: '#ffffff',
+            height: 600,
+            width: 400,
+            fontSize: 16,
+            starterPrompts: [
+              "How do I add emergency contacts?",
+              "How does the Panic Alarm work?",
+              "What is included in the Essential Safety plan?"
+            ],
+            starterPromptFontSize: 14,
+            clearChatOnReload: true,
+            botMessage: {
+              backgroundColor: '#f0f9ff',
+              textColor: '#1a1a1a',
+              showAvatar: true,
+              avatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg'
+            },
+            userMessage: {
+              backgroundColor: '#004F7B',
+              textColor: '#ffffff',
+              showAvatar: false
+            },
+            textInput: {
+              placeholder: 'Type your question here...',
+              backgroundColor: '#ffffff',
+              textColor: '#1a1a1a',
+              sendButtonColor: '#004F7B',
+              maxChars: 200,
+              maxCharsWarningMessage: 'You exceeded the character limit.',
+              autoFocus: true,
+              sendMessageSound: true,
+              receiveMessageSound: true
+            },
+            footer: {
+              textColor: '#666',
+              text: 'Powered by',
+              company: 'MySentry.AI',
+              companyLink: 'https://www.mysentry.ai/'
+            }
+          }
+        }
+      })
+    </script>
   </body>
 
 </html>
