@@ -58,7 +58,7 @@ export default function Navbar() {
         "fixed top-0 z-50 w-full transition-all duration-300 border-b",
         (scrolled || !isHome)
           ? "bg-white/95 backdrop-blur-md border-gray-200 py-3 shadow-sm" 
-          : "bg-white/95 backdrop-blur-md border-gray-200 py-3 shadow-sm lg:bg-transparent lg:border-transparent lg:py-6"
+          : "bg-white/95 backdrop-blur-md border-gray-200 py-3 shadow-sm xl:bg-transparent xl:border-transparent xl:py-6"
       )}
     >
       <div className="container flex items-center justify-between">
@@ -69,7 +69,7 @@ export default function Navbar() {
               src="/images/logo.png" 
               alt="MySentry" 
               className={cn(
-                "h-14 w-auto transition-all duration-300 group-hover:scale-105",
+                "h-10 md:h-12 lg:h-14 w-auto transition-all duration-300 group-hover:scale-105",
                 ""
               )} 
             />
@@ -77,14 +77,14 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-8 xl:gap-10">
+        <div className="hidden xl:flex items-center gap-6 2xl:gap-10">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
               className={cn(
                 "text-[16px] font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
-                (scrolled || !isHome) ? "!text-black" : "text-black lg:text-white",
+                (scrolled || !isHome) ? "!text-black" : "text-black xl:text-white",
                 isActive(link.href) ? "text-primary" : ""
               )}
             >
@@ -130,7 +130,7 @@ export default function Navbar() {
         </div>
 
         {/* CTA Button */}
-        <div className="hidden lg:flex items-center">
+        <div className="hidden xl:flex items-center">
           <Link 
             href="/pricing"
             className={cn(
@@ -145,7 +145,7 @@ export default function Navbar() {
         {/* Mobile Menu Toggle */}
         <button
           className={cn(
-            "lg:hidden p-2 transition-colors",
+            "xl:hidden p-2 transition-colors",
             "text-black"
           )}
           onClick={() => setIsOpen(true)}
@@ -156,10 +156,10 @@ export default function Navbar() {
 
       {/* Mobile Nav Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-[9999] bg-white flex flex-col animate-in slide-in-from-right duration-300 lg:hidden overflow-y-auto h-[100dvh] w-screen">
+        <div className="fixed inset-0 z-[9999] bg-white flex flex-col animate-in slide-in-from-right duration-300 xl:hidden overflow-y-auto h-[100dvh] w-screen">
           <div className="container py-6 flex items-center justify-between border-b border-gray-100 bg-white sticky top-0 z-10">
              <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
-                <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
+                <img src="/images/logo.png" alt="MySentry" className="h-10 w-auto" />
              </Link>
              <button onClick={() => setIsOpen(false)} className="p-2">
                <X className="h-8 w-8 text-black" />
