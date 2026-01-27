@@ -91,7 +91,7 @@ export const Contact = () => {
       <Navbar />
       
       {/* Hero Section - Standardized */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/contact-hero.jpg" 

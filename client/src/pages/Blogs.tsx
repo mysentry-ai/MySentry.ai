@@ -28,7 +28,7 @@ const Blogs = () => {
       <Navbar />
 
       {/* Hero Section - Minimalist & Editorial */}
-      <section className="pt-32 pb-16 px-4 md:px-8 lg:px-16 max-w-[1400px] mx-auto">
+      <section className="pt-24 pb-16 px-4 md:px-8 lg:px-16 max-w-[1400px] mx-auto">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

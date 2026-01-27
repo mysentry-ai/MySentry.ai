@@ -191,7 +191,7 @@ export default function Employers() {
       />
       
       {/* HERO SECTION - Standardized with Females Page Style */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-20 overflow-hidden">
+      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
            <ResponsiveImage 
