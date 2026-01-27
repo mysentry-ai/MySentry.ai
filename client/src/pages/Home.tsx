@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Shield, Activity, Users, Building2, Heart, AlertTriangle, Phone, MapPin, Video, Lock, Clock, Smartphone, Watch, Menu } from "lucide-react";
 import { motion } from "framer-motion";
@@ -186,7 +187,7 @@ export default function Home() {
       <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
-           <img 
+           <ResponsiveImage 
              src="/images/families-hero.jpg" 
              alt="Family safety and connection" 
              className="absolute inset-0 w-full h-full object-cover opacity-60"

@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { Heart, AlertCircle, Activity, TrendingDown, Shield, Clock, CheckCircle2, ArrowRight, Zap, Play, UserCheck, HeartPulse, Watch, Pill, Home, Car, MapPin, Phone, UserPlus, Battery, Bell } from "lucide-react";
 import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
 import GetStartedSection from "@/components/GetStartedSection";
@@ -187,7 +188,7 @@ export default function Seniors() {
       <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
-           <img 
+           <ResponsiveImage 
              src="/images/happy-senior-watch.jpg" 
              alt="Active senior enjoying life" 
              className="absolute inset-0 w-full h-full object-cover opacity-60"

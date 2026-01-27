@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { Heart, MapPin, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Eye, Smartphone, TrendingDown, Zap, Car, Activity, Watch, Users, Lock, Building2 } from "lucide-react";
 import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
 import GetStartedSection from "@/components/GetStartedSection";
@@ -187,7 +188,7 @@ export default function Females() {
       <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
-           <img 
+           <ResponsiveImage 
              src="/images/hero-female-active.jpg" 
              alt="Confident woman walking in city" 
              className="absolute inset-0 w-full h-full object-cover opacity-60"

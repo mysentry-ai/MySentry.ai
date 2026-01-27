@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import ResponsiveImage from "@/components/ResponsiveImage";
 import { ShieldAlert, Activity, Car, HeartPulse, Video, Smartphone, Watch, Check, ArrowRight, AlertTriangle, MapPin, Zap, CheckCircle2, Lock, Users, TrendingDown, Play, Phone, Heart } from "lucide-react";
 import AlertDemo from "@/components/AlertDemo";
 import { motion } from "framer-motion";
@@ -20,7 +21,7 @@ export default function Features() {
       <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
-           <img 
+           <ResponsiveImage 
              src="/images/flyer-main.png" 
              alt="Happy senior checking smartwatch" 
              className="absolute inset-0 w-full h-full object-cover opacity-60"
@@ -196,7 +197,7 @@ export default function Features() {
       {/* FEATURES HERO SECTION */}
       <section className="relative min-h-[60vh] flex items-center bg-[#f8fafc] overflow-hidden">
         <div className="absolute inset-0 z-0">
-           <img 
+           <ResponsiveImage 
              src="/images/features-hero.jpg" 
              alt="Active senior lifestyle" 
              className="absolute inset-0 w-full h-full object-cover"
@@ -263,7 +264,7 @@ export default function Features() {
           </div>
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
-              <img src="/images/panic-feature.jpg" alt="Panic Alarm" className="w-full h-full object-cover" />
+              <ResponsiveImage src="/images/panic-feature.jpg" alt="Panic Alarm" className="w-full h-full object-cover" />
               <AlertDemo type="panic" className="absolute inset-0" />
             </div>
           </div>
@@ -275,7 +276,7 @@ export default function Features() {
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
-              <img src="/images/frame-1.png" alt="Fall Detection" className="w-full h-full object-cover" />
+              <ResponsiveImage src="/images/frame-1.png" alt="Fall Detection" className="w-full h-full object-cover" />
               <AlertDemo type="fall" className="absolute inset-0" />
             </div>
           </div>
