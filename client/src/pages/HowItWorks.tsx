@@ -290,11 +290,11 @@ export default function Features() {
               <span className="text-gray-500">Automatically.</span>
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-10">
-              Hard fall? Your watch and phone know in 2 seconds and call for help. You don't have to do anything. The system responds for you.
+              Hard fall? Your watch and phone detect it and call for help if you don't respond within 2 minutes. Need help sooner? Trigger the panic alarm instantly with your voice or a tap.
             </p>
             <div className="grid grid-cols-2 gap-6">
               {[
-                { title: "2 Second", desc: "Detection Speed" },
+                { title: "Instant", desc: "Panic Alarm" },
                 { title: "Hands-Free", desc: "Auto-Activation" },
                 { title: "Any Angle", desc: "360° Monitoring" },
                 { title: "Live Video", desc: "Instant Context" }

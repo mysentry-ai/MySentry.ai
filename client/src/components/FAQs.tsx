@@ -25,7 +25,7 @@ export default function FAQs() {
     },
     {
       question: "How does the Fall Detection work?",
-      answer: "MySentry uses the motion sensors in your smartwatch to detect hard falls. If a fall is detected, you'll receive an alert on your watch. If you don't respond within the designated time window (2 minutes for Apple, 30 seconds for Samsung) OR if you mark yourself unsafe, emergency contacts and 24/7 monitoring are notified immediately with your location."
+      answer: "MySentry uses the motion sensors in your smartwatch to detect hard falls. If a fall is detected, you'll receive an alert on your watch. If you don't respond within the designated time window (2 minutes) OR if you mark yourself unsafe, emergency contacts and 24/7 monitoring are notified immediately with your location."
     },
     {
       question: "Is my health data private and secure?",
