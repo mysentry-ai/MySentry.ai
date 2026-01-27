@@ -206,11 +206,11 @@ export default function Home() {
               24/7 Safety & Health Monitoring with Emergency Response
             </span>
             <h1 className="text-[48px] font-heading font-bold uppercase leading-[1.1] tracking-tight mb-6 text-[#1a1a1a]">
-              Turn Your Smartwatch<br/>
-              <span className="text-gray-600">Into A Health Guardian.</span>
+              Never Face a Safety or<br/>
+              <span className="text-gray-600">Health Emergency Alone.</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed max-w-2xl font-normal">
-              MySentry transforms raw wearable data into personalized insights, real-time safety alerts, and proactive health guidance, all from your Apple Watch or Samsung Watch.
+              MySentry turns your smart phone and smart wearables including smart watches into 24/7 safety and health monitoring so help is dispatched fast when you can’t respond.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
