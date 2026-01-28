@@ -78,13 +78,13 @@ export default function Navbar() {
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden xl:flex items-center gap-6 2xl:gap-10">
+        <div className="hidden xl:flex items-center gap-4 2xl:gap-8">
           {navLinks.map((link) => (
             <Link 
               key={link.name} 
               href={link.href}
               className={cn(
-                "nav-link font-bold tracking-widest transition-all hover:text-primary relative group font-heading uppercase",
+                "nav-link text-sm font-bold tracking-wider transition-all hover:text-primary relative group font-heading uppercase",
                 (scrolled || !isHome) ? "!text-black" : "text-black xl:text-white",
                 isActive(link.href) ? "text-primary" : ""
               )}
@@ -102,7 +102,7 @@ export default function Navbar() {
             <button
               onClick={() => setMoreOpen(!moreOpen)}
               className={cn(
-                "flex items-center gap-1 nav-link font-bold tracking-widest transition-all font-heading uppercase !text-black"
+                "flex items-center gap-1 nav-link text-sm font-bold tracking-wider transition-all font-heading uppercase !text-black"
               )}
             >
               MORE <ChevronDown className={cn("w-4 h-4 transition-transform", moreOpen ? "rotate-180" : "")} />
@@ -135,7 +135,7 @@ export default function Navbar() {
           <Link 
             href="/pricing"
             className={cn(
-              "inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-8 h-12 text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300",
+              "inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-6 h-10 text-xs shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300",
               "bg-primary text-white hover:bg-primary/90"
             )}
           >
