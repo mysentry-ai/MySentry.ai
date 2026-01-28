@@ -116,6 +116,7 @@ const BlogPost = () => {
           </p>
 
           <div 
+            id="blog-content"
             className="prose prose-lg max-w-none 
               prose-headings:font-barlow prose-headings:font-medium prose-headings:text-gray-900 prose-headings:mt-12 prose-headings:mb-6
               prose-p:text-gray-900 prose-p:leading-8 prose-p:mb-6 prose-p:font-light

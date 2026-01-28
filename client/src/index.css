@@ -251,3 +251,25 @@
     @apply -translate-y-2 shadow-xl;
   }
 }
+
+/* FORCE BLACK TEXT OVERRIDE FOR LEGAL AND BLOG PAGES */
+.prose p, 
+.prose h1, 
+.prose h2, 
+.prose h3, 
+.prose h4, 
+.prose h5, 
+.prose h6, 
+.prose li, 
+.prose strong, 
+.prose span,
+.prose div {
+  color: #000000 !important;
+}
+
+/* Specific overrides for Privacy, Terms, and Blog containers if they use specific IDs or classes */
+#privacy-content *, 
+#terms-content *, 
+#blog-content * {
+  color: #000000 !important;
+}
