@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, ArrowRight, Building2, Users, ShieldCheck, BarChart3, ChevronDown, Check, AlertCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { HeroHeading, HeroText, LabelText, SectionHeading, CardHeading } from "@/components/ui/typography";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
@@ -193,15 +194,15 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <span className="text-[#004F7B] font-bold tracking-widest uppercase text-sm mb-4 block">
+            <LabelText variant="primary">
               Partner Program
-            </span>
-            <h1 className="mb-8 uppercase">
+            </LabelText>
+            <HeroHeading>
               Join the <br/><span className="text-primary">Dealer Network</span>
-            </h1>
-            <p className="mb-10 max-w-2xl font-medium">
+            </HeroHeading>
+            <HeroText>
               Expand your business with the world's first AI-powered personal assistant for employee safety, security, and wellness.
-            </p>
+            </HeroText>
             <Button 
               size="lg"
               className="bg-[#004F7B] text-white hover:bg-[#003d60] font-bold uppercase tracking-wider text-lg h-14 px-8 rounded-full shadow-lg hover:shadow-xl transition-all"
@@ -217,7 +218,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="uppercase text-primary mb-4">Why Become an Authorized Dealer?</h2>
+            <SectionHeading variant="primary">Why Become an Authorized Dealer?</SectionHeading>
             <p className="text-xl text-gray-600">Position yourself as a leader in AI-driven safety solutions.</p>
           </div>
 
@@ -250,7 +251,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                 <div className="w-16 h-16 bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-6 text-[#004F7B]">
                   <item.icon className="w-8 h-8" />
                 </div>
-                <h3 className="uppercase mb-4">{item.title}</h3>
+                <CardHeading>{item.title}</CardHeading>
                 <p className="text-gray-600 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}

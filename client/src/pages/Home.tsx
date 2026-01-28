@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { Button } from "@/components/ui/button";
+import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
 import { ArrowRight, Check, Shield, Activity, Users, Building2, Heart, AlertTriangle, Phone, MapPin, Video, Lock, Clock, Smartphone, Watch, Menu } from "lucide-react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
@@ -202,16 +203,16 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
+            <LabelText variant="primary">
               24/7 Safety & Health Monitoring with Emergency Response
-            </span>
-            <h1 className="uppercase mb-6">
+            </LabelText>
+            <HeroHeading>
               Never Face a Safety or<br/>
               <span className="text-muted-foreground">Health Emergency Alone.</span>
-            </h1>
-            <p className="mb-8 max-w-2xl font-normal">
+            </HeroHeading>
+            <HeroText>
               MySentry turns your smart phone and smart wearables into 24/7 safety and health monitoring so help is dispatched fast when you can’t respond.
-            </p>
+            </HeroText>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 

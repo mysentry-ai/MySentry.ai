@@ -170,8 +170,8 @@ export default function Navbar() {
             <Link 
               href="/"
               className={cn(
-                "block text-[18px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4",
-                isActive("/") ? "text-primary" : "text-foreground"
+                "block text-[28px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4 text-black",
+                isActive("/") ? "text-primary" : "text-black"
               )}
               onClick={() => setIsOpen(false)}
             >
@@ -182,8 +182,8 @@ export default function Navbar() {
                 key={link.name} 
                 href={link.href}
                 className={cn(
-                  "block text-[18px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4",
-                  isActive(link.href) ? "text-primary" : "text-foreground"
+                  "block text-[28px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 pb-4 text-black",
+                  isActive(link.href) ? "text-primary" : "text-black"
                 )}
                 onClick={() => setIsOpen(false)}
               >
@@ -198,8 +198,8 @@ export default function Navbar() {
                   key={link.name} 
                   href={link.href}
                   className={cn(
-                    "block text-[18px] font-heading font-bold transition-colors hover:text-primary py-2",
-                    isActive(link.href) ? "text-primary" : "text-gray-600"
+                    "block text-[20px] font-heading font-bold transition-colors hover:text-primary py-2 text-gray-700",
+                    isActive(link.href) ? "text-primary" : "text-gray-700"
                   )}
                   onClick={() => setIsOpen(false)}
                 >

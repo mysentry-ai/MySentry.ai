@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
+import { HeroHeading, HeroText, LabelText, SectionHeading, CardHeading, BodyText } from "@/components/ui/typography";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { Heart, MapPin, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Eye, Smartphone, TrendingDown, Zap, Car, Activity, Watch, Users, Lock, Building2 } from "lucide-react";
@@ -203,16 +204,16 @@ export default function Females() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
+            <LabelText variant="primary">
               Personal Safety Reimagined
-            </span>
-            <h1 className="text-[55px] font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
+            </LabelText>
+            <HeroHeading>
               Freedom To Go<br/>
-              <span className="text-gray-600">Anywhere.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+              <span className="text-muted-foreground">Anywhere.</span>
+            </HeroHeading>
+            <HeroText>
               Walking alone at night? Meeting someone new? Traveling solo? MySentry is your silent guardian. We detect threats, share your location, and alert 24/7 professional monitoring with live video so help can be dispatched fast.
-            </p>
+            </HeroText>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
@@ -231,14 +232,14 @@ export default function Females() {
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-20">
-            <span className="text-red-500 font-bold tracking-wider uppercase text-sm mb-4 block">The Reality</span>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-8 leading-tight">
+            <LabelText className="text-red-500">The Reality</LabelText>
+            <SectionHeading>
               Safety shouldn't be a <br/>
-              <span className="text-gray-400">constant worry.</span>
-            </h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
+              <span className="text-muted-foreground">constant worry.</span>
+            </SectionHeading>
+            <BodyText className="text-xl">
               You check your surroundings. You hold your keys. You share your location. But if something actually happens, who will help you in that split second?
-            </p>
+            </BodyText>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">

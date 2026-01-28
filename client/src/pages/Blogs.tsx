@@ -5,6 +5,7 @@ import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'wouter';
 import { ArrowRight, Clock, Calendar } from 'lucide-react';
+import { HeroHeading, HeroText } from "@/components/ui/typography";
 import { blogs } from '../lib/blogs';
 
 const Blogs = () => {
@@ -35,12 +36,12 @@ const Blogs = () => {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h1 className="mb-6">
+          <HeroHeading>
             Safety & Health Hub
-          </h1>
-          <p className="max-w-2xl">
+          </HeroHeading>
+          <HeroText>
             Stories, science, and strategies for living a safer, freer life.
-          </p>
+          </HeroText>
         </motion.div>
 
         {/* Filter Navigation - Underlined Style */}
