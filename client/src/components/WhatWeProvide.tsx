@@ -32,7 +32,7 @@ export default function WhatWeProvide() {
               <li className="flex gap-4">
                 <Phone className="h-6 w-6 text-blue-600 shrink-0" />
                 <div>
-                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">24/7 Monitoring</h4>
+                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">24/7 Professional Monitoring</h4>
                   <p className="text-gray-600">Alerts are sent to your emergency contacts and MySentry's professional monitoring team, so help can be dispatched even if you're unable to reach out.</p>
                 </div>
               </li>
@@ -70,8 +70,8 @@ export default function WhatWeProvide() {
               <li className="flex gap-4">
                 <HeartPulse className="h-6 w-6 text-green-600 shrink-0" />
                 <div>
-                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">Personalized Monitoring</h4>
-                  <p className="text-gray-600">We help you stay on top of your health every day, with proactive nudges to keep you balanced.</p>
+                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">24/7 Professional Monitoring</h4>
+                  <p className="text-gray-600">Emergencies are sent to your emergency contacts and MySentry's professional monitoring team, so help can be dispatched even if you're unable to reach out.</p>
                 </div>
               </li>
             </ul>
