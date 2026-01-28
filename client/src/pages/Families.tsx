@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { Heart, Shield, Users, Smartphone, MapPin, Bell, CheckCircle2, ArrowRight, Activity, Watch, Lock, Home, Car, Clock, AlertCircle, School, UserPlus, Baby, Dog, Bike } from "lucide-react";
+import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
 import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
 import GetStartedSection from "@/components/GetStartedSection";
 import { motion } from "framer-motion";
@@ -185,7 +186,7 @@ export default function Families() {
       />
       
       {/* HERO SECTION - Standardized with Females Page Style */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
            <ResponsiveImage 
@@ -203,16 +204,16 @@ export default function Families() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
+            <LabelText variant="primary" className="mb-4 block">
               For Families with Teens + Aging Parents
-            </span>
-            <h1 className="text-[55px] font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
+            </LabelText>
+            <HeroHeading className="text-[#1a1a1a] mb-8">
               Know They’re Safe.<br/>
               <span className="text-gray-600">Without Constant Texting.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+            </HeroHeading>
+            <HeroText className="text-gray-800 mb-10 font-medium">
               Kids at school? Parents at home? Teenager driving? MySentry connects and protects your whole family. Setup automated real-time location updates, get crash/fall alerts, and know instantly if a loved one needs help.
-            </p>
+            </HeroText>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 

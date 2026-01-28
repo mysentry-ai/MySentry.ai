@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import { Linkedin } from 'lucide-react';
+import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
 
 const leadership = [
   {
@@ -108,7 +109,7 @@ export const Team = () => {
       <Navbar />
       
       {/* Hero Section - Standardized */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
+      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/team-hero.jpg" 
@@ -125,16 +126,16 @@ export const Team = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
+            <LabelText variant="primary" className="mb-4 block">
               Our Team
-            </span>
-            <h1 className="text-[55px] font-normal mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+            </LabelText>
+            <HeroHeading className="text-[#1a1a1a] mb-8">
               The Right Team<br/>
               <span className="text-gray-600">For A Safer Tomorrow.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+            </HeroHeading>
+            <HeroText className="text-gray-800 mb-10 font-medium">
               At MySentry.ai, safety begins with empathy. Our team brings together innovators, AI experts, and wellness advocates driven by one shared purpose: to make safety and well-being accessible for everyone.
-            </p>
+            </HeroText>
           </motion.div>
         </div>
       </section>

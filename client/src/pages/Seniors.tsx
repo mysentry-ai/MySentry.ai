@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { Heart, AlertCircle, Activity, TrendingDown, Shield, Clock, CheckCircle2, ArrowRight, Zap, Play, UserCheck, HeartPulse, Watch, Pill, Home, Car, MapPin, Phone, UserPlus, Battery, Bell } from "lucide-react";
+import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
 import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
 import GetStartedSection from "@/components/GetStartedSection";
 import { motion } from "framer-motion";
@@ -185,7 +186,7 @@ export default function Seniors() {
       />
       
       {/* HERO SECTION - Standardized with Females Page Style */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
            <ResponsiveImage 
@@ -203,16 +204,16 @@ export default function Seniors() {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
+            <LabelText variant="primary" className="mb-4 block">
               Independence & Dignity
-            </span>
-            <h1 className="text-[55px] font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
+            </LabelText>
+            <HeroHeading className="text-[#1a1a1a] mb-8">
               Live Life on<br/>
               <span className="text-gray-600">Your Own Terms.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+            </HeroHeading>
+            <HeroText className="text-gray-800 mb-10 font-medium">
               No bulky pendants. No stigma. Just a stylish smartwatch that protects you 24/7 with fall detection, health monitoring, and instant access to help. MySentry transforms raw wearable data into personalized insights and real-time safety alerts.
-            </p>
+            </HeroText>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 

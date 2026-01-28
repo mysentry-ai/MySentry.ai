@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, MessageSquare, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 
 export const Contact = () => {
@@ -91,7 +92,7 @@ export const Contact = () => {
       <Navbar />
       
       {/* Hero Section - Standardized */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-24 overflow-hidden">
+      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/contact-hero.jpg" 
@@ -108,16 +109,16 @@ export const Contact = () => {
             transition={{ duration: 0.8 }}
             className="max-w-4xl"
           >
-            <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
+            <LabelText variant="primary" className="mb-4 block">
               Contact Us
-            </span>
-            <h1 className="text-[55px] font-normal mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
+            </LabelText>
+            <HeroHeading className="text-[#1a1a1a] mb-8">
               We're Here<br/>
               <span className="text-gray-600">To Help.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+            </HeroHeading>
+            <HeroText className="text-gray-800 mb-10 font-medium">
               Whether you have a question about our technology, need support, or just want to say hello, our team is ready to listen.
-            </p>
+            </HeroText>
           </motion.div>
         </div>
       </section>
