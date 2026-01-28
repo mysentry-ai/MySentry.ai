@@ -23,7 +23,7 @@ const BlogPost = () => {
     return (
       <div className="min-h-screen bg-[#fcfbf9] flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-medium text-[#1a1a1a] mb-4">Article Not Found</h1>
+          <h1 className="text-4xl font-medium text-gray-900 mb-4">Article Not Found</h1>
           <Link href="/blogs" className="text-[#386758] hover:underline">
             Return to Safety & Health Hub
           </Link>
@@ -38,7 +38,7 @@ const BlogPost = () => {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-[#fcfbf9] font-sans text-[#1a1a1a]">
+    <div className="min-h-screen bg-[#fcfbf9] font-sans text-gray-900">
       <SEO 
         title={`${blog.title} | MySentry Safety & Health Hub`}
         description={blog.excerpt}
@@ -48,7 +48,7 @@ const BlogPost = () => {
 
       {/* Article Header - Centered & Editorial */}
       <header className="pt-32 pb-12 px-4 md:px-8 max-w-4xl mx-auto text-center">
-        <Link href="/blogs" className="inline-flex items-center text-gray-700 hover:text-[#386758] mb-8 transition-colors text-sm font-bold uppercase tracking-widest">
+        <Link href="/blogs" className="inline-flex items-center text-gray-900 hover:text-[#386758] mb-8 transition-colors text-sm font-bold uppercase tracking-widest">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Safety & Health Hub
         </Link>
@@ -59,11 +59,11 @@ const BlogPost = () => {
           </span>
         </div>
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-[#1a1a1a] mb-8 leading-tight font-barlow">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 mb-8 leading-tight font-barlow">
           {blog.title}
         </h1>
 
-        <div className="flex items-center justify-center gap-6 text-gray-700 text-sm font-medium uppercase tracking-wider border-t border-b border-gray-200 py-6">
+        <div className="flex items-center justify-center gap-6 text-gray-900 text-sm font-medium uppercase tracking-wider border-t border-b border-gray-200 py-6">
           <span className="flex items-center gap-2">
             <Calendar className="w-4 h-4" /> {blog.date}
           </span>
@@ -117,12 +117,12 @@ const BlogPost = () => {
 
           <div 
             className="prose prose-lg max-w-none 
-              prose-headings:font-barlow prose-headings:font-medium prose-headings:text-[#1a1a1a] prose-headings:mt-12 prose-headings:mb-6
+              prose-headings:font-barlow prose-headings:font-medium prose-headings:text-gray-900 prose-headings:mt-12 prose-headings:mb-6
               prose-p:text-gray-900 prose-p:leading-8 prose-p:mb-6 prose-p:font-light
               prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-a:font-medium
               prose-li:text-gray-900 prose-li:leading-8
-              prose-strong:text-[#1a1a1a] prose-strong:font-semibold
-              prose-blockquote:border-l-4 prose-blockquote:border-[#386758] prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700 prose-blockquote:bg-gray-50 prose-blockquote:py-4 prose-blockquote:pr-4 prose-blockquote:rounded-r-lg"
+              prose-strong:text-gray-900 prose-strong:font-semibold
+              prose-blockquote:border-l-4 prose-blockquote:border-[#386758] prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-900 prose-blockquote:bg-gray-50 prose-blockquote:py-4 prose-blockquote:pr-4 prose-blockquote:rounded-r-lg"
             dangerouslySetInnerHTML={{ __html: blog.content }}
           />
 
@@ -133,8 +133,8 @@ const BlogPost = () => {
             </div>
             <div>
               <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Written By</div>
-              <div className="text-lg font-bold text-[#1a1a1a]">MySentry Editorial Team</div>
-              <p className="text-gray-700 text-sm mt-1">Dedicated to bringing you the latest insights on safety, health, and independence.</p>
+              <div className="text-lg font-bold text-gray-900">MySentry Editorial Team</div>
+              <p className="text-gray-900 text-sm mt-1">Dedicated to bringing you the latest insights on safety, health, and independence.</p>
             </div>
           </div>
 
@@ -147,7 +147,7 @@ const BlogPost = () => {
       {relatedPosts.length > 0 && (
         <section className="bg-white py-24 mt-24 border-t border-gray-100">
           <div className="container mx-auto px-4 max-w-[1400px]">
-            <h3 className="text-3xl font-medium text-[#1a1a1a] mb-12 text-center font-barlow">
+            <h3 className="text-3xl font-medium text-gray-900 mb-12 text-center font-barlow">
               More from {blog.category}
             </h3>
             <div className="grid md:grid-cols-3 gap-8">
@@ -161,7 +161,7 @@ const BlogPost = () => {
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     </div>
-                    <h4 className="text-xl font-medium text-[#1a1a1a] mb-2 leading-tight group-hover:underline decoration-1 underline-offset-4">
+                    <h4 className="text-xl font-medium text-gray-900 mb-2 leading-tight group-hover:underline decoration-1 underline-offset-4">
                       {post.title}
                     </h4>
                     <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mt-3">
