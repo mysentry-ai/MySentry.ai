@@ -186,7 +186,7 @@ export default function Females() {
       />
       
       {/* HERO SECTION - Standardized with Features Page Style */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
            <ResponsiveImage 
@@ -207,11 +207,11 @@ export default function Females() {
             <LabelText variant="primary">
               Personal Safety Reimagined
             </LabelText>
-            <HeroHeading>
+            <HeroHeading className="text-shadow-sm">
               Freedom To Go<br/>
               <span className="text-muted-foreground">Anywhere.</span>
             </HeroHeading>
-            <HeroText>
+            <HeroText className="text-shadow-sm font-medium">
               Walking alone at night? Meeting someone new? Traveling solo? MySentry is your silent guardian. We detect threats, share your location, and alert 24/7 professional monitoring with live video so help can be dispatched fast.
             </HeroText>
             

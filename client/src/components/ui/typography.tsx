@@ -13,8 +13,8 @@ export function HeroHeading({ children, className, as: Component = "h1", variant
     <Component
       className={cn(
         "font-heading font-bold uppercase leading-[1.1] tracking-tight mb-6",
-        "text-[2.5rem] sm:text-[3rem] md:text-[3.5rem]", // Responsive sizing, max ~56px
-        variant === "white" ? "text-white" : "text-foreground",
+        "text-[2rem] sm:text-[2.25rem] md:text-[2.75rem]", // Reduced by ~25%
+        variant === "white" ? "text-white" : "text-[#1a1a1a]", // Default to dark text
         variant === "primary" && "text-primary",
         className
       )}
@@ -30,8 +30,8 @@ export function SectionHeading({ children, className, as: Component = "h2", vari
     <Component
       className={cn(
         "font-heading font-bold uppercase leading-[1.2] tracking-tight mb-4",
-        "text-[2rem] md:text-[2.5rem]", // ~32px to 40px
-        variant === "white" ? "text-white" : "text-foreground",
+        "text-[1.5rem] md:text-[2rem]", // Reduced by ~25%
+        variant === "white" ? "text-white" : "text-[#1a1a1a]", // Default to dark text
         variant === "primary" && "text-primary",
         className
       )}
@@ -47,8 +47,8 @@ export function CardHeading({ children, className, as: Component = "h3", variant
     <Component
       className={cn(
         "font-heading font-bold uppercase leading-tight mb-3",
-        "text-[1.5rem] md:text-[1.75rem]", // ~24px to 28px
-        variant === "white" ? "text-white" : "text-foreground",
+        "text-[1.25rem] md:text-[1.5rem]", // Reduced by ~25%
+        variant === "white" ? "text-white" : "text-[#1a1a1a]", // Default to dark text
         variant === "primary" && "text-primary",
         className
       )}
@@ -65,7 +65,7 @@ export function HeroText({ children, className, as: Component = "p", variant = "
       className={cn(
         "font-sans font-normal leading-relaxed mb-8 max-w-2xl",
         "text-lg md:text-xl", // ~18px to 20px
-        variant === "white" ? "text-white/90" : "text-muted-foreground",
+        variant === "white" ? "text-white/90" : "text-gray-700", // Default to darker gray
         variant === "dark" && "text-gray-700",
         className
       )}

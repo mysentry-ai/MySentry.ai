@@ -76,7 +76,7 @@ const Blogs = () => {
                 <span className="text-[#386758] font-bold tracking-widest uppercase text-xs mb-4">
                   Featured Story
                 </span>
-                <h2 className="mb-6 group-hover:underline decoration-1 underline-offset-4">
+                <h2 className="text-[1.75rem] md:text-[2.25rem] font-heading font-bold leading-tight mb-6 group-hover:underline decoration-1 underline-offset-4 text-[#1a1a1a]">
                   {featuredBlog.title}
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed line-clamp-3">
@@ -121,7 +121,7 @@ const Blogs = () => {
 
                   {/* Content */}
                   <div className="flex flex-col flex-grow">
-                    <h3 className="mb-3 group-hover:underline decoration-1 underline-offset-4">
+                    <h3 className="text-[1.25rem] md:text-[1.5rem] font-heading font-bold leading-tight mb-3 group-hover:underline decoration-1 underline-offset-4 text-[#1a1a1a]">
                       {blog.title}
                     </h3>
                     

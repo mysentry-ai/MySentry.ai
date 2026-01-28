@@ -185,7 +185,7 @@ export default function Home() {
   return (
     <Layout>
       {/* HERO SECTION - Standardized with Females Page Style */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
+      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
            {/* Relatable Hero Image */}
            <ResponsiveImage 
@@ -206,11 +206,11 @@ export default function Home() {
             <LabelText variant="primary">
               24/7 Safety & Health Monitoring with Emergency Response
             </LabelText>
-            <HeroHeading>
+            <HeroHeading className="text-shadow-sm">
               Never Face a Safety or<br/>
               <span className="text-muted-foreground">Health Emergency Alone.</span>
             </HeroHeading>
-            <HeroText>
+            <HeroText className="text-shadow-sm font-medium">
               MySentry turns your smart phone and smart wearables into 24/7 safety and health monitoring so help is dispatched fast when you can’t respond.
             </HeroText>
             
