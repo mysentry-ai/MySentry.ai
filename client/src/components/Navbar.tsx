@@ -85,7 +85,7 @@ export default function Navbar() {
               href={link.href}
               className={cn(
                 "nav-link text-[11px] font-bold tracking-wider transition-all hover:text-primary relative group font-heading uppercase",
-                (scrolled || !isHome) ? "!text-black" : "text-black xl:text-white",
+                "!text-black",
                 isActive(link.href) ? "text-primary" : ""
               )}
             >
