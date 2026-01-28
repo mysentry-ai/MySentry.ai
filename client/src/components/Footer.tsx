@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           {/* Brand Column */}
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
+            <Link onClick={() => window.scrollTo(0, 0)} href="/" className="flex items-center gap-2">
               <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
             </Link>
             <p className="text-base text-gray-900 leading-relaxed font-medium">
@@ -35,32 +35,32 @@ export default function Footer() {
             <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Solutions</h3>
             <ul className="space-y-3 text-base font-medium">
               <li>
-                <Link href="/seniors" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/seniors" className="text-gray-900 hover:text-primary transition-colors">
                   For Seniors
                 </Link>
               </li>
               <li>
-                <Link href="/families" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/families" className="text-gray-900 hover:text-primary transition-colors">
                   For Families
                 </Link>
               </li>
               <li>
-                <Link href="/employers" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/employers" className="text-gray-900 hover:text-primary transition-colors">
                   For Employers
                 </Link>
               </li>
               <li>
-                <Link href="/females" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/females" className="text-gray-900 hover:text-primary transition-colors">
                   For Females
                 </Link>
               </li>
               <li>
-                <Link href="/how-it-works" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/how-it-works" className="text-gray-900 hover:text-primary transition-colors">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/pricing" className="text-gray-900 hover:text-primary transition-colors">
                   Pricing
                 </Link>
               </li>
@@ -72,37 +72,37 @@ export default function Footer() {
             <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Company</h3>
             <ul className="space-y-3 text-base font-medium">
               <li>
-                <Link href="/about" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/about" className="text-gray-900 hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/team" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/team" className="text-gray-900 hover:text-primary transition-colors">
                   Our Team
                 </Link>
               </li>
               <li>
-                <Link href="/partner" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/partner" className="text-gray-900 hover:text-primary transition-colors">
                   Partners
                 </Link>
               </li>
               <li>
-                <Link href="/blogs" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blogs" className="text-gray-900 hover:text-primary transition-colors">
                   Blogs
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/contact" className="text-gray-900 hover:text-primary transition-colors">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/privacy" className="text-gray-900 hover:text-primary transition-colors">
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link href="/terms" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/terms" className="text-gray-900 hover:text-primary transition-colors">
                   Terms & Conditions
                 </Link>
               </li>
@@ -128,8 +128,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary/10 pt-8 text-center text-sm text-gray-900">
-          <p>&copy; {new Date().getFullYear()} MySentry.ai. All rights reserved.</p>
+        <div className="border-t border-primary/10 pt-8 text-center text-sm text-black">
+          <p>&copy; 2026 MySentry.ai. All rights reserved.</p>
         </div>
       </div>
     </footer>

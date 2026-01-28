@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, ArrowRight, Building2, Users, ShieldCheck, BarChart3, ChevronDown, Check, AlertCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { HeroHeading, HeroText, LabelText, SectionHeading, CardHeading } from "@/components/ui/typography";
+import HeroSection from "@/components/HeroSection";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
@@ -180,43 +181,26 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
       
-      {/* Hero Section - Standardized */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/partner-hero.jpg" 
-            alt="MySentry Partner Network" 
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-        
-        <div className="relative z-20 container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <LabelText variant="primary">
-              Partner Program
-            </LabelText>
-            <HeroHeading>
-              Join the <br/><span className="text-primary">Dealer Network</span>
-            </HeroHeading>
-            <HeroText>
-              Expand your business with the world's first AI-powered personal assistant for employee safety, security, and wellness.
-            </HeroText>
+      <div className="relative">
+        <HeroSection
+          label="Partner Program"
+          title="Join the Dealer Network"
+          description="Expand your business with the world's first AI-powered personal assistant for employee safety, security, and wellness."
+          imageSrc="/images/partner-hero.jpg"
+          imageAlt="MySentry Partner Network"
+        />
+        <div className="absolute bottom-32 left-0 w-full z-30 pointer-events-none">
+          <div className="container mx-auto px-4">
             <Button 
               size="lg"
-              className="bg-[#004F7B] text-white hover:bg-[#003d60] font-bold uppercase tracking-wider text-lg h-14 px-8 rounded-full shadow-lg hover:shadow-xl transition-all"
+              className="bg-[#004F7B] text-white hover:bg-[#003d60] font-bold uppercase tracking-wider text-lg h-14 px-8 rounded-full shadow-lg hover:shadow-xl transition-all pointer-events-auto"
               onClick={() => document.getElementById('partner-form')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Become a Partner
             </Button>
-          </motion.div>
+          </div>
         </div>
-      </section>
+      </div>
 
       {/* Value Proposition */}
       <section className="py-24 bg-white">
