@@ -128,8 +128,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary/10 pt-8 text-center text-sm text-black">
-          <p>&copy; 2026 MySentry.ai. All rights reserved.</p>
+        <div className="border-t border-primary/10 pt-8 text-center text-sm">
+          <p className="text-black font-medium">&copy; 2026 MySentry.ai. All rights reserved.</p>
         </div>
       </div>
     </footer>

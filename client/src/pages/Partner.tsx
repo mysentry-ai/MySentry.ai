@@ -153,7 +153,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
     <div 
       className={cn(
         "flex items-center justify-between p-6 cursor-pointer transition-colors",
-        isActive ? "bg-[#004F7B] text-white" : "bg-white text-black hover:bg-gray-50 border-b border-gray-100",
+        "bg-[#004F7B] text-white border-b border-[#003d60]",
         isCompleted ? "bg-[#e0f2fe] text-[#004F7B]" : ""
       )}
       onClick={() => {
@@ -166,7 +166,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
       <div className="flex items-center gap-4">
         <div className={cn(
           "w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm border-2 transition-all duration-300",
-          isActive ? "border-[#4ADE80] bg-[#4ADE80] text-[#022c22]" : "border-black text-black",
+          isActive ? "border-[#4ADE80] bg-[#4ADE80] text-[#022c22]" : "border-white text-white",
           isCompleted ? "border-[#004F7B] bg-[#004F7B] text-white" : ""
         )}>
           {isCompleted ? <Check className="w-5 h-5" /> : step}
