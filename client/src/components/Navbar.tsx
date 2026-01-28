@@ -84,7 +84,7 @@ export default function Navbar() {
               key={link.name} 
               href={link.href}
               className={cn(
-                "nav-link text-[10px] font-bold tracking-wider transition-all hover:text-primary relative group font-heading uppercase whitespace-nowrap",
+                "nav-link text-[13px] font-bold tracking-wider transition-all hover:text-primary relative group font-heading uppercase whitespace-nowrap",
                 "!text-black",
                 isActive(link.href) ? "text-primary" : ""
               )}
@@ -102,7 +102,7 @@ export default function Navbar() {
             <button
               onClick={() => setMoreOpen(!moreOpen)}
               className={cn(
-                "flex items-center gap-1 nav-link text-[10px] font-bold tracking-wider transition-all font-heading uppercase !text-black whitespace-nowrap"
+                "flex items-center gap-1 nav-link text-[13px] font-bold tracking-wider transition-all font-heading uppercase !text-black whitespace-nowrap"
               )}
             >
               MORE <ChevronDown className={cn("w-4 h-4 transition-transform", moreOpen ? "rotate-180" : "")} />

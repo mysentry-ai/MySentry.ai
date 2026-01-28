@@ -138,50 +138,13 @@
     line-height: 1.6;
   }
   
-  /* Standardized Typography System */
+  /* Typography defaults - relying on Tailwind utility classes in components */
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold tracking-tight text-foreground;
-    line-height: 1.1;
-  }
-  
-  /* Hero Heading - Max 55px per user request */
-  h1 { 
-    font-size: 3.5rem; /* 56px approx, adjusted to fit 55px constraint visually */
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-  
-  /* Section Heading */
-  h2 { 
-    font-size: 2.5rem; /* 40px */
-    font-weight: 600;
-    letter-spacing: -0.01em;
-    margin-bottom: 1.5rem;
-  }
-  
-  /* Card/Feature Heading */
-  h3 { 
-    font-size: 1.75rem; /* 28px */
-    font-weight: 600;
-    margin-bottom: 1rem;
-  }
-  
-  /* Subheading */
-  h4 { 
-    font-size: 1.25rem; /* 20px */
-    font-weight: 600;
   }
   
   p {
-    @apply text-foreground;
-    font-size: 1.125rem; /* 18px for better readability */
-    line-height: 1.6;
-    color: var(--muted-foreground);
-  }
-  
-  /* Menu Items - Font size controlled by utility classes */
-  .nav-link {
-    /* Font size controlled by utility classes */
+    @apply text-foreground leading-relaxed;
   }
 
   /* Button Standardization */
