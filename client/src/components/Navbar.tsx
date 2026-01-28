@@ -57,9 +57,9 @@ export default function Navbar() {
     <nav 
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300 border-b",
-        (scrolled || !isHome)
+        scrolled
           ? "bg-white/95 backdrop-blur-md border-gray-200 py-3 shadow-sm" 
-          : "bg-white/95 backdrop-blur-md border-gray-200 py-3 shadow-sm xl:bg-transparent xl:border-transparent xl:py-6"
+          : "bg-transparent border-transparent py-6"
       )}
     >
       <div className="container flex items-center justify-between">
@@ -84,7 +84,7 @@ export default function Navbar() {
               key={link.name} 
               href={link.href}
               className={cn(
-                "nav-link text-[11px] font-bold tracking-wider transition-all hover:text-primary relative group font-heading uppercase",
+                "nav-link text-[10px] font-bold tracking-wider transition-all hover:text-primary relative group font-heading uppercase whitespace-nowrap",
                 "!text-black",
                 isActive(link.href) ? "text-primary" : ""
               )}
@@ -102,7 +102,7 @@ export default function Navbar() {
             <button
               onClick={() => setMoreOpen(!moreOpen)}
               className={cn(
-                "flex items-center gap-1 nav-link text-[11px] font-bold tracking-wider transition-all font-heading uppercase !text-black"
+                "flex items-center gap-1 nav-link text-[10px] font-bold tracking-wider transition-all font-heading uppercase !text-black whitespace-nowrap"
               )}
             >
               MORE <ChevronDown className={cn("w-4 h-4 transition-transform", moreOpen ? "rotate-180" : "")} />
