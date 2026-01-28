@@ -26,7 +26,7 @@ const Partners = () => {
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-primary mb-4">The Market Gap</h2>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg text-gray-900">
                 Your customers are looking for modern safety solutions, but traditional options are outdated, stigmatizing, and limited. They want technology that fits their lifestyle, not bulky hardware that limits it.
               </p>
             </div>
@@ -39,7 +39,7 @@ const Partners = () => {
                 className="bg-background p-8 rounded-2xl shadow-sm border border-border"
               >
                 <h3 className="text-xl font-bold text-red-600 mb-3">The Challenge</h3>
-                <p className="text-muted-foreground">
+                <p className="text-gray-900">
                   Offering standalone, single-purpose devices often leads to low adoption rates and high churn. Customers simply stop wearing them.
                 </p>
               </motion.div>
@@ -50,7 +50,7 @@ const Partners = () => {
                 className="bg-background p-8 rounded-2xl shadow-sm border border-border"
               >
                 <h3 className="text-xl font-bold text-primary mb-3">The Opportunity</h3>
-                <p className="text-muted-foreground">
+                <p className="text-gray-900">
                   MySentry integrates with the devices they already love, Apple and Samsung watches. This means higher engagement, better retention, and real value.
                 </p>
               </motion.div>
@@ -95,8 +95,8 @@ const Partners = () => {
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <item.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground">{item.desc}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-900">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -109,10 +109,10 @@ const Partners = () => {
           <h2 className="text-3xl font-bold text-primary mb-12">Our Strategic Partners</h2>
           <div className="flex flex-wrap justify-center items-center gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
             {/* Logos would go here - using text placeholders for now */}
-            <div className="text-2xl font-bold text-foreground/50">Rapid Response Monitoring</div>
-            <div className="text-2xl font-bold text-foreground/50">Apple Health</div>
-            <div className="text-2xl font-bold text-foreground/50">Samsung Health</div>
-            <div className="text-2xl font-bold text-foreground/50">FirstNet</div>
+            <div className="text-2xl font-bold text-gray-900/50">Rapid Response Monitoring</div>
+            <div className="text-2xl font-bold text-gray-900/50">Apple Health</div>
+            <div className="text-2xl font-bold text-gray-900/50">Samsung Health</div>
+            <div className="text-2xl font-bold text-gray-900/50">FirstNet</div>
           </div>
         </div>
       </section>
@@ -124,7 +124,7 @@ const Partners = () => {
             <div className="absolute top-0 left-0 w-full h-full opacity-10" />
             <div className="relative z-10 max-w-2xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Become a Partner</h2>
-              <p className="text-lg text-primary-foreground/90 mb-8">
+              <p className="text-lg text-white/90 mb-8">
                 Ready to expand your portfolio with the future of personal safety? Let's talk.
               </p>
               <button className="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg flex items-center gap-2 mx-auto">

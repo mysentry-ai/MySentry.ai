@@ -5,7 +5,7 @@ import HeroSection from "@/components/HeroSection";
 
 export const Privacy = () => {
   return (
-    <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
+    <div className="min-h-screen bg-white font-sans text-gray-900">
       <Navbar />
       
       <HeroSection
@@ -17,7 +17,7 @@ export const Privacy = () => {
       />
 
       <div className="container mx-auto px-4 py-24 max-w-4xl">
-        <div className="bg-white p-8 md:p-16 rounded-3xl shadow-xl border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:font-bold prose-headings:text-[#1a1a1a] prose-headings:mt-16 prose-headings:mb-8 prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-p:text-gray-900 prose-p:leading-relaxed prose-p:mb-8 prose-li:text-gray-900 prose-li:mb-4">
+        <div className="bg-white p-8 md:p-16 rounded-3xl shadow-xl border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:font-bold prose-headings:text-gray-900 prose-headings:mt-16 prose-headings:mb-8 prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-p:text-gray-900 prose-p:leading-relaxed prose-p:mb-8 prose-li:text-gray-200 prose-li:mb-4">
           
           <p className="lead text-xl text-gray-900 font-medium mb-12">
             At MySentry.ai, our dedication to user privacy and security is paramount. In this Privacy Policy, we explain the types of personal information that may be collected through the MySentry app (referred to as "the App"), how this information might be used and shared, and the choices available to users with respect to their personal information.
