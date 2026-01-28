@@ -159,7 +159,7 @@ export default function Pricing() {
       <HeroSection
         label="Flexible Plans"
         title={<>Pricing and Plans<br/><span className="text-gray-600">Within Every Budget.</span></>}
-        description="Choose the protection that fits your life. Whether for yourself, your family, or your entire workforce, MySentry offers comprehensive safety at an affordable price."
+        description="Choose the protection that fits your life. Whether for yourself, your family, or your entire workforce, MySentry offers comprehensive safety & health monitoring with emergency response at an affordable price."
         imageSrc="/images/safety-dispenser.png"
         imageAlt="Safety Dispenser"
         ctaText="START 7-DAY FREE TRIAL"
