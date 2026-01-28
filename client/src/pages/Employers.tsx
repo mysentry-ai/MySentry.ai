@@ -225,7 +225,7 @@ export default function Employers() {
                 className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
                 onClick={() => setIsDemoModalOpen(true)}
               >
-                BOOK A DEMO TODAY
+                BOOK A DEMO
               </Button>
             </div>
           </motion.div>
@@ -295,7 +295,7 @@ export default function Employers() {
         </div>
       </section>
 
-      {/* 15-Card Carousel Section */}
+      {/* Industry Tabs Section */}
       <section className="py-24 bg-gray-50">
         <div className="container">
           <div className="text-center mb-16">
@@ -307,8 +307,98 @@ export default function Employers() {
               See how MySentry protects workers across diverse industries, from healthcare to construction.
             </p>
           </div>
-          
-          <ExpandableCarousel items={employerChallenges} />
+
+          <div className="flex flex-col lg:flex-row gap-8 max-w-7xl mx-auto">
+            {/* Industry List */}
+            <div className="lg:w-1/3 space-y-2">
+              {industries.map((industry) => (
+                <button
+                  key={industry.id}
+                  onClick={() => setActiveIndustry(industry)}
+                  className={`w-full flex items-center gap-4 p-4 rounded-xl transition-all duration-300 text-left ${
+                    activeIndustry.id === industry.id
+                      ? "bg-white shadow-lg border-l-4 border-primary"
+                      : "hover:bg-white/50 text-gray-600"
+                  }`}
+                >
+                  <div className={`p-2 rounded-lg ${
+                    activeIndustry.id === industry.id ? "bg-primary/10 text-primary" : "bg-gray-100 text-gray-500"
+                  }`}>
+                    <industry.icon className="h-6 w-6" />
+                  </div>
+                  <span className={`font-bold text-lg ${
+                    activeIndustry.id === industry.id ? "text-[#1a1a1a]" : "text-gray-600"
+                  }`}>
+                    {industry.title}
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            {/* Content Area */}
+            <div className="lg:w-2/3">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeIndustry.id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                  className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-gray-100 h-full"
+                >
+                  <div className="mb-8">
+                    <h3 className="text-3xl font-bold text-[#1a1a1a] mb-6 flex items-center gap-3">
+                      <activeIndustry.icon className="h-8 w-8 text-primary" />
+                      {activeIndustry.title}
+                    </h3>
+                    
+                    <div className="bg-red-50 rounded-2xl p-6 mb-8 border border-red-100">
+                      <h4 className="text-red-800 font-bold uppercase tracking-wider text-sm mb-4 flex items-center gap-2">
+                        <AlertTriangle className="h-4 w-4" />
+                        The Challenge
+                      </h4>
+                      <ul className="space-y-3">
+                        {activeIndustry.peace.problems.map((problem, idx) => (
+                          <li key={idx} className="flex items-start gap-3 text-gray-700">
+                            <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-red-400 shrink-0" />
+                            {problem}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="space-y-8">
+                      <div>
+                        <h4 className="text-gray-400 font-bold uppercase tracking-wider text-sm mb-2">The Reality</h4>
+                        <p className="text-xl text-gray-600 italic">"{activeIndustry.peace.empathy}"</p>
+                      </div>
+
+                      <div className="grid md:grid-cols-2 gap-8">
+                        <div>
+                          <h4 className="text-primary font-bold uppercase tracking-wider text-sm mb-2">The Solution</h4>
+                          <p className="text-gray-700">{activeIndustry.peace.answer}</p>
+                        </div>
+                        <div>
+                          <h4 className="text-green-600 font-bold uppercase tracking-wider text-sm mb-2">The Result</h4>
+                          <p className="text-gray-700">{activeIndustry.peace.endResult}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="pt-8 border-t border-gray-100 flex flex-col sm:flex-row gap-4 items-center justify-between">
+                    <p className="text-gray-500 font-medium">Ready to protect your team?</p>
+                    <Button 
+                      onClick={() => setIsDemoModalOpen(true)}
+                      className="bg-primary text-white hover:bg-primary/90 px-8 rounded-full font-bold uppercase tracking-wider shadow-lg hover:shadow-xl transition-all"
+                    >
+                      Book a Demo
+                    </Button>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
       </section>
 
