@@ -14,6 +14,7 @@ interface HeroSectionProps {
   ctaLink?: string;
   className?: string;
   showCta?: boolean;
+  children?: React.ReactNode;
 }
 
 export default function HeroSection({
@@ -25,7 +26,8 @@ export default function HeroSection({
   ctaText = "START 7-DAY FREE TRIAL",
   ctaLink = "/pricing",
   className,
-  showCta = true
+  showCta = true,
+  children
 }: HeroSectionProps) {
   return (
     <section className={cn("relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden", className)}>
@@ -55,7 +57,9 @@ export default function HeroSection({
             {description}
           </HeroText>
           
-          {showCta && (
+          {children ? (
+            children
+          ) : showCta && (
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href={ctaLink}

@@ -189,18 +189,17 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
           imageSrc="/images/partner-hero.jpg"
           imageAlt="MySentry Partner Network"
           showCta={false}
-        />
-        <div className="absolute bottom-32 left-0 w-full z-30 pointer-events-none">
-          <div className="container mx-auto px-4">
+        >
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               size="lg"
-              className="bg-[#004F7B] text-white hover:bg-[#003d60] font-bold uppercase tracking-wider text-lg h-14 px-8 rounded-full shadow-lg hover:shadow-xl transition-all pointer-events-auto"
+              className="bg-[#004F7B] text-white hover:bg-[#003d60] font-bold uppercase tracking-wider text-lg h-14 px-8 rounded-full shadow-lg hover:shadow-xl transition-all"
               onClick={() => document.getElementById('partner-form')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Become a Partner
             </Button>
           </div>
-        </div>
+        </HeroSection>
       </div>
 
       {/* Value Proposition */}
