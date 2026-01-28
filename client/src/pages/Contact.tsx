@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, MessageSquare, AlertCircle, CheckCircle2 } from 'lucide-react';
-import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
+import HeroSection from "@/components/HeroSection";
 import { cn } from "@/lib/utils";
 
 export const Contact = () => {
@@ -91,37 +91,13 @@ export const Contact = () => {
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
       
-      {/* Hero Section - Standardized */}
-      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/contact-hero.jpg" 
-            alt="Contact MySentry Support" 
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-        
-        <div className="relative z-20 container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <LabelText variant="primary" className="mb-4 block">
-              Contact Us
-            </LabelText>
-            <HeroHeading className="text-[#1a1a1a] mb-8">
-              We're Here<br/>
-              <span className="text-gray-600">To Help.</span>
-            </HeroHeading>
-            <HeroText className="text-gray-800 mb-10 font-medium">
-              Whether you have a question about our technology, need support, or just want to say hello, our team is ready to listen.
-            </HeroText>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        label="Contact Us"
+        title={<>We're Here<br/><span className="text-gray-600">To Help.</span></>}
+        description="Whether you have a question about our technology, need support, or just want to say hello, our team is ready to listen."
+        imageSrc="/images/contact-hero.jpg"
+        imageAlt="Contact MySentry Support"
+      />
 
       {/* Contact Info & Form Section */}
       <section className="py-24 bg-white">

@@ -1,7 +1,8 @@
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { HeroHeading, HeroText, LabelText, SectionHeading, CardHeading, BodyText } from "@/components/ui/typography";
+import { SectionHeading, CardHeading, BodyText, LabelText } from "@/components/ui/typography";
+import HeroSection from "@/components/HeroSection";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { Heart, MapPin, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Eye, Smartphone, TrendingDown, Zap, Car, Activity, Watch, Users, Lock, Building2 } from "lucide-react";
@@ -185,48 +186,13 @@ export default function Females() {
         description="Stay safe everywhere with MySentry. Discreet panic button, live location sharing, and 24/7 monitoring for women."
       />
       
-      {/* HERO SECTION - Standardized with Features Page Style */}
-      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-           {/* Relatable Hero Image */}
-           <ResponsiveImage 
-             src="/images/hero-female-active.jpg" 
-             alt="Confident woman walking in city" 
-             className="absolute inset-0 w-full h-full object-cover opacity-60"
-           />
-           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-
-        <div className="container relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <LabelText variant="primary">
-              Personal Safety Reimagined
-            </LabelText>
-            <HeroHeading className="text-shadow-sm">
-              Freedom To Go<br/>
-              <span className="text-muted-foreground">Anywhere.</span>
-            </HeroHeading>
-            <HeroText className="text-shadow-sm font-medium">
-              Walking alone at night? Meeting someone new? Traveling solo? MySentry is your silent guardian. We detect threats, share your location, and alert 24/7 professional monitoring with live video so help can be dispatched fast.
-            </HeroText>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                href="/pricing"
-                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                START 7-DAY FREE TRIAL
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        label="Personal Safety Reimagined"
+        title={<>Freedom To Go<br/><span className="text-gray-600">Anywhere.</span></>}
+        description="Walking alone at night? Meeting someone new? Traveling solo? MySentry is your silent guardian. We detect threats, share your location, and alert 24/7 professional monitoring with live video so help can be dispatched fast."
+        imageSrc="/images/hero-female-active.jpg"
+        imageAlt="Confident woman walking in city"
+      />
 
       {/* PEACE: The Problem & Empathy */}
       <section className="py-32 bg-white relative overflow-hidden">

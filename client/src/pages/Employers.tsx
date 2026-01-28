@@ -1,6 +1,7 @@
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
+import HeroSection from "@/components/HeroSection";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { Heart, TrendingUp, Users, DollarSign, AlertCircle, Video, Shield, Clock, CheckCircle2, ArrowRight, Zap, Car, Activity, BarChart3, Award, AlertTriangle, Building2, HardHat, Truck, Stethoscope, Briefcase, Warehouse, Home, Hotel, Utensils, Plane, School, Landmark, Factory } from "lucide-react";
@@ -190,47 +191,15 @@ export default function Employers() {
         description="Protect your workforce and reduce liability with MySentry. 24/7 monitoring, fall detection, and panic buttons for every industry."
       />
       
-      {/* HERO SECTION - Standardized with Females Page Style */}
-      <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-24 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-           {/* Relatable Hero Image */}
-           <ResponsiveImage 
-             src="/images/business-meeting-happy.jpg" 
-             alt="Diverse team having a productive meeting" 
-             className="absolute inset-0 w-full h-full object-cover opacity-60"
-           />
-           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-
-        <div className="container relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
-              Workforce Protection
-            </span>
-            <h1 className="text-[55px] font-heading font-bold uppercase leading-[0.9] tracking-tighter mb-8 text-[#1a1a1a]">
-              Protect Your<br/>
-              <span className="text-gray-600">Greatest Asset.</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              Workplace accidents happen fast. MySentry detects falls, crashes, and health emergencies instantly, alerting 24/7 professional monitoring with live video so help arrives fast. We provide objective evidence to protect your business from liability while ensuring your team gets home safe.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
-                onClick={() => setIsDemoModalOpen(true)}
-              >
-                BOOK A DEMO
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        label="Workforce Protection"
+        title={<>Protect Your<br/><span className="text-gray-600">Greatest Asset.</span></>}
+        description="Workplace accidents happen fast. MySentry detects falls, crashes, and health emergencies instantly, alerting 24/7 professional monitoring with live video so help arrives fast. We provide objective evidence to protect your business from liability while ensuring your team gets home safe."
+        imageSrc="/images/business-meeting-happy.jpg"
+        imageAlt="Diverse team having a productive meeting"
+        ctaText="BOOK A DEMO"
+        ctaLink="#"
+      />
 
       {/* PEACE: The Problem & Empathy */}
       <section className="py-32 bg-white relative overflow-hidden">

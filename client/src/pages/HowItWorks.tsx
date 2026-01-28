@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { ShieldAlert, Activity, Car, HeartPulse, Video, Smartphone, Watch, Check, ArrowRight, AlertTriangle, MapPin, Zap, CheckCircle2, Lock, Users, TrendingDown, Play, Phone, Heart } from "lucide-react";
-import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
+import HeroSection from "@/components/HeroSection";
 import AlertDemo from "@/components/AlertDemo";
 import { motion } from "framer-motion";
 import ActivationSteps from "@/components/ActivationSteps";
@@ -18,46 +18,13 @@ export default function Features() {
         description="Explore the 8 powerful features of MySentry: Panic Alarm, Fall Detection, Health Monitoring, Crash Detection, and more."
       />
       
-      {/* HERO SECTION - Light Green Theme with Relatable Image */}
-      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-           {/* Relatable Hero Image */}
-           <ResponsiveImage 
-             src="/images/flyer-main.png" 
-             alt="Happy senior checking smartwatch" 
-             className="absolute inset-0 w-full h-full object-cover opacity-60"
-           />
-           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-
-        <div className="container relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <LabelText variant="primary" className="mb-4 block">
-              Advanced Protection System
-            </LabelText>
-            <HeroHeading className="text-[#1a1a1a] mb-8">
-              Your Smartwatch Collects Data.<br/>
-              <span className="text-gray-600">MySentry Gives You Answers.</span>
-            </HeroHeading>
-            <HeroText className="text-gray-800 mb-10 font-medium">
-              MySentry transforms raw wearable data into personalized insights, real-time safety alerts, and proactive health guidance, all from your Apple Watch or Samsung Watch.
-            </HeroText>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/pricing">
-                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl" onClick={() => window.scrollTo(0, 0)}>
-                  START 7-DAY FREE TRIAL
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        label="Advanced Protection System"
+        title={<>Your Smartwatch Collects Data.<br/><span className="text-gray-600">MySentry Gives You Answers.</span></>}
+        description="MySentry transforms raw wearable data into personalized insights, real-time safety alerts, and proactive health guidance, all from your Apple Watch or Samsung Watch."
+        imageSrc="/images/flyer-main.png"
+        imageAlt="Happy senior checking smartwatch"
+      />
 
       {/* ACTIVATION STEPS - 3-Step Process */}
       <ActivationSteps />

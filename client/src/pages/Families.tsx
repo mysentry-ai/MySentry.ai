@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { Heart, Shield, Users, Smartphone, MapPin, Bell, CheckCircle2, ArrowRight, Activity, Watch, Lock, Home, Car, Clock, AlertCircle, School, UserPlus, Baby, Dog, Bike } from "lucide-react";
-import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
+import HeroSection from "@/components/HeroSection";
 import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
 import GetStartedSection from "@/components/GetStartedSection";
 import { motion } from "framer-motion";
@@ -185,48 +185,13 @@ export default function Families() {
         description="Protect your whole family with MySentry. Real-time location, crash detection, and health alerts for everyone you love."
       />
       
-      {/* HERO SECTION - Standardized with Females Page Style */}
-      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-           {/* Relatable Hero Image */}
-           <ResponsiveImage 
-             src="/images/family-hero-base.jpg" 
-             alt="Happy family outdoors" 
-             className="absolute inset-0 w-full h-full object-cover opacity-60"
-           />
-           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-
-        <div className="container relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <LabelText variant="primary" className="mb-4 block">
-              For Families with Teens + Aging Parents
-            </LabelText>
-            <HeroHeading className="text-[#1a1a1a] mb-8">
-              Know They’re Safe.<br/>
-              <span className="text-gray-600">Without Constant Texting.</span>
-            </HeroHeading>
-            <HeroText className="text-gray-800 mb-10 font-medium">
-              Kids at school? Parents at home? Teenager driving? MySentry connects and protects your whole family. Setup automated real-time location updates, get crash/fall alerts, and know instantly if a loved one needs help.
-            </HeroText>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                href="/pricing"
-                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                START 7-DAY FREE TRIAL
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        label="For Families with Teens + Aging Parents"
+        title={<>Know They’re Safe.<br/><span className="text-gray-600">Without Constant Texting.</span></>}
+        description="Kids at school? Parents at home? Teenager driving? MySentry connects and protects your whole family. Setup automated real-time location updates, get crash/fall alerts, and know instantly if a loved one needs help."
+        imageSrc="/images/family-hero-base.jpg"
+        imageAlt="Happy family outdoors"
+      />
 
       {/* PEACE: The Problem & Empathy */}
       <section className="py-32 bg-white relative overflow-hidden">

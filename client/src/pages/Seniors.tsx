@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { Heart, AlertCircle, Activity, TrendingDown, Shield, Clock, CheckCircle2, ArrowRight, Zap, Play, UserCheck, HeartPulse, Watch, Pill, Home, Car, MapPin, Phone, UserPlus, Battery, Bell } from "lucide-react";
-import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
+import HeroSection from "@/components/HeroSection";
 import ExpandableCarousel, { CarouselItem } from "@/components/ExpandableCarousel";
 import GetStartedSection from "@/components/GetStartedSection";
 import { motion } from "framer-motion";
@@ -185,48 +185,13 @@ export default function Seniors() {
         description="Stay independent and safe with MySentry. 24/7 fall detection, health monitoring, and emergency response for active seniors."
       />
       
-      {/* HERO SECTION - Standardized with Females Page Style */}
-      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-           {/* Relatable Hero Image */}
-           <ResponsiveImage 
-             src="/images/happy-senior-watch.jpg" 
-             alt="Active senior enjoying life" 
-             className="absolute inset-0 w-full h-full object-cover opacity-60"
-           />
-           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-
-        <div className="container relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <LabelText variant="primary" className="mb-4 block">
-              Independence & Dignity
-            </LabelText>
-            <HeroHeading className="text-[#1a1a1a] mb-8">
-              Live Life on<br/>
-              <span className="text-gray-600">Your Own Terms.</span>
-            </HeroHeading>
-            <HeroText className="text-gray-800 mb-10 font-medium">
-              No bulky pendants. No stigma. Just a stylish smartwatch that protects you 24/7 with fall detection, health monitoring, and instant access to help. MySentry transforms raw wearable data into personalized insights and real-time safety alerts.
-            </HeroText>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                href="/pricing"
-                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                START 7-DAY FREE TRIAL
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        label="Independence & Dignity"
+        title={<>Live Life on<br/><span className="text-gray-600">Your Own Terms.</span></>}
+        description="No bulky pendants. No stigma. Just a stylish smartwatch that protects you 24/7 with fall detection, health monitoring, and instant access to help. MySentry transforms raw wearable data into personalized insights and real-time safety alerts."
+        imageSrc="/images/happy-senior-watch.jpg"
+        imageAlt="Active senior enjoying life"
+      />
 
       {/* PEACE: The Problem & Empathy */}
       <section className="py-32 bg-white relative overflow-hidden">

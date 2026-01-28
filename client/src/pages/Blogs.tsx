@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'wouter';
 import { ArrowRight, Clock, Calendar } from 'lucide-react';
-import { HeroHeading, HeroText } from "@/components/ui/typography";
+import HeroSection from "@/components/HeroSection";
 import { blogs } from '../lib/blogs';
 
 const Blogs = () => {
@@ -28,22 +28,15 @@ const Blogs = () => {
       />
       <Navbar />
 
-      {/* Hero Section - Minimalist & Editorial */}
-      <section className="pt-24 pb-16 px-4 md:px-8 lg:px-16 max-w-[1400px] mx-auto">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-16"
-        >
-          <HeroHeading>
-            Safety & Health Hub
-          </HeroHeading>
-          <HeroText>
-            Stories, science, and strategies for living a safer, freer life.
-          </HeroText>
-        </motion.div>
+      <HeroSection
+        label="Safety & Health Hub"
+        title={<>Stories, science, and strategies<br/><span className="text-gray-600">for living a safer, freer life.</span></>}
+        description="Explore our articles on senior care, family safety, and personal security."
+        imageSrc="/images/blog-hero.jpg"
+        imageAlt="Safety & Health Hub"
+      />
 
+      <section className="pt-16 px-4 md:px-8 lg:px-16 max-w-[1400px] mx-auto">
         {/* Filter Navigation - Underlined Style */}
         <div className="flex flex-wrap gap-8 border-b border-gray-200 pb-4 mb-16">
           {categories.map((cat) => (

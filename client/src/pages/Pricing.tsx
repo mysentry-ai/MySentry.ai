@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Check, X, Shield, Zap, Users, Building2, Heart, AlertTriangle, Lock } from "lucide-react";
-import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
+import HeroSection from "@/components/HeroSection";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Link } from "wouter";
@@ -156,47 +156,15 @@ export default function Pricing() {
 
   return (
     <Layout>
-      {/* HERO SECTION - Standardized with Features Page Style */}
-      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-           {/* Relatable Hero Image */}
-           <img 
-             src="/images/safety-dispenser.png" 
-             alt="Safety Dispenser" 
-             className="absolute inset-0 w-full h-full object-cover opacity-60"
-           />
-           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-
-        <div className="container relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <LabelText variant="primary" className="mb-4 block">
-              Flexible Plans
-            </LabelText>
-            <HeroHeading className="text-[#1a1a1a] mb-8">
-              Pricing and Plans<br/>
-              <span className="text-gray-600">Within Every Budget.</span>
-            </HeroHeading>
-            <HeroText className="text-gray-800 mb-10 font-medium">
-              Choose the protection that fits your life. Whether for yourself, your family, or your entire workforce, MySentry offers comprehensive safety at an affordable price.
-            </HeroText>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button 
-                onClick={() => document.getElementById('pricing-plans')?.scrollIntoView({ behavior: 'smooth' })}
-                className="w-full sm:w-auto bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center"
-              >
-                START 7-DAY FREE TRIAL
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        label="Flexible Plans"
+        title={<>Pricing and Plans<br/><span className="text-gray-600">Within Every Budget.</span></>}
+        description="Choose the protection that fits your life. Whether for yourself, your family, or your entire workforce, MySentry offers comprehensive safety at an affordable price."
+        imageSrc="/images/safety-dispenser.png"
+        imageAlt="Safety Dispenser"
+        ctaText="START 7-DAY FREE TRIAL"
+        ctaLink="#pricing-plans"
+      />
 
       {/* Pricing Toggle */}
       <section id="pricing-plans" className="py-12 bg-[#e8f5e9] border-t border-primary/10">

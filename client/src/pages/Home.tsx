@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { Button } from "@/components/ui/button";
-import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
+import HeroSection from "@/components/HeroSection";
 import { ArrowRight, Check, Shield, Activity, Users, Building2, Heart, AlertTriangle, Phone, MapPin, Video, Lock, Clock, Smartphone, Watch, Menu } from "lucide-react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
@@ -184,48 +184,13 @@ export default function Home() {
 
   return (
     <Layout>
-      {/* HERO SECTION - Standardized with Females Page Style */}
-      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-           {/* Relatable Hero Image */}
-           <ResponsiveImage 
-             src="/images/families-hero.jpg" 
-             alt="Family safety and connection" 
-             className="absolute inset-0 w-full h-full object-cover opacity-60"
-           />
-           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-
-        <div className="container relative z-20">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <LabelText variant="primary">
-              24/7 Safety & Health Monitoring with Emergency Response
-            </LabelText>
-            <HeroHeading className="text-shadow-sm">
-              Never Face a Safety or<br/>
-              <span className="text-muted-foreground">Health Emergency Alone.</span>
-            </HeroHeading>
-            <HeroText className="text-shadow-sm font-medium">
-              MySentry turns your smart phone and smart wearables into 24/7 safety and health monitoring so help is dispatched fast when you can’t respond.
-            </HeroText>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link 
-                href="/pricing"
-                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-8 h-14 text-base transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
-                onClick={() => window.scrollTo(0, 0)}
-              >
-                START 7-DAY FREE TRIAL
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        label="24/7 Safety & Health Monitoring with Emergency Response"
+        title={<>Never Face a Safety or<br/><span className="text-gray-600">Health Emergency Alone.</span></>}
+        description="MySentry turns your smart phone and smart wearables into 24/7 safety and health monitoring so help is dispatched fast when you can’t respond."
+        imageSrc="/images/families-hero.jpg"
+        imageAlt="Family safety and connection"
+      />
 
       {/* How It Works Demo */}
       <section className="py-20 bg-white">

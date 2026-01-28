@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
 import { Linkedin } from 'lucide-react';
-import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
+import HeroSection from "@/components/HeroSection";
 
 const leadership = [
   {
@@ -108,37 +108,13 @@ export const Team = () => {
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
       
-      {/* Hero Section - Standardized */}
-      <section className="relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/team-hero.jpg" 
-            alt="MySentry Team" 
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-        
-        <div className="relative z-20 container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <LabelText variant="primary" className="mb-4 block">
-              Our Team
-            </LabelText>
-            <HeroHeading className="text-[#1a1a1a] mb-8">
-              The Right Team<br/>
-              <span className="text-gray-600">For A Safer Tomorrow.</span>
-            </HeroHeading>
-            <HeroText className="text-gray-800 mb-10 font-medium">
-              At MySentry.ai, safety begins with empathy. Our team brings together innovators, AI experts, and wellness advocates driven by one shared purpose: to make safety and well-being accessible for everyone.
-            </HeroText>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        label="Our Team"
+        title={<>The Right Team<br/><span className="text-gray-600">For A Safer Tomorrow.</span></>}
+        description="At MySentry.ai, safety begins with empathy. Our team brings together innovators, AI experts, and wellness advocates driven by one shared purpose: to make safety and well-being accessible for everyone."
+        imageSrc="/images/team-hero.jpg"
+        imageAlt="MySentry Team"
+      />
 
       <TeamSection 
         title="Leadership: Vision with Heart"
