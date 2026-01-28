@@ -13,6 +13,7 @@ interface HeroSectionProps {
   ctaText?: string;
   ctaLink?: string;
   className?: string;
+  showCta?: boolean;
 }
 
 export default function HeroSection({
@@ -23,7 +24,8 @@ export default function HeroSection({
   imageAlt,
   ctaText = "START 7-DAY FREE TRIAL",
   ctaLink = "/pricing",
-  className
+  className,
+  showCta = true
 }: HeroSectionProps) {
   return (
     <section className={cn("relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden", className)}>
@@ -53,15 +55,17 @@ export default function HeroSection({
             {description}
           </HeroText>
           
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link 
-              href={ctaLink}
-              className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
-              onClick={() => window.scrollTo(0, 0)}
-            >
-              {ctaText}
-            </Link>
-          </div>
+          {showCta && (
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link 
+                href={ctaLink}
+                className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
+                onClick={() => window.scrollTo(0, 0)}
+              >
+                {ctaText}
+              </Link>
+            </div>
+          )}
         </motion.div>
       </div>
     </section>
