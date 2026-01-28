@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-import { motion } from "framer-motion";
+import HeroSection from "@/components/HeroSection";
 
 export default function Terms() {
   return (
@@ -10,46 +10,23 @@ export default function Terms() {
         description="Read the Terms and Conditions for using MySentry services, including the mobile app and website."
       />
       
-      {/* Hero Section - Standardized with Privacy Page Style */}
-      <section className="relative min-h-[60vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/smartwatches-display.jpg" 
-            alt="Terms & Conditions" 
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-        
-        <div className="relative z-20 container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
-              Legal
-            </span>
-            <h1 className="text-[55px] font-normal mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
-              Terms & Conditions
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              Last Updated: January 2026
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        label="Legal"
+        title="Terms & Conditions"
+        description="Last Updated: January 2026"
+        imageSrc="/images/smartwatches-display.jpg"
+        imageAlt="Terms & Conditions"
+      />
 
       <div className="container mx-auto px-4 py-24 max-w-4xl">
-        <div className="bg-white p-8 md:p-16 rounded-3xl shadow-xl border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:font-bold prose-headings:text-[#1a1a1a] prose-headings:mt-16 prose-headings:mb-8 prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-8 prose-li:text-gray-600 prose-li:mb-4">
+        <div className="bg-white p-8 md:p-16 rounded-3xl shadow-xl border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:font-bold prose-headings:text-[#1a1a1a] prose-headings:mt-16 prose-headings:mb-8 prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-p:text-gray-900 prose-p:leading-relaxed prose-p:mb-8 prose-li:text-gray-900 prose-li:mb-4">
           
           <section className="mb-12">
             <h2 className="text-2xl mb-4">1. Introduction</h2>
             <p>
               Welcome to MySentry. These Terms and Conditions ("Terms") govern the use of the MySentry services, including the MySentry mobile app, website, and related services ("Services"). By using MySentry, you agree to comply with these Terms.
             </p>
-            <h3 className="text-xl mt-6 mb-3 font-semibold text-gray-800">Definitions</h3>
+            <h3 className="text-xl mt-6 mb-3 font-semibold text-gray-900">Definitions</h3>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>End User:</strong> An individual who subscribes to or uses MySentry's services for personal safety and wellness.</li>
               <li><strong>Dealer:</strong> A third-party entity authorized to distribute and manage licenses for MySentry services.</li>
@@ -61,7 +38,7 @@ export default function Terms() {
           <section className="mb-12">
             <h2 className="text-2xl mb-4">2. Use of Services</h2>
             
-            <h3 className="text-xl mt-6 mb-3 font-semibold text-gray-800">2.1 End User</h3>
+            <h3 className="text-xl mt-6 mb-3 font-semibold text-gray-900">2.1 End User</h3>
             <p>
               As an End User, you are granted a limited, non-transferable license to use the MySentry mobile app and associated services solely for personal use. Your use of MySentry’s services is subject to:
             </p>
@@ -71,7 +48,7 @@ export default function Terms() {
               <li>Complying with all safety protocols and configurations as outlined in the app.</li>
             </ul>
 
-            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-800">2.2 Dealer</h3>
+            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-900">2.2 Dealer</h3>
             <p>
               Dealers are responsible for distributing MySentry licenses and managing user and organization accounts. As a Dealer:
             </p>
@@ -81,7 +58,7 @@ export default function Terms() {
               <li>You are prohibited from accessing other Dealer accounts or data without explicit consent.</li>
             </ul>
 
-            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-800">2.3 Organization</h3>
+            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-900">2.3 Organization</h3>
             <p>
               Organizations use the Account Management Dashboard to manage employees or members. As an Organization:
             </p>
@@ -94,17 +71,17 @@ export default function Terms() {
           <section className="mb-12">
             <h2 className="text-2xl mb-4">3. Account Management</h2>
             
-            <h3 className="text-xl mt-6 mb-3 font-semibold text-gray-800">3.1 Creating an Account</h3>
+            <h3 className="text-xl mt-6 mb-3 font-semibold text-gray-900">3.1 Creating an Account</h3>
             <p>
               To use MySentry's services, you must create an account. For End Users, this involves providing personal details and emergency contact information. For Dealers and Organizations, account setup involves business information and details of the individual managing the dashboard.
             </p>
 
-            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-800">3.2 Account Security</h3>
+            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-900">3.2 Account Security</h3>
             <p>
               You are responsible for maintaining the confidentiality of your account credentials. Notify MySentry immediately if you suspect unauthorized access to your account.
             </p>
 
-            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-800">3.3 License and Subscription Plans</h3>
+            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-900">3.3 License and Subscription Plans</h3>
             <ul className="list-disc pl-6 space-y-2 mt-2">
               <li><strong>Individual Plan:</strong> Grants access to individual safety features.</li>
               <li><strong>Family Plan:</strong> Includes additional family safety features.</li>
@@ -143,27 +120,27 @@ export default function Terms() {
           <section className="mb-12">
             <h2 className="text-2xl mb-4">7. Dealer Responsibilities and Agreements</h2>
             
-            <h3 className="text-xl mt-6 mb-3 font-semibold text-gray-800">7.1 Compliance with Legal Requirements</h3>
+            <h3 className="text-xl mt-6 mb-3 font-semibold text-gray-900">7.1 Compliance with Legal Requirements</h3>
             <p>
               Dealers must comply with all local, state, and federal laws regarding MySentry subscription sales and distribution. They must hold the necessary licenses to operate in their jurisdiction.
             </p>
 
-            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-800">7.2 Subscriber Contracts</h3>
+            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-900">7.2 Subscriber Contracts</h3>
             <p>
               Dealers must use the approved Subscriber Contracts or End User License Agreements (EULAs) provided by MySentry. These contracts should clearly outline the service terms, cancellation rights, and liabilities. Dealers are responsible for ensuring that these agreements are compliant with consumer protection laws and are properly signed by subscribers.
             </p>
 
-            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-800">7.3 Service Payment and Charges</h3>
+            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-900">7.3 Service Payment and Charges</h3>
             <p>
               Dealers must pay MySentry’s service charges on time. MySentry reserves the right to modify the pricing with 30 days' notice.
             </p>
 
-            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-800">7.4 Liability and Indemnity</h3>
+            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-900">7.4 Liability and Indemnity</h3>
             <p>
               Dealers indemnify and hold MySentry harmless from any claims arising out of their operations. This includes damage, loss, or injury due to the dealer's failure to comply with contractual obligations.
             </p>
 
-            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-800">7.5 Termination and Default</h3>
+            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-900">7.5 Termination and Default</h3>
             <p>
               MySentry or the Dealer may terminate the agreement with proper notice. Dealers are responsible for paying any outstanding charges upon termination, including fees for services already provided.
             </p>
@@ -179,22 +156,22 @@ export default function Terms() {
           <section className="mb-12">
             <h2 className="text-2xl mb-4">9. Miscellaneous Provisions</h2>
             
-            <h3 className="text-xl mt-6 mb-3 font-semibold text-gray-800">9.1 Dispute Resolution</h3>
+            <h3 className="text-xl mt-6 mb-3 font-semibold text-gray-900">9.1 Dispute Resolution</h3>
             <p>
               Any disputes arising from these Terms shall be resolved through binding arbitration under the laws of the State of New York.
             </p>
 
-            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-800">9.2 Modification of Terms</h3>
+            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-900">9.2 Modification of Terms</h3>
             <p>
               MySentry reserves the right to modify or update these Terms. Changes will be effective once posted on the website or within the app.
             </p>
 
-            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-800">9.3 Limitation of Liability</h3>
+            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-900">9.3 Limitation of Liability</h3>
             <p>
               MySentry’s liability is limited to a maximum of $500. We are not liable for any indirect, incidental, special, or consequential damages.
             </p>
 
-            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-800">9.4 Indemnity</h3>
+            <h3 className="text-xl mt-8 mb-3 font-semibold text-gray-900">9.4 Indemnity</h3>
             <p>
               Dealers and Organizations agree to indemnify MySentry against any claims or damages arising from their use of the Services.
             </p>

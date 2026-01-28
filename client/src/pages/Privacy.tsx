@@ -1,48 +1,25 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { motion } from 'framer-motion';
+import HeroSection from "@/components/HeroSection";
 
 export const Privacy = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
       <Navbar />
       
-      {/* Hero Section - Standardized */}
-      <section className="relative min-h-[60vh] flex items-center bg-[#e8f5e9] pt-32 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/smartwatches-display.jpg" 
-            alt="Privacy Policy" 
-            className="absolute inset-0 w-full h-full object-cover opacity-60"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-        </div>
-        
-        <div className="relative z-20 container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="max-w-4xl"
-          >
-            <span className="text-[#386758] font-bold tracking-widest uppercase text-sm mb-4 block">
-              Legal
-            </span>
-            <h1 className="text-[55px] font-normal mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
-              Privacy Policy
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
-              Last Updated: January 22, 2026
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection
+        label="Legal"
+        title="Privacy Policy"
+        description="Last Updated: January 22, 2026"
+        imageSrc="/images/smartwatches-display.jpg"
+        imageAlt="Privacy Policy"
+      />
 
       <div className="container mx-auto px-4 py-24 max-w-4xl">
-        <div className="bg-white p-8 md:p-16 rounded-3xl shadow-xl border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:font-bold prose-headings:text-[#1a1a1a] prose-headings:mt-16 prose-headings:mb-8 prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-8 prose-li:text-gray-600 prose-li:mb-4">
+        <div className="bg-white p-8 md:p-16 rounded-3xl shadow-xl border border-gray-100 prose prose-lg max-w-none prose-headings:font-barlow prose-headings:uppercase prose-headings:font-bold prose-headings:text-[#1a1a1a] prose-headings:mt-16 prose-headings:mb-8 prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-p:text-gray-900 prose-p:leading-relaxed prose-p:mb-8 prose-li:text-gray-900 prose-li:mb-4">
           
-          <p className="lead text-xl text-gray-700 font-medium mb-12">
+          <p className="lead text-xl text-gray-900 font-medium mb-12">
             At MySentry.ai, our dedication to user privacy and security is paramount. In this Privacy Policy, we explain the types of personal information that may be collected through the MySentry app (referred to as "the App"), how this information might be used and shared, and the choices available to users with respect to their personal information.
           </p>
 

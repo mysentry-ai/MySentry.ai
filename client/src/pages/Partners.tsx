@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Handshake, ShieldCheck, Globe, Zap } from 'lucide-react';
+import HeroSection from "@/components/HeroSection";
 import SEO from '../components/SEO';
 
 const Partners = () => {
@@ -11,29 +12,13 @@ const Partners = () => {
         description="Partner with MySentry to deliver world-class safety and health monitoring solutions to your customers."
       />
 
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none" />
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl mx-auto text-center">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-6xl font-normal text-primary mb-6"
-            >
-              Partner With Purpose
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-muted-foreground leading-relaxed"
-            >
-              Join forces with the leader in AI-powered personal safety. Together, we can protect more lives and provide peace of mind to families everywhere.
-            </motion.p>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        label="Partnerships"
+        title="Partner With Purpose"
+        description="Join forces with the leader in AI-powered personal safety. Together, we can protect more lives and provide peace of mind to families everywhere."
+        imageSrc="/images/partners-hero.jpg"
+        imageAlt="Partner With Purpose"
+      />
 
       {/* The Problem & Empathy (for potential partners) */}
       <section className="py-20 bg-secondary/30">

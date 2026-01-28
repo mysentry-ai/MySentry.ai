@@ -48,7 +48,7 @@ const BlogPost = () => {
 
       {/* Article Header - Centered & Editorial */}
       <header className="pt-32 pb-12 px-4 md:px-8 max-w-4xl mx-auto text-center">
-        <Link href="/blogs" className="inline-flex items-center text-gray-500 hover:text-[#386758] mb-8 transition-colors text-sm font-bold uppercase tracking-widest">
+        <Link href="/blogs" className="inline-flex items-center text-gray-700 hover:text-[#386758] mb-8 transition-colors text-sm font-bold uppercase tracking-widest">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Safety & Health Hub
         </Link>
@@ -63,7 +63,7 @@ const BlogPost = () => {
           {blog.title}
         </h1>
 
-        <div className="flex items-center justify-center gap-6 text-gray-500 text-sm font-medium uppercase tracking-wider border-t border-b border-gray-200 py-6">
+        <div className="flex items-center justify-center gap-6 text-gray-700 text-sm font-medium uppercase tracking-wider border-t border-b border-gray-200 py-6">
           <span className="flex items-center gap-2">
             <Calendar className="w-4 h-4" /> {blog.date}
           </span>
@@ -93,16 +93,16 @@ const BlogPost = () => {
           <div className="sticky top-32 flex flex-col gap-8">
             <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">Share</div>
             <div className="flex flex-col gap-4">
-              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-900 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
                 <Facebook className="w-4 h-4" />
               </button>
-              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-900 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
                 <Twitter className="w-4 h-4" />
               </button>
-              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-900 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
                 <Linkedin className="w-4 h-4" />
               </button>
-              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
+              <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-900 hover:bg-[#386758] hover:text-white hover:border-[#386758] transition-all">
                 <Share2 className="w-4 h-4" />
               </button>
             </div>
@@ -111,16 +111,16 @@ const BlogPost = () => {
 
         {/* Article Content */}
         <article className="flex-1 max-w-3xl mx-auto lg:mx-0">
-          <p className="text-xl md:text-2xl text-gray-600 leading-relaxed mb-12 font-light border-l-4 border-[#386758] pl-6 italic">
+          <p className="text-xl md:text-2xl text-gray-900 leading-relaxed mb-12 font-light border-l-4 border-[#386758] pl-6 italic">
             {blog.excerpt}
           </p>
 
           <div 
             className="prose prose-lg max-w-none 
               prose-headings:font-barlow prose-headings:font-medium prose-headings:text-[#1a1a1a] prose-headings:mt-12 prose-headings:mb-6
-              prose-p:text-gray-600 prose-p:leading-8 prose-p:mb-6 prose-p:font-light
+              prose-p:text-gray-900 prose-p:leading-8 prose-p:mb-6 prose-p:font-light
               prose-a:text-[#386758] prose-a:no-underline hover:prose-a:underline prose-a:font-medium
-              prose-li:text-gray-600 prose-li:leading-8
+              prose-li:text-gray-900 prose-li:leading-8
               prose-strong:text-[#1a1a1a] prose-strong:font-semibold
               prose-blockquote:border-l-4 prose-blockquote:border-[#386758] prose-blockquote:pl-6 prose-blockquote:italic prose-blockquote:text-gray-700 prose-blockquote:bg-gray-50 prose-blockquote:py-4 prose-blockquote:pr-4 prose-blockquote:rounded-r-lg"
             dangerouslySetInnerHTML={{ __html: blog.content }}
@@ -134,7 +134,7 @@ const BlogPost = () => {
             <div>
               <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Written By</div>
               <div className="text-lg font-bold text-[#1a1a1a]">MySentry Editorial Team</div>
-              <p className="text-gray-500 text-sm mt-1">Dedicated to bringing you the latest insights on safety, health, and independence.</p>
+              <p className="text-gray-700 text-sm mt-1">Dedicated to bringing you the latest insights on safety, health, and independence.</p>
             </div>
           </div>
 

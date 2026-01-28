@@ -160,18 +160,9 @@
     @apply bg-accent text-foreground font-bold uppercase tracking-wider rounded-full px-8 h-14 text-base transition-all hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center;
   }
 
-  /* Exception for white text on dark/primary backgrounds */
-  .text-white, .text-white * {
-    color: #ffffff !important;
-  }
-  .bg-primary, .bg-primary * {
-    color: #ffffff !important;
-  }
-  .bg-secondary, .bg-secondary * {
-    color: #ffffff !important;
-  }
-  .bg-black, .bg-black * {
-    color: #ffffff !important;
+  /* Exception for white text on dark/primary backgrounds - Removed !important overrides to allow component flexibility */
+  .text-white {
+    color: #ffffff;
   }
   
   button:not(:disabled),
