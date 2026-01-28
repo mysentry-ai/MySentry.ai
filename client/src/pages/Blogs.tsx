@@ -35,10 +35,10 @@ const Blogs = () => {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h1 className="text-[60px] md:text-[80px] lg:text-[100px] font-light leading-[0.9] tracking-tight text-[#1a1a1a] mb-6 font-barlow">
+          <h1 className="mb-6">
             Safety & Health Hub
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl font-light">
+          <p className="max-w-2xl">
             Stories, science, and strategies for living a safer, freer life.
           </p>
         </motion.div>
@@ -75,7 +75,7 @@ const Blogs = () => {
                 <span className="text-[#386758] font-bold tracking-widest uppercase text-xs mb-4">
                   Featured Story
                 </span>
-                <h2 className="text-4xl md:text-5xl font-medium text-[#1a1a1a] mb-6 leading-tight group-hover:underline decoration-1 underline-offset-4">
+                <h2 className="mb-6 group-hover:underline decoration-1 underline-offset-4">
                   {featuredBlog.title}
                 </h2>
                 <p className="text-xl text-gray-600 mb-8 leading-relaxed line-clamp-3">
@@ -120,7 +120,7 @@ const Blogs = () => {
 
                   {/* Content */}
                   <div className="flex flex-col flex-grow">
-                    <h3 className="text-2xl font-medium text-[#1a1a1a] mb-3 leading-tight group-hover:underline decoration-1 underline-offset-4">
+                    <h3 className="mb-3 group-hover:underline decoration-1 underline-offset-4">
                       {blog.title}
                     </h3>
                     

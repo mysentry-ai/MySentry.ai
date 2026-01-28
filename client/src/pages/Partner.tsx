@@ -196,10 +196,10 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
             <span className="text-[#004F7B] font-bold tracking-widest uppercase text-sm mb-4 block">
               Partner Program
             </span>
-            <h1 className="text-[55px] font-black mb-8 font-barlow uppercase leading-[0.9] tracking-tighter text-[#1a1a1a]">
-              Join the <br/><span className="text-[#004F7B]">Dealer Network</span>
+            <h1 className="mb-8 uppercase">
+              Join the <br/><span className="text-primary">Dealer Network</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-10 leading-relaxed max-w-2xl font-medium">
+            <p className="mb-10 max-w-2xl font-medium">
               Expand your business with the world's first AI-powered personal assistant for employee safety, security, and wellness.
             </p>
             <Button 
@@ -217,7 +217,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-black font-barlow uppercase text-[#004F7B] mb-4">Why Become an Authorized Dealer?</h2>
+            <h2 className="uppercase text-primary mb-4">Why Become an Authorized Dealer?</h2>
             <p className="text-xl text-gray-600">Position yourself as a leader in AI-driven safety solutions.</p>
           </div>
 
@@ -250,7 +250,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                 <div className="w-16 h-16 bg-[#e0f2fe] rounded-2xl flex items-center justify-center mb-6 text-[#004F7B]">
                   <item.icon className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold font-barlow uppercase text-[#1a1a1a] mb-4">{item.title}</h3>
+                <h3 className="uppercase mb-4">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.description}</p>
               </motion.div>
             ))}
