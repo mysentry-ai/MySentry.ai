@@ -48,6 +48,7 @@ export default function Navbar() {
     { name: "Blogs", href: "/blogs" },
     { name: "Contact Us", href: "/contact" },
     { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms & Conditions", href: "/terms" },
   ];
 
   const isActive = (path: string) => location === path;
