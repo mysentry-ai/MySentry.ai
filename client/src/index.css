@@ -179,9 +179,9 @@
     color: var(--muted-foreground);
   }
   
-  /* Menu Items - 28px per user request */
+  /* Menu Items - Font size controlled by utility classes */
   .nav-link {
-    font-size: 1.75rem !important; /* 28px */
+    /* Font size controlled by utility classes */
   }
 
   /* Button Standardization */
