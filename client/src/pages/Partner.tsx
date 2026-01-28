@@ -11,6 +11,10 @@ import { toast } from "sonner";
 import { cn } from "@/lib/utils";
 
 export const Partner = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [currentStep, setCurrentStep] = useState(1);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);

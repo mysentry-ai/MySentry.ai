@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Handshake, ShieldCheck, Globe, Zap } from 'lucide-react';
 import HeroSection from "@/components/HeroSection";
 import SEO from '../components/SEO';
 
 const Partners = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background pt-24">
       <SEO 
