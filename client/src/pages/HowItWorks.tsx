@@ -22,7 +22,7 @@ export default function Features() {
         label="Advanced Protection System"
         title={<>Your Smartwatch Collects Data.<br/><span className="text-gray-600">MySentry Gives You Answers.</span></>}
         description="MySentry transforms raw wearable data into personalized insights, real-time safety alerts, and proactive health guidance, all from your Apple Watch or Samsung Watch."
-        imageSrc="/images/flyer-main.png"
+        imageSrc="/images/how-it-works-hero.png"
         imageAlt="Happy senior checking smartwatch"
       />
 

@@ -47,3 +47,4 @@
 - [ ] Trial signup button connections
 - [ ] Admin dashboard for viewing submissions
 - [ ] Email notifications for form submissions
+- [x] Replaced How It Works hero section image with MySentry app interface showing multiple devices
