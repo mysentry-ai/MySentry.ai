@@ -22,7 +22,7 @@ export default function Features() {
         label="Advanced Protection System"
         title={<>Your Smartwatch Collects Data.<br/><span className="text-gray-600">MySentry Gives You Answers.</span></>}
         description="MySentry transforms raw wearable data into personalized insights, real-time safety alerts, and proactive health guidance, all from your Apple Watch or Samsung Watch."
-        imageSrc="/images/how-it-works-hero.png"
+        imageSrc="/images/hero-section.svg"
         imageAlt="Happy senior checking smartwatch"
       />
 
@@ -232,7 +232,7 @@ export default function Features() {
           </div>
           <div className="order-1 lg:order-2 relative flex justify-center items-center">
             <div className="relative w-full">
-              <ResponsiveImage src="/images/panic-feature.png" alt="Panic Alarm" className="w-full h-auto object-contain max-h-[600px]" />
+              <img src="/images/panic-alarm-feature.svg" alt="Panic Alarm - Phone showing triggered alarm and live video response" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
           </div>
         </div>
@@ -310,10 +310,9 @@ export default function Features() {
       {/* FEATURE 4: CRASH DETECTION */}
       <section id="crash-detection" className="py-24 bg-[#e8f5e9] scroll-mt-20">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
-          <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
-              <img src="/images/frame-6.png" alt="Crash Detection" className="w-full h-full object-cover" />
-              <AlertDemo type="crash" className="absolute inset-0" />
+          <div className="relative flex justify-center items-center">
+            <div className="w-full">
+              <img src="/images/crash-detection-feature.svg" alt="Crash Detection - Phone and Watch showing crash detected alert" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
           </div>
           <div>
@@ -369,9 +368,9 @@ export default function Features() {
               </div>
             </div>
           </div>
-          <div className="order-1 lg:order-2 relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100">
-              <img src="/images/feature-smart-connectivity.jpg" alt="Smart Connectivity" className="w-full h-full object-cover" />
+          <div className="order-1 lg:order-2 relative flex justify-center items-center">
+            <div className="w-full">
+              <img src="/images/smart-connectivity-feature.svg" alt="Smart Connectivity - Three phones showing location sharing and family connections" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
           </div>
         </div>
