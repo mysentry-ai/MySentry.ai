@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -15,17 +15,41 @@ export default function Footer() {
               24/7 Safety and Health Monitoring for everyone with Emergency Response.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="text-gray-900 hover:text-primary transition-colors">
+              <a 
+                href="https://www.facebook.com/MySentryAi" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="MySentry on Facebook"
+                className="text-gray-900 hover:text-primary transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-900 hover:text-primary transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-900 hover:text-primary transition-colors">
+              <a 
+                href="https://www.instagram.com/mysentry.ai/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="MySentry on Instagram"
+                className="text-gray-900 hover:text-primary transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-900 hover:text-primary transition-colors">
+              <a 
+                href="https://www.linkedin.com/company/mysentryai/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="MySentry on LinkedIn"
+                className="text-gray-900 hover:text-primary transition-colors"
+              >
                 <Linkedin className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.youtube.com/@MySentry" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="MySentry on YouTube"
+                className="text-gray-900 hover:text-primary transition-colors"
+              >
+                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
