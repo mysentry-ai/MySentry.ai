@@ -241,10 +241,9 @@ export default function Features() {
       {/* FEATURE 2: FALL DETECTION */}
       <section id="fall-detection" className="py-24 bg-[#e8f5e9] scroll-mt-20">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
-          <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
-              <ResponsiveImage src="/images/frame-1.png" alt="Fall Detection" className="w-full h-full object-cover" />
-              <AlertDemo type="fall" className="absolute inset-0" />
+          <div className="relative flex justify-center items-center">
+            <div className="w-full">
+              <img src="/images/fall-detection-feature.svg" alt="Fall Detection - Phone and Watch showing fall detected alert" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
           </div>
           <div>
@@ -300,9 +299,9 @@ export default function Features() {
               </div>
             </div>
           </div>
-          <div className="order-1 lg:order-2 relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100">
-              <img src="/images/frame-8.png" alt="Near-Fall Detection" className="w-full h-full object-cover" />
+          <div className="order-1 lg:order-2 relative flex justify-center items-center">
+            <div className="w-full">
+              <img src="/images/near-fall-detection-feature.svg" alt="Near-Fall Detection - Phone and Watch showing stumble alert" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
           </div>
         </div>

@@ -48,3 +48,5 @@
 - [ ] Admin dashboard for viewing submissions
 - [ ] Email notifications for form submissions
 - [x] Replaced How It Works hero section image with MySentry app interface showing multiple devices
+- [x] Replaced Feature 02 (Fall Detection) image with WebMysentry(5).svg showing phone and watch with fall detected alert
+- [x] Replaced Feature 03 (Near-Fall Detection) image with WebMysentry(4).svg showing phone and watch with stumble alert
