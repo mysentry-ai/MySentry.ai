@@ -230,10 +230,9 @@ export default function Features() {
               ))}
             </ul>
           </div>
-          <div className="order-1 lg:order-2 relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
-              <ResponsiveImage src="/images/panic-feature.jpg" alt="Panic Alarm" className="w-full h-full object-cover" />
-              <AlertDemo type="panic" className="absolute inset-0" />
+          <div className="order-1 lg:order-2 relative flex justify-center items-center">
+            <div className="relative w-full">
+              <ResponsiveImage src="/images/panic-feature-new.png" alt="Panic Alarm" className="w-full h-auto object-contain" />
             </div>
           </div>
         </div>
