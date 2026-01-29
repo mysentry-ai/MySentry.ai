@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Loader2 } from "lucide-react";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 interface EmployerDemoModalProps {
   isOpen: boolean;
@@ -24,19 +26,9 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
     message: "1. Employee Safety Monitoring\n2. Health & Wellness Tracking\n3. Emergency Response Coordination"
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate API call to sales@mysentry.ai
-    console.log("Sending email to sales@mysentry.ai", formData);
-    
-    setTimeout(() => {
+  // tRPC mutation for demo request
+  const demoMutation = trpc.demo.request.useMutation({
+    onSuccess: () => {
       setIsSubmitting(false);
       setIsSuccess(true);
       // Reset form after success
@@ -48,7 +40,32 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
         phone: "",
         message: "1. Employee Safety Monitoring\n2. Health & Wellness Tracking\n3. Emergency Response Coordination"
       });
-    }, 1500);
+    },
+    onError: (error) => {
+      setIsSubmitting(false);
+      toast.error(error.message || "Failed to submit demo request. Please try again.");
+    }
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Submit to backend via tRPC
+    demoMutation.mutate({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone || undefined,
+      company: formData.company,
+      companySize: formData.employees,
+      useCase: "employer",
+      message: formData.message || undefined,
+    });
   };
 
   const handleClose = () => {

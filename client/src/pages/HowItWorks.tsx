@@ -232,7 +232,7 @@ export default function Features() {
           </div>
           <div className="order-1 lg:order-2 relative flex justify-center items-center">
             <div className="relative w-full">
-              <ResponsiveImage src="/images/panic-feature-new.png" alt="Panic Alarm" className="w-full h-auto object-contain" />
+              <ResponsiveImage src="/images/panic-feature.png" alt="Panic Alarm" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
           </div>
         </div>

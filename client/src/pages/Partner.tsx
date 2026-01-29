@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { cn } from "@/lib/utils";
+import { trpc } from "@/lib/trpc";
 
 export const Partner = () => {
   useEffect(() => {
@@ -20,6 +21,38 @@ export const Partner = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
   const [formError, setFormError] = useState<string | null>(null);
+  
+  // tRPC mutation for partner application
+  const partnerMutation = trpc.partner.submit.useMutation({
+    onSuccess: () => {
+      toast.success("Application submitted successfully! We'll be in touch soon.");
+      setIsSubmitting(false);
+      // Reset form
+      setFormData({
+        companyName: '',
+        website: '',
+        address: '',
+        city: '',
+        state: '',
+        zip: '',
+        country: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        taxId: '',
+        taxState: '',
+        licenseNum: '',
+        licenseState: ''
+      });
+      setCurrentStep(1);
+      setCompletedSteps([]);
+    },
+    onError: (error) => {
+      toast.error(error.message || "Failed to submit application. Please try again.");
+      setIsSubmitting(false);
+    }
+  });
   
   // Form State
   const [formData, setFormData] = useState({
@@ -122,31 +155,22 @@ export const Partner = () => {
 
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    toast.success("Application submitted successfully! We'll be in touch soon.");
-    setIsSubmitting(false);
-    
-    // Construct mailto link with form data
-    const subject = encodeURIComponent(`New Partner Application: ${formData.companyName}`);
-    const body = encodeURIComponent(`
-Company Information:
-Name: ${formData.companyName}
-Website: ${formData.website}
-Address: ${formData.address}, ${formData.city}, ${formData.state} ${formData.zip}, ${formData.country}
-
-Primary Contact:
-Name: ${formData.firstName} ${formData.lastName}
-Email: ${formData.email}
-Phone: ${formData.phone}
-
-Licensing:
-Tax ID: ${formData.taxId} (${formData.taxState})
-License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
-    `);
-    
-    window.location.href = `mailto:support@MySentry.ai?subject=${subject}&body=${body}`;
+    // Submit to backend via tRPC
+    partnerMutation.mutate({
+      companyName: formData.companyName,
+      contactName: `${formData.firstName} ${formData.lastName}`,
+      email: formData.email,
+      phone: formData.phone,
+      website: formData.website,
+      partnerType: "dealer", // Default partner type for this form
+      industry: "security", // Default industry
+      companySize: "", // Not collected in this form
+      currentSolutions: `Address: ${formData.address}, ${formData.city}, ${formData.state} ${formData.zip}, ${formData.country}`,
+      targetMarket: "",
+      expectedVolume: "",
+      additionalInfo: `Tax ID: ${formData.taxId} (${formData.taxState}), License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})`,
+      howHeard: "",
+    });
   };
 
   const StepHeader = ({ step, title, isActive, isCompleted }: { step: number, title: string, isActive: boolean, isCompleted: boolean }) => (
@@ -270,7 +294,7 @@ License: ${formData.licenseNum || 'N/A'} (${formData.licenseState || 'N/A'})
                   },
                   {
                     step: "03",
-                    title: "Account Control",
+                    title: "User Management",
                     description: "Instantly manage application access to ensure security and compliance."
                   }
                 ].map((item, index) => (

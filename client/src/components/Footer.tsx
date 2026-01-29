@@ -1,7 +1,45 @@
+import { useState } from "react";
 import { Link } from "wouter";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, Loader2 } from "lucide-react";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // tRPC mutation for newsletter subscription
+  const newsletterMutation = trpc.newsletter.subscribe.useMutation({
+    onSuccess: (data) => {
+      setIsSubmitting(false);
+      if (data.alreadySubscribed) {
+        toast.info("You're already subscribed to our newsletter!");
+      } else if (data.reactivated) {
+        toast.success("Welcome back! Your subscription has been reactivated.");
+      } else {
+        toast.success("Thank you for subscribing to our newsletter!");
+      }
+      setEmail("");
+    },
+    onError: (error) => {
+      setIsSubmitting(false);
+      toast.error(error.message || "Failed to subscribe. Please try again.");
+    }
+  });
+
+  const handleNewsletterSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !email.includes("@")) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    setIsSubmitting(true);
+    newsletterMutation.mutate({
+      email,
+      source: "footer"
+    });
+  };
+
   return (
     <footer className="bg-[#e8f5e9] border-t border-primary/10 pt-16 pb-8">
       <div className="container">
@@ -139,14 +177,25 @@ export default function Footer() {
             <p className="text-base text-gray-900 mb-4 font-medium">
               Subscribe to our newsletter for the latest safety tips and product updates.
             </p>
-            <form className="flex gap-2" onSubmit={(e) => e.preventDefault()}>
+            <form className="flex gap-2" onSubmit={handleNewsletterSubmit}>
               <input 
                 type="email" 
                 placeholder="Enter your email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 px-3 py-2 rounded-lg bg-white border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm"
+                disabled={isSubmitting}
               />
-              <button className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors">
-                Subscribe
+              <button 
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center gap-2"
+              >
+                {isSubmitting ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  "Subscribe"
+                )}
               </button>
             </form>
           </div>
