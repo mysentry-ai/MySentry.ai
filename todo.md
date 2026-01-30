@@ -70,3 +70,4 @@
 - [x] Apply consistent animations to Feature 07 (Live Video) mockup
 - [x] Apply consistent animations to Feature 08 (MeetSafe) mockup
 - [x] Ensure visual consistency across all feature sections
+- [x] Updated chatbot welcome message to "Hi there! What brings you in today?"
