@@ -80,3 +80,4 @@
 
 ## UI Fixes
 - [x] Adjust chatbot layout to prevent overlapping with header (reduced height from 600 to 500, increased bottom offset from 20 to 30)
+- [x] Add mobile-responsive chatbot size that adjusts dimensions on smaller screens

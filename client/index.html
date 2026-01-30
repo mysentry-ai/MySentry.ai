@@ -21,26 +21,39 @@
       data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
     <script type="module">
       import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+      
+      // Detect if mobile device
+      const isMobile = window.innerWidth <= 768;
+      
+      // Set responsive dimensions
+      const chatWindowHeight = isMobile ? Math.min(window.innerHeight - 120, 450) : 500;
+      const chatWindowWidth = isMobile ? Math.min(window.innerWidth - 20, 350) : 400;
+      const buttonSize = isMobile ? 50 : 60;
+      const buttonRight = isMobile ? 15 : 20;
+      const buttonBottom = isMobile ? 20 : 30;
+      const fontSize = isMobile ? 14 : 16;
+      const starterPromptFontSize = isMobile ? 12 : 14;
+      
       Chatbot.init({
         chatflowid: "343c9ce8-205b-434d-9c95-68737d97752e",
         apiHost: "https://flowise.zigron.com",
         theme: {
           button: {
             backgroundColor: '#6AD990',
-            right: 20,
-            bottom: 30,
-            size: 60,
+            right: buttonRight,
+            bottom: buttonBottom,
+            size: buttonSize,
             dragAndDrop: true,
             iconColor: 'white',
             customIconSrc: '/chatbot-icon.jpg',
             autoWindowOpen: {
-              autoOpen: true,
+              autoOpen: !isMobile,
               openDelay: 2,
               autoOpenOnMobile: false
             }
           },
           tooltip: {
-            showTooltip: true,
+            showTooltip: !isMobile,
             tooltipMessage: 'Hi! Need Help?',
             tooltipBackgroundColor: '#6AD990',
             tooltipTextColor: '#232020',
@@ -54,15 +67,15 @@
             welcomeMessage: 'Hi there! What brings you in today?',
             errorMessage: 'I am having trouble connecting. Please try again later.',
             backgroundColor: '#ffffff',
-            height: 500,
-            width: 400,
-            fontSize: 16,
+            height: chatWindowHeight,
+            width: chatWindowWidth,
+            fontSize: fontSize,
             starterPrompts: [
               "How do I add emergency contacts?",
               "How does the Panic Alarm work?",
               "What is included in the Essential Safety plan?"
             ],
-            starterPromptFontSize: 14,
+            starterPromptFontSize: starterPromptFontSize,
             clearChatOnReload: true,
             botMessage: {
               backgroundColor: '#f0f9ff',
@@ -82,7 +95,7 @@
               sendButtonColor: '#6AD990',
               maxChars: 200,
               maxCharsWarningMessage: 'You exceeded the character limit.',
-              autoFocus: true,
+              autoFocus: !isMobile,
               sendMessageSound: true,
               receiveMessageSound: true
             },
