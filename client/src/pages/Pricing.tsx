@@ -227,8 +227,8 @@ export default function Pricing() {
 
           {/* Family Plan Note */}
           {isFamily && (
-            <div className="text-center mb-8">
-              <p className="text-gray-600 italic">Invite up to 6 family members to join your plan (1 admin account holder and 5 family members).</p>
+            <div className="text-center" style={{ marginTop: '-3px', marginBottom: '60px' }}>
+              <p className="text-gray-600 italic text-sm">Invite up to 6 family members to join your plan (1 admin account holder and 5 family members).</p>
             </div>
           )}
 
