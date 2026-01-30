@@ -77,3 +77,6 @@
 - [x] Update Family Plan: $30/month, $288/year (20% off, save $72)
 - [x] Add family member note: "Invite up to 6 family members to join your plan (1 admin account holder and 5 family members)"
 - [x] Update all pricing instances across all pages (PricingSection.tsx and Pricing.tsx)
+
+## UI Fixes
+- [x] Adjust chatbot layout to prevent overlapping with header (reduced height from 600 to 500, increased bottom offset from 20 to 30)
