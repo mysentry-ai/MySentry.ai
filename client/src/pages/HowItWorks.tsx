@@ -230,22 +230,34 @@ export default function Features() {
               ))}
             </ul>
           </div>
-          <div className="order-1 lg:order-2 relative flex justify-center items-center">
+          <motion.div 
+            className="order-1 lg:order-2 relative flex justify-center items-center"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="relative w-full">
               <img src="/images/panic-alarm-feature.svg" alt="Panic Alarm - Phone showing triggered alarm and live video response" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* FEATURE 2: FALL DETECTION */}
       <section id="fall-detection" className="py-24 bg-[#e8f5e9] scroll-mt-20">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
-          <div className="relative flex justify-center items-center">
+          <motion.div 
+            className="relative flex justify-center items-center"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="w-full">
               <img src="/images/fall-detection-feature.svg" alt="Fall Detection - Phone and Watch showing fall detected alert" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
-          </div>
+          </motion.div>
           <div>
             <div className="flex items-center gap-2 mb-6">
               <span className="h-px w-8 bg-primary"></span>
@@ -299,22 +311,34 @@ export default function Features() {
               </div>
             </div>
           </div>
-          <div className="order-1 lg:order-2 relative flex justify-center items-center">
+          <motion.div 
+            className="order-1 lg:order-2 relative flex justify-center items-center"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="w-full">
               <img src="/images/near-fall-detection-feature.svg" alt="Near-Fall Detection - Phone and Watch showing stumble alert" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* FEATURE 4: CRASH DETECTION */}
       <section id="crash-detection" className="py-24 bg-[#e8f5e9] scroll-mt-20">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
-          <div className="relative flex justify-center items-center">
+          <motion.div 
+            className="relative flex justify-center items-center"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="w-full">
               <img src="/images/crash-detection-feature.svg" alt="Crash Detection - Phone and Watch showing crash detected alert" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
-          </div>
+          </motion.div>
           <div>
             <div className="flex items-center gap-2 mb-6">
               <span className="h-px w-8 bg-blue-600"></span>
@@ -368,22 +392,34 @@ export default function Features() {
               </div>
             </div>
           </div>
-          <div className="order-1 lg:order-2 relative flex justify-center items-center">
+          <motion.div 
+            className="order-1 lg:order-2 relative flex justify-center items-center"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="w-full">
               <img src="/images/smart-connectivity-feature.svg" alt="Smart Connectivity - Three phones showing location sharing and family connections" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* FEATURE 6: HEALTH MONITORING */}
       <section id="health-monitoring" className="py-24 bg-[#e8f5e9] scroll-mt-20">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
-          <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
-              <img src="/images/WebMysentry(10).svg" alt="Health Monitoring - Daily Health Vitals" className="w-full h-full object-contain bg-white" />
+          <motion.div 
+            className="relative flex justify-center items-center"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="w-full">
+              <img src="/images/WebMysentry(10).svg" alt="Health Monitoring - Daily Health Vitals" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
-          </div>
+          </motion.div>
           <div>
             <div className="flex items-center gap-2 mb-6">
               <span className="h-px w-8 bg-pink-600"></span>
@@ -431,22 +467,34 @@ export default function Features() {
               </div>
             </div>
           </div>
-          <div className="order-1 lg:order-2 relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100">
-              <img src="/images/WebMysentry(12).svg" alt="Live Video Streaming - Video call and chat" className="w-full h-full object-contain bg-white" />
+          <motion.div 
+            className="order-1 lg:order-2 relative flex justify-center items-center"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="w-full">
+              <img src="/images/WebMysentry(12).svg" alt="Live Video Streaming - Video call and chat" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* FEATURE 8: MEETSAFE */}
       <section id="meetsafe" className="py-24 bg-[#e8f5e9] scroll-mt-20">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
-          <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
-              <img src="/images/WebMysentry(11).svg" alt="MeetSafe - Meetings and Meet Safe with Voice" className="w-full h-full object-contain bg-white" />
+          <motion.div 
+            className="relative flex justify-center items-center"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="w-full">
+              <img src="/images/WebMysentry(11).svg" alt="MeetSafe - Meetings and Meet Safe with Voice" className="w-full h-auto object-contain max-h-[600px]" />
             </div>
-          </div>
+          </motion.div>
           <div>
             <div className="flex items-center gap-2 mb-6">
               <span className="h-px w-8 bg-teal-600"></span>
