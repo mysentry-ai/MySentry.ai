@@ -381,7 +381,7 @@ export default function Features() {
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
-              <img src="/images/feature-health.jpg" alt="Health Monitoring" className="w-full h-full object-cover" />
+              <img src="/images/WebMysentry(10).svg" alt="Health Monitoring - Daily Health Vitals" className="w-full h-full object-contain bg-white" />
             </div>
           </div>
           <div>
@@ -433,7 +433,7 @@ export default function Features() {
           </div>
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-gray-100">
-              <img src="/images/feature-video.jpg" alt="Live Video Streaming" className="w-full h-full object-cover" />
+              <img src="/images/WebMysentry(12).svg" alt="Live Video Streaming - Video call and chat" className="w-full h-full object-contain bg-white" />
             </div>
           </div>
         </div>
@@ -444,7 +444,7 @@ export default function Features() {
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="relative">
             <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border border-green-200 relative group">
-              <img src="/images/feature-meetsafe.jpg" alt="MeetSafe" className="w-full h-full object-cover" />
+              <img src="/images/WebMysentry(11).svg" alt="MeetSafe - Meetings and Meet Safe with Voice" className="w-full h-full object-contain bg-white" />
             </div>
           </div>
           <div>
