@@ -8,12 +8,14 @@ export default function PricingSection() {
   const [isAnnual, setIsAnnual] = useState(true);
   const [employeeCount, setEmployeeCount] = useState(50);
 
-  // Pricing Constants
-  const individualMonthly = 12.49;
-  const individualYearlyRate = 9.99;
+  // Pricing Constants - Updated
+  const individualMonthly = 15;
+  const individualYearlyTotal = 144; // 20% off from $180 ($15 x 12)
+  const individualYearlySavings = 36;
   
-  const familyMonthly = 24.99;
-  const familyYearlyRate = 19.99;
+  const familyMonthly = 30;
+  const familyYearlyTotal = 288; // 20% off from $360 ($30 x 12)
+  const familyYearlySavings = 72;
 
   // Employer Pricing Logic
   const baseEmployerMonthlyRate = 24.99;
@@ -30,9 +32,9 @@ export default function PricingSection() {
   const plans = [
     {
       name: "Individual",
-      price: isAnnual ? `$${individualYearlyRate}` : `$${individualMonthly}`,
-      period: "/month",
-      billing: isAnnual ? "Billed annually" : "Billed monthly",
+      price: isAnnual ? `$${individualYearlyTotal}` : `$${individualMonthly}`,
+      period: isAnnual ? "/year" : "/month",
+      billing: isAnnual ? `Save $${individualYearlySavings} with annual billing` : "Billed monthly",
       description: "Complete Protection\nSafety + Health + Monitoring",
       features: [
         "24/7 Professional Monitoring",
@@ -43,13 +45,14 @@ export default function PricingSection() {
       ],
       cta: "Start 7-Day Free Trial",
       popular: false,
-      highlightColor: "primary"
+      highlightColor: "primary",
+      familyNote: null
     },
     {
-      name: "Family (up to 6)",
-      price: isAnnual ? `$${familyYearlyRate}` : `$${familyMonthly}`,
-      period: "/family/mo",
-      billing: isAnnual ? "Billed annually" : "Billed monthly",
+      name: "Family",
+      price: isAnnual ? `$${familyYearlyTotal}` : `$${familyMonthly}`,
+      period: isAnnual ? "/year" : "/month",
+      billing: isAnnual ? `Save $${familyYearlySavings} with annual billing` : "Billed monthly",
       description: "Complete Protection\nSafety + Health + Monitoring",
       features: [
         "Everything in Individual",
@@ -60,7 +63,8 @@ export default function PricingSection() {
       ],
       cta: "Start 7-Day Free Trial",
       popular: true,
-      highlightColor: "#66d48f"
+      highlightColor: "#66d48f",
+      familyNote: "Invite up to 6 family members to join your plan (1 admin account holder and 5 family members)."
     },
     {
       name: "Employers",
@@ -78,7 +82,8 @@ export default function PricingSection() {
       cta: "Book a Demo Today",
       popular: false,
       highlightColor: "primary",
-      isEmployer: true
+      isEmployer: true,
+      familyNote: null
     }
   ];
 
@@ -137,7 +142,12 @@ export default function PricingSection() {
                 <span className="text-4xl font-bold text-[#1a1a1a]">{plan.price}</span>
                 <span className="text-gray-500 font-medium">{plan.period}</span>
               </div>
-              <p className="text-sm text-gray-400 font-medium mb-4">{plan.billing}</p>
+              <p className={`text-sm font-medium mb-4 ${isAnnual && !plan.isEmployer ? "text-[#66d48f]" : "text-gray-400"}`}>{plan.billing}</p>
+
+              {/* Family Note */}
+              {plan.familyNote && (
+                <p className="text-sm text-gray-500 italic mb-4">{plan.familyNote}</p>
+              )}
 
               {/* Employer Employee Count Slider */}
               {plan.isEmployer && (

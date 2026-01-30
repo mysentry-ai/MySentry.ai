@@ -71,3 +71,9 @@
 - [x] Apply consistent animations to Feature 08 (MeetSafe) mockup
 - [x] Ensure visual consistency across all feature sections
 - [x] Updated chatbot welcome message to "Hi there! What brings you in today?"
+
+## Pricing Updates
+- [x] Update Individual Plan: $15/month, $144/year (20% off, save $36)
+- [x] Update Family Plan: $30/month, $288/year (20% off, save $72)
+- [x] Add family member note: "Invite up to 6 family members to join your plan (1 admin account holder and 5 family members)"
+- [x] Update all pricing instances across all pages (PricingSection.tsx and Pricing.tsx)

@@ -15,21 +15,21 @@ export default function Pricing() {
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [selectedEmployerPlan, setSelectedEmployerPlan] = useState("");
 
-  // Static pricing logic
-  // Individual: $15/mo (Monthly) or $150/yr (Yearly - 2 months free)
-  // Family (up to 6): $30/mo (Monthly) or $300/yr (Yearly - 2 months free)
+  // Static pricing logic - Updated with 20% yearly discount
+  // Individual: $15/mo (Monthly) or $144/yr (Yearly - 20% off, save $36)
+  // Family (up to 6): $30/mo (Monthly) or $288/yr (Yearly - 20% off, save $72)
   
   const individualMonthly = 15.00;
-  const individualYearlyRate = 12.50; // $150 / 12
-  const individualAnnualTotal = 150.00;
+  const individualYearlyTotal = 144.00; // 20% off from $180
+  const individualYearlySavings = 36.00;
 
   const familyMonthly = 30.00;
-  const familyYearlyRate = 25.00; // $300 / 12
-  const familyAnnualTotal = 300.00;
+  const familyYearlyTotal = 288.00; // 20% off from $360
+  const familyYearlySavings = 72.00;
 
   const currentMonthlyPrice = isFamily ? familyMonthly : individualMonthly;
-  const currentYearlyRate = isFamily ? familyYearlyRate : individualYearlyRate;
-  const currentAnnualTotal = isFamily ? familyAnnualTotal : individualAnnualTotal;
+  const currentYearlyTotal = isFamily ? familyYearlyTotal : individualYearlyTotal;
+  const currentYearlySavings = isFamily ? familyYearlySavings : individualYearlySavings;
 
   // Longevity Plan Pricing (Double the Essential Safety Plan)
   // Individual: $24.99/mo (Monthly) or $19.99/mo (Yearly)
@@ -63,7 +63,8 @@ export default function Pricing() {
       name: "Essential Safety",
       tagline: "24x7 Safety & Health Monitoring with Emergency Response",
       price: currentMonthlyPrice,
-      annualPrice: currentAnnualTotal,
+      annualPrice: currentYearlyTotal,
+      yearlySavings: currentYearlySavings,
       description: "Full protection with health monitoring and 24/7 agents.",
       cta: "START 7-DAY FREE TRIAL",
       highlighted: true,
@@ -186,7 +187,7 @@ export default function Pricing() {
                 isAnnual ? "bg-primary text-white" : "text-[#1a1a1a] hover:text-primary"
               )}
             >
-              Yearly <span className="text-[10px] bg-secondary text-white px-2 py-0.5 rounded-full font-bold ml-1">2 MONTHS FREE</span>
+              Yearly <span className="text-[10px] bg-secondary text-white px-2 py-0.5 rounded-full font-bold ml-1">SAVE 20%</span>
             </button>
           </div>
         </div>
@@ -224,6 +225,13 @@ export default function Pricing() {
             </div>
           </div>
 
+          {/* Family Plan Note */}
+          {isFamily && (
+            <div className="text-center mb-8">
+              <p className="text-gray-600 italic">Invite up to 6 family members to join your plan (1 admin account holder and 5 family members).</p>
+            </div>
+          )}
+
           {/* Consumer Plans Grid */}
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {consumerPlans.map((plan, idx) => (
@@ -253,18 +261,18 @@ export default function Pricing() {
                     {!plan.comingSoon ? (
                       <>
                         <span className="text-5xl font-bold text-[#1a1a1a]">
-                          ${isAnnual ? (plan.id === "advanced" ? longevityYearlyRate : currentYearlyRate) : plan.price}
+                          ${isAnnual ? plan.annualPrice : plan.price}
                         </span>
-                        <span className="text-gray-500 font-medium">/mo</span>
+                        <span className="text-gray-500 font-medium">{isAnnual ? '/year' : '/mo'}</span>
                       </>
                     ) : (
                       <span className="text-4xl font-bold text-[#1a1a1a]">Coming Soon</span>
                     )}
                   </div>
                   
-                  {!plan.comingSoon && isAnnual && (
+                  {!plan.comingSoon && isAnnual && plan.yearlySavings && (
                     <p className="text-sm text-green-600 font-medium">
-                      Billed ${plan.annualPrice.toFixed(2)} yearly
+                      Save ${plan.yearlySavings.toFixed(0)} with annual billing
                     </p>
                   )}
                   
