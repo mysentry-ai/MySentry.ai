@@ -7,6 +7,7 @@ import { Link } from "wouter";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import EmployerDemoModal from "@/components/EmployerDemoModal";
+import { getSignupUrl } from "@/const";
 
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -30,6 +31,13 @@ export default function Pricing() {
   const currentMonthlyPrice = isFamily ? familyMonthly : individualMonthly;
   const currentYearlyTotal = isFamily ? familyYearlyTotal : individualYearlyTotal;
   const currentYearlySavings = isFamily ? familyYearlySavings : individualYearlySavings;
+
+  // Generate dynamic signup URL based on plan type and billing cycle
+  const getConsumerSignupUrl = () => {
+    const planType = isFamily ? 'family' : 'individual';
+    const billingCycle = isAnnual ? 'yearly' : 'monthly';
+    return getSignupUrl(planType, billingCycle);
+  };
 
   // Longevity Plan Pricing (Double the Essential Safety Plan)
   // Individual: $24.99/mo (Monthly) or $19.99/mo (Yearly)
@@ -241,7 +249,7 @@ export default function Pricing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className={cn(
-                  "relative p-8 rounded-[2.5rem] border transition-all duration-300 flex flex-col h-full",
+                  "relative rounded-3xl p-8 border-2 transition-all duration-300 flex flex-col",
                   plan.highlighted 
                     ? "bg-white border-primary shadow-2xl scale-105 z-10" 
                     : "bg-white/50 border-gray-200 hover:border-primary/30 hover:shadow-xl"
@@ -303,17 +311,29 @@ export default function Pricing() {
                   </ul>
                 </div>
 
-                <Button 
-                  className={cn(
-                    "w-full h-14 text-lg font-bold rounded-xl transition-all",
-                    plan.highlighted 
-                      ? "bg-primary text-white hover:bg-primary/90 shadow-lg hover:shadow-xl hover:-translate-y-1" 
-                      : "bg-gray-100 text-gray-900 hover:bg-gray-200"
-                  )}
-                  disabled={plan.comingSoon}
-                >
-                  {plan.cta}
-                </Button>
+                {!plan.comingSoon ? (
+                  <a 
+                    href={getConsumerSignupUrl()}
+                    className={cn(
+                      "w-full h-14 text-lg font-bold rounded-xl transition-all inline-flex items-center justify-center",
+                      plan.highlighted 
+                        ? "bg-primary text-white hover:bg-primary/90 shadow-lg hover:shadow-xl hover:-translate-y-1" 
+                        : "bg-gray-100 text-gray-900 hover:bg-gray-200"
+                    )}
+                  >
+                    {plan.cta}
+                  </a>
+                ) : (
+                  <Button 
+                    className={cn(
+                      "w-full h-14 text-lg font-bold rounded-xl transition-all",
+                      "bg-gray-100 text-gray-900 hover:bg-gray-200"
+                    )}
+                    disabled
+                  >
+                    {plan.cta}
+                  </Button>
+                )}
               </motion.div>
             ))}
           </div>
@@ -357,12 +377,18 @@ export default function Pricing() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 className={cn(
-                  "relative p-8 rounded-[2.5rem] border transition-all duration-300 flex flex-col h-full",
+                  "relative rounded-3xl p-8 border-2 transition-all duration-300 flex flex-col",
                   plan.highlighted 
                     ? "bg-white border-primary shadow-2xl scale-105 z-10" 
                     : "bg-white/50 border-gray-200 hover:border-primary/30 hover:shadow-xl"
                 )}
               >
+                {plan.highlighted && (
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                    RECOMMENDED
+                  </div>
+                )}
+
                 <div className="mb-8">
                   <h3 className="text-2xl font-bold text-[#1a1a1a] mb-2">{plan.name}</h3>
                   <p className="text-primary font-medium mb-6">{plan.tagline}</p>
@@ -371,18 +397,18 @@ export default function Pricing() {
                     {!plan.comingSoon ? (
                       <>
                         <span className="text-5xl font-bold text-[#1a1a1a]">
-                          ${(plan.totalPrice / employeeCount).toFixed(2)}
+                          ${plan.totalPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                         </span>
-                        <span className="text-gray-500 font-medium">/family/mo</span>
+                        <span className="text-gray-500 font-medium">/mo</span>
                       </>
                     ) : (
                       <span className="text-4xl font-bold text-[#1a1a1a]">Coming Soon</span>
                     )}
                   </div>
                   
-                  {!plan.comingSoon && (
-                    <p className="text-sm text-green-600 font-medium mb-4">
-                      Total: ${plan.totalPrice.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} {isAnnual ? 'yearly' : 'monthly'}
+                  {!plan.comingSoon && employerDiscount > 0 && (
+                    <p className="text-sm text-green-600 font-medium">
+                      {Math.round(employerDiscount * 100)}% volume discount applied
                     </p>
                   )}
                   
@@ -420,11 +446,13 @@ export default function Pricing() {
                       ? "bg-primary text-white hover:bg-primary/90 shadow-lg hover:shadow-xl hover:-translate-y-1" 
                       : "bg-gray-100 text-gray-900 hover:bg-gray-200"
                   )}
-                  onClick={() => {
-                    setSelectedEmployerPlan(plan.name);
-                    setIsDemoModalOpen(true);
-                  }}
                   disabled={plan.comingSoon}
+                  onClick={() => {
+                    if (!plan.comingSoon) {
+                      setSelectedEmployerPlan(plan.name);
+                      setIsDemoModalOpen(true);
+                    }
+                  }}
                 >
                   {plan.cta}
                 </Button>
@@ -434,9 +462,49 @@ export default function Pricing() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-24 bg-[#e8f5e9]">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-tight">Frequently Asked Questions</h2>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-6">
+            {[
+              {
+                q: "What's included in the 7-day free trial?",
+                a: "Your free trial includes full access to all Essential Safety features including 24/7 professional monitoring, fall detection, crash detection, and real-time health alerts. No credit card required to start."
+              },
+              {
+                q: "Can I switch between Individual and Family plans?",
+                a: "Yes! You can upgrade or downgrade your plan at any time. When upgrading, you'll only pay the prorated difference. When downgrading, the change takes effect at your next billing cycle."
+              },
+              {
+                q: "What devices are compatible with MySentry?",
+                a: "MySentry works with iPhone (iOS 14+), Android phones (Android 10+), Apple Watch (Series 4+), and most Wear OS smartwatches. Our app is optimized for both smartphones and wearables."
+              },
+              {
+                q: "How does the 24/7 professional monitoring work?",
+                a: "When an emergency is detected (fall, crash, panic alarm), our trained monitoring agents are immediately alerted. They can view live video, communicate with you, and dispatch emergency services to your exact location if needed."
+              },
+              {
+                q: "Is there a contract or commitment?",
+                a: "No long-term contracts! All plans are month-to-month or annual (with 20% savings). You can cancel anytime with no cancellation fees."
+              }
+            ].map((faq, i) => (
+              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                <h3 className="text-lg font-bold text-[#1a1a1a] mb-3">{faq.q}</h3>
+                <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Employer Demo Modal */}
       <EmployerDemoModal 
         isOpen={isDemoModalOpen} 
-        onClose={() => setIsDemoModalOpen(false)} 
+        onClose={() => setIsDemoModalOpen(false)}
         planName={selectedEmployerPlan}
       />
     </Layout>

@@ -81,3 +81,11 @@
 ## UI Fixes
 - [x] Adjust chatbot layout to prevent overlapping with header (reduced height from 600 to 500, increased bottom offset from 20 to 30)
 - [x] Add mobile-responsive chatbot size that adjusts dimensions on smaller screens
+
+## Pricing Signup Links
+- [x] Add VITE_FRONTEND_BASE_URL environment variable
+- [x] Update Individual Monthly CTA to link to /create-saas-account?plan=individual_basic_monthly
+- [x] Update Individual Yearly CTA to link to /create-saas-account?plan=individual_basic_yearly
+- [x] Update Family Monthly CTA to link to /create-saas-account?plan=family_basic_monthly
+- [x] Update Family Yearly CTA to link to /create-saas-account?plan=family_basic_yearly
+- [x] Ensure dynamic routing based on plan selection

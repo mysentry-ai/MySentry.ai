@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Users } from "lucide-react";
-import { Link } from "wouter";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { getSignupUrl } from "@/const";
 
 export default function PricingSection() {
   const [isAnnual, setIsAnnual] = useState(true);
@@ -29,6 +29,10 @@ export default function PricingSection() {
     ? baseEmployerYearlyRate * (1 - employerDiscount)
     : baseEmployerMonthlyRate * (1 - employerDiscount);
 
+  // Generate signup URLs based on billing cycle
+  const individualSignupUrl = getSignupUrl('individual', isAnnual ? 'yearly' : 'monthly');
+  const familySignupUrl = getSignupUrl('family', isAnnual ? 'yearly' : 'monthly');
+
   const plans = [
     {
       name: "Individual",
@@ -46,7 +50,9 @@ export default function PricingSection() {
       cta: "Start 7-Day Free Trial",
       popular: false,
       highlightColor: "primary",
-      familyNote: null
+      familyNote: null,
+      signupUrl: individualSignupUrl,
+      isEmployer: false
     },
     {
       name: "Family",
@@ -64,7 +70,9 @@ export default function PricingSection() {
       cta: "Start 7-Day Free Trial",
       popular: true,
       highlightColor: "#66d48f",
-      familyNote: "Invite up to 6 family members to join your plan (1 admin account holder and 5 family members)."
+      familyNote: "Invite up to 6 family members to join your plan (1 admin account holder and 5 family members).",
+      signupUrl: familySignupUrl,
+      isEmployer: false
     },
     {
       name: "Employers",
@@ -83,7 +91,8 @@ export default function PricingSection() {
       popular: false,
       highlightColor: "primary",
       isEmployer: true,
-      familyNote: null
+      familyNote: null,
+      signupUrl: "/pricing#employers" // Employers go to demo booking
     }
   ];
 
@@ -187,8 +196,8 @@ export default function PricingSection() {
                 ))}
               </ul>
               
-              <Link 
-                href="/pricing"
+              <a 
+                href={plan.signupUrl}
                 className={`inline-flex items-center justify-center w-full h-12 rounded-full font-bold uppercase tracking-wide transition-all ${
                   plan.popular 
                     ? "bg-[#66d48f] text-white hover:bg-[#5bc482] shadow-lg hover:shadow-xl" 
@@ -196,7 +205,7 @@ export default function PricingSection() {
                 }`}
               >
                 {plan.cta}
-              </Link>
+              </a>
             </div>
           ))}
         </div>
