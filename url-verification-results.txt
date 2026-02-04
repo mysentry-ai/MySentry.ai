@@ -1,0 +1,29 @@
+# Pricing CTA URL Verification Results
+Date: 2026-02-04
+
+## Base URL
+VITE_FRONTEND_BASE_URL: https://stagedashboard.mysentry.ai
+
+## Verified URLs
+
+1. Individual Monthly:
+   - Expected: https://stagedashboard.mysentry.ai/create-saas-account?plan=individual_basic_monthly
+   - Verified: ✓ PASS
+
+2. Individual Yearly:
+   - Expected: https://stagedashboard.mysentry.ai/create-saas-account?plan=individual_basic_yearly
+   - Verified: ✓ PASS
+
+3. Family Monthly:
+   - Expected: https://stagedashboard.mysentry.ai/create-saas-account?plan=family_basic_monthly
+   - Verified: ✓ PASS
+
+4. Family Yearly:
+   - Expected: https://stagedashboard.mysentry.ai/create-saas-account?plan=family_basic_yearly
+   - Verified: ✓ PASS
+
+## Implementation Notes
+- All CTA buttons in the Pricing section correctly redirect using the stagedashboard.mysentry.ai base URL
+- No pricing page URL (/pricing#pricing-plans) is included in any redirect
+- Each CTA correctly maps to its corresponding plan and billing cycle
+- The base URL is environment-specific (VITE_FRONTEND_BASE_URL) and can be replaced later for production

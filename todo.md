@@ -89,3 +89,4 @@
 - [x] Update Family Monthly CTA to link to /create-saas-account?plan=family_basic_monthly
 - [x] Update Family Yearly CTA to link to /create-saas-account?plan=family_basic_yearly
 - [x] Ensure dynamic routing based on plan selection
+- [x] Update frontend base URL to https://stagedashboard.mysentry.ai for all pricing CTA signup links
