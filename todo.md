@@ -91,3 +91,4 @@
 - [x] Ensure dynamic routing based on plan selection
 - [x] Update frontend base URL to https://stagedashboard.mysentry.ai for all pricing CTA signup links
 - [x] Rename About page route from /about to /about-us and update all internal links
+- [x] Add Login button to navbar next to Start a Free Trial, using environment-based URL (VITE_FRONTEND_BASE_URL + /login)

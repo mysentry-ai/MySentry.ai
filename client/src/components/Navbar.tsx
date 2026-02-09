@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
+import { getMySentryLoginUrl } from "@/const";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -130,8 +131,17 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* CTA Button */}
-        <div className="hidden xl:flex items-center">
+        {/* CTA Buttons */}
+        <div className="hidden xl:flex items-center gap-3">
+          <a 
+            href={getMySentryLoginUrl()}
+            className={cn(
+              "inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-6 h-10 text-xs transition-all duration-300 border-2 border-primary",
+              "bg-transparent text-primary hover:bg-primary hover:text-white"
+            )}
+          >
+            Login
+          </a>
           <Link 
             href="/pricing"
             className={cn(
@@ -208,7 +218,14 @@ export default function Navbar() {
               ))}
             </div>
 
-            <div className="pt-8 pb-12">
+            <div className="pt-8 pb-12 space-y-4">
+              <a 
+                href={getMySentryLoginUrl()}
+                className="inline-flex items-center justify-center w-full border-2 border-primary text-primary bg-transparent rounded-full h-14 text-lg font-bold uppercase tracking-wider hover:bg-primary hover:text-white transition-all duration-300" 
+                onClick={() => setIsOpen(false)}
+              >
+                Login
+              </a>
               <Link 
                 href="/pricing" 
                 className="inline-flex items-center justify-center w-full bg-primary text-white rounded-full h-14 text-lg font-bold uppercase tracking-wider" 
