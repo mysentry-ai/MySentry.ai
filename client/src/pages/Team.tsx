@@ -112,7 +112,7 @@ export const Team = () => {
         label="Our Team"
         title={<>The Right Team<br/><span className="text-gray-600">For A Safer Tomorrow.</span></>}
         description="At MySentry.ai, safety begins with empathy. Our team brings together innovators, AI experts, and wellness advocates driven by one shared purpose: to make safety and well-being accessible for everyone."
-        imageSrc="/images/team-hero.jpg"
+        imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/WMyuwyfaQGypncrA.jpg"
         imageAlt="MySentry Team"
       />
 

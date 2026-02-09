@@ -14,7 +14,7 @@ export default function Terms() {
         label="Legal"
         title="Terms & Conditions"
         description="Last Updated: January 2026"
-        imageSrc="/images/smartwatches-display.jpg"
+        imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/IElpNKDyEyZQAZJG.jpg"
         imageAlt="Terms & Conditions"
       />
 

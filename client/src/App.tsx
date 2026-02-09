@@ -33,7 +33,7 @@ function Router() {
       <Route path="/pricing" component={Pricing} />
       
       {/* New Pages */}
-      <Route path="/about" component={About} />
+      <Route path="/about-us" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/team" component={Team} />
       <Route path="/blogs" component={Blogs} />

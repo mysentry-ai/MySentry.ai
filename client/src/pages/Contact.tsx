@@ -95,7 +95,7 @@ export const Contact = () => {
         label="Contact Us"
         title={<>We're Here<br/><span className="text-gray-600">To Help.</span></>}
         description="Whether you have a question about our technology, need support, or just want to say hello, our team is ready to listen."
-        imageSrc="/images/contact-hero.jpg"
+        imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/lLrpekajBLjvQSbU.jpg"
         imageAlt="Contact MySentry Support"
       />
 

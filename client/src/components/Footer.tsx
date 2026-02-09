@@ -134,7 +134,7 @@ export default function Footer() {
             <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Company</h3>
             <ul className="space-y-3 text-base font-medium">
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/about" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/about-us" className="text-gray-900 hover:text-primary transition-colors">
                   About Us
                 </Link>
               </li>

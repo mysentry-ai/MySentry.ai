@@ -12,7 +12,7 @@ export const About = () => {
       <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/images/about-hero.jpg" 
+            src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/QVNDUrAMsxMgicVc.jpg" 
             alt="MySentry Vision" 
             className="absolute inset-0 w-full h-full object-cover opacity-60"
           />
@@ -88,7 +88,7 @@ export const About = () => {
             </div>
             <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
                <img 
-                src="/images/blog-senior-care.jpg" 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/QRKKwqMiGpYMAFfR.jpg" 
                 alt="MySentry Promise" 
                 className="w-full h-full object-cover"
               />

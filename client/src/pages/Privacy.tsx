@@ -12,7 +12,7 @@ export const Privacy = () => {
         label="Legal"
         title="Privacy Policy"
         description="Last Updated: January 22, 2026"
-        imageSrc="/images/smartwatches-display.jpg"
+        imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/IElpNKDyEyZQAZJG.jpg"
         imageAlt="Privacy Policy"
       />
 

@@ -210,7 +210,7 @@ export const Partner = () => {
           label="Partner Program"
           title="Join the Dealer Network"
           description="Expand your business with the world's first AI-powered personal assistant for employee safety, security, and wellness."
-          imageSrc="/images/partner-hero.jpg"
+          imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/PNeMojefSAcSjgAW.jpg"
           imageAlt="MySentry Partner Network"
           showCta={false}
         >
@@ -324,7 +324,7 @@ export const Partner = () => {
             >
               <div className="absolute inset-0 bg-[#4ADE80] rounded-3xl blur-3xl opacity-20" />
               <img 
-                src="/images/partner-dashboard.jpg" 
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/UoakOftbovNQJNav.jpg" 
                 alt="Dealer Dashboard Interface" 
                 className="relative rounded-3xl shadow-2xl border border-white/10"
               />

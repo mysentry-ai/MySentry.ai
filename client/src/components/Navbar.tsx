@@ -42,7 +42,7 @@ export default function Navbar() {
   ];
 
   const moreLinks = [
-    { name: "About Us", href: "/about" },
+    { name: "About Us", href: "/about-us" },
     { name: "Our Team", href: "/team" },
     { name: "Partners", href: "/partner" },
     { name: "Blogs", href: "/blogs" },
