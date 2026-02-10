@@ -96,3 +96,4 @@
 - [x] Update Pricing CTA prices: Individual Monthly $15, Individual Yearly $144, Family Monthly $30, Family Yearly $288
 - [x] Add favicon using provided Group630.svg file
 - [x] Move Login button to the right side of Start 7-Day Free Trial button in header
+- [x] Update pricing CTA base URL from stagedashboard.mysentry.ai to dashboard.eagleeyeai.ai
