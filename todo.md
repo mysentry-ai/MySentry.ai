@@ -93,3 +93,6 @@
 - [x] Rename About page route from /about to /about-us and update all internal links
 - [x] Add Login button to navbar next to Start a Free Trial, using environment-based URL (VITE_FRONTEND_BASE_URL + /login)
 - [x] Update Pricing CTA URLs to include currency=USD and price parameters for all four plan/billing combinations
+- [x] Update Pricing CTA prices: Individual Monthly $15, Individual Yearly $144, Family Monthly $30, Family Yearly $288
+- [x] Add favicon using provided Group630.svg file
+- [x] Move Login button to the right side of Start 7-Day Free Trial button in header

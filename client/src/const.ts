@@ -45,8 +45,8 @@ export type BillingCycle = 'monthly' | 'yearly';
 
 // Price mapping for each plan type and billing cycle (in USD)
 const PLAN_PRICES: Record<PlanType, Record<BillingCycle, number>> = {
-  individual: { monthly: 10, yearly: 100 },
-  family: { monthly: 15, yearly: 150 },
+  individual: { monthly: 15, yearly: 144 },
+  family: { monthly: 30, yearly: 288 },
 };
 
 // Generate signup URL based on plan type and billing cycle
