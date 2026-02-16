@@ -43,16 +43,21 @@ export const getMySentryLoginUrl = (): string => {
 export type PlanType = 'individual' | 'family';
 export type BillingCycle = 'monthly' | 'yearly';
 
-// Price mapping for each plan type and billing cycle (in USD)
-const PLAN_PRICES: Record<PlanType, Record<BillingCycle, number>> = {
-  individual: { monthly: 15, yearly: 144 },
-  family: { monthly: 30, yearly: 288 },
+// UUID mapping for each plan type and billing cycle
+const PLAN_UUIDS: Record<PlanType, Record<BillingCycle, string>> = {
+  individual: {
+    monthly: '550e8400-e29b-41d4-a716-446655440001',
+    yearly: '550e8400-e29b-41d4-a716-446655440002',
+  },
+  family: {
+    monthly: '550e8400-e29b-41d4-a716-446655440003',
+    yearly: '550e8400-e29b-41d4-a716-446655440004',
+  },
 };
 
 // Generate signup URL based on plan type and billing cycle
 export const getSignupUrl = (planType: PlanType, billingCycle: BillingCycle): string => {
   const baseUrl = getFrontendBaseUrl();
-  const planParam = `${planType}_basic_${billingCycle}`;
-  const price = PLAN_PRICES[planType][billingCycle];
-  return `${baseUrl}/create-saas-account?plan=${planParam}&currency=USD&price=${price}`;
+  const planUuid = PLAN_UUIDS[planType][billingCycle];
+  return `${baseUrl}/create-saas-account?plan=${planUuid}`;
 };

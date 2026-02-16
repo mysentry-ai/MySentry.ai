@@ -97,3 +97,5 @@
 - [x] Add favicon using provided Group630.svg file
 - [x] Move Login button to the right side of Start 7-Day Free Trial button in header
 - [x] Update pricing CTA base URL from stagedashboard.mysentry.ai to dashboard.eagleeyeai.ai
+- [x] Update pricing CTA links to use UUID-based plan parameters instead of plan key strings
+- [x] Fix Login button visibility on mobile navbar (show directly, not only inside hamburger menu)

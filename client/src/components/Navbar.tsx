@@ -153,16 +153,27 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className={cn(
-            "xl:hidden p-2 transition-colors",
-            "text-black"
-          )}
-          onClick={() => setIsOpen(true)}
-        >
-          <Menu className="h-8 w-8 text-black" />
-        </button>
+        {/* Mobile Login + Menu Toggle */}
+        <div className="xl:hidden flex items-center gap-2">
+          <a 
+            href={getMySentryLoginUrl()}
+            className={cn(
+              "inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-4 h-9 text-xs transition-all duration-300 border-2 border-primary",
+              "bg-transparent text-primary hover:bg-primary hover:text-white"
+            )}
+          >
+            Login
+          </a>
+          <button
+            className={cn(
+              "p-2 transition-colors",
+              "text-black"
+            )}
+            onClick={() => setIsOpen(true)}
+          >
+            <Menu className="h-8 w-8 text-black" />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav Overlay */}
