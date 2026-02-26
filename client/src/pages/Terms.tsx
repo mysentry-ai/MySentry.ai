@@ -6,8 +6,9 @@ export default function Terms() {
   return (
     <Layout>
       <SEO 
-        title="Terms & Conditions" 
-        description="Read the Terms and Conditions for using MySentry services, including the mobile app and website."
+        title="Terms & Conditions | MySentry" 
+        description="Read the Terms and Conditions for using MySentry services, including the mobile app, website, and 24/7 monitoring platform."
+        canonical="https://mysentry.ai/terms"
       />
       
       <HeroSection

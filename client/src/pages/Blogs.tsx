@@ -23,8 +23,9 @@ const Blogs = () => {
   return (
     <div className="min-h-screen bg-[#fcfbf9] font-sans text-[#1a1a1a]">
       <SEO 
-        title="Safety & Health Hub | MySentry" 
-        description="Expert advice, safety tips, and stories about protecting what matters most. Explore our articles on senior care, family safety, and personal security."
+        title="Safety & Health Blog | Personal Safety Tips & Emergency Preparedness | MySentry" 
+        description="Expert advice on personal safety, fall prevention, family protection, and emergency preparedness. Read the latest from MySentry's safety and health blog."
+        canonical="https://mysentry.ai/blogs"
       />
       <Navbar />
 

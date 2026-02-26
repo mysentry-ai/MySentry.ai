@@ -181,8 +181,9 @@ export default function Seniors() {
   return (
     <Layout>
       <SEO 
-        title="Seniors" 
-        description="Stay independent and safe with MySentry. 24/7 fall detection, health monitoring, and emergency response for active seniors."
+        title="Medical Alert App for Seniors | Fall Detection & Health Monitoring | MySentry" 
+        description="MySentry helps seniors stay independent with 24/7 fall detection, health monitoring, and emergency response. No pendant needed, just your phone and smartwatch. Start your free trial."
+        canonical="https://mysentry.ai/seniors"
       />
       
       <HeroSection

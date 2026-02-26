@@ -187,8 +187,9 @@ export default function Employers() {
   return (
     <Layout>
       <SEO 
-        title="Employers" 
-        description="Protect your workforce and reduce liability with MySentry. 24/7 monitoring, fall detection, and panic buttons for every industry."
+        title="Lone Worker Safety App for Employers | Fall Detection & Panic Button | MySentry" 
+        description="Protect your workforce with MySentry. 24/7 fall detection, panic buttons, health monitoring, and live video response for lone workers and field employees. Reduce liability and comply with OSHA."
+        canonical="https://mysentry.ai/employers"
       />
       
       <HeroSection

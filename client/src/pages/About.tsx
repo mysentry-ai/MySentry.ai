@@ -1,11 +1,17 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 
 export const About = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
+      <SEO 
+        title="About MySentry | Our Mission to Make Personal Safety Accessible" 
+        description="Learn about MySentry's mission to provide 24/7 personal safety and health monitoring with emergency response. Founded to make professional-grade protection accessible to everyone."
+        canonical="https://mysentry.ai/about-us"
+      />
       <Navbar />
       
       {/* Hero Section - Standardized */}

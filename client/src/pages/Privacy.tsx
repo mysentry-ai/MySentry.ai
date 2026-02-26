@@ -1,11 +1,17 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import HeroSection from "@/components/HeroSection";
 
 export const Privacy = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-gray-900">
+      <SEO 
+        title="Privacy Policy | MySentry" 
+        description="Read MySentry's privacy policy. Learn how we collect, use, and protect your personal data, health information, and location data."
+        canonical="https://mysentry.ai/privacy"
+      />
       <Navbar />
       
       <HeroSection

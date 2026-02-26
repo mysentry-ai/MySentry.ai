@@ -182,8 +182,9 @@ export default function Females() {
   return (
     <Layout>
       <SEO 
-        title="Females" 
-        description="Stay safe everywhere with MySentry. Discreet panic button, live location sharing, and 24/7 monitoring for women."
+        title="Safety App for Women | Discreet Panic Button & 24/7 Monitoring | MySentry" 
+        description="MySentry keeps women safe with a discreet panic button, live location sharing, and 24/7 professional monitoring. Walk, run, date, and travel with confidence. Start your free trial."
+        canonical="https://mysentry.ai/females"
       />
       
       <HeroSection

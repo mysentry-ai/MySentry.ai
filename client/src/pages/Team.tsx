@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Linkedin } from 'lucide-react';
 import HeroSection from "@/components/HeroSection";
@@ -106,6 +107,11 @@ const TeamSection = ({ title, subtitle, members, bgColor = "bg-white" }: { title
 export const Team = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
+      <SEO 
+        title="Meet the MySentry Team | Leadership & Advisory Board" 
+        description="Meet the team behind MySentry. Our leadership and advisory board bring decades of experience in safety technology, healthcare, and enterprise solutions."
+        canonical="https://mysentry.ai/team"
+      />
       <Navbar />
       
       <HeroSection

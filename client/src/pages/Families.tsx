@@ -181,8 +181,9 @@ export default function Families() {
   return (
     <Layout>
       <SEO 
-        title="Families" 
-        description="Protect your whole family with MySentry. Real-time location, crash detection, and health alerts for everyone you love."
+        title="Family Safety App | Crash Detection, GPS & Health Alerts | MySentry" 
+        description="Keep your whole family safe with MySentry. Real-time GPS, crash detection, fall alerts, and health monitoring for kids, teens, parents, and grandparents. Start your 7-day free trial."
+        canonical="https://mysentry.ai/families"
       />
       
       <HeroSection

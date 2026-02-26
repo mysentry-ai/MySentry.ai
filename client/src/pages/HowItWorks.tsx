@@ -14,8 +14,80 @@ export default function Features() {
   return (
     <Layout>
       <SEO 
-        title="Features" 
-        description="Explore the 8 powerful features of MySentry: Panic Alarm, Fall Detection, Health Monitoring, Crash Detection, and more."
+        title="How MySentry Works | Panic Button, Fall Detection & 24/7 Monitoring" 
+        description="See how MySentry protects you in 3 simple steps. Panic button, fall detection, crash detection, health monitoring, and 24/7 professional response with live video. Try free for 7 days."
+        canonical="https://mysentry.ai/how-it-works"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Set Up MySentry for 24/7 Safety Monitoring",
+            "description": "Get started with MySentry in 3 simple steps: download the app, pair your smartwatch, and activate 24/7 professional monitoring.",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Download the App",
+                "text": "Download MySentry from the App Store or Google Play and create your account in under 2 minutes."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Pair Your Watch",
+                "text": "Connect your Apple Watch (Series 6+) or Samsung Galaxy Watch (Watch 6+) to start real-time health and safety monitoring."
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Activate Protection",
+                "text": "Enable 24/7 professional monitoring, set up emergency contacts, and customize your safety preferences."
+              }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How is MySentry different from the health tracking my Apple Watch or Samsung Watch already does?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Your watch collects vitals. MySentry explains what they mean and alerts you when something's wrong. We use AI to learn your personal baseline and detect anomalies in real-time, connected to 24/7 professional monitoring."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to buy a new device to use MySentry?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No! MySentry works with Apple Watch (Series 6+) and Samsung Galaxy Watch (Watch 6+). No expensive, stigmatizing hardware required."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I use MySentry if I don't have a smartwatch?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, you can use the MySentry app on your smartphone for Panic Button, MeetSafe Timer, and Crash Detection. However, Fall Detection and Health Monitoring require a compatible smartwatch."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How does the Fall Detection work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "MySentry uses motion sensors in your smartwatch to detect hard falls. If you don't respond within 2 minutes or mark yourself unsafe, emergency contacts and 24/7 monitoring are notified immediately with your location."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is my health data private and secure?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. All health information is stored on encrypted servers, never shared with third parties without permission, and accessed only when you explicitly allow it."
+                }
+              }
+            ]
+          }
+        ]}
       />
       
       <HeroSection

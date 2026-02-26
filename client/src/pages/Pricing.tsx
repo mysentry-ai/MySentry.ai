@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Check, X, Shield, Zap, Users, Building2, Heart, AlertTriangle, Lock } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
+import SEO from "@/components/SEO";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Link } from "wouter";
@@ -165,6 +166,57 @@ export default function Pricing() {
 
   return (
     <Layout>
+      <SEO 
+        title="MySentry Pricing | Personal Safety Plans from $15/mo | 7-Day Free Trial" 
+        description="Choose your MySentry plan: Individual ($15/mo) or Family ($30/mo, up to 6 members). Includes fall detection, panic button, crash detection, and 24/7 professional monitoring. Try free for 7 days."
+        canonical="https://mysentry.ai/pricing"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What's included in the 7-day free trial?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Your free trial includes full access to all Essential Safety features including 24/7 professional monitoring, fall detection, crash detection, and real-time health alerts. No credit card required to start."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I switch between Individual and Family plans?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! You can upgrade or downgrade your plan at any time. When upgrading, you'll only pay the prorated difference. When downgrading, the change takes effect at your next billing cycle."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What devices are compatible with MySentry?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "MySentry works with iPhone (iOS 14+), Android phones (Android 10+), Apple Watch (Series 4+), and most Wear OS smartwatches. Our app is optimized for both smartphones and wearables."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the 24/7 professional monitoring work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "When an emergency is detected (fall, crash, panic alarm), our trained monitoring agents are immediately alerted. They can view live video, communicate with you, and dispatch emergency services to your exact location if needed."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is there a contract or commitment?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No long-term contracts! All plans are month-to-month or annual (with 20% savings). You can cancel anytime with no cancellation fees."
+              }
+            }
+          ]
+        }}
+      />
       <HeroSection
         label="Flexible Plans"
         title={<>Pricing and Plans<br/><span className="text-gray-600">Within Every Budget.</span></>}

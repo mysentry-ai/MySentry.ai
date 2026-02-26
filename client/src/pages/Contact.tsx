@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, MessageSquare, AlertCircle, CheckCircle2 } from 'lucide-react';
 import HeroSection from "@/components/HeroSection";
@@ -89,6 +90,11 @@ export const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
+      <SEO 
+        title="Contact MySentry | Get Help, Request a Demo, or Partner With Us" 
+        description="Contact MySentry for support, sales inquiries, partnership opportunities, or to schedule a demo. Our team is ready to help you find the right personal safety solution."
+        canonical="https://mysentry.ai/contact"
+      />
       <Navbar />
       
       <HeroSection

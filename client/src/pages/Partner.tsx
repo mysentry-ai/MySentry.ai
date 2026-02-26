@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, ArrowRight, Building2, Users, ShieldCheck, BarChart3, ChevronDown, Check, AlertCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -203,6 +204,11 @@ export const Partner = () => {
 
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
+      <SEO 
+        title="Become a MySentry Dealer | Partner Program for Safety Solutions" 
+        description="Join MySentry's dealer network. Offer AI-powered personal safety, health monitoring, and emergency response solutions to your clients. Competitive margins and full support."
+        canonical="https://mysentry.ai/partner"
+      />
       <Navbar />
       
       <div className="relative">
