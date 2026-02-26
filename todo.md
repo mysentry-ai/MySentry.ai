@@ -99,3 +99,69 @@
 - [x] Update pricing CTA base URL from stagedashboard.mysentry.ai to dashboard.eagleeyeai.ai
 - [x] Update pricing CTA links to use UUID-based plan parameters instead of plan key strings
 - [x] Fix Login button visibility on mobile navbar (show directly, not only inside hamburger menu)
+
+## SEO & GEO Optimization
+
+### Phase 0: Baseline Audit + P0 Fixes
+- [x] Create robots.txt at site root with sitemap reference
+- [x] Create sitemap_index.xml, sitemap_pages.xml, sitemap_blog.xml
+- [x] Add canonical tags on every page (enforce https://mysentry.ai)
+- [x] Add noindex meta to dashboard/login references
+- [ ] Create Google Search Console readiness checklist
+- [ ] Optimize images (lazy-load, width/height attributes)
+
+### Phase 1: Keyword Research + Keyword-to-Page Map
+- [x] Create keyword-to-page map for all clusters (Consumer Safety, Seniors/Medical Alert, Employers/Lone Worker, GEO/AEO)
+
+### Phase 2: Build SEO Money Pages
+- [ ] Create /features/ hub page
+- [ ] Create /features/panic-button-app/
+- [ ] Create /features/fall-detection-app/
+- [ ] Create /features/crash-detection/
+- [ ] Create /features/24-7-professional-monitoring/
+- [ ] Create /features/emergency-contacts/
+- [ ] Create /features/live-video-response/
+- [ ] Create /features/health-monitoring/
+- [ ] Create /features/meetsafe-check-ins/
+- [ ] Create /use-cases/ hub page
+- [ ] Create /use-cases/safety-app-for-women/
+- [ ] Create /use-cases/family-safety-app/
+- [ ] Create /use-cases/medical-alert-app-for-seniors/
+- [ ] Create /use-cases/lone-worker-safety-app/
+- [ ] Create /use-cases/home-healthcare-worker-safety/
+- [ ] Create /industries/ hub page
+- [ ] Create /industries/home-healthcare/
+- [ ] Create /industries/construction/
+- [ ] Create /industries/retail/
+- [ ] Create /industries/hospitality/
+- [ ] Create /industries/real-estate/
+- [ ] Create /industries/education/
+- [ ] Create /compare/ hub page
+- [ ] Create /compare/noonlight-vs-mysentry/
+- [ ] Create /compare/life360-vs-mysentry/
+- [ ] Create /compare/fallcall-vs-mysentry/
+- [ ] Create /compare/google-personal-safety-vs-mysentry/
+
+### Phase 4: Sitewide Meta Titles + Descriptions
+- [ ] Rewrite meta titles and descriptions for all existing pages
+- [ ] Rewrite meta titles and descriptions for all new pages
+
+### Phase 5: Schema Structured Data
+- [ ] Add Organization schema sitewide
+- [ ] Add SoftwareApplication schema sitewide
+- [ ] Add FAQPage schema on pages with FAQs
+- [ ] Add HowTo schema on setup/how-to pages
+
+### Phase 6: Blog Topical Map + Posts
+- [ ] Create topical map with 6 content clusters
+- [ ] Create 10 new SEO-optimized blog posts
+
+### Phase 7-8: Linking Strategy + Dashboard Protection
+- [ ] Add Features navigation entry to navbar
+- [ ] Add contextual internal links in existing pages
+- [ ] Add Feature + Use-Case links to footer
+- [ ] Create external backlink plan deliverable
+- [ ] Add "Secure checkout" microcopy to dashboard CTAs
+
+### Final Deliverable
+- [ ] Generate comprehensive SEO report
