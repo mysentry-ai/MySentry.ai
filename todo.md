@@ -165,3 +165,4 @@
 
 ### Final Deliverable
 - [ ] Generate comprehensive SEO report
+- [x] Fix homepage meta: title should include "24/7 Personal Safety & Health Monitoring with Emergency Response", remove "StoryBrand-based" from description

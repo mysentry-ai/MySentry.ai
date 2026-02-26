@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import HeroSection from "@/components/HeroSection";
 import { ArrowRight, Check, Shield, Activity, Users, Building2, Heart, AlertTriangle, Phone, MapPin, Video, Lock, Clock, Smartphone, Watch, Menu } from "lucide-react";
@@ -184,6 +185,11 @@ export default function Home() {
 
   return (
     <Layout>
+      <SEO 
+        title="Home"
+        description="24/7 Personal Safety and Health Monitoring with Emergency Response. Panic alarm, fall detection, crash detection, health alerts, emergency contacts, live video response, and professional monitoring for individuals, families, seniors, and employers."
+        canonical="https://mysentry.ai/"
+      />
       <HeroSection
         label="24/7 Safety & Health Monitoring with Emergency Response"
         title={<>Never Face a Safety or<br/><span className="text-gray-600">Health Emergency Alone.</span></>}

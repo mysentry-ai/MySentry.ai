@@ -19,7 +19,7 @@ export default function SEO({
   noindex = false,
   schema
 }: SEOProps) {
-  const siteTitle = "MySentry | 24/7 Safety & Health Monitoring";
+  const siteTitle = "MySentry | 24/7 Personal Safety & Health Monitoring with Emergency Response";
   const fullTitle = title === "Home" ? siteTitle : `${title} | MySentry`;
   
   // Enforce canonical host: always use https://mysentry.ai
