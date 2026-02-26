@@ -62,8 +62,8 @@ export default function Education() {
       ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
-        { text: "Panic Alarm for Lone Workers", href: "/features/panic-button" },
-        { text: "Safety for Healthcare Workers", href: "/industries/healthcare" },
+        { text: "Panic Alarm for Lone Workers", href: "/features/panic-button-app" },
+        { text: "Safety for Healthcare Workers", href: "/industries/home-healthcare" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
       ]}

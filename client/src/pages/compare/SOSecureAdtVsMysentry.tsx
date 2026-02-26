@@ -79,8 +79,8 @@ export default function SOSecureAdtVsMysentry() {
       ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
-        { text: "Panic Button for Seniors", href: "/features/panic-button-for-seniors" },
-        { text: "Automatic Fall Detection", href: "/features/automatic-fall-detection" },
+        { text: "Panic Button for Seniors", href: "/features/panic-button-app" },
+        { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "See How It Works", href: "/how-it-works" },
       ]}

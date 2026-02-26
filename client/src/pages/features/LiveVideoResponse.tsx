@@ -62,8 +62,8 @@ export default function LiveVideoResponse() {
       ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
-        { text: "Panic Button", href: "/features/panic-button" },
-        { text: "24/7 Professional Monitoring", href: "/features/professional-monitoring" },
+        { text: "Panic Button", href: "/features/panic-button-app" },
+        { text: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
       ]}

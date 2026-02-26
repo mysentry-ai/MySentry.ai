@@ -86,10 +86,10 @@ export default function RealEstate() {
       ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
-        { text: "Panic Alarm for Agents", href: "/features/panic-alarm" },
+        { text: "Panic Alarm for Agents", href: "/features/panic-button-app" },
         {
           text: "Safety for Lone Workers",
-          href: "/use-cases/lone-worker-safety",
+          href: "/use-cases/lone-worker-safety-app",
         },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },

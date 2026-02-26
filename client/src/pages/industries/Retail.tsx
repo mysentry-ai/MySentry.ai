@@ -65,8 +65,8 @@ export default function Retail() {
       ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
-        { text: "Retail Employee Panic Button", href: "/features/panic-button" },
-        { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety" },
+        { text: "Retail Employee Panic Button", href: "/features/panic-button-app" },
+        { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
       ]}

@@ -36,7 +36,7 @@ const features = [
   {
     title: "24/7 Professional Monitoring",
     description: "Our certified team is always ready to respond to any alert.",
-    href: "/features/professional-monitoring",
+    href: "/features/24-7-professional-monitoring",
     icon: <Phone className="w-10 h-10 text-primary" />,
   },
   {

@@ -70,7 +70,7 @@ export default function Life360VsMysentry() {
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "MySentry vs. Noonlight", href: "/compare/noonlight-vs-mysentry" },
-        { text: "Personal Panic Alarm", href: "/features/panic-alarm" },
+        { text: "Personal Panic Alarm", href: "/features/panic-button-app" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
       ]}
