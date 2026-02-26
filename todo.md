@@ -153,15 +153,16 @@
 - [x] Add HowTo schema on setup/how-to pages
 
 ### Phase 6: Blog Topical Map + Posts
-- [ ] Create topical map with 6 content clusters
-- [ ] Create 10 new SEO-optimized blog posts
+- [x] Create topical map with 6 content clusters
+- [x] Create 10 new SEO-optimized blog posts
+- [x] Update blog sitemap with new posts
 
 ### Phase 7-8: Linking Strategy + Dashboard Protection
-- [ ] Add Features navigation entry to navbar
-- [ ] Add contextual internal links in existing pages
-- [ ] Add Feature + Use-Case links to footer
+- [x] Add Features, Use Cases, Industries, Compare navigation entries to navbar More menu
+- [x] Add contextual internal links via hub pages and SEOPageTemplate cross-links
+- [x] Add Feature, Use-Case, Industries, Compare links to footer Solutions column
 - [ ] Create external backlink plan deliverable
-- [ ] Add "Secure checkout" microcopy to dashboard CTAs
+- [x] Update sitemaps with all new pages
 
 ### Final Deliverable
 - [ ] Generate comprehensive SEO report

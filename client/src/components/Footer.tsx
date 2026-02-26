@@ -97,6 +97,11 @@ export default function Footer() {
             <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Solutions</h3>
             <ul className="space-y-3 text-base font-medium">
               <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/features" className="text-gray-900 hover:text-primary transition-colors">
+                  All Features
+                </Link>
+              </li>
+              <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/seniors" className="text-gray-900 hover:text-primary transition-colors">
                   For Seniors
                 </Link>
@@ -117,6 +122,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/use-cases" className="text-gray-900 hover:text-primary transition-colors">
+                  Use Cases
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/industries" className="text-gray-900 hover:text-primary transition-colors">
+                  Industries
+                </Link>
+              </li>
+              <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/how-it-works" className="text-gray-900 hover:text-primary transition-colors">
                   How It Works
                 </Link>
@@ -124,6 +139,11 @@ export default function Footer() {
               <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/pricing" className="text-gray-900 hover:text-primary transition-colors">
                   Pricing
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/compare" className="text-gray-900 hover:text-primary transition-colors">
+                  Compare
                 </Link>
               </li>
             </ul>

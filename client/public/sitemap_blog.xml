@@ -60,4 +60,54 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://mysentry.ai/blog/why-your-apple-watch-could-save-your-life</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mysentry.ai/blog/the-hidden-dangers-of-working-alone-what-every-employer-needs-to-know</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mysentry.ai/blog/5-safety-habits-every-woman-should-adopt-in-2026</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mysentry.ai/blog/what-happens-in-the-first-5-minutes-after-a-fall-why-speed-matters</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mysentry.ai/blog/how-to-talk-to-your-parents-about-safety-without-making-them-feel-old</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mysentry.ai/blog/crash-detection-how-your-phone-can-call-for-help-when-you-cant</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mysentry.ai/blog/the-real-cost-of-workplace-accidents-why-prevention-beats-compensation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mysentry.ai/blog/solo-travel-safety-a-complete-guide-for-women-traveling-alone</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mysentry.ai/blog/heart-rate-monitoring-what-your-watch-is-telling-you-and-what-it-is-not</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mysentry.ai/blog/why-every-real-estate-agent-needs-a-personal-safety-plan</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

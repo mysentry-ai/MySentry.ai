@@ -43,6 +43,10 @@ export default function Navbar() {
   ];
 
   const moreLinks = [
+    { name: "Features", href: "/features" },
+    { name: "Use Cases", href: "/use-cases" },
+    { name: "Industries", href: "/industries" },
+    { name: "Compare", href: "/compare" },
     { name: "About Us", href: "/about-us" },
     { name: "Our Team", href: "/team" },
     { name: "Partners", href: "/partner" },
