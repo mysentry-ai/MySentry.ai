@@ -285,3 +285,6 @@
 - [x] Fix hero image display in editor and preview - image cropped/not fully visible
 - [x] All "Start 7-Day Free Trial" links should go to Pricing page (already done)
 - [x] Add CTA styling ("Start your 7-day free trial today!") to WYSIWYG editor and preview - BlogCTA now appears in preview, indicator shown below editor
+
+## Features Page Redesign (Round 8)
+- [x] Redesign Features page to be consistent with other pages - remove dark cards, use light greenish bg with white cards, green accents, high-contrast black text
