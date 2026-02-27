@@ -1,0 +1,8 @@
+{
+  "query": "SELECT id, title, hero_image, slug, status FROM blog_posts ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Mig8qsURabZmP9.root --database 5pk35fzRuLVvrjtZdt4C3R --execute SELECT id, title, hero_image, slug, status FROM blog_posts ORDER BY id;",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1054 (42S22) at line 1: Unknown column 'hero_image' in 'field list'"
+  ]
+}

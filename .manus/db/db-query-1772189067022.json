@@ -1,0 +1,118 @@
+{
+  "query": "SELECT id, title, LEFT(heroImageUrl, 100) as img, status FROM blog_posts ORDER BY id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Mig8qsURabZmP9.root --database 5pk35fzRuLVvrjtZdt4C3R --execute SELECT id, title, LEFT(heroImageUrl, 100) as img, status FROM blog_posts ORDER BY id;",
+  "rows": [
+    {
+      "id": "1",
+      "title": "Aging with Confidence: How to Maintain Independence Without Sacrificing Safety",
+      "img": "/images/happy-senior-hiking.jpg",
+      "status": "published"
+    },
+    {
+      "id": "2",
+      "title": "Caught in the Middle? How to Care for Aging Parents While Raising Kids",
+      "img": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/JrYBgITupwcLquzK.jp",
+      "status": "published"
+    },
+    {
+      "id": "3",
+      "title": "The Silent Signs: Why Heart Rate Monitoring is Critical for Seniors",
+      "img": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/GKOqQqWQmKuJkePP.jp",
+      "status": "published"
+    },
+    {
+      "id": "4",
+      "title": "Run Free: The Ultimate Guide to Safety for Solo Female Runners",
+      "img": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/xVvXipIagbMzyabU.jp",
+      "status": "published"
+    },
+    {
+      "id": "5",
+      "title": "Smart Dating: How to Stay Safe When Meeting Someone New",
+      "img": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/jwsBikltRBgQccmM.jp",
+      "status": "published"
+    },
+    {
+      "id": "6",
+      "title": "Solo Living: Essential Safety Tips for Women Living on Their Own",
+      "img": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/QkoRToYyXJdsJZDq.jp",
+      "status": "published"
+    },
+    {
+      "id": "7",
+      "title": "Connected & Protected: A Modern Approach to Family Safety",
+      "img": "/images/family-hero-base.jpg",
+      "status": "published"
+    },
+    {
+      "id": "8",
+      "title": "Protecting Your Most Valuable Asset: A Guide to Lone Worker Safety",
+      "img": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/xeEOSVembFXLEvcM.jp",
+      "status": "published"
+    },
+    {
+      "id": "9",
+      "title": "Beyond the Desk: Why Employee Health Monitoring is the Future of Workplace Wellness",
+      "img": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/PXvJZfCsLMkaKlOl.jp",
+      "status": "published"
+    },
+    {
+      "id": "10",
+      "title": "Safety as a Strategy: How Proactive Monitoring Reduces Costs and Liability",
+      "img": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/UeCHohfvBfhNbbyg.jp",
+      "status": "published"
+    },
+    {
+      "id": "11",
+      "title": "The Hidden Dangers of Working Alone: What Every Employer Needs to Know",
+      "img": "/images/happy-senior-hiking.jpg",
+      "status": "published"
+    },
+    {
+      "id": "12",
+      "title": "5 Safety Habits Every Woman Should Adopt in 2026",
+      "img": "/images/happy-senior-hiking.jpg",
+      "status": "published"
+    },
+    {
+      "id": "13",
+      "title": "What Happens in the First 5 Minutes After a Fall? Why Speed Matters",
+      "img": "/images/happy-senior-hiking.jpg",
+      "status": "published"
+    },
+    {
+      "id": "14",
+      "title": "How to Talk to Your Parents About Safety Without Making Them Feel Old",
+      "img": "/images/happy-senior-hiking.jpg",
+      "status": "published"
+    },
+    {
+      "id": "15",
+      "title": "The Real Cost of Workplace Accidents: Why Prevention Beats Compensation",
+      "img": "/images/happy-senior-hiking.jpg",
+      "status": "published"
+    },
+    {
+      "id": "16",
+      "title": "Solo Travel Safety: A Complete Guide for Women Traveling Alone",
+      "img": "/images/happy-senior-hiking.jpg",
+      "status": "published"
+    },
+    {
+      "id": "17",
+      "title": "Heart Rate Monitoring: What Your Watch Is Telling You (And What It Is Not)",
+      "img": "/images/happy-senior-hiking.jpg",
+      "status": "published"
+    },
+    {
+      "id": "18",
+      "title": "Why Every Real Estate Agent Needs a Personal Safety Plan",
+      "img": "/images/happy-senior-hiking.jpg",
+      "status": "published"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\timg\tstatus\n1\tAging with Confidence: How to Maintain Independence Without Sacrificing Safety\t/images/happy-senior-hiking.jpg\tpublished\n2\tCaught in the Middle? How to Care for Aging Parents While Raising Kids\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/JrYBgITupwcLquzK.jp\tpublished\n3\tThe Silent Signs: Why Heart Rate Monitoring is Critical for Seniors\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/GKOqQqWQmKuJkePP.jp\tpublished\n4\tRun Free: The Ultimate Guide to Safety for Solo Female Runners\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/xVvXipIagbMzyabU.jp\tpublished\n5\tSmart Dating: How to Stay Safe When Meeting Someone New\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/jwsBikltRBgQccmM.jp\tpublished\n6\tSolo Living: Essential Safety Tips for Women Living on Their Own\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/QkoRToYyXJdsJZDq.jp\tpublished\n7\tConnected & Protected: A Modern Approach to Family Safety\t/images/family-hero-base.jpg\tpublished\n8\tProtecting Your Most Valuable Asset: A Guide to Lone Worker Safety\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/xeEOSVembFXLEvcM.jp\tpublished\n9\tBeyond the Desk: Why Employee Health Monitoring is the Future of Workplace Wellness\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/PXvJZfCsLMkaKlOl.jp\tpublished\n10\tSafety as a Strategy: How Proactive Monitoring Reduces Costs and Liability\thttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/UeCHohfvBfhNbbyg.jp\tpublished\n11\tThe Hidden Dangers of Working Alone: What Every Employer Needs to Know\t/images/happy-senior-hiking.jpg\tpublished\n12\t5 Safety Habits Every Woman Should Adopt in 2026\t/images/happy-senior-hiking.jpg\tpublished\n13\tWhat Happens in the First 5 Minutes After a Fall? Why Speed Matters\t/images/happy-senior-hiking.jpg\tpublished\n14\tHow to Talk to Your Parents About Safety Without Making Them Feel Old\t/images/happy-senior-hiking.jpg\tpublished\n15\tThe Real Cost of Workplace Accidents: Why Prevention Beats Compensation\t/images/happy-senior-hiking.jpg\tpublished\n16\tSolo Travel Safety: A Complete Guide for Women Traveling Alone\t/images/happy-senior-hiking.jpg\tpublished\n17\tHeart Rate Monitoring: What Your Watch Is Telling You (And What It Is Not)\t/images/happy-senior-hiking.jpg\tpublished\n18\tWhy Every Real Estate Agent Needs a Personal Safety Plan\t/images/happy-senior-hiking.jpg\tpublished\n",
+  "stderr": "",
+  "execution_time_ms": 368
+}

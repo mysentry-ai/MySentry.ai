@@ -260,3 +260,9 @@
 - [x] Fix "Admin authentication required" error when clicking Suggest 10 Topics
 - [x] Make admin UI more colorful with better contrast and visibility
 - [x] Fix blog post rendering inconsistency between WYSIWYG editor, preview, and public page
+
+## Blog Content Fixes (Round 4)
+- [x] Fix blog content mismatch between WYSIWYG editor and public page (excerpt/first paragraph differs) - Clarified: excerpt is a separate summary field shown as blockquote on public page, content is the full article in editor. This is by design.
+- [x] Fix duplicate blog posts appearing on /blogs listing page with same hero images - All 18 posts now have unique CDN-hosted hero images
+- [x] Ensure each blog post has unique hero image - Searched and uploaded 18 unique relevant stock images to CDN
+- [x] Check for and remove any duplicate blog entries in the database - No duplicates found, all posts are unique
