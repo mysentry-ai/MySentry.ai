@@ -270,7 +270,7 @@ export default function BlogList({ token }: BlogListProps) {
           <div>Title</div>
           <div className="hidden md:block">Category</div>
           <div>Status</div>
-          <div className="hidden lg:block">Updated</div>
+          <div className="hidden lg:block">Published</div>
           <div className="hidden lg:block">Read</div>
           <div></div>
         </div>
@@ -314,7 +314,7 @@ export default function BlogList({ token }: BlogListProps) {
                 <StatusBadge status={post.status} />
               </div>
               <div className="hidden lg:block text-xs text-[#5C5C5C]">
-                {post.updatedAt ? new Date(post.updatedAt).toLocaleDateString() : "-"}
+                {post.publishedAt ? new Date(post.publishedAt).toLocaleDateString() : "-"}
               </div>
               <div className="hidden lg:flex items-center gap-1 text-xs text-[#5C5C5C]">
                 <Clock className="w-3 h-3" />

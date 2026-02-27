@@ -116,7 +116,7 @@ export async function getBlogPosts(filters: BlogListFilters = {}) {
       .select()
       .from(blogPosts)
       .where(where)
-      .orderBy(desc(blogPosts.updatedAt))
+      .orderBy(desc(blogPosts.publishedAt))
       .limit(limit)
       .offset(offset),
     db

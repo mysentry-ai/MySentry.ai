@@ -1,0 +1,136 @@
+{
+  "query": "SELECT id, LEFT(title, 50) as title_short, publishedAt, status FROM blog_posts ORDER BY id ASC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Mig8qsURabZmP9.root --database 5pk35fzRuLVvrjtZdt4C3R --execute SELECT id, LEFT(title, 50) as title_short, publishedAt, status FROM blog_posts ORDER BY id ASC;",
+  "rows": [
+    {
+      "id": "1",
+      "title_short": "Aging with Confidence: How to Maintain Independenc",
+      "publishedAt": "2026-01-15 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "2",
+      "title_short": "Caught in the Middle? How to Care for Aging Parent",
+      "publishedAt": "2026-01-12 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "3",
+      "title_short": "The Silent Signs: Why Heart Rate Monitoring is Cri",
+      "publishedAt": "2026-01-08 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "4",
+      "title_short": "Run Free: The Ultimate Guide to Safety for Solo Fe",
+      "publishedAt": "2026-01-20 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "5",
+      "title_short": "Smart Dating: How to Stay Safe When Meeting Someon",
+      "publishedAt": "2026-01-18 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "6",
+      "title_short": "Solo Living: Essential Safety Tips for Women Livin",
+      "publishedAt": "2026-01-10 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "7",
+      "title_short": "Connected & Protected: A Modern Approach to Family",
+      "publishedAt": "2026-01-05 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "8",
+      "title_short": "Protecting Your Most Valuable Asset: A Guide to Lo",
+      "publishedAt": "2026-01-19 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "9",
+      "title_short": "Beyond the Desk: Why Employee Health Monitoring is",
+      "publishedAt": "2026-01-11 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "10",
+      "title_short": "Safety as a Strategy: How Proactive Monitoring Red",
+      "publishedAt": "2026-01-07 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "11",
+      "title_short": "The Hidden Dangers of Working Alone: What Every Em",
+      "publishedAt": "2026-02-20 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "12",
+      "title_short": "5 Safety Habits Every Woman Should Adopt in 2026",
+      "publishedAt": "2026-02-20 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "13",
+      "title_short": "What Happens in the First 5 Minutes After a Fall? ",
+      "publishedAt": "2026-02-20 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "14",
+      "title_short": "How to Talk to Your Parents About Safety Without M",
+      "publishedAt": "2026-02-20 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "15",
+      "title_short": "The Real Cost of Workplace Accidents: Why Preventi",
+      "publishedAt": "2026-02-20 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "16",
+      "title_short": "Solo Travel Safety: A Complete Guide for Women Tra",
+      "publishedAt": "2026-02-20 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "17",
+      "title_short": "Heart Rate Monitoring: What Your Watch Is Telling ",
+      "publishedAt": "2026-02-20 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "18",
+      "title_short": "Why Every Real Estate Agent Needs a Personal Safet",
+      "publishedAt": "2026-02-20 00:00:00",
+      "status": "published"
+    },
+    {
+      "id": "150001",
+      "title_short": "Beyond the Swing Set: Making Park Outings Safe for",
+      "publishedAt": "2026-02-27 10:47:19",
+      "status": "published"
+    },
+    {
+      "id": "150004",
+      "title_short": "Test Draft Post",
+      "publishedAt": "NULL",
+      "status": "draft"
+    },
+    {
+      "id": "150006",
+      "title_short": "Test Draft Post",
+      "publishedAt": "NULL",
+      "status": "draft"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle_short\tpublishedAt\tstatus\n1\tAging with Confidence: How to Maintain Independenc\t2026-01-15 00:00:00\tpublished\n2\tCaught in the Middle? How to Care for Aging Parent\t2026-01-12 00:00:00\tpublished\n3\tThe Silent Signs: Why Heart Rate Monitoring is Cri\t2026-01-08 00:00:00\tpublished\n4\tRun Free: The Ultimate Guide to Safety for Solo Fe\t2026-01-20 00:00:00\tpublished\n5\tSmart Dating: How to Stay Safe When Meeting Someon\t2026-01-18 00:00:00\tpublished\n6\tSolo Living: Essential Safety Tips for Women Livin\t2026-01-10 00:00:00\tpublished\n7\tConnected & Protected: A Modern Approach to Family\t2026-01-05 00:00:00\tpublished\n8\tProtecting Your Most Valuable Asset: A Guide to Lo\t2026-01-19 00:00:00\tpublished\n9\tBeyond the Desk: Why Employee Health Monitoring is\t2026-01-11 00:00:00\tpublished\n10\tSafety as a Strategy: How Proactive Monitoring Red\t2026-01-07 00:00:00\tpublished\n11\tThe Hidden Dangers of Working Alone: What Every Em\t2026-02-20 00:00:00\tpublished\n12\t5 Safety Habits Every Woman Should Adopt in 2026\t2026-02-20 00:00:00\tpublished\n13\tWhat Happens in the First 5 Minutes After a Fall? \t2026-02-20 00:00:00\tpublished\n14\tHow to Talk to Your Parents About Safety Without M\t2026-02-20 00:00:00\tpublished\n15\tThe Real Cost of Workplace Accidents: Why Preventi\t2026-02-20 00:00:00\tpublished\n16\tSolo Travel Safety: A Complete Guide for Women Tra\t2026-02-20 00:00:00\tpublished\n17\tHeart Rate Monitoring: What Your Watch Is Telling \t2026-02-20 00:00:00\tpublished\n18\tWhy Every Real Estate Agent Needs a Personal Safet\t2026-02-20 00:00:00\tpublished\n150001\tBeyond the Swing Set: Making Park Outings Safe for\t2026-02-27 10:47:19\tpublished\n150004\tTest Draft Post\tNULL\tdraft\n150006\tTest Draft Post\tNULL\tdraft\n",
+  "stderr": "",
+  "execution_time_ms": 344
+}

@@ -24,7 +24,7 @@ interface SEOPageTemplateProps {
   canonical: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
 
-  // Hero / StoryBrand
+  // Hero Section
   label: string;
   h1: string;
   problem: string;
@@ -102,7 +102,7 @@ export default function SEOPageTemplate({
         schema={allSchemas}
       />
 
-      {/* Hero / StoryBrand Section */}
+      {/* Hero Section */}
       <section className="pt-32 pb-20 bg-gradient-to-b from-[#e8f5e9] to-white">
         <div className="container max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

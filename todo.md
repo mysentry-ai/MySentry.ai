@@ -273,3 +273,8 @@
 - [x] Add "Regenerate with AI" button with editable prompt in Blog Editor hero image section
 - [x] AI Wizard already saves posts as "draft" by default (Save as Draft button on step 7)
 - [x] Blog Editor Save button now shows "Save Draft" when post is in draft status
+
+## Meta & Blog Fixes (Round 6)
+- [x] Update site meta description to remove "StoryBrand-based" wording
+- [x] Spread blog post dates from December 1, 2025 to today (Feb 27, 2026)
+- [x] Sort admin blog list by date descending (latest first)

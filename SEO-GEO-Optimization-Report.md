@@ -180,7 +180,7 @@ The blog content strategy covers six topical clusters aligned with the keyword m
 
 ### New Blog Posts (10 articles)
 
-All posts follow the StoryBrand framework, are 500-700 words, written at an 8th-grade reading level, and include internal links to relevant feature/use-case pages.
+All posts are 500-700 words, written at an 8th-grade reading level, and include internal links to relevant feature/use-case pages.
 
 | # | Title | Target Cluster |
 |---|---|---|
