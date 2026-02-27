@@ -105,7 +105,7 @@ export default function TipTapEditor({
     editorProps: {
       attributes: {
         class:
-          "prose prose-lg max-w-none min-h-[400px] focus:outline-none px-6 py-4 prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-p:leading-7 prose-a:text-[#4CAF50] prose-img:rounded-lg prose-img:mx-auto prose-blockquote:border-l-4 prose-blockquote:border-[#386758] prose-blockquote:bg-gray-50 prose-blockquote:pl-4 prose-blockquote:py-2 prose-table:border-collapse",
+          "prose prose-lg max-w-none min-h-[400px] focus:outline-none px-6 py-4 blog-content",
       },
       handleDrop: (view, event, _slice, moved) => {
         if (!moved && event.dataTransfer?.files?.length && onImageUpload) {

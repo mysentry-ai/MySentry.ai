@@ -94,7 +94,6 @@ const GOAL_OPTIONS = [
 
 export default function AIWizard({ token }: AIWizardProps) {
   const [, navigate] = useLocation();
-  const headers = useMemo(() => ({ "x-blog-admin-token": token }), [token]);
 
   const [step, setStep] = useState(1);
   const [category, setCategory] = useState("");
@@ -113,9 +112,7 @@ export default function AIWizard({ token }: AIWizardProps) {
   const [heroImage, setHeroImage] = useState<{ url: string; altText: string } | null>(null);
   const [complianceResult, setComplianceResult] = useState<any>(null);
 
-  const categoriesQuery = trpc.blog.categories.list.useQuery(undefined, {
-    trpc: { context: { headers } },
-  });
+  const categoriesQuery = trpc.blog.categories.list.useQuery();
 
   const suggestTopicsMutation = trpc.blog.ai.suggestTopics.useMutation();
   const generateOutlineMutation = trpc.blog.ai.generateOutline.useMutation();
@@ -146,8 +143,7 @@ export default function AIWizard({ token }: AIWizardProps) {
     }
     try {
       const result = await suggestTopicsMutation.mutateAsync(
-        { category, icp, goal },
-        { trpc: { context: { headers } } } as any
+        { category, icp, goal }
       );
       setSuggestedTopics(result.topics || []);
       setStep(2);
@@ -164,8 +160,7 @@ export default function AIWizard({ token }: AIWizardProps) {
     }
     try {
       const result = await generateOutlineMutation.mutateAsync(
-        { topic, category, icp, goal },
-        { trpc: { context: { headers } } } as any
+        { topic, category, icp, goal }
       );
       setOutline(result.outline || []);
       setOutlineText(
@@ -183,8 +178,7 @@ export default function AIWizard({ token }: AIWizardProps) {
     const topic = selectedTopic || customTopic;
     try {
       const result = await generateDraftMutation.mutateAsync(
-        { topic, category, icp, goal, outline: outlineText, wordCount: 1800 },
-        { trpc: { context: { headers } } } as any
+        { topic, category, icp, goal, outline: outlineText, wordCount: 1800 }
       );
       setDraft(result);
       setStep(4);
@@ -209,8 +203,7 @@ export default function AIWizard({ token }: AIWizardProps) {
           category,
           imageType: "hero",
           concept: draft.image_plan?.hero?.concept || `Hero image for: ${draft.title}`,
-        },
-        { trpc: { context: { headers } } } as any
+        }
       );
       setHeroImage({ url: result.url || "", altText: result.altText || "" });
       setStep(6);
@@ -223,8 +216,7 @@ export default function AIWizard({ token }: AIWizardProps) {
     if (!draft) return;
     try {
       const result = await complianceCheckMutation.mutateAsync(
-        { content: draft.content_html },
-        { trpc: { context: { headers } } } as any
+        { content: draft.content_html }
       );
       setComplianceResult(result);
       setStep(7);
@@ -255,8 +247,7 @@ export default function AIWizard({ token }: AIWizardProps) {
           focusKeyword: seo.focus_keyword,
           secondaryKeywords: seo.secondary_keywords,
           tags: seo.tags,
-        },
-        { trpc: { context: { headers } } } as any
+        }
       );
       toast.success(publishNow ? "Post published!" : "Draft saved!");
       navigate(`~/admin/blog/edit/${result.id}`);
@@ -355,7 +346,7 @@ export default function AIWizard({ token }: AIWizardProps) {
                     <SelectValue placeholder="Who is this for?" />
                   </SelectTrigger>
                   <SelectContent className="bg-white border-[#E5E7EB]">
-                    {icpOptions.map((opt) => (
+                    {icpOptions.map((opt: string) => (
                       <SelectItem key={opt} value={opt}>
                         {opt}
                       </SelectItem>
@@ -530,7 +521,7 @@ export default function AIWizard({ token }: AIWizardProps) {
               <h3 className="text-2xl font-bold text-[#232020] mb-2">{draft.title}</h3>
               <p className="text-[#5C5C5C] italic mb-4 text-sm">{draft.excerpt}</p>
               <div
-                className="prose prose-sm max-w-none text-[#232020]"
+                className="prose prose-lg max-w-none blog-content"
                 dangerouslySetInnerHTML={{ __html: draft.content_html }}
               />
             </div>

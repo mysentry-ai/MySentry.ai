@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -63,11 +63,7 @@ export default function BlogList({ token }: BlogListProps) {
   const [page, setPage] = useState(0);
   const limit = 20;
 
-  const headers = useMemo(() => ({ "x-blog-admin-token": token }), [token]);
-
-  const categoriesQuery = trpc.blog.categories.list.useQuery(undefined, {
-    trpc: { context: { headers } },
-  });
+  const categoriesQuery = trpc.blog.categories.list.useQuery();
 
   const postsQuery = trpc.blog.admin.list.useQuery(
     {
@@ -77,7 +73,6 @@ export default function BlogList({ token }: BlogListProps) {
       limit,
       offset: page * limit,
     },
-    { trpc: { context: { headers } } }
   );
 
   const deleteMutation = trpc.blog.admin.delete.useMutation({
@@ -147,23 +142,21 @@ export default function BlogList({ token }: BlogListProps) {
       setBulkAction("delete");
     } else {
       bulkMutation.mutate(
-        { ids: selectedIds, action: action as any },
-        { trpc: { context: { headers } } } as any
+        { ids: selectedIds, action: action as any }
       );
     }
   };
 
   const confirmBulkDelete = () => {
     bulkMutation.mutate(
-      { ids: selectedIds, action: "delete" },
-      { trpc: { context: { headers } } } as any
+      { ids: selectedIds, action: "delete" }
     );
     setBulkAction(null);
   };
 
   const handleDelete = (id: number) => {
     if (deleteConfirmText === "DELETE") {
-      deleteMutation.mutate({ id }, { trpc: { context: { headers } } } as any);
+      deleteMutation.mutate({ id });
       setDeleteConfirmId(null);
       setDeleteConfirmText("");
     }
@@ -172,8 +165,7 @@ export default function BlogList({ token }: BlogListProps) {
   const handleTogglePublish = (post: any) => {
     const newStatus = post.status === "published" ? "unpublished" : "published";
     updateMutation.mutate(
-      { id: post.id, status: newStatus },
-      { trpc: { context: { headers } } } as any
+      { id: post.id, status: newStatus }
     );
     toast.success(newStatus === "published" ? "Post published" : "Post unpublished");
   };
@@ -339,7 +331,7 @@ export default function BlogList({ token }: BlogListProps) {
                     <DropdownMenuItem className="text-[#232020] cursor-pointer" onClick={() => navigate(`~/admin/blog/edit/${post.id}`)}>
                       <Edit className="w-4 h-4 mr-2 text-[#5C5C5C]" /> Edit
                     </DropdownMenuItem>
-                    <DropdownMenuItem className="text-[#232020] cursor-pointer" onClick={() => duplicateMutation.mutate({ id: post.id }, { trpc: { context: { headers } } } as any)}>
+                    <DropdownMenuItem className="text-[#232020] cursor-pointer" onClick={() => duplicateMutation.mutate({ id: post.id })}>
                       <Copy className="w-4 h-4 mr-2 text-[#5C5C5C]" /> Duplicate
                     </DropdownMenuItem>
                     <DropdownMenuItem className="text-[#232020] cursor-pointer" onClick={() => window.open(`/blog/${post.slug}`, "_blank")}>

@@ -1,4 +1,5 @@
 import { trpc } from "@/lib/trpc";
+import { getBlogAdminToken } from "@/lib/blogAdminToken";
 import { UNAUTHED_ERR_MSG } from '@shared/const';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink, TRPCClientError } from "@trpc/client";
@@ -43,11 +44,11 @@ const trpcClient = trpc.createClient({
     httpBatchLink({
       url: "/api/trpc",
       transformer: superjson,
-      headers(opts) {
-        const ctx = (opts as any)?.opList?.[0]?.context;
+      headers() {
         const extra: Record<string, string> = {};
-        if (ctx?.headers) {
-          Object.assign(extra, ctx.headers);
+        const blogToken = getBlogAdminToken();
+        if (blogToken) {
+          extra["x-blog-admin-token"] = blogToken;
         }
         return extra;
       },

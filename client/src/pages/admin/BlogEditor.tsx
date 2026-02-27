@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { useRoute, useLocation } from "wouter";
 import { trpc } from "@/lib/trpc";
 import TipTapEditor from "@/components/TipTapEditor";
@@ -49,7 +49,6 @@ interface BlogEditorProps {
 
 export default function BlogEditor({ token, postId }: BlogEditorProps) {
   const [, navigate] = useLocation();
-  const headers = useMemo(() => ({ "x-blog-admin-token": token }), [token]);
 
   // Form state
   const [title, setTitle] = useState("");
@@ -93,16 +92,11 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
   const autosaveTimerRef = useRef<any>(null);
   const heroReplaceInputRef = useRef<HTMLInputElement>(null);
 
-  const categoriesQuery = trpc.blog.categories.list.useQuery(undefined, {
-    trpc: { context: { headers } },
-  });
+  const categoriesQuery = trpc.blog.categories.list.useQuery();
 
   const postQuery = trpc.blog.admin.get.useQuery(
     { id: postId! },
-    {
-      enabled: !!postId,
-      trpc: { context: { headers } },
-    }
+    { enabled: !!postId }
   );
 
   const createMutation = trpc.blog.admin.create.useMutation();
@@ -208,13 +202,11 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
     try {
       if (postId) {
         await updateMutation.mutateAsync(
-          { id: postId, ...getFormData(), status } as any,
-          { trpc: { context: { headers } } } as any
+          { id: postId, ...getFormData(), status } as any
         );
       } else {
         const result = await createMutation.mutateAsync(
-          { ...getFormData(), status } as any,
-          { trpc: { context: { headers } } } as any
+          { ...getFormData(), status } as any
         );
         navigate(`~/admin/blog/edit/${result.id}`, { replace: true });
       }
@@ -234,13 +226,11 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
     try {
       if (postId) {
         await updateMutation.mutateAsync(
-          { id: postId, ...getFormData(), status: "published" } as any,
-          { trpc: { context: { headers } } } as any
+          { id: postId, ...getFormData(), status: "published" } as any
         );
       } else {
         const result = await createMutation.mutateAsync(
-          { ...getFormData(), status: "published" } as any,
-          { trpc: { context: { headers } } } as any
+          { ...getFormData(), status: "published" } as any
         );
         navigate(`~/admin/blog/edit/${result.id}`, { replace: true });
       }
@@ -258,8 +248,7 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
     if (!postId) return;
     try {
       await updateMutation.mutateAsync(
-        { id: postId, status: "unpublished" } as any,
-        { trpc: { context: { headers } } } as any
+        { id: postId, status: "unpublished" } as any
       );
       setStatus("unpublished");
       toast.success("Unpublished");
@@ -277,8 +266,7 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
           try {
             const base64 = (reader.result as string).split(",")[1];
             const result = await uploadImageMutation.mutateAsync(
-              { base64, filename: file.name, contentType: file.type },
-              { trpc: { context: { headers } } } as any
+              { base64, filename: file.name, contentType: file.type }
             );
             resolve(result.url);
           } catch (err) {
@@ -289,7 +277,7 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
         reader.readAsDataURL(file);
       });
     },
-    [uploadImageMutation, headers]
+    [uploadImageMutation]
   );
 
   const handleHeroImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -319,8 +307,7 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
           category: catName,
           imageType: "hero",
           concept: `Hero image for blog post: ${title}`,
-        },
-        { trpc: { context: { headers } } } as any
+        }
       );
       if (result.url) {
         setHeroImageUrl(result.url);
@@ -343,8 +330,7 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
     try {
       const catName = categoriesQuery.data?.find((c) => c.id === categoryId)?.name || "General";
       const result = await generateSEOMutation.mutateAsync(
-        { title, content: contentHtml, category: catName },
-        { trpc: { context: { headers } } } as any
+        { title, content: contentHtml, category: catName }
       );
       if (result.meta_title) setMetaTitle(result.meta_title);
       if (result.meta_description) setMetaDescription(result.meta_description);
@@ -830,7 +816,7 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
                 <h1 className="text-4xl font-bold text-gray-900 mb-4">{title || "Untitled Post"}</h1>
                 {excerpt && <p className="text-lg text-gray-500 mb-6">{excerpt}</p>}
                 <div
-                  className="prose prose-lg max-w-none text-gray-900"
+                  className="prose prose-lg max-w-none blog-content"
                   dangerouslySetInnerHTML={{ __html: contentHtml }}
                 />
               </article>

@@ -252,24 +252,161 @@
   }
 }
 
-/* FORCE BLACK TEXT OVERRIDE FOR LEGAL AND BLOG PAGES */
-.prose p, 
-.prose h1, 
-.prose h2, 
-.prose h3, 
-.prose h4, 
-.prose h5, 
-.prose h6, 
-.prose li, 
-.prose strong, 
-.prose span,
-.prose div {
-  color: #000000 !important;
+/* ===== ADMIN LIGHT THEME OVERRIDE =====
+   Admin pages set data-admin-light on <html>.
+   This forces ALL elements (including Radix portals) to use light-mode colors,
+   overriding the global dark theme. */
+html[data-admin-light] [data-radix-popper-content-wrapper],
+html[data-admin-light] [data-radix-popper-content-wrapper] *,
+html[data-admin-light] [role="dialog"],
+html[data-admin-light] [role="dialog"] *,
+html[data-admin-light] [role="alertdialog"],
+html[data-admin-light] [role="alertdialog"] *,
+html[data-admin-light] [data-radix-select-viewport],
+html[data-admin-light] [data-radix-select-viewport] * {
+  --popover: #ffffff;
+  --popover-foreground: #232020;
+  --accent: #e8f5e9;
+  --accent-foreground: #232020;
+  --muted: #F5F7F7;
+  --muted-foreground: #5C5C5C;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --background: #ffffff;
+  --foreground: #232020;
+  --card: #ffffff;
+  --card-foreground: #232020;
 }
 
-/* Specific overrides for Privacy, Terms, and Blog containers if they use specific IDs or classes */
-#privacy-content *, 
-#terms-content *, 
-#blog-content * {
-  color: #000000 !important;
+html[data-admin-light] [data-slot="select-content"] {
+  background-color: #ffffff !important;
+  color: #232020 !important;
+  border-color: #E5E7EB !important;
+}
+
+html[data-admin-light] [data-slot="select-item"] {
+  color: #232020 !important;
+}
+
+html[data-admin-light] [data-slot="select-item"]:hover,
+html[data-admin-light] [data-slot="select-item"]:focus,
+html[data-admin-light] [data-slot="select-item"][data-highlighted] {
+  background-color: #e8f5e9 !important;
+  color: #232020 !important;
+}
+
+html[data-admin-light] [data-slot="dropdown-menu-content"] {
+  background-color: #ffffff !important;
+  color: #232020 !important;
+  border-color: #E5E7EB !important;
+}
+
+html[data-admin-light] [data-slot="dropdown-menu-item"] {
+  color: #232020 !important;
+}
+
+html[data-admin-light] [data-slot="dropdown-menu-item"]:hover,
+html[data-admin-light] [data-slot="dropdown-menu-item"]:focus,
+html[data-admin-light] [data-slot="dropdown-menu-item"][data-highlighted] {
+  background-color: #e8f5e9 !important;
+  color: #232020 !important;
+}
+
+/* ===== SHARED BLOG CONTENT STYLES =====
+   Ensures consistent rendering across:
+   - Public blog page (BlogPost.tsx)
+   - WYSIWYG editor (TipTapEditor.tsx)
+   - Editor preview modal (BlogEditor.tsx)
+   - AI Wizard draft preview (AIWizard.tsx)
+*/
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 600;
+  color: #111827;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+}
+
+.blog-content h2 {
+  font-size: 1.75rem;
+}
+
+.blog-content h3 {
+  font-size: 1.375rem;
+}
+
+.blog-content h4 {
+  font-size: 1.125rem;
+}
+
+.blog-content p {
+  color: #111827;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.blog-content a {
+  color: #386758;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.blog-content a:hover {
+  text-decoration: underline;
+}
+
+.blog-content strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.blog-content li {
+  color: #111827;
+  line-height: 1.9;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #386758;
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: #111827;
+  background-color: #f9fafb;
+  padding: 1rem 1rem 1rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.blog-content img {
+  border-radius: 0.75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.blog-content table th,
+.blog-content table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  color: #111827;
+}
+
+.blog-content table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+/* Legal pages (Privacy, Terms) */
+#privacy-content *,
+#terms-content * {
+  color: #111827;
 }

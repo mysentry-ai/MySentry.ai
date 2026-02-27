@@ -254,3 +254,9 @@
 - [x] Fix chatbot appearing on admin pages
 - [x] Fix /admin redirect to /admin/blog
 - [x] Run vitest and thorough QA on all admin pages
+
+## Blog Admin UI Fixes (Round 3)
+- [x] Fix AI Wizard dropdown showing blank gray box instead of options (Category, ICP, Goal selects)
+- [x] Fix "Admin authentication required" error when clicking Suggest 10 Topics
+- [x] Make admin UI more colorful with better contrast and visibility
+- [x] Fix blog post rendering inconsistency between WYSIWYG editor, preview, and public page

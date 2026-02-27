@@ -22,9 +22,11 @@ export default function AdminLayout() {
   useEffect(() => {
     const root = document.documentElement;
     root.classList.remove("dark");
+    root.setAttribute("data-admin-light", "true");
     return () => {
       // Restore dark theme when leaving admin
       root.classList.add("dark");
+      root.removeAttribute("data-admin-light");
     };
   }, []);
   const { token, isAuthenticated, isLoading, login, logout, loginError, isLoginLoading } = useBlogAdmin();
@@ -77,15 +79,17 @@ export default function AdminLayout() {
       <aside
         className={`${
           sidebarOpen ? "w-60" : "w-0 overflow-hidden"
-        } transition-all duration-200 bg-white border-r border-[#E5E7EB] flex flex-col shrink-0`}
+        } transition-all duration-200 bg-gradient-to-b from-[#004F7B] to-[#003a5c] flex flex-col shrink-0`}
       >
         {/* Logo area */}
-        <div className="h-16 px-5 flex items-center border-b border-[#E5E7EB]">
+        <div className="h-16 px-5 flex items-center border-b border-white/10">
           <div className="flex items-center gap-2.5">
-            <img src="/favicon.svg" alt="MySentry" className="w-8 h-8" />
+            <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+              <img src="/favicon.svg" alt="MySentry" className="w-5 h-5" />
+            </div>
             <div>
-              <span className="font-bold text-[#232020] text-sm">MySentry</span>
-              <span className="text-[#5C5C5C] text-xs block -mt-0.5">Blog CMS</span>
+              <span className="font-bold text-white text-sm">MySentry</span>
+              <span className="text-white/60 text-xs block -mt-0.5">Blog CMS</span>
             </div>
           </div>
         </div>
@@ -97,11 +101,11 @@ export default function AdminLayout() {
               <div
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all cursor-pointer ${
                   item.active
-                    ? "bg-[#e8f5e9] text-[#232020] shadow-sm"
-                    : "text-[#5C5C5C] hover:bg-[#F5F7F7] hover:text-[#232020]"
+                    ? "bg-[#6AD990] text-[#232020] shadow-md"
+                    : "text-white/80 hover:bg-white/10 hover:text-white"
                 }`}
               >
-                <item.icon className={`w-[18px] h-[18px] ${item.active ? "text-[#6AD990]" : ""}`} />
+                <item.icon className={`w-[18px] h-[18px] ${item.active ? "text-[#232020]" : "text-white/60"}`} />
                 {item.label}
               </div>
             </Link>
@@ -109,11 +113,11 @@ export default function AdminLayout() {
         </nav>
 
         {/* Sign out */}
-        <div className="px-3 py-3 border-t border-[#E5E7EB]">
+        <div className="px-3 py-3 border-t border-white/10">
           <Button
             variant="ghost"
             size="sm"
-            className="w-full justify-start text-[#5C5C5C] hover:text-red-600 hover:bg-red-50 rounded-lg"
+            className="w-full justify-start text-white/70 hover:text-red-300 hover:bg-white/10 rounded-lg"
             onClick={logout}
           >
             <LogOut className="w-4 h-4 mr-2" />
@@ -125,19 +129,25 @@ export default function AdminLayout() {
       {/* Main Content */}
       <div className="flex-1 min-w-0 flex flex-col">
         {/* Top bar */}
-        <header className="h-16 bg-white border-b border-[#E5E7EB] px-6 flex items-center gap-4 shrink-0">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-            className="text-[#5C5C5C] hover:text-[#232020] hover:bg-[#F5F7F7] -ml-2"
-          >
-            {sidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
-          </Button>
-          <div className="flex items-center gap-1.5 text-sm">
-            <span className="text-[#9CA3AF]">Admin</span>
-            <ChevronRight className="w-3.5 h-3.5 text-[#9CA3AF]" />
-            <span className="text-[#232020] font-medium">{currentPage?.label || "Blog CMS"}</span>
+        <header className="h-16 bg-white border-b border-[#E5E7EB] px-6 flex items-center justify-between shrink-0">
+          <div className="flex items-center gap-4">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setSidebarOpen(!sidebarOpen)}
+              className="text-[#5C5C5C] hover:text-[#232020] hover:bg-[#F5F7F7] -ml-2"
+            >
+              {sidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            </Button>
+            <div className="flex items-center gap-1.5 text-sm">
+              <span className="text-[#9CA3AF]">Admin</span>
+              <ChevronRight className="w-3.5 h-3.5 text-[#9CA3AF]" />
+              <span className="text-[#232020] font-medium">{currentPage?.label || "Blog CMS"}</span>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="h-2 w-2 rounded-full bg-[#6AD990] animate-pulse" />
+            <span className="text-xs text-[#5C5C5C]">System Online</span>
           </div>
         </header>
 

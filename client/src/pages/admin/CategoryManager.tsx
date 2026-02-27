@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import { trpc } from "@/lib/trpc";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,7 +29,6 @@ interface CategoryManagerProps {
 }
 
 export default function CategoryManager({ token }: CategoryManagerProps) {
-  const headers = useMemo(() => ({ "x-blog-admin-token": token }), [token]);
   const [editDialog, setEditDialog] = useState(false);
   const [deleteId, setDeleteId] = useState<number | null>(null);
   const [editId, setEditId] = useState<number | null>(null);
@@ -37,9 +36,7 @@ export default function CategoryManager({ token }: CategoryManagerProps) {
   const [slug, setSlug] = useState("");
   const [description, setDescription] = useState("");
 
-  const categoriesQuery = trpc.blog.categories.list.useQuery(undefined, {
-    trpc: { context: { headers } },
-  });
+  const categoriesQuery = trpc.blog.categories.list.useQuery();
 
   const createMutation = trpc.blog.categories.create.useMutation({
     onSuccess: () => {
@@ -101,13 +98,11 @@ export default function CategoryManager({ token }: CategoryManagerProps) {
     }
     if (editId) {
       updateMutation.mutate(
-        { id: editId, name, slug, description },
-        { trpc: { context: { headers } } } as any
+        { id: editId, name, slug, description }
       );
     } else {
       createMutation.mutate(
-        { name, slug, description },
-        { trpc: { context: { headers } } } as any
+        { name, slug, description }
       );
     }
   };
@@ -239,7 +234,7 @@ export default function CategoryManager({ token }: CategoryManagerProps) {
           <AlertDialogFooter>
             <AlertDialogCancel className="bg-white border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">Cancel</AlertDialogCancel>
             <AlertDialogAction
-              onClick={() => deleteId && deleteMutation.mutate({ id: deleteId }, { trpc: { context: { headers } } } as any)}
+              onClick={() => deleteId && deleteMutation.mutate({ id: deleteId })}
               className="bg-red-600 hover:bg-red-700 text-white rounded-lg"
             >
               Delete
