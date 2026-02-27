@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, json, longtext } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -131,3 +131,82 @@ export const trialSignups = mysqlTable("trial_signups", {
 
 export type TrialSignup = typeof trialSignups.$inferSelect;
 export type InsertTrialSignup = typeof trialSignups.$inferInsert;
+
+/**
+ * Blog categories (single-level)
+ */
+export const blogCategories = mysqlTable("blog_categories", {
+  id: int("id").autoincrement().primaryKey(),
+  name: varchar("name", { length: 100 }).notNull().unique(),
+  slug: varchar("slug", { length: 100 }).notNull().unique(),
+  description: text("description"),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+});
+
+export type BlogCategory = typeof blogCategories.$inferSelect;
+export type InsertBlogCategory = typeof blogCategories.$inferInsert;
+
+/**
+ * Blog posts - full CMS schema
+ */
+export const blogPosts = mysqlTable("blog_posts", {
+  id: int("id").autoincrement().primaryKey(),
+  title: varchar("title", { length: 500 }).notNull(),
+  slug: varchar("slug", { length: 500 }).notNull().unique(),
+  categoryId: int("categoryId"),
+  status: mysqlEnum("status", ["draft", "published", "unpublished", "scheduled"]).default("draft").notNull(),
+  excerpt: text("excerpt"),
+  // Hero image
+  heroImageUrl: text("heroImageUrl"),
+  heroImageAlt: varchar("heroImageAlt", { length: 500 }),
+  heroImageCaption: varchar("heroImageCaption", { length: 500 }),
+  heroImageSource: mysqlEnum("heroImageSource", ["upload", "ai", "url"]).default("upload"),
+  // Content
+  contentHtml: longtext("contentHtml"),
+  contentJson: json("contentJson"),
+  // SEO fields
+  metaTitle: varchar("metaTitle", { length: 200 }),
+  metaDescription: text("metaDescription"),
+  focusKeyword: varchar("focusKeyword", { length: 200 }),
+  secondaryKeywords: json("secondaryKeywords"), // string[]
+  tags: json("tags"), // string[]
+  canonicalUrl: varchar("canonicalUrl", { length: 500 }),
+  // Open Graph
+  ogTitle: varchar("ogTitle", { length: 200 }),
+  ogDescription: text("ogDescription"),
+  ogImageUrl: text("ogImageUrl"),
+  // Indexing
+  isIndexed: boolean("isIndexed").default(true).notNull(),
+  isFollowed: boolean("isFollowed").default(true).notNull(),
+  // GEO
+  geoRegion: varchar("geoRegion", { length: 100 }),
+  geoAudience: varchar("geoAudience", { length: 200 }),
+  // Author
+  authorName: varchar("authorName", { length: 255 }).default("MySentry Editorial Team").notNull(),
+  // Computed
+  readTimeMinutes: int("readTimeMinutes").default(5),
+  wordCount: int("wordCount").default(0),
+  // Timestamps
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+  publishedAt: timestamp("publishedAt"),
+  scheduledAt: timestamp("scheduledAt"),
+});
+
+export type BlogPost = typeof blogPosts.$inferSelect;
+export type InsertBlogPost = typeof blogPosts.$inferInsert;
+
+/**
+ * Blog slug redirects (301 mapping when slug changes)
+ */
+export const blogRedirects = mysqlTable("blog_redirects", {
+  id: int("id").autoincrement().primaryKey(),
+  oldSlug: varchar("oldSlug", { length: 500 }).notNull().unique(),
+  newSlug: varchar("newSlug", { length: 500 }).notNull(),
+  postId: int("postId").notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type BlogRedirect = typeof blogRedirects.$inferSelect;
+export type InsertBlogRedirect = typeof blogRedirects.$inferInsert;

@@ -57,6 +57,9 @@ import Life360VsMysentry from "./pages/compare/Life360VsMysentry";
 import FallCallVsMysentry from "./pages/compare/FallCallVsMysentry";
 import GooglePersonalSafetyVsMysentry from "./pages/compare/GooglePersonalSafetyVsMysentry";
 import SOSecureAdtVsMysentry from "./pages/compare/SOSecureAdtVsMysentry";
+
+// Admin
+import AdminLayout from "./pages/admin/AdminLayout";
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -115,6 +118,11 @@ function Router() {
       <Route path="/compare/fallcall-vs-mysentry" component={FallCallVsMysentry} />
       <Route path="/compare/google-personal-safety-vs-mysentry" component={GooglePersonalSafetyVsMysentry} />
       <Route path="/compare/sosecure-adt-vs-mysentry" component={SOSecureAdtVsMysentry} />
+
+      {/* Admin Blog CMS */}
+      <Route path="/admin/blog" nest>
+        <AdminLayout />
+      </Route>
 
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
