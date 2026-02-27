@@ -193,7 +193,7 @@ export default function CategoryManager({ token }: CategoryManagerProps) {
                   }
                 }}
                 placeholder="e.g., Safety Tips"
-                className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
+                className="mt-1.5 !bg-white border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
               />
             </div>
             <div>
@@ -202,7 +202,7 @@ export default function CategoryManager({ token }: CategoryManagerProps) {
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
                 placeholder="e.g., safety-tips"
-                className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
+                className="mt-1.5 !bg-white border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
               />
             </div>
             <div>
@@ -211,7 +211,7 @@ export default function CategoryManager({ token }: CategoryManagerProps) {
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Brief description..."
-                className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
+                className="mt-1.5 !bg-white border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
                 rows={2}
               />
             </div>

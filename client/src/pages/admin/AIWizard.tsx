@@ -334,7 +334,7 @@ export default function AIWizard({ token }: AIWizardProps) {
               <div>
                 <Label className="text-sm font-semibold text-[#232020]">Category</Label>
                 <Select value={category} onValueChange={handleCategoryChange}>
-                  <SelectTrigger className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] rounded-lg">
+                  <SelectTrigger className="mt-1.5 !bg-white border-[#E5E7EB] text-[#232020] rounded-lg">
                     <SelectValue placeholder="Select a category" />
                   </SelectTrigger>
                   <SelectContent className="bg-white border-[#E5E7EB]">
@@ -351,7 +351,7 @@ export default function AIWizard({ token }: AIWizardProps) {
               <div>
                 <Label className="text-sm font-semibold text-[#232020]">Target Audience (ICP)</Label>
                 <Select value={icp} onValueChange={setIcp}>
-                  <SelectTrigger className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] rounded-lg">
+                  <SelectTrigger className="mt-1.5 !bg-white border-[#E5E7EB] text-[#232020] rounded-lg">
                     <SelectValue placeholder="Who is this for?" />
                   </SelectTrigger>
                   <SelectContent className="bg-white border-[#E5E7EB]">
@@ -370,7 +370,7 @@ export default function AIWizard({ token }: AIWizardProps) {
               <div>
                 <Label className="text-sm font-semibold text-[#232020]">Primary Goal</Label>
                 <Select value={goal} onValueChange={setGoal}>
-                  <SelectTrigger className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] rounded-lg">
+                  <SelectTrigger className="mt-1.5 !bg-white border-[#E5E7EB] text-[#232020] rounded-lg">
                     <SelectValue placeholder="What's the goal?" />
                   </SelectTrigger>
                   <SelectContent className="bg-white border-[#E5E7EB]">
@@ -389,7 +389,7 @@ export default function AIWizard({ token }: AIWizardProps) {
                   value={customTopic}
                   onChange={(e) => setCustomTopic(e.target.value)}
                   placeholder="e.g., How Fall Detection Saves Lives for Solo Hikers"
-                  className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
+                  className="mt-1.5 !bg-white border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
                 />
               </div>
             </div>

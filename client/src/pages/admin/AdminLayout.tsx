@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation, useRoute, Link } from "wouter";
 import { useBlogAdmin } from "@/hooks/useBlogAdmin";
 import AdminLogin from "./AdminLogin";
@@ -18,6 +18,15 @@ import {
 } from "lucide-react";
 
 export default function AdminLayout() {
+  // Force light theme on admin pages so dropdowns and all UI elements use light CSS variables
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove("dark");
+    return () => {
+      // Restore dark theme when leaving admin
+      root.classList.add("dark");
+    };
+  }, []);
   const { token, isAuthenticated, isLoading, login, logout, loginError, isLoginLoading } = useBlogAdmin();
   const [location, navigate] = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(true);

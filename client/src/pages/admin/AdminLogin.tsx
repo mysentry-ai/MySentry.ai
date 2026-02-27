@@ -63,7 +63,7 @@ export default function AdminLogin({ onLogin, error, isLoading }: AdminLoginProp
                 onChange={(e) => setUsername(e.target.value)}
                 placeholder="Enter your username"
                 required
-                className="h-11 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] focus:border-[#6AD990] focus:ring-[#6AD990]/20 rounded-lg"
+                className="h-11 !bg-white border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] focus:border-[#6AD990] focus:ring-[#6AD990]/20 rounded-lg"
               />
             </div>
 
@@ -79,7 +79,7 @@ export default function AdminLogin({ onLogin, error, isLoading }: AdminLoginProp
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
-                  className="h-11 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] focus:border-[#6AD990] focus:ring-[#6AD990]/20 pr-10 rounded-lg"
+                  className="h-11 !bg-white border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] focus:border-[#6AD990] focus:ring-[#6AD990]/20 pr-10 rounded-lg"
                 />
                 <button
                   type="button"

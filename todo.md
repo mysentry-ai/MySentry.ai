@@ -238,3 +238,19 @@
 - [x] Redesign admin sidebar/layout with MySentry branding
 - [x] Hide chatbot widget on all admin pages
 - [x] Ensure all admin text is high contrast (black on white/light backgrounds)
+
+## Blog Admin Dropdown Fix
+- [x] Fix invisible dropdown items in Categories and Status filters on BlogList page - text not visible against white background
+- [x] Fix invisible dropdown text in ALL admin dropdowns (BlogList categories/status, AIWizard category/ICP/goal, BlogEditor category/status) - text not visible against white background
+- [x] Fix AI Wizard "Admin authentication required" error when clicking Suggest 10 Topics - token not being passed to API
+- [x] Redesign BlogEditor page with proper MySentry brand colors - high contrast black text on white inputs, green accents, clean SEO panel
+
+## Blog Admin UI Fixes (Round 2)
+- [x] Fix BlogEditor Replace button not working (file input not triggering on click)
+- [x] Fix BlogEditor gray input backgrounds - use white with proper borders
+- [x] Make all admin pages professional layout with consistent MySentry branding
+- [x] Fix AI Wizard auth token passing for all mutations
+- [x] Update AI blog generation prompts to avoid AI detection (Wikipedia guidelines on signs of AI writing)
+- [x] Fix chatbot appearing on admin pages
+- [x] Fix /admin redirect to /admin/blog
+- [x] Run vitest and thorough QA on all admin pages
