@@ -288,3 +288,6 @@
 
 ## Features Page Redesign (Round 8)
 - [x] Redesign Features page to be consistent with other pages - remove dark cards, use light greenish bg with white cards, green accents, high-contrast black text
+
+## Blog Post Hero Image Mobile Fix (Round 9)
+- [x] Fix blog post hero image on mobile - changed aspect ratio from 21/9 to 4/3 on mobile, 16/9 on tablet, 2/1 on desktop; removed horizontal padding and border-radius on mobile for edge-to-edge display

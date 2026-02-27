@@ -125,8 +125,8 @@ const BlogPost = () => {
 
       {/* Hero Image - Wide & Cinematic */}
       {post.heroImageUrl && (
-        <div className="w-full max-w-[1400px] mx-auto px-4 md:px-8 mb-16">
-          <div className="relative aspect-[21/9] md:aspect-[2/1] overflow-hidden rounded-2xl">
+        <div className="w-full max-w-[1400px] mx-auto px-0 md:px-8 mb-16">
+          <div className="relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[2/1] overflow-hidden rounded-none sm:rounded-2xl">
             <img 
               src={post.heroImageUrl} 
               alt={post.heroImageAlt || post.title} 
