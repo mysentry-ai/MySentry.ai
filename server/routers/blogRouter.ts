@@ -149,12 +149,25 @@ Brand notes:
 - Avoid showing medical diagnosis scenes or anything graphic
 - Prefer authentic people moments and real environments
 
+CRITICAL QUALITY RULES (to avoid common AI image artifacts):
+- NEVER duplicate people: each person in the scene must be visually distinct (different face, hair, clothing, body type)
+- NEVER blur or fade any side of the image. The entire frame must be sharp and fully composed edge to edge.
+- NEVER place the same person twice in the frame from different angles
+- Limit the number of people to 2-3 maximum for clean composition
+- Each person must have anatomically correct hands (5 fingers, natural poses)
+- No floating objects, disconnected limbs, or merged body parts
+- Background must be coherent and realistic (no impossible architecture or warped perspectives)
+- No watermarks, logos, or stock photo artifacts
+- Ensure faces are fully rendered and not distorted
+- Use a single consistent light source direction
+
 Requirements:
-- Photorealistic, high resolution
-- Natural lighting
+- Photorealistic, high resolution, 16:9 landscape aspect ratio
+- Natural lighting from a single direction
 - Diverse representation when showing people
 - No text baked into the image
 - Leave negative space suitable for an H1 overlay (hero only)
+- Full edge-to-edge composition with no faded/blurred borders
 
 Output format (strict JSON):
 {
@@ -698,7 +711,7 @@ Must include CTA: "Start 7-Day Free Trial" (use natural wording, not spammy)`;
             { role: "system", content: AI_IMAGE_SYSTEM },
             {
               role: "user",
-              content: `Post title: ${input.title}\nAudience/ICP: ${input.icp}\nCategory: ${input.category}\nImage type: ${input.imageType}\nConcept: ${input.concept}\n\nGenerate the image prompt.`,
+              content: `Post title: ${input.title}\nAudience/ICP: ${input.icp}\nCategory: ${input.category}\nImage type: ${input.imageType}\nConcept: ${input.concept}\n\nGenerate the image prompt. Remember: no duplicated people, no blurred edges, full edge-to-edge composition, anatomically correct hands, max 2-3 people.`,
             },
           ],
           response_format: {
@@ -737,7 +750,26 @@ Must include CTA: "Start 7-Day Free Trial" (use natural wording, not spammy)`;
           url,
           altText: imagePrompt.alt_text,
           styleNotes: imagePrompt.style_notes,
+          generatedPrompt: imagePrompt.final_prompt,
         };
+      }),
+
+    // Regenerate image from a user-editable prompt (no LLM step, direct image generation)
+    regenerateImage: publicProcedure
+      .input(z.object({
+        prompt: z.string().min(10),
+      }))
+      .mutation(async ({ ctx, input }) => {
+        requireAdmin(ctx);
+
+        const qualitySuffix = ". Photorealistic, high resolution, 16:9 landscape, natural lighting, no duplicated people, no blurred edges, full edge-to-edge composition, anatomically correct hands, no text in image.";
+        const fullPrompt = input.prompt + qualitySuffix;
+
+        const { url } = await generateImage({
+          prompt: fullPrompt,
+        });
+
+        return { url };
       }),
 
     complianceCheck: publicProcedure

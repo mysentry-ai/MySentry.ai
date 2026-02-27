@@ -87,6 +87,9 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
   const [newKeyword, setNewKeyword] = useState("");
   const [newTag, setNewTag] = useState("");
   const [isGeneratingHeroImage, setIsGeneratingHeroImage] = useState(false);
+  const [isRegeneratingImage, setIsRegeneratingImage] = useState(false);
+  const [heroImagePrompt, setHeroImagePrompt] = useState("");
+  const [showImagePromptEditor, setShowImagePromptEditor] = useState(false);
   const [isGeneratingSEO, setIsGeneratingSEO] = useState(false);
   const [activeTab, setActiveTab] = useState<"settings" | "seo">("settings");
   const autosaveTimerRef = useRef<any>(null);
@@ -104,6 +107,7 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
   const uploadImageMutation = trpc.blog.admin.uploadImage.useMutation();
   const generateSEOMutation = trpc.blog.ai.generateSEO.useMutation();
   const generateImageMutation = trpc.blog.ai.generateImage.useMutation();
+  const regenerateImageMutation = trpc.blog.ai.regenerateImage.useMutation();
 
   // Load post data
   useEffect(() => {
@@ -312,12 +316,35 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
       if (result.url) {
         setHeroImageUrl(result.url);
         setHeroImageAlt(result.altText || "");
+        if (result.generatedPrompt) {
+          setHeroImagePrompt(result.generatedPrompt);
+        }
         toast.success("Hero image generated");
       }
     } catch (err: any) {
       toast.error(err.message || "Image generation failed");
     } finally {
       setIsGeneratingHeroImage(false);
+    }
+  };
+
+  const handleRegenerateHeroImage = async () => {
+    if (!heroImagePrompt.trim()) {
+      toast.error("Please enter an image prompt");
+      return;
+    }
+    setIsRegeneratingImage(true);
+    try {
+      const result = await regenerateImageMutation.mutateAsync({ prompt: heroImagePrompt });
+      if (result.url) {
+        setHeroImageUrl(result.url);
+        setIsDirty(true);
+        toast.success("Hero image regenerated!");
+      }
+    } catch (err: any) {
+      toast.error(err.message || "Image regeneration failed");
+    } finally {
+      setIsRegeneratingImage(false);
     }
   };
 
@@ -408,7 +435,7 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
               className="border-gray-200 text-gray-700 hover:bg-gray-50 rounded-lg h-9"
             >
               {isSaving ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Save className="w-4 h-4 mr-1.5" />}
-              Save
+              {status === "draft" ? "Save Draft" : "Save"}
             </Button>
             {status === "published" ? (
               <Button
@@ -496,24 +523,59 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
               </div>
             )}
             {heroImageUrl && (
-              <div className="mt-3 grid grid-cols-2 gap-3">
-                <div>
-                  <label className="text-xs font-medium text-gray-500 mb-1 block">Alt Text</label>
-                  <input
-                    value={heroImageAlt}
-                    onChange={(e) => setHeroImageAlt(e.target.value)}
-                    placeholder="Describe the image..."
-                    className="w-full text-sm text-gray-900 bg-white border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-[#6AD990] focus:ring-1 focus:ring-[#6AD990]/20 placeholder:text-gray-400"
-                  />
+              <div className="mt-3 space-y-3">
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <label className="text-xs font-medium text-gray-500 mb-1 block">Alt Text</label>
+                    <input
+                      value={heroImageAlt}
+                      onChange={(e) => setHeroImageAlt(e.target.value)}
+                      placeholder="Describe the image..."
+                      className="w-full text-sm text-gray-900 bg-white border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-[#6AD990] focus:ring-1 focus:ring-[#6AD990]/20 placeholder:text-gray-400"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-xs font-medium text-gray-500 mb-1 block">Caption</label>
+                    <input
+                      value={heroImageCaption}
+                      onChange={(e) => setHeroImageCaption(e.target.value)}
+                      placeholder="Optional caption..."
+                      className="w-full text-sm text-gray-900 bg-white border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-[#6AD990] focus:ring-1 focus:ring-[#6AD990]/20 placeholder:text-gray-400"
+                    />
+                  </div>
                 </div>
+                {/* Regenerate with AI */}
                 <div>
-                  <label className="text-xs font-medium text-gray-500 mb-1 block">Caption</label>
-                  <input
-                    value={heroImageCaption}
-                    onChange={(e) => setHeroImageCaption(e.target.value)}
-                    placeholder="Optional caption..."
-                    className="w-full text-sm text-gray-900 bg-white border border-gray-200 rounded-lg px-3 py-2 focus:outline-none focus:border-[#6AD990] focus:ring-1 focus:ring-[#6AD990]/20 placeholder:text-gray-400"
-                  />
+                  <button
+                    onClick={() => setShowImagePromptEditor(!showImagePromptEditor)}
+                    className="text-xs font-medium text-[#004F7B] hover:text-[#003d5f] flex items-center gap-1 cursor-pointer"
+                  >
+                    <Sparkles className="w-3.5 h-3.5" />
+                    {showImagePromptEditor ? "Hide" : "Regenerate with AI"}
+                  </button>
+                  {showImagePromptEditor && (
+                    <div className="mt-2 space-y-2">
+                      <textarea
+                        value={heroImagePrompt}
+                        onChange={(e) => setHeroImagePrompt(e.target.value)}
+                        placeholder="Describe the image you want. E.g.: A senior woman hiking on a sunny mountain trail, wearing a smartwatch..."
+                        className="w-full text-sm text-gray-900 bg-white border border-gray-200 rounded-lg px-3 py-2 min-h-[80px] focus:outline-none focus:border-[#6AD990] focus:ring-1 focus:ring-[#6AD990]/20 placeholder:text-gray-400"
+                      />
+                      <Button
+                        size="sm"
+                        onClick={handleRegenerateHeroImage}
+                        disabled={isRegeneratingImage || !heroImagePrompt.trim()}
+                        className="bg-[#004F7B] hover:bg-[#003d5f] text-white rounded-lg"
+                      >
+                        {isRegeneratingImage ? (
+                          <Loader2 className="w-4 h-4 mr-1.5 animate-spin" />
+                        ) : (
+                          <Sparkles className="w-4 h-4 mr-1.5" />
+                        )}
+                        Regenerate Image
+                      </Button>
+                    </div>
+                  )}
                 </div>
               </div>
             )}

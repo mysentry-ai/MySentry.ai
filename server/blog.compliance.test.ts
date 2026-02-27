@@ -206,3 +206,65 @@ describe("blog compliance check", () => {
     ).rejects.toThrow("Admin authentication required");
   });
 });
+
+describe("blog regenerateImage", () => {
+  it("rejects unauthorized regenerate image request", async () => {
+    const ctx = createPublicContext();
+    const caller = appRouter.createCaller(ctx);
+
+    await expect(
+      caller.blog.ai.regenerateImage({
+        prompt: "A beautiful landscape with mountains and a sunset",
+      })
+    ).rejects.toThrow("Admin authentication required");
+  });
+
+  it("rejects prompt that is too short", async () => {
+    const ctx = createPublicContext();
+    const caller = appRouter.createCaller(ctx);
+
+    const { token } = await caller.blog.adminLogin({
+      username: "admin",
+      password: "MySentry2026",
+    });
+
+    const adminCtx = createAdminContext(token);
+    const adminCaller = appRouter.createCaller(adminCtx);
+
+    await expect(
+      adminCaller.blog.ai.regenerateImage({
+        prompt: "short",
+      })
+    ).rejects.toThrow();
+  });
+});
+
+describe("blog save as draft flow", () => {
+  it("createPost defaults to draft status when publishNow is false", async () => {
+    const ctx = createPublicContext();
+    const caller = appRouter.createCaller(ctx);
+
+    const { token } = await caller.blog.adminLogin({
+      username: "admin",
+      password: "MySentry2026",
+    });
+
+    const adminCtx = createAdminContext(token);
+    const adminCaller = appRouter.createCaller(adminCtx);
+
+    const result = await adminCaller.blog.admin.create({
+      title: "Test Draft Post",
+      slug: "test-draft-post-" + Date.now(),
+      status: "draft",
+      excerpt: "This is a test draft post",
+      contentHtml: "<p>Test content for draft post</p>",
+    });
+
+    expect(result).toHaveProperty("id");
+    expect(typeof result.id).toBe("number");
+
+    // Verify the post was created as draft
+    const post = await adminCaller.blog.admin.get({ id: result.id });
+    expect(post.status).toBe("draft");
+  });
+});

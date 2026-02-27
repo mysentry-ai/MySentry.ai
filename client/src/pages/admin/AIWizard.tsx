@@ -110,6 +110,7 @@ export default function AIWizard({ token }: AIWizardProps) {
   const [draft, setDraft] = useState<any>(null);
   const [seo, setSeo] = useState<any>(null);
   const [heroImage, setHeroImage] = useState<{ url: string; altText: string } | null>(null);
+  const [imagePrompt, setImagePrompt] = useState("");
   const [complianceResult, setComplianceResult] = useState<any>(null);
 
   const categoriesQuery = trpc.blog.categories.list.useQuery();
@@ -118,6 +119,7 @@ export default function AIWizard({ token }: AIWizardProps) {
   const generateOutlineMutation = trpc.blog.ai.generateOutline.useMutation();
   const generateDraftMutation = trpc.blog.ai.generateDraft.useMutation();
   const generateImageMutation = trpc.blog.ai.generateImage.useMutation();
+  const regenerateImageMutation = trpc.blog.ai.regenerateImage.useMutation();
   const complianceCheckMutation = trpc.blog.ai.complianceCheck.useMutation();
   const createPostMutation = trpc.blog.admin.create.useMutation();
 
@@ -206,9 +208,26 @@ export default function AIWizard({ token }: AIWizardProps) {
         }
       );
       setHeroImage({ url: result.url || "", altText: result.altText || "" });
+      if (result.generatedPrompt) {
+        setImagePrompt(result.generatedPrompt);
+      }
       setStep(6);
     } catch (err: any) {
       toast.error(err.message || "Image generation failed");
+    }
+  };
+
+  const handleRegenerateImage = async () => {
+    if (!imagePrompt.trim()) {
+      toast.error("Please enter an image prompt");
+      return;
+    }
+    try {
+      const result = await regenerateImageMutation.mutateAsync({ prompt: imagePrompt });
+      setHeroImage({ url: result.url, altText: heroImage?.altText || draft?.title || "Hero image" } as { url: string; altText: string });
+      toast.success("Image regenerated!");
+    } catch (err: any) {
+      toast.error(err.message || "Image regeneration failed");
     }
   };
 
@@ -630,18 +649,59 @@ export default function AIWizard({ token }: AIWizardProps) {
           <div className="space-y-5">
             <div>
               <h2 className="text-xl font-bold text-[#232020]">Hero Image</h2>
-              <p className="text-sm text-[#5C5C5C] mt-1">Review the generated hero image for your post.</p>
+              <p className="text-sm text-[#5C5C5C] mt-1">Review the generated hero image. Edit the prompt below to regenerate.</p>
             </div>
             {heroImage ? (
-              <div className="bg-white rounded-xl border border-[#E5E7EB] p-5">
+              <div className="bg-white rounded-xl border border-[#E5E7EB] p-5 space-y-4">
                 <img src={heroImage.url} alt={heroImage.altText} className="w-full h-64 object-cover rounded-xl" />
-                <p className="text-xs text-[#5C5C5C] mt-3">Alt text: {heroImage.altText}</p>
+                <p className="text-xs text-[#5C5C5C]">Alt text: {heroImage.altText}</p>
               </div>
             ) : (
               <div className="bg-white rounded-xl border border-[#E5E7EB] p-10 text-center">
-                <p className="text-[#9CA3AF]">No hero image generated. You can add one later in the editor.</p>
+                <p className="text-[#9CA3AF]">No hero image generated yet.</p>
               </div>
             )}
+
+            {/* Editable Image Prompt */}
+            <div className="bg-white rounded-xl border border-[#E5E7EB] p-5 space-y-3">
+              <Label className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider">Image Prompt (editable)</Label>
+              <Textarea
+                value={imagePrompt}
+                onChange={(e) => setImagePrompt(e.target.value)}
+                placeholder="Describe the image you want. E.g.: A senior woman hiking on a sunny mountain trail, wearing a smartwatch, smiling confidently..."
+                className="!bg-white border-[#E5E7EB] text-[#232020] min-h-[100px] text-sm"
+              />
+              <div className="flex gap-2">
+                <Button
+                  onClick={handleRegenerateImage}
+                  disabled={regenerateImageMutation.isPending || !imagePrompt.trim()}
+                  variant="outline"
+                  className="border-[#6AD990] text-[#232020] hover:bg-[#e8f5e9] rounded-lg"
+                >
+                  {regenerateImageMutation.isPending ? (
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                  ) : (
+                    <ImagePlus className="w-4 h-4 mr-2" />
+                  )}
+                  Regenerate Image
+                </Button>
+                {!heroImage && (
+                  <Button
+                    onClick={handleGenerateHeroImage}
+                    disabled={generateImageMutation.isPending}
+                    className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#232020] font-semibold rounded-lg shadow-none"
+                  >
+                    {generateImageMutation.isPending ? (
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    ) : (
+                      <Sparkles className="w-4 h-4 mr-2" />
+                    )}
+                    Generate with AI
+                  </Button>
+                )}
+              </div>
+            </div>
+
             <div className="flex gap-3 pt-2">
               <Button variant="outline" onClick={() => setStep(5)} className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back
