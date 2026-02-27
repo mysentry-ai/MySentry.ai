@@ -278,3 +278,10 @@
 - [x] Update site meta description to remove "StoryBrand-based" wording
 - [x] Spread blog post dates from December 1, 2025 to today (Feb 27, 2026)
 - [x] Sort admin blog list by date descending (latest first)
+
+## Blog Editor/CMS Fixes (Round 7)
+- [x] Fix Insert Link text box - text invisible (white on light gray)
+- [x] Fix link editing - allow modifying existing links without remove/re-add
+- [x] Fix hero image display in editor and preview - image cropped/not fully visible
+- [x] All "Start 7-Day Free Trial" links should go to Pricing page (already done)
+- [x] Add CTA styling ("Start your 7-day free trial today!") to WYSIWYG editor and preview - BlogCTA now appears in preview, indicator shown below editor

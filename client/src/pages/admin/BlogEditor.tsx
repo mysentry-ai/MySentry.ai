@@ -41,6 +41,7 @@ import {
   ImageIcon,
 } from "lucide-react";
 import { toast } from "sonner";
+import BlogCTA from "@/components/BlogCTA";
 
 interface BlogEditorProps {
   token: string;
@@ -479,7 +480,7 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
                 <img
                   src={heroImageUrl}
                   alt={heroImageAlt || "Hero image"}
-                  className="w-full h-72 object-cover rounded-xl border border-gray-100"
+                  className="w-full max-h-[500px] object-contain rounded-xl border border-gray-100 bg-gray-50"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl flex items-center justify-center gap-3">
                   <input type="file" accept="image/*" className="hidden" ref={heroReplaceInputRef} onChange={handleHeroImageUpload} />
@@ -592,6 +593,14 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
               }}
               onImageUpload={handleImageUpload}
             />
+          </div>
+
+          {/* CTA Preview Indicator */}
+          <div className="mt-4 rounded-xl border-2 border-dashed border-[#386758]/30 bg-[#386758]/5 p-6 text-center">
+            <p className="text-sm font-medium text-[#386758]">
+              ✦ "Start 7-Day Free Trial" CTA block will appear here on the published blog
+            </p>
+            <p className="text-xs text-gray-400 mt-1">Preview this post to see the full CTA</p>
           </div>
         </div>
 
@@ -873,7 +882,7 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
             <div className="flex-1 overflow-y-auto p-8 bg-white">
               <article className="max-w-3xl mx-auto">
                 {heroImageUrl && (
-                  <img src={heroImageUrl} alt={heroImageAlt} className="w-full h-72 object-cover rounded-xl mb-6" />
+                  <img src={heroImageUrl} alt={heroImageAlt} className="w-full max-h-[500px] object-contain rounded-xl mb-6 bg-gray-50" />
                 )}
                 <h1 className="text-4xl font-bold text-gray-900 mb-4">{title || "Untitled Post"}</h1>
                 {excerpt && <p className="text-lg text-gray-500 mb-6">{excerpt}</p>}
@@ -881,6 +890,8 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
                   className="prose prose-lg max-w-none blog-content"
                   dangerouslySetInnerHTML={{ __html: contentHtml }}
                 />
+                {/* CTA block - same as public blog */}
+                <BlogCTA />
               </article>
             </div>
           </div>

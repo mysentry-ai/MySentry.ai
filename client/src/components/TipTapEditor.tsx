@@ -381,23 +381,29 @@ export default function TipTapEditor({
 
       {/* Link Dialog */}
       <Dialog open={linkDialogOpen} onOpenChange={setLinkDialogOpen}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md bg-white">
           <DialogHeader>
-            <DialogTitle>Insert Link</DialogTitle>
+            <DialogTitle className="text-gray-900">Insert Link</DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
             <div>
-              <Label>URL</Label>
+              <Label className="text-gray-700">URL</Label>
               <Input
                 value={linkUrl}
                 onChange={(e) => setLinkUrl(e.target.value)}
                 placeholder="https://..."
-                className="bg-white"
+                className="bg-white text-gray-900 border-gray-300 placeholder:text-gray-400"
+                onKeyDown={(e) => { if (e.key === 'Enter') { e.preventDefault(); addLink(); } }}
               />
             </div>
+            {editor?.isActive('link') && (
+              <p className="text-xs text-gray-500">
+                Editing existing link. Change the URL above and click Apply.
+              </p>
+            )}
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setLinkDialogOpen(false)}>
+            <Button variant="outline" onClick={() => setLinkDialogOpen(false)} className="text-gray-700 border-gray-300 bg-white hover:bg-gray-50">
               Cancel
             </Button>
             <Button onClick={addLink} className="bg-[#386758] hover:bg-[#2d5446] text-white">
@@ -410,27 +416,27 @@ export default function TipTapEditor({
 
       {/* Image Dialog */}
       <Dialog open={imageDialogOpen} onOpenChange={setImageDialogOpen}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md bg-white">
           <DialogHeader>
-            <DialogTitle>Insert Image</DialogTitle>
+            <DialogTitle className="text-gray-900">Insert Image</DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
             <div>
-              <Label>Image URL</Label>
+              <Label className="text-gray-700">Image URL</Label>
               <Input
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
                 placeholder="https://..."
-                className="bg-white"
+                className="bg-white text-gray-900 border-gray-300 placeholder:text-gray-400"
               />
             </div>
             <div>
-              <Label>Alt Text (required for accessibility)</Label>
+              <Label className="text-gray-700">Alt Text (required for accessibility)</Label>
               <Input
                 value={imageAlt}
                 onChange={(e) => setImageAlt(e.target.value)}
                 placeholder="Describe the image..."
-                className="bg-white"
+                className="bg-white text-gray-900 border-gray-300 placeholder:text-gray-400"
               />
             </div>
             {onImageUpload && (
