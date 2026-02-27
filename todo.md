@@ -227,3 +227,14 @@
 - [x] Vitest tests for blog CRUD operations
 - [x] Vitest tests for admin auth
 - [x] Vitest tests for AI wizard endpoints
+
+## Blog Admin CMS Redesign
+- [x] Add /admin route redirect to /admin/blog
+- [x] Redesign admin login page - clean white/light green MySentry branding, high contrast, no dark theme
+- [x] Redesign blog list page - proper MySentry color scheme, polished table UX, no gray backgrounds
+- [x] Redesign blog editor - clean light theme, brand-consistent sidebar, readable inputs
+- [x] Redesign AI Wizard - fix ICP dropdown to show category-relevant options, clean light styling
+- [x] Redesign category manager page with brand consistency
+- [x] Redesign admin sidebar/layout with MySentry branding
+- [x] Hide chatbot widget on all admin pages
+- [x] Ensure all admin text is high contrast (black on white/light backgrounds)

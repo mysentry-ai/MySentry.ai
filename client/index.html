@@ -37,6 +37,8 @@
       const fontSize = isMobile ? 14 : 16;
       const starterPromptFontSize = isMobile ? 12 : 14;
       
+      // Do not initialize chatbot on admin pages
+      if (!window.location.pathname.startsWith('/admin')) {
       Chatbot.init({
         chatflowid: "343c9ce8-205b-434d-9c95-68737d97752e",
         apiHost: "https://flowise.zigron.com",
@@ -111,6 +113,7 @@
           }
         }
       })
+      }
     </script>
   </body>
 

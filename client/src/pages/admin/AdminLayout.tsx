@@ -14,7 +14,7 @@ import {
   LogOut,
   Menu,
   X,
-  LayoutDashboard,
+  ChevronRight,
 } from "lucide-react";
 
 export default function AdminLayout() {
@@ -22,8 +22,6 @@ export default function AdminLayout() {
   const [location, navigate] = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  // In nested routing context, useLocation returns paths relative to /admin/blog
-  // So "/" means /admin/blog, "/edit/17" means /admin/blog/edit/17, etc.
   const [isEditRoute, editParams] = useRoute("/edit/:id");
   const isNewPost = location === "/new";
   const isWizard = location === "/wizard";
@@ -32,8 +30,11 @@ export default function AdminLayout() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-spin w-8 h-8 border-4 border-[#386758] border-t-transparent rounded-full" />
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <div className="flex flex-col items-center gap-3">
+          <div className="w-10 h-10 border-3 border-[#6AD990] border-t-transparent rounded-full animate-spin" />
+          <span className="text-sm text-[#5C5C5C]">Loading...</span>
+        </div>
       </div>
     );
   }
@@ -58,41 +59,52 @@ export default function AdminLayout() {
     { href: "~/admin/blog/wizard", label: "AI Wizard", icon: Sparkles, active: isWizard },
   ];
 
+  // Get current page title
+  const currentPage = navItems.find((item) => item.active);
+
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-[#F8FAF9] flex">
       {/* Sidebar */}
       <aside
         className={`${
-          sidebarOpen ? "w-56" : "w-0 overflow-hidden"
-        } transition-all duration-200 bg-white border-r flex flex-col shrink-0`}
+          sidebarOpen ? "w-60" : "w-0 overflow-hidden"
+        } transition-all duration-200 bg-white border-r border-[#E5E7EB] flex flex-col shrink-0`}
       >
-        <div className="p-4 border-b">
-          <div className="flex items-center gap-2">
-            <LayoutDashboard className="w-5 h-5 text-[#386758]" />
-            <span className="font-bold text-gray-900">Blog Admin</span>
+        {/* Logo area */}
+        <div className="h-16 px-5 flex items-center border-b border-[#E5E7EB]">
+          <div className="flex items-center gap-2.5">
+            <img src="/favicon.svg" alt="MySentry" className="w-8 h-8" />
+            <div>
+              <span className="font-bold text-[#232020] text-sm">MySentry</span>
+              <span className="text-[#5C5C5C] text-xs block -mt-0.5">Blog CMS</span>
+            </div>
           </div>
         </div>
-        <nav className="flex-1 p-3 space-y-1">
+
+        {/* Navigation */}
+        <nav className="flex-1 px-3 py-4 space-y-1">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href}>
               <div
-                className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer ${
+                className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all cursor-pointer ${
                   item.active
-                    ? "bg-[#e8f5e9] text-[#386758]"
-                    : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                    ? "bg-[#e8f5e9] text-[#232020] shadow-sm"
+                    : "text-[#5C5C5C] hover:bg-[#F5F7F7] hover:text-[#232020]"
                 }`}
               >
-                <item.icon className="w-4 h-4" />
+                <item.icon className={`w-[18px] h-[18px] ${item.active ? "text-[#6AD990]" : ""}`} />
                 {item.label}
               </div>
             </Link>
           ))}
         </nav>
-        <div className="p-3 border-t">
+
+        {/* Sign out */}
+        <div className="px-3 py-3 border-t border-[#E5E7EB]">
           <Button
             variant="ghost"
             size="sm"
-            className="w-full justify-start text-gray-500 hover:text-red-600"
+            className="w-full justify-start text-[#5C5C5C] hover:text-red-600 hover:bg-red-50 rounded-lg"
             onClick={logout}
           >
             <LogOut className="w-4 h-4 mr-2" />
@@ -102,14 +114,26 @@ export default function AdminLayout() {
       </aside>
 
       {/* Main Content */}
-      <div className="flex-1 min-w-0">
-        <header className="bg-white border-b px-4 py-3 flex items-center gap-3">
-          <Button variant="ghost" size="sm" onClick={() => setSidebarOpen(!sidebarOpen)}>
+      <div className="flex-1 min-w-0 flex flex-col">
+        {/* Top bar */}
+        <header className="h-16 bg-white border-b border-[#E5E7EB] px-6 flex items-center gap-4 shrink-0">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="text-[#5C5C5C] hover:text-[#232020] hover:bg-[#F5F7F7] -ml-2"
+          >
             {sidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </Button>
-          <span className="text-sm text-gray-500">MySentry Blog CMS</span>
+          <div className="flex items-center gap-1.5 text-sm">
+            <span className="text-[#9CA3AF]">Admin</span>
+            <ChevronRight className="w-3.5 h-3.5 text-[#9CA3AF]" />
+            <span className="text-[#232020] font-medium">{currentPage?.label || "Blog CMS"}</span>
+          </div>
         </header>
-        <div className="p-6">
+
+        {/* Page content */}
+        <div className="flex-1 p-6 overflow-auto">
           {isList && <BlogList token={token} />}
           {isCategories && <CategoryManager token={token} />}
         </div>

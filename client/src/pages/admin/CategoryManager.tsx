@@ -5,14 +5,6 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import {
   Dialog,
   DialogContent,
   DialogHeader,
@@ -29,7 +21,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { Plus, Edit, Trash2 } from "lucide-react";
+import { Plus, Edit, Trash2, FolderOpen } from "lucide-react";
 import { toast } from "sonner";
 
 interface CategoryManagerProps {
@@ -124,70 +116,74 @@ export default function CategoryManager({ token }: CategoryManagerProps) {
     <div className="space-y-6">
       <div className="flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Categories</h1>
-          <p className="text-gray-500 text-sm mt-1">{categories.length} categories</p>
+          <h1 className="text-xl font-bold text-[#232020]">Categories</h1>
+          <p className="text-sm text-[#5C5C5C] mt-1">{categories.length} categories</p>
         </div>
-        <Button onClick={openCreate} className="bg-[#386758] hover:bg-[#2d5446] text-white">
-          <Plus className="w-4 h-4 mr-2" /> New Category
+        <Button
+          onClick={openCreate}
+          className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#232020] font-semibold rounded-lg shadow-none"
+        >
+          <Plus className="w-4 h-4 mr-1.5" /> New Category
         </Button>
       </div>
 
-      <div className="bg-white rounded-lg border overflow-hidden">
-        <Table>
-          <TableHeader>
-            <TableRow className="bg-gray-50">
-              <TableHead>Name</TableHead>
-              <TableHead>Slug</TableHead>
-              <TableHead className="hidden md:table-cell">Description</TableHead>
-              <TableHead className="w-24">Actions</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            {categories.length === 0 ? (
-              <TableRow>
-                <TableCell colSpan={4} className="text-center py-12 text-gray-400">
-                  No categories yet. Create your first category!
-                </TableCell>
-              </TableRow>
-            ) : (
-              categories.map((cat) => (
-                <TableRow key={cat.id}>
-                  <TableCell className="font-medium">{cat.name}</TableCell>
-                  <TableCell className="text-sm text-gray-500">{cat.slug}</TableCell>
-                  <TableCell className="hidden md:table-cell text-sm text-gray-500">
-                    {cat.description || "-"}
-                  </TableCell>
-                  <TableCell>
-                    <div className="flex gap-1">
-                      <Button variant="ghost" size="sm" onClick={() => openEdit(cat)}>
-                        <Edit className="w-4 h-4" />
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        className="text-red-500 hover:text-red-700"
-                        onClick={() => setDeleteId(cat.id)}
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </Button>
-                    </div>
-                  </TableCell>
-                </TableRow>
-              ))
-            )}
-          </TableBody>
-        </Table>
-      </div>
+      {categories.length === 0 ? (
+        <div className="bg-white rounded-xl border border-[#E5E7EB] p-12 text-center">
+          <FolderOpen className="w-10 h-10 text-[#D2D9D9] mx-auto mb-3" />
+          <p className="text-[#5C5C5C] font-medium">No categories yet</p>
+          <p className="text-sm text-[#9CA3AF] mt-1">Create your first category to organize blog posts.</p>
+        </div>
+      ) : (
+        <div className="grid gap-3">
+          {categories.map((cat) => (
+            <div
+              key={cat.id}
+              className="bg-white rounded-xl border border-[#E5E7EB] p-4 flex items-center justify-between hover:border-[#6AD990]/40 transition-colors"
+            >
+              <div className="flex items-center gap-4 min-w-0">
+                <div className="w-10 h-10 rounded-lg bg-[#e8f5e9] flex items-center justify-center shrink-0">
+                  <FolderOpen className="w-5 h-5 text-[#6AD990]" />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-[#232020] text-sm">{cat.name}</h3>
+                  <p className="text-xs text-[#9CA3AF] mt-0.5">/{cat.slug}</p>
+                  {cat.description && (
+                    <p className="text-xs text-[#5C5C5C] mt-1 truncate max-w-md">{cat.description}</p>
+                  )}
+                </div>
+              </div>
+              <div className="flex items-center gap-1 shrink-0">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => openEdit(cat)}
+                  className="text-[#5C5C5C] hover:text-[#232020] hover:bg-[#F5F7F7] rounded-lg"
+                >
+                  <Edit className="w-4 h-4" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="text-[#5C5C5C] hover:text-red-600 hover:bg-red-50 rounded-lg"
+                  onClick={() => setDeleteId(cat.id)}
+                >
+                  <Trash2 className="w-4 h-4" />
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Create/Edit Dialog */}
       <Dialog open={editDialog} onOpenChange={closeDialog}>
-        <DialogContent>
+        <DialogContent className="bg-white border-[#E5E7EB] rounded-xl">
           <DialogHeader>
-            <DialogTitle>{editId ? "Edit Category" : "New Category"}</DialogTitle>
+            <DialogTitle className="text-[#232020]">{editId ? "Edit Category" : "New Category"}</DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
             <div>
-              <Label>Name</Label>
+              <Label className="text-sm font-semibold text-[#232020]">Name</Label>
               <Input
                 value={name}
                 onChange={(e) => {
@@ -197,32 +193,34 @@ export default function CategoryManager({ token }: CategoryManagerProps) {
                   }
                 }}
                 placeholder="e.g., Safety Tips"
-                className="bg-white"
+                className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
               />
             </div>
             <div>
-              <Label>Slug</Label>
+              <Label className="text-sm font-semibold text-[#232020]">Slug</Label>
               <Input
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
                 placeholder="e.g., safety-tips"
-                className="bg-white"
+                className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
               />
             </div>
             <div>
-              <Label>Description (optional)</Label>
+              <Label className="text-sm font-semibold text-[#232020]">Description (optional)</Label>
               <Textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Brief description..."
-                className="bg-white"
+                className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
                 rows={2}
               />
             </div>
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={closeDialog}>Cancel</Button>
-            <Button onClick={handleSave} className="bg-[#386758] hover:bg-[#2d5446] text-white">
+            <Button variant="outline" onClick={closeDialog} className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">
+              Cancel
+            </Button>
+            <Button onClick={handleSave} className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#232020] font-semibold rounded-lg shadow-none">
               {editId ? "Update" : "Create"}
             </Button>
           </DialogFooter>
@@ -231,18 +229,18 @@ export default function CategoryManager({ token }: CategoryManagerProps) {
 
       {/* Delete Confirmation */}
       <AlertDialog open={deleteId !== null} onOpenChange={() => setDeleteId(null)}>
-        <AlertDialogContent>
+        <AlertDialogContent className="bg-white border-[#E5E7EB] rounded-xl">
           <AlertDialogHeader>
-            <AlertDialogTitle>Delete Category</AlertDialogTitle>
-            <AlertDialogDescription>
+            <AlertDialogTitle className="text-[#232020]">Delete Category</AlertDialogTitle>
+            <AlertDialogDescription className="text-[#5C5C5C]">
               Posts in this category will become uncategorized. This action cannot be undone.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel className="bg-white border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">Cancel</AlertDialogCancel>
             <AlertDialogAction
               onClick={() => deleteId && deleteMutation.mutate({ id: deleteId }, { trpc: { context: { headers } } } as any)}
-              className="bg-red-600 hover:bg-red-700"
+              className="bg-red-600 hover:bg-red-700 text-white rounded-lg"
             >
               Delete
             </AlertDialogAction>

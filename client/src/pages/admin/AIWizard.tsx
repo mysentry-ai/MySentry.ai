@@ -5,9 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import {
   Select,
   SelectContent,
@@ -36,26 +34,53 @@ interface AIWizardProps {
 }
 
 const STEPS = [
-  { id: 1, title: "Topic Setup", icon: Lightbulb, description: "Define your topic and audience" },
-  { id: 2, title: "AI Topics", icon: Sparkles, description: "Choose from AI-suggested topics" },
-  { id: 3, title: "Outline", icon: FileText, description: "Review and edit the outline" },
-  { id: 4, title: "Draft", icon: PenTool, description: "Generate the full article" },
-  { id: 5, title: "SEO Pack", icon: Search, description: "Auto-generate SEO metadata" },
-  { id: 6, title: "Images", icon: ImagePlus, description: "Generate hero and inline images" },
-  { id: 7, title: "Review", icon: ShieldCheck, description: "Compliance check and publish" },
+  { id: 1, title: "Setup", icon: Lightbulb },
+  { id: 2, title: "Topics", icon: Sparkles },
+  { id: 3, title: "Outline", icon: FileText },
+  { id: 4, title: "Draft", icon: PenTool },
+  { id: 5, title: "SEO", icon: Search },
+  { id: 6, title: "Images", icon: ImagePlus },
+  { id: 7, title: "Publish", icon: ShieldCheck },
 ];
 
-const ICP_OPTIONS = [
-  "Seniors living independently",
-  "Adult children caring for aging parents",
-  "Families with elderly members",
-  "Solo hikers, runners, and outdoor enthusiasts",
-  "Women concerned about personal safety",
-  "Lone workers in remote or hazardous environments",
-  "Employers managing remote workforce safety",
-  "Healthcare providers and home health agencies",
-  "Safety-conscious individuals",
-];
+// Category-specific ICP options
+const ICP_BY_CATEGORY: Record<string, string[]> = {
+  "Senior Care": [
+    "Seniors living independently",
+    "Adult children caring for aging parents",
+    "Families with elderly members",
+    "Home health aides and caregivers",
+    "Assisted living facility managers",
+  ],
+  "Women's Safety": [
+    "Women living alone",
+    "Women who commute or travel solo",
+    "College-age women",
+    "Women in urban environments",
+    "Parents of young women",
+  ],
+  "Workplace Safety": [
+    "Lone workers in remote or hazardous environments",
+    "Employers managing remote workforce safety",
+    "Construction and field workers",
+    "Healthcare workers on home visits",
+    "Warehouse and logistics workers",
+  ],
+  "Outdoor & Active": [
+    "Solo hikers and trail runners",
+    "Outdoor adventure enthusiasts",
+    "Cyclists and mountain bikers",
+    "Runners training alone",
+    "Backcountry skiers and climbers",
+  ],
+  General: [
+    "Safety-conscious individuals",
+    "Families wanting peace of mind",
+    "People with chronic health conditions",
+    "First responders and their families",
+    "Frequent travelers",
+  ],
+};
 
 const GOAL_OPTIONS = [
   "Drive trial signups",
@@ -84,11 +109,8 @@ export default function AIWizard({ token }: AIWizardProps) {
   const [outlineText, setOutlineText] = useState("");
 
   const [draft, setDraft] = useState<any>(null);
-
   const [seo, setSeo] = useState<any>(null);
-
   const [heroImage, setHeroImage] = useState<{ url: string; altText: string } | null>(null);
-
   const [complianceResult, setComplianceResult] = useState<any>(null);
 
   const categoriesQuery = trpc.blog.categories.list.useQuery(undefined, {
@@ -98,13 +120,24 @@ export default function AIWizard({ token }: AIWizardProps) {
   const suggestTopicsMutation = trpc.blog.ai.suggestTopics.useMutation();
   const generateOutlineMutation = trpc.blog.ai.generateOutline.useMutation();
   const generateDraftMutation = trpc.blog.ai.generateDraft.useMutation();
-  const generateSEOMutation = trpc.blog.ai.generateSEO.useMutation();
   const generateImageMutation = trpc.blog.ai.generateImage.useMutation();
   const complianceCheckMutation = trpc.blog.ai.complianceCheck.useMutation();
   const createPostMutation = trpc.blog.admin.create.useMutation();
 
   const categories = categoriesQuery.data || [];
   const progress = (step / STEPS.length) * 100;
+
+  // Get ICP options based on selected category
+  const icpOptions = useMemo(() => {
+    if (!category) return ICP_BY_CATEGORY["General"];
+    return ICP_BY_CATEGORY[category] || ICP_BY_CATEGORY["General"];
+  }, [category]);
+
+  // Reset ICP when category changes
+  const handleCategoryChange = (val: string) => {
+    setCategory(val);
+    setIcp(""); // Reset ICP when category changes
+  };
 
   const handleSuggestTopics = async () => {
     if (!category || !icp || !goal) {
@@ -137,7 +170,7 @@ export default function AIWizard({ token }: AIWizardProps) {
       setOutline(result.outline || []);
       setOutlineText(
         (result.outline || [])
-          .map((item: any) => `${item.level === "H3" ? "  " : ""}${item.heading} — ${item.notes}`)
+          .map((item: any) => `${item.level === "H3" ? "  " : ""}${item.heading} - ${item.notes}`)
           .join("\n")
       );
       setStep(3);
@@ -162,12 +195,8 @@ export default function AIWizard({ token }: AIWizardProps) {
 
   const handleGenerateSEO = async () => {
     if (!draft) return;
-    try {
-      setSeo(draft.seo);
-      setStep(5);
-    } catch (err: any) {
-      toast.error(err.message || "Failed");
-    }
+    setSeo(draft.seo);
+    setStep(5);
   };
 
   const handleGenerateHeroImage = async () => {
@@ -237,48 +266,57 @@ export default function AIWizard({ token }: AIWizardProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#F8FAF9]">
       {/* Header */}
-      <div className="bg-white border-b px-6 py-4">
-        <div className="max-w-5xl mx-auto flex items-center justify-between">
+      <div className="bg-white border-b border-[#E5E7EB] px-6 py-4">
+        <div className="max-w-4xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" onClick={() => navigate("~/admin/blog")}>
-              <ArrowLeft className="w-4 h-4 mr-1" /> Back
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate("~/admin/blog")}
+              className="text-[#5C5C5C] hover:text-[#232020] hover:bg-[#F5F7F7] rounded-lg"
+            >
+              <ArrowLeft className="w-4 h-4 mr-1.5" /> Back
             </Button>
+            <div className="h-5 w-px bg-[#E5E7EB]" />
             <div>
-              <h1 className="text-lg font-bold text-gray-900 flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-[#4CAF50]" />
+              <h1 className="text-lg font-bold text-[#232020] flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-[#6AD990]" />
                 AI Blog Wizard
               </h1>
-              <p className="text-sm text-gray-500">Step {step} of {STEPS.length}: {STEPS[step - 1].title}</p>
             </div>
           </div>
-        </div>
-        <div className="max-w-5xl mx-auto mt-3">
-          <Progress value={progress} className="h-1.5" />
+          <span className="text-sm text-[#5C5C5C]">Step {step} of {STEPS.length}</span>
         </div>
       </div>
 
-      {/* Step indicators */}
-      <div className="bg-white border-b px-6 py-3 overflow-x-auto">
-        <div className="max-w-5xl mx-auto flex gap-1">
-          {STEPS.map((s) => (
-            <button
-              key={s.id}
-              onClick={() => s.id <= step && setStep(s.id)}
-              disabled={s.id > step}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                s.id === step
-                  ? "bg-[#386758] text-white"
-                  : s.id < step
-                  ? "bg-[#e8f5e9] text-[#386758] cursor-pointer hover:bg-[#c8e6c9]"
-                  : "bg-gray-100 text-gray-400 cursor-not-allowed"
-              }`}
-            >
-              {s.id < step ? <Check className="w-3 h-3" /> : <s.icon className="w-3 h-3" />}
-              {s.title}
-            </button>
-          ))}
+      {/* Step Progress Bar */}
+      <div className="bg-white border-b border-[#E5E7EB] px-6 py-3">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-center gap-1">
+            {STEPS.map((s, i) => (
+              <div key={s.id} className="flex items-center flex-1">
+                <button
+                  onClick={() => s.id <= step && setStep(s.id)}
+                  disabled={s.id > step}
+                  className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all w-full justify-center ${
+                    s.id === step
+                      ? "bg-[#6AD990] text-[#232020]"
+                      : s.id < step
+                      ? "bg-[#e8f5e9] text-[#232020] cursor-pointer hover:bg-[#d0ebd6]"
+                      : "bg-[#F5F7F7] text-[#9CA3AF] cursor-not-allowed"
+                  }`}
+                >
+                  {s.id < step ? <Check className="w-3.5 h-3.5" /> : <s.icon className="w-3.5 h-3.5" />}
+                  <span className="hidden sm:inline">{s.title}</span>
+                </button>
+                {i < STEPS.length - 1 && (
+                  <div className={`w-4 h-0.5 mx-0.5 shrink-0 ${s.id < step ? "bg-[#6AD990]" : "bg-[#E5E7EB]"}`} />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -287,133 +325,141 @@ export default function AIWizard({ token }: AIWizardProps) {
         {/* Step 1: Topic Setup */}
         {step === 1 && (
           <div className="space-y-6">
-            <Card>
-              <CardContent className="p-6 space-y-5">
-                <div>
-                  <Label className="font-medium">Category</Label>
-                  <Select value={category} onValueChange={setCategory}>
-                    <SelectTrigger className="mt-1 bg-white">
-                      <SelectValue placeholder="Select a category" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {categories.map((cat) => (
-                        <SelectItem key={cat.id} value={cat.name}>
-                          {cat.name}
-                        </SelectItem>
-                      ))}
-                      <SelectItem value="General">General</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
+            <div>
+              <h2 className="text-xl font-bold text-[#232020]">Define Your Topic</h2>
+              <p className="text-sm text-[#5C5C5C] mt-1">Set the category, audience, and goal to generate relevant topic ideas.</p>
+            </div>
 
-                <div>
-                  <Label className="font-medium">Target Audience (ICP)</Label>
-                  <Select value={icp} onValueChange={setIcp}>
-                    <SelectTrigger className="mt-1 bg-white">
-                      <SelectValue placeholder="Who is this for?" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {ICP_OPTIONS.map((opt) => (
-                        <SelectItem key={opt} value={opt}>
-                          {opt}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
+            <div className="bg-white rounded-xl border border-[#E5E7EB] p-6 space-y-5">
+              <div>
+                <Label className="text-sm font-semibold text-[#232020]">Category</Label>
+                <Select value={category} onValueChange={handleCategoryChange}>
+                  <SelectTrigger className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] rounded-lg">
+                    <SelectValue placeholder="Select a category" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-[#E5E7EB]">
+                    {categories.map((cat) => (
+                      <SelectItem key={cat.id} value={cat.name}>
+                        {cat.name}
+                      </SelectItem>
+                    ))}
+                    <SelectItem value="General">General</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
 
-                <div>
-                  <Label className="font-medium">Primary Goal</Label>
-                  <Select value={goal} onValueChange={setGoal}>
-                    <SelectTrigger className="mt-1 bg-white">
-                      <SelectValue placeholder="What's the goal?" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {GOAL_OPTIONS.map((opt) => (
-                        <SelectItem key={opt} value={opt}>
-                          {opt}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
+              <div>
+                <Label className="text-sm font-semibold text-[#232020]">Target Audience (ICP)</Label>
+                <Select value={icp} onValueChange={setIcp}>
+                  <SelectTrigger className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] rounded-lg">
+                    <SelectValue placeholder="Who is this for?" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-[#E5E7EB]">
+                    {icpOptions.map((opt) => (
+                      <SelectItem key={opt} value={opt}>
+                        {opt}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                {category && (
+                  <p className="text-xs text-[#9CA3AF] mt-1.5">Showing audience options for {category}</p>
+                )}
+              </div>
 
-                <div>
-                  <Label className="font-medium">Or enter a specific topic</Label>
-                  <Input
-                    value={customTopic}
-                    onChange={(e) => setCustomTopic(e.target.value)}
-                    placeholder="e.g., How Fall Detection Saves Lives for Solo Hikers"
-                    className="mt-1 bg-white"
-                  />
-                </div>
+              <div>
+                <Label className="text-sm font-semibold text-[#232020]">Primary Goal</Label>
+                <Select value={goal} onValueChange={setGoal}>
+                  <SelectTrigger className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] rounded-lg">
+                    <SelectValue placeholder="What's the goal?" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-[#E5E7EB]">
+                    {GOAL_OPTIONS.map((opt) => (
+                      <SelectItem key={opt} value={opt}>
+                        {opt}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
 
-                <div className="flex gap-3 pt-2">
-                  <Button
-                    onClick={handleSuggestTopics}
-                    disabled={suggestTopicsMutation.isPending}
-                    className="bg-[#386758] hover:bg-[#2d5446] text-white"
-                  >
-                    {suggestTopicsMutation.isPending ? (
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                    ) : (
-                      <Sparkles className="w-4 h-4 mr-2" />
-                    )}
-                    Suggest 10 Topics
-                  </Button>
-                  {customTopic && (
-                    <Button
-                      variant="outline"
-                      onClick={() => { setSelectedTopic(customTopic); setStep(2); handleGenerateOutline(); }}
-                    >
-                      <ArrowRight className="w-4 h-4 mr-2" />
-                      Skip to Outline
-                    </Button>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
+              <div className="pt-2 border-t border-[#E5E7EB]">
+                <Label className="text-sm font-semibold text-[#232020]">Or enter a specific topic</Label>
+                <Input
+                  value={customTopic}
+                  onChange={(e) => setCustomTopic(e.target.value)}
+                  placeholder="e.g., How Fall Detection Saves Lives for Solo Hikers"
+                  className="mt-1.5 bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
+                />
+              </div>
+            </div>
+
+            <div className="flex gap-3">
+              <Button
+                onClick={handleSuggestTopics}
+                disabled={suggestTopicsMutation.isPending}
+                className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#232020] font-semibold rounded-lg shadow-none"
+              >
+                {suggestTopicsMutation.isPending ? (
+                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                ) : (
+                  <Sparkles className="w-4 h-4 mr-2" />
+                )}
+                Suggest 10 Topics
+              </Button>
+              {customTopic && (
+                <Button
+                  variant="outline"
+                  onClick={() => { setSelectedTopic(customTopic); handleGenerateOutline(); }}
+                  className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg"
+                >
+                  Skip to Outline <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+              )}
+            </div>
           </div>
         )}
 
         {/* Step 2: Topic Selection */}
         {step === 2 && (
-          <div className="space-y-4">
-            <h2 className="text-xl font-bold text-gray-900">Choose a Topic</h2>
-            <p className="text-gray-500">Select one of the AI-suggested topics or use your own.</p>
+          <div className="space-y-5">
+            <div>
+              <h2 className="text-xl font-bold text-[#232020]">Choose a Topic</h2>
+              <p className="text-sm text-[#5C5C5C] mt-1">Select one of the AI-suggested topics or use your own.</p>
+            </div>
             <div className="grid gap-3">
               {suggestedTopics.map((topic, i) => (
-                <Card
+                <button
                   key={i}
-                  className={`cursor-pointer transition-all hover:shadow-md ${
-                    selectedTopic === topic.title ? "ring-2 ring-[#386758] bg-[#e8f5e9]/30" : ""
-                  }`}
                   onClick={() => setSelectedTopic(topic.title)}
+                  className={`w-full text-left p-4 rounded-xl border transition-all ${
+                    selectedTopic === topic.title
+                      ? "border-[#6AD990] bg-[#e8f5e9]/40"
+                      : "border-[#E5E7EB] bg-white hover:border-[#6AD990]/50"
+                  }`}
                 >
-                  <CardContent className="p-4">
-                    <div className="flex items-start gap-3">
-                      <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center mt-0.5 ${
-                        selectedTopic === topic.title ? "border-[#386758] bg-[#386758]" : "border-gray-300"
-                      }`}>
-                        {selectedTopic === topic.title && <Check className="w-3 h-3 text-white" />}
-                      </div>
-                      <div>
-                        <h3 className="font-medium text-gray-900">{topic.title}</h3>
-                        <p className="text-sm text-gray-500 mt-1">{topic.description}</p>
-                      </div>
+                  <div className="flex items-start gap-3">
+                    <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mt-0.5 shrink-0 ${
+                      selectedTopic === topic.title ? "border-[#6AD990] bg-[#6AD990]" : "border-[#D2D9D9]"
+                    }`}>
+                      {selectedTopic === topic.title && <Check className="w-3 h-3 text-white" />}
                     </div>
-                  </CardContent>
-                </Card>
+                    <div>
+                      <h3 className="font-semibold text-[#232020] text-sm">{topic.title}</h3>
+                      <p className="text-xs text-[#5C5C5C] mt-1">{topic.description}</p>
+                    </div>
+                  </div>
+                </button>
               ))}
             </div>
-            <div className="flex gap-3 pt-4">
-              <Button variant="outline" onClick={() => setStep(1)}>
+            <div className="flex gap-3 pt-2">
+              <Button variant="outline" onClick={() => setStep(1)} className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back
               </Button>
               <Button
                 onClick={handleGenerateOutline}
                 disabled={!selectedTopic || generateOutlineMutation.isPending}
-                className="bg-[#386758] hover:bg-[#2d5446] text-white"
+                className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#232020] font-semibold rounded-lg shadow-none"
               >
                 {generateOutlineMutation.isPending ? (
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />
@@ -428,39 +474,39 @@ export default function AIWizard({ token }: AIWizardProps) {
 
         {/* Step 3: Outline */}
         {step === 3 && (
-          <div className="space-y-4">
-            <h2 className="text-xl font-bold text-gray-900">Review Outline</h2>
-            <p className="text-gray-500">Edit the outline before generating the full draft.</p>
-            <Card>
-              <CardContent className="p-4">
-                {outline.map((item, i) => (
-                  <div key={i} className={`py-2 ${item.level === "H3" ? "pl-6" : ""}`}>
-                    <div className="flex items-center gap-2">
-                      <Badge variant="outline" className="text-xs">{item.level}</Badge>
-                      <span className="font-medium text-gray-900">{item.heading}</span>
-                    </div>
-                    <p className="text-sm text-gray-500 mt-1 ml-12">{item.notes}</p>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
+          <div className="space-y-5">
             <div>
-              <Label className="font-medium">Edit outline (plain text)</Label>
+              <h2 className="text-xl font-bold text-[#232020]">Review Outline</h2>
+              <p className="text-sm text-[#5C5C5C] mt-1">Edit the outline before generating the full draft.</p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#E5E7EB] p-5">
+              {outline.map((item, i) => (
+                <div key={i} className={`py-2.5 ${item.level === "H3" ? "pl-6" : ""} ${i > 0 ? "border-t border-[#F5F7F7]" : ""}`}>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold text-[#9CA3AF] bg-[#F5F7F7] px-1.5 py-0.5 rounded">{item.level}</span>
+                    <span className="font-semibold text-[#232020] text-sm">{item.heading}</span>
+                  </div>
+                  <p className="text-xs text-[#5C5C5C] mt-1 ml-10">{item.notes}</p>
+                </div>
+              ))}
+            </div>
+            <div>
+              <Label className="text-sm font-semibold text-[#232020]">Edit outline (plain text)</Label>
               <Textarea
                 value={outlineText}
                 onChange={(e) => setOutlineText(e.target.value)}
-                className="mt-1 bg-white font-mono text-sm"
+                className="mt-1.5 bg-white border-[#E5E7EB] text-[#232020] font-mono text-sm rounded-lg"
                 rows={10}
               />
             </div>
-            <div className="flex gap-3 pt-4">
-              <Button variant="outline" onClick={() => setStep(2)}>
+            <div className="flex gap-3 pt-2">
+              <Button variant="outline" onClick={() => setStep(2)} className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back
               </Button>
               <Button
                 onClick={handleGenerateDraft}
                 disabled={generateDraftMutation.isPending}
-                className="bg-[#386758] hover:bg-[#2d5446] text-white"
+                className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#232020] font-semibold rounded-lg shadow-none"
               >
                 {generateDraftMutation.isPending ? (
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />
@@ -475,38 +521,37 @@ export default function AIWizard({ token }: AIWizardProps) {
 
         {/* Step 4: Draft Review */}
         {step === 4 && draft && (
-          <div className="space-y-4">
-            <h2 className="text-xl font-bold text-gray-900">Review Draft</h2>
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{draft.title}</h3>
-                <p className="text-gray-500 italic mb-4">{draft.excerpt}</p>
-                <div
-                  className="prose prose-lg max-w-none"
-                  dangerouslySetInnerHTML={{ __html: draft.content_html }}
-                />
-              </CardContent>
-            </Card>
+          <div className="space-y-5">
+            <div>
+              <h2 className="text-xl font-bold text-[#232020]">Review Draft</h2>
+              <p className="text-sm text-[#5C5C5C] mt-1">Review the generated article before proceeding.</p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#E5E7EB] p-6">
+              <h3 className="text-2xl font-bold text-[#232020] mb-2">{draft.title}</h3>
+              <p className="text-[#5C5C5C] italic mb-4 text-sm">{draft.excerpt}</p>
+              <div
+                className="prose prose-sm max-w-none text-[#232020]"
+                dangerouslySetInnerHTML={{ __html: draft.content_html }}
+              />
+            </div>
             {draft.internal_links?.length > 0 && (
-              <Card>
-                <CardContent className="p-4">
-                  <h4 className="font-medium text-gray-900 mb-2">Suggested Internal Links</h4>
-                  {draft.internal_links.map((link: any, i: number) => (
-                    <div key={i} className="text-sm py-1">
-                      <span className="text-[#4CAF50] font-medium">{link.anchor_text}</span>
-                      <span className="text-gray-400 ml-2">{link.url}</span>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
+              <div className="bg-white rounded-xl border border-[#E5E7EB] p-5">
+                <h4 className="font-semibold text-[#232020] text-sm mb-3">Suggested Internal Links</h4>
+                {draft.internal_links.map((link: any, i: number) => (
+                  <div key={i} className="text-sm py-1.5 flex items-center gap-2">
+                    <span className="text-[#6AD990] font-medium">{link.anchor_text}</span>
+                    <span className="text-[#9CA3AF]">{link.url}</span>
+                  </div>
+                ))}
+              </div>
             )}
-            <div className="flex gap-3 pt-4">
-              <Button variant="outline" onClick={() => setStep(3)}>
+            <div className="flex gap-3 pt-2">
+              <Button variant="outline" onClick={() => setStep(3)} className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back
               </Button>
               <Button
                 onClick={handleGenerateSEO}
-                className="bg-[#386758] hover:bg-[#2d5446] text-white"
+                className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#232020] font-semibold rounded-lg shadow-none"
               >
                 <ArrowRight className="w-4 h-4 mr-2" />
                 Continue to SEO
@@ -517,56 +562,59 @@ export default function AIWizard({ token }: AIWizardProps) {
 
         {/* Step 5: SEO Pack */}
         {step === 5 && seo && (
-          <div className="space-y-4">
-            <h2 className="text-xl font-bold text-gray-900">SEO Pack</h2>
-            <Card>
-              <CardContent className="p-6 space-y-4">
-                <div>
-                  <Label className="text-sm text-gray-500">Meta Title</Label>
-                  <p className="font-medium">{seo.meta_title}</p>
+          <div className="space-y-5">
+            <div>
+              <h2 className="text-xl font-bold text-[#232020]">SEO Pack</h2>
+              <p className="text-sm text-[#5C5C5C] mt-1">Auto-generated SEO metadata for your post.</p>
+            </div>
+            <div className="bg-white rounded-xl border border-[#E5E7EB] p-6 space-y-5">
+              <div>
+                <Label className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider">Meta Title</Label>
+                <p className="font-semibold text-[#232020] mt-1">{seo.meta_title}</p>
+              </div>
+              <div>
+                <Label className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider">Meta Description</Label>
+                <p className="text-sm text-[#232020] mt-1">{seo.meta_description}</p>
+              </div>
+              <div>
+                <Label className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider">Focus Keyword</Label>
+                <div className="mt-1">
+                  <Badge className="bg-[#e8f5e9] text-[#232020] border-0 rounded-md">{seo.focus_keyword}</Badge>
                 </div>
-                <div>
-                  <Label className="text-sm text-gray-500">Meta Description</Label>
-                  <p className="text-sm text-gray-700">{seo.meta_description}</p>
+              </div>
+              <div>
+                <Label className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider">Secondary Keywords</Label>
+                <div className="flex flex-wrap gap-1.5 mt-1.5">
+                  {seo.secondary_keywords?.map((kw: string, i: number) => (
+                    <Badge key={i} variant="outline" className="text-xs text-[#5C5C5C] border-[#E5E7EB] rounded-md">{kw}</Badge>
+                  ))}
                 </div>
-                <div>
-                  <Label className="text-sm text-gray-500">Focus Keyword</Label>
-                  <Badge className="bg-[#e8f5e9] text-[#386758]">{seo.focus_keyword}</Badge>
+              </div>
+              <div>
+                <Label className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider">Tags</Label>
+                <div className="flex flex-wrap gap-1.5 mt-1.5">
+                  {seo.tags?.map((tag: string, i: number) => (
+                    <Badge key={i} className="text-xs bg-[#F5F7F7] text-[#232020] border-0 rounded-md">{tag}</Badge>
+                  ))}
                 </div>
-                <div>
-                  <Label className="text-sm text-gray-500">Secondary Keywords</Label>
-                  <div className="flex flex-wrap gap-1 mt-1">
-                    {seo.secondary_keywords?.map((kw: string, i: number) => (
-                      <Badge key={i} variant="outline" className="text-xs">{kw}</Badge>
-                    ))}
-                  </div>
+              </div>
+              <div>
+                <Label className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider">Slug Suggestions</Label>
+                <div className="space-y-1 mt-1.5">
+                  {seo.slug_suggestions?.map((slug: string, i: number) => (
+                    <p key={i} className="text-sm text-[#232020] font-mono bg-[#F5F7F7] px-3 py-1.5 rounded-lg">/blog/{slug}</p>
+                  ))}
                 </div>
-                <div>
-                  <Label className="text-sm text-gray-500">Tags</Label>
-                  <div className="flex flex-wrap gap-1 mt-1">
-                    {seo.tags?.map((tag: string, i: number) => (
-                      <Badge key={i} variant="secondary" className="text-xs">{tag}</Badge>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <Label className="text-sm text-gray-500">Slug Suggestions</Label>
-                  <div className="space-y-1 mt-1">
-                    {seo.slug_suggestions?.map((slug: string, i: number) => (
-                      <p key={i} className="text-sm font-mono text-gray-600">/blog/{slug}</p>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-            <div className="flex gap-3 pt-4">
-              <Button variant="outline" onClick={() => setStep(4)}>
+              </div>
+            </div>
+            <div className="flex gap-3 pt-2">
+              <Button variant="outline" onClick={() => setStep(4)} className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back
               </Button>
               <Button
                 onClick={handleGenerateHeroImage}
                 disabled={generateImageMutation.isPending}
-                className="bg-[#386758] hover:bg-[#2d5446] text-white"
+                className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#232020] font-semibold rounded-lg shadow-none"
               >
                 {generateImageMutation.isPending ? (
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />
@@ -578,6 +626,7 @@ export default function AIWizard({ token }: AIWizardProps) {
               <Button
                 variant="outline"
                 onClick={() => { setStep(6); handleComplianceCheck(); }}
+                className="border-[#E5E7EB] text-[#5C5C5C] hover:bg-[#F5F7F7] rounded-lg"
               >
                 Skip Image <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
@@ -587,30 +636,29 @@ export default function AIWizard({ token }: AIWizardProps) {
 
         {/* Step 6: Images */}
         {step === 6 && (
-          <div className="space-y-4">
-            <h2 className="text-xl font-bold text-gray-900">Hero Image</h2>
+          <div className="space-y-5">
+            <div>
+              <h2 className="text-xl font-bold text-[#232020]">Hero Image</h2>
+              <p className="text-sm text-[#5C5C5C] mt-1">Review the generated hero image for your post.</p>
+            </div>
             {heroImage ? (
-              <Card>
-                <CardContent className="p-4">
-                  <img src={heroImage.url} alt={heroImage.altText} className="w-full h-64 object-cover rounded-lg" />
-                  <p className="text-sm text-gray-500 mt-2">Alt: {heroImage.altText}</p>
-                </CardContent>
-              </Card>
+              <div className="bg-white rounded-xl border border-[#E5E7EB] p-5">
+                <img src={heroImage.url} alt={heroImage.altText} className="w-full h-64 object-cover rounded-xl" />
+                <p className="text-xs text-[#5C5C5C] mt-3">Alt text: {heroImage.altText}</p>
+              </div>
             ) : (
-              <Card>
-                <CardContent className="p-8 text-center">
-                  <p className="text-gray-400">No hero image generated. You can add one later in the editor.</p>
-                </CardContent>
-              </Card>
+              <div className="bg-white rounded-xl border border-[#E5E7EB] p-10 text-center">
+                <p className="text-[#9CA3AF]">No hero image generated. You can add one later in the editor.</p>
+              </div>
             )}
-            <div className="flex gap-3 pt-4">
-              <Button variant="outline" onClick={() => setStep(5)}>
+            <div className="flex gap-3 pt-2">
+              <Button variant="outline" onClick={() => setStep(5)} className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back
               </Button>
               <Button
                 onClick={handleComplianceCheck}
                 disabled={complianceCheckMutation.isPending}
-                className="bg-[#386758] hover:bg-[#2d5446] text-white"
+                className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#232020] font-semibold rounded-lg shadow-none"
               >
                 {complianceCheckMutation.isPending ? (
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />
@@ -625,60 +673,60 @@ export default function AIWizard({ token }: AIWizardProps) {
 
         {/* Step 7: Review & Publish */}
         {step === 7 && (
-          <div className="space-y-4">
-            <h2 className="text-xl font-bold text-gray-900">Final Review</h2>
+          <div className="space-y-5">
+            <div>
+              <h2 className="text-xl font-bold text-[#232020]">Final Review</h2>
+              <p className="text-sm text-[#5C5C5C] mt-1">Review compliance results and publish your post.</p>
+            </div>
 
             {complianceResult && (
-              <Card>
-                <CardContent className="p-4 space-y-3">
-                  <h3 className="font-medium text-gray-900">Compliance Checks</h3>
-                  {complianceResult.checks?.map((check: any, i: number) => (
-                    <div key={i} className="flex items-center gap-3 py-1">
-                      <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
-                        check.passed ? "bg-green-100 text-green-600" : "bg-red-100 text-red-600"
-                      }`}>
-                        {check.passed ? <Check className="w-3 h-3" /> : "!"}
-                      </div>
-                      <div>
-                        <span className="font-medium text-sm">{check.name}</span>
-                        <p className="text-xs text-gray-500">{check.message}</p>
-                      </div>
+              <div className="bg-white rounded-xl border border-[#E5E7EB] p-5 space-y-3">
+                <h3 className="font-semibold text-[#232020] text-sm">Compliance Checks</h3>
+                {complianceResult.checks?.map((check: any, i: number) => (
+                  <div key={i} className="flex items-center gap-3 py-1.5">
+                    <div className={`w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold ${
+                      check.passed ? "bg-[#e8f5e9] text-[#2e7d32]" : "bg-[#FFF8E1] text-[#F57F17]"
+                    }`}>
+                      {check.passed ? <Check className="w-3 h-3" /> : "!"}
                     </div>
-                  ))}
-                  <div className={`p-3 rounded-lg text-sm font-medium ${
-                    complianceResult.allPassed ? "bg-green-50 text-green-800" : "bg-yellow-50 text-yellow-800"
-                  }`}>
-                    {complianceResult.allPassed ? "All checks passed!" : "Some checks need attention. You can still publish."}
+                    <div>
+                      <span className="font-medium text-sm text-[#232020]">{check.name}</span>
+                      <p className="text-xs text-[#5C5C5C]">{check.message}</p>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
+                ))}
+                <div className={`p-3 rounded-lg text-sm font-medium ${
+                  complianceResult.allPassed ? "bg-[#e8f5e9] text-[#2e7d32]" : "bg-[#FFF8E1] text-[#F57F17]"
+                }`}>
+                  {complianceResult.allPassed ? "All checks passed!" : "Some checks need attention. You can still publish."}
+                </div>
+              </div>
             )}
 
-            <Card>
-              <CardContent className="p-6">
-                <h3 className="text-lg font-bold text-gray-900 mb-1">{draft?.title}</h3>
-                <p className="text-sm text-gray-500">{draft?.excerpt}</p>
-                {heroImage && (
-                  <img src={heroImage.url} alt={heroImage.altText} className="w-full h-48 object-cover rounded-lg mt-3" />
-                )}
-              </CardContent>
-            </Card>
+            <div className="bg-white rounded-xl border border-[#E5E7EB] p-6">
+              <h3 className="text-lg font-bold text-[#232020] mb-1">{draft?.title}</h3>
+              <p className="text-sm text-[#5C5C5C]">{draft?.excerpt}</p>
+              {heroImage && (
+                <img src={heroImage.url} alt={heroImage.altText} className="w-full h-48 object-cover rounded-xl mt-4" />
+              )}
+            </div>
 
-            <div className="flex gap-3 pt-4">
-              <Button variant="outline" onClick={() => setStep(6)}>
+            <div className="flex gap-3 pt-2">
+              <Button variant="outline" onClick={() => setStep(6)} className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">
                 <ArrowLeft className="w-4 h-4 mr-2" /> Back
               </Button>
               <Button
                 variant="outline"
                 onClick={() => handleCreatePost(false)}
                 disabled={createPostMutation.isPending}
+                className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg"
               >
                 Save as Draft
               </Button>
               <Button
                 onClick={() => handleCreatePost(true)}
                 disabled={createPostMutation.isPending}
-                className="bg-[#386758] hover:bg-[#2d5446] text-white"
+                className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#232020] font-semibold rounded-lg shadow-none"
               >
                 {createPostMutation.isPending ? (
                   <Loader2 className="w-4 h-4 mr-2 animate-spin" />

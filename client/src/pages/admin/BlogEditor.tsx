@@ -32,10 +32,8 @@ import {
   Eye,
   Globe,
   GlobeLock,
-  ImagePlus,
   Sparkles,
   Loader2,
-  Check,
   X,
   Upload,
   Monitor,
@@ -377,26 +375,39 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
 
   const categories = categoriesQuery.data || [];
 
+  const statusStyles: Record<string, string> = {
+    published: "bg-[#e8f5e9] text-[#2e7d32]",
+    draft: "bg-[#FFF8E1] text-[#F57F17]",
+    unpublished: "bg-[#F5F7F7] text-[#5C5C5C]",
+    scheduled: "bg-[#E3F2FD] text-[#1565C0]",
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#F8FAF9]">
       {/* Sticky Top Bar */}
-      <div className="sticky top-0 z-30 bg-white border-b shadow-sm">
-        <div className="flex items-center justify-between px-4 py-2 max-w-[1800px] mx-auto">
+      <div className="sticky top-0 z-30 bg-white border-b border-[#E5E7EB]">
+        <div className="flex items-center justify-between px-5 py-3 max-w-[1800px] mx-auto">
           <div className="flex items-center gap-3">
-            <Button variant="ghost" size="sm" onClick={() => navigate("~/admin/blog")}>
-              <ArrowLeft className="w-4 h-4 mr-1" /> Back
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => navigate("~/admin/blog")}
+              className="text-[#5C5C5C] hover:text-[#232020] hover:bg-[#F5F7F7] rounded-lg"
+            >
+              <ArrowLeft className="w-4 h-4 mr-1.5" /> Back
             </Button>
-            <span className="text-sm text-gray-400">
+            <div className="h-5 w-px bg-[#E5E7EB]" />
+            <span className="text-sm text-[#5C5C5C]">
               {postId ? "Edit Post" : "New Post"}
             </span>
             {isDirty && (
-              <Badge variant="outline" className="text-yellow-600 border-yellow-300 bg-yellow-50 text-xs">
+              <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-[#FFF8E1] text-[#F57F17]">
                 Unsaved
-              </Badge>
+              </span>
             )}
             {lastSaved && (
-              <span className="text-xs text-gray-400">
-                Last saved {lastSaved.toLocaleTimeString()}
+              <span className="text-xs text-[#9CA3AF]">
+                Saved {lastSaved.toLocaleTimeString()}
               </span>
             )}
           </div>
@@ -405,35 +416,37 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
               variant="outline"
               size="sm"
               onClick={() => setPreviewMode(previewMode ? null : "desktop")}
+              className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg"
             >
-              <Eye className="w-4 h-4 mr-1" /> Preview
+              <Eye className="w-4 h-4 mr-1.5" /> Preview
             </Button>
             <Button
               variant="outline"
               size="sm"
               onClick={() => handleSave(false)}
               disabled={isSaving}
+              className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg"
             >
-              {isSaving ? <Loader2 className="w-4 h-4 mr-1 animate-spin" /> : <Save className="w-4 h-4 mr-1" />}
-              Save Draft
+              {isSaving ? <Loader2 className="w-4 h-4 mr-1.5 animate-spin" /> : <Save className="w-4 h-4 mr-1.5" />}
+              Save
             </Button>
             {status === "published" ? (
               <Button
                 variant="outline"
                 size="sm"
-                className="text-orange-600 border-orange-200"
+                className="border-orange-200 text-orange-600 hover:bg-orange-50 rounded-lg"
                 onClick={() => setShowUnpublishConfirm(true)}
               >
-                <GlobeLock className="w-4 h-4 mr-1" /> Unpublish
+                <GlobeLock className="w-4 h-4 mr-1.5" /> Unpublish
               </Button>
             ) : (
               <Button
                 size="sm"
-                className="bg-[#386758] hover:bg-[#2d5446] text-white"
+                className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#232020] font-semibold rounded-lg shadow-none"
                 onClick={handlePublish}
                 disabled={isSaving}
               >
-                <Globe className="w-4 h-4 mr-1" /> Publish
+                <Globe className="w-4 h-4 mr-1.5" /> Publish
               </Button>
             )}
           </div>
@@ -449,35 +462,35 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             placeholder="Post title..."
-            className="text-3xl font-bold border-0 border-b rounded-none px-0 py-3 bg-transparent focus-visible:ring-0 focus-visible:border-[#386758] placeholder:text-gray-300"
+            className="text-2xl font-bold border-0 border-b border-[#E5E7EB] rounded-none px-0 py-3 bg-transparent text-[#232020] focus-visible:ring-0 focus-visible:border-[#6AD990] placeholder:text-[#D2D9D9]"
           />
 
           {/* Hero Image */}
           <div className="mt-4 mb-6">
             {heroImageUrl ? (
-              <div className="relative group rounded-lg overflow-hidden">
+              <div className="relative group rounded-xl overflow-hidden">
                 <img
                   src={heroImageUrl}
                   alt={heroImageAlt || "Hero image"}
-                  className="w-full h-64 object-cover rounded-lg"
+                  className="w-full h-64 object-cover rounded-xl"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-3">
                   <label className="cursor-pointer">
-                    <Button size="sm" variant="secondary">
-                      <Upload className="w-4 h-4 mr-1" /> Replace
+                    <Button size="sm" className="bg-white text-[#232020] hover:bg-[#F5F7F7] rounded-lg shadow-none">
+                      <Upload className="w-4 h-4 mr-1.5" /> Replace
                     </Button>
                     <input type="file" accept="image/*" className="hidden" onChange={handleHeroImageUpload} />
                   </label>
-                  <Button size="sm" variant="secondary" onClick={() => setHeroImageUrl("")}>
-                    <X className="w-4 h-4 mr-1" /> Remove
+                  <Button size="sm" className="bg-white text-[#232020] hover:bg-[#F5F7F7] rounded-lg shadow-none" onClick={() => setHeroImageUrl("")}>
+                    <X className="w-4 h-4 mr-1.5" /> Remove
                   </Button>
                 </div>
               </div>
             ) : (
-              <div className="border-2 border-dashed border-gray-200 rounded-lg p-8 text-center hover:border-[#386758]/30 transition-colors">
+              <div className="border-2 border-dashed border-[#D2D9D9] rounded-xl p-8 text-center hover:border-[#6AD990]/50 transition-colors bg-white">
                 <div className="flex items-center justify-center gap-4">
                   <label className="cursor-pointer">
-                    <Button variant="outline" size="sm" asChild>
+                    <Button variant="outline" size="sm" asChild className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">
                       <span>
                         <Upload className="w-4 h-4 mr-2" /> Upload Image
                       </span>
@@ -489,16 +502,17 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
                     size="sm"
                     onClick={handleGenerateHeroImage}
                     disabled={isGeneratingHeroImage}
+                    className="border-[#6AD990] text-[#232020] hover:bg-[#e8f5e9] rounded-lg"
                   >
                     {isGeneratingHeroImage ? (
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                     ) : (
-                      <Sparkles className="w-4 h-4 mr-2" />
+                      <Sparkles className="w-4 h-4 mr-2 text-[#6AD990]" />
                     )}
                     AI Generate
                   </Button>
                 </div>
-                <p className="text-sm text-gray-400 mt-2">Recommended: 1200x630px</p>
+                <p className="text-sm text-[#9CA3AF] mt-3">Recommended: 1200 x 630px</p>
               </div>
             )}
             {heroImageUrl && (
@@ -507,65 +521,71 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
                   value={heroImageAlt}
                   onChange={(e) => setHeroImageAlt(e.target.value)}
                   placeholder="Alt text..."
-                  className="text-sm bg-white"
+                  className="text-sm bg-white border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
                 />
                 <Input
                   value={heroImageCaption}
                   onChange={(e) => setHeroImageCaption(e.target.value)}
                   placeholder="Caption (optional)..."
-                  className="text-sm bg-white"
+                  className="text-sm bg-white border-[#E5E7EB] text-[#232020] placeholder:text-[#9CA3AF] rounded-lg"
                 />
               </div>
             )}
           </div>
 
           {/* WYSIWYG Editor */}
-          <TipTapEditor
-            content={contentHtml}
-            onChange={(html, json) => {
-              setContentHtml(html);
-              setContentJson(json);
-              setIsDirty(true);
-            }}
-            onImageUpload={handleImageUpload}
-          />
+          <div className="bg-white rounded-xl border border-[#E5E7EB] overflow-hidden">
+            <TipTapEditor
+              content={contentHtml}
+              onChange={(html, json) => {
+                setContentHtml(html);
+                setContentJson(json);
+                setIsDirty(true);
+              }}
+              onImageUpload={handleImageUpload}
+            />
+          </div>
         </div>
 
         {/* Right: Settings Panel */}
-        <div className="w-[380px] shrink-0 border-l bg-white overflow-y-auto" style={{ maxHeight: "calc(100vh - 53px)", position: "sticky", top: "53px" }}>
+        <div className="w-[360px] shrink-0 border-l border-[#E5E7EB] bg-white overflow-y-auto" style={{ maxHeight: "calc(100vh - 57px)", position: "sticky", top: "57px" }}>
           <Tabs defaultValue="settings" className="w-full">
-            <TabsList className="w-full rounded-none border-b bg-gray-50 p-0 h-auto">
-              <TabsTrigger value="settings" className="flex-1 rounded-none py-3 text-sm data-[state=active]:border-b-2 data-[state=active]:border-[#386758] data-[state=active]:shadow-none">
+            <TabsList className="w-full rounded-none border-b border-[#E5E7EB] bg-[#F8FAF9] p-0 h-auto">
+              <TabsTrigger
+                value="settings"
+                className="flex-1 rounded-none py-3 text-sm text-[#5C5C5C] data-[state=active]:text-[#232020] data-[state=active]:font-semibold data-[state=active]:border-b-2 data-[state=active]:border-[#6AD990] data-[state=active]:shadow-none data-[state=active]:bg-white"
+              >
                 Settings
               </TabsTrigger>
-              <TabsTrigger value="seo" className="flex-1 rounded-none py-3 text-sm data-[state=active]:border-b-2 data-[state=active]:border-[#386758] data-[state=active]:shadow-none">
+              <TabsTrigger
+                value="seo"
+                className="flex-1 rounded-none py-3 text-sm text-[#5C5C5C] data-[state=active]:text-[#232020] data-[state=active]:font-semibold data-[state=active]:border-b-2 data-[state=active]:border-[#6AD990] data-[state=active]:shadow-none data-[state=active]:bg-white"
+              >
                 SEO
               </TabsTrigger>
             </TabsList>
 
             {/* Settings Tab */}
-            <TabsContent value="settings" className="p-4 space-y-5 mt-0">
-              <div>
-                <Label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Slug</Label>
+            <TabsContent value="settings" className="p-5 space-y-5 mt-0">
+              <FieldGroup label="Slug">
                 <Input
                   value={slug}
                   onChange={(e) => setSlug(e.target.value)}
                   placeholder="post-slug"
-                  className="mt-1 bg-white text-sm"
+                  className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                 />
-                <p className="text-xs text-gray-400 mt-1">/blog/{slug || "..."}</p>
-              </div>
+                <p className="text-xs text-[#9CA3AF] mt-1">/blog/{slug || "..."}</p>
+              </FieldGroup>
 
-              <div>
-                <Label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Category</Label>
+              <FieldGroup label="Category">
                 <Select
                   value={categoryId ? String(categoryId) : "none"}
                   onValueChange={(v) => setCategoryId(v === "none" ? null : parseInt(v))}
                 >
-                  <SelectTrigger className="mt-1 bg-white text-sm">
+                  <SelectTrigger className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg">
                     <SelectValue placeholder="Select category" />
                   </SelectTrigger>
-                  <SelectContent>
+                  <SelectContent className="bg-white border-[#E5E7EB]">
                     <SelectItem value="none">Uncategorized</SelectItem>
                     {categories.map((cat) => (
                       <SelectItem key={cat.id} value={String(cat.id)}>
@@ -574,208 +594,190 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
                     ))}
                   </SelectContent>
                 </Select>
-              </div>
+              </FieldGroup>
 
-              <div>
-                <Label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Excerpt</Label>
+              <FieldGroup label="Excerpt">
                 <Textarea
                   value={excerpt}
                   onChange={(e) => setExcerpt(e.target.value)}
                   placeholder="Brief summary for blog listing..."
-                  className="mt-1 bg-white text-sm"
+                  className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                   rows={3}
                 />
-                <p className="text-xs text-gray-400 mt-1">{excerpt.length}/180 characters</p>
-              </div>
+                <p className="text-xs text-[#9CA3AF] mt-1">{excerpt.length}/180 characters</p>
+              </FieldGroup>
 
-              <div>
-                <Label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Author</Label>
+              <FieldGroup label="Author">
                 <Input
                   value={authorName}
                   onChange={(e) => setAuthorName(e.target.value)}
-                  className="mt-1 bg-white text-sm"
+                  className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                 />
-              </div>
+              </FieldGroup>
 
-              <div>
-                <Label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Status</Label>
-                <div className="mt-1 flex items-center gap-2">
-                  <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
-                    status === "published" ? "bg-green-100 text-green-800" :
-                    status === "draft" ? "bg-yellow-100 text-yellow-800" :
-                    "bg-gray-100 text-gray-600"
-                  }`}>
+              <FieldGroup label="Status">
+                <div className="flex items-center gap-2">
+                  <span className={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium ${statusStyles[status] || statusStyles.unpublished}`}>
                     {status}
                   </span>
                 </div>
-              </div>
+              </FieldGroup>
             </TabsContent>
 
             {/* SEO Tab */}
-            <TabsContent value="seo" className="p-4 space-y-5 mt-0">
+            <TabsContent value="seo" className="p-5 space-y-5 mt-0">
               <div className="flex justify-between items-center">
-                <Label className="text-xs font-medium text-gray-500 uppercase tracking-wide">SEO & Discoverability</Label>
+                <span className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider">SEO & Discoverability</span>
                 <Button
                   variant="outline"
                   size="sm"
                   onClick={handleGenerateSEO}
                   disabled={isGeneratingSEO}
-                  className="text-xs"
+                  className="text-xs border-[#6AD990] text-[#232020] hover:bg-[#e8f5e9] rounded-lg"
                 >
-                  {isGeneratingSEO ? <Loader2 className="w-3 h-3 mr-1 animate-spin" /> : <Sparkles className="w-3 h-3 mr-1" />}
+                  {isGeneratingSEO ? <Loader2 className="w-3 h-3 mr-1 animate-spin" /> : <Sparkles className="w-3 h-3 mr-1 text-[#6AD990]" />}
                   AI Generate
                 </Button>
               </div>
 
-              <div>
-                <Label className="text-xs text-gray-500">Meta Title</Label>
+              <FieldGroup label="Meta Title">
                 <Input
                   value={metaTitle}
                   onChange={(e) => setMetaTitle(e.target.value)}
                   placeholder="50-60 characters"
-                  className="mt-1 bg-white text-sm"
+                  className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                 />
-                <p className="text-xs text-gray-400 mt-1">{metaTitle.length}/60</p>
-              </div>
+                <p className="text-xs text-[#9CA3AF] mt-1">{metaTitle.length}/60</p>
+              </FieldGroup>
 
-              <div>
-                <Label className="text-xs text-gray-500">Meta Description</Label>
+              <FieldGroup label="Meta Description">
                 <Textarea
                   value={metaDescription}
                   onChange={(e) => setMetaDescription(e.target.value)}
                   placeholder="150-160 characters"
-                  className="mt-1 bg-white text-sm"
+                  className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                   rows={3}
                 />
-                <p className="text-xs text-gray-400 mt-1">{metaDescription.length}/160</p>
-              </div>
+                <p className="text-xs text-[#9CA3AF] mt-1">{metaDescription.length}/160</p>
+              </FieldGroup>
 
-              <div>
-                <Label className="text-xs text-gray-500">Focus Keyword</Label>
+              <FieldGroup label="Focus Keyword">
                 <Input
                   value={focusKeyword}
                   onChange={(e) => setFocusKeyword(e.target.value)}
                   placeholder="Primary keyword"
-                  className="mt-1 bg-white text-sm"
+                  className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                 />
-              </div>
+              </FieldGroup>
 
-              <div>
-                <Label className="text-xs text-gray-500">Secondary Keywords</Label>
-                <div className="flex gap-1 mt-1">
+              <FieldGroup label="Secondary Keywords">
+                <div className="flex gap-1.5">
                   <Input
                     value={newKeyword}
                     onChange={(e) => setNewKeyword(e.target.value)}
                     placeholder="Add keyword"
-                    className="bg-white text-sm"
+                    className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                     onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), addKeyword())}
                   />
-                  <Button size="sm" variant="outline" onClick={addKeyword}>+</Button>
+                  <Button size="sm" variant="outline" onClick={addKeyword} className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg px-3">+</Button>
                 </div>
-                <div className="flex flex-wrap gap-1 mt-2">
+                <div className="flex flex-wrap gap-1.5 mt-2">
                   {secondaryKeywords.map((kw, i) => (
-                    <Badge key={i} variant="secondary" className="text-xs cursor-pointer" onClick={() => setSecondaryKeywords(secondaryKeywords.filter((_, j) => j !== i))}>
+                    <Badge key={i} className="text-xs cursor-pointer bg-[#e8f5e9] text-[#232020] border-0 hover:bg-[#d0ebd6] rounded-md" onClick={() => setSecondaryKeywords(secondaryKeywords.filter((_, j) => j !== i))}>
                       {kw} <X className="w-3 h-3 ml-1" />
                     </Badge>
                   ))}
                 </div>
-              </div>
+              </FieldGroup>
 
-              <div>
-                <Label className="text-xs text-gray-500">Tags</Label>
-                <div className="flex gap-1 mt-1">
+              <FieldGroup label="Tags">
+                <div className="flex gap-1.5">
                   <Input
                     value={newTag}
                     onChange={(e) => setNewTag(e.target.value)}
                     placeholder="Add tag"
-                    className="bg-white text-sm"
+                    className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                     onKeyDown={(e) => e.key === "Enter" && (e.preventDefault(), addTag())}
                   />
-                  <Button size="sm" variant="outline" onClick={addTag}>+</Button>
+                  <Button size="sm" variant="outline" onClick={addTag} className="border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg px-3">+</Button>
                 </div>
-                <div className="flex flex-wrap gap-1 mt-2">
+                <div className="flex flex-wrap gap-1.5 mt-2">
                   {tags.map((tag, i) => (
-                    <Badge key={i} variant="outline" className="text-xs cursor-pointer" onClick={() => setTags(tags.filter((_, j) => j !== i))}>
+                    <Badge key={i} variant="outline" className="text-xs cursor-pointer text-[#5C5C5C] border-[#E5E7EB] hover:bg-[#F5F7F7] rounded-md" onClick={() => setTags(tags.filter((_, j) => j !== i))}>
                       {tag} <X className="w-3 h-3 ml-1" />
                     </Badge>
                   ))}
                 </div>
-              </div>
+              </FieldGroup>
 
-              <div>
-                <Label className="text-xs text-gray-500">Canonical URL</Label>
+              <FieldGroup label="Canonical URL">
                 <Input
                   value={canonicalUrl}
                   onChange={(e) => setCanonicalUrl(e.target.value)}
                   placeholder="Leave blank for default"
-                  className="mt-1 bg-white text-sm"
+                  className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                 />
-              </div>
+              </FieldGroup>
 
-              <div className="space-y-3 pt-2 border-t">
-                <Label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Open Graph</Label>
-                <div>
-                  <Label className="text-xs text-gray-500">OG Title</Label>
+              <div className="space-y-4 pt-4 border-t border-[#E5E7EB]">
+                <span className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider">Open Graph</span>
+                <FieldGroup label="OG Title">
                   <Input
                     value={ogTitle}
                     onChange={(e) => setOgTitle(e.target.value)}
                     placeholder="Defaults to meta title"
-                    className="mt-1 bg-white text-sm"
+                    className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                   />
-                </div>
-                <div>
-                  <Label className="text-xs text-gray-500">OG Description</Label>
+                </FieldGroup>
+                <FieldGroup label="OG Description">
                   <Textarea
                     value={ogDescription}
                     onChange={(e) => setOgDescription(e.target.value)}
                     placeholder="Defaults to meta description"
-                    className="mt-1 bg-white text-sm"
+                    className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                     rows={2}
                   />
-                </div>
-                <div>
-                  <Label className="text-xs text-gray-500">OG Image URL</Label>
+                </FieldGroup>
+                <FieldGroup label="OG Image URL">
                   <Input
                     value={ogImageUrl}
                     onChange={(e) => setOgImageUrl(e.target.value)}
                     placeholder="Defaults to hero image"
-                    className="mt-1 bg-white text-sm"
+                    className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                   />
-                </div>
+                </FieldGroup>
               </div>
 
-              <div className="space-y-3 pt-2 border-t">
-                <Label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Indexing</Label>
-                <div className="flex items-center justify-between">
-                  <Label className="text-xs text-gray-600">Allow indexing</Label>
+              <div className="space-y-3 pt-4 border-t border-[#E5E7EB]">
+                <span className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider">Indexing</span>
+                <div className="flex items-center justify-between py-1">
+                  <Label className="text-sm text-[#232020]">Allow indexing</Label>
                   <Switch checked={isIndexed} onCheckedChange={setIsIndexed} />
                 </div>
-                <div className="flex items-center justify-between">
-                  <Label className="text-xs text-gray-600">Allow link following</Label>
+                <div className="flex items-center justify-between py-1">
+                  <Label className="text-sm text-[#232020]">Allow link following</Label>
                   <Switch checked={isFollowed} onCheckedChange={setIsFollowed} />
                 </div>
               </div>
 
-              <div className="space-y-3 pt-2 border-t">
-                <Label className="text-xs font-medium text-gray-500 uppercase tracking-wide">GEO Targeting</Label>
-                <div>
-                  <Label className="text-xs text-gray-500">Region</Label>
+              <div className="space-y-4 pt-4 border-t border-[#E5E7EB]">
+                <span className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider">GEO Targeting</span>
+                <FieldGroup label="Region">
                   <Input
                     value={geoRegion}
                     onChange={(e) => setGeoRegion(e.target.value)}
                     placeholder="e.g., US"
-                    className="mt-1 bg-white text-sm"
+                    className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                   />
-                </div>
-                <div>
-                  <Label className="text-xs text-gray-500">Audience</Label>
+                </FieldGroup>
+                <FieldGroup label="Audience">
                   <Input
                     value={geoAudience}
                     onChange={(e) => setGeoAudience(e.target.value)}
                     placeholder="e.g., North America"
-                    className="mt-1 bg-white text-sm"
+                    className="bg-[#F5F7F7] border-[#E5E7EB] text-[#232020] text-sm rounded-lg"
                   />
-                </div>
+                </FieldGroup>
               </div>
             </TabsContent>
           </Tabs>
@@ -784,15 +786,15 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
 
       {/* Preview Modal */}
       {previewMode && (
-        <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
           <div className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col" style={{ width: previewMode === "mobile" ? "390px" : "90vw", height: "90vh" }}>
-            <div className="flex items-center justify-between px-4 py-2 bg-gray-50 border-b">
+            <div className="flex items-center justify-between px-4 py-3 bg-[#F8FAF9] border-b border-[#E5E7EB]">
               <div className="flex gap-2">
                 <Button
                   size="sm"
                   variant={previewMode === "desktop" ? "default" : "outline"}
                   onClick={() => setPreviewMode("desktop")}
-                  className={previewMode === "desktop" ? "bg-[#386758] text-white" : ""}
+                  className={previewMode === "desktop" ? "bg-[#6AD990] text-[#232020] shadow-none rounded-lg" : "border-[#E5E7EB] text-[#232020] rounded-lg"}
                 >
                   <Monitor className="w-4 h-4" />
                 </Button>
@@ -800,24 +802,24 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
                   size="sm"
                   variant={previewMode === "mobile" ? "default" : "outline"}
                   onClick={() => setPreviewMode("mobile")}
-                  className={previewMode === "mobile" ? "bg-[#386758] text-white" : ""}
+                  className={previewMode === "mobile" ? "bg-[#6AD990] text-[#232020] shadow-none rounded-lg" : "border-[#E5E7EB] text-[#232020] rounded-lg"}
                 >
                   <Smartphone className="w-4 h-4" />
                 </Button>
               </div>
-              <Button size="sm" variant="ghost" onClick={() => setPreviewMode(null)}>
+              <Button size="sm" variant="ghost" onClick={() => setPreviewMode(null)} className="text-[#5C5C5C] hover:text-[#232020] rounded-lg">
                 <X className="w-4 h-4" />
               </Button>
             </div>
-            <div className="flex-1 overflow-y-auto p-8">
+            <div className="flex-1 overflow-y-auto p-8 bg-white">
               <article className="max-w-3xl mx-auto">
                 {heroImageUrl && (
                   <img src={heroImageUrl} alt={heroImageAlt} className="w-full h-64 object-cover rounded-xl mb-6" />
                 )}
-                <h1 className="text-4xl font-bold text-gray-900 mb-4">{title || "Untitled Post"}</h1>
-                {excerpt && <p className="text-lg text-gray-500 mb-6">{excerpt}</p>}
+                <h1 className="text-4xl font-bold text-[#232020] mb-4">{title || "Untitled Post"}</h1>
+                {excerpt && <p className="text-lg text-[#5C5C5C] mb-6">{excerpt}</p>}
                 <div
-                  className="prose prose-lg max-w-none"
+                  className="prose prose-lg max-w-none text-[#232020]"
                   dangerouslySetInnerHTML={{ __html: contentHtml }}
                 />
               </article>
@@ -828,21 +830,30 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
 
       {/* Unpublish Confirmation */}
       <AlertDialog open={showUnpublishConfirm} onOpenChange={setShowUnpublishConfirm}>
-        <AlertDialogContent>
+        <AlertDialogContent className="bg-white border-[#E5E7EB] rounded-xl">
           <AlertDialogHeader>
-            <AlertDialogTitle>Unpublish Post</AlertDialogTitle>
-            <AlertDialogDescription>
+            <AlertDialogTitle className="text-[#232020]">Unpublish Post</AlertDialogTitle>
+            <AlertDialogDescription className="text-[#5C5C5C]">
               This will remove the post from the public blog. It will remain as a draft in the admin console.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction onClick={handleUnpublish} className="bg-orange-600 hover:bg-orange-700">
+            <AlertDialogCancel className="bg-white border-[#E5E7EB] text-[#232020] hover:bg-[#F5F7F7] rounded-lg">Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={handleUnpublish} className="bg-orange-600 hover:bg-orange-700 text-white rounded-lg">
               Unpublish
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+    </div>
+  );
+}
+
+function FieldGroup({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <Label className="text-xs font-semibold text-[#5C5C5C] uppercase tracking-wider mb-1.5 block">{label}</Label>
+      {children}
     </div>
   );
 }

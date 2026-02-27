@@ -120,6 +120,9 @@ function Router() {
       <Route path="/compare/sosecure-adt-vs-mysentry" component={SOSecureAdtVsMysentry} />
 
       {/* Admin Blog CMS */}
+      <Route path="/admin">
+        {() => { window.location.replace("/admin/blog"); return null; }}
+      </Route>
       <Route path="/admin/blog" nest>
         <AdminLayout />
       </Route>
