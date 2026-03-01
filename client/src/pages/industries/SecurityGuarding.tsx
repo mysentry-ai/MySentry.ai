@@ -52,6 +52,16 @@ export default function SecurityGuarding() {
         { question: "Can we customize the emergency response protocol?", answer: "Yes. During setup, we work with you to define your specific chain of command and response procedures. We will notify the people you designate in the order you specify." },
         { question: "How much does the monitoring service cost?", answer: "We offer flexible plans based on the number of users. Please book a demo with our team for a detailed quote based on your company's needs." },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Security guards can trigger panic alerts with live video during patrol incidents.", detail: "24/7 monitoring agents receive real-time video and location to coordinate emergency response." },
+        { claim: "Automated patrol check-ins verify guard safety at scheduled intervals.", detail: "Missed check-ins trigger automatic alerts to supervisors and monitoring agents." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },

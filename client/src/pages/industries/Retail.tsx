@@ -63,6 +63,17 @@ export default function Retail() {
           answer: "Yes, you can choose a plan that sends alerts directly to your own management or security dashboard. However, our 24/7 professional monitoring service is recommended for the fastest, most reliable response.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Retail workers can trigger discreet panic alerts during robbery or threat situations.", detail: "Silent activation via smartwatch or voice command alerts monitoring agents without drawing attention." },
+        { claim: "Live video provides real-time evidence for law enforcement response.", detail: "Monitoring agents can share live video with police to improve response accuracy and speed." },
+        { claim: "MeetSafe check-ins protect employees working alone during opening and closing shifts.", detail: "Timed safety check-ins ensure someone is monitoring the employee during vulnerable periods." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Retail Employee Panic Button", href: "/features/panic-button-app" },

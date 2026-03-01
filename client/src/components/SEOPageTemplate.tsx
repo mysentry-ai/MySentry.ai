@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Check, AlertTriangle, ChevronDown } from "lucide-react";
+import { ArrowRight, Check, AlertTriangle, ChevronDown, Smartphone, Watch, Wifi, Battery, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
@@ -15,6 +15,11 @@ interface FAQ {
 interface Step {
   title: string;
   description: string;
+}
+
+interface ProofBlock {
+  claim: string;
+  detail: string;
 }
 
 interface SEOPageTemplateProps {
@@ -41,6 +46,17 @@ interface SEOPageTemplateProps {
   notIdealFor: string[];
   keyTakeaways: string[];
   faqs: FAQ[];
+
+  // Setup / Requirements (AEO Phase 3)
+  setupRequirements?: {
+    devices: string;
+    permissions: string;
+    connectivity: string;
+    limitations: string;
+  };
+
+  // Cite-ready proof blocks (GEO Phase 4)
+  proofBlocks?: ProofBlock[];
 
   // Trust
   disclaimer?: string;
@@ -71,6 +87,8 @@ export default function SEOPageTemplate({
   notIdealFor,
   keyTakeaways,
   faqs,
+  setupRequirements,
+  proofBlocks,
   disclaimer,
   relatedLinks,
   heroImage,
@@ -91,7 +109,23 @@ export default function SEOPageTemplate({
     }))
   };
 
-  const allSchemas = schema ? (Array.isArray(schema) ? [faqSchema, ...schema] : [faqSchema, schema]) : [faqSchema];
+  // Build HowTo schema from steps
+  const howToSchema: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": h1,
+    "description": directAnswer,
+    "step": steps.map((step, i) => ({
+      "@type": "HowToStep",
+      "position": i + 1,
+      "name": step.title,
+      "text": step.description
+    }))
+  };
+
+  const allSchemas = schema 
+    ? (Array.isArray(schema) ? [faqSchema, howToSchema, ...schema] : [faqSchema, howToSchema, schema]) 
+    : [faqSchema, howToSchema];
 
   return (
     <Layout>
@@ -173,6 +207,28 @@ export default function SEOPageTemplate({
             <p className="text-lg text-gray-700 leading-relaxed">{directAnswer}</p>
           </div>
 
+          {/* Cite-Ready Proof Blocks (GEO) */}
+          {proofBlocks && proofBlocks.length > 0 && (
+            <div className="mb-12">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-[#1a1a1a] mb-6">
+                How MySentry Works: Verified Facts
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {proofBlocks.map((block, i) => (
+                  <div key={i} className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+                    <div className="flex items-start gap-3">
+                      <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <div>
+                        <p className="font-bold text-[#1a1a1a] mb-1">{block.claim}</p>
+                        <p className="text-sm text-gray-600">{block.detail}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* How It Works */}
           <div className="mb-12">
             <h2 className="text-2xl md:text-3xl font-heading font-bold text-[#1a1a1a] mb-6">
@@ -204,6 +260,45 @@ export default function SEOPageTemplate({
               ))}
             </div>
           </div>
+
+          {/* Setup / Requirements Section (AEO) */}
+          {setupRequirements && (
+            <div className="mb-12">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-[#1a1a1a] mb-6">
+                Setup and Requirements
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Smartphone className="w-5 h-5 text-primary" />
+                    <h3 className="font-bold text-[#1a1a1a]">Device Compatibility</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">{setupRequirements.devices}</p>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Watch className="w-5 h-5 text-primary" />
+                    <h3 className="font-bold text-[#1a1a1a]">Permissions Needed</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">{setupRequirements.permissions}</p>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Wifi className="w-5 h-5 text-primary" />
+                    <h3 className="font-bold text-[#1a1a1a]">Connectivity</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">{setupRequirements.connectivity}</p>
+                </div>
+                <div className="bg-white border border-gray-200 rounded-xl p-5">
+                  <div className="flex items-center gap-3 mb-2">
+                    <Battery className="w-5 h-5 text-primary" />
+                    <h3 className="font-bold text-[#1a1a1a]">Limitations</h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">{setupRequirements.limitations}</p>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Best For / Not Ideal For */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">

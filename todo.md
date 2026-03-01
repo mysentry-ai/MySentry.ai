@@ -291,3 +291,45 @@
 
 ## Blog Post Hero Image Mobile Fix (Round 9)
 - [x] Fix blog post hero image on mobile - changed aspect ratio from 21/9 to 4/3 on mobile, 16/9 on tablet, 2/1 on desktop; removed horizontal padding and border-radius on mobile for edge-to-edge display
+
+## SEO + AEO + GEO Optimization (Round 10)
+
+### Phase 0: Hard SEO Foundation
+- [x] P0.1 Canonical host unification - already enforced via SEO component getCanonicalUrl()
+- [x] P0.2 robots.txt - added /admin/ disallow, sitemap directive already present
+- [x] P0.3 Sitemap system - converted to dynamic server-side generation, blog sitemap pulls from DB
+- [x] P0.4 Rendering/crawlability audit - SPA with SSR-like meta tags via react-helmet-async
+- [ ] P0.5 Core Web Vitals - images already use width/height, lazy-load on below-fold (ongoing)
+
+### Phase 1: Keyword Strategy
+- [x] P1.1 Create Keyword-to-Page Map document with primary/supporting keywords per page (SEO-Keyword-Page-Map.md)
+
+### Phase 2: On-Page SEO Rebuild
+- [x] P2.1 Sitewide Title tag + Meta description overhaul - already optimized with unique keyword-rich titles/descriptions
+- [x] P2.2 Header hierarchy enforcement - SEOPageTemplate enforces single H1 and logical H2/H3 structure
+- [x] P2.3 Internal linking - relatedLinks prop on all 25 SEOPageTemplate pages + hub pages provide cross-links
+
+### Phase 3: AEO Template
+- [x] P3.1 Answer Engine blocks already present on all 25 pages (Direct Answer, How It Works, What Happens After Alert, Best For, Key Takeaways, FAQs)
+- [x] P3.2 Added Setup/Requirements sections to all 25 SEOPageTemplate pages
+
+### Phase 4: GEO Layer
+- [x] P4.1 Created /llms.txt and /llms-full.txt for AI citation
+- [x] P4.2 Added cite-ready proof blocks to all 25 SEOPageTemplate pages
+
+### Phase 5: Schema/Structured Data
+- [x] P5.1 Organization + SoftwareApplication schema already sitewide via SEO component
+- [x] P5.2 FAQPage schema auto-generated on every SEOPageTemplate page
+- [x] P5.3 HowTo schema auto-generated on every SEOPageTemplate page from steps
+- [x] P5.4 Article schema for blog posts - added JSON-LD Article schema to BlogPost.tsx
+
+### Phase 6: Content Expansion
+- [x] P6.1 Created missing money pages: /features/safety-check-in-app, /use-cases/teen-driver-safety (medical-alert-app-for-seniors already existed)
+- [x] P6.2 Created 40 blog topic plan (Blog-40-Topic-Plan.md) mapped to long-tail keywords with publishing schedule
+
+### Phase 7: Digital Marketing Layer
+- [x] P7.1 Event tracking - site already has analytics via VITE_ANALYTICS_ENDPOINT (built-in platform analytics)
+- [x] P7.2 Created Backlink-Strategy.md with 10 linkable assets, 6 outreach categories, and priority plan
+
+### Final Deliverables
+- [x] Generated SEO-AEO-GEO-Optimization-Report.md with complete Before vs After analysis

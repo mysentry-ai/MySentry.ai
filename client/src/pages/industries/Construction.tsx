@@ -45,6 +45,17 @@ export default function Construction() {
         { question: "Is the app complicated for workers to use?", answer: "No, it's designed for simplicity. After a one-time setup, the app runs in the background. The panic button is large and easy to access. We focused on making it as user-friendly as possible for all skill levels." },
         { question: "How much does the service cost for a construction company?", answer: "Our pricing is based on the number of workers you wish to protect. We offer flexible plans to fit teams of all sizes. Please book a demo or visit our pricing page for more details." },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Fall detection is calibrated for construction environments and elevated work.", detail: "The app detects falls from heights and on uneven surfaces common on construction sites." },
+        { claim: "Panic alerts work in areas with limited cellular coverage using offline mode.", detail: "Alerts are queued when offline and sent automatically when connectivity is restored." },
+        { claim: "Health monitoring can detect signs of heat stress in outdoor workers.", detail: "Continuous tracking of heart rate and skin temperature helps identify heat-related illness before it becomes critical." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },

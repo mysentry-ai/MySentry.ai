@@ -31,6 +31,7 @@ import EmergencyContacts from "./pages/features/EmergencyContacts";
 import LiveVideoResponse from "./pages/features/LiveVideoResponse";
 import HealthMonitoring from "./pages/features/HealthMonitoring";
 import MeetSafeCheckIns from "./pages/features/MeetSafeCheckIns";
+import SafetyCheckInApp from "./pages/features/SafetyCheckInApp";
 
 // SEO Pages - Use Cases
 import UseCasesHub from "./pages/UseCasesHub";
@@ -39,6 +40,7 @@ import FamilySafetyApp from "./pages/use-cases/FamilySafetyApp";
 import MedicalAlertForSeniors from "./pages/use-cases/MedicalAlertForSeniors";
 import LoneWorkerSafetyApp from "./pages/use-cases/LoneWorkerSafetyApp";
 import HomeHealthcareWorkerSafety from "./pages/use-cases/HomeHealthcareWorkerSafety";
+import TeenDriverSafety from "./pages/use-cases/TeenDriverSafety";
 
 // SEO Pages - Industries
 import IndustriesHub from "./pages/IndustriesHub";
@@ -92,6 +94,7 @@ function Router() {
       <Route path="/features/live-video-response" component={LiveVideoResponse} />
       <Route path="/features/health-monitoring" component={HealthMonitoring} />
       <Route path="/features/meetsafe-check-ins" component={MeetSafeCheckIns} />
+      <Route path="/features/safety-check-in-app" component={SafetyCheckInApp} />
 
       {/* SEO Pages - Use Cases */}
       <Route path="/use-cases" component={UseCasesHub} />
@@ -100,6 +103,7 @@ function Router() {
       <Route path="/use-cases/medical-alert-app-for-seniors" component={MedicalAlertForSeniors} />
       <Route path="/use-cases/lone-worker-safety-app" component={LoneWorkerSafetyApp} />
       <Route path="/use-cases/home-healthcare-worker-safety" component={HomeHealthcareWorkerSafety} />
+      <Route path="/use-cases/teen-driver-safety" component={TeenDriverSafety} />
 
       {/* SEO Pages - Industries */}
       <Route path="/industries" component={IndustriesHub} />

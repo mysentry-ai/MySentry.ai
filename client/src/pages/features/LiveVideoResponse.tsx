@@ -60,6 +60,17 @@ export default function LiveVideoResponse() {
           answer: "It allows our agents to confirm a real emergency is happening, reducing false alarms. It also gives first responders critical information before they arrive, so they can help you more effectively.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Live video streams from the user's phone camera to monitoring agents during emergencies.", detail: "When an alert is triggered, the phone's camera activates and streams video to the monitoring center for real-time assessment." },
+        { claim: "Video evidence helps agents dispatch the right type of emergency response.", detail: "Agents can see the situation and determine whether police, fire, or medical services are needed, reducing response errors." },
+        { claim: "Video is encrypted end-to-end and stored securely for evidence purposes.", detail: "All video transmissions use encryption to protect user privacy, and recordings are retained for incident documentation." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button", href: "/features/panic-button-app" },

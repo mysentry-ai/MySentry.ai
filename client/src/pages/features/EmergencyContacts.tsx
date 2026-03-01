@@ -67,6 +67,16 @@ export default function EmergencyContacts() {
           answer: "No, your contacts do not need the app. They receive the alert via a standard SMS text message and can view your status on any web browser.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Up to 10 emergency contacts can be designated per user profile.", detail: "Each contact receives SMS, push notification, and email alerts simultaneously when an emergency is triggered." },
+        { claim: "Emergency contacts receive the user's real-time GPS location during an active alert.", detail: "Contacts can track the user's location on a map and coordinate with emergency services." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Fall Detection", href: "/features/fall-detection-app" },

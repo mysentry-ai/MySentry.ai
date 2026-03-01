@@ -60,6 +60,16 @@ export default function HomeHealthcare() {
           answer: "Our pricing is based on the number of employees you need to protect. Please contact us to book a demo and receive a detailed quote tailored to your agency's specific needs.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Home healthcare agencies can monitor worker safety across all patient visits from a single dashboard.", detail: "Real-time GPS tracking and automated check-ins provide visibility into worker locations and status." },
+        { claim: "Silent panic alerts allow healthcare workers to request help without escalating patient situations.", detail: "Discreet activation methods protect workers in potentially volatile home environments." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },

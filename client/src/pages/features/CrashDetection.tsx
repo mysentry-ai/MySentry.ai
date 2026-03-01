@@ -60,6 +60,16 @@ export default function CrashDetection() {
           answer: "No, the app does not need to be open on your screen. It just needs to be running in the background with the necessary permissions enabled for it to monitor for a potential crash.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Crash detection uses phone sensors to identify sudden deceleration events consistent with vehicle collisions.", detail: "The app analyzes accelerometer data patterns that match crash signatures and triggers automatic alerts." },
+        { claim: "If the user does not respond within 2 minutes, 24/7 agents are alerted with GPS location and live video.", detail: "The countdown gives conscious users time to cancel false alarms from speed bumps or phone drops." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Alarm for Immediate Help", href: "/features/panic-button-app" },

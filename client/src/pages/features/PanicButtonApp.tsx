@@ -60,6 +60,17 @@ export default function PanicButtonApp() {
           answer: "No. For your privacy, only our trained, professional monitoring agents can see the live video stream. Your emergency contacts will receive a text message with a link to your live location map.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Panic alerts are triggered by voice command, smartphone tap, or smartwatch tap.", detail: "MySentry supports three activation methods so users can send alerts even when they cannot reach their phone." },
+        { claim: "Alerts include live GPS location, audio, and video.", detail: "When a panic alarm is triggered, 24/7 monitoring agents receive real-time location, live audio, and video from the user's device." },
+        { claim: "Emergency contacts receive SMS, push, and email notifications simultaneously.", detail: "All designated contacts are notified instantly through multiple channels to maximize response speed." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "How Fall Detection Works", href: "/features/fall-detection-app" },

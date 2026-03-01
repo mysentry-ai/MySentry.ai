@@ -60,6 +60,16 @@ export default function Education() {
           answer: "MySentry acts as a powerful first-alert tool that complements your existing systems. It provides immediate, on-the-ground intelligence that can inform and accelerate your broader campus-wide emergency notifications.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "School staff can trigger campus-wide alerts from any location using the MySentry app.", detail: "Panic alerts include GPS location and live video to help responders assess the situation." },
+        { claim: "MeetSafe check-ins protect staff working alone in buildings after hours.", detail: "Automated safety intervals ensure someone is monitoring staff during vulnerable periods." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Alarm for Lone Workers", href: "/features/panic-button-app" },

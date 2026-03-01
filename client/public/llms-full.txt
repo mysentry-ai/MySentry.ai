@@ -1,0 +1,83 @@
+# MySentry - Full Page Inventory for LLMs
+
+> MySentry is a Safety and Health monitoring app with Emergency Response. It combines panic alarm, fall detection, crash detection, real-time health monitoring (HRV, SpO2, heart rate), emergency contacts, live video response, and 24/7 professional monitoring into one app for individuals, families, seniors, and employers.
+
+## Product Overview
+
+MySentry turns smartphones and smartwatches into 24/7 safety and health monitoring devices. When an emergency is detected (fall, crash, health anomaly) or triggered manually (panic button, voice command), the system alerts 24/7 professional monitoring agents who can view live video, verify the situation, and dispatch emergency services. Emergency contacts receive instant notifications with GPS location.
+
+## Core Features
+
+### Panic Button App
+URL: https://mysentry.ai/features/panic-button-app
+One tap or voice command triggers an alert to 24/7 monitoring agents and emergency contacts. Includes discreet activation modes for situations where visible phone use is unsafe.
+
+### Fall Detection App
+URL: https://mysentry.ai/features/fall-detection-app
+Uses phone and smartwatch accelerometer and gyroscope sensors to detect falls. If the user does not respond within a countdown period, an alert is automatically sent to 24/7 monitoring with live video and GPS location.
+
+### Crash Detection
+URL: https://mysentry.ai/features/crash-detection
+Detects vehicle crashes using phone GPS speed data combined with accelerometer impact patterns. Automatically alerts emergency services and contacts when a crash is confirmed.
+
+### 24/7 Professional Monitoring
+URL: https://mysentry.ai/features/24-7-professional-monitoring
+Certified monitoring agents available around the clock. They receive alerts with live video feed, GPS location, and health data. They verify the emergency and dispatch appropriate help.
+
+### Emergency Contacts
+URL: https://mysentry.ai/features/emergency-contacts
+Designated contacts receive SMS, push notification, and email alerts with real-time GPS location during any emergency event.
+
+### Live Video Response
+URL: https://mysentry.ai/features/live-video-response
+During an emergency, the phone camera streams live video to monitoring agents so they can assess the scene, communicate with the user, and provide accurate information to first responders.
+
+### Health Monitoring
+URL: https://mysentry.ai/features/health-monitoring
+Tracks heart rate, heart rate variability (HRV), blood oxygen (SpO2), and skin temperature via Apple Watch or Samsung Watch. Alerts users and contacts when readings fall outside safe ranges.
+
+### MeetSafe Check-Ins
+URL: https://mysentry.ai/features/meetsafe-check-ins
+Timed safety check-ins for meetings, dates, or appointments. If the user does not check in by the timer deadline, an alert is sent to monitoring and emergency contacts.
+
+## Audience Segments
+
+### Women's Safety
+URL: https://mysentry.ai/females
+Discreet panic activation, location sharing, and 24/7 monitoring for women walking alone, dating, running, or traveling solo.
+
+### Senior Safety
+URL: https://mysentry.ai/seniors
+Fall detection, health monitoring, and emergency response designed for independent seniors and their caregivers.
+
+### Family Safety
+URL: https://mysentry.ai/families
+Connected safety for the whole family: teen driver crash detection, child location sharing, senior parent monitoring, and family emergency alerts.
+
+### Employer/Workforce Safety
+URL: https://mysentry.ai/employers
+Lone worker protection, incident detection, compliance support, and 24/7 monitoring for field employees across industries.
+
+## Pricing
+
+URL: https://mysentry.ai/pricing
+- Essential Safety (Individual): $14.99/month
+- Family Safety: $24.99/month (up to 5 family members)
+- 7-day free trial available for all plans
+- Enterprise pricing available for employers
+
+## Device Compatibility
+
+- iPhone (iOS 15+)
+- Android phones (Android 10+)
+- Apple Watch (Series 4+)
+- Samsung Galaxy Watch (Watch 4+)
+- Requires cellular or Wi-Fi connectivity
+- Location services and notification permissions required
+
+## Company Information
+
+- Website: https://mysentry.ai
+- Contact: https://mysentry.ai/contact
+- Blog: https://mysentry.ai/blogs
+- Partner Program: https://mysentry.ai/partner

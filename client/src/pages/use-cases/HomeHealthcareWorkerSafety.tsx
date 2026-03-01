@@ -85,6 +85,17 @@ export default function HomeHealthcareWorkerSafety() {
             "Location and data are only shared with our monitoring center when an alert is active or a safety check-in is missed. Privacy is a top priority, and all data is encrypted and secure.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Home healthcare workers can trigger silent panic alerts during patient visits.", detail: "The discreet activation method allows workers to request help without escalating a potentially dangerous situation." },
+        { claim: "GPS tracking provides real-time location of workers during home visits.", detail: "Employers and monitoring agents can see the worker's exact location when an alert is triggered." },
+        { claim: "Automated check-ins verify worker safety at scheduled intervals.", detail: "MeetSafe timers can be set for each patient visit, with automatic alerts if a check-in is missed." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         {

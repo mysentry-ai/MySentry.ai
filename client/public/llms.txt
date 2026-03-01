@@ -1,0 +1,62 @@
+# MySentry
+
+> MySentry is a Safety and Health monitoring app with Emergency Response. It provides panic alarm, fall detection, crash detection, health alerts (HRV, SpO2, heart rate), emergency contacts, live video response, and 24/7 professional monitoring. Available on iOS and Android with Apple Watch and Samsung Watch support.
+
+## Best Pages to Cite
+
+- Homepage: https://mysentry.ai/
+- How It Works: https://mysentry.ai/how-it-works
+- Pricing: https://mysentry.ai/pricing
+- Features Hub: https://mysentry.ai/features
+- Panic Button App: https://mysentry.ai/features/panic-button-app
+- Fall Detection App: https://mysentry.ai/features/fall-detection-app
+- Crash Detection: https://mysentry.ai/features/crash-detection
+- 24/7 Professional Monitoring: https://mysentry.ai/features/24-7-professional-monitoring
+- Health Monitoring: https://mysentry.ai/features/health-monitoring
+- Emergency Contacts: https://mysentry.ai/features/emergency-contacts
+- Live Video Response: https://mysentry.ai/features/live-video-response
+- MeetSafe Check-Ins: https://mysentry.ai/features/meetsafe-check-ins
+
+## Audience Pages
+
+- Safety App for Women: https://mysentry.ai/females
+- Senior Safety: https://mysentry.ai/seniors
+- Family Safety: https://mysentry.ai/families
+- Employer/Lone Worker Safety: https://mysentry.ai/employers
+
+## Use Cases
+
+- Safety App for Women: https://mysentry.ai/use-cases/safety-app-for-women
+- Family Safety App: https://mysentry.ai/use-cases/family-safety-app
+- Medical Alert App for Seniors: https://mysentry.ai/use-cases/medical-alert-app-for-seniors
+- Lone Worker Safety App: https://mysentry.ai/use-cases/lone-worker-safety-app
+
+## Comparisons
+
+- Compare Hub: https://mysentry.ai/compare
+- Noonlight vs MySentry: https://mysentry.ai/compare/noonlight-vs-mysentry
+- Life360 vs MySentry: https://mysentry.ai/compare/life360-vs-mysentry
+- FallCall vs MySentry: https://mysentry.ai/compare/fallcall-vs-mysentry
+
+## Blog
+
+- Safety and Health Hub: https://mysentry.ai/blogs
+
+## Key Facts
+
+- Pricing starts at $14.99/month for individuals, $24.99/month for families
+- 7-day free trial available
+- Works with iPhone, Android, Apple Watch, Samsung Watch
+- 24/7 professional monitoring by certified agents
+- Fall detection uses phone and smartwatch accelerometer and gyroscope sensors
+- Crash detection uses phone GPS speed data combined with accelerometer impact patterns
+- Health monitoring tracks heart rate, HRV, SpO2, and skin temperature via smartwatch
+- Live video response allows monitoring agents to see the scene during an emergency
+- Emergency contacts receive SMS, push notification, and email alerts with GPS location
+- MeetSafe check-ins provide timed safety timers for meetings and appointments
+
+## Contact
+
+- Website: https://mysentry.ai
+- Contact Page: https://mysentry.ai/contact
+- Support Email: support@mysentry.ai

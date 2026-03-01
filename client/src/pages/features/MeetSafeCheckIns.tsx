@@ -84,6 +84,16 @@ export default function MeetSafeCheckIns() {
             "Yes, MySentry requires an active internet connection (cellular or Wi-Fi) to set the timer, send notifications, and trigger alerts. Your location services must also be enabled.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "MeetSafe check-ins use timed safety intervals that trigger automatic alerts if not dismissed.", detail: "Users set a timer before meetings or appointments. If the timer expires without dismissal, 24/7 agents are alerted with location." },
+        { claim: "Check-in timers can be customized for different scenarios from 15 minutes to 8 hours.", detail: "Flexible timing accommodates short client meetings, long shifts, or extended outdoor activities." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button", href: "/features/panic-button-app" },

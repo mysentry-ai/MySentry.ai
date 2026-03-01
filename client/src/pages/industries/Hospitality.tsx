@@ -60,6 +60,17 @@ export default function Hospitality() {
           answer: "Our professional monitoring center responds to every alert in seconds, 24/7/365. Our agents are trained to quickly assess the situation and coordinate with on-site personnel and local emergency services.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Hotel and restaurant workers can send silent panic alerts from any location on property.", detail: "The app works throughout the property using Wi-Fi or cellular, covering guest rooms, kitchens, and parking areas." },
+        { claim: "GPS and indoor positioning help identify the exact location of a worker in distress.", detail: "Monitoring agents receive precise location data to direct emergency responders to the right area." },
+        { claim: "Automated incident reporting helps employers meet OSHA workplace safety requirements.", detail: "Every alert generates a documented record with timestamps, location, and response details for compliance." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Hotel Staff Panic Buttons", href: "/features/panic-button-app" },

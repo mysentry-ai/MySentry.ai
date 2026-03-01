@@ -91,6 +91,43 @@ const BlogPost = () => {
         description={post.metaDescription || post.excerpt || ''}
         image={post.ogImageUrl || post.heroImageUrl || undefined}
       />
+
+      {/* Article Schema (JSON-LD) for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: post.title,
+            description: post.metaDescription || post.excerpt || '',
+            image: post.heroImageUrl || undefined,
+            datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
+            dateModified: post.updatedAt ? new Date(post.updatedAt).toISOString() : undefined,
+            author: {
+              "@type": "Organization",
+              name: post.authorName || "MySentry Editorial Team",
+              url: "https://mysentry.ai"
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "MySentry",
+              url: "https://mysentry.ai",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://mysentry.ai/mysentry-logo.svg"
+              }
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://mysentry.ai/blog/${slug}`
+            },
+            wordCount: post.contentHtml ? post.contentHtml.replace(/<[^>]*>/g, '').split(/\s+/).length : undefined,
+            articleSection: categoryName || undefined,
+            keywords: Array.isArray(post.tags) ? (post.tags as string[]).join(', ') : undefined
+          })
+        }}
+      />
       <Navbar />
 
       {/* Article Header - Centered & Editorial */}

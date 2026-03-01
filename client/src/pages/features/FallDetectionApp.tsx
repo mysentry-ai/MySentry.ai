@@ -60,6 +60,17 @@ export default function FallDetectionApp() {
           answer: "Yes, it is an ideal solution for seniors who want to maintain their independence. It is easy to set up on a device they already use and provides 24/7 protection without the stigma of a traditional medical alert necklace."
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Falls are detected using accelerometer and gyroscope sensors on phone and smartwatch.", detail: "MySentry analyzes sudden changes in motion patterns to identify falls, even when the user is alone." },
+        { claim: "If the user does not respond within 2 minutes, alerts are sent automatically.", detail: "A 2-minute countdown gives the user time to cancel a false alarm. If no response, 24/7 agents are alerted with location and vitals." },
+        { claim: "Near-fall detection identifies stability issues before a serious fall occurs.", detail: "The app tracks balance patterns over time and alerts users and caregivers to increasing fall risk." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Alarm for Emergencies", href: "/features/panic-button-app" },

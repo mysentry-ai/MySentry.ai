@@ -45,6 +45,16 @@ export default function HealthMonitoring() {
         { question: "What is HRV and why is it important?", answer: "Heart Rate Variability (HRV) is the variation in time between each heartbeat. It is a key indicator of your body's stress and recovery levels, offering insights into your overall well-being." },
         { question: "Can my family see my real-time health data?", answer: "Your emergency contacts are alerted if your vitals fall outside the safe zones you define, but they cannot see your real-time data continuously. This protects your privacy while ensuring help is available when needed." },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "MySentry tracks heart rate, HRV, SpO2, and skin temperature continuously via smartwatch.", detail: "Data is collected in real time and analyzed for abnormalities that may indicate a health emergency." },
+        { claim: "Abnormal health readings trigger automatic alerts to 24/7 monitoring agents and emergency contacts.", detail: "Users and caregivers are notified of concerning trends before they become critical emergencies." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Alarm for Immediate Help", href: "/features/panic-button-app" },

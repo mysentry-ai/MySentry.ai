@@ -84,6 +84,16 @@ export default function GooglePersonalSafetyVsMysentry() {
             "MySentry provides proactive health monitoring, including Heart Rate Variability (HRV), blood oxygen (SpO2), and resting heart rate. Google's app does not include these ongoing health tracking features.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "MySentry provides 24/7 professional monitoring; Google Personal Safety relies on automated emergency calls.", detail: "Human agents can assess situations via live video and make better decisions about which services to dispatch." },
+        { claim: "MySentry includes health monitoring and emergency contacts; Google Personal Safety focuses on crash and emergency detection.", detail: "MySentry tracks HRV, SpO2, and heart rate for proactive health alerts beyond emergency detection." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "MySentry vs Life360", href: "/compare/life360-vs-mysentry" },

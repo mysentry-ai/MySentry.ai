@@ -67,6 +67,16 @@ export default function Life360VsMysentry() {
           answer: "MySentry offers different pricing plans based on the level of protection you need. While it may have a higher cost than some of Life360's plans, it includes professional monitoring services, which is a significant value for your safety.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "MySentry includes 24/7 professional monitoring with live video; Life360 provides location sharing and crash detection.", detail: "MySentry's trained agents can assess emergencies in real time, while Life360 relies on automated alerts." },
+        { claim: "MySentry tracks health vitals (HRV, SpO2, heart rate); Life360 focuses on location and driving safety.", detail: "MySentry provides proactive health monitoring in addition to location-based safety features." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "MySentry vs. Noonlight", href: "/compare/noonlight-vs-mysentry" },

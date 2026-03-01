@@ -77,6 +77,16 @@ export default function SOSecureAdtVsMysentry() {
           answer: "MySentry is designed for personal safety wherever you go, not for property security. It protects you, not your house. It is an excellent complement to a home alarm system, but not a direct replacement.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "MySentry is a mobile-first app; SoSecure by ADT is tied to ADT's home security ecosystem.", detail: "MySentry works anywhere with cellular or Wi-Fi, while SoSecure is designed as an add-on to ADT home monitoring." },
+        { claim: "MySentry includes health monitoring and fall detection; SoSecure focuses on personal safety alerts.", detail: "MySentry provides a more comprehensive safety solution including health vitals tracking and automatic fall detection." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button for Seniors", href: "/features/panic-button-app" },

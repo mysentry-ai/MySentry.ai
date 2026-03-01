@@ -52,6 +52,17 @@ export default function MedicalAlertForSeniors() {
         { question: "What health metrics does the senior health monitoring app track?", answer: "MySentry can monitor key wellness indicators like Heart Rate Variability (HRV), blood oxygen (SpO2), and resting heart rate, providing a more complete picture of your loved one's well-being." },
         { question: "Is the MySentry medical alert system app difficult to set up?", answer: "Not at all. You can download MySentry from the app store and follow the simple on-screen instructions. Most users are set up in just a few minutes. We designed it to be user-friendly for everyone." },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "MySentry replaces traditional medical alert pendants with a smartphone and smartwatch.", detail: "No separate device needed. The app runs on devices seniors already own or can easily obtain." },
+        { claim: "Health monitoring tracks heart rate, HRV, SpO2, and skin temperature continuously.", detail: "Abnormal readings trigger alerts to 24/7 monitoring agents and designated family caregivers." },
+        { claim: "Fall detection works automatically without the senior needing to press any button.", detail: "If a fall is detected and the user does not respond within 2 minutes, help is dispatched automatically." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },

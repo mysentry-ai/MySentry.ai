@@ -67,6 +67,17 @@ export default function FamilySafetyApp() {
           answer: "No, MySentry runs in the background. As long as the phone is on and has an internet connection, our monitoring features like fall and crash detection are active. Location services must also be enabled.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Family plans cover up to 6 members under a single subscription.", detail: "Each family member gets their own profile with customized alerts, emergency contacts, and health monitoring settings." },
+        { claim: "Parents receive instant alerts for teen driver crashes and missed check-ins.", detail: "Crash detection and MeetSafe check-ins keep parents informed without requiring constant manual monitoring." },
+        { claim: "Family members see alerts only when emergencies occur, not continuous health data.", detail: "Privacy is maintained by sharing notifications only during panic alarms, falls, or health anomalies." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button for Seniors", href: "/features/panic-button-app" },

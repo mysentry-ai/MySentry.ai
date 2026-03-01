@@ -60,6 +60,16 @@ export default function NoonlightVsMysentry() {
           answer: "Both apps offer peace of mind. MySentry's MeetSafe feature and fall/crash detection provide additional layers of safety that are particularly valuable for families with students, active members, or senior parents.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "MySentry includes fall detection, crash detection, and health monitoring; Noonlight focuses on panic alerts.", detail: "MySentry provides a broader safety ecosystem beyond manual panic activation." },
+        { claim: "MySentry offers 24/7 professional monitoring with live video; Noonlight dispatches based on location only.", detail: "Live video gives MySentry agents better situational awareness for more accurate emergency response." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "MySentry vs Citizen", href: "/compare/noonlight-vs-mysentry" },

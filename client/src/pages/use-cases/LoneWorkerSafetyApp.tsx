@@ -60,6 +60,17 @@ export default function LoneWorkerSafetyApp() {
           answer: "We offer several plans based on the size of your team and the features you need. Please visit our pricing page or book a demo for a detailed quote.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "MySentry provides automatic fall detection and panic alerts for workers in isolated environments.", detail: "Lone workers in remote locations can trigger alerts via voice, phone tap, or smartwatch without needing a colleague nearby." },
+        { claim: "MeetSafe check-ins verify worker safety at scheduled intervals throughout shifts.", detail: "Employers receive automatic alerts if a lone worker misses a scheduled check-in, enabling rapid response." },
+        { claim: "GPS tracking provides real-time location data for workers in the field.", detail: "Monitoring agents and employers can see the exact location of a worker when an alert is triggered." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button for Instant Help", href: "/features/panic-button-app" },

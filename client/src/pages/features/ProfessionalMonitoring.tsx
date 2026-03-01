@@ -45,6 +45,17 @@ export default function ProfessionalMonitoring() {
         { question: "What happens if I trigger an alarm by accident?", answer: "Accidents happen. If you trigger a false alarm, you can simply cancel it in the app or inform the monitoring agent when they contact you. There is no penalty for false alarms." },
         { question: "Do I need a separate landline for this service?", answer: "No, MySentry's monitoring service works through your smartphone's internet connection (Wi-Fi or cellular data). No landline is required." },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Certified monitoring agents are available 24 hours a day, 7 days a week, 365 days a year.", detail: "MySentry's monitoring center operates continuously with trained agents who can assess emergencies using live video, GPS, and health data." },
+        { claim: "Agents can dispatch police, fire, or EMS based on real-time assessment.", detail: "Using live video and audio from the user's device, agents determine the appropriate emergency response and coordinate with local services." },
+        { claim: "Average response time from alert to agent contact is under 60 seconds.", detail: "Alerts are prioritized and routed to available agents immediately, with automated escalation if the first agent is unavailable." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button", href: "/features/panic-button-app" },

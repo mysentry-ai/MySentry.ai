@@ -84,6 +84,16 @@ export default function RealEstate() {
             "Absolutely. Your MySentry subscription covers you 24/7, whether you are at work, at home, or on the go. It's a complete personal safety solution for all aspects of your life.",
         },
       ]}
+      setupRequirements={{
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+      }}
+      proofBlocks={[
+        { claim: "Real estate agents can set MeetSafe timers before property showings with unknown clients.", detail: "If the agent does not check in after the showing, 24/7 monitoring agents are alerted with their location." },
+        { claim: "Voice-activated panic works hands-free during property tours.", detail: "Agents can trigger alerts discreetly using a custom voice command without reaching for their phone." }
+      ]}
       disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Alarm for Agents", href: "/features/panic-button-app" },
