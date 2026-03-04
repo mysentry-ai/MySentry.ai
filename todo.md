@@ -342,3 +342,8 @@
 - [x] P2: Remove "Start a 7-Day Free Trial" hero button on Pricing page (desktop + mobile)
 - [x] P3: Set chatbot autoOpen to false, remove autoOpenDelay and auto-trigger configs
 - [x] P4: All sitewide "Start a 7-Day Free Trial" buttons redirect to /pricing#pricing-plans with smooth scroll
+
+## Category Pill Overlay Fixes (Round 11)
+- [x] Add category pill overlay to featured story card on /blogs listing page (same style as grid cards)
+- [x] Add category pill overlay to hero image on individual blog post pages (/blog/:slug)
+- [x] Add category pill overlay to related posts cards on individual blog post pages

@@ -103,6 +103,11 @@ const Blogs = () => {
                   alt={featuredBlog.heroImageAlt || featuredBlog.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
+                {featuredBlog.categoryId && categoryMap[featuredBlog.categoryId] && (
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#1a1a1a]">
+                    {categoryMap[featuredBlog.categoryId]}
+                  </div>
+                )}
               </div>
               <div className="flex flex-col justify-center lg:pl-8">
                 <span className="text-[#386758] font-bold tracking-widest uppercase text-xs mb-4">
