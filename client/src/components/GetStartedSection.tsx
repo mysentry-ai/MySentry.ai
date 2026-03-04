@@ -15,7 +15,7 @@ export default function GetStartedSection({
   title = "Get Started in Minutes", 
   subtitle = "Three simple steps to 24/7 peace of mind.",
   ctaText = "Start Your Free Trial",
-  ctaLink = "/pricing"
+  ctaLink = "/pricing#pricing-plans"
 }: GetStartedSectionProps) {
   const steps = [
     {
@@ -86,7 +86,7 @@ export default function GetStartedSection({
           <Link 
             href={ctaLink}
             className="inline-flex items-center justify-center bg-[#1a1a1a] text-white hover:bg-black text-xl px-12 py-8 h-auto font-bold uppercase tracking-wider rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onClick={() => { /* scroll handled by hash */ }}
           >
             {ctaText}
             <ArrowRight className="ml-3 w-6 h-6" />

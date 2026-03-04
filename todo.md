@@ -333,3 +333,12 @@
 
 ### Final Deliverables
 - [x] Generated SEO-AEO-GEO-Optimization-Report.md with complete Before vs After analysis
+
+## Pricing, Chatbot & Trial Button Updates (Round 10)
+- [x] P1: Update Individual Monthly CTA to https://dashboard.mysentry.ai/create-saas-account?plan=550e8400-e29b-41d4-a716-446655440001
+- [x] P1: Update Individual Yearly CTA to https://dashboard.mysentry.ai/create-saas-account?plan=550e8400-e29b-41d4-a716-446655440002
+- [x] P1: Update Family Monthly CTA to https://dashboard.mysentry.ai/create-saas-account?plan=550e8400-e29b-41d4-a716-446655440003
+- [x] P1: Update Family Yearly CTA to https://dashboard.mysentry.ai/create-saas-account?plan=550e8400-e29b-41d4-a716-446655440004
+- [x] P2: Remove "Start a 7-Day Free Trial" hero button on Pricing page (desktop + mobile)
+- [x] P3: Set chatbot autoOpen to false, remove autoOpenDelay and auto-trigger configs
+- [x] P4: All sitewide "Start a 7-Day Free Trial" buttons redirect to /pricing#pricing-plans with smooth scroll

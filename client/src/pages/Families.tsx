@@ -279,7 +279,7 @@ export default function Families() {
         title="Protect your whole family today."
         subtitle="One simple app to keep everyone connected and safe."
         ctaText="Start Your 7-Day Free Trial"
-        ctaLink="/pricing"
+        ctaLink="/pricing#pricing-plans"
       />
     </Layout>
   );

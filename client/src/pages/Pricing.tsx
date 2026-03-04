@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Check, X, Shield, Zap, Users, Building2, Heart, AlertTriangle, Lock } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import SEO from "@/components/SEO";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Link } from "wouter";
 import Layout from "@/components/Layout";
@@ -164,6 +164,18 @@ export default function Pricing() {
     }
   ];
 
+  // Smooth scroll to hash on page load
+  useEffect(() => {
+    if (window.location.hash) {
+      const el = document.querySelector(window.location.hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 300);
+      }
+    }
+  }, []);
+
   return (
     <Layout>
       <SEO 
@@ -223,8 +235,7 @@ export default function Pricing() {
         description="Choose the protection that fits your life. Whether for yourself, your family, or your entire workforce, MySentry offers comprehensive safety & health monitoring with emergency response at an affordable price."
         imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zhjtYYsGkjNemizw.png"
         imageAlt="Safety Dispenser"
-        ctaText="START 7-DAY FREE TRIAL"
-        ctaLink="#pricing-plans"
+        showCta={false}
       />
 
       {/* Pricing Toggle */}

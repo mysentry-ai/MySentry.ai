@@ -138,7 +138,7 @@ export default function Navbar() {
         {/* CTA Buttons */}
         <div className="hidden xl:flex items-center gap-3">
           <Link 
-            href="/pricing"
+            href="/pricing#pricing-plans"
             className={cn(
               "inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-6 h-10 text-xs shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300",
               "bg-primary text-white hover:bg-primary/90"
@@ -235,7 +235,7 @@ export default function Navbar() {
 
             <div className="pt-8 pb-12 space-y-4">
               <Link 
-                href="/pricing" 
+                href="/pricing#pricing-plans" 
                 className="inline-flex items-center justify-center w-full bg-primary text-white rounded-full h-14 text-lg font-bold uppercase tracking-wider" 
                 onClick={() => setIsOpen(false)}
               >

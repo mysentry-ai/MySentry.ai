@@ -57,7 +57,6 @@ const PLAN_UUIDS: Record<PlanType, Record<BillingCycle, string>> = {
 
 // Generate signup URL based on plan type and billing cycle
 export const getSignupUrl = (planType: PlanType, billingCycle: BillingCycle): string => {
-  const baseUrl = getFrontendBaseUrl();
   const planUuid = PLAN_UUIDS[planType][billingCycle];
-  return `${baseUrl}/create-saas-account?plan=${planUuid}`;
+  return `https://dashboard.mysentry.ai/create-saas-account?plan=${planUuid}`;
 };

@@ -24,7 +24,7 @@ export default function HeroSection({
   imageSrc,
   imageAlt,
   ctaText = "START 7-DAY FREE TRIAL",
-  ctaLink = "/pricing",
+  ctaLink = "/pricing#pricing-plans",
   className,
   showCta = true,
   children
@@ -64,7 +64,6 @@ export default function HeroSection({
               <Link 
                 href={ctaLink}
                 className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
-                onClick={() => window.scrollTo(0, 0)}
               >
                 {ctaText}
               </Link>

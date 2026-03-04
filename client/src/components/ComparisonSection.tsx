@@ -286,7 +286,7 @@ export default function ComparisonSection() {
         </div>
 
         <div className="mt-16 text-center">
-          <Link href="/pricing" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary hover:bg-primary/90 rounded-full transition-all hover:scale-105 shadow-lg shadow-primary/25">
+          <Link href="/pricing#pricing-plans" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary hover:bg-primary/90 rounded-full transition-all hover:scale-105 shadow-lg shadow-primary/25">
             Start Your 7-Day Free Trial
           </Link>
           <p className="mt-4 text-gray-500 text-sm">

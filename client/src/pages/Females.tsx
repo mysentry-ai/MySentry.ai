@@ -343,8 +343,8 @@ export default function Females() {
               <p className="text-xl text-gray-300 mb-12 leading-relaxed">
                 Start your 7-day free trial. Safety that fits your lifestyle.
               </p>
-              <Link href="/pricing">
-                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl" onClick={() => window.scrollTo(0, 0)}>
+              <Link href="/pricing#pricing-plans">
+                <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl">
                   START 7-DAY FREE TRIAL
                 </Button>
               </Link>
