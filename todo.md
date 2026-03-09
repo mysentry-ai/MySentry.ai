@@ -347,3 +347,10 @@
 - [x] Add category pill overlay to featured story card on /blogs listing page (same style as grid cards)
 - [x] Add category pill overlay to hero image on individual blog post pages (/blog/:slug)
 - [x] Add category pill overlay to related posts cards on individual blog post pages
+
+## Google Search Console Duplicate Content Fixes (Round 12)
+- [x] Investigate current sitemap.xml vs sitemaps.xml setup
+- [x] Consolidate to single sitemap.xml (remove static XML files, keep dynamic server routes)
+- [x] Canonical tags already present via SEO component (enforcing https://mysentry.ai)
+- [x] Added www-to-non-www 301 redirect in server middleware
+- [x] Added /sitemap.xml → /sitemap_index.xml 301 redirect, all URLs use https://mysentry.ai

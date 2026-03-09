@@ -53,6 +53,8 @@ const STATIC_PAGES = [
   { url: "/contact", priority: "0.6", changefreq: "monthly" },
   { url: "/team", priority: "0.5", changefreq: "monthly" },
   { url: "/partner", priority: "0.6", changefreq: "monthly" },
+  { url: "/privacy", priority: "0.3", changefreq: "yearly" },
+  { url: "/terms", priority: "0.3", changefreq: "yearly" },
 ];
 
 const BASE_URL = "https://mysentry.ai";
@@ -73,7 +75,24 @@ function formatDate(date: Date | string | null): string {
 }
 
 export function registerSitemapRoutes(app: Express) {
-  // Sitemap Index
+  // ── www → non-www redirect (production only) ──
+  // Redirect www.mysentry.ai to mysentry.ai to prevent duplicate content
+  app.use((req, res, next) => {
+    const host = req.get("host") || "";
+    if (host.startsWith("www.")) {
+      const newHost = host.replace(/^www\./, "");
+      return res.redirect(301, `https://${newHost}${req.originalUrl}`);
+    }
+    next();
+  });
+
+  // ── /sitemap.xml → redirect to /sitemap_index.xml ──
+  // Google auto-checks /sitemap.xml; redirect to the actual sitemap index
+  app.get("/sitemap.xml", (_req, res) => {
+    res.redirect(301, `${BASE_URL}/sitemap_index.xml`);
+  });
+
+  // ── Sitemap Index ──
   app.get("/sitemap_index.xml", (_req, res) => {
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -85,10 +104,11 @@ export function registerSitemapRoutes(app: Express) {
   </sitemap>
 </sitemapindex>`;
     res.set("Content-Type", "application/xml");
+    res.set("Cache-Control", "public, max-age=3600");
     res.send(xml);
   });
 
-  // Pages Sitemap (static pages)
+  // ── Pages Sitemap (static pages) ──
   app.get("/sitemap_pages.xml", (_req, res) => {
     const urls = STATIC_PAGES.map(
       (page) => `  <url>
@@ -103,10 +123,11 @@ export function registerSitemapRoutes(app: Express) {
 ${urls}
 </urlset>`;
     res.set("Content-Type", "application/xml");
+    res.set("Cache-Control", "public, max-age=3600");
     res.send(xml);
   });
 
-  // Blog Sitemap (dynamic from database)
+  // ── Blog Sitemap (dynamic from database) ──
   app.get("/sitemap_blog.xml", async (_req, res) => {
     try {
       const db = await getDb();
@@ -136,6 +157,7 @@ ${urls}
 ${urls}
 </urlset>`;
       res.set("Content-Type", "application/xml");
+      res.set("Cache-Control", "public, max-age=3600");
       res.send(xml);
     } catch (error) {
       console.error("Error generating blog sitemap:", error);

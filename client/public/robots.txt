@@ -4,4 +4,5 @@ Disallow: /api/
 Disallow: /admin/
 Disallow: /404
 
+Sitemap: https://mysentry.ai/sitemap.xml
 Sitemap: https://mysentry.ai/sitemap_index.xml
