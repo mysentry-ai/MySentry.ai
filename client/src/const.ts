@@ -33,10 +33,9 @@ export const getFrontendBaseUrl = () => {
   return 'https://www.mysentry.ai';
 };
 
-// Generate login URL using the environment-based frontend base URL
+// Generate login URL pointing to the MySentry dashboard
 export const getMySentryLoginUrl = (): string => {
-  const baseUrl = getFrontendBaseUrl();
-  return `${baseUrl}/login`;
+  return 'https://dashboard.mysentry.ai/login';
 };
 
 // Plan signup URL types

@@ -354,3 +354,8 @@
 - [x] Canonical tags already present via SEO component (enforcing https://mysentry.ai)
 - [x] Added www-to-non-www 301 redirect in server middleware
 - [x] Added /sitemap.xml → /sitemap_index.xml 301 redirect, all URLs use https://mysentry.ai
+
+## Login Button URL Update (Round 13)
+- [x] Update Login button URL to https://dashboard.mysentry.ai/login across all pages (desktop + mobile)
+- [x] Ensure only the Login button uses this URL, no other elements affected
+- [x] Verify Login button works on both desktop and mobile layouts
