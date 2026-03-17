@@ -365,3 +365,12 @@
 - [x] Fix /sitemap.xml redirect (serve content directly instead of 301 redirect)
 - [x] Review www-to-non-www redirect (kept - correct behavior, Google will stop flagging once it re-crawls)
 - [x] Ensure sitemap only lists final canonical URLs (robots.txt now references single /sitemap.xml)
+
+## Growth Strategy Phase 1: Homepage Conversion Optimization (Round 15)
+- [x] P1.1: Add ICP Selector below hero text ("I am looking for safety for... Myself / My Family / My Team")
+- [x] P1.1: Dynamic CTA - "My Team" changes CTA to "Book a Demo", others show "Start 7-Day Free Trial"
+- [x] P1.2: Add "Trusted By" / "As Featured In" banner below hero section with metric
+- [x] P1.3: Consolidate "Who We Protect" from 12 items to 4 tabs (Seniors, Families, Women, Employers)
+- [x] P1.3: Use tabbed interface so only one segment visible at a time
+- [x] Typography: Verify hero max 55px, menu items 28px
+- [x] Mobile: Ensure all new components are fully responsive
