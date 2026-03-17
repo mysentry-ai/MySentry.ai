@@ -191,7 +191,7 @@ export default function Home() {
         canonical="https://mysentry.ai/"
       />
       <HeroSection
-        label="24/7 Safety & Health Monitoring with Emergency Response"
+        label="24/7 Personal Safety & Health Monitoring with Emergency Response"
         title={<>Never Face a Safety or<br/><span className="text-gray-600">Health Emergency Alone.</span></>}
         description="MySentry turns your smart phone and smart wearables into 24/7 safety and health monitoring so help is dispatched fast when you can’t respond."
         imageSrc="/images/families-hero.jpg"
