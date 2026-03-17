@@ -359,3 +359,9 @@
 - [x] Update Login button URL to https://dashboard.mysentry.ai/login across all pages (desktop + mobile)
 - [x] Ensure only the Login button uses this URL, no other elements affected
 - [x] Verify Login button works on both desktop and mobile layouts
+
+## Google Search Console - "Page with redirect" Fix (Round 14)
+- [x] Investigate which redirects are causing "Page with redirect" indexing issue
+- [x] Fix /sitemap.xml redirect (serve content directly instead of 301 redirect)
+- [x] Review www-to-non-www redirect (kept - correct behavior, Google will stop flagging once it re-crawls)
+- [x] Ensure sitemap only lists final canonical URLs (robots.txt now references single /sitemap.xml)

@@ -86,14 +86,9 @@ export function registerSitemapRoutes(app: Express) {
     next();
   });
 
-  // ── /sitemap.xml → redirect to /sitemap_index.xml ──
-  // Google auto-checks /sitemap.xml; redirect to the actual sitemap index
-  app.get("/sitemap.xml", (_req, res) => {
-    res.redirect(301, `${BASE_URL}/sitemap_index.xml`);
-  });
-
-  // ── Sitemap Index ──
-  app.get("/sitemap_index.xml", (_req, res) => {
+  // ── Sitemap Index (served at both /sitemap.xml and /sitemap_index.xml) ──
+  // Serve identical content at both URLs to avoid redirects that Google flags
+  const serveSitemapIndex = (_req: any, res: any) => {
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
@@ -106,7 +101,9 @@ export function registerSitemapRoutes(app: Express) {
     res.set("Content-Type", "application/xml");
     res.set("Cache-Control", "public, max-age=3600");
     res.send(xml);
-  });
+  };
+  app.get("/sitemap.xml", serveSitemapIndex);
+  app.get("/sitemap_index.xml", serveSitemapIndex);
 
   // ── Pages Sitemap (static pages) ──
   app.get("/sitemap_pages.xml", (_req, res) => {
