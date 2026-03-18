@@ -58,8 +58,6 @@ interface SEOPageTemplateProps {
   // Cite-ready proof blocks (GEO Phase 4)
   proofBlocks?: ProofBlock[];
 
-  // Trust
-  disclaimer?: string;
 
   // Internal links
   relatedLinks: { text: string; href: string }[];
@@ -89,7 +87,6 @@ export default function SEOPageTemplate({
   faqs,
   setupRequirements,
   proofBlocks,
-  disclaimer,
   relatedLinks,
   heroImage,
 }: SEOPageTemplateProps) {
@@ -368,15 +365,6 @@ export default function SEOPageTemplate({
             </div>
           </div>
 
-          {/* Trust + Safety Disclaimer */}
-          {disclaimer && (
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-12">
-              <div className="flex items-start gap-3">
-                <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <p className="text-sm text-amber-800">{disclaimer}</p>
-              </div>
-            </div>
-          )}
 
           {/* Related Links */}
           <div className="border-t border-gray-200 pt-8">

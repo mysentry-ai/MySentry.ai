@@ -87,7 +87,6 @@ export default function SOSecureAdtVsMysentry() {
         { claim: "MySentry is a mobile-first app; SoSecure by ADT is tied to ADT's home security ecosystem.", detail: "MySentry works anywhere with cellular or Wi-Fi, while SoSecure is designed as an add-on to ADT home monitoring." },
         { claim: "MySentry includes health monitoring and fall detection; SoSecure focuses on personal safety alerts.", detail: "MySentry provides a more comprehensive safety solution including health vitals tracking and automatic fall detection." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button for Seniors", href: "/features/panic-button-app" },
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },

@@ -74,7 +74,6 @@ export default function Retail() {
         { claim: "Live video provides real-time evidence for law enforcement response.", detail: "Monitoring agents can share live video with police to improve response accuracy and speed." },
         { claim: "MeetSafe check-ins protect employees working alone during opening and closing shifts.", detail: "Timed safety check-ins ensure someone is monitoring the employee during vulnerable periods." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Retail Employee Panic Button", href: "/features/panic-button-app" },
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },

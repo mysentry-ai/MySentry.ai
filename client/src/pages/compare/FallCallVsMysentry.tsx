@@ -94,7 +94,6 @@ export default function FallCallVsMysentry() {
         { claim: "MySentry combines fall detection with panic alarm, crash detection, and health monitoring in one app.", detail: "FallCall focuses primarily on fall detection for seniors, while MySentry covers a broader range of safety scenarios." },
         { claim: "MySentry works on both iPhone and Android with Apple Watch and Samsung Watch support.", detail: "FallCall is primarily Apple Watch focused, while MySentry supports a wider range of devices." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button", href: "/features/panic-button-app" },
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },

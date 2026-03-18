@@ -63,7 +63,6 @@ export default function MedicalAlertForSeniors() {
         { claim: "Health monitoring tracks heart rate, HRV, SpO2, and skin temperature continuously.", detail: "Abnormal readings trigger alerts to 24/7 monitoring agents and designated family caregivers." },
         { claim: "Fall detection works automatically without the senior needing to press any button.", detail: "If a fall is detected and the user does not respond within 2 minutes, help is dispatched automatically." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },
         { text: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" },

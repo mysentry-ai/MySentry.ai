@@ -94,7 +94,6 @@ export default function GooglePersonalSafetyVsMysentry() {
         { claim: "MySentry provides 24/7 professional monitoring; Google Personal Safety relies on automated emergency calls.", detail: "Human agents can assess situations via live video and make better decisions about which services to dispatch." },
         { claim: "MySentry includes health monitoring and emergency contacts; Google Personal Safety focuses on crash and emergency detection.", detail: "MySentry tracks HRV, SpO2, and heart rate for proactive health alerts beyond emergency detection." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "MySentry vs Life360", href: "/compare/life360-vs-mysentry" },
         { text: "Fall Detection Feature", href: "/features/fall-detection-app" },

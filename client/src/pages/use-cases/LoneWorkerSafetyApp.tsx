@@ -71,7 +71,6 @@ export default function LoneWorkerSafetyApp() {
         { claim: "MeetSafe check-ins verify worker safety at scheduled intervals throughout shifts.", detail: "Employers receive automatic alerts if a lone worker misses a scheduled check-in, enabling rapid response." },
         { claim: "GPS tracking provides real-time location data for workers in the field.", detail: "Monitoring agents and employers can see the exact location of a worker when an alert is triggered." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button for Instant Help", href: "/features/panic-button-app" },
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },

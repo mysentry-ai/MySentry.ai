@@ -92,7 +92,6 @@ export default function ConstructionSolutionPage() {
         detail: '“MySentry gives me peace of mind. I know if one of my guys has a problem, we\'ll know about it instantly.” - John Miller, Safety Manager',
       },
     ],
-    disclaimer: 'MySentry is a supplementary monitoring tool and not a replacement for emergency services or a comprehensive on-site safety program. Users should always call 911 or their local emergency number in a critical situation.',
     relatedLinks: [
       { text: 'Fall Detection for Roofers', href: '/solutions/roofing' },
       { text: 'Lone Worker Safety Guide', href: '/guides/lone-worker-safety' },

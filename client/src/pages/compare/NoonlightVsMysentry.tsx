@@ -70,7 +70,6 @@ export default function NoonlightVsMysentry() {
         { claim: "MySentry includes fall detection, crash detection, and health monitoring; Noonlight focuses on panic alerts.", detail: "MySentry provides a broader safety ecosystem beyond manual panic activation." },
         { claim: "MySentry offers 24/7 professional monitoring with live video; Noonlight dispatches based on location only.", detail: "Live video gives MySentry agents better situational awareness for more accurate emergency response." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "MySentry vs Citizen", href: "/compare/noonlight-vs-mysentry" },
         { text: "Fall Detection Feature", href: "/features/fall-detection-app" },

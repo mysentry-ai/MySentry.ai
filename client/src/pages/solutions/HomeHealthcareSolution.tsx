@@ -76,7 +76,6 @@ export default function HomeHealthcareSolutionPage() {
         { claim: "GPS Location Tracking", detail: "Pinpoint the exact location of your workers in an emergency." },
         { claim: "Live Video Streaming", detail: "Get a real-time view of the situation to make informed decisions." },
       ]}
-      disclaimer="MySentry is a tool to enhance safety but does not replace emergency services. Always call 911 in a life-threatening situation."
       relatedLinks={[
         { text: "Lone Worker Safety Guide", href: "/guides/lone-worker-safety" },
         { text: "Pricing Plans", href: "/pricing" },

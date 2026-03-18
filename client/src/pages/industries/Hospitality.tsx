@@ -71,7 +71,6 @@ export default function Hospitality() {
         { claim: "GPS and indoor positioning help identify the exact location of a worker in distress.", detail: "Monitoring agents receive precise location data to direct emergency responders to the right area." },
         { claim: "Automated incident reporting helps employers meet OSHA workplace safety requirements.", detail: "Every alert generates a documented record with timestamps, location, and response details for compliance." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Hotel Staff Panic Buttons", href: "/features/panic-button-app" },
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },

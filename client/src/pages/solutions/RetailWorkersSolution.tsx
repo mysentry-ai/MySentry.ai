@@ -91,7 +91,6 @@ export default function RetailWorkersSolution() {
           detail: "\"MySentry has given our team peace of mind. Knowing they have a direct line to help has made a huge difference.\" - Store Manager, National Clothing Retailer",
         },
       ]}
-      disclaimer="MySentry is a monitoring and alert service and is not a substitute for emergency services. Response times may vary based on local conditions and service availability."
       relatedLinks={[
         { text: "Workplace Violence Prevention", href: "/guides/workplace-violence-prevention" },
         { text: "Case Study: Luxury Retailer", href: "/case-studies/luxury-retailer" },

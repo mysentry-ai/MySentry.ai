@@ -84,7 +84,6 @@ export default function AppleWatchIntegrationPage() {
           detail: "I feel so much safer knowing MySentry is on my Apple Watch. It is the peace of mind I did not know I was missing. - Sarah K., MySentry User",
         },
       ]}
-      disclaimer="MySentry for Apple Watch is not a medical device and is not intended to diagnose, treat, cure, or prevent any disease. It is a personal emergency response service. Fall detection does not detect 100% of falls. For crash detection, the user must have their iPhone with them in the car."
       relatedLinks={[
         { text: "Compare MySentry to Other Medical Alert Devices", href: "/compare/medical-alert-devices-vs-mysentry" },
         { text: "How Our 24/7 Monitoring Works", href: "/solutions/24-7-monitoring" },

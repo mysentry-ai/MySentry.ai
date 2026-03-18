@@ -87,7 +87,6 @@ export default function SoloTravelersPage() {
           detail: "Trusted by thousands of solo travelers across 50+ countries.",
         },
       ]}
-      disclaimer="MySentry is a personal safety monitoring service and not a replacement for emergency services. In a life-threatening situation, always try to contact local emergency services directly if possible."
       relatedLinks={[
         { text: "A Guide to Safe Solo Female Travel", href: "/guides/safe-solo-female-travel" },
         { text: "MySentry vs. Apple Find My", href: "/compare/mysentry-vs-apple-find-my" },

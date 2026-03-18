@@ -417,3 +417,9 @@
 - [x] P2.12: Article/HowTo schema auto-generated via SEOPageTemplate on all guides
 - [ ] P2.13: Add Solutions and Integrations to main menu navigation (deferred to next round)
 - [x] P2.14: Update sitemaps with all new pages (64 total URLs in sitemap_pages.xml)
+
+## Remove Disclaimer/Warning Banner (Round 17)
+- [x] Remove "If you feel unsafe, use the MySentry panic alarm..." disclaimer from all pages (37 files)
+- [x] Remove from SEOPageTemplate (prop, destructuring, and rendering code removed)
+- [x] Remove from any blog post templates (blog posts don't use SEOPageTemplate, no disclaimers found)
+- [x] Verify removal across all pages (zero disclaimer= matches, zero TS errors, 42 tests pass)

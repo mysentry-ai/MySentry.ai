@@ -62,7 +62,6 @@ export default function SecurityGuarding() {
         { claim: "Security guards can trigger panic alerts with live video during patrol incidents.", detail: "24/7 monitoring agents receive real-time video and location to coordinate emergency response." },
         { claim: "Automated patrol check-ins verify guard safety at scheduled intervals.", detail: "Missed check-ins trigger automatic alerts to supervisors and monitoring agents." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
         { text: "Panic Button for Teams", href: "/features/panic-button-app" },

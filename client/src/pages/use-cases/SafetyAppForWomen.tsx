@@ -80,7 +80,6 @@ export default function SafetyAppForWomen() {
         { claim: "Live video streaming provides real-time evidence to monitoring agents during an emergency.", detail: "Video evidence helps agents assess the situation and dispatch appropriate emergency services." },
         { claim: "MeetSafe check-ins protect women during dates, rideshares, and solo activities.", detail: "Timed safety intervals trigger automatic alerts if the user does not check in as scheduled." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button for Seniors", href: "/use-cases/medical-alert-app-for-seniors" },
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },

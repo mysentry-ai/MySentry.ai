@@ -70,7 +70,6 @@ export default function Education() {
         { claim: "School staff can trigger campus-wide alerts from any location using the MySentry app.", detail: "Panic alerts include GPS location and live video to help responders assess the situation." },
         { claim: "MeetSafe check-ins protect staff working alone in buildings after hours.", detail: "Automated safety intervals ensure someone is monitoring staff during vulnerable periods." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Alarm for Lone Workers", href: "/features/panic-button-app" },
         { text: "Safety for Healthcare Workers", href: "/industries/home-healthcare" },

@@ -61,7 +61,6 @@ export default function RealEstateSolution() {
         { claim: "A Non-Negotiable Safety Protocol", detail: "MySentry has become a non-negotiable part of our safety protocol. Our agents feel more secure, and as a broker, I have peace of mind. - Sarah K., Brokerage Owner" },
         { claim: "A Virtual Partner for Showings", detail: "The MeetSafe feature is brilliant. I use it for every showing. It’s like having a virtual partner with me. - David L., Real Estate Agent" },
       ]}
-      disclaimer="MySentry is a personal safety response service and not a replacement for 911. In any immediate, life-threatening situation, always dial 911 first if possible."
       relatedLinks={[
         { text: "Safety Tips for Lone Workers", href: "/guides/lone-worker-safety" },
         { text: "MySentry vs. Traditional Panic Buttons", href: "/compare/mysentry-vs-panic-buttons" },

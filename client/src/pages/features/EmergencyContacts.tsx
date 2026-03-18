@@ -77,7 +77,6 @@ export default function EmergencyContacts() {
         { claim: "Up to 10 emergency contacts can be designated per user profile.", detail: "Each contact receives SMS, push notification, and email alerts simultaneously when an emergency is triggered." },
         { claim: "Emergency contacts receive the user's real-time GPS location during an active alert.", detail: "Contacts can track the user's location on a map and coordinate with emergency services." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Fall Detection", href: "/features/fall-detection-app" },
         { text: "Panic Alarm for Seniors", href: "/use-cases/medical-alert-app-for-seniors" },

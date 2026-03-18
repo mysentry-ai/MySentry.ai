@@ -78,7 +78,6 @@ export default function FamilySafetyApp() {
         { claim: "Parents receive instant alerts for teen driver crashes and missed check-ins.", detail: "Crash detection and MeetSafe check-ins keep parents informed without requiring constant manual monitoring." },
         { claim: "Family members see alerts only when emergencies occur, not continuous health data.", detail: "Privacy is maintained by sharing notifications only during panic alarms, falls, or health anomalies." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button for Seniors", href: "/features/panic-button-app" },
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },

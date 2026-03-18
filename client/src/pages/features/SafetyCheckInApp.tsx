@@ -85,7 +85,6 @@ export default function SafetyCheckInApp() {
         { claim: "Check-in timers can be customized for different scenarios from 15 minutes to 8 hours.", detail: "Flexible timing accommodates short client meetings, long shifts, or extended outdoor activities." },
         { claim: "Missed check-ins trigger a multi-step response: agent contact, emergency contact notification, and 911 dispatch.", detail: "The escalation process ensures appropriate response without overwhelming users with false alarms." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery."
       relatedLinks={[
         { text: "Panic Button App", href: "/features/panic-button-app" },
         { text: "Safety App for Women", href: "/use-cases/safety-app-for-women" },

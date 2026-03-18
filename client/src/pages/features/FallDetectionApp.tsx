@@ -71,7 +71,6 @@ export default function FallDetectionApp() {
         { claim: "If the user does not respond within 2 minutes, alerts are sent automatically.", detail: "A 2-minute countdown gives the user time to cancel a false alarm. If no response, 24/7 agents are alerted with location and vitals." },
         { claim: "Near-fall detection identifies stability issues before a serious fall occurs.", detail: "The app tracks balance patterns over time and alerts users and caregivers to increasing fall risk." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Alarm for Emergencies", href: "/features/panic-button-app" },
         { text: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" },

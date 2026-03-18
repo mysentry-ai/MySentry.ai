@@ -85,7 +85,6 @@ export default function TeenDriverSafety() {
         { claim: "A 2-minute countdown allows conscious users to cancel false alarms before agents are notified.", detail: "This prevents unnecessary emergency responses while ensuring unresponsive users still receive help." },
         { claim: "Parents receive automatic notifications with GPS coordinates within seconds of a detected crash.", detail: "Notifications are sent simultaneously to all designated emergency contacts and the 24/7 monitoring team." }
       ]}
-      disclaimer="If your teen is in an immediate life-threatening emergency, contact 911 directly. MySentry requires an active internet connection, device permissions, and sufficient battery. Crash detection may not detect all types of collisions."
       relatedLinks={[
         { text: "Crash Detection Feature", href: "/features/crash-detection" },
         { text: "Family Safety App", href: "/use-cases/family-safety-app" },

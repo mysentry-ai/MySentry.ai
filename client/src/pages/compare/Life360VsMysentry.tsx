@@ -77,7 +77,6 @@ export default function Life360VsMysentry() {
         { claim: "MySentry includes 24/7 professional monitoring with live video; Life360 provides location sharing and crash detection.", detail: "MySentry's trained agents can assess emergencies in real time, while Life360 relies on automated alerts." },
         { claim: "MySentry tracks health vitals (HRV, SpO2, heart rate); Life360 focuses on location and driving safety.", detail: "MySentry provides proactive health monitoring in addition to location-based safety features." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "MySentry vs. Noonlight", href: "/compare/noonlight-vs-mysentry" },
         { text: "Personal Panic Alarm", href: "/features/panic-button-app" },

@@ -70,7 +70,6 @@ export default function HomeHealthcare() {
         { claim: "Home healthcare agencies can monitor worker safety across all patient visits from a single dashboard.", detail: "Real-time GPS tracking and automated check-ins provide visibility into worker locations and status." },
         { claim: "Silent panic alerts allow healthcare workers to request help without escalating patient situations.", detail: "Discreet activation methods protect workers in potentially volatile home environments." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
         { text: "Panic Button", href: "/features/panic-button-app" },

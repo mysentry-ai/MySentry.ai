@@ -71,7 +71,6 @@ export default function PanicButtonApp() {
         { claim: "Alerts include live GPS location, audio, and video.", detail: "When a panic alarm is triggered, 24/7 monitoring agents receive real-time location, live audio, and video from the user's device." },
         { claim: "Emergency contacts receive SMS, push, and email notifications simultaneously.", detail: "All designated contacts are notified instantly through multiple channels to maximize response speed." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "How Fall Detection Works", href: "/features/fall-detection-app" },
         { text: "What is 24/7 Monitoring?", href: "/features/24-7-professional-monitoring" },

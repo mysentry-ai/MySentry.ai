@@ -73,7 +73,6 @@ export default function WomenLivingAlone() {
         { claim: "A Silent Guardian", detail: "As a young professional living alone in the city, MySentry gives me the confidence to enjoy my independence without constantly looking over my shoulder. It is like having a silent guardian with me 24/7. - Jessica L." },
         { claim: "3 in 4 Women Alter Their Lives for Safety", detail: "A recent study shows that a majority of women have altered their daily routines because of safety concerns. MySentry aims to restore that freedom." },
       ]}
-      disclaimer="MySentry is a personal safety alert system and not a substitute for emergency services. Always dial 911 for immediate police, fire, or medical assistance."
       relatedLinks={[
         { text: "Compare MySentry to Traditional Medical Alert Devices", href: "/compare/medical-alert-devices-vs-mysentry" },
         { text: "How MySentry Empowers Seniors to Live Independently", href: "/safety-for/seniors" },

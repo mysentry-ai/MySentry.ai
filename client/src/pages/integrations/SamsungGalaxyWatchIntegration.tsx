@@ -72,7 +72,6 @@ export default function SamsungGalaxyWatchIntegration() {
         { claim: "Automatic Crash Detection", detail: "In the event of a car accident, MySentry can automatically detect the crash and alert our monitoring center." },
         { claim: "User Testimonial", detail: "I feel so much safer knowing MySentry is on my wrist. It is the best of both worlds: the smartwatch I love and the protection I need. - Sarah L., MySentry User" },
       ]}
-      disclaimer="MySentry is not a substitute for professional medical advice. Heart rate and SpO2 monitoring are for informational purposes only and not intended for medical use."
       relatedLinks={[
         { text: "Explore Pricing Plans", href: "/pricing#pricing-plans" },
         { text: "How MySentry Works", href: "/how-it-works" },

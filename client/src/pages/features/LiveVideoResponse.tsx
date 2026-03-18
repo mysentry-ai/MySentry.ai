@@ -71,7 +71,6 @@ export default function LiveVideoResponse() {
         { claim: "Video evidence helps agents dispatch the right type of emergency response.", detail: "Agents can see the situation and determine whether police, fire, or medical services are needed, reducing response errors." },
         { claim: "Video is encrypted end-to-end and stored securely for evidence purposes.", detail: "All video transmissions use encryption to protect user privacy, and recordings are retained for incident documentation." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button", href: "/features/panic-button-app" },
         { text: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" },

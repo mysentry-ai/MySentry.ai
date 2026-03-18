@@ -92,7 +92,6 @@ export default function OuraRingIntegration() {
           detail: "Our service enhances your Oura Ring with critical safety features, including automatic fall detection, a voice-activated panic alarm, and immediate access to our emergency dispatch center.",
         },
       ]}
-      disclaimer="MySentry is an independent service and is not affiliated with, endorsed by, or sponsored by Oura. Oura Ring is a registered trademark of Ōura Health Oy. MySentry enhances the Oura Ring experience by adding a layer of professional monitoring and emergency response."
       relatedLinks={[
         { text: "How MySentry Works", href: "/how-it-works" },
         { text: "Pricing Plans", href: "/pricing" },

@@ -56,7 +56,6 @@ export default function Construction() {
         { claim: "Panic alerts work in areas with limited cellular coverage using offline mode.", detail: "Alerts are queued when offline and sent automatically when connectivity is restored." },
         { claim: "Health monitoring can detect signs of heat stress in outdoor workers.", detail: "Continuous tracking of heart rate and skin temperature helps identify heat-related illness before it becomes critical." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },

@@ -56,7 +56,6 @@ export default function ProfessionalMonitoring() {
         { claim: "Agents can dispatch police, fire, or EMS based on real-time assessment.", detail: "Using live video and audio from the user's device, agents determine the appropriate emergency response and coordinate with local services." },
         { claim: "Average response time from alert to agent contact is under 60 seconds.", detail: "Alerts are prioritized and routed to available agents immediately, with automated escalation if the first agent is unavailable." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Button", href: "/features/panic-button-app" },
         { text: "Fall Detection", href: "/features/fall-detection-app" },

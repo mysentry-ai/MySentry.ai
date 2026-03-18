@@ -55,7 +55,6 @@ export default function HealthMonitoring() {
         { claim: "MySentry tracks heart rate, HRV, SpO2, and skin temperature continuously via smartwatch.", detail: "Data is collected in real time and analyzed for abnormalities that may indicate a health emergency." },
         { claim: "Abnormal health readings trigger automatic alerts to 24/7 monitoring agents and emergency contacts.", detail: "Users and caregivers are notified of concerning trends before they become critical emergencies." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Alarm for Immediate Help", href: "/features/panic-button-app" },
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },

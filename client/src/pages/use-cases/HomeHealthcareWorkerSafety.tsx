@@ -96,7 +96,6 @@ export default function HomeHealthcareWorkerSafety() {
         { claim: "GPS tracking provides real-time location of workers during home visits.", detail: "Employers and monitoring agents can see the worker's exact location when an alert is triggered." },
         { claim: "Automated check-ins verify worker safety at scheduled intervals.", detail: "MeetSafe timers can be set for each patient visit, with automatic alerts if a check-in is missed." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         {
           text: "Lone Worker Safety",

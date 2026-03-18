@@ -70,7 +70,6 @@ export default function CrashDetection() {
         { claim: "Crash detection uses phone sensors to identify sudden deceleration events consistent with vehicle collisions.", detail: "The app analyzes accelerometer data patterns that match crash signatures and triggers automatic alerts." },
         { claim: "If the user does not respond within 2 minutes, 24/7 agents are alerted with GPS location and live video.", detail: "The countdown gives conscious users time to cancel false alarms from speed bumps or phone drops." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Alarm for Immediate Help", href: "/features/panic-button-app" },
         { text: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" },

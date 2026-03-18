@@ -94,7 +94,6 @@ export default function RealEstate() {
         { claim: "Real estate agents can set MeetSafe timers before property showings with unknown clients.", detail: "If the agent does not check in after the showing, 24/7 monitoring agents are alerted with their location." },
         { claim: "Voice-activated panic works hands-free during property tours.", detail: "Agents can trigger alerts discreetly using a custom voice command without reaching for their phone." }
       ]}
-      disclaimer="If you feel unsafe, use the MySentry panic alarm. If it is an immediate life-threatening emergency, contact local emergency services. MySentry requires an active internet connection, device permissions, and sufficient battery. Not all features are available on all devices."
       relatedLinks={[
         { text: "Panic Alarm for Agents", href: "/features/panic-button-app" },
         {

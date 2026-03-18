@@ -87,7 +87,6 @@ export default function DeliveryDriversSolution() {
           detail: "\"MySentry gives us the peace of mind that our drivers are protected, no matter where their routes take them. The panic alarm is a game-changer.\" - John D., Fleet Manager",
         },
       ]}
-      disclaimer="MySentry is a personal safety monitoring service and not a replacement for 911. In any immediate, life-threatening emergency, always call 911 first."
       relatedLinks={[
         { text: "How MySentry Works", href: "/how-it-works" },
         { text: "Pricing for Teams", href: "/pricing#pricing-plans" },
