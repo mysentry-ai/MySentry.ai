@@ -374,3 +374,46 @@
 - [x] P1.3: Use tabbed interface so only one segment visible at a time
 - [x] Typography: Verify hero max 55px, menu items 28px
 - [x] Mobile: Ensure all new components are fully responsive
+
+## Growth Strategy Phase 2: Massive Content Expansion (Round 16)
+
+### Part 1: BOFU & Comparison Pages
+- [x] P2.1a: Create /compare/medical-alert-devices (modern app vs stigmatizing lanyard)
+- [x] P2.1b: Enhanced existing /compare/sosecure-adt-vs-mysentry page
+- [ ] P2.1c: Update existing /compare/life360-vs-mysentry with enhanced comparison table (deferred - existing pages already have comparison tables)
+- [ ] P2.1d: Update existing /compare/noonlight-vs-mysentry with enhanced comparison table (deferred)
+- [ ] P2.1e: Update existing /compare/fallcall-vs-mysentry with enhanced comparison table (deferred)
+- [ ] P2.1f: Update existing /compare/google-personal-safety-vs-mysentry with enhanced comparison table (deferred)
+- [x] P2.2a: Create /solutions/home-healthcare (PEACE framework)
+- [x] P2.2b: Create /solutions/real-estate (PEACE framework)
+- [x] P2.2c: Create /solutions/delivery-drivers (PEACE framework)
+- [x] P2.2d: Create /solutions/construction (PEACE framework)
+- [x] P2.2e: Create /solutions/retail-workers (PEACE framework)
+- [x] P2.3a: Create /safety-for/women-living-alone (StoryBrand framework)
+- [x] P2.3b: Create /safety-for/seniors-aging-in-place (StoryBrand framework)
+- [x] P2.3c: Create /safety-for/solo-travelers (StoryBrand framework)
+
+### Part 2: B2B Sales Enablement
+- [x] P2.4a: Create /case-studies/home-healthcare
+- [x] P2.4b: Create /case-studies/real-estate
+- [x] P2.4c: Create /case-studies/field-services
+- [x] P2.5: Create /resources/employer-one-pager (PDF-ready visual page)
+- [ ] P2.6: Enhance ROI calculator on Employers page with "Email ROI report" lead capture (deferred)
+
+### Part 3: Wearable Integration Pages
+- [x] P2.7a: Create /integrations/apple-watch
+- [x] P2.7b: Create /integrations/samsung-galaxy-watch
+- [x] P2.7c: Create /integrations/oura-ring
+
+### Part 4: Authority Content Guides
+- [x] P2.8a: Create /guides/lone-worker-safety (OSHA deep dive)
+- [x] P2.8b: Create /guides/professional-monitoring
+- [x] P2.8c: Create /guides/senior-safety-planning
+
+### Part 5: SEO & Internal Linking
+- [x] P2.9: Internal linking - all new pages include relatedLinks to BOFU and comparison pages
+- [x] P2.10: All new pages include CTA buttons linking to pricing/trial
+- [x] P2.11: FAQPage schema auto-generated via SEOPageTemplate on all new pages
+- [x] P2.12: Article/HowTo schema auto-generated via SEOPageTemplate on all guides
+- [ ] P2.13: Add Solutions and Integrations to main menu navigation (deferred to next round)
+- [x] P2.14: Update sitemaps with all new pages (64 total URLs in sitemap_pages.xml)

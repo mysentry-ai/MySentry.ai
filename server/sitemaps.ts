@@ -47,6 +47,31 @@ const STATIC_PAGES = [
   { url: "/compare/fallcall-vs-mysentry", priority: "0.7", changefreq: "monthly" },
   { url: "/compare/google-personal-safety-vs-mysentry", priority: "0.7", changefreq: "monthly" },
   { url: "/compare/sosecure-adt-vs-mysentry", priority: "0.7", changefreq: "monthly" },
+  { url: "/compare/medical-alert-devices-vs-mysentry", priority: "0.7", changefreq: "monthly" },
+  // Solutions (Vertical-Specific BOFU)
+  { url: "/solutions/home-healthcare", priority: "0.8", changefreq: "monthly" },
+  { url: "/solutions/real-estate", priority: "0.8", changefreq: "monthly" },
+  { url: "/solutions/delivery-drivers", priority: "0.8", changefreq: "monthly" },
+  { url: "/solutions/construction", priority: "0.8", changefreq: "monthly" },
+  { url: "/solutions/retail-workers", priority: "0.8", changefreq: "monthly" },
+  // Safety For (Audience-Specific BOFU)
+  { url: "/safety-for/women-living-alone", priority: "0.8", changefreq: "monthly" },
+  { url: "/safety-for/seniors-aging-in-place", priority: "0.8", changefreq: "monthly" },
+  { url: "/safety-for/solo-travelers", priority: "0.8", changefreq: "monthly" },
+  // Case Studies
+  { url: "/case-studies/home-healthcare", priority: "0.7", changefreq: "monthly" },
+  { url: "/case-studies/real-estate", priority: "0.7", changefreq: "monthly" },
+  { url: "/case-studies/field-services", priority: "0.7", changefreq: "monthly" },
+  // Resources
+  { url: "/resources/employer-one-pager", priority: "0.7", changefreq: "monthly" },
+  // Integrations (Wearable Pages)
+  { url: "/integrations/apple-watch", priority: "0.8", changefreq: "monthly" },
+  { url: "/integrations/samsung-galaxy-watch", priority: "0.8", changefreq: "monthly" },
+  { url: "/integrations/oura-ring", priority: "0.8", changefreq: "monthly" },
+  // Guides (Authority Content)
+  { url: "/guides/lone-worker-safety", priority: "0.7", changefreq: "monthly" },
+  { url: "/guides/professional-monitoring", priority: "0.7", changefreq: "monthly" },
+  { url: "/guides/senior-safety-planning", priority: "0.7", changefreq: "monthly" },
   // Info pages
   { url: "/blogs", priority: "0.8", changefreq: "daily" },
   { url: "/about-us", priority: "0.6", changefreq: "monthly" },

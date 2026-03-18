@@ -59,6 +59,37 @@ import Life360VsMysentry from "./pages/compare/Life360VsMysentry";
 import FallCallVsMysentry from "./pages/compare/FallCallVsMysentry";
 import GooglePersonalSafetyVsMysentry from "./pages/compare/GooglePersonalSafetyVsMysentry";
 import SOSecureAdtVsMysentry from "./pages/compare/SOSecureAdtVsMysentry";
+import MedicalAlertDevicesVsMysentry from "./pages/compare/MedicalAlertDevicesVsMysentry";
+
+// Phase 2 - Solutions (Vertical-Specific BOFU)
+import HomeHealthcareSolution from "./pages/solutions/HomeHealthcareSolution";
+import RealEstateSolution from "./pages/solutions/RealEstateSolution";
+import DeliveryDriversSolution from "./pages/solutions/DeliveryDriversSolution";
+import ConstructionSolution from "./pages/solutions/ConstructionSolution";
+import RetailWorkersSolution from "./pages/solutions/RetailWorkersSolution";
+
+// Phase 2 - Safety For (Audience-Specific BOFU)
+import WomenLivingAlone from "./pages/safety-for/WomenLivingAlone";
+import SeniorsAgingInPlace from "./pages/safety-for/SeniorsAgingInPlace";
+import SoloTravelers from "./pages/safety-for/SoloTravelers";
+
+// Phase 2 - Case Studies (B2B Sales Enablement)
+import HomeHealthcareCaseStudy from "./pages/case-studies/HomeHealthcareCaseStudy";
+import RealEstateCaseStudy from "./pages/case-studies/RealEstateCaseStudy";
+import FieldServicesCaseStudy from "./pages/case-studies/FieldServicesCaseStudy";
+
+// Phase 2 - Resources
+import EmployerOnePager from "./pages/resources/EmployerOnePager";
+
+// Phase 2 - Integrations (Wearable Pages)
+import AppleWatchIntegration from "./pages/integrations/AppleWatchIntegration";
+import SamsungGalaxyWatchIntegration from "./pages/integrations/SamsungGalaxyWatchIntegration";
+import OuraRingIntegration from "./pages/integrations/OuraRingIntegration";
+
+// Phase 2 - Guides (Authority Content)
+import LoneWorkerSafetyGuide from "./pages/guides/LoneWorkerSafetyGuide";
+import ProfessionalMonitoringGuide from "./pages/guides/ProfessionalMonitoringGuide";
+import SeniorSafetyPlanningGuide from "./pages/guides/SeniorSafetyPlanningGuide";
 
 // Admin
 import AdminLayout from "./pages/admin/AdminLayout";
@@ -122,6 +153,37 @@ function Router() {
       <Route path="/compare/fallcall-vs-mysentry" component={FallCallVsMysentry} />
       <Route path="/compare/google-personal-safety-vs-mysentry" component={GooglePersonalSafetyVsMysentry} />
       <Route path="/compare/sosecure-adt-vs-mysentry" component={SOSecureAdtVsMysentry} />
+      <Route path="/compare/medical-alert-devices-vs-mysentry" component={MedicalAlertDevicesVsMysentry} />
+
+      {/* Phase 2 - Solutions (Vertical-Specific BOFU) */}
+      <Route path="/solutions/home-healthcare" component={HomeHealthcareSolution} />
+      <Route path="/solutions/real-estate" component={RealEstateSolution} />
+      <Route path="/solutions/delivery-drivers" component={DeliveryDriversSolution} />
+      <Route path="/solutions/construction" component={ConstructionSolution} />
+      <Route path="/solutions/retail-workers" component={RetailWorkersSolution} />
+
+      {/* Phase 2 - Safety For (Audience-Specific BOFU) */}
+      <Route path="/safety-for/women-living-alone" component={WomenLivingAlone} />
+      <Route path="/safety-for/seniors-aging-in-place" component={SeniorsAgingInPlace} />
+      <Route path="/safety-for/solo-travelers" component={SoloTravelers} />
+
+      {/* Phase 2 - Case Studies */}
+      <Route path="/case-studies/home-healthcare" component={HomeHealthcareCaseStudy} />
+      <Route path="/case-studies/real-estate" component={RealEstateCaseStudy} />
+      <Route path="/case-studies/field-services" component={FieldServicesCaseStudy} />
+
+      {/* Phase 2 - Resources */}
+      <Route path="/resources/employer-one-pager" component={EmployerOnePager} />
+
+      {/* Phase 2 - Integrations (Wearable Pages) */}
+      <Route path="/integrations/apple-watch" component={AppleWatchIntegration} />
+      <Route path="/integrations/samsung-galaxy-watch" component={SamsungGalaxyWatchIntegration} />
+      <Route path="/integrations/oura-ring" component={OuraRingIntegration} />
+
+      {/* Phase 2 - Guides (Authority Content) */}
+      <Route path="/guides/lone-worker-safety" component={LoneWorkerSafetyGuide} />
+      <Route path="/guides/professional-monitoring" component={ProfessionalMonitoringGuide} />
+      <Route path="/guides/senior-safety-planning" component={SeniorSafetyPlanningGuide} />
 
       {/* Admin Blog CMS */}
       <Route path="/admin">
