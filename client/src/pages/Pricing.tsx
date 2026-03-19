@@ -191,7 +191,7 @@ export default function Pricing() {
               "name": "What's included in the 7-day free trial?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Your free trial includes full access to all Essential Safety features including 24/7 professional monitoring, fall detection, crash detection, and real-time health alerts. No credit card required to start."
+                "text": "Your free trial includes full access to all Essential Safety features including 24/7 professional monitoring, fall detection, crash detection, and real-time health alerts. A credit card is required to start, but if you cancel within 7 days you won't be charged."
               }
             },
             {
@@ -536,16 +536,25 @@ export default function Pricing() {
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
-              { step: "1", title: "Choose Your Plan", description: "Select Individual or Family, and pick Monthly or Yearly billing. Click 'Start 7-Day Free Trial' to begin.", icon: "💳" },
-              { step: "2", title: "Create Your Account Online", description: "You will be taken to our secure signup portal at dashboard.mysentry.ai. Enter your details and payment method to activate your free trial.", icon: "🖥️" },
-              { step: "3", title: "Download the App & Log In", description: "Once your account is active, download the MySentry app from the App Store or Google Play. Log in with your credentials and you are protected.", icon: "📱" }
+              { step: "1", title: "Choose Your Plan", description: "Select Individual or Family, and pick Monthly or Yearly billing. Click 'Start 7-Day Free Trial' to begin.", icon: "💳", link: getSignupUrl('individual', 'monthly') },
+              { step: "2", title: "Create Your Account Online", description: "You will be taken to our secure signup portal at dashboard.mysentry.ai. Enter your details and payment method to activate your free trial. A credit card is required, but you won't be charged if you cancel within 7 days.", icon: "🖥️", link: getSignupUrl('individual', 'monthly') },
+              { step: "3", title: "Download the App & Log In", description: "Once your account is active, download the MySentry app from the App Store or Google Play. Log in with your credentials and you are protected.", icon: "📱", link: undefined }
             ].map((item, i) => (
-              <div key={i} className="bg-[#f0f7f0] rounded-3xl p-8 text-center border border-gray-100 shadow-sm">
-                <div className="text-4xl mb-4">{item.icon}</div>
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold text-lg mb-4">{item.step}</div>
-                <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.description}</p>
-              </div>
+              item.link ? (
+                <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" className="bg-[#f0f7f0] rounded-3xl p-8 text-center border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200 cursor-pointer block">
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold text-lg mb-4">{item.step}</div>
+                  <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </a>
+              ) : (
+                <div key={i} className="bg-[#f0f7f0] rounded-3xl p-8 text-center border border-gray-100 shadow-sm">
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold text-lg mb-4">{item.step}</div>
+                  <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                </div>
+              )
             ))}
           </div>
         </div>
@@ -562,7 +571,7 @@ export default function Pricing() {
             {[
               {
                 q: "What's included in the 7-day free trial?",
-                a: "Your free trial includes full access to all Essential Safety features including 24/7 professional monitoring, fall detection, crash detection, and real-time health alerts. No credit card required to start."
+                a: "Your free trial includes full access to all Essential Safety features including 24/7 professional monitoring, fall detection, crash detection, and real-time health alerts. A credit card is required to start, but if you cancel within 7 days you won't be charged."
               },
               {
                 q: "Can I switch between Individual and Family plans?",
