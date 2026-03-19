@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Layout>
       <SEO 
-        title="MySentry - Safety & Health Monitoring App with 24/7 Response"
+        title="MySentry - 24/7 Personal Safety & Health Monitoring App with Emergency Response"
         description="MySentry turns your smartphone into a 24/7 safety companion. Panic alarm, fall detection, crash detection, health monitoring, and live video emergency response for individuals, families, seniors, and employers. Start your free trial today."
         canonical="https://mysentry.ai/"
       />

@@ -435,3 +435,6 @@
 - [x] Remove all "No credit card required" messaging sitewide (credit card IS required) - confirmed no instances exist
 - [x] Replace with accurate messaging: "Cancel within 7 days and you won't be charged" - already present in FAQ and schema
 - [x] Link "Choose Your Plan" step card on Pricing page to Individual Monthly create-account URL
+
+## SEO Meta Title Update (Round 20)
+- [x] Update homepage SEO meta title to include "Personal" to match hero tagline
