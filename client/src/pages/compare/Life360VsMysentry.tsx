@@ -12,7 +12,7 @@ export default function Life360VsMysentry() {
       problem="You're looking for a safety app but aren't sure which one is right for your family. It's hard to know the key differences between popular options like Life360 and MySentry."
       empathy="Choosing the right tools to keep your loved ones safe is a big decision. You need clear, honest information to make the best choice for your peace of mind."
       steps={[
-        { title: "Download MySentry", description: "Get the app on your smartphone and create your account in minutes." },
+        { title: "Download MySentry", description: "Visit mysentry.ai, choose your plan, and create your account online. Then download the app on your smartphone." },
         { title: "Set Up Your Profile", description: "Add emergency contacts, health preferences, and customize your safety settings." },
         { title: "Stay Protected 24/7", description: "MySentry monitors your safety with fall detection, health tracking, and instant emergency response." },
       ]}

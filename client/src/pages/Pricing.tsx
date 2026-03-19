@@ -525,6 +525,32 @@ export default function Pricing() {
         </div>
       </section>
 
+      {/* How to Get Started Section */}
+      <section className="py-24 bg-white">
+        <div className="container">
+          <div className="text-center mb-16">
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Simple Online Signup</span>
+            <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-tight">How to Get Started</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">No in-app purchases. No complicated setup. Create your account online and start your free trial in minutes.</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              { step: "1", title: "Choose Your Plan", description: "Select Individual or Family, and pick Monthly or Yearly billing. Click 'Start 7-Day Free Trial' to begin.", icon: "💳" },
+              { step: "2", title: "Create Your Account Online", description: "You will be taken to our secure signup portal at dashboard.mysentry.ai. Enter your details and payment method to activate your free trial.", icon: "🖥️" },
+              { step: "3", title: "Download the App & Log In", description: "Once your account is active, download the MySentry app from the App Store or Google Play. Log in with your credentials and you are protected.", icon: "📱" }
+            ].map((item, i) => (
+              <div key={i} className="bg-[#f0f7f0] rounded-3xl p-8 text-center border border-gray-100 shadow-sm">
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold text-lg mb-4">{item.step}</div>
+                <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
       <section className="py-24 bg-[#e8f5e9]">
         <div className="container">
@@ -553,6 +579,14 @@ export default function Pricing() {
               {
                 q: "Is there a contract or commitment?",
                 a: "No long-term contracts! All plans are month-to-month or annual (with 20% savings). You can cancel anytime with no cancellation fees."
+              },
+              {
+                q: "How do I sign up for MySentry?",
+                a: "MySentry does not offer in-app purchases. To get started, click 'Start 7-Day Free Trial' on this page, which takes you to our secure signup portal. There you create your account and choose your payment method. Once your account is active, you download the MySentry app from the App Store or Google Play and log in."
+              },
+              {
+                q: "Can I purchase MySentry through the App Store or Google Play?",
+                a: "No. All MySentry subscriptions are purchased directly through our website at mysentry.ai. After creating your account online, you simply download the free MySentry app and log in with your credentials. This allows us to offer you a 7-day free trial and flexible plan management."
               }
             ].map((faq, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">

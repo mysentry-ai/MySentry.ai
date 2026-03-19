@@ -50,7 +50,7 @@ export default function MedicalAlertForSeniors() {
         { question: "Does the fall detection app for seniors work automatically?", answer: "Yes, our senior fall detection app uses the sensors in your smartphone to automatically detect a fall. When a fall is detected, it triggers an alert to our 24/7 monitoring center without you needing to do anything." },
         { question: "Can I add my family as emergency contacts?", answer: "Absolutely. You can add multiple family members, friends, or caregivers as emergency contacts. They will be notified when an alarm is triggered, keeping everyone in the loop." },
         { question: "What health metrics does the senior health monitoring app track?", answer: "MySentry can monitor key wellness indicators like Heart Rate Variability (HRV), blood oxygen (SpO2), and resting heart rate, providing a more complete picture of your loved one's well-being." },
-        { question: "Is the MySentry medical alert system app difficult to set up?", answer: "Not at all. You can download MySentry from the app store and follow the simple on-screen instructions. Most users are set up in just a few minutes. We designed it to be user-friendly for everyone." },
+        { question: "Is the MySentry medical alert system app difficult to set up?", answer: "Not at all. Simply visit mysentry.ai, choose your plan, and create your account online. Then download the MySentry app from the App Store or Google Play and log in. Most users are fully set up in just a few minutes." },
       ]}
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",

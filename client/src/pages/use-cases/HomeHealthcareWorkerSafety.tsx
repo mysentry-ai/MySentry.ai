@@ -15,7 +15,7 @@ export default function HomeHealthcareWorkerSafety() {
         {
           title: "Equip Your Team",
           description:
-            "Invite your caregivers to download the MySentry app on their personal or work-issued smartphones.",
+            "Enroll your caregivers through the employer dashboard online. They then download the MySentry app on their personal or work-issued smartphones.",
         },
         {
           title: "Monitor Their Safety",
@@ -32,7 +32,7 @@ export default function HomeHealthcareWorkerSafety() {
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
       directAnswer="MySentry is a home healthcare worker safety app that protects visiting nurses and caregivers. It provides an easy-to-use panic alarm, automatic fall and crash detection, and 24/7 professional monitoring. The app helps employers ensure their lone workers are safe in the field, reducing risk and providing peace of mind."
       howItWorks={[
-        "Caregivers download the MySentry app and complete a quick setup.",
+        "Caregivers are enrolled online, then download the MySentry app and complete a quick setup.",
         "They can trigger a panic alarm silently or with a siren from the app or a paired Bluetooth button.",
         "Automatic fall detection and crash detection monitor for accidents without any user action.",
         "MeetSafe check-ins require the user to confirm their safety before, during, and after appointments.",

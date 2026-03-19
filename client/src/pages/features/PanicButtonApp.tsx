@@ -41,7 +41,7 @@ export default function PanicButtonApp() {
       faqs={[
         {
           question: "Is the panic button app free?",
-          answer: "The MySentry app is free to download, but the 24/7 professional monitoring service requires a subscription. We offer a 7-day free trial so you can experience the peace of mind we offer.",
+          answer: "MySentry requires a subscription that you purchase online at mysentry.ai. We offer a 7-day free trial so you can experience the peace of mind risk-free. After creating your account online, you download the app from the App Store or Google Play.",
         },
         {
           question: "How is this different from calling 911?",

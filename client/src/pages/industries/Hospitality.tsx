@@ -20,7 +20,7 @@ export default function Hospitality() {
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
       directAnswer="MySentry is a hospitality worker safety app that equips hotel staff with a panic button, fall detection, and 24/7 professional monitoring on their smartphone. It helps employers meet safety mandates and protect lone workers like housekeepers and maintenance staff, ensuring a rapid response to any emergency."
       howItWorks={[
-        "Staff download the MySentry app onto their personal or work-issued smartphone.",
+        "Staff are enrolled online through the employer dashboard, then download the MySentry app onto their personal or work-issued smartphone.",
         "A discreet panic alarm can be triggered with a single tap or voice command.",
         "Automatic fall detection sends an alert even if the employee is incapacitated.",
         "Our 24/7 professional monitoring center verifies the emergency and dispatches help.",

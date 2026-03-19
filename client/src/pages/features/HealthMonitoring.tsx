@@ -12,7 +12,7 @@ export default function HealthMonitoring() {
       problem="Keeping track of key health signs like heart rate, HRV, and SpO2 can be complicated and easy to forget. You worry about missing an important change that could signal a problem."
       empathy="It's natural to want peace of mind about your health or the well-being of a loved one. You deserve a simple way to stay informed without constant stress."
       steps={[
-        { title: "Download the MySentry App", description: "Get the app from the App Store or Google Play and create your account." },
+        { title: "Create Your Account Online", description: "Visit mysentry.ai, choose your plan, and create your account. Then download the MySentry app from the App Store or Google Play." },
         { title: "Connect Your Wearable Device", description: "Easily link your compatible smartwatch or health tracker to start syncing your data." },
         { title: "View Your Health Vitals", description: "See your real-time health information on your personal dashboard and set your alert preferences." },
       ]}

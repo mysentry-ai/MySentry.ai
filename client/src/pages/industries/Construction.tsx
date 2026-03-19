@@ -12,7 +12,7 @@ export default function Construction() {
       problem="Construction sites are full of risks. It's hard to know if a worker is safe, especially if they are working alone or in a remote area of the job site."
       empathy="You're responsible for your crew's safety. You need a reliable way to monitor them and get them help fast in an emergency, without watching them all day."
       steps={[
-        { title: "Equip Your Crew", description: "Workers download the MySentry app on their existing smartphones. No new hardware needed." },
+        { title: "Equip Your Crew", description: "Workers are enrolled online through the employer dashboard. They then download the MySentry app on their existing smartphones. No new hardware needed." },
         { title: "Monitor Job Sites", description: "See worker status and location from a simple dashboard. Get alerts for falls, missed check-ins, or panic alarms." },
         { title: "Dispatch Help Fast", description: "Our 24/7 monitoring team verifies alerts and dispatches emergency services or your on-site supervisor." },
       ]}

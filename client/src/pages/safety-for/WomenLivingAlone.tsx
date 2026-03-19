@@ -11,7 +11,7 @@ export default function WomenLivingAlone() {
       problem="The fear of walking to your car at night, the unease of entering an empty apartment, the vulnerability of jogging alone. These worries can dim the joy of independence."
       empathy="We understand the anxiety that comes with living alone. You deserve to feel secure in your own space and wherever you go, without compromising your freedom."
       steps={[
-        { title: "Download the App", description: "Get started by downloading the MySentry app on your smartphone." },
+        { title: "Download the App", description: "Get started by visiting mysentry.ai, choosing your plan, and creating your account online. Then download the MySentry app on your smartphone." },
         { title: "Set Up Contacts", description: "Easily add your trusted friends, family, and neighbors as emergency contacts." },
         { title: "Activate Features", description: "Enable features like fall detection and voice-activated panic alarms to customize your safety net." },
       ]}

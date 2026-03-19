@@ -12,7 +12,7 @@ export default function SecurityGuarding() {
       problem="Your guards work alone, often in high-risk environments. A simple slip, a medical emergency, or a direct threat can happen anytime, and traditional check-in systems are slow and unreliable."
       empathy="You're responsible for their safety, but you can't be everywhere at once. You need a reliable way to know your team is safe, especially when they are out of sight."
       steps={[
-        { title: "Equip Your Guards", description: "Guards download the MySentry app on their existing smartphones. No new hardware is needed." },
+        { title: "Equip Your Guards", description: "Guards are enrolled online through the employer dashboard. They then download the MySentry app on their existing smartphones. No new hardware is needed." },
         { title: "Monitor Their Safety", description: "See your team's status in a central dashboard. Get instant alerts for falls, missed check-ins, or panic alarms." },
         { title: "Respond Instantly", description: "Our 24/7 monitoring center verifies every alert. We can dispatch emergency services or notify your chain of command, based on your protocol." },
       ]}

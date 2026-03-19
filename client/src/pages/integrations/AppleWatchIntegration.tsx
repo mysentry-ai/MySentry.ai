@@ -11,7 +11,7 @@ export default function AppleWatchIntegrationPage() {
       problem="You love the convenience and health features of your Apple Watch, but worry it's not enough to protect you or your loved ones in a serious emergency like a fall or a car accident."
       empathy="It's unsettling to think that a device you wear every day might not be a complete safety net. You deserve the peace of mind that comes from knowing help is always just a tap or a voice command away."
       steps={[
-        { title: "Download the MySentry App", description: "Get the app on your iPhone to get started." },
+        { title: "Create Your Account", description: "Visit mysentry.ai, choose your plan, and create your account online. Then download the MySentry app on your iPhone." },
         { title: "Pair with Apple Watch", description: "Connect MySentry to your Apple Watch seamlessly." },
         { title: "Enable Data Sharing", description: "Allow health and location data for full protection." },
       ]}
@@ -61,7 +61,7 @@ export default function AppleWatchIntegrationPage() {
         },
         {
           question: "What do I need to use MySentry with my Apple Watch?",
-          answer: "You will need an Apple Watch Series 4 or newer running watchOS 9 or later, paired with a compatible iPhone. You will also need to download the MySentry app from the App Store and subscribe to a monitoring plan.",
+          answer: "You will need an Apple Watch Series 4 or newer running watchOS 9 or later, paired with a compatible iPhone. You will also need to create your account and subscribe to a monitoring plan at mysentry.ai, then download the MySentry app from the App Store.",
         },
       ]}
       setupRequirements={{

@@ -45,7 +45,7 @@ export default function Education() {
         },
         {
           question: "Is this system difficult to implement across a large campus?",
-          answer: "No. MySentry is a software-based solution that requires no special hardware. Staff simply download the app to their existing smartphones, making deployment simple and scalable for any size school or university.",
+          answer: "No. MySentry is a software-based solution that requires no special hardware. Staff are enrolled online through the employer dashboard, then they download the app to their existing smartphones, making deployment simple and scalable for any size school or university.",
         },
         {
           question: "Can this app be used for medical emergencies as well as security threats?",

@@ -423,3 +423,10 @@
 - [x] Remove from SEOPageTemplate (prop, destructuring, and rendering code removed)
 - [x] Remove from any blog post templates (blog posts don't use SEOPageTemplate, no disclaimers found)
 - [x] Verify removal across all pages (zero disclaimer= matches, zero TS errors, 42 tests pass)
+
+## Buying Process Explanation (Round 18)
+- [x] Audit site for places where the signup/buying process needs to be explained
+- [x] Add "How to Get Started" section to Pricing page explaining online-only signup (3-step visual section)
+- [x] Add buying process explanation to FAQ sections (2 new FAQs on Pricing page)
+- [x] How It Works page already has correct online-first signup steps (ActivationSteps component + schema updated)
+- [x] Ensure no pages imply in-app purchases exist (14 files updated with online-first messaging)

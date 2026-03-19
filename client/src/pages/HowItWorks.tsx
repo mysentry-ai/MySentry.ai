@@ -22,12 +22,12 @@ export default function Features() {
             "@context": "https://schema.org",
             "@type": "HowTo",
             "name": "How to Set Up MySentry for 24/7 Safety Monitoring",
-            "description": "Get started with MySentry in 3 simple steps: download the app, pair your smartwatch, and activate 24/7 professional monitoring.",
+            "description": "Get started with MySentry in 3 simple steps: create your account online, download the app, and activate 24/7 professional monitoring.",
             "step": [
               {
                 "@type": "HowToStep",
-                "name": "Download the App",
-                "text": "Download MySentry from the App Store or Google Play and create your account in under 2 minutes."
+                "name": "Create Your Account Online",
+                "text": "Visit mysentry.ai, choose your plan, and create your account online in under 2 minutes. Then download the MySentry app from the App Store or Google Play."
               },
               {
                 "@type": "HowToStep",

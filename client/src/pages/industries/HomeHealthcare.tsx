@@ -12,7 +12,7 @@ export default function HomeHealthcare() {
       problem="Your home health aides, visiting nurses, and in-home caregivers work alone, often in unpredictable environments. How do you ensure their safety from a distance?"
       empathy="Worrying about your team's well-being is a constant stressor. You need a reliable way to protect them and fulfill your duty of care, without adding complexity."
       steps={[
-        { title: "Equip Your Team", description: "Invite your caregivers to download the MySentry app on their existing smartphones." },
+        { title: "Equip Your Team", description: "Enroll your caregivers through the employer dashboard online. They then download the MySentry app on their existing smartphones." },
         { title: "Monitor Their Safety", description: "Use the employer dashboard to see check-ins and manage safety protocols." },
         { title: "Respond Instantly", description: "Receive immediate alerts if a panic alarm is triggered or a potential fall is detected." },
       ]}
@@ -20,7 +20,7 @@ export default function HomeHealthcare() {
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
       directAnswer="MySentry is a safety app for home healthcare agencies that protects lone workers like visiting nurses and in-home caregivers. It provides a panic button, automatic fall detection, and 24/7 professional monitoring on their smartphone, allowing employers to ensure team safety and meet duty of care requirements."
       howItWorks={[
-        "Caregivers download the MySentry app on their personal or work phone.",
+        "Caregivers are enrolled online through the employer dashboard, then download the MySentry app on their personal or work phone.",
         "They use the MeetSafe feature to set a safety timer before entering a client's home.",
         "A discreet panic alarm can be triggered with a single tap if they feel unsafe.",
         "Automatic fall and crash detection sends an alert even if the worker is incapacitated.",

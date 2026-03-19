@@ -62,7 +62,7 @@ export default function HomeHealthcareSolutionPage() {
         },
         {
           question: "What are the setup requirements?",
-          answer: "Setup is simple. Workers just need to download the MySentry app on their iOS or Android smartphone. Agencies get access to a web-based dashboard for monitoring and management. No special hardware is required.",
+          answer: "Setup is simple. Workers are enrolled online through the employer dashboard, then download the MySentry app on their iOS or Android smartphone. Agencies get access to a web-based dashboard for monitoring and management. No special hardware is required.",
         },
       ]}
       setupRequirements={{
