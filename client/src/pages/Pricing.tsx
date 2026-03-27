@@ -8,9 +8,10 @@ import { cn } from "@/lib/utils";
 
 /* ─── Pricing Data ─── */
 const PRICING = {
-  b2c_individual: 15,
-  b2c_family: 30,
-  b2b_base: 15,
+  individual_monthly: 15,   // $15 per license per month
+  family_monthly: 30,       // $30 per license per month
+  individual_yearly: 120,   // $120 per license per year (20% off)
+  family_yearly: 288,       // $288 per license per year (20% off)
 };
 
 const FEATURES_B2C = [
@@ -70,36 +71,30 @@ export default function Pricing() {
   const [licenses, setLicenses] = useState(5);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
-  /* Derived pricing */
+  /* Derived pricing — same logic for B2C (1 license) and B2B (N licenses) */
   const calculated = useMemo(() => {
-    let baseMonthly = 0;
-    let users = 1;
+    const numLicenses = mode === "b2b" ? licenses : 1;
 
-    if (mode === "b2c") {
-      baseMonthly = coverage === "individual" ? PRICING.b2c_individual : PRICING.b2c_family;
-    } else {
-      baseMonthly = coverage === "individual" ? PRICING.b2b_base : PRICING.b2b_base * 2;
-      users = licenses;
-    }
-
-    const totalMonthly = baseMonthly * users;
-
-    if (billing === "yearly") {
-      const discountedMonthly = totalMonthly * 0.8;
-      const annualTotal = discountedMonthly * 12;
-      const savings = totalMonthly * 12 - annualTotal;
+    if (billing === "monthly") {
+      const perLicense = coverage === "individual" ? PRICING.individual_monthly : PRICING.family_monthly;
+      const total = perLicense * numLicenses;
       return {
-        displayPrice: annualTotal,
-        cycleLabel: `Billed annually (${formatMoney(discountedMonthly)}/mo)`,
-        savings,
-        costPerUser: mode === "b2b" ? formatMoney(baseMonthly * 0.8) + " / user / mo" : null,
-      };
-    } else {
-      return {
-        displayPrice: totalMonthly,
+        displayPrice: total,
         cycleLabel: "Billed monthly",
         savings: 0,
-        costPerUser: mode === "b2b" ? formatMoney(baseMonthly) + " / user / mo" : null,
+        costPerUser: mode === "b2b" ? formatMoney(perLicense) + " / user / mo" : null,
+      };
+    } else {
+      const yearlyPerLicense = coverage === "individual" ? PRICING.individual_yearly : PRICING.family_yearly;
+      const monthlyPerLicense = coverage === "individual" ? PRICING.individual_monthly : PRICING.family_monthly;
+      const total = yearlyPerLicense * numLicenses;
+      const monthlyEquiv = total / 12;
+      const savings = (monthlyPerLicense * 12 * numLicenses) - total;
+      return {
+        displayPrice: total,
+        cycleLabel: `Billed annually (${formatMoney(monthlyEquiv)}/mo)`,
+        savings,
+        costPerUser: mode === "b2b" ? formatMoney(yearlyPerLicense / 12) + " / user / mo" : null,
       };
     }
   }, [mode, coverage, billing, licenses]);

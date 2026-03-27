@@ -450,3 +450,11 @@
 - [x] Update routing to use new Pricing page, keep legacy route hidden
 - [x] Ensure full responsiveness (desktop, tablet, mobile)
 - [x] Maintain consistent site styling (Layout wrapper, SEO component, background colors)
+
+## Employer Pricing Fix (Round 22)
+- [x] Fix employer pricing: both Individual and Family should be $15/user/month, $12/user/month yearly (superseded by full pricing logic overhaul)
+
+## Pricing Logic Overhaul (Round 22)
+- [x] Update pricing: Individual $15/mo or $120/yr per license, Family $30/mo or $288/yr per license
+- [x] Same logic for B2C (1 license) and B2B (multiple licenses)
+- [x] Dynamic update based on plan type, billing duration, and number of licenses
