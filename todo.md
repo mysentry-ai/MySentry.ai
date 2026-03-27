@@ -458,3 +458,13 @@
 - [x] Update pricing: Individual $15/mo or $120/yr per license, Family $30/mo or $288/yr per license
 - [x] Same logic for B2C (1 license) and B2B (multiple licenses)
 - [x] Dynamic update based on plan type, billing duration, and number of licenses
+
+## Pricing Page Overhaul Round 23
+- [x] Fix pricing: Individual $15/mo, $144/yr (15×12×0.8); Family $30/mo, $288/yr (30×12×0.8)
+- [x] Same logic for B2C (1 license) and B2B (multiple licenses)
+- [x] Add proper top spacing between nav bar and main heading
+- [x] Change toggle background from grey to white
+- [x] Create custom quotation form matching provided screenshot exactly
+- [x] Connect "Customized Quotation" button to the form modal
+- [x] Ensure full responsiveness (desktop, tablet, mobile)
+- [x] Verify all pricing combinations work correctly

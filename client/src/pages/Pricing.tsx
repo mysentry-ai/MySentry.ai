@@ -5,13 +5,21 @@ import SEO from "@/components/SEO";
 import EmployerDemoModal from "@/components/EmployerDemoModal";
 import { getSignupUrl, type PlanType, type BillingCycle } from "@/const";
 import { cn } from "@/lib/utils";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 /* ─── Pricing Data ─── */
 const PRICING = {
   individual_monthly: 15,   // $15 per license per month
   family_monthly: 30,       // $30 per license per month
-  individual_yearly: 120,   // $120 per license per year (20% off)
-  family_yearly: 288,       // $288 per license per year (20% off)
+  // Yearly = monthly × 12 × 0.8 (20% discount)
+  individual_yearly: 15 * 12 * 0.8,   // $144 per license per year
+  family_yearly: 30 * 12 * 0.8,       // $288 per license per year
 };
 
 const FEATURES_B2C = [
@@ -63,19 +71,209 @@ const pricingSchema = {
   url: "https://mysentry.ai/pricing",
 };
 
-/* ─── Component ─── */
+/* ─── Custom Quote Modal ─── */
+function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boolean; onClose: () => void; defaultEmployees: number }) {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [scheduleDemo, setScheduleDemo] = useState(true);
+  const [formData, setFormData] = useState({
+    company: "",
+    employees: String(defaultEmployees),
+    email: "",
+    requirements: "",
+  });
+
+  // Use the existing demo request mutation for quote submissions
+  const quoteMutation = trpc.demo.request.useMutation({
+    onSuccess: () => {
+      setIsSubmitting(false);
+      setIsSuccess(true);
+    },
+    onError: (error) => {
+      setIsSubmitting(false);
+      toast.error(error.message || "Failed to submit quote request. Please try again.");
+    },
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    quoteMutation.mutate({
+      name: formData.company,
+      email: formData.email,
+      company: formData.company,
+      companySize: formData.employees,
+      useCase: "employer-quote",
+      message: `${formData.requirements ? formData.requirements + "\n\n" : ""}${scheduleDemo ? "[Requested live product demo]" : ""}`,
+    });
+  };
+
+  const handleClose = () => {
+    onClose();
+    setTimeout(() => {
+      setIsSuccess(false);
+      setFormData({ company: "", employees: String(defaultEmployees), email: "", requirements: "" });
+      setScheduleDemo(true);
+    }, 300);
+  };
+
+  return (
+    <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
+      <DialogContent className="sm:max-w-[520px] p-0 gap-0 bg-white border-0 shadow-2xl rounded-2xl overflow-hidden">
+        {isSuccess ? (
+          <div className="flex flex-col items-center justify-center py-16 px-8 text-center space-y-4">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+              <Check className="h-8 w-8 text-green-600" />
+            </div>
+            <h3 className="text-2xl font-bold text-[#0F172A]">Quote Request Received!</h3>
+            <p className="text-[#64748B] max-w-xs">Our enterprise safety team will reach out shortly with a tailored package for your organization.</p>
+            <button
+              onClick={handleClose}
+              className="mt-4 px-8 py-3 bg-[#0F172A] text-white rounded-xl font-bold hover:bg-[#1E293B] transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        ) : (
+          <div className="p-8">
+            {/* Close button */}
+            <button
+              onClick={handleClose}
+              className="absolute top-4 right-4 text-[#94A3B8] hover:text-[#0F172A] transition-colors"
+              aria-label="Close"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Title */}
+            <h2 className="text-2xl font-bold text-[#0F172A] mb-2">Get a Custom Quote</h2>
+            <p className="text-[#64748B] text-sm mb-8">
+              Fill out the form below and our enterprise safety team will build a tailored package for your organization.
+            </p>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Company Name */}
+              <div>
+                <Label htmlFor="quote-company" className="text-[#0F172A] font-bold text-sm mb-2 block">
+                  Company Name
+                </Label>
+                <Input
+                  id="quote-company"
+                  name="company"
+                  placeholder="Acme Corporation"
+                  required
+                  value={formData.company}
+                  onChange={handleChange}
+                  className="h-12 bg-white border-[#E2E8F0] text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-[#6ad990] focus:ring-[#6ad990]"
+                />
+              </div>
+
+              {/* Number of Employees + Work Email */}
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <Label htmlFor="quote-employees" className="text-[#0F172A] font-bold text-sm mb-2 block">
+                    Number of Employees
+                  </Label>
+                  <Input
+                    id="quote-employees"
+                    name="employees"
+                    type="number"
+                    min={1}
+                    placeholder="5"
+                    required
+                    value={formData.employees}
+                    onChange={handleChange}
+                    className="h-12 bg-[#F0FDF4] border-[#E2E8F0] text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-[#6ad990] focus:ring-[#6ad990]"
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="quote-email" className="text-[#0F172A] font-bold text-sm mb-2 block">
+                    Work Email
+                  </Label>
+                  <Input
+                    id="quote-email"
+                    name="email"
+                    type="email"
+                    placeholder="name@company.com"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="h-12 bg-white border-[#E2E8F0] text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-[#6ad990] focus:ring-[#6ad990]"
+                  />
+                </div>
+              </div>
+
+              {/* Specific Safety Requirements */}
+              <div>
+                <Label htmlFor="quote-requirements" className="text-[#0F172A] font-bold text-sm mb-2 block">
+                  Specific Safety Requirements (Optional)
+                </Label>
+                <Textarea
+                  id="quote-requirements"
+                  name="requirements"
+                  placeholder="E.g., We need hardware integrations..."
+                  value={formData.requirements}
+                  onChange={handleChange}
+                  className="min-h-[100px] bg-white border-[#E2E8F0] text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-[#6ad990] focus:ring-[#6ad990] resize-none"
+                />
+              </div>
+
+              {/* Schedule Demo Checkbox */}
+              <div className="flex items-start gap-3">
+                <Checkbox
+                  id="quote-demo"
+                  checked={scheduleDemo}
+                  onCheckedChange={(checked) => setScheduleDemo(checked === true)}
+                  className="mt-0.5 data-[state=checked]:bg-[#22C55E] data-[state=checked]:border-[#22C55E]"
+                />
+                <label htmlFor="quote-demo" className="text-sm text-[#334155] leading-snug cursor-pointer">
+                  I would like to schedule a live product demo with an expert.
+                </label>
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full py-4 bg-[#0F172A] text-white rounded-xl text-base font-bold cursor-pointer transition-all hover:bg-[#1E293B] disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  "Request Quote"
+                )}
+              </button>
+            </form>
+          </div>
+        )}
+      </DialogContent>
+    </Dialog>
+  );
+}
+
+/* ─── Main Component ─── */
 export default function Pricing() {
   const [mode, setMode] = useState<Mode>("b2c");
   const [coverage, setCoverage] = useState<Coverage>("individual");
   const [billing, setBilling] = useState<Billing>("yearly");
   const [licenses, setLicenses] = useState(5);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
+  const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
-  /* Derived pricing — same logic for B2C (1 license) and B2B (N licenses) */
+  /* Derived pricing: same logic for B2C (1 license) and B2B (N licenses) */
   const calculated = useMemo(() => {
     const numLicenses = mode === "b2b" ? licenses : 1;
 
     if (billing === "monthly") {
+      // Monthly: Individual = 15 × licenses, Family = 30 × licenses
       const perLicense = coverage === "individual" ? PRICING.individual_monthly : PRICING.family_monthly;
       const total = perLicense * numLicenses;
       return {
@@ -85,6 +283,7 @@ export default function Pricing() {
         costPerUser: mode === "b2b" ? formatMoney(perLicense) + " / user / mo" : null,
       };
     } else {
+      // Yearly: Individual = 15 × 12 × 0.8 × licenses ($144), Family = 30 × 12 × 0.8 × licenses ($288)
       const yearlyPerLicense = coverage === "individual" ? PRICING.individual_yearly : PRICING.family_yearly;
       const monthlyPerLicense = coverage === "individual" ? PRICING.individual_monthly : PRICING.family_monthly;
       const total = yearlyPerLicense * numLicenses;
@@ -149,8 +348,8 @@ export default function Pricing() {
         schema={pricingSchema}
       />
 
-      {/* ─── Header ─── */}
-      <section className="text-center pt-16 pb-10 px-5">
+      {/* ─── Header with proper top spacing ─── */}
+      <section className="text-center pt-28 md:pt-32 pb-10 px-5">
         <h1 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] uppercase tracking-tight mb-4">
           Pricing and plans within every budget.
         </h1>
@@ -158,15 +357,15 @@ export default function Pricing() {
           Choose the protection that fits your life. Whether for yourself, your family, or your entire workforce.
         </p>
 
-        {/* B2C / B2B Toggle */}
-        <div className="inline-flex bg-[#E2E8F0] p-1.5 rounded-full shadow-inner">
+        {/* B2C / B2B Toggle - white background */}
+        <div className="inline-flex bg-white p-1.5 rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.08)] border border-[#E2E8F0]">
           <button
             onClick={() => setMode("b2c")}
             className={cn(
               "flex items-center gap-2 px-6 md:px-8 py-3 rounded-full text-sm md:text-[15px] font-bold transition-all duration-300",
               mode === "b2c"
                 ? "bg-[#6ad990] text-white shadow-[0_4px_10px_rgba(97,197,39,0.3)]"
-                : "bg-transparent text-[#64748B]"
+                : "bg-transparent text-[#64748B] hover:text-[#0F172A]"
             )}
           >
             <User className="w-4 h-4" />
@@ -178,7 +377,7 @@ export default function Pricing() {
               "flex items-center gap-2 px-6 md:px-8 py-3 rounded-full text-sm md:text-[15px] font-bold transition-all duration-300",
               mode === "b2b"
                 ? "bg-[#6ad990] text-white shadow-[0_4px_10px_rgba(97,197,39,0.3)]"
-                : "bg-transparent text-[#64748B]"
+                : "bg-transparent text-[#64748B] hover:text-[#0F172A]"
             )}
           >
             <Building2 className="w-4 h-4" />
@@ -336,20 +535,20 @@ export default function Pricing() {
                 </div>
               )}
 
-              {/* CTA */}
+              {/* CTA Buttons */}
               <button
                 onClick={handleCheckout}
                 className="w-full py-4.5 bg-[#6ad990] text-white border-none rounded-xl text-base font-bold cursor-pointer transition-all shadow-[0_4px_15px_rgba(97,197,39,0.3)] hover:translate-y-[-2px] hover:shadow-[0_8px_20px_rgba(97,197,39,0.4)] flex justify-center items-center gap-2.5"
               >
-                {mode === "b2c" ? "Start 7-Day Free Trial" : "Get Started"}
+                {mode === "b2c" ? "Start 7-Day Free Trial" : "Get Offer"}
               </button>
 
               {mode === "b2b" && (
                 <button
-                  onClick={() => setIsDemoModalOpen(true)}
+                  onClick={() => setIsQuoteModalOpen(true)}
                   className="w-full py-4 bg-transparent text-[#0F172A] border-2 border-[#E2E8F0] rounded-xl text-[15px] font-bold cursor-pointer transition-all mt-3 hover:border-[#0F172A] hover:bg-[#F8FAFC]"
                 >
-                  Request Custom Quote
+                  Customized Quotation
                 </button>
               )}
             </div>
@@ -357,11 +556,18 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Demo Modal */}
+      {/* Demo Modal (for "Get Offer") */}
       <EmployerDemoModal
         isOpen={isDemoModalOpen}
         onClose={() => setIsDemoModalOpen(false)}
         planName={planBadge}
+      />
+
+      {/* Custom Quote Modal (for "Customized Quotation") */}
+      <CustomQuoteModal
+        isOpen={isQuoteModalOpen}
+        onClose={() => setIsQuoteModalOpen(false)}
+        defaultEmployees={licenses}
       />
     </Layout>
   );
