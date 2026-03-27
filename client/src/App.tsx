@@ -10,6 +10,7 @@ import Seniors from "./pages/Seniors";
 import Families from "./pages/Families";
 import Employers from "./pages/Employers";
 import Pricing from "./pages/Pricing";
+import PricingLegacy from "./pages/PricingLegacy";
 import HowItWorks from "./pages/HowItWorks";
 import Females from "./pages/Females";
 import About from "./pages/About";
@@ -104,6 +105,8 @@ function Router() {
       <Route path="/families" component={Families} />
       <Route path="/employers" component={Employers} />
       <Route path="/pricing" component={Pricing} />
+      {/* Legacy pricing page preserved for future reactivation - hidden from navigation */}
+      <Route path="/pricing-legacy" component={PricingLegacy} />
       
       {/* New Pages */}
       <Route path="/about-us" component={About} />

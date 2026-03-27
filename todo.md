@@ -438,3 +438,15 @@
 
 ## SEO Meta Title Update (Round 20)
 - [x] Update homepage SEO meta title to include "Personal" to match hero tagline
+
+## New Pricing Page Replacement (Round 21)
+- [x] Rename current Pricing.tsx to PricingLegacy.tsx (preserve for future reactivation)
+- [x] Create new Pricing.tsx from provided HTML configurator design
+- [x] Implement B2C/B2B toggle with Individual/Family/Employer modes
+- [x] Implement step-based configurator (coverage type, plan, billing duration)
+- [x] Implement sticky summary sidebar with dynamic pricing
+- [x] Implement B2B employee slider and custom quote modal
+- [x] Wire CTA buttons to correct UUID-based signup URLs
+- [x] Update routing to use new Pricing page, keep legacy route hidden
+- [x] Ensure full responsiveness (desktop, tablet, mobile)
+- [x] Maintain consistent site styling (Layout wrapper, SEO component, background colors)

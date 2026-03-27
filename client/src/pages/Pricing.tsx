@@ -1,618 +1,421 @@
-import { Button } from "@/components/ui/button";
-import { Check, X, Shield, Zap, Users, Building2, Heart, AlertTriangle, Lock } from "lucide-react";
-import HeroSection from "@/components/HeroSection";
-import SEO from "@/components/SEO";
-import { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
-import { Link } from "wouter";
+import { useState, useCallback, useMemo } from "react";
+import { User, Users, Shield, HeartPulse, Calendar, CalendarCheck, Building2, Check, X, Loader2 } from "lucide-react";
 import Layout from "@/components/Layout";
-import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 import EmployerDemoModal from "@/components/EmployerDemoModal";
-import { getSignupUrl } from "@/const";
+import { getSignupUrl, type PlanType, type BillingCycle } from "@/const";
+import { cn } from "@/lib/utils";
 
+/* ─── Pricing Data ─── */
+const PRICING = {
+  b2c_individual: 15,
+  b2c_family: 30,
+  b2b_base: 15,
+};
+
+const FEATURES_B2C = [
+  "Panic Alarm (Voice, Button, Watch)",
+  "Fall Detection",
+  "Crash Detection",
+  "Real-Time Personalized Health Monitoring",
+  "24/7 Professional Monitoring",
+  "Live Video Response",
+  "Automated Location Sharing",
+  "5 Emergency Contacts",
+  "MeetSafe (Optional)",
+  "Automated Call (Optional)",
+  "Mental Health Coach Access (StressGuru.ai)",
+];
+
+const FEATURES_B2B = [
+  "All Essential Safety Features",
+  "Video Evidence for Claims",
+  "Dedicated Account Manager",
+  "API Integration",
+  "Protect Your Workers Everywhere",
+  "SOS Alerts",
+  "Proactive Monitoring & Analysis",
+  "Instant Incident Response",
+  "Video Evidence for Police",
+  "Real-time Location Tracking",
+  "IoT Integrations",
+];
+
+const QUICK_EMPLOYEE_COUNTS = [10, 50, 100, 500];
+
+/* ─── Types ─── */
+type Mode = "b2c" | "b2b";
+type Coverage = "individual" | "family";
+type Billing = "monthly" | "yearly";
+
+/* ─── Helpers ─── */
+function formatMoney(amount: number): string {
+  return "$" + amount.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+/* ─── Schema for SEO ─── */
+const pricingSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "MySentry Pricing",
+  description: "Choose the protection that fits your life. Personal safety plans starting from $15/mo with 7-day free trial.",
+  url: "https://mysentry.ai/pricing",
+};
+
+/* ─── Component ─── */
 export default function Pricing() {
-  const [isAnnual, setIsAnnual] = useState(true);
-  const [isFamily, setIsFamily] = useState(false);
-  const [employeeCount, setEmployeeCount] = useState(50);
+  const [mode, setMode] = useState<Mode>("b2c");
+  const [coverage, setCoverage] = useState<Coverage>("individual");
+  const [billing, setBilling] = useState<Billing>("yearly");
+  const [licenses, setLicenses] = useState(5);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-  const [selectedEmployerPlan, setSelectedEmployerPlan] = useState("");
 
-  // Static pricing logic - Updated with 20% yearly discount
-  // Individual: $15/mo (Monthly) or $144/yr (Yearly - 20% off, save $36)
-  // Family (up to 6): $30/mo (Monthly) or $288/yr (Yearly - 20% off, save $72)
-  
-  const individualMonthly = 15.00;
-  const individualYearlyTotal = 144.00; // 20% off from $180
-  const individualYearlySavings = 36.00;
+  /* Derived pricing */
+  const calculated = useMemo(() => {
+    let baseMonthly = 0;
+    let users = 1;
 
-  const familyMonthly = 30.00;
-  const familyYearlyTotal = 288.00; // 20% off from $360
-  const familyYearlySavings = 72.00;
-
-  const currentMonthlyPrice = isFamily ? familyMonthly : individualMonthly;
-  const currentYearlyTotal = isFamily ? familyYearlyTotal : individualYearlyTotal;
-  const currentYearlySavings = isFamily ? familyYearlySavings : individualYearlySavings;
-
-  // Generate dynamic signup URL based on plan type and billing cycle
-  const getConsumerSignupUrl = () => {
-    const planType = isFamily ? 'family' : 'individual';
-    const billingCycle = isAnnual ? 'yearly' : 'monthly';
-    return getSignupUrl(planType, billingCycle);
-  };
-
-  // Longevity Plan Pricing (Double the Essential Safety Plan)
-  // Individual: $24.99/mo (Monthly) or $19.99/mo (Yearly)
-  // Family: $49.99/mo (Monthly) or $39.99/mo (Yearly)
-  const longevityMonthly = isFamily ? 49.99 : 24.99;
-  const longevityYearlyRate = isFamily ? 39.99 : 19.99;
-  const longevityAnnualTotal = longevityYearlyRate * 12;
-
-  // Calculate employer plan price (Based on Family rates)
-  // Complete: $24.99/mo (Monthly) or $19.99/mo (Yearly)
-  // Longevity: $49.99/mo (Monthly) or $39.99/mo (Yearly)
-  
-  let employerDiscount = 0;
-  if (employeeCount >= 5000) {
-    employerDiscount = 0.5;
-  } else if (employeeCount >= 500) {
-    employerDiscount = 0.35;
-  }
-
-  const discountMultiplier = 1 - employerDiscount;
-
-  const completeBaseRate = isAnnual ? 25.00 : 30.00;
-  const longevityBaseRate = isAnnual ? 39.99 : 49.99;
-
-  const completeTotalPrice = completeBaseRate * employeeCount * discountMultiplier;
-  const longevityTotalPrice = longevityBaseRate * employeeCount * discountMultiplier;
-
-  const consumerPlans = [
-    {
-      id: "complete",
-      name: "Essential Safety",
-      tagline: "24x7 Safety & Health Monitoring with Emergency Response",
-      price: currentMonthlyPrice,
-      annualPrice: currentYearlyTotal,
-      yearlySavings: currentYearlySavings,
-      description: "Full protection with health monitoring and 24/7 agents.",
-      cta: "START 7-DAY FREE TRIAL",
-      highlighted: true,
-      comingSoon: false,
-      features: [
-        { name: "Panic Alarm (Voice, Button, Watch)", included: true },
-        { name: "Fall Detection", included: true },
-        { name: "Crash Detection", included: true },
-        { name: "Real-Time Personalized Health Monitoring", included: true },
-        { name: "24/7 Professional Monitoring", included: true },
-        { name: "Live Video Response", included: true },
-        { name: "Automated Location Sharing", included: true },
-        { name: "5 Emergency Contacts", included: true },
-        { name: "MeetSafe (Optional)", included: true },
-        { name: "Automated Call (Optional)", included: true },
-        { name: "Mental Health Coach Access (StressGuru.ai)", included: true, link: "https://stressguru.ai" }
-      ]
-    },
-    {
-      id: "advanced",
-      name: "Longevity & Wellness",
-      tagline: "Prevention Through Prediction",
-      price: longevityMonthly,
-      annualPrice: longevityAnnualTotal,
-      description: "Advanced health insights with predictive analytics.",
-      cta: "START 7-DAY FREE TRIAL",
-      highlighted: false,
-      comingSoon: true,
-      features: [
-        { name: "All Essential Safety Features", included: true },
-        { name: "Labs Integration", included: true },
-        { name: "Predictive Health Assessments", included: true },
-        { name: "Nutrition Guide", included: true },
-        { name: "Physical Activity Guide", included: true },
-        { name: "Mental Wellness Guide", included: true },
-        { name: "Mental Wellness Coaching (StressGuru.ai)", included: true, link: "https://stressguru.ai" },
-        { name: "Personalized Prevention Plans", included: true },
-        { name: "AI-Powered Health Trends", included: true },
-        { name: "Priority Support", included: true }
-      ]
+    if (mode === "b2c") {
+      baseMonthly = coverage === "individual" ? PRICING.b2c_individual : PRICING.b2c_family;
+    } else {
+      baseMonthly = coverage === "individual" ? PRICING.b2b_base : PRICING.b2b_base * 2;
+      users = licenses;
     }
-  ];
 
-  const employerPlans = [
-    {
-      id: "employer-complete",
-      name: "Essential Safety for Employees",
-      tagline: "Employee Safety & Health Monitoring",
-      description: "Protect your workforce with comprehensive safety and health monitoring.",
-      cta: "BOOK A DEMO",
-      highlighted: true,
-      comingSoon: false,
-      totalPrice: completeTotalPrice,
-      features: [
-        { name: "All Essential Safety Features", included: true },
-        { name: "Unlimited Team Members", included: true },
-        { name: "Team Dashboard", included: true },
-        { name: "Incident Reporting & Analytics", included: true },
-        { name: "OSHA Compliance Reporting", included: true },
-        { name: "Custom Health Thresholds", included: true },
-        { name: "Video Evidence for Claims", included: true },
-        { name: "Dedicated Account Manager", included: true },
-        { name: "API Integration", included: true },
-        { name: "Mental Health Coach Access (StressGuru.ai)", included: true, link: "https://stressguru.ai" }
-      ]
-    },
-    {
-      id: "employer-advanced",
-      name: "Longevity & Wellness for Employees",
-      tagline: "Prevention + Prediction",
-      description: "Advanced predictive health for enterprise workforce management.",
-      cta: "BOOK A DEMO",
-      highlighted: false,
-      comingSoon: true,
-      totalPrice: longevityTotalPrice,
-      features: [
-        { name: "All Complete Protection Features", included: true },
-        { name: "Labs Integration", included: true },
-        { name: "Predictive Health Assessments", included: true },
-        { name: "Nutrition Guide", included: true },
-        { name: "Physical Activity Guide", included: true },
-        { name: "Mental Wellness Guide", included: true },
-        { name: "Mental Wellness Coaching (StressGuru.ai)", included: true, link: "https://stressguru.ai" },
-        { name: "Workforce Health Trends", included: true },
-        { name: "Preventive Health Programs", included: true },
-        { name: "Dedicated Health Officer", included: true }
-      ]
-    }
-  ];
+    const totalMonthly = baseMonthly * users;
 
-  // Smooth scroll to hash on page load
-  useEffect(() => {
-    if (window.location.hash) {
-      const el = document.querySelector(window.location.hash);
-      if (el) {
-        setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }, 300);
-      }
+    if (billing === "yearly") {
+      const discountedMonthly = totalMonthly * 0.8;
+      const annualTotal = discountedMonthly * 12;
+      const savings = totalMonthly * 12 - annualTotal;
+      return {
+        displayPrice: annualTotal,
+        cycleLabel: `Billed annually (${formatMoney(discountedMonthly)}/mo)`,
+        savings,
+        costPerUser: mode === "b2b" ? formatMoney(baseMonthly * 0.8) + " / user / mo" : null,
+      };
+    } else {
+      return {
+        displayPrice: totalMonthly,
+        cycleLabel: "Billed monthly",
+        savings: 0,
+        costPerUser: mode === "b2b" ? formatMoney(baseMonthly) + " / user / mo" : null,
+      };
     }
+  }, [mode, coverage, billing, licenses]);
+
+  const features = mode === "b2b" ? FEATURES_B2B : FEATURES_B2C;
+
+  const summaryTitle = useMemo(() => {
+    if (mode === "b2b") {
+      return coverage === "individual" ? "For Employers (Individual)" : "For Employers (Family)";
+    }
+    return coverage === "individual" ? "For Individuals" : "For Families";
+  }, [mode, coverage]);
+
+  const planBadge = mode === "b2b" ? "Essential Safety for Employers" : "Essential Safety";
+
+  /* CTA handler */
+  const handleCheckout = useCallback(() => {
+    if (mode === "b2c") {
+      const planType: PlanType = coverage;
+      const billingCycle: BillingCycle = billing === "yearly" ? "yearly" : "monthly";
+      const url = getSignupUrl(planType, billingCycle);
+      window.open(url, "_blank");
+    } else {
+      setIsDemoModalOpen(true);
+    }
+  }, [mode, coverage, billing]);
+
+  /* License slider handler */
+  const handleSliderChange = useCallback((val: number) => {
+    const clamped = Math.max(5, Math.min(10000, val));
+    setLicenses(clamped);
   }, []);
+
+  const handleInputChange = useCallback((val: string) => {
+    const num = parseInt(val, 10);
+    if (!isNaN(num)) {
+      handleSliderChange(num);
+    }
+  }, [handleSliderChange]);
+
+  /* Step numbering */
+  const planStepNum = 2;
+  const licensesStepNum = mode === "b2b" ? 3 : -1;
+  const billingStepNum = mode === "b2b" ? 4 : 3;
 
   return (
     <Layout>
-      <SEO 
-        title="MySentry Pricing | Personal Safety Plans from $15/mo | 7-Day Free Trial" 
-        description="Choose your MySentry plan: Individual ($15/mo) or Family ($30/mo, up to 6 members). Includes fall detection, panic button, crash detection, and 24/7 professional monitoring. Try free for 7 days."
+      <SEO
+        title="MySentry Pricing | Personal Safety Plans from $15/mo | 7-Day Free Trial"
+        description="Choose the protection that fits your life. Individual plans from $15/mo, Family plans from $30/mo. 24/7 professional monitoring, fall detection, panic alarm, and live video response. Start your 7-day free trial today."
         canonical="https://mysentry.ai/pricing"
-        schema={{
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": [
-            {
-              "@type": "Question",
-              "name": "What's included in the 7-day free trial?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Your free trial includes full access to all Essential Safety features including 24/7 professional monitoring, fall detection, crash detection, and real-time health alerts. A credit card is required to start, but if you cancel within 7 days you won't be charged."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Can I switch between Individual and Family plans?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes! You can upgrade or downgrade your plan at any time. When upgrading, you'll only pay the prorated difference. When downgrading, the change takes effect at your next billing cycle."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "What devices are compatible with MySentry?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "MySentry works with iPhone (iOS 14+), Android phones (Android 10+), Apple Watch (Series 4+), and most Wear OS smartwatches. Our app is optimized for both smartphones and wearables."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "How does the 24/7 professional monitoring work?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "When an emergency is detected (fall, crash, panic alarm), our trained monitoring agents are immediately alerted. They can view live video, communicate with you, and dispatch emergency services to your exact location if needed."
-              }
-            },
-            {
-              "@type": "Question",
-              "name": "Is there a contract or commitment?",
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No long-term contracts! All plans are month-to-month or annual (with 20% savings). You can cancel anytime with no cancellation fees."
-              }
-            }
-          ]
-        }}
-      />
-      <HeroSection
-        label="Flexible Plans"
-        title={<>Pricing and Plans<br/><span className="text-gray-600">Within Every Budget.</span></>}
-        description="Choose the protection that fits your life. Whether for yourself, your family, or your entire workforce, MySentry offers comprehensive safety & health monitoring with emergency response at an affordable price."
-        imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zhjtYYsGkjNemizw.png"
-        imageAlt="Safety Dispenser"
-        showCta={false}
+        schema={pricingSchema}
       />
 
-      {/* Pricing Toggle */}
-      <section id="pricing-plans" className="py-12 bg-[#e8f5e9] border-t border-primary/10">
-        <div className="container flex justify-center">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 p-1 bg-[#c8e6c9] rounded-3xl sm:rounded-full inline-flex border border-primary/20 w-full sm:w-auto">
-            <button 
-              onClick={() => setIsAnnual(false)}
-              className={cn(
-                "w-full sm:w-auto px-6 py-3 sm:py-2 rounded-full text-sm font-bold transition-all",
-                !isAnnual ? "bg-primary text-white" : "text-[#1a1a1a] hover:text-primary"
-              )}
-            >
-              Monthly
-            </button>
-            <button 
-              onClick={() => setIsAnnual(true)}
-              className={cn(
-                "w-full sm:w-auto px-6 py-3 sm:py-2 rounded-full text-sm font-bold transition-all",
-                isAnnual ? "bg-primary text-white" : "text-[#1a1a1a] hover:text-primary"
-              )}
-            >
-              Yearly <span className="text-[10px] bg-secondary text-white px-2 py-0.5 rounded-full font-bold ml-1">SAVE 20%</span>
-            </button>
-          </div>
+      {/* ─── Header ─── */}
+      <section className="text-center pt-16 pb-10 px-5">
+        <h1 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] uppercase tracking-tight mb-4">
+          Pricing and plans within every budget.
+        </h1>
+        <p className="text-base text-[#64748B] font-medium max-w-[600px] mx-auto mb-8">
+          Choose the protection that fits your life. Whether for yourself, your family, or your entire workforce.
+        </p>
+
+        {/* B2C / B2B Toggle */}
+        <div className="inline-flex bg-[#E2E8F0] p-1.5 rounded-full shadow-inner">
+          <button
+            onClick={() => setMode("b2c")}
+            className={cn(
+              "flex items-center gap-2 px-6 md:px-8 py-3 rounded-full text-sm md:text-[15px] font-bold transition-all duration-300",
+              mode === "b2c"
+                ? "bg-[#6ad990] text-white shadow-[0_4px_10px_rgba(97,197,39,0.3)]"
+                : "bg-transparent text-[#64748B]"
+            )}
+          >
+            <User className="w-4 h-4" />
+            Personal Plans
+          </button>
+          <button
+            onClick={() => setMode("b2b")}
+            className={cn(
+              "flex items-center gap-2 px-6 md:px-8 py-3 rounded-full text-sm md:text-[15px] font-bold transition-all duration-300",
+              mode === "b2b"
+                ? "bg-[#6ad990] text-white shadow-[0_4px_10px_rgba(97,197,39,0.3)]"
+                : "bg-transparent text-[#64748B]"
+            )}
+          >
+            <Building2 className="w-4 h-4" />
+            Employer Plans
+          </button>
         </div>
       </section>
 
-      {/* Consumer Plans */}
-      <section id="individuals" className="py-12 bg-[#e8f5e9]">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-tight">For Individuals & Families</h2>
-            <p className="text-xl text-gray-600">Choose the protection that's right for you</p>
-          </div>
+      {/* ─── Main Layout: Configurator + Summary ─── */}
+      <section className="max-w-[1200px] mx-auto px-6 pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 items-start">
 
-          {/* Plan Type Toggle (Individual vs Family) */}
-          <div className="flex justify-center mb-12">
-            <div className="bg-white p-1 rounded-3xl sm:rounded-full border border-primary/20 inline-flex flex-col sm:flex-row shadow-sm w-full sm:w-auto">
-              <button
-                onClick={() => setIsFamily(false)}
-                className={cn(
-                  "w-full sm:w-auto px-8 py-3 rounded-full text-base font-bold transition-all",
-                  !isFamily ? "bg-primary text-white shadow-md" : "text-[#1a1a1a] hover:bg-gray-50"
-                )}
-              >
-                Individual
-              </button>
-              <button
-                onClick={() => setIsFamily(true)}
-                className={cn(
-                  "w-full sm:w-auto px-8 py-3 rounded-full text-base font-bold transition-all",
-                  isFamily ? "bg-primary text-white shadow-md" : "text-[#1a1a1a] hover:bg-gray-50"
-                )}
-              >
-                Family (up to 6)
-              </button>
-            </div>
-          </div>
+          {/* ─── LEFT: Configurator ─── */}
+          <div className="flex flex-col gap-8">
 
-          {/* Family Plan Note */}
-          {isFamily && (
-            <div className="text-center" style={{ marginTop: '-3px', marginBottom: '60px' }}>
-              <p className="text-gray-600 italic text-sm">Invite up to 6 family members to join your plan (1 admin account holder and 5 family members).</p>
-            </div>
-          )}
-
-          {/* Consumer Plans Grid */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {consumerPlans.map((plan, idx) => (
-              <motion.div
-                key={plan.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className={cn(
-                  "relative rounded-3xl p-8 border-2 transition-all duration-300 flex flex-col",
-                  plan.highlighted 
-                    ? "bg-white border-primary shadow-2xl scale-105 z-10" 
-                    : "bg-white/50 border-gray-200 hover:border-primary/30 hover:shadow-xl"
-                )}
-              >
-                {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
-                    MOST POPULAR
-                  </div>
-                )}
-
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-[#1a1a1a] mb-2">{plan.name}</h3>
-                  <p className="text-primary font-medium mb-6">{plan.tagline}</p>
-                  
-                  <div className="flex items-baseline gap-1 mb-2">
-                    {!plan.comingSoon ? (
-                      <>
-                        <span className="text-5xl font-bold text-[#1a1a1a]">
-                          ${isAnnual ? plan.annualPrice : plan.price}
-                        </span>
-                        <span className="text-gray-500 font-medium">{isAnnual ? '/year' : '/mo'}</span>
-                      </>
-                    ) : (
-                      <span className="text-4xl font-bold text-[#1a1a1a]">Coming Soon</span>
-                    )}
-                  </div>
-                  
-                  {!plan.comingSoon && isAnnual && plan.yearlySavings && (
-                    <p className="text-sm text-green-600 font-medium">
-                      Save ${plan.yearlySavings.toFixed(0)} with annual billing
-                    </p>
-                  )}
-                  
-                  <p className="mt-4 text-gray-600 leading-relaxed">{plan.description}</p>
-                </div>
-
-                <div className="flex-grow mb-8">
-                  <ul className="space-y-4">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <div className="mt-1 shrink-0">
-                          {feature.included ? (
-                            <Check className="h-5 w-5 text-primary" />
-                          ) : (
-                            <X className="h-5 w-5 text-gray-300" />
-                          )}
-                        </div>
-                        <span className={cn("text-sm", feature.included ? "text-gray-700 font-medium" : "text-gray-400")}>
-                          {feature.name}
-                          {feature.link && (
-                            <a href={feature.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-1">
-                              (Learn more)
-                            </a>
-                          )}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {!plan.comingSoon ? (
-                  <a 
-                    href={getConsumerSignupUrl()}
-                    className={cn(
-                      "w-full h-14 text-lg font-bold rounded-xl transition-all inline-flex items-center justify-center",
-                      plan.highlighted 
-                        ? "bg-primary text-white hover:bg-primary/90 shadow-lg hover:shadow-xl hover:-translate-y-1" 
-                        : "bg-gray-100 text-gray-900 hover:bg-gray-200"
-                    )}
-                  >
-                    {plan.cta}
-                  </a>
-                ) : (
-                  <Button 
-                    className={cn(
-                      "w-full h-14 text-lg font-bold rounded-xl transition-all",
-                      "bg-gray-100 text-gray-900 hover:bg-gray-200"
-                    )}
-                    disabled
-                  >
-                    {plan.cta}
-                  </Button>
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Employer Plans */}
-      <section className="py-24 bg-white">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-tight">For Employers</h2>
-            <p className="text-xl text-gray-600">Protect your workforce and reduce costs</p>
-          </div>
-
-          {/* Employee Count Slider */}
-          <div className="max-w-3xl mx-auto mb-16 bg-[#e8f5e9] p-8 rounded-[2rem] border border-primary/20">
-            <label className="block text-center text-lg font-bold text-[#1a1a1a] mb-8">
-              Number of Employees: <span className="text-primary text-2xl ml-2">{employeeCount}</span>
-            </label>
-            <input
-              type="range"
-              min="10"
-              max="10000"
-              step="10"
-              value={employeeCount}
-              onChange={(e) => setEmployeeCount(parseInt(e.target.value))}
-              className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-primary"
-            />
-            <div className="flex justify-between text-sm text-gray-500 mt-4 font-medium">
-              <span>10</span>
-              <span>10,000+</span>
-            </div>
-          </div>
-
-          {/* Employer Plans Grid */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {employerPlans.map((plan, idx) => (
-              <motion.div
-                key={plan.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className={cn(
-                  "relative rounded-3xl p-8 border-2 transition-all duration-300 flex flex-col",
-                  plan.highlighted 
-                    ? "bg-white border-primary shadow-2xl scale-105 z-10" 
-                    : "bg-white/50 border-gray-200 hover:border-primary/30 hover:shadow-xl"
-                )}
-              >
-                {plan.highlighted && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-secondary text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
-                    RECOMMENDED
-                  </div>
-                )}
-
-                <div className="mb-8">
-                  <h3 className="text-2xl font-bold text-[#1a1a1a] mb-2">{plan.name}</h3>
-                  <p className="text-primary font-medium mb-6">{plan.tagline}</p>
-                  
-                  <div className="flex items-baseline gap-1 mb-2">
-                    {!plan.comingSoon ? (
-                      <>
-                        <span className="text-5xl font-bold text-[#1a1a1a]">
-                          ${plan.totalPrice.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
-                        </span>
-                        <span className="text-gray-500 font-medium">/mo</span>
-                      </>
-                    ) : (
-                      <span className="text-4xl font-bold text-[#1a1a1a]">Coming Soon</span>
-                    )}
-                  </div>
-                  
-                  {!plan.comingSoon && employerDiscount > 0 && (
-                    <p className="text-sm text-green-600 font-medium">
-                      {Math.round(employerDiscount * 100)}% volume discount applied
-                    </p>
-                  )}
-                  
-                  <p className="mt-4 text-gray-600 leading-relaxed">{plan.description}</p>
-                </div>
-
-                <div className="flex-grow mb-8">
-                  <ul className="space-y-4">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        <div className="mt-1 shrink-0">
-                          {feature.included ? (
-                            <Check className="h-5 w-5 text-primary" />
-                          ) : (
-                            <X className="h-5 w-5 text-gray-300" />
-                          )}
-                        </div>
-                        <span className={cn("text-sm", feature.included ? "text-gray-700 font-medium" : "text-gray-400")}>
-                          {feature.name}
-                          {feature.link && (
-                            <a href={feature.link} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-1">
-                              (Learn more)
-                            </a>
-                          )}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <Button 
-                  className={cn(
-                    "w-full h-14 text-lg font-bold rounded-xl transition-all",
-                    plan.highlighted 
-                      ? "bg-primary text-white hover:bg-primary/90 shadow-lg hover:shadow-xl hover:-translate-y-1" 
-                      : "bg-gray-100 text-gray-900 hover:bg-gray-200"
-                  )}
-                  disabled={plan.comingSoon}
-                  onClick={() => {
-                    if (!plan.comingSoon) {
-                      setSelectedEmployerPlan(plan.name);
-                      setIsDemoModalOpen(true);
-                    }
-                  }}
-                >
-                  {plan.cta}
-                </Button>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How to Get Started Section */}
-      <section className="py-24 bg-white">
-        <div className="container">
-          <div className="text-center mb-16">
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Simple Online Signup</span>
-            <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-tight">How to Get Started</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">No in-app purchases. No complicated setup. Create your account online and start your free trial in minutes.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {[
-              { step: "1", title: "Choose Your Plan", description: "Select Individual or Family, and pick Monthly or Yearly billing. Click 'Start 7-Day Free Trial' to begin.", icon: "💳", link: getSignupUrl('individual', 'monthly') },
-              { step: "2", title: "Create Your Account Online", description: "You will be taken to our secure signup portal at dashboard.mysentry.ai. Enter your details and payment method to activate your free trial. A credit card is required, but you won't be charged if you cancel within 7 days.", icon: "🖥️", link: getSignupUrl('individual', 'monthly') },
-              { step: "3", title: "Download the App & Log In", description: "Once your account is active, download the MySentry app from the App Store or Google Play. Log in with your credentials and you are protected.", icon: "📱", link: undefined }
-            ].map((item, i) => (
-              item.link ? (
-                <a key={i} href={item.link} target="_blank" rel="noopener noreferrer" className="bg-[#f0f7f0] rounded-3xl p-8 text-center border border-gray-100 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-200 cursor-pointer block">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold text-lg mb-4">{item.step}</div>
-                  <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                </a>
-              ) : (
-                <div key={i} className="bg-[#f0f7f0] rounded-3xl p-8 text-center border border-gray-100 shadow-sm">
-                  <div className="text-4xl mb-4">{item.icon}</div>
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary text-white font-bold text-lg mb-4">{item.step}</div>
-                  <h3 className="text-xl font-bold text-[#1a1a1a] mb-3">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                </div>
-              )
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-24 bg-[#e8f5e9]">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-tight">Frequently Asked Questions</h2>
-          </div>
-
-          <div className="max-w-3xl mx-auto space-y-6">
-            {[
-              {
-                q: "What's included in the 7-day free trial?",
-                a: "Your free trial includes full access to all Essential Safety features including 24/7 professional monitoring, fall detection, crash detection, and real-time health alerts. A credit card is required to start, but if you cancel within 7 days you won't be charged."
-              },
-              {
-                q: "Can I switch between Individual and Family plans?",
-                a: "Yes! You can upgrade or downgrade your plan at any time. When upgrading, you'll only pay the prorated difference. When downgrading, the change takes effect at your next billing cycle."
-              },
-              {
-                q: "What devices are compatible with MySentry?",
-                a: "MySentry works with iPhone (iOS 14+), Android phones (Android 10+), Apple Watch (Series 4+), and most Wear OS smartwatches. Our app is optimized for both smartphones and wearables."
-              },
-              {
-                q: "How does the 24/7 professional monitoring work?",
-                a: "When an emergency is detected (fall, crash, panic alarm), our trained monitoring agents are immediately alerted. They can view live video, communicate with you, and dispatch emergency services to your exact location if needed."
-              },
-              {
-                q: "Is there a contract or commitment?",
-                a: "No long-term contracts! All plans are month-to-month or annual (with 20% savings). You can cancel anytime with no cancellation fees."
-              },
-              {
-                q: "How do I sign up for MySentry?",
-                a: "MySentry does not offer in-app purchases. To get started, click 'Start 7-Day Free Trial' on this page, which takes you to our secure signup portal. There you create your account and choose your payment method. Once your account is active, you download the MySentry app from the App Store or Google Play and log in."
-              },
-              {
-                q: "Can I purchase MySentry through the App Store or Google Play?",
-                a: "No. All MySentry subscriptions are purchased directly through our website at mysentry.ai. After creating your account online, you simply download the free MySentry app and log in with your credentials. This allows us to offer you a 7-day free trial and flexible plan management."
-              }
-            ].map((faq, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
-                <h3 className="text-lg font-bold text-[#1a1a1a] mb-3">{faq.q}</h3>
-                <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+            {/* Step 1: Coverage Type */}
+            <StepBlock stepNum={1} title="Select Coverage Type">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <SelectCard
+                  active={coverage === "individual"}
+                  onClick={() => setCoverage("individual")}
+                  icon={<User className="w-6 h-6 text-[#2E7D6F]" />}
+                  title="Individual"
+                  description="Coverage for a single user."
+                />
+                <SelectCard
+                  active={coverage === "family"}
+                  onClick={() => setCoverage("family")}
+                  icon={<Users className="w-6 h-6 text-[#2E7D6F]" />}
+                  title="Family"
+                  description="Coverage for up to 5 family members."
+                />
               </div>
-            ))}
+            </StepBlock>
+
+            {/* Step 2: Plan Type */}
+            <StepBlock stepNum={planStepNum} title="Select Subscription Plan">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <SelectCard
+                  active
+                  icon={<Shield className="w-6 h-6 text-[#2E7D6F]" />}
+                  title={mode === "b2b" ? "Essential Safety for Employers" : "Essential Safety"}
+                  description="Comprehensive safety & health monitoring with emergency response."
+                  badge={<span className="absolute -top-2.5 right-4 bg-[#2E7D6F] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">Most Popular</span>}
+                />
+                <SelectCard
+                  disabled
+                  icon={<HeartPulse className="w-6 h-6 text-[#64748B]" />}
+                  title="Longevity & Wellness"
+                  description="Advanced vitals tracking, virtual coach, and in-home testing."
+                  badge={<span className="absolute -top-2.5 right-4 bg-[#E2E8F0] text-[#64748B] text-[11px] font-bold px-2.5 py-1 rounded-full">Coming Soon</span>}
+                  titleClassName="text-[#64748B]"
+                />
+              </div>
+            </StepBlock>
+
+            {/* Step 3 (B2B only): Number of Employees */}
+            {mode === "b2b" && (
+              <StepBlock stepNum={licensesStepNum} title="Number of Employees">
+                <div className="mt-2">
+                  <div className="flex justify-between items-center mb-5">
+                    <span className="text-[15px] font-semibold text-[#64748B]">Drag to adjust or type number:</span>
+                    <input
+                      type="number"
+                      value={licenses}
+                      min={5}
+                      max={10000}
+                      onChange={(e) => handleInputChange(e.target.value)}
+                      className="w-[90px] px-3 py-2.5 text-lg font-bold border-2 border-[#E2E8F0] rounded-xl text-center text-[#0F172A] outline-none transition-colors focus:border-[#6ad990]"
+                    />
+                  </div>
+                  <input
+                    type="range"
+                    min={5}
+                    max={500}
+                    value={Math.min(licenses, 500)}
+                    onChange={(e) => handleSliderChange(parseInt(e.target.value, 10))}
+                    className="w-full accent-[#6ad990] h-2 rounded-full appearance-none cursor-pointer mb-6"
+                    style={{
+                      background: `linear-gradient(to right, #6ad990 ${((Math.min(licenses, 500) - 5) / 495) * 100}%, #E2E8F0 ${((Math.min(licenses, 500) - 5) / 495) * 100}%)`,
+                    }}
+                  />
+                  <div className="flex gap-2 flex-wrap">
+                    {QUICK_EMPLOYEE_COUNTS.map((count) => (
+                      <button
+                        key={count}
+                        onClick={() => setLicenses(count)}
+                        className="bg-[#F1F5F9] border border-transparent px-4 py-2 rounded-full text-[13px] font-semibold text-[#64748B] cursor-pointer transition-all hover:bg-white hover:border-[#6ad990] hover:text-[#6ad990]"
+                      >
+                        {count}{count === 500 ? "+" : ""}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </StepBlock>
+            )}
+
+            {/* Step 3/4: Billing Duration */}
+            <StepBlock stepNum={billingStepNum} title="Select Billing Duration">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <SelectCard
+                  active={billing === "monthly"}
+                  onClick={() => setBilling("monthly")}
+                  icon={<Calendar className="w-6 h-6 text-[#2E7D6F]" />}
+                  title="Monthly"
+                  description="Pay as you go, cancel anytime."
+                />
+                <SelectCard
+                  active={billing === "yearly"}
+                  onClick={() => setBilling("yearly")}
+                  icon={<CalendarCheck className="w-6 h-6 text-[#2E7D6F]" />}
+                  title="Yearly"
+                  description="Commit to long-term safety and save."
+                  badge={<span className="absolute -top-2.5 right-4 bg-[#0F172A] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">Save 20%</span>}
+                />
+              </div>
+            </StepBlock>
+          </div>
+
+          {/* ─── RIGHT: Sticky Summary ─── */}
+          <div className="lg:sticky lg:top-10">
+            <div className="bg-white rounded-3xl p-8 shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-black/5">
+              {/* Header */}
+              <div className="flex justify-between items-center text-xs uppercase tracking-widest font-extrabold text-[#2E7D6F] mb-6">
+                <span>{summaryTitle}</span>
+                <span className="bg-[#F4FBF7] text-[#0F172A] px-2.5 py-1 rounded-lg text-xs font-extrabold">{planBadge}</span>
+              </div>
+
+              {/* Price */}
+              <div className="mb-6">
+                <div className="text-5xl md:text-[56px] font-extrabold text-[#0F172A] leading-none tracking-tighter">
+                  {formatMoney(calculated.displayPrice)}
+                </div>
+                {calculated.costPerUser && (
+                  <div className="text-sm font-bold text-[#6ad990] mt-1">{calculated.costPerUser}</div>
+                )}
+                <div className="text-[15px] text-[#64748B] font-medium mt-2">{calculated.cycleLabel}</div>
+              </div>
+
+              {/* Features */}
+              <div className="py-6 border-t border-b border-[#E2E8F0] flex flex-col gap-3 mb-6">
+                {features.map((feat, i) => (
+                  <div key={i} className="flex items-start gap-3 text-sm font-medium text-[#334155]">
+                    <Check className="w-4 h-4 text-[#6ad990] mt-0.5 shrink-0" />
+                    <span>{feat}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Savings Row */}
+              {billing === "yearly" && calculated.savings > 0 && (
+                <div className="flex justify-between text-[15px] font-bold text-[#166534] bg-[#DCFCE7] px-4 py-3 rounded-xl mb-6">
+                  <span>Yearly Savings</span>
+                  <span>{formatMoney(calculated.savings)}</span>
+                </div>
+              )}
+
+              {/* CTA */}
+              <button
+                onClick={handleCheckout}
+                className="w-full py-4.5 bg-[#6ad990] text-white border-none rounded-xl text-base font-bold cursor-pointer transition-all shadow-[0_4px_15px_rgba(97,197,39,0.3)] hover:translate-y-[-2px] hover:shadow-[0_8px_20px_rgba(97,197,39,0.4)] flex justify-center items-center gap-2.5"
+              >
+                {mode === "b2c" ? "Start 7-Day Free Trial" : "Get Started"}
+              </button>
+
+              {mode === "b2b" && (
+                <button
+                  onClick={() => setIsDemoModalOpen(true)}
+                  className="w-full py-4 bg-transparent text-[#0F172A] border-2 border-[#E2E8F0] rounded-xl text-[15px] font-bold cursor-pointer transition-all mt-3 hover:border-[#0F172A] hover:bg-[#F8FAFC]"
+                >
+                  Request Custom Quote
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Employer Demo Modal */}
-      <EmployerDemoModal 
-        isOpen={isDemoModalOpen} 
+      {/* Demo Modal */}
+      <EmployerDemoModal
+        isOpen={isDemoModalOpen}
         onClose={() => setIsDemoModalOpen(false)}
-        planName={selectedEmployerPlan}
+        planName={planBadge}
       />
     </Layout>
+  );
+}
+
+/* ─── Sub-components ─── */
+
+function StepBlock({ stepNum, title, children }: { stepNum: number; title: string; children: React.ReactNode }) {
+  return (
+    <div className="bg-white rounded-3xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-white/50">
+      <h2 className="text-lg font-bold text-[#0F172A] mb-6 flex items-center gap-3">
+        <span className="bg-[#DCFCE7] text-[#2E7D6F] w-7 h-7 rounded-full flex items-center justify-center text-sm font-extrabold">
+          {stepNum}
+        </span>
+        {title}
+      </h2>
+      {children}
+    </div>
+  );
+}
+
+interface SelectCardProps {
+  active?: boolean;
+  disabled?: boolean;
+  onClick?: () => void;
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  badge?: React.ReactNode;
+  titleClassName?: string;
+}
+
+function SelectCard({ active = false, disabled = false, onClick, icon, title, description, badge, titleClassName }: SelectCardProps) {
+  return (
+    <div
+      onClick={disabled ? undefined : onClick}
+      className={cn(
+        "relative border-2 rounded-2xl p-5 transition-all text-left",
+        disabled
+          ? "opacity-60 cursor-not-allowed bg-[#F8FAFC] border-[#E2E8F0]"
+          : active
+            ? "border-[#6ad990] bg-[#DCFCE7] cursor-pointer"
+            : "border-[#E2E8F0] bg-white cursor-pointer hover:border-[#A7F3D0]"
+      )}
+    >
+      {badge}
+      <div className="mb-3">{icon}</div>
+      <div className={cn("text-base font-bold text-[#0F172A] mb-1", titleClassName)}>{title}</div>
+      <div className="text-[13px] text-[#64748B] leading-snug">{description}</div>
+    </div>
   );
 }
