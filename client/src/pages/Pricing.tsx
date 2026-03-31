@@ -263,7 +263,7 @@ function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boole
 export default function Pricing() {
   const [mode, setMode] = useState<Mode>("b2c");
   const [coverage, setCoverage] = useState<Coverage>("individual");
-  const [billing, setBilling] = useState<Billing>("yearly");
+  const [billing, setBilling] = useState<Billing>("monthly");
   const [licenses, setLicenses] = useState(5);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
@@ -323,7 +323,7 @@ export default function Pricing() {
 
   /* License slider handler */
   const handleSliderChange = useCallback((val: number) => {
-    const clamped = Math.max(5, Math.min(10000, val));
+    const clamped = Math.max(1, Math.min(10000, val));
     setLicenses(clamped);
   }, []);
 
@@ -381,7 +381,7 @@ export default function Pricing() {
             )}
           >
             <Building2 className="w-4 h-4" />
-            Employer Plans
+            Enterprise Plans
           </button>
         </div>
       </section>
@@ -394,27 +394,27 @@ export default function Pricing() {
           <div className="flex flex-col gap-8">
 
             {/* Step 1: Coverage Type */}
-            <StepBlock stepNum={1} title="Select Coverage Type">
+            <StepBlock stepNum={1} title="Who is this plan for?">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <SelectCard
                   active={coverage === "individual"}
                   onClick={() => setCoverage("individual")}
                   icon={<User className="w-6 h-6 text-[#2E7D6F]" />}
-                  title="Individual"
-                  description="Coverage for a single user."
+                  title={mode === "b2b" ? "Employees Only" : "Just Me"}
+                  description={mode === "b2b" ? "Covers your employees" : "Coverage for a single user."}
                 />
                 <SelectCard
                   active={coverage === "family"}
                   onClick={() => setCoverage("family")}
                   icon={<Users className="w-6 h-6 text-[#2E7D6F]" />}
-                  title="Family"
-                  description="Coverage for up to 5 family members."
+                  title={mode === "b2b" ? "Employees + Families" : "My Family"}
+                  description={mode === "b2b" ? "Covers employees and their family members" : "Coverage for up to 5 family members."}
                 />
               </div>
             </StepBlock>
 
             {/* Step 2: Plan Type */}
-            <StepBlock stepNum={planStepNum} title="Select Subscription Plan">
+            <StepBlock stepNum={planStepNum} title="Select your plan">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <SelectCard
                   active
@@ -440,14 +440,14 @@ export default function Pricing() {
                 <div className="mt-2">
                   <div className="flex justify-between items-center mb-5">
                     <span className="text-[15px] font-semibold text-[#64748B]">Drag to adjust or type number:</span>
-                    <input
-                      type="number"
-                      value={licenses}
-                      min={5}
-                      max={10000}
-                      onChange={(e) => handleInputChange(e.target.value)}
-                      className="w-[90px] px-3 py-2.5 text-lg font-bold border-2 border-[#E2E8F0] rounded-xl text-center text-[#0F172A] outline-none transition-colors focus:border-[#6ad990]"
-                    />
+                  <input
+                    type="number"
+                    value={licenses}
+                    min={1}
+                    max={10000}
+                    onChange={(e) => handleInputChange(e.target.value)}
+                    className="w-[90px] px-3 py-2.5 text-lg font-bold border-2 border-[#E2E8F0] rounded-xl text-center text-[#0F172A] outline-none transition-colors focus:border-[#6ad990]"
+                  />
                   </div>
                   <input
                     type="range"
@@ -490,7 +490,7 @@ export default function Pricing() {
                   onClick={() => setBilling("yearly")}
                   icon={<CalendarCheck className="w-6 h-6 text-[#2E7D6F]" />}
                   title="Yearly"
-                  description="Commit to long-term safety and save."
+                  description="Save more with annual billing."
                   badge={<span className="absolute -top-2.5 right-4 bg-[#0F172A] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">Save 20%</span>}
                 />
               </div>

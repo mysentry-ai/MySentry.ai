@@ -468,3 +468,19 @@
 - [x] Connect "Customized Quotation" button to the form modal
 - [x] Ensure full responsiveness (desktop, tablet, mobile)
 - [x] Verify all pricing combinations work correctly
+
+## Pricing Page UI/UX Defaults & Input Fixes (Round 24)
+- [x] Set Personal Plan default to Individual Monthly
+- [x] Set Employer Plan default to Individual Monthly
+- [x] Set default employee count to 5 (editable, not locked)
+- [x] Fix employee count input to be fully editable (remove min value restriction)
+- [x] Set default Coverage Type to Individual for both B2C and B2B
+- [x] Apply text updates: (Employer plans) → (Enterprise Plans)
+- [x] Apply text updates: (Select Coverage Type) → (Who is this plan for?)
+- [x] Apply text updates: (Individual) → (Just Me), (Family) → (My Family)
+- [x] Apply text updates: (Select subscription plan) → (Select your plan)
+- [x] Apply text updates: (Commit to long-term safety and save) → (Save more with annual billing)
+- [x] Update B2B Coverage Type labels: (Individual) → (Employees Only), (Family) → (Employees + Families)
+- [x] Update B2B Coverage Type descriptions
+- [x] Apply Proxima Nova font throughout (no Black variant)
+- [x] Verify all defaults and editable fields work correctly
