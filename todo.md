@@ -489,3 +489,10 @@
 - [x] Change "Get Offer" button to "Proceed with Payment"
 - [x] Remove grey background highlighting from all form input fields in custom quotation modal
 - [x] Ensure form fields display with white background (no color fill)
+
+## Custom Quotation Form Styling & Content Updates (Round 26)
+- [x] Change all form field backgrounds from grey to white
+- [x] Add black outline/border to all form fields
+- [x] Update description text: remove "enterprise safety" from the form description
+- [x] Replace "Specific Safety Requirements (Optional)" with "Other requirements (Optional)"
+- [x] Verify all changes are implemented correctly

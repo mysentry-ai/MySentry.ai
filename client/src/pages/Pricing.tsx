@@ -153,7 +153,7 @@ function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boole
             {/* Title */}
             <h2 className="text-2xl font-bold text-[#0F172A] mb-2">Get a Custom Quote</h2>
             <p className="text-[#64748B] text-sm mb-8">
-              Fill out the form below and our enterprise safety team will build a tailored package for your organization.
+              Fill out the form below and our team will build a tailored package for your organization.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -169,7 +169,7 @@ function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boole
                   required
                   value={formData.company}
                   onChange={handleChange}
-                  className="h-12 bg-white border-[#E2E8F0] text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-[#6ad990] focus:ring-[#6ad990]"
+                  className="h-12 bg-white border-2 border-black text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-black focus:ring-black"
                 />
               </div>
 
@@ -188,7 +188,7 @@ function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boole
                     required
                     value={formData.employees}
                     onChange={handleChange}
-                    className="h-12 bg-white border-[#E2E8F0] text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-[#6ad990] focus:ring-[#6ad990]"
+                    className="h-12 bg-white border-2 border-black text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-black focus:ring-black"
                   />
                 </div>
                 <div>
@@ -203,7 +203,7 @@ function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boole
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="h-12 bg-white border-[#E2E8F0] text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-[#6ad990] focus:ring-[#6ad990]"
+                    className="h-12 bg-white border-2 border-black text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-black focus:ring-black"
                   />
                 </div>
               </div>
@@ -211,7 +211,7 @@ function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boole
               {/* Specific Safety Requirements */}
               <div>
                 <Label htmlFor="quote-requirements" className="text-[#0F172A] font-bold text-sm mb-2 block">
-                  Specific Safety Requirements (Optional)
+                  Other requirements (Optional)
                 </Label>
                 <Textarea
                   id="quote-requirements"
@@ -219,7 +219,7 @@ function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boole
                   placeholder="E.g., We need hardware integrations..."
                   value={formData.requirements}
                   onChange={handleChange}
-                  className="min-h-[100px] bg-white border-[#E2E8F0] text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-[#6ad990] focus:ring-[#6ad990] resize-none"
+                  className="min-h-[100px] bg-white border-2 border-black text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-black focus:ring-black resize-none"
                 />
               </div>
 
