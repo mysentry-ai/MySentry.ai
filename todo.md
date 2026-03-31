@@ -484,3 +484,8 @@
 - [x] Update B2B Coverage Type descriptions
 - [x] Apply Proxima Nova font throughout (no Black variant)
 - [x] Verify all defaults and editable fields work correctly
+
+## Pricing Page Button & Form Styling Updates (Round 25)
+- [x] Change "Get Offer" button to "Proceed with Payment"
+- [x] Remove grey background highlighting from all form input fields in custom quotation modal
+- [x] Ensure form fields display with white background (no color fill)

@@ -188,7 +188,7 @@ function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boole
                     required
                     value={formData.employees}
                     onChange={handleChange}
-                    className="h-12 bg-[#F0FDF4] border-[#E2E8F0] text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-[#6ad990] focus:ring-[#6ad990]"
+                    className="h-12 bg-white border-[#E2E8F0] text-[#0F172A] placeholder:text-[#94A3B8] rounded-xl focus:border-[#6ad990] focus:ring-[#6ad990]"
                   />
                 </div>
                 <div>
@@ -540,7 +540,7 @@ export default function Pricing() {
                 onClick={handleCheckout}
                 className="w-full py-4.5 bg-[#6ad990] text-white border-none rounded-xl text-base font-bold cursor-pointer transition-all shadow-[0_4px_15px_rgba(97,197,39,0.3)] hover:translate-y-[-2px] hover:shadow-[0_8px_20px_rgba(97,197,39,0.4)] flex justify-center items-center gap-2.5"
               >
-                {mode === "b2c" ? "Start 7-Day Free Trial" : "Get Offer"}
+                {mode === "b2c" ? "Start 7-Day Free Trial" : "Proceed with Payment"}
               </button>
 
               {mode === "b2b" && (
