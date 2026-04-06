@@ -496,3 +496,18 @@
 - [x] Update description text: remove "enterprise safety" from the form description
 - [x] Replace "Specific Safety Requirements (Optional)" with "Other requirements (Optional)"
 - [x] Verify all changes are implemented correctly
+
+## Privacy Policy Page Expansion (Round 27)
+- [x] Add Section 1: How We Use Personal Information (ID: how-we-use-personal-information)
+- [x] Add Section 2: AI Features and Model Training (ID: ai-features-model-training)
+- [x] Add Section 3: Data Retention (ID: data-retention)
+- [x] Add Section 4: Sharing with Third Parties (ID: third-party-sharing)
+- [x] Add Section 5: Privacy Rights and Data Requests (ID: privacy-rights-requests)
+- [x] Add Section 6: User Choices and Opt-Out Options (ID: opt-out-options)
+- [x] Add Section 7: Effect of Opting Out (ID: effect-of-opting-out)
+- [x] Add Section 8: Authorized Personnel Access (ID: authorized-access)
+- [x] Add Section 9: User Data Control (ID: user-data-control)
+- [x] Add Section 10: AI Updates (ID: ai-updates)
+- [x] Create table of contents with anchor links at top of page
+- [x] Ensure smooth scrolling and mobile responsiveness
+- [x] Verify all anchor links work correctly
