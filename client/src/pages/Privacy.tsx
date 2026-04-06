@@ -32,7 +32,7 @@ export const Privacy = () => {
     { title: "Contact Us", id: "contact-us" },
   ];
 
-  // Track active section on scroll
+  // Track active section on scroll and handle scroll-on-load
   useEffect(() => {
     const handleScroll = () => {
       const sections = tableOfContents.map(item => item.id);
@@ -54,6 +54,19 @@ export const Privacy = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    
+    // Handle scroll-on-load for anchor links
+    const hash = window.location.hash.substring(1);
+    if (hash) {
+      setTimeout(() => {
+        const element = document.getElementById(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+          setActiveSection(hash);
+        }
+      }, 100);
+    }
+    
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -63,6 +76,8 @@ export const Privacy = () => {
       element.scrollIntoView({ behavior: 'smooth' });
       setActiveSection(id);
       setIsMobileMenuOpen(false);
+      // Update URL hash for shareable links
+      window.history.replaceState(null, '', `#${id}`);
     }
   };
 
@@ -90,17 +105,23 @@ export const Privacy = () => {
             <h3 className="text-lg font-bold text-gray-900 mb-6">On This Page</h3>
             <nav className="space-y-2">
               {tableOfContents.map((item) => (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`w-full text-left px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium ${
+                  href={`/privacy#${item.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.id);
+                  }}
+                  className={`block w-full text-left px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium cursor-pointer ${
                     activeSection === item.id
                       ? 'bg-[#386758] text-white'
                       : 'text-[#386758] hover:bg-[#386758]/10'
                   }`}
                 >
                   {item.title}
-                </button>
+                </a>
               ))}
             </nav>
           </div>
@@ -121,17 +142,23 @@ export const Privacy = () => {
             <div className="mt-4 bg-[#f0f7f4] p-6 rounded-2xl border border-[#386758]/20">
               <nav className="space-y-2">
                 {tableOfContents.map((item) => (
-                  <button
+                  <a
                     key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`w-full text-left px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium ${
+                    href={`/privacy#${item.id}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      scrollToSection(item.id);
+                    }}
+                    className={`block w-full text-left px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium cursor-pointer ${
                       activeSection === item.id
                         ? 'bg-[#386758] text-white'
                         : 'text-[#386758] hover:bg-[#386758]/10'
                     }`}
                   >
                     {item.title}
-                  </button>
+                  </a>
                 ))}
               </nav>
             </div>
