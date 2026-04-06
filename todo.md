@@ -511,3 +511,14 @@
 - [x] Create table of contents with anchor links at top of page
 - [x] Ensure smooth scrolling and mobile responsiveness
 - [x] Verify all anchor links work correctly
+
+## Privacy Policy Sticky TOC (Round 28)
+- [x] Add IDs to all existing and new section headings on Privacy page
+- [x] Create sticky TOC component with left-side positioning
+- [x] Implement smooth scrolling to sections when TOC links are clicked
+- [x] Add active section highlighting as user scrolls
+- [x] Add mobile collapse/toggle for TOC on smaller screens
+- [x] Ensure TOC is accessible (keyboard navigation, screen readers)
+- [x] Add hover effects and visual feedback for TOC links
+- [x] Test TOC functionality across all screen sizes
+- [x] Verify all anchor links work correctly
