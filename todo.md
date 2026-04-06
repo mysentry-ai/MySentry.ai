@@ -522,3 +522,18 @@
 - [x] Add hover effects and visual feedback for TOC links
 - [x] Test TOC functionality across all screen sizes
 - [x] Verify all anchor links work correctly
+
+## Privacy Policy Section IDs Update (Round 29)
+- [x] Update section IDs to match exact user specifications (20 sections total)
+- [x] Add ID #collection-user-information to "Collection of User Information"
+- [x] Add ID #utilization-collected-information to "Utilization of Collected Information"
+- [x] Add ID #sharing-information to "Sharing of Information"
+- [x] Add ID #permission-access-contacts to "Permission to Access Contacts"
+- [x] Add ID #data-security-compliance to "Data Security & Compliance"
+- [x] Add ID #rights-choices-users to "Rights and Choices for Users"
+- [x] Add ID #requesting-data-deletion to "Requesting Data Deletion"
+- [x] Add ID #privacy-children to "Privacy for Children"
+- [x] Verify all 20 sections have matching IDs in TOC
+- [x] Test all TOC links for smooth scrolling
+- [x] Verify active section highlighting works correctly
+- [x] Test mobile collapse functionality
