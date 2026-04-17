@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import { User, Users, Building2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { trackLeadEvent } from "@/lib/metaPixel";
 
 type ICPOption = "myself" | "family" | "team";
 
@@ -92,6 +93,7 @@ export default function ICPSelector({ className }: ICPSelectorProps) {
         >
           <Link
             href={ctaLink}
+            onClick={trackLeadEvent}
             className={cn(
               "inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl",
               selected === "team"

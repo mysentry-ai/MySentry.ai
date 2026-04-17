@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import ResponsiveImage from "@/components/ResponsiveImage";
 import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
+import { trackLeadEvent } from "@/lib/metaPixel";
 
 interface HeroSectionProps {
   label: string;
@@ -63,6 +64,7 @@ export default function HeroSection({
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href={ctaLink}
+                onClick={trackLeadEvent}
                 className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center" 
               >
                 {ctaText}

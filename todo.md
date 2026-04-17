@@ -537,3 +537,25 @@
 - [x] Test all TOC links for smooth scrolling
 - [x] Verify active section highlighting works correctly
 - [x] Test mobile collapse functionality
+
+
+## Meta Pixel Event Tracking (Round 31)
+- [ ] Add Meta Pixel initialization code to client/index.html
+- [ ] Create Meta Pixel tracking utility function for Lead events
+- [ ] Add Lead event tracking to all signup/CTA buttons
+- [ ] Add Lead event tracking to all contact/demo buttons
+- [ ] Verify PageView tracking works on all pages
+- [ ] Test Lead events fire without affecting site performance
+- [ ] Verify Meta Pixel events in Facebook Events Manager
+
+
+## Meta Pixel Event Tracking Implementation (Round 31)
+- [x] Add Meta Pixel initialization code to client/index.html
+- [x] Create Meta Pixel tracking utility (client/src/lib/metaPixel.ts)
+- [x] Add Lead event tracking to HeroSection CTA button
+- [x] Add Lead event tracking to ICPSelector CTA button
+- [x] Add Lead event tracking to Pricing page checkout handler
+- [x] Add Lead event tracking to Footer Contact Us link
+- [x] Add Lead event tracking to EmployerDemoModal submit handler
+- [x] Verify all tests pass (42 tests passing)
+- [x] Ensure Meta Pixel tracking doesn't affect site performance

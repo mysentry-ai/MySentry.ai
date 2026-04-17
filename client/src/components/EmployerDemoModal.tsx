@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { trackLeadEvent } from "@/lib/metaPixel";
 
 interface EmployerDemoModalProps {
   isOpen: boolean;
@@ -55,6 +56,7 @@ export default function EmployerDemoModal({ isOpen, onClose, planName = "Employe
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    trackLeadEvent(); // Track Lead event for Meta Pixel
     
     // Submit to backend via tRPC
     demoMutation.mutate({

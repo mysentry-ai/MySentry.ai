@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { Facebook, Instagram, Linkedin, Youtube, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { trackLeadEvent } from "@/lib/metaPixel";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -174,7 +175,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/contact" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => { trackLeadEvent(); window.scrollTo(0, 0); }} href="/contact" className="text-gray-900 hover:text-primary transition-colors">
                   Contact Us
                 </Link>
               </li>

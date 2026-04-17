@@ -12,6 +12,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Checkbox } from "@/components/ui/checkbox";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
+import { trackLeadEvent } from "@/lib/metaPixel";
 
 /* ─── Pricing Data ─── */
 const PRICING = {
@@ -311,6 +312,7 @@ export default function Pricing() {
 
   /* CTA handler */
   const handleCheckout = useCallback(() => {
+    trackLeadEvent(); // Track Lead event for Meta Pixel
     if (mode === "b2c") {
       const planType: PlanType = coverage;
       const billingCycle: BillingCycle = billing === "yearly" ? "yearly" : "monthly";
