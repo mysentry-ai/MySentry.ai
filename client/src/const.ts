@@ -41,6 +41,7 @@ export const getMySentryLoginUrl = (): string => {
 // Plan signup URL types
 export type PlanType = 'individual' | 'family';
 export type BillingCycle = 'monthly' | 'yearly';
+export type EnterpriseCoverage = 'employees_only' | 'employees_families';
 
 // UUID mapping for each plan type and billing cycle
 const PLAN_UUIDS: Record<PlanType, Record<BillingCycle, string>> = {
@@ -54,8 +55,35 @@ const PLAN_UUIDS: Record<PlanType, Record<BillingCycle, string>> = {
   },
 };
 
+// UUID mapping for Enterprise plans (coverage × billing)
+const ENTERPRISE_PLAN_UUIDS: Record<EnterpriseCoverage, Record<BillingCycle, string>> = {
+  employees_families: {
+    monthly: '550e8400-e29b-41d4-a716-446655440005',
+    yearly:  '550e8400-e29b-41d4-a716-446655440006',
+  },
+  employees_only: {
+    monthly: '550e8400-e29b-41d4-a716-446655440007',
+    yearly:  '550e8400-e29b-41d4-a716-446655440008',
+  },
+};
+
 // Generate signup URL based on plan type and billing cycle
 export const getSignupUrl = (planType: PlanType, billingCycle: BillingCycle): string => {
   const planUuid = PLAN_UUIDS[planType][billingCycle];
   return `https://dashboard.mysentry.ai/create-saas-account?plan=${planUuid}`;
+};
+
+// Generate Enterprise checkout URL with dynamic licence count.
+// Minimum enforced: 5. Query parameter name is `licences` (not `licenses`).
+export const getEnterpriseSignupUrl = (
+  coverage: EnterpriseCoverage,
+  billingCycle: BillingCycle,
+  licences: number,
+): string => {
+  const planUuid = ENTERPRISE_PLAN_UUIDS[coverage][billingCycle];
+  const safeLicences = Math.max(5, Math.floor(licences));
+  const url = new URL('https://dashboard.mysentry.ai/create-saas-account');
+  url.searchParams.set('plan', planUuid);
+  url.searchParams.set('licences', String(safeLicences));
+  return url.toString();
 };

@@ -559,3 +559,20 @@
 - [x] Add Lead event tracking to EmployerDemoModal submit handler
 - [x] Verify all tests pass (42 tests passing)
 - [x] Ensure Meta Pixel tracking doesn't affect site performance
+
+
+## Enterprise Plan Checkout URL Update (Round 32)
+- [x] Add getEnterpriseSignupUrl() helper to client/src/const.ts with 4 Enterprise plan UUIDs (0005–0008)
+- [x] Map Employees+Families Monthly → plan 550e8400-e29b-41d4-a716-446655440005
+- [x] Map Employees+Families Yearly  → plan 550e8400-e29b-41d4-a716-446655440006
+- [x] Map Employees Only Monthly     → plan 550e8400-e29b-41d4-a716-446655440007
+- [x] Map Employees Only Yearly      → plan 550e8400-e29b-41d4-a716-446655440008
+- [x] Enforce minimum licences = 5 in getEnterpriseSignupUrl() (Math.max(5, ...))
+- [x] Fix handleSliderChange min clamp from 1 → 5
+- [x] Fix number input min attribute from 1 → 5
+- [x] Wire "Proceed with Payment" CTA to dynamic Enterprise URL (not demo modal)
+- [x] Inject dynamic licences count into checkout URL via `licences` query param
+- [x] Expand vitest.config.ts to include client/src test files
+- [x] Write enterprise-checkout.test.ts with 14 tests covering all 4 plan paths + guardrails
+- [x] Verify all 62 tests pass (42 original + 20 new)
+- [x] Confirm non-Enterprise flows (Individual/Family) are completely unchanged
