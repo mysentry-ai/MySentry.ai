@@ -393,6 +393,17 @@ export const blogRouter = router({
         return duplicateBlogPost(input.id);
       }),
 
+    updatePublishedAt: publicProcedure
+      .input(z.object({
+        id: z.number(),
+        publishedAt: z.string(), // ISO 8601 date string e.g. "2026-03-15T10:00:00.000Z"
+      }))
+      .mutation(async ({ ctx, input }) => {
+        requireAdmin(ctx);
+        const db = await import("../blogDb").then(m => m.updateBlogPost);
+        return db(input.id, { publishedAt: new Date(input.publishedAt) } as any);
+      }),
+
     bulkAction: publicProcedure
       .input(z.object({
         ids: z.array(z.number()),
