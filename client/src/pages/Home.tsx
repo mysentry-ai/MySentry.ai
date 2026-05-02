@@ -24,8 +24,8 @@ export default function Home() {
         label="24/7 Personal Safety & Health Monitoring with Emergency Response"
         title={<>Never Face a Safety or<br/><span className="text-gray-600">Health Emergency Alone.</span></>}
         description="MySentry turns your smart phone and smart wearables into 24/7 safety and health monitoring so help is dispatched fast when you can't respond."
-        imageSrc="/images/families-hero.jpg"
-        imageAlt="Family safety and connection"
+        imageSrc="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-family-multigenerational-E2GoJdiP8d3vSnxHi3L9fP.webp"
+        imageAlt="Multi-generational family including grandmother, parents, and teenagers enjoying time together outdoors"
       >
         <ICPSelector className="mt-2" />
       </HeroSection>
