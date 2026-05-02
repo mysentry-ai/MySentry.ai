@@ -1,14 +1,13 @@
-
 import SEOPageTemplate from "@/components/SEOPageTemplate";
 
 export default function ProfessionalMonitoring() {
   return (
     <SEOPageTemplate
-      seoTitle="24/7 Professional Monitoring App | MySentry"
-      seoDescription="Get peace of mind with MySentry's 24/7 professional monitoring. Our live agents respond to any alert, day or night. Start your 7-day free trial today."
+      seoTitle="Professional Monitoring App for Safety | MySentry"
+      seoDescription="Worried about emergencies? MySentry's professional monitoring connects you to live agents 24/7. They respond to alerts and get you help fast. Get peace of mind, start your free trial."
       canonical="https://mysentry.ai/features/24-7-professional-monitoring"
       label="FEATURE"
-      h1="24/7 Professional Monitoring For Total Peace of Mind"
+      h1="Never Face an Emergency Alone: 24/7 Professional Monitoring"
       problem="You worry about what might happen if you have an emergency and can't call for help. Who will know you're in trouble?"
       empathy="It's stressful to think about facing a crisis alone. You deserve to know that someone is always ready to respond, no matter what."
       steps={[
@@ -18,9 +17,9 @@ export default function ProfessionalMonitoring() {
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="A 24/7 professional monitoring app like MySentry provides constant oversight for your safety. If an alert like a fall, crash, or panic button is triggered, certified agents are immediately notified. They can assess the situation, speak to you via live video, and dispatch emergency services if needed, ensuring you get help anytime."
+      directAnswer="MySentry's professional monitoring connects you to live agents 24/7. When an alert is triggered, certified agents are notified. They assess the situation, speak with you, and dispatch emergency services if needed, ensuring you get help quickly."
       howItWorks={[
-        "MySentry's smart sensors monitor for falls, car crashes, or a press of your panic button.",
+        "MySentry's smart sensors detect falls, car crashes, or a panic alarm triggered by voice, tap, or smartwatch.",
         "When an alert is triggered, it's sent instantly to our 24/7 professional monitoring center.",
         "A certified agent immediately attempts to contact you via live video and voice.",
         "If you're unresponsive or confirm you need help, we coordinate with local emergency services, providing them with your location and critical information.",
@@ -65,4 +64,3 @@ export default function ProfessionalMonitoring() {
     />
   );
 }
-

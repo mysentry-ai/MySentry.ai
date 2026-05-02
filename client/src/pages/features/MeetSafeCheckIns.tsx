@@ -1,14 +1,13 @@
-
 import SEOPageTemplate from "@/components/SEOPageTemplate";
 
 export default function MeetSafeCheckIns() {
   return (
     <SEOPageTemplate
       seoTitle="Safety Check-In App for Peace of Mind | MySentry"
-      seoDescription="Never worry about your safety again. MySentry's safety check-in app automatically alerts your loved ones if you miss a check-in. Start your free trial today."
+      seoDescription="Feeling unsafe? MySentry's safety check-in app automatically alerts loved ones if you miss a check-in. Get peace of mind, start your free trial today."
       canonical="https://mysentry.ai/features/meetsafe-check-ins"
       label="FEATURE"
-      h1="MeetSafe: The Safety Check-In App That Has Your Back"
+      h1="Worried about meeting new people? MeetSafe is your safety check-in app."
       problem="Going on a date, meeting someone new, or just walking home alone can feel risky. You want a simple way to let someone know you're okay, without constant texting."
       empathy="It's natural to want a little backup. MySentry's MeetSafe feature gives you a discreet safety net, so you can live your life with more confidence and less worry."
       steps={[
@@ -30,7 +29,7 @@ export default function MeetSafeCheckIns() {
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry's MeetSafe is a safety check-in app feature that lets you set a timed safety check-in before activities like dates or meeting someone new. If you don't confirm your safety before the timer ends, the app automatically alerts your emergency contacts with your location, providing a crucial safety net."
+      directAnswer="MySentry's MeetSafe is a safety check-in app. You set a timer before activities like dates or meeting someone new. If you don't confirm you're safe before the timer ends, the app automatically alerts your emergency contacts with your location. This gives you a safety net."
       howItWorks={[
         "Set a safety timer for any duration before you start your activity.",
         "The app will remind you to check in as the timer nears its end.",

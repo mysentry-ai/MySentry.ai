@@ -4,79 +4,79 @@ import SEOPageTemplate from "@/components/SEOPageTemplate";
 export default function Hospitality() {
   return (
     <SEOPageTemplate
-      seoTitle="Hospitality Worker Safety App | MySentry"
-      seoDescription="Protect your hotel and hospitality staff with MySentry's lone worker safety app. Features panic buttons and fall detection for housekeeping and front desk staff. Book a demo."
+      seoTitle="Hospitality Staff Safety App, Panic Button | MySentry"
+      seoDescription="Keep hospitality staff safe with MySentry's app. It offers a panic button and fall detection for housekeepers and front desk workers. Get help fast. Book a demo today."
       canonical="https://mysentry.ai/industries/hospitality"
       label="INDUSTRY"
-      h1="Hospitality Worker Safety App"
-      problem="Hospitality staff often work alone in guest rooms or isolated areas, making them vulnerable to threats, accidents, or medical emergencies with no one nearby to help."
-      empathy="Your team's safety is your top priority. Ensuring they feel secure shouldn't be a constant source of worry for you or for them."
-      steps={[
-        { title: "Equip Your Team", description: "Provide your staff with the MySentry app on their existing smartphones. No new hardware is needed." },
-        { title: "Monitor & Respond", description: "Our 24/7 professional monitoring team responds instantly to any alert, from a panic button press to a detected fall." },
-        { title: "Ensure Peace of Mind", description: "Give your employees confidence that help is always just a tap away, improving morale and retention." },
-      ]}
+      h1="Worried About Your Hospitality Team's Safety? MySentry Helps."
+      problem="Hospitality staff often work alone in guest rooms or quiet areas. This can make them feel unsafe if a threat, accident, or medical emergency happens and no one is around to help."
+      empathy="You want your team to be safe. It shouldn't be a constant worry for you or for them to feel secure at work."
+steps={[
+          { title: "Give Your Team the App", description: "Your staff gets the MySentry app on their own smartphones. No new devices are needed." },
+          { title: "We Watch and Respond", description: "Our team watches 24/7. They respond right away to any alert, like a panic button press or a detected fall." },
+          { title: "Feel Safe at Work", description: "Your employees will know help is always close. This makes them feel more secure and happy at work." },
+        ]}
       primaryCta={{ text: "Book a Demo", href: "/contact" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry is a hospitality worker safety app that equips hotel staff with a panic button, fall detection, and 24/7 professional monitoring on their smartphone. It helps employers meet safety mandates and protect lone workers like housekeepers and maintenance staff, ensuring a rapid response to any emergency."
-      howItWorks={[
-        "Staff are enrolled online through the employer dashboard, then download the MySentry app onto their personal or work-issued smartphone.",
-        "A discreet panic alarm can be triggered with a single tap or voice command.",
-        "Automatic fall detection sends an alert even if the employee is incapacitated.",
-        "Our 24/7 professional monitoring center verifies the emergency and dispatches help.",
-      ]}
-      afterAlert={[
-        "Our U.S.-based monitoring team receives the alert with the employee's precise location.",
-        "An agent immediately attempts to contact the employee via call, text, and live video.",
-        "If the employee is unresponsive or confirms the emergency, we contact hotel security and local 911.",
-        "Management is kept informed with real-time updates throughout the incident.",
-      ]}
-      bestFor={["Hotels & Resorts", "Casino Staff", "Housekeeping & Janitorial", "Maintenance & Engineering", "Event & Banquet Staff"]}
-      notIdealFor={["Locations without reliable cellular or Wi-Fi service.", "Companies unwilling to implement a formal safety response plan."]}
-      keyTakeaways={[
-        "Protect your lone workers and comply with hotel safety regulations.",
-        "Reduce incident response times with 24/7 professional monitoring.",
-        "Improve staff morale, retention, and sense of security at work.",
-      ]}
-      faqs={[
-        {
-          question: "Do my employees need a special device?",
-          answer: "No, MySentry works on most standard smartphones. This eliminates the cost and hassle of purchasing and managing new hardware. Employees can use their own devices or company-provided phones.",
-        },
-        {
-          question: "How does this help us comply with safety mandates?",
-          answer: "Many cities and states now legally require hotels to provide employees with panic buttons. MySentry provides a modern, app-based solution that meets or exceeds these requirements, including location tracking and 24/7 monitoring.",
-        },
-        {
-          question: "Is the app difficult for staff to use?",
-          answer: "Not at all. The app is designed for simplicity and ease of use, even for non-technical users. Activating an alarm is as simple as tapping a button on the screen or using a voice command.",
-        },
-        {
-          question: "What is the cost for a hotel or hospitality business?",
-          answer: "We offer flexible, per-user pricing plans designed to be affordable for businesses of all sizes. Please contact us to book a demo and receive a custom quote based on your team's needs.",
-        },
-        {
-          question: "How quickly is an alert responded to?",
-          answer: "Our professional monitoring center responds to every alert in seconds, 24/7/365. Our agents are trained to quickly assess the situation and coordinate with on-site personnel and local emergency services.",
-        },
-      ]}
-      setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
-        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
-        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
-      }}
-      proofBlocks={[
-        { claim: "Hotel and restaurant workers can send silent panic alerts from any location on property.", detail: "The app works throughout the property using Wi-Fi or cellular, covering guest rooms, kitchens, and parking areas." },
-        { claim: "GPS and indoor positioning help identify the exact location of a worker in distress.", detail: "Monitoring agents receive precise location data to direct emergency responders to the right area." },
-        { claim: "Automated incident reporting helps employers meet OSHA workplace safety requirements.", detail: "Every alert generates a documented record with timestamps, location, and response details for compliance." }
-      ]}
-      relatedLinks={[
-        { text: "Hotel Staff Panic Buttons", href: "/features/panic-button-app" },
-        { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
-        { text: "Pricing Plans", href: "/pricing" },
-        { text: "How It Works", href: "/how-it-works" },
-      ]}
+      directAnswer="MySentry is a safety app for hospitality workers. It gives hotel staff a panic button, fall detection, and 24/7 professional monitoring on their smartphone. It helps employers meet safety rules and protect lone workers like housekeepers, ensuring quick help in an emergency."
+howItWorks={[
+          "Your staff signs up online through your dashboard. Then, they download the MySentry app to their personal or work phone.",
+          "They can trigger a silent panic alarm by tapping their phone, smartwatch, or using a voice command.",
+          "If someone falls, the app sends an alert automatically, even if they can't move.",
+          "Our 24/7 monitoring team checks the emergency and sends help right away.",
+        ]}
+afterAlert={[
+          "Our U.S.-based monitoring team gets the alert and the employee's exact location.",
+          "An agent tries to reach the employee right away by call, text, and live video.",
+          "If the employee doesn't answer or confirms the emergency, we call hotel security and 911.",
+          "We keep management updated with live information during the event.",
+        ]}
+      bestFor={["Hotels and Resorts", "Casino Staff", "Housekeeping and Janitorial", "Maintenance and Engineering", "Event and Banquet Staff"]}
+      notIdealFor={["Places without good cell service or Wi-Fi.", "Companies that don't want to set up a clear safety plan."]}
+keyTakeaways={[
+          "Keep your lone workers safe and follow hotel safety rules.",
+          "Get faster help during incidents with 24/7 professional monitoring.",
+          "Make your staff feel safer and happier at work, which helps keep them longer.",
+        ]}
+faqs={[
+          {
+            question: "Do my employees need a special device?",
+            answer: "No, MySentry works on most common smartphones. This means no extra cost or trouble buying new devices. Staff can use their own phones or company phones.",
+          },
+          {
+            question: "How does this help us follow safety rules?",
+            answer: "Many places now require hotels to give employees panic buttons. MySentry is a modern app that meets or goes beyond these rules. It includes tracking location and 24/7 monitoring.",
+          },
+          {
+            question: "Is the app hard for staff to use?",
+            answer: "No, it's very easy to use, even for people who aren't tech-savvy. To set off an alarm, they just tap a button on the screen or use a voice command.",
+          },
+          {
+            question: "What does it cost for a hotel or hospitality business?",
+            answer: "We have flexible pricing per user, made to be affordable for any size business. Please contact us for a demo and a custom price quote based on what your team needs.",
+          },
+          {
+            question: "How fast do you respond to an alert?",
+            answer: "Our monitoring center responds to every alert within seconds, all day, every day. Our agents are trained to quickly check what's happening and work with your staff and local emergency services.",
+          },
+        ]}
+setupRequirements={{
+          devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+          permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+          connectivity: "Works on cell data and Wi-Fi. Cell connection is best for outside use and accurate GPS. Offline mode saves alerts and sends them when connected again.",
+          limitations: "How well fall detection works depends on the sensor and where it's worn. Battery life changes based on the device and how much the features are used. Health monitoring needs a compatible smartwatch."
+        }}
+proofBlocks={[
+          { claim: "Hotel and restaurant workers can send silent panic alerts from anywhere on the property.", detail: "The app works across the entire property using Wi-Fi or cell service, covering guest rooms, kitchens, and parking areas." },
+          { claim: "GPS and indoor tracking help find the exact spot of a worker in trouble.", detail: "Monitoring agents get precise location data to guide emergency responders to the correct area." },
+          { claim: "Automatic incident reports help employers meet OSHA workplace safety rules.", detail: "Every alert creates a written record with times, location, and response details for compliance." }
+        ]}
+relatedLinks={[
+          { text: "Hotel Staff Panic Buttons", href: "/features/panic-button-app" },
+          { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
+          { text: "Pricing Plans", href: "/pricing" },
+          { text: "How It Works", href: "/how-it-works" },
+        ]}
     />
   );
 }

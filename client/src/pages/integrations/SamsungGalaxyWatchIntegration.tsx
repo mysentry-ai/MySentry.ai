@@ -3,20 +3,21 @@ import SEOPageTemplate from "@/components/SEOPageTemplate";
 export default function SamsungGalaxyWatchIntegration() {
   return (
     <SEOPageTemplate
-      seoTitle="MySentry | Samsung Galaxy Watch Integration"
-      seoDescription="The ultimate safety layer for your Samsung Galaxy Watch. MySentry offers fall detection, a panic alarm, and more, seamlessly integrated with your smartwatch."
+      seoTitle="Samsung Galaxy Watch Safety App | MySentry"
+      seoDescription="Turn your Samsung Galaxy Watch into a safety device. MySentry adds fall detection, panic alarm, and 24/7 monitoring to your Galaxy Watch. Start your free trial."
       canonical="https://mysentry.ai/integrations/samsung-galaxy-watch"
       label="Integration"
-      h1="The Ultimate Safety Layer for Your Samsung Galaxy Watch"
-      problem="You love the convenience of your Samsung Galaxy Watch, but worry about safety, especially during falls or emergencies. You need a solution that integrates seamlessly without adding another device."
-      empathy="We get it. Your watch is part of your life. That's why we created MySentry to enhance the device you already own and love, turning it into a powerful safety companion."
+      h1="Turn Your Samsung Galaxy Watch Into a Personal Safety Device"
+      problem="You love your Samsung Galaxy Watch, but it doesn't call for help when something goes wrong. You need safety features built into the device you already wear every day."
+      empathy="Your watch is already on your wrist. We built MySentry to add the safety layer it's missing, without asking you to carry anything new."
       steps={[
         { title: "Step 1: Download", description: "Download the MySentry app on your Android smartphone." },
         { title: "Step 2: Pair", description: "Pair the app with your Samsung Galaxy Watch." },
         { title: "Step 3: Enable", description: "Enable data sharing with Samsung Health to get the most out of MySentry." },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing#pricing-plans" }}
-      directAnswer="MySentry integrates with your Samsung Galaxy Watch to provide advanced safety features like automatic fall detection, a voice-activated panic alarm, and health monitoring, all from your wrist."
+      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
+      secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
+      directAnswer="MySentry adds fall detection, a panic alarm, and 24/7 professional monitoring to your Samsung Galaxy Watch. When a fall is detected or you trigger an alarm, our monitoring team is notified with your GPS location and live video from your phone. If you don't respond within 2 minutes of a fall, an alert is sent automatically."
       howItWorks={[
         "Automatic Fall Detection: If you fall, MySentry detects it and alerts our 24/7 monitoring center within 2 minutes if you do not respond.",
         "Instant Panic Alarm: Trigger a panic alarm with a simple voice command, a tap on your watch face, or through your smartphone.",
@@ -38,10 +39,10 @@ export default function SamsungGalaxyWatchIntegration() {
         "People who are uncomfortable with sharing health data from their watch.",
       ]}
       keyTakeaways={[
-        "Seamless integration with your existing Samsung Galaxy Watch.",
-        "Comprehensive safety features: fall detection, panic alarm, and crash detection.",
-        "Utilizes watch sensors for heart rate and SpO2 monitoring.",
-        "Requires a compatible Android phone and Galaxy Watch (4 or newer).",
+        "MySentry works with Samsung Galaxy Watch 4 and newer models.",
+        "Fall detection sends an automatic alert if you don't respond within 2 minutes.",
+        "Panic alarm works by watch tap, phone tap, or voice command.",
+        "Requires an Android smartphone with the MySentry app installed.",
       ]}
       faqs={[
         {
@@ -73,9 +74,10 @@ export default function SamsungGalaxyWatchIntegration() {
         { claim: "User Testimonial", detail: "I feel so much safer knowing MySentry is on my wrist. It is the best of both worlds: the smartwatch I love and the protection I need. - Sarah L., MySentry User" },
       ]}
       relatedLinks={[
-        { text: "Explore Pricing Plans", href: "/pricing#pricing-plans" },
-        { text: "How MySentry Works", href: "/how-it-works" },
-        { text: "Contact Support", href: "/contact" },
+        { text: "Apple Watch Integration", href: "/integrations/apple-watch" },
+        { text: "Fall Detection Feature", href: "/features/fall-detection-app" },
+        { text: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" },
+        { text: "Pricing Plans", href: "/pricing" },
       ]}
       heroImage="/images/integrations/samsung-galaxy-watch-hero.png"
     />

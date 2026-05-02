@@ -1,20 +1,20 @@
 # MySentry - Full Page Inventory for LLMs
 
-> MySentry is a Safety and Health monitoring app with Emergency Response. It combines panic alarm, fall detection, crash detection, real-time health monitoring (HRV, SpO2, heart rate), emergency contacts, live video response, and 24/7 professional monitoring into one app for individuals, families, seniors, and employers.
+> MySentry is a Safety and Health monitoring app with Emergency Response. It combines panic alarm, fall detection, crash detection, real-time health monitoring (heart rate, HRV, SpO2), emergency contacts, live video response, and 24/7 professional monitoring into one app for individuals, families, seniors, and employers. Plans start at $15/month with a 7-day free trial.
 
 ## Product Overview
 
-MySentry turns smartphones and smartwatches into 24/7 safety and health monitoring devices. When an emergency is detected (fall, crash, health anomaly) or triggered manually (panic button, voice command), the system alerts 24/7 professional monitoring agents who can view live video, verify the situation, and dispatch emergency services. Emergency contacts receive instant notifications with GPS location.
+MySentry turns smartphones and smartwatches into 24/7 personal safety and health monitoring devices. When an emergency is detected automatically (fall, crash, health anomaly) or triggered manually (panic button tap, voice command, smartwatch tap), the system immediately alerts 24/7 professional monitoring agents. Those agents can view live video from the user's phone camera, verify the situation, and dispatch emergency services. At the same time, the user's designated emergency contacts receive instant SMS, push notification, and email alerts with real-time GPS location.
 
 ## Core Features
 
 ### Panic Button App
 URL: https://mysentry.ai/features/panic-button-app
-One tap or voice command triggers an alert to 24/7 monitoring agents and emergency contacts. Includes discreet activation modes for situations where visible phone use is unsafe.
+One tap or voice command triggers an alert to 24/7 monitoring agents and emergency contacts. Includes discreet activation modes for situations where visible phone use is unsafe. Works on smartphone and smartwatch.
 
 ### Fall Detection App
 URL: https://mysentry.ai/features/fall-detection-app
-Uses phone and smartwatch accelerometer and gyroscope sensors to detect falls. If the user does not respond within a countdown period, an alert is automatically sent to 24/7 monitoring with live video and GPS location.
+Uses phone and smartwatch accelerometer and gyroscope sensors to detect falls. If the user does not respond within a 2-minute countdown, an alert is automatically sent to 24/7 monitoring with live video and GPS location.
 
 ### Crash Detection
 URL: https://mysentry.ai/features/crash-detection
@@ -22,11 +22,11 @@ Detects vehicle crashes using phone GPS speed data combined with accelerometer i
 
 ### 24/7 Professional Monitoring
 URL: https://mysentry.ai/features/24-7-professional-monitoring
-Certified monitoring agents available around the clock. They receive alerts with live video feed, GPS location, and health data. They verify the emergency and dispatch appropriate help.
+Certified monitoring agents available around the clock. They receive alerts with live video feed, GPS location, and health data. They verify the emergency and dispatch appropriate help. This is not an automated system; real people respond to every alert.
 
 ### Emergency Contacts
 URL: https://mysentry.ai/features/emergency-contacts
-Designated contacts receive SMS, push notification, and email alerts with real-time GPS location during any emergency event.
+Up to 5 designated contacts receive SMS, push notification, and email alerts with real-time GPS location during any emergency event. Contacts do not need the MySentry app to receive alerts.
 
 ### Live Video Response
 URL: https://mysentry.ai/features/live-video-response
@@ -34,11 +34,15 @@ During an emergency, the phone camera streams live video to monitoring agents so
 
 ### Health Monitoring
 URL: https://mysentry.ai/features/health-monitoring
-Tracks heart rate, heart rate variability (HRV), blood oxygen (SpO2), and skin temperature via Apple Watch or Samsung Watch. Alerts users and contacts when readings fall outside safe ranges.
+Tracks heart rate, heart rate variability (HRV), blood oxygen (SpO2), and skin temperature via Apple Watch or Samsung Galaxy Watch. Alerts users and contacts when readings fall outside safe ranges.
 
 ### MeetSafe Check-Ins
 URL: https://mysentry.ai/features/meetsafe-check-ins
 Timed safety check-ins for meetings, dates, or appointments. If the user does not check in by the timer deadline, an alert is sent to monitoring and emergency contacts.
+
+### Safety Check-In App
+URL: https://mysentry.ai/features/safety-check-in-app
+Scheduled and on-demand check-ins for lone workers, seniors, and anyone in a potentially risky situation. Missed check-ins trigger automatic alerts.
 
 ## Audience Segments
 
@@ -48,23 +52,63 @@ Discreet panic activation, location sharing, and 24/7 monitoring for women walki
 
 ### Senior Safety
 URL: https://mysentry.ai/seniors
-Fall detection, health monitoring, and emergency response designed for independent seniors and their caregivers.
+Fall detection, health monitoring, and emergency response designed for independent seniors and their family caregivers.
 
 ### Family Safety
 URL: https://mysentry.ai/families
 Connected safety for the whole family: teen driver crash detection, child location sharing, senior parent monitoring, and family emergency alerts.
 
-### Employer/Workforce Safety
+### Employer / Workforce Safety
 URL: https://mysentry.ai/employers
 Lone worker protection, incident detection, compliance support, and 24/7 monitoring for field employees across industries.
+
+## Use Cases
+
+- Safety App for Women: https://mysentry.ai/use-cases/safety-app-for-women
+- Family Safety App: https://mysentry.ai/use-cases/family-safety-app
+- Medical Alert App for Seniors: https://mysentry.ai/use-cases/medical-alert-app-for-seniors
+- Lone Worker Safety App: https://mysentry.ai/use-cases/lone-worker-safety-app
+- Home Healthcare Worker Safety: https://mysentry.ai/use-cases/home-healthcare-worker-safety
+- Teen Driver Safety: https://mysentry.ai/use-cases/teen-driver-safety
+
+## Industries Served
+
+- Home Healthcare: https://mysentry.ai/industries/home-healthcare
+- Construction: https://mysentry.ai/industries/construction
+- Retail: https://mysentry.ai/industries/retail
+- Hospitality: https://mysentry.ai/industries/hospitality
+- Real Estate: https://mysentry.ai/industries/real-estate
+- Education: https://mysentry.ai/industries/education
+- Security Guarding: https://mysentry.ai/industries/security-guarding
+
+## Comparisons
+
+- Noonlight vs MySentry: https://mysentry.ai/compare/noonlight-vs-mysentry
+- Life360 vs MySentry: https://mysentry.ai/compare/life360-vs-mysentry
+- FallCall vs MySentry: https://mysentry.ai/compare/fallcall-vs-mysentry
+- Google Personal Safety vs MySentry: https://mysentry.ai/compare/google-personal-safety-vs-mysentry
+- SOS Secure / ADT vs MySentry: https://mysentry.ai/compare/sosecure-adt-vs-mysentry
+- Medical Alert Devices vs MySentry: https://mysentry.ai/compare/medical-alert-devices-vs-mysentry
+
+## Wearable Integrations
+
+- Apple Watch Integration: https://mysentry.ai/integrations/apple-watch
+- Samsung Galaxy Watch Integration: https://mysentry.ai/integrations/samsung-galaxy-watch
+- Oura Ring Integration: https://mysentry.ai/integrations/oura-ring
+
+## Guides and Resources
+
+- Lone Worker Safety Guide: https://mysentry.ai/guides/lone-worker-safety
+- Professional Monitoring Guide: https://mysentry.ai/guides/professional-monitoring
+- Senior Safety Planning Guide: https://mysentry.ai/guides/senior-safety-planning
 
 ## Pricing
 
 URL: https://mysentry.ai/pricing
-- Essential Safety (Individual): $14.99/month
-- Family Safety: $24.99/month (up to 5 family members)
-- 7-day free trial available for all plans
-- Enterprise pricing available for employers
+- Individual (Personal): $15/month or $144/year (save 20%)
+- Family: $30/month or $288/year (save 20%)
+- Enterprise: custom pricing based on employee count
+- 7-day free trial; credit card required, no charge if cancelled within 7 days
 
 ## Device Compatibility
 
@@ -81,3 +125,4 @@ URL: https://mysentry.ai/pricing
 - Contact: https://mysentry.ai/contact
 - Blog: https://mysentry.ai/blogs
 - Partner Program: https://mysentry.ai/partner
+- About: https://mysentry.ai/about-us

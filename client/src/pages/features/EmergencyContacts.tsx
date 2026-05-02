@@ -5,10 +5,10 @@ export default function EmergencyContacts() {
   return (
     <SEOPageTemplate
       seoTitle="Emergency Contacts App | MySentry"
-      seoDescription="Instantly notify family and friends with MySentry's emergency contacts app. Share your location and status with one tap. Keep your loved ones informed and safe. Start your free trial."
+      seoDescription="MySentry's emergency contacts app helps you instantly alert loved ones during an emergency. Share your location and status with a tap, keeping family informed and safe. Start your free trial today."
       canonical="https://mysentry.ai/features/emergency-contacts"
       label="FEATURE"
-      h1="Emergency Contacts App for Instant Alerts"
+      h1="Worried about loved ones in an emergency? Instantly alert your emergency contacts."
       problem="It's hard to quickly and reliably notify your family or friends when you're in an emergency. You need a simple way to send an alert with your location."
       empathy="Worrying about your loved ones' safety is natural. It's even more stressful when you can't reach them or know if they are okay."
       steps={[
@@ -18,7 +18,7 @@ export default function EmergencyContacts() {
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="An emergency contacts app like MySentry allows you to instantly notify pre-selected family and friends during an emergency. With a single tap or an automatic detection, the app sends an alert with your live location and status, ensuring your loved ones are informed and can respond quickly when you need help most."
+      directAnswer="MySentry's emergency contacts app lets you instantly alert pre-selected family and friends during an emergency. With a single tap or an automatic detection, the app sends an alert with your live location and status, ensuring your loved ones are informed and can respond quickly when you need help most."
       howItWorks={[
         "Designate trusted family members and friends as your emergency contacts within the app.",
         "When you trigger a panic alarm, or if the app detects a fall or car crash, it sends an immediate notification.",
@@ -74,7 +74,7 @@ export default function EmergencyContacts() {
         limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
       }}
       proofBlocks={[
-        { claim: "Up to 10 emergency contacts can be designated per user profile.", detail: "Each contact receives SMS, push notification, and email alerts simultaneously when an emergency is triggered." },
+        { claim: "Up to 5 emergency contacts can be designated per user profile.", detail: "Each contact receives SMS, push notification, and email alerts simultaneously when an emergency is triggered." },
         { claim: "Emergency contacts receive the user's real-time GPS location during an active alert.", detail: "Contacts can track the user's location on a map and coordinate with emergency services." }
       ]}
       relatedLinks={[
@@ -86,4 +86,5 @@ export default function EmergencyContacts() {
     />
   );
 }
+
 

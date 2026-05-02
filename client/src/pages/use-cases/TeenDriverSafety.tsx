@@ -1,14 +1,13 @@
-
 import SEOPageTemplate from "@/components/SEOPageTemplate";
 
 export default function TeenDriverSafety() {
   return (
     <SEOPageTemplate
-      seoTitle="Teen Driver Safety App | Crash Detection for Parents | MySentry"
-      seoDescription="Protect your teen driver with automatic crash detection, real-time location, and 24/7 professional monitoring. Get instant alerts if your teen is in an accident."
+      seoTitle="Teen Driver Safety: Crash Detection for Parents | MySentry"
+      seoDescription="Worried about your teen on the road? MySentry offers automatic crash detection, real-time location, and 24/7 monitoring. Get alerts if your teen is in an accident. Protect your new driver today."
       canonical="https://mysentry.ai/use-cases/teen-driver-safety"
       label="USE CASE"
-      h1="Teen Driver Safety: Automatic Crash Detection and 24/7 Monitoring for Parents"
+      h1="Keep Your Teen Driver Safe: Automatic Crash Detection for Peace of Mind"
       problem="Your teenager just got their license, and every time they take the car, you worry about accidents on unfamiliar roads, distracted driving, or breakdowns in isolated areas."
       empathy="Handing over the keys is one of the hardest moments as a parent. You want to give them independence, but you also want to know they're safe. That constant worry doesn't have to be your reality."
       steps={[

@@ -3,88 +3,88 @@ import SEOPageTemplate from "@/components/SEOPageTemplate";
 export default function SoloTravelersPage() {
   return (
     <SEOPageTemplate
-      seoTitle="Safety for Solo Travelers | MySentry.ai"
-      seoDescription="Travel with confidence. MySentry is your global safety companion, providing peace of mind for solo travelers exploring the world."
+      seoTitle="Solo Travel Safety App | MySentry"
+      seoDescription="Solo travelers, explore confidently. MySentry is a safety app with 24/7 monitoring, panic alarms, and fall detection. Get help anywhere, anytime. Start your free trial."
       canonical="https://www.mysentry.ai/safety-for/solo-travelers"
       label="For Solo Travelers"
-      h1="Your Global Safety Companion for Solo Adventures"
-      problem="You're exploring a new city alone. You don't speak the language, and nobody knows exactly where you are. What if something happens? The excitement of solo travel can quickly turn to anxiety when you think about the 'what-ifs' in an unfamiliar place."
-      empathy="We understand the thrill of solo exploration and the vulnerability that comes with it. You want to embrace the adventure, not worry about your safety. It’s frustrating to feel like you have to choose between freedom and security."
+      h1="Solo Travel: Explore the World, Stay Safe with MySentry"
+      problem="You're exploring a new place by yourself. Maybe you don't know the language, and no one knows where you are. What if something goes wrong? The fun of solo travel can quickly become stressful when you think about what could happen in a new spot."
+      empathy="We get it. You love the excitement of solo trips, but you also know it can feel a bit risky. You want to enjoy your adventure, not constantly worry about staying safe. It's tough feeling like you have to pick between freedom and feeling secure."
       steps={[
         {
-          title: "Download Before You Go",
-          description: "Install the MySentry app on your smartphone before your trip.",
+          title: "Get Ready Before You Go",
+          description: "Install the MySentry app on your smartphone before your trip starts.",
         },
         {
-          title: "Share Your Journey",
-          description: "Easily share your live location and itinerary with family or friends back home.",
+          title: "Share Your Journey Easily",
+          description: "Share your live location and travel plans with family or friends back home.",
         },
         {
-          title: "Travel with Confidence",
-          description: "Use features like MeetSafe for check-ins and know that our 24/7 monitoring center is just a tap or voice command away.",
+          title: "Travel with Peace of Mind",
+          description: "Use features like MeetSafe for check-ins. Know that our 24/7 monitoring team is just a tap or voice command away.",
         },
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing#pricing-plans" }}
       secondaryCta={{ text: "How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry offers a comprehensive safety solution for solo travelers by providing a 24/7 personal monitoring service on their smartphone. It allows you to share your location with loved ones, set up safety check-ins, and instantly alert our emergency response center through a simple tap, voice command, or by connecting to your smartwatch. This ensures that no matter where you are in the world, help is always available, even if you don't know the local emergency number or speak the language."
+      directAnswer="MySentry helps solo travelers stay safe by turning their smartphone into a 24/7 personal monitoring device. It lets you share your location, set up safety check-ins, and quickly alert our emergency team with a tap, voice command, or smartwatch. This means help is always available, no matter where you are, even if you don't know local emergency numbers or the language."
       howItWorks={[
-        "Always-On Safety, Anywhere in the World: MySentry turns your smartphone into a powerful safety device. Whether you're hiking a remote trail or navigating a bustling city, our app works globally to keep you safe.",
-        "Instant Help with a Tap or Voice Command: If you feel unsafe or need help, you can trigger a panic alarm silently by tapping your phone or smartwatch, or by using a discreet voice command. Our 24/7 monitoring center responds in seconds.",
-        "Automatic Fall Detection: Should you have a fall, MySentry detects it automatically and initiates an alert sequence after 2 minutes if you don't respond, ensuring you get help even if you can't ask for it.",
+        "Always-On Safety, Anywhere You Go: MySentry makes your smartphone a strong safety tool. Whether you're on a quiet trail or in a busy city, our app works everywhere to keep you safe.",
+        "Quick Help with a Tap or Voice: If you feel unsafe or need help, you can silently trigger a panic alarm by tapping your phone or smartwatch, or by using a quiet voice command. Our 24/7 monitoring center responds fast.",
+        "Automatic Fall Detection: If you fall, MySentry senses it automatically. It starts an alert after 2 minutes if you don't respond, making sure you get help even if you can't ask for it.",
       ]}
       afterAlert={[
-        "We Verify the Emergency: Our certified agents immediately contact you to assess the situation. If you don't respond, we assume it's a real emergency.",
-        "We Dispatch Local First Responders: We pinpoint your exact GPS location and coordinate with local police, ambulance, or fire services, providing them with your critical information.",
-        "We Stay with You: Our agent stays on the line with you, offering support and guidance until help arrives on the scene.",
+        "We Check the Situation: Our trained agents immediately call you to see what's happening. If you don't answer, we assume it's a real emergency.",
+        "We Send Local Help: We find your exact GPS spot and connect with local police, ambulance, or fire services. We give them your important details.",
+        "We Stay with You: Our agent stays on the phone with you, offering support until help arrives.",
       ]}
       bestFor={[
-        "Solo adventurers exploring new countries or remote areas.",
-        "Digital nomads who frequently travel and work alone.",
-        "Students studying abroad or on gap years.",
-        "Anyone who wants an extra layer of security while traveling independently.",
+        "People exploring new countries or remote areas by themselves.",
+        "Digital nomads who travel and work alone often.",
+        "Students studying abroad or taking a gap year.",
+        "Anyone wanting extra safety while traveling independently.",
       ]}
       notIdealFor={[
-        "Group tourists who are always with a guide or companions.",
-        "Travelers who will have no internet or cellular service for their entire trip.",
-        "Individuals looking for a travel planning or booking service.",
+        "Group tourists who are always with a guide or friends.",
+        "Travelers who will have no internet or phone service for their whole trip.",
+        "People looking for a travel planning or booking service.",
       ]}
       keyTakeaways={[
-        "Be Prepared: Download and set up MySentry before you leave.",
+        "Be Ready: Download and set up MySentry before you leave.",
         "Stay Connected: Use location sharing and check-in features to keep loved ones informed.",
-        "Explore Fearlessly: With MySentry, you have a 24/7 safety net, so you can focus on the adventure.",
+        "Explore Freely: With MySentry, you have a 24/7 safety net, so you can focus on your adventure.",
       ]}
       faqs={[
         {
-          question: "Does MySentry work without an internet connection?",
-          answer: "An internet or cellular connection is required for most features, including triggering an alert and live location sharing. However, a fall detection alert can be triggered via an integrated smartwatch even without a phone connection in some cases.",
+          question: "Does MySentry work without internet?",
+          answer: "You need an internet or phone connection for most features, like sending an alert and sharing your live location. However, a fall detection alert can sometimes be sent through a connected smartwatch even without a phone connection.",
         },
         {
           question: "Can I use MySentry in any country?",
-          answer: "Yes, MySentry is designed to work globally. We coordinate with local emergency services in the country you are in, overcoming language barriers and saving critical time.",
+          answer: "Yes, MySentry works worldwide. We work with local emergency services in the country you are in, helping with language differences and saving important time.",
         },
         {
           question: "How does the MeetSafe feature work?",
-          answer: "MeetSafe allows you to set a timer when meeting someone new or going to an unfamiliar place. If you don't check in as safe before the timer expires, we automatically initiate a welfare check.",
+          answer: "MeetSafe lets you set a timer when meeting someone new or going to an unfamiliar place. If you don't check in as safe before the timer runs out, we automatically check on your well-being.",
         },
         {
           question: "Is it easy to cancel my subscription?",
-          answer: "Absolutely. You can cancel your subscription at any time through the app or our website. We offer a 7-day free trial so you can experience the peace of mind risk-free.",
+          answer: "Yes, it's easy. You can cancel your subscription anytime through the app or our website. We offer a 7-day free trial so you can try it without risk.",
         },
       ]}
       setupRequirements={{
-        devices: "A smartphone (iOS or Android) is all you need to get started. You can also connect a compatible smartwatch for added features.",
-        permissions: "Enable location services and microphone access for full functionality, including emergency response and voice commands.",
-        connectivity: "An active internet or cellular connection is necessary for most features to work correctly.",
-        limitations: "The service does not replace local emergency services and requires a network connection to function.",
+        devices: "A smartphone (iOS or Android) is all you need to start. You can also connect a compatible smartwatch for more features.",
+        permissions: "Turn on location services and microphone access for all features, including emergency help and voice commands.",
+        connectivity: "You need an active internet or phone connection for most features to work right.",
+        limitations: "This service does not replace local emergency services and needs a network connection to work.",
       }}
       proofBlocks={[
         {
-          claim: "A Traveler’s Testimonial",
-          detail: "\"As a solo female traveler, MySentry is non-negotiable. I feel so much safer knowing help is just a tap away. It gave my parents peace of mind too!\" - Chloe, Digital Nomad",
+          claim: "A Traveler’s Story",
+          detail: "\'As a solo female traveler, MySentry is a must-have. I feel much safer knowing help is just a tap away. It also gave my parents peace of mind!\' - Chloe, Digital Nomad",
         },
         {
-          claim: "Trusted Worldwide",
-          detail: "Trusted by thousands of solo travelers across 50+ countries.",
+          claim: "Trusted Around the World",
+          detail: "Trusted by thousands of solo travelers in over 50 countries.",
         },
       ]}
       relatedLinks={[

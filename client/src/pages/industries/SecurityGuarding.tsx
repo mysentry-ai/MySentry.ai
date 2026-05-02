@@ -1,69 +1,68 @@
-
 import SEOPageTemplate from "@/components/SEOPageTemplate";
 
 export default function SecurityGuarding() {
   return (
     <SEOPageTemplate
-      seoTitle="Security Guard Safety App | MySentry"
-      seoDescription="Protect your security guards with a lone worker safety app. MySentry offers fall detection, panic alerts, and 24/7 monitoring to keep your team safe. Book a demo."
+      seoTitle="Security Guard Safety App for Lone Workers | MySentry"
+      seoDescription="Keep your security guards safe with MySentry, a lone worker safety app. It offers fall detection, panic alarms, and 24/7 monitoring. Get peace of mind, book a demo today."
       canonical="https://mysentry.ai/industries/security-guarding"
       label="FOR SECURITY COMPANIES"
-      h1="A Modern Safety App for Security Guards"
-      problem="Your guards work alone, often in high-risk environments. A simple slip, a medical emergency, or a direct threat can happen anytime, and traditional check-in systems are slow and unreliable."
-      empathy="You're responsible for their safety, but you can't be everywhere at once. You need a reliable way to know your team is safe, especially when they are out of sight."
+      h1="Keep Your Lone Security Guards Safe and Connected"
+      problem="Your guards work alone, often in high-risk places. A simple fall, a health issue, or a threat can happen fast. Old check-in systems are slow and not always reliable."
+      empathy="You want to keep your team safe, but you can't be everywhere. You need a trusted way to know your guards are okay, especially when they are out of sight."
       steps={[
-        { title: "Equip Your Guards", description: "Guards are enrolled online through the employer dashboard. They then download the MySentry app on their existing smartphones. No new hardware is needed." },
-        { title: "Monitor Their Safety", description: "See your team's status in a central dashboard. Get instant alerts for falls, missed check-ins, or panic alarms." },
-        { title: "Respond Instantly", description: "Our 24/7 monitoring center verifies every alert. We can dispatch emergency services or notify your chain of command, based on your protocol." },
+        { title: "Equip Your Guards", description: "Guards enroll online through your dashboard. They download the MySentry app on their own smartphone. No new devices are needed." },
+        { title: "Monitor Their Safety", description: "See your team's status on a central dashboard. Get instant alerts for falls, missed check-ins, or panic alarms." },
+        { title: "Respond Instantly", description: "Our 24/7 monitoring center checks every alert. We can send emergency help or tell your managers, based on your rules." },
       ]}
       primaryCta={{ text: "Book a Demo", href: "/contact" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="A security guard safety app is a smartphone application designed to protect lone security officers. It uses features like fall detection, a panic button, and GPS tracking to monitor their well-being. If an incident occurs, the app automatically alerts a 24/7 monitoring center for an immediate, verified response."
+      directAnswer="A security guard safety app helps protect lone security officers. It uses features like fall detection, a panic alarm, and GPS tracking to watch over them. If something happens, the app automatically tells a 24/7 monitoring center for a quick, verified response."
       howItWorks={[
-        "Guards install the MySentry app on their personal or work-issued smartphone.",
-        "The app runs in the background, monitoring for falls, inactivity, or manual panic alerts.",
-        "Supervisors can use the MeetSafe feature to confirm guards arrive and leave sites on time.",
-        "All alerts are sent to our 24/7 professional monitoring center for immediate verification and response.",
+        "Guards put the MySentry app on their phone.",
+        "The app runs quietly, looking for falls, no movement, or panic alarms.",
+        "Supervisors can use MeetSafe to make sure guards arrive and leave sites on time.",
+        "All alerts go to our 24/7 monitoring center for quick checking and help.",
       ]}
       afterAlert={[
-        "Our 24/7 monitoring agents receive the alert with the guard's location and data.",
-        "We immediately open a live video and audio stream to assess the situation.",
-        "We contact the guard directly to verify the emergency.",
-        "If the guard is unresponsive or confirms the emergency, we dispatch local emergency services and notify your designated contacts.",
+        "Our 24/7 agents get the alert with the guard's location.",
+        "We quickly open a live video and audio call to see what's happening.",
+        "We call the guard to confirm the emergency.",
+        "If the guard doesn't answer or confirms the problem, we send local emergency services and tell your chosen contacts.",
       ]}
       bestFor={[
-        "Security companies with lone workers.",
+        "Security companies with guards who work alone.",
         "Mobile guard patrols.",
-        "Companies seeking to improve compliance and reduce liability.",
+        "Companies wanting to follow rules better and lower risks.",
       ]}
       notIdealFor={[
-        "Companies needing passive guard tour tracking.",
-        "Situations without reliable cellular or Wi-Fi coverage.",
+        "Companies needing simple guard tour tracking.",
+        "Places without good cell service or Wi-Fi.",
       ]}
       keyTakeaways={[
-        "Provides an all-in-one safety net for lone security officers.",
-        "Uses the guard's own smartphone, making it easy and affordable to deploy.",
-        "Combines automatic detection with 24/7 professional monitoring for a fast, reliable response.",
+        "Gives lone security officers a full safety net.",
+        "Uses the guard's own smartphone, making it easy and cheap to use.",
+        "Combines automatic detection with 24/7 professional monitoring for fast, reliable help.",
       ]}
       faqs={[
-        { question: "How does this replace our old guard tour system?", answer: "MySentry is not a guard tour system that tracks patrol routes. It is a life safety solution focused on responding to emergencies. It complements your existing operational software by adding a critical layer of protection for your officers." },
-        { question: "Is the app complicated for our guards to use?", answer: "No, the app is designed for simplicity. It runs in the background with minimal interaction required. The panic button is easy to access, and check-ins are straightforward." },
-        { question: "What happens if a guard has a false alarm?", answer: "Our 24/7 monitoring agents verify every alarm. If it's a false alarm, the guard can simply confirm they are safe with the agent, and the alert is closed. This prevents unnecessary emergency dispatches." },
-        { question: "Can we customize the emergency response protocol?", answer: "Yes. During setup, we work with you to define your specific chain of command and response procedures. We will notify the people you designate in the order you specify." },
-        { question: "How much does the monitoring service cost?", answer: "We offer flexible plans based on the number of users. Please book a demo with our team for a detailed quote based on your company's needs." },
+        { question: "How is this different from our old guard tour system?", answer: "MySentry is not for tracking patrol routes. It's a safety tool for emergencies. It works with your current software to add a vital layer of protection for your officers." },
+        { question: "Is the app hard for our guards to use?", answer: "No, the app is made to be simple. It runs in the background and needs little interaction. The panic alarm is easy to find, and check-ins are simple." },
+        { question: "What if a guard accidentally triggers an alarm?", answer: "Our 24/7 agents check every alarm. If it's a false alarm, the guard can just tell the agent they are safe, and the alert is closed. This stops unneeded emergency calls." },
+        { question: "Can we change the emergency response plan?", answer: "Yes. When you set up, we work with you to set your specific chain of command and how to respond. We will tell the people you name in the order you choose." },
+        { question: "How much does the monitoring service cost?", answer: "We have flexible plans based on how many users you have. Please book a demo with our team for a detailed price based on your company's needs." },
       ]}
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
-        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
-        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+        permissions: "Location services (always on for GPS tracking), notifications, microphone (for voice panic alarm), camera (for live video response).",
+        connectivity: "Works with cell data and Wi-Fi. Cell connection is best for outside use and accurate GPS. Offline mode saves alerts and sends them when connected again.",
+        limitations: "Fall detection accuracy depends on sensor quality and how it's worn. Battery life changes with device and feature use. Health monitoring needs a compatible smartwatch."
       }}
       proofBlocks={[
-        { claim: "Security guards can trigger panic alerts with live video during patrol incidents.", detail: "24/7 monitoring agents receive real-time video and location to coordinate emergency response." },
-        { claim: "Automated patrol check-ins verify guard safety at scheduled intervals.", detail: "Missed check-ins trigger automatic alerts to supervisors and monitoring agents." }
+        { claim: "Security guards can trigger panic alarms with live video during patrol incidents.", detail: "24/7 monitoring agents get real-time video and location to help coordinate emergency response." },
+        { claim: "Automated patrol check-ins confirm guard safety at set times.", detail: "Missed check-ins send automatic alerts to supervisors and monitoring agents." }
       ]}
       relatedLinks={[
-        { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
+        { text: "Lone Worker Safety App", href: "/use-cases/lone-worker-safety-app" },
         { text: "Panic Button for Teams", href: "/features/panic-button-app" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
@@ -71,4 +70,3 @@ export default function SecurityGuarding() {
     />
   );
 }
-

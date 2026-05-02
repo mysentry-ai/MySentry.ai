@@ -4,11 +4,11 @@ import SEOPageTemplate from "@/components/SEOPageTemplate";
 export default function NoonlightVsMysentry() {
   return (
     <SEOPageTemplate
-      seoTitle="Noonlight vs MySentry | MySentry"
-      seoDescription="See how Noonlight and MySentry compare in 2026. Get a fact-based look at features like panic buttons, monitoring, and pricing to choose the right safety app for you."
+      seoTitle="Noonlight vs MySentry: Choose Your Safety App | MySentry"
+      seoDescription="Compare Noonlight and MySentry. Find the best safety app for you with features like panic alarms, fall detection, and 24/7 monitoring. Get peace of mind, start your free trial."
       canonical="https://mysentry.ai/compare/noonlight-vs-mysentry"
       label="COMPARISON"
-      h1="Noonlight vs. MySentry: Which is Best in 2026?"
+      h1="Noonlight vs. MySentry: Which Safety App Protects You Best?"
       problem="You need a reliable personal safety app but are trying to decide between Noonlight and MySentry."
       empathy="Choosing the right safety app is a big decision. It's hard to know which one truly offers the best protection for your needs."
       steps={[
@@ -18,64 +18,65 @@ export default function NoonlightVsMysentry() {
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry offers a more comprehensive safety solution with live video response, integrated health monitoring (HRV, SpO2), and automatic fall and crash detection. Noonlight provides effective basic monitoring and a panic button, but lacks these advanced features. MySentry is ideal for those seeking all-in-one health and safety protection."
-      howItWorks={[
-        "MySentry includes live video, allowing our agents to see what's happening and provide visual information to first responders.",
-        "Our app monitors key health metrics like heart rate variability and blood oxygen, providing a more complete picture of your well-being.",
-        "Automatic fall and crash detection uses your phone's sensors to get help even if you can't press the button.",
-        "MeetSafe check-ins let you set a safety timer for any activity, automatically alerting contacts if you don't check in.",
-      ]}
-      afterAlert={[
-        "A certified agent receives your alert and assesses the situation.",
-        "The agent can activate your phone's camera to see what's happening.",
-        "We share your live location and critical data with first responders.",
-        "Your emergency contacts are notified and kept informed.",
-      ]}
-      bestFor={["Users wanting integrated health and safety", "Seniors who need fall detection", "Drivers and commuters"]}
-      notIdealFor={["Users who only need a basic panic button", "Those on a very strict budget"]}
-      keyTakeaways={[
-        "MySentry offers more advanced features like live video, health monitoring, and automatic detection.",
-        "Noonlight is a solid choice for basic, affordable panic button functionality.",
-        "Your choice depends on whether you need comprehensive, all-in-one protection or just a simple emergency button.",
-      ]}
-      faqs={[
-        {
-          question: "Is MySentry more expensive than Noonlight?",
-          answer: "MySentry offers plans with more features, which may have a different price point. We offer a 7-day free trial to experience the full value before you commit. Visit our pricing page for the latest details.",
-        },
-        {
-          question: "Does Noonlight have fall detection?",
-          answer: "No, Noonlight does not offer automatic fall detection. MySentry uses your phone's built-in sensors to detect a fall and trigger an alert automatically, even if you can't reach your phone.",
-        },
-        {
-          question: "What is the main difference in your monitoring service?",
-          answer: "The biggest difference is MySentry's live video response. Our agents can see the emergency, which helps verify the situation and provide critical visual context to 911 dispatchers. Noonlight's monitoring is primarily audio and location-based.",
-        },
-        {
-          question: "Can I connect health devices to Noonlight?",
-          answer: "Noonlight does not have integrations for health monitoring. MySentry connects with your device to track metrics like HRV, SpO2, and heart rate, providing a more complete safety and wellness tool.",
-        },
-        {
-          question: "Which app is better for families?",
-          answer: "Both apps offer peace of mind. MySentry's MeetSafe feature and fall/crash detection provide additional layers of safety that are particularly valuable for families with students, active members, or senior parents.",
-        },
-      ]}
-      setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
-        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
-        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
-      }}
-      proofBlocks={[
-        { claim: "MySentry includes fall detection, crash detection, and health monitoring; Noonlight focuses on panic alerts.", detail: "MySentry provides a broader safety ecosystem beyond manual panic activation." },
-        { claim: "MySentry offers 24/7 professional monitoring with live video; Noonlight dispatches based on location only.", detail: "Live video gives MySentry agents better situational awareness for more accurate emergency response." }
-      ]}
-      relatedLinks={[
-        { text: "MySentry vs Citizen", href: "/compare/noonlight-vs-mysentry" },
-        { text: "Fall Detection Feature", href: "/features/fall-detection-app" },
-        { text: "Pricing Plans", href: "/pricing" },
-        { text: "How It Works", href: "/how-it-works" },
-      ]}
+      directAnswer="MySentry provides a complete safety solution with live video response, health monitoring, and automatic fall and crash detection. Noonlight offers basic monitoring and a panic button, but does not include these advanced features. MySentry is best for those who want all-in-one health and safety protection."
+howItWorks={[
+	        "MySentry connects you to 24/7 professional monitoring. When you need help, our agents are there.",
+	        "Panic alarms can be triggered by voice, a tap on your phone, or a tap on your smartwatch.",
+	        "Automatic fall and crash detection uses your phone\'s sensors to call for help, even if you can\'t.",
+	        "Live video allows our agents to see what\'s happening and share important details with first responders.",
+	        "Health monitoring tracks your heart rate and blood oxygen, giving you a fuller picture of your well-being.",
+	      ]}
+afterAlert={[
+	        "A certified agent gets your alert and quickly checks in.",
+	        "The agent can turn on your phone\'s camera to see what\'s happening, if you allow it.",
+	        "We share your live location and important details with emergency services.",
+	        "Your chosen emergency contacts are told about the situation and kept updated.",
+	      ]}
+      bestFor={["People who want health and safety in one app", "Seniors who need automatic fall detection", "Drivers and commuters who want crash detection"]}
+      notIdealFor={["People who only need a simple panic button", "Those on a very tight budget"]}
+keyTakeaways={[
+	        "MySentry has more advanced features, including live video, health monitoring, and automatic fall and crash detection.",
+	        "Noonlight is a good option for a basic, low-cost panic button.",
+	        "Your decision depends on if you need full, all-around protection or just a simple emergency button.",
+	      ]}
+faqs={[
+	        {
+	          question: "Is MySentry more expensive than Noonlight?",
+	          answer: "MySentry offers plans with more features, which may have a different price. We have a 7-day free trial so you can try it out before you decide. Check our pricing page for current details.",
+	        },
+	        {
+	          question: "Does Noonlight have fall detection?",
+	          answer: "No, Noonlight does not offer automatic fall detection. MySentry uses your phone\'s sensors to detect a fall and send an alert automatically, even if you can\'t reach your phone. The response window is 2 minutes.",
+	        },
+	        {
+	          question: "What is the main difference in your monitoring service?",
+	          answer: "The biggest difference is MySentry\'s live video response. Our agents can see the emergency, which helps them confirm the situation and give important visual details to 911 dispatchers. Noonlight\'s monitoring mainly uses audio and location.",
+	        },
+	        {
+	          question: "Can I connect health devices to Noonlight?",
+	          answer: "Noonlight does not connect with health monitoring devices. MySentry works with your device to track things like heart rate and blood oxygen, giving you a more complete safety and wellness tool.",
+	        },
+	        {
+	          question: "Which app is better for families?",
+	          answer: "Both apps offer peace of mind. MySentry\'s MeetSafe feature and fall/crash detection add extra layers of safety. These are especially helpful for families with students, active members, or older parents.",
+	        },
+	      ]}
+setupRequirements={{
+	        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+	        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
+	        connectivity: "Works on cellular data and Wi-Fi. Cellular connection is best for outdoor use and accurate GPS. Offline mode saves alerts and sends them when you reconnect.",
+	        limitations: "How well fall detection works depends on sensor quality and where you wear your device. Battery life changes based on your device and how you use features. Health monitoring needs a compatible smartwatch."
+	      }}
+proofBlocks={[
+	        { claim: "MySentry includes fall detection, crash detection, and health monitoring. Noonlight focuses on panic alerts.", detail: "MySentry offers a wider safety system than just pressing a panic button." },
+	        { claim: "MySentry provides 24/7 professional monitoring with live video. Noonlight sends help based only on your location.", detail: "Live video helps MySentry agents understand the situation better for a more accurate emergency response." }
+	      ]}
+relatedLinks={[
+	        { text: "MySentry vs Citizen", href: "/compare/mysentry-vs-citizen" },
+	        { text: "Fall Detection Feature", href: "/features/fall-detection-app" },
+	        { text: "Pricing Plans", href: "/pricing" },
+	        { text: "How It Works", href: "/how-it-works" },
+	      ]}
     />
   );
 }

@@ -1,16 +1,15 @@
-
 import SEOPageTemplate from "@/components/SEOPageTemplate";
 
 export default function HealthMonitoring() {
   return (
     <SEOPageTemplate
-      seoTitle="Health Monitoring App for Seniors | MySentry"
-      seoDescription="Keep an eye on your health with MySentry's real-time tracking app. Monitor heart rate, SpO2, and HRV, and get alerts for changes. Start your free trial today for peace of mind."
+      seoTitle="Health Monitoring App: Track Vitals & Get Alerts | MySentry"
+      seoDescription="Monitor heart rate, SpO2, and HRV with MySentry's health monitoring app. Get instant alerts for changes and connect to emergency help. Start your free trial today."
       canonical="https://mysentry.ai/features/health-monitoring"
       label="FEATURE"
-      h1="Your 24/7 Health Monitoring Companion"
-      problem="Keeping track of key health signs like heart rate, HRV, and SpO2 can be complicated and easy to forget. You worry about missing an important change that could signal a problem."
-      empathy="It's natural to want peace of mind about your health or the well-being of a loved one. You deserve a simple way to stay informed without constant stress."
+      h1="Worried about health changes? Monitor vitals with MySentry."
+      problem="Keeping track of important health signs like heart rate, HRV, and SpO2 can be tough. You might worry about missing a change that signals a problem."
+      empathy="It's normal to want peace of mind about your health or a loved one's well-being. You deserve a simple way to stay informed without constant stress."
       steps={[
         { title: "Create Your Account Online", description: "Visit mysentry.ai, choose your plan, and create your account. Then download the MySentry app from the App Store or Google Play." },
         { title: "Connect Your Wearable Device", description: "Easily link your compatible smartwatch or health tracker to start syncing your data." },
@@ -18,32 +17,32 @@ export default function HealthMonitoring() {
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="The MySentry health monitoring app provides real-time tracking of key vitals like heart rate, HRV, and SpO2 through a connected wearable device. It helps you understand your health trends and can automatically alert you and your emergency contacts to significant changes, offering 24/7 peace of mind."
+      directAnswer="MySentry's health monitoring app tracks vital signs like heart rate, HRV, and SpO2 in real-time using your wearable device. It helps you understand health trends and automatically alerts you and your emergency contacts to important changes, providing peace of mind around the clock."
       howItWorks={[
-        "MySentry securely syncs with your compatible wearable device to gather health data.",
-        "It tracks your Heart Rate Variability (HRV), Blood Oxygen (SpO2), and Heart Rate in real-time.",
-        "You can view your current and historical data easily within the app's dashboard.",
-        "Set custom thresholds for alerts if your vitals go outside your normal range.",
+        "MySentry connects securely with your compatible smartwatch or health tracker to collect your health data.",
+        "It keeps an eye on your Heart Rate, Blood Oxygen (SpO2), and Heart Rate Variability (HRV) all the time.",
+        "You can easily see your current and past health information on your app dashboard.",
+        "Set up personal alerts so you know if your health numbers go outside your usual range.",
       ]}
       afterAlert={[
-        "A notification is sent to you, your emergency contacts, and our 24/7 monitoring team.",
-        "Our professional responders can view your live location and health data.",
-        "A live video call is initiated to assess your situation visually.",
-        "If needed, we coordinate with local emergency services and provide them with critical information.",
+        "You, your emergency contacts, and our 24/7 monitoring team all get a notification.",
+        "Our trained responders can see your live location and your health information.",
+        "We start a live video call to check on you and see what's happening.",
+        "If you need help, we contact local emergency services and give them key details.",
       ]}
-      bestFor={["Seniors living independently", "Individuals with chronic health conditions", "Family members wanting to monitor loved ones"]}
-      notIdealFor={["Diagnosing medical conditions", "Replacing professional medical advice"]}
+      bestFor={["Older adults living alone", "People with ongoing health conditions", "Family members who want to check on loved ones"]}
+      notIdealFor={["Diagnosing illnesses", "Replacing a doctor's advice"]}
       keyTakeaways={[
-        "Get 24/7 visibility into your key health vitals like HRV, SpO2, and heart rate.",
-        "Receive automatic alerts when your health metrics go outside your set ranges.",
-        "Empower your family and our 24/7 responders to act quickly in an emergency.",
+        "Get a clear view of your key health numbers like HRV, SpO2, and heart rate, 24/7.",
+        "Receive automatic alerts when your health metrics change unexpectedly.",
+        "Give your family and our responders the power to act fast in an emergency.",
       ]}
       faqs={[
-        { question: "What devices work with MySentry for health monitoring?", answer: "MySentry is compatible with a wide range of popular smartwatches and wearable health trackers. You can check our full compatibility list on the How It Works page." },
-        { question: "Is my health data secure?", answer: "Absolutely. We use bank-level encryption to protect your personal health information. Your privacy and security are our top priorities." },
-        { question: "Can this app replace my doctor?", answer: "No. MySentry is a monitoring tool designed to provide you and your loved ones with peace of mind. It does not provide medical advice and should not replace consultations with your healthcare provider." },
-        { question: "What is HRV and why is it important?", answer: "Heart Rate Variability (HRV) is the variation in time between each heartbeat. It is a key indicator of your body's stress and recovery levels, offering insights into your overall well-being." },
-        { question: "Can my family see my real-time health data?", answer: "Your emergency contacts are alerted if your vitals fall outside the safe zones you define, but they cannot see your real-time data continuously. This protects your privacy while ensuring help is available when needed." },
+        { question: "What devices work with MySentry for health monitoring?", answer: "MySentry works with many popular smartwatches and health trackers. You can find our full list of compatible devices on the How It Works page." },
+        { question: "Is my health data safe?", answer: "Yes, absolutely. We use strong encryption to protect your personal health information. Your privacy and security are our top concerns." },
+        { question: "Can this app replace my doctor?", answer: "No. MySentry is a tool to help you and your loved ones feel more secure. It does not give medical advice and should not take the place of talking with your healthcare provider." },
+        { question: "What is HRV and why is it important?", answer: "Heart Rate Variability (HRV) is how much the time between your heartbeats changes. It's a good sign of your body's stress and recovery, giving you clues about your overall health." },
+        { question: "Can my family see my real-time health data?", answer: "Your emergency contacts get alerts if your health numbers go outside the safe limits you set. They do not see your real-time data all the time. This keeps your information private while making sure help is there when you need it." },
       ]}
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
@@ -52,8 +51,8 @@ export default function HealthMonitoring() {
         limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
       }}
       proofBlocks={[
-        { claim: "MySentry tracks heart rate, HRV, SpO2, and skin temperature continuously via smartwatch.", detail: "Data is collected in real time and analyzed for abnormalities that may indicate a health emergency." },
-        { claim: "Abnormal health readings trigger automatic alerts to 24/7 monitoring agents and emergency contacts.", detail: "Users and caregivers are notified of concerning trends before they become critical emergencies." }
+        { claim: "MySentry tracks heart rate, HRV, SpO2, and skin temperature continuously via smartwatch.", detail: "Data is collected in real time and checked for unusual readings that might point to a health emergency." },
+        { claim: "Unusual health readings send automatic alerts to 24/7 monitoring agents and emergency contacts.", detail: "Users and caregivers are told about worrying trends before they become serious emergencies." }
       ]}
       relatedLinks={[
         { text: "Panic Alarm for Immediate Help", href: "/features/panic-button-app" },
@@ -64,4 +63,3 @@ export default function HealthMonitoring() {
     />
   );
 }
-

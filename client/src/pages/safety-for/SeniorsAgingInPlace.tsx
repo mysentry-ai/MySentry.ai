@@ -62,8 +62,8 @@ export default function SeniorsAgingInPlace() {
   return (
     <Layout>
       <SEO
-        title="Senior Safety for Aging in Place | MySentry"
-        description="Help your aging parents stay safe and independent at home. MySentry provides automatic fall detection, health monitoring, and 24/7 professional response so seniors can age in place with confidence."
+        title="Aging in Place Safety: Keep Seniors Safe at Home | MySentry"
+        description="Ensure aging in place safety for your parents. MySentry offers automatic fall detection, health monitoring, and 24/7 professional response. Keep loved ones safe at home. Start your free trial."
         canonical="https://mysentry.ai/safety-for/seniors-aging-in-place"
         schema={schema}
       />
@@ -74,7 +74,7 @@ export default function SeniorsAgingInPlace() {
           <div className="max-w-3xl">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">SENIOR SAFETY</span>
             <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-6 uppercase tracking-tighter">
-              Your Parents Deserve to Age at Home. You Deserve Peace of Mind.
+              Keep Your Parents Safe at Home. Get Peace of Mind.
             </h1>
             <p className="text-lg text-gray-700 mb-4 leading-relaxed">
               Your mom wants to stay in her own home. She loves her garden, her neighbors, and the independence she has built over a lifetime. But you worry. What if she falls in the bathroom at 2 AM? What if her heart rate spikes and nobody notices?

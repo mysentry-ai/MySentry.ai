@@ -1,14 +1,13 @@
-
 import SEOPageTemplate from "@/components/SEOPageTemplate";
 
 export default function FamilySafetyApp() {
   return (
     <SEOPageTemplate
-      seoTitle="Family Safety App for Peace of Mind | MySentry"
-      seoDescription="Keep your loved ones safe with the MySentry family safety app. Features location sharing, panic button, and health monitoring for total peace of mind. Start your free trial."
+      seoTitle="Family Safety App with Monitoring & Alerts | MySentry"
+      seoDescription="Keep your family safe with MySentry. Get real-time location, panic alerts, and 24/7 monitoring for peace of mind. Protect loved ones, get help fast. Try it free."
       canonical="https://mysentry.ai/use-cases/family-safety-app"
       label="USE CASE"
-      h1="The All-In-One Family Safety App You Can Trust"
+      h1="Worried About Your Family's Safety? MySentry Can Help."
       problem="You worry about your family's safety when they're out alone, from your teenager driving to your elderly parent living independently."
       empathy="It's hard to have peace of mind when you can't be with them. You just want to know they are okay, no matter where they are."
       steps={[
@@ -18,7 +17,7 @@ export default function FamilySafetyApp() {
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="A family safety app is a mobile application designed to help families stay connected and safe. It typically includes features like location sharing, emergency alerts, and check-in functions. MySentry enhances this with fall detection, crash detection, and 24/7 professional monitoring, providing a comprehensive safety net for all family members."
+      directAnswer="A family safety app helps families stay connected and safe. MySentry adds fall detection, crash detection, and 24/7 professional monitoring, creating a complete safety net for all family members."
       howItWorks={[
         "Each family member installs the MySentry app on their smartphone.",
         "You can see everyone's location on a private map and get arrival/departure alerts.",
@@ -87,4 +86,3 @@ export default function FamilySafetyApp() {
     />
   );
 }
-

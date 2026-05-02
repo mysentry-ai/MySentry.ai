@@ -576,3 +576,103 @@
 - [x] Write enterprise-checkout.test.ts with 14 tests covering all 4 plan paths + guardrails
 - [x] Verify all 62 tests pass (42 original + 20 new)
 - [x] Confirm non-Enterprise flows (Individual/Family) are completely unchanged
+
+
+## SEO + AEO + GEO Upgrade (Round 33 — Full Campaign)
+
+### Phase 0: Technical SEO Foundation
+- [ ] Set canonical host to https://mysentry.ai (301 redirect www → non-www)
+- [ ] Verify/update robots.txt with sitemap directive and proper disallow rules
+- [ ] Update sitemap_index.xml, sitemap_pages.xml, sitemap_blog.xml with all canonical URLs
+- [ ] Add noindex to login/dashboard pages
+- [ ] Create /llms.txt for GEO (LLM-friendly index)
+- [ ] Add <link rel="canonical"> to every page
+- [ ] Lazy-load below-the-fold images sitewide
+- [ ] Add explicit width/height to all images to prevent CLS
+
+### Phase 1+2: Keyword Strategy + On-Page Rebuild
+- [ ] Create keyword-to-page map (25-60 pages, all clusters A/B/C/D)
+- [ ] Rewrite Title + Meta Description for every indexable page
+- [ ] Enforce one H1 per page, H2s as questions (AEO)
+- [ ] Build internal linking graph (ICP → Features → Compare → Blog)
+- [ ] Update /females page with full SEO treatment
+
+### Phase 3+4: AEO + GEO Blocks
+- [ ] Add AEO answer blocks to all Feature pages (20+)
+- [ ] Add AEO answer blocks to all Use-Case pages
+- [ ] Add AEO answer blocks to all Compare pages
+- [ ] Add GEO cite-ready proof blocks on top pages
+- [ ] Add Setup/Requirements section to all feature pages
+
+### Phase 5: Schema Structured Data
+- [ ] Add/verify Organization schema sitewide
+- [ ] Add/verify SoftwareApplication schema sitewide
+- [ ] Add FAQPage schema on all pages with FAQs
+- [ ] Add HowTo schema (emergency contacts, MeetSafe, panic alarm)
+- [ ] Add Article schema on all blog posts
+
+### Phase 6: Content Expansion
+- [ ] Create /features/safety-check-in-app/ (MeetSafe)
+- [ ] Create /use-cases/teen-driver-safety/
+- [ ] Verify /features/panic-button-app/ exists and is fully optimized
+- [ ] Write 40 new SEO-optimized blog posts
+- [ ] Update sitemap with all new pages and posts
+
+
+## SEO + AEO + GEO Full Upgrade (May 2026)
+
+### Technical Foundation
+- [x] Update robots.txt: correct Sitemap directive to sitemap_index.xml, add /pricing-legacy Disallow
+- [x] Update llms.txt with accurate pricing, all 70+ pages, and GEO-optimized product description
+- [x] Update llms-full.txt with complete page inventory and cite-ready product facts
+- [x] Canonical host confirmed: https://mysentry.ai (non-www)
+- [x] Sitemap index verified: sitemap_index.xml covers sitemap_pages.xml (64 URLs) + sitemap_blog.xml (76 URLs)
+
+### On-Page SEO: Meta Titles, Descriptions, H1/H2
+- [x] Rewrote meta titles/descriptions for all 40+ feature, use-case, compare, industry, guide, and ICP pages
+- [x] Updated H1/H2 hierarchy on all pages to match primary keyword intent
+- [x] Added AEO-optimized direct-answer opening paragraphs to all SEOPageTemplate pages
+- [x] Added GEO cite-ready proof blocks (statistics, response times, monitoring facts) to all money pages
+- [x] Added internal links from all pages to related money pages
+
+### Content Expansion: 40 New Blog Posts
+- [x] what-happens-when-you-press-a-panic-button-app
+- [x] how-does-fall-detection-work-on-a-phone-or-watch
+- [x] safety-app-vs-medical-alert-system-whats-the-difference
+- [x] best-safety-app-for-women-living-alone
+- [x] what-employers-must-provide-for-lone-worker-safety
+- [x] does-a-safety-app-work-without-cell-service
+- [x] how-to-set-up-emergency-contacts-on-your-phone
+- [x] fall-detection-apple-watch-vs-dedicated-safety-app
+- [x] panic-button-app-for-employees-what-to-look-for
+- [x] how-crash-detection-works-on-your-smartphone
+- [x] teen-driver-safety-apps-what-parents-need-to-know
+- [x] health-monitoring-app-what-it-tracks-and-why-it-matters
+- [x] 24-7-professional-monitoring-what-it-actually-means
+- [x] caregiver-alert-app-how-to-stay-informed-from-a-distance
+- [x] safety-check-in-app-how-meetsafe-works
+- [x] share-location-with-emergency-contacts-how-it-works
+- [x] workforce-safety-monitoring-app-for-remote-teams
+- [x] incident-reporting-safety-app-why-your-team-needs-one
+- [x] personal-safety-app-vs-home-security-system
+- [x] how-gps-tracking-works-in-a-safety-app
+- [x] senior-fall-risk-how-to-reduce-it-at-home
+- [x] what-is-a-lone-worker-definition-risks-and-legal-duties
+- [x] how-to-choose-a-medical-alert-app-for-an-aging-parent
+- [x] women-dating-safety-tips-how-to-stay-safe-on-a-first-date
+- [x] how-to-talk-to-a-senior-parent-about-wearing-a-safety-app
+- [x] real-estate-agent-safety-app-why-agents-need-one
+- [x] construction-worker-safety-app-what-osha-requires
+- [x] how-to-build-a-lone-worker-safety-program
+- [x] smartwatch-safety-features-apple-watch-vs-samsung-galaxy
+- [x] what-is-spo2-and-why-does-it-matter-for-seniors
+- [x] heart-rate-variability-what-it-means-for-your-health
+- [x] how-to-stay-safe-when-working-from-home-alone
+- [x] family-safety-app-how-to-keep-everyone-connected
+- [x] safety-app-for-college-students-what-parents-should-know
+- [x] how-to-prevent-heat-exhaustion-in-outdoor-workers
+- [x] nursing-home-vs-aging-in-place-which-is-safer
+- [x] how-mysentry-compares-to-life360-for-family-safety
+- [x] how-mysentry-compares-to-adt-for-personal-protection
+- [x] how-mysentry-compares-to-noonlight-for-emergency-response
+- [x] All 39 new posts verified published in blog sitemap (total: 76 posts)

@@ -1,60 +1,59 @@
-
 import SEOPageTemplate from "@/components/SEOPageTemplate";
 
 export default function Construction() {
   return (
     <SEOPageTemplate
-      seoTitle="Construction Worker Safety App | MySentry"
-      seoDescription="Protect your crew with MySentry's construction worker safety app. Features fall detection, panic alarm, and 24/7 monitoring for lone workers. Book a demo."
+      seoTitle="Construction Safety App for Workers | MySentry"
+      seoDescription="Keep construction workers safe with MySentry. Our app offers fall detection, panic alarms, and 24/7 monitoring for lone workers. Get help fast. Book a demo."
       canonical="https://mysentry.ai/industries/construction"
       label="INDUSTRY"
-      h1="Keep Your Construction Crew Safe"
-      problem="Construction sites are full of risks. It's hard to know if a worker is safe, especially if they are working alone or in a remote area of the job site."
-      empathy="You're responsible for your crew's safety. You need a reliable way to monitor them and get them help fast in an emergency, without watching them all day."
+      h1="Construction Workers Face Risks. MySentry Keeps Them Safe."
+      problem="Construction sites are full of dangers. It's hard to know if a worker is okay, especially if they are alone or in a far-off part of the job site."
+      empathy="You want your crew to be safe. You need a simple way to watch over them and get them help quickly in an emergency, without having to watch them all day."
       steps={[
-        { title: "Equip Your Crew", description: "Workers are enrolled online through the employer dashboard. They then download the MySentry app on their existing smartphones. No new hardware needed." },
-        { title: "Monitor Job Sites", description: "See worker status and location from a simple dashboard. Get alerts for falls, missed check-ins, or panic alarms." },
-        { title: "Dispatch Help Fast", description: "Our 24/7 monitoring team verifies alerts and dispatches emergency services or your on-site supervisor." },
+        { title: "Equip Your Crew", description: "Workers sign up online through your company dashboard. They then download the MySentry app on their own smartphones. No new devices are needed." },
+        { title: "Monitor Job Sites", description: "See where your workers are and their status from an easy-to-use dashboard. Get alerts for falls, missed check-ins, or panic alarms." },
+        { title: "Dispatch Help Fast", description: "Our 24/7 monitoring team checks alerts and sends emergency services or your on-site supervisor." },
       ]}
       primaryCta={{ text: "Book a Demo", href: "/contact" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry is a construction worker safety app that turns smartphones into life-saving devices. It provides fall detection, a panic button, and GPS location to a 24/7 monitoring service. This allows construction companies to protect lone workers and ensure rapid emergency response on any job site, improving overall safety."
+      directAnswer="MySentry helps construction companies keep their workers safe. It's a smartphone app with fall detection, a panic button, and GPS. Our 24/7 monitoring team gets help to your team fast, especially for lone workers on any job site."
       howItWorks={[
-        "Workers install the MySentry app on their personal or company-issued phones.",
-        "The app runs in the background, using sensors to detect falls or long periods of inactivity.",
-        "If a potential incident is detected, an alarm is triggered.",
-        "Workers can also manually trigger a panic alarm for any emergency.",
+        "Workers put the MySentry app on their phone.",
+        "The app works in the background, using phone sensors to spot falls or if someone stops moving for too long.",
+        "If the app thinks there's a problem, it sends an alert.",
+        "Workers can also tap their phone or smartwatch, or use a voice command to call for help right away.",
       ]}
       afterAlert={[
-        "Our 24/7 professional monitoring agents receive the alert with the worker's location.",
-        "They immediately attempt to contact the worker via call and text.",
-        "If the worker is unresponsive or confirms the emergency, we dispatch local EMS.",
-        "Your designated company contacts are notified of the incident and its outcome.",
+        "Our 24/7 monitoring team gets the alert and the worker's location.",
+        "They try to reach the worker by phone and text. If it's a fall, they wait 2 minutes for a response.",
+        "If the worker doesn't answer or says they need help, we send local emergency services.",
+        "We also tell your company's contacts what happened.",
       ]}
       bestFor={["General contractors", "Subcontractors", "Lone workers on job sites", "Companies with multiple job sites", "Firms focused on OSHA compliance"]}
       notIdealFor={["Companies without a clear safety protocol", "Workers without a smartphone"]}
       keyTakeaways={[
-        "Improve job site safety and OSHA compliance with a simple app.",
+        "Make job sites safer and meet OSHA rules with a simple app.",
         "Protect your lone workers with automatic fall detection and 24/7 monitoring.",
-        "Reduce emergency response times with GPS location and professional dispatch.",
+        "Get help to workers faster with GPS location and professional dispatch.",
       ]}
       faqs={[
-        { question: "How does MySentry detect falls on a construction site?", answer: "MySentry uses the motion sensors in a worker's smartphone, combined with a sophisticated algorithm, to detect the sudden impact and change in orientation characteristic of a fall. It's designed to minimize false alarms from normal work activities." },
-        { question: "Does this replace the need for an on-site safety manager?", answer: "No. MySentry is a tool to augment your existing safety program. It provides an extra layer of protection, especially for lone workers, but does not replace the need for on-site supervision and a comprehensive safety culture." },
-        { question: "What if a worker is in an area with poor cell service?", answer: "MySentry requires an active internet connection (cellular or Wi-Fi) to send alerts. While it can cache some data, real-time alerts depend on connectivity. We recommend assessing connectivity on your job sites as part of implementation." },
-        { question: "Is the app complicated for workers to use?", answer: "No, it's designed for simplicity. After a one-time setup, the app runs in the background. The panic button is large and easy to access. We focused on making it as user-friendly as possible for all skill levels." },
-        { question: "How much does the service cost for a construction company?", answer: "Our pricing is based on the number of workers you wish to protect. We offer flexible plans to fit teams of all sizes. Please book a demo or visit our pricing page for more details." },
+        { question: "How does MySentry detect falls on a construction site?", answer: "MySentry uses the motion sensors in a worker's smartphone, along with smart software, to spot the sudden hit and change in position that happens with a fall. It's made to avoid false alarms from normal work." },
+        { question: "Does this replace the need for an on-site safety manager?", answer: "No. MySentry is a tool to add to your current safety plan. It gives extra protection, especially for lone workers, but it doesn't take the place of on-site managers and a full safety culture." },
+        { question: "What if a worker is in an area with poor cell service?", answer: "MySentry needs an active internet connection (cell service or Wi-Fi) to send alerts. While it can save some data, real-time alerts need a connection. We suggest checking cell service on your job sites when you set it up." },
+        { question: "Is the app hard for workers to use?", answer: "No, it's made to be simple. After setting it up once, the app runs in the background. The panic button is big and easy to tap. We made it as easy to use as possible for everyone." },
+        { question: "How much does the service cost for a construction company?", answer: "Our price depends on how many workers you want to protect. We have flexible plans for teams of all sizes. Please book a demo or visit our pricing page for more details." },
       ]}
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
-        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+        connectivity: "Works on cell data and Wi-Fi. Cell connection is best for outside use and accurate GPS. Offline mode saves alerts and sends them when connected again.",
+        limitations: "Fall detection accuracy depends on sensor quality and how the device is worn. Battery life changes based on device and how much the features are used. Health monitoring needs a compatible smartwatch."
       }}
       proofBlocks={[
-        { claim: "Fall detection is calibrated for construction environments and elevated work.", detail: "The app detects falls from heights and on uneven surfaces common on construction sites." },
-        { claim: "Panic alerts work in areas with limited cellular coverage using offline mode.", detail: "Alerts are queued when offline and sent automatically when connectivity is restored." },
-        { claim: "Health monitoring can detect signs of heat stress in outdoor workers.", detail: "Continuous tracking of heart rate and skin temperature helps identify heat-related illness before it becomes critical." }
+        { claim: "Fall detection works well for construction sites and work at heights.", detail: "The app spots falls from high places and on rough ground common on construction sites." },
+        { claim: "Panic alerts work even with weak cell service using offline mode.", detail: "Alerts are saved when offline and sent automatically when you get service back." },
+        { claim: "Health monitoring can spot signs of heat stress in workers outside.", detail: "Watching heart rate and skin temperature helps find heat-related sickness before it gets serious." }
       ]}
       relatedLinks={[
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
@@ -65,4 +64,3 @@ export default function Construction() {
     />
   );
 }
-

@@ -3,5 +3,7 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 Disallow: /404
+Disallow: /pricing-legacy
 
-Sitemap: https://mysentry.ai/sitemap.xml
+# Sitemap index (covers pages + blog)
+Sitemap: https://mysentry.ai/sitemap_index.xml

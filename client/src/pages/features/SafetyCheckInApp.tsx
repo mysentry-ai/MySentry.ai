@@ -1,14 +1,13 @@
-
 import SEOPageTemplate from "@/components/SEOPageTemplate";
 
 export default function SafetyCheckInApp() {
   return (
     <SEOPageTemplate
-      seoTitle="Safety Check-In App | Timed Alerts & 24/7 Monitoring | MySentry"
-      seoDescription="Set timed safety check-ins for meetings, dates, solo activities, and shifts. If you don't check in, MySentry's 24/7 agents are alerted with your location. Start free."
+      seoTitle="Safety Check-In App: Timed Alerts & Monitoring | MySentry"
+      seoDescription="MySentry's safety check-in app offers timed alerts for solo activities, meetings, or dates. Miss a check-in? 24/7 agents get your GPS location and dispatch help. Start free."
       canonical="https://mysentry.ai/features/safety-check-in-app"
       label="FEATURE"
-      h1="Safety Check-In App: Timed Alerts That Protect You Automatically"
+      h1="Feeling unsafe in solo situations? MySentry's Safety Check-In App automatically alerts help if you don't check in."
       problem="You meet strangers for dates, property showings, or client visits, and no one knows exactly where you are or when to expect you back."
       empathy="That uneasy feeling before walking into an unfamiliar situation is real. You deserve a simple way to let someone know you're safe, without constantly texting."
       steps={[
