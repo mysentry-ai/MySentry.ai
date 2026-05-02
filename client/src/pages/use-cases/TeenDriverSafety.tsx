@@ -76,7 +76,7 @@ export default function TeenDriverSafety() {
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for driving and GPS accuracy.",
+        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates.",
         limitations: "Crash detection accuracy depends on sensor quality and crash severity. Very low-speed collisions may not trigger detection. Battery life varies by device and feature usage."
       }}
       proofBlocks={[

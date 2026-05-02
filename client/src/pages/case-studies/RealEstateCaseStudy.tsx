@@ -57,7 +57,7 @@ export default function RealEstateCaseStudy() {
       setupRequirements={{
         devices: "A smartphone (iOS or Android) or a compatible smartwatch.",
         permissions: "Location services and microphone access for emergency situations.",
-        connectivity: "A cellular or Wi-Fi connection is required for most features.",
+        connectivity: "A cellular signal is all that is required. No Wi-Fi is needed for any feature.",
         limitations: "Effectiveness may be reduced in areas with no connectivity."
       }}
       proofBlocks={[

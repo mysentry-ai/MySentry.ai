@@ -84,7 +84,7 @@ export default function LoneWorkerSafetyGuide() {
       setupRequirements={{
         devices: "iPhone (iOS 15+) or Android (10+) smartphone. Apple Watch (Series 4+) or Samsung Galaxy Watch for wrist-based features.",
         permissions: "Location services (always-on), notifications, microphone for voice activation.",
-        connectivity: "Cellular data or Wi-Fi required for alerts to reach monitoring. Offline mode queues alerts until reconnected.",
+        connectivity: "Cellular signal is all that is needed. No Wi-Fi required. Even with a weak signal, the app sends a text alert with your GPS coordinates. Alerts queue and send the moment signal returns.",
         limitations: "Does not replace a formal lone worker safety policy or OSHA compliance documentation. Health monitoring requires a compatible smartwatch."
       }}
       relatedLinks={[

@@ -49,7 +49,7 @@ export default function CrashDetection() {
         },
         {
           question: "What if I'm in an area with no cell service?",
-          answer: "MySentry needs an active internet connection (cell data or Wi-Fi) to send an alert. If a crash happens where there's no service, the alert will wait and send as soon as your phone gets back online.",
+          answer: "MySentry works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. If a crash happens in an area with no cell coverage, the alert queues and sends the moment signal returns.",
         },
         {
           question: "Does this take the place of calling 911?",
@@ -63,7 +63,7 @@ export default function CrashDetection() {
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for watch features.",
         permissions: "Location services (always on for GPS tracking), notifications, microphone (for voice panic alarm), camera (for live video response).",
-        connectivity: "Works on cell data and Wi-Fi. Cell connection is best for outside use and accurate GPS. Offline mode saves alerts and sends them when you reconnect.",
+        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Crash detection accuracy depends on sensor quality. Battery life changes based on your device and how you use features. Health monitoring needs a compatible smartwatch."
       }}
       proofBlocks={[

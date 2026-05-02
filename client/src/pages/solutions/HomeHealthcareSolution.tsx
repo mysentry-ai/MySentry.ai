@@ -68,7 +68,7 @@ export default function HomeHealthcareSolutionPage() {
       setupRequirements={{
         devices: "iOS or Android smartphone with the MySentry app.",
         permissions: "Location services and microphone access for full functionality.",
-        connectivity: "Cellular or Wi-Fi connection for real-time alerts.",
+        connectivity: "Cellular signal for real-time alerts. No Wi-Fi required.",
         limitations: "Effectiveness depends on device battery and signal strength.",
       }}
       proofBlocks={[

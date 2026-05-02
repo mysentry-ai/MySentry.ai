@@ -34,7 +34,7 @@ export default function Retail() {
       bestFor={["Big Box Retailers", "Convenience Stores", "Luxury Boutiques", "Shopping Malls", "Grocery Stores", "Any retail business with employees who work alone or face public interaction"]}
       notIdealFor={[
         "Companies without a clear emergency response protocol.",
-        "Locations with no reliable cellular or Wi-Fi signal.",
+        "Locations with no cellular signal at all (Wi-Fi is never required).",
         "Businesses looking for a simple check-in system without emergency response capabilities.",
       ]}
       keyTakeaways={[
@@ -72,7 +72,7 @@ export default function Retail() {
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
       }}
       proofBlocks={[

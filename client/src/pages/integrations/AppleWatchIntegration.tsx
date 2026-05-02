@@ -71,7 +71,7 @@ export default function AppleWatchIntegrationPage() {
       setupRequirements={{
         devices: "Apple Watch Series 4 or newer running watchOS 9 or later, paired with a compatible iPhone.",
         permissions: "You must give the app permission to use your location and health data for all features to work.",
-        connectivity: "Your iPhone needs an active cellular or Wi-Fi connection.",
+        connectivity: "Your iPhone needs an active cellular signal. Wi-Fi is not required.",
         limitations: "Fall detection does not catch 100% of falls. For crash detection, you must have your iPhone with you in the car.",
       }}
       proofBlocks={[

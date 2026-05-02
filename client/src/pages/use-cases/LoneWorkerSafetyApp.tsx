@@ -49,7 +49,7 @@ export default function LoneWorkerSafetyApp() {
         },
         {
           question: "What happens if an employee is in an area with no cell service?",
-          answer: "MySentry requires an active internet connection (cellular or Wi-Fi) to function. The app is not suitable for workers in locations that consistently lack reliable connectivity.",
+          answer: "MySentry works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. The app is not suitable for locations that consistently have zero cell coverage.",
         },
         {
           question: "Can we customize the emergency response protocol?",
@@ -63,7 +63,7 @@ export default function LoneWorkerSafetyApp() {
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
       }}
       proofBlocks={[

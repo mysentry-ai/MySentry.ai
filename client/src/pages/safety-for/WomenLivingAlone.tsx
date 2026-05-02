@@ -66,7 +66,7 @@ export default function WomenLivingAlone() {
       setupRequirements={{
         devices: "A smartphone (iOS or Android) is needed. A compatible smartwatch is suggested for fall detection.",
         permissions: "The app needs location and notification permissions to work correctly.",
-        connectivity: "An active internet connection (cellular or Wi-Fi) is required for alerts.",
+        connectivity: "A cellular signal is all that is required for alerts. No Wi-Fi needed.",
         limitations: "How well it works depends on your device's battery, signal, and if you are carrying it.",
       }}
       proofBlocks={[

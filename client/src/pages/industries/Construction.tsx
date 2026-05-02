@@ -40,14 +40,14 @@ export default function Construction() {
       faqs={[
         { question: "How does MySentry detect falls on a construction site?", answer: "MySentry uses the motion sensors in a worker's smartphone, along with smart software, to spot the sudden hit and change in position that happens with a fall. It's made to avoid false alarms from normal work." },
         { question: "Does this replace the need for an on-site safety manager?", answer: "No. MySentry is a tool to add to your current safety plan. It gives extra protection, especially for lone workers, but it doesn't take the place of on-site managers and a full safety culture." },
-        { question: "What if a worker is in an area with poor cell service?", answer: "MySentry needs an active internet connection (cell service or Wi-Fi) to send alerts. While it can save some data, real-time alerts need a connection. We suggest checking cell service on your job sites when you set it up." },
+        { question: "What if a worker is in an area with poor cell service?", answer: "MySentry works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with GPS coordinates. We suggest confirming cell coverage on your job sites during setup." },
         { question: "Is the app hard for workers to use?", answer: "No, it's made to be simple. After setting it up once, the app runs in the background. The panic button is big and easy to tap. We made it as easy to use as possible for everyone." },
         { question: "How much does the service cost for a construction company?", answer: "Our price depends on how many workers you want to protect. We have flexible plans for teams of all sizes. Please book a demo or visit our pricing page for more details." },
       ]}
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cell data and Wi-Fi. Cell connection is best for outside use and accurate GPS. Offline mode saves alerts and sends them when connected again.",
+        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and how the device is worn. Battery life changes based on device and how much the features are used. Health monitoring needs a compatible smartwatch."
       }}
       proofBlocks={[

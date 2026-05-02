@@ -74,7 +74,7 @@ export default function DeliveryDriversSolution() {
       setupRequirements={{
         devices: "A smartphone with the MySentry app installed.",
         permissions: "Location and microphone access for emergency services.",
-        connectivity: "A cellular or Wi-Fi connection.",
+        connectivity: "A cellular signal. No Wi-Fi required.",
         limitations: "The app must be running in the background to detect incidents.",
       }}
       proofBlocks={[

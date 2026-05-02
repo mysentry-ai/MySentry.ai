@@ -79,7 +79,7 @@ export default function HomeHealthcareCaseStudy() {
       setupRequirements={{
         devices: "Each worker needs a MySentry-compatible smartphone (iOS or Android) and the wearable MySentry device.",
         permissions: "The MySentry app requires location services and microphone/camera access to be enabled for full functionality.",
-        connectivity: "A cellular or Wi-Fi connection is necessary for the device to communicate with the monitoring center.",
+        connectivity: "A cellular signal is all that is needed. No Wi-Fi is required. The app communicates with the monitoring center over your phone's cellular connection.",
         limitations: "Effectiveness depends on cellular coverage in the operational area. The device's battery must be kept charged.",
       }}
       proofBlocks={[

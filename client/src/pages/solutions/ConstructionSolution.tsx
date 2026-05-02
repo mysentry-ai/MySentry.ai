@@ -69,7 +69,7 @@ export default function ConstructionSolutionPage() {
       },
       {
         question: 'What are the connectivity requirements on-site?',
-        answer: 'MySentry uses a cellular connection to transmit alerts, so it works anywhere there is reliable cell service. It does not depend on your local Wi-Fi network.',
+        answer: 'MySentry uses a cellular connection to transmit alerts, so it works anywhere there is cell service. No Wi-Fi is required.',
       },
       {
         question: 'Can we manage alerts and see worker status ourselves?',

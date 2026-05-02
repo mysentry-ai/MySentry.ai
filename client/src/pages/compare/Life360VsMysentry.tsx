@@ -70,7 +70,7 @@ export default function Life360VsMysentry() {
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) phones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS), notifications, microphone (for voice panic), camera (for live video help).",
-        connectivity: "Works with cell data and Wi-Fi. Cell connection is best for outside use and GPS. Offline mode saves alerts and sends them when you reconnect.",
+        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection works best with good sensor quality and proper wearing. Battery life changes based on device and how you use features. Health tracking needs a compatible smartwatch."
       }}
       proofBlocks={[

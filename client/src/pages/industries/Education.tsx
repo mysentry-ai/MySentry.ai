@@ -62,7 +62,7 @@ export default function Education() {
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular data and Wi-Fi. Cellular connection is best for outdoor use and GPS accuracy. Offline mode saves alerts and sends them when connected again.",
+        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and how it is worn. Battery life changes based on device and feature use. Health monitoring needs a compatible smartwatch."
       }}
       proofBlocks={[

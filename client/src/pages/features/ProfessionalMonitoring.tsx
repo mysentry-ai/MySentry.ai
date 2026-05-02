@@ -42,12 +42,12 @@ export default function ProfessionalMonitoring() {
         { question: "Is the monitoring center always open?", answer: "Yes, our professional monitoring center operates 24 hours a day, 7 days a week, 365 days a year, including all holidays. You are never without protection." },
         { question: "Who are the monitoring agents?", answer: "Our agents are U.S.-based, TMA Five Diamond Certified professionals. They undergo rigorous training in emergency response protocols to provide you with the highest level of service." },
         { question: "What happens if I trigger an alarm by accident?", answer: "Accidents happen. If you trigger a false alarm, you can simply cancel it in the app or inform the monitoring agent when they contact you. There is no penalty for false alarms." },
-        { question: "Do I need a separate landline for this service?", answer: "No, MySentry's monitoring service works through your smartphone's internet connection (Wi-Fi or cellular data). No landline is required." },
+        { question: "Do I need a separate landline for this service?", answer: "No, MySentry's monitoring service works through your smartphone's cellular connection. No landline and no Wi-Fi are required." },
       ]}
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular data and Wi-Fi. Cellular connection recommended for outdoor use and GPS accuracy. Offline mode stores alerts and sends when reconnected.",
+        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
       }}
       proofBlocks={[

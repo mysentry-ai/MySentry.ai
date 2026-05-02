@@ -30,7 +30,7 @@ const faqs = [
   },
   {
     question: "Does MySentry work if my parent lives in a rural area?",
-    answer: "Yes. MySentry works anywhere with a cellular or Wi-Fi connection. GPS tracking works outdoors in all areas. For indoor use, the app uses Wi-Fi positioning to provide location data to emergency responders."
+    answer: "Yes. MySentry works anywhere with a cellular signal. No Wi-Fi is required. GPS tracking works outdoors in all areas. Indoors, the app uses available signals to provide location data to emergency responders."
   }
 ];
 

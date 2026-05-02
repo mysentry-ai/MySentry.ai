@@ -13,6 +13,11 @@ import Pricing from "./pages/Pricing";
 import PricingLegacy from "./pages/PricingLegacy";
 import HowItWorks from "./pages/HowItWorks";
 import Females from "./pages/Females";
+import Nurses from "./pages/Nurses";
+import TravelNurses from "./pages/nurses/TravelNurses";
+import HomeHealthNurses from "./pages/nurses/HomeHealthNurses";
+import ErTraumaNurses from "./pages/nurses/ErTraumaNurses";
+import NightShiftNurses from "./pages/nurses/NightShiftNurses";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Team from "./pages/Team";
@@ -101,6 +106,11 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/females" component={Females} />
+      <Route path="/nurses" component={Nurses} />
+      <Route path="/nurses/travel-nurses" component={TravelNurses} />
+      <Route path="/nurses/home-health" component={HomeHealthNurses} />
+      <Route path="/nurses/er-trauma" component={ErTraumaNurses} />
+      <Route path="/nurses/night-shift" component={NightShiftNurses} />
       <Route path="/seniors" component={Seniors} />
       <Route path="/families" component={Families} />
       <Route path="/employers" component={Employers} />

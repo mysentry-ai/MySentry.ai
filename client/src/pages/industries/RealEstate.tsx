@@ -48,7 +48,7 @@ export default function RealEstate() {
         "Property managers and leasing agents.",
       ]}
       notIdealFor={[
-        "Areas without good cell service or Wi-Fi.",
+        "Areas with no cell coverage at all (Wi-Fi is never required).",
         "People who don't want to give the app necessary phone permissions.",
       ]}
       keyTakeaways={[
@@ -65,7 +65,7 @@ export default function RealEstate() {
         {
           question: "How does the app work if I'm in a remote area?",
           answer:
-            "MySentry needs an active internet connection (cell service or Wi-Fi) to send alerts. It works in most places, but might have limits in remote areas with no signal. We suggest checking your coverage before relying on it in isolated spots.",
+            "MySentry works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns. We suggest confirming cell coverage before relying on it in isolated spots.",
         },
         {
           question: "Is MySentry a replacement for 911?",
@@ -86,7 +86,7 @@ export default function RealEstate() {
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cell data and Wi-Fi. Cell connection is best for outdoor use and accurate GPS. Offline mode saves alerts and sends them when you reconnect.",
+        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and how you wear it. Battery life changes based on your device and how you use features. Health monitoring needs a compatible smartwatch."
       }}
       proofBlocks={[

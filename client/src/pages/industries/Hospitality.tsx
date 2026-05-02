@@ -32,7 +32,7 @@ afterAlert={[
           "We keep management updated with live information during the event.",
         ]}
       bestFor={["Hotels and Resorts", "Casino Staff", "Housekeeping and Janitorial", "Maintenance and Engineering", "Event and Banquet Staff"]}
-      notIdealFor={["Places without good cell service or Wi-Fi.", "Companies that don't want to set up a clear safety plan."]}
+      notIdealFor={["Places with no cell coverage at all (Wi-Fi is never required).", "Companies that don't want to set up a clear safety plan."]}
 keyTakeaways={[
           "Keep your lone workers safe and follow hotel safety rules.",
           "Get faster help during incidents with 24/7 professional monitoring.",
@@ -63,11 +63,11 @@ faqs={[
 setupRequirements={{
           devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
           permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-          connectivity: "Works on cell data and Wi-Fi. Cell connection is best for outside use and accurate GPS. Offline mode saves alerts and sends them when connected again.",
+          connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
           limitations: "How well fall detection works depends on the sensor and where it's worn. Battery life changes based on the device and how much the features are used. Health monitoring needs a compatible smartwatch."
         }}
 proofBlocks={[
-          { claim: "Hotel and restaurant workers can send silent panic alerts from anywhere on the property.", detail: "The app works across the entire property using Wi-Fi or cell service, covering guest rooms, kitchens, and parking areas." },
+          { claim: "Hotel and restaurant workers can send silent panic alerts from anywhere on the property.", detail: "The app works across the entire property using cellular signal. No Wi-Fi is required, though the app uses it automatically if available. It covers guest rooms, kitchens, and parking areas." },
           { claim: "GPS and indoor tracking help find the exact spot of a worker in trouble.", detail: "Monitoring agents get precise location data to guide emergency responders to the correct area." },
           { claim: "Automatic incident reports help employers meet OSHA workplace safety rules.", detail: "Every alert creates a written record with times, location, and response details for compliance." }
         ]}

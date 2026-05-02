@@ -676,3 +676,38 @@
 - [x] how-mysentry-compares-to-adt-for-personal-protection
 - [x] how-mysentry-compares-to-noonlight-for-emergency-response
 - [x] All 39 new posts verified published in blog sitemap (total: 76 posts)
+
+## Nurse ICP Vertical Expansion
+
+- [ ] Create /nurses primary landing page
+- [ ] Create /nurses/travel-nurses subpage
+- [ ] Create /nurses/home-health subpage
+- [ ] Create /nurses/er-trauma subpage
+- [ ] Create /nurses/night-shift subpage
+- [ ] Add "Nurses" to top nav
+- [ ] Add nurses to WhoWeProtect section on homepage
+- [ ] Add nurse pages to sitemap
+- [ ] Update llms.txt with nurse pages
+- [ ] Add internal links from /families, /seniors, /employers to /nurses
+- [ ] Publish 12 nurse blog posts with hero images
+- [ ] Add nurse blog category/tag
+- [ ] Add FAQPage schema to all nurse pages
+
+## Wi-Fi Fix + Mega-Menu Redesign
+- [ ] Fix all incorrect Wi-Fi references across all pages (app works on cellular signal alone, no Wi-Fi needed)
+- [ ] Redesign navbar with mega-menu: grouped 2-column dropdowns with icons and descriptions for Features, Who We Protect, Solutions, Compare, and Learn
+
+## Nurse ICP Vertical + Wi-Fi Fix + Mega-Menu (May 2026)
+- [x] Build /nurses primary ICP landing page with hero image, AEO blocks, FAQs, schema
+- [x] Build /nurses/travel-nurses subpage
+- [x] Build /nurses/home-health subpage
+- [x] Build /nurses/er-trauma subpage
+- [x] Build /nurses/night-shift subpage
+- [x] Generate and attach photorealistic hero images to all 5 nurse landing pages
+- [x] Add Nurses to navbar navigation
+- [x] Add all 5 nurse pages to sitemap
+- [x] Write and publish 12 nurse-focused blog posts with hero images
+- [x] Fix all incorrect Wi-Fi references sitewide (54 replacements across 41 files)
+- [x] Redesign navbar with mega-menu (grouped 2-column dropdowns with icons and descriptions)
+- [x] Redistribute all 88 blog post dates from Jan 2, 2026 with natural intervals
+- [x] Attach hero images to all 12 nurse blog posts

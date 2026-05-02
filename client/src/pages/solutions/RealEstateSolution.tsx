@@ -54,7 +54,7 @@ export default function RealEstateSolution() {
       setupRequirements={{
         devices: "Requires an iOS or Android smartphone. Optional smartwatch integration is available.",
         permissions: "The app requires location and camera permissions to function correctly.",
-        connectivity: "A stable internet connection (cellular or Wi-Fi) is needed for the service to operate.",
+        connectivity: "A cellular signal is all that is needed. No Wi-Fi required. Even with a weak signal, the app can send a text alert with your GPS coordinates.",
         limitations: "The service relies on device battery and signal strength. It is not a replacement for 911 in life-threatening emergencies.",
       }}
       proofBlocks={[

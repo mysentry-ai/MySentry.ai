@@ -37,7 +37,7 @@ export default function SecurityGuarding() {
       ]}
       notIdealFor={[
         "Companies needing simple guard tour tracking.",
-        "Places without good cell service or Wi-Fi.",
+        "Places with no cell coverage at all (Wi-Fi is never required).",
       ]}
       keyTakeaways={[
         "Gives lone security officers a full safety net.",
@@ -54,7 +54,7 @@ export default function SecurityGuarding() {
       setupRequirements={{
         devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always on for GPS tracking), notifications, microphone (for voice panic alarm), camera (for live video response).",
-        connectivity: "Works with cell data and Wi-Fi. Cell connection is best for outside use and accurate GPS. Offline mode saves alerts and sends them when connected again.",
+        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and how it's worn. Battery life changes with device and feature use. Health monitoring needs a compatible smartwatch."
       }}
       proofBlocks={[
