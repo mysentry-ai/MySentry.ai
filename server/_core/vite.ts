@@ -48,15 +48,26 @@ export async function setupVite(app: Express, server: Server) {
 }
 
 export function serveStatic(app: Express) {
-  const distPath =
-    process.env.NODE_ENV === "development"
-      ? path.resolve(import.meta.dirname, "../..", "dist", "public")
-      : path.resolve(import.meta.dirname, "public");
+  // Use process.cwd() so the path is always relative to the project root,
+  // regardless of where the compiled bundle lives in the deployment container.
+  // import.meta.dirname can resolve to different locations depending on how
+  // esbuild bundles and where the production server runs.
+  const distPath = path.resolve(process.cwd(), "dist", "public");
+
   if (!fs.existsSync(distPath)) {
     console.error(
       `Could not find the build directory: ${distPath}, make sure to build the client first`
     );
   }
+
+  // Serve hashed assets with long-lived cache headers first (before catch-all)
+  app.use(
+    "/assets",
+    express.static(path.join(distPath, "assets"), {
+      immutable: true,
+      maxAge: "1y",
+    })
+  );
 
   app.use(express.static(distPath));
 
