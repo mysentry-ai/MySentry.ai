@@ -62,6 +62,8 @@ async function startServer() {
 
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
+    console.log(`[Build] Static assets served from: ${process.cwd()}/dist/public`);
+    console.log(`[Build] Deployed at: ${new Date().toISOString()}`);
   });
 }
 
