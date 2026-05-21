@@ -711,3 +711,11 @@
 - [x] Redesign navbar with mega-menu (grouped 2-column dropdowns with icons and descriptions)
 - [x] Redistribute all 88 blog post dates from Jan 2, 2026 with natural intervals
 - [x] Attach hero images to all 12 nurse blog posts
+
+## Production Deployment Fix
+- [x] Diagnosed blank page issue: Manus platform CDN intercepts /assets/* path before reaching Express server
+- [x] Changed Vite build.assetsDir from 'assets' to '_app' so built JS/CSS are served at /_app/* which reaches Express
+- [x] Updated serveStatic() in vite.ts to serve /_app/ with immutable cache headers
+- [x] Verified production build outputs to dist/public/_app/ with correct HTML references
+- [x] Confirmed all 62 tests pass
+- [x] Verified local production server serves /_app/* assets with correct MIME types

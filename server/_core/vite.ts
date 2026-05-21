@@ -62,8 +62,8 @@ export function serveStatic(app: Express) {
 
   // Serve hashed assets with long-lived cache headers first (before catch-all)
   app.use(
-    "/assets",
-    express.static(path.join(distPath, "assets"), {
+    "/_app",
+    express.static(path.join(distPath, "_app"), {
       immutable: true,
       maxAge: "1y",
     })
