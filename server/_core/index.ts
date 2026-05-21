@@ -1,7 +1,9 @@
 import "dotenv/config";
 import express from "express";
+import fs from "fs";
 import { createServer } from "http";
 import net from "net";
+import path from "path";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
@@ -46,11 +48,18 @@ async function startServer() {
       createContext,
     })
   );
-  // development mode uses Vite, production mode uses static files
-  if (process.env.NODE_ENV === "development") {
-    await setupVite(app, server);
-  } else {
+  // Use static serving if dist/public exists (production build is present),
+  // otherwise fall back to Vite dev server. This is more robust than relying
+  // solely on NODE_ENV which may not be set correctly in all deployment environments.
+  const distPublicPath = path.resolve(process.cwd(), "dist", "public");
+  const hasBuiltAssets = fs.existsSync(distPublicPath) && fs.existsSync(path.join(distPublicPath, "index.html"));
+  if (process.env.NODE_ENV !== "development" && hasBuiltAssets) {
     serveStatic(app);
+  } else {
+    if (!hasBuiltAssets && process.env.NODE_ENV !== "development") {
+      console.warn(`[Build] WARNING: dist/public not found at ${distPublicPath}. Falling back to Vite dev server.`);
+    }
+    await setupVite(app, server);
   }
 
   const preferredPort = parseInt(process.env.PORT || "3000");
