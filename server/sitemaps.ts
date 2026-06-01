@@ -105,6 +105,11 @@ function formatDate(date: Date | string | null): string {
 }
 
 export function registerSitemapRoutes(app: Express) {
+  // ── Static 301 redirects ──
+  app.get("/blog/protecting-teen-drivers", (_req, res) => {
+    res.redirect(301, "/blogs");
+  });
+
   // ── www → non-www redirect (production only) ──
   // Redirect www.mysentry.ai to mysentry.ai to prevent duplicate content
   app.use((req, res, next) => {

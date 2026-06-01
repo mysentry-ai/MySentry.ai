@@ -719,3 +719,6 @@
 - [x] Verified production build outputs to dist/public/_app/ with correct HTML references
 - [x] Confirmed all 62 tests pass
 - [x] Verified local production server serves /_app/* assets with correct MIME types
+
+## URL Redirects
+- [x] Add 301 redirect from /blog/protecting-teen-drivers to /blogs
