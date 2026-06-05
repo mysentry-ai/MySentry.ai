@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { AlertCircle, Heart, Clock, MapPin, ArrowRight, Zap, Activity, Users, Moon, Car } from "lucide-react";
 
 const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/eAqkYaznpJbyFziv.jpg";
-const LOGIN_URL = "https://dashboard.mysentry.ai/login";
+const LOGIN_URL = "https://dashboard.mysentry.ai/website-auth?redirect_url=login";
 
 const problems = [
   { icon: Moon, color: "bg-indigo-100 text-indigo-600", title: "1. Empty parking lots and dark commutes.", body: "Leaving a hospital at 3am means walking through parking structures and streets that are mostly empty. The same route that feels normal at noon feels completely different at 3am." },

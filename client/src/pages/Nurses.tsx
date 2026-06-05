@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 
 const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/UMhRglgqUKBlLDfM.jpg";
-const LOGIN_URL = "https://dashboard.mysentry.ai/login";
+const LOGIN_URL = "https://dashboard.mysentry.ai/website-auth?redirect_url=login";
 
 const nurseChallenges = [
   {

@@ -17,7 +17,7 @@
 import { describe, it, expect } from 'vitest';
 import { getEnterpriseSignupUrl, getSignupUrl } from './const';
 
-const BASE = 'https://dashboard.mysentry.ai/create-saas-account';
+const BASE = 'https://dashboard.mysentry.ai/website-auth/create-account';
 
 describe('Enterprise Plan Checkout URL — getEnterpriseSignupUrl()', () => {
   // ── Test 1: Employees+Families Monthly + 5 ────────────────────────────────

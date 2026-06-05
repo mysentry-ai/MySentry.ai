@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { AlertCircle, Heart, Clock, MapPin, ArrowRight, Zap, Activity, Users, Car } from "lucide-react";
 
 const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/rUMdMJIpZDvPYyBm.jpg";
-const LOGIN_URL = "https://dashboard.mysentry.ai/login";
+const LOGIN_URL = "https://dashboard.mysentry.ai/website-auth?redirect_url=login";
 
 const problems = [
   { icon: MapPin, color: "bg-red-100 text-red-600", title: "1. Unfamiliar housing and neighborhoods.", body: "Every new assignment drops you into a city you don't know. You're figuring out which streets are safe, which parking lots are well-lit, and which neighbors you can trust, all while starting a new job." },

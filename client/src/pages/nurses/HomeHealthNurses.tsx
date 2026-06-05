@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { AlertCircle, Heart, Clock, MapPin, ArrowRight, Zap, Activity, Users, Home } from "lucide-react";
 
 const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/brsrMeZqzKnRPjcC.jpg";
-const LOGIN_URL = "https://dashboard.mysentry.ai/login";
+const LOGIN_URL = "https://dashboard.mysentry.ai/website-auth?redirect_url=login";
 
 const problems = [
   { icon: Home, color: "bg-red-100 text-red-600", title: "1. Solo visits in unknown environments.", body: "You walk into homes you have never seen before, often without knowing what to expect inside. No security desk. No coworker down the hall. Just you and the patient." },

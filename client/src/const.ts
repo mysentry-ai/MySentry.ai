@@ -35,7 +35,7 @@ export const getFrontendBaseUrl = () => {
 
 // Generate login URL pointing to the MySentry dashboard
 export const getMySentryLoginUrl = (): string => {
-  return 'https://dashboard.mysentry.ai/login';
+  return 'https://dashboard.mysentry.ai/website-auth?redirect_url=login';
 };
 
 // Plan signup URL types
@@ -70,7 +70,7 @@ const ENTERPRISE_PLAN_UUIDS: Record<EnterpriseCoverage, Record<BillingCycle, str
 // Generate signup URL based on plan type and billing cycle
 export const getSignupUrl = (planType: PlanType, billingCycle: BillingCycle): string => {
   const planUuid = PLAN_UUIDS[planType][billingCycle];
-  return `https://dashboard.mysentry.ai/create-saas-account?plan=${planUuid}`;
+  return `https://dashboard.mysentry.ai/website-auth/create-account?plan=${planUuid}`;
 };
 
 // Generate Enterprise checkout URL with dynamic licence count.
@@ -82,7 +82,7 @@ export const getEnterpriseSignupUrl = (
 ): string => {
   const planUuid = ENTERPRISE_PLAN_UUIDS[coverage][billingCycle];
   const safeLicences = Math.max(5, Math.floor(licences));
-  const url = new URL('https://dashboard.mysentry.ai/create-saas-account');
+  const url = new URL('https://dashboard.mysentry.ai/website-auth/create-account');
   url.searchParams.set('plan', planUuid);
   url.searchParams.set('licences', String(safeLicences));
   return url.toString();

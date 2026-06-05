@@ -722,3 +722,11 @@
 
 ## URL Redirects
 - [x] Add 301 redirect from /blog/protecting-teen-drivers to /blogs
+
+## URL Updates (Login & Plan Signup)
+- [x] Update login URL to https://dashboard.mysentry.ai/website-auth?redirect_url=login (Navbar + 5 Nurses pages)
+- [x] Update Personal plan signup base URL to https://dashboard.mysentry.ai/website-auth/create-account (getSignupUrl in const.ts)
+- [x] Update Family plan signup base URL to https://dashboard.mysentry.ai/website-auth/create-account (getSignupUrl in const.ts)
+- [x] Update Enterprise plan signup base URL to https://dashboard.mysentry.ai/website-auth/create-account (getEnterpriseSignupUrl in const.ts)
+- [x] Update enterprise-checkout.test.ts BASE constant to match new URL
+- [x] All 62 tests pass

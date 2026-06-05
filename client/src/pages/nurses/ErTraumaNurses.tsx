@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 import { AlertCircle, Heart, Clock, MapPin, ArrowRight, Zap, Activity, Users, Car, Moon } from "lucide-react";
 
 const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/CdUihnsjRgcMzrEo.jpg";
-const LOGIN_URL = "https://dashboard.mysentry.ai/login";
+const LOGIN_URL = "https://dashboard.mysentry.ai/website-auth?redirect_url=login";
 
 const problems = [
   { icon: AlertCircle, color: "bg-red-100 text-red-600", title: "1. Patient and visitor aggression.", body: "ER nurses experience higher rates of workplace violence than almost any other profession. When a situation escalates, you need a way to call for backup in seconds, not minutes." },
