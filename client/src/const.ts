@@ -74,15 +74,15 @@ export const getSignupUrl = (planType: PlanType, billingCycle: BillingCycle): st
 };
 
 // Generate Enterprise checkout URL with dynamic licence count.
-// Minimum enforced: 5. Query parameter name is `licences` (not `licenses`).
+// Minimum enforced: 2. Query parameter name is `licences` (not `licenses`).
 export const getEnterpriseSignupUrl = (
   coverage: EnterpriseCoverage,
   billingCycle: BillingCycle,
   licences: number,
 ): string => {
   const planUuid = ENTERPRISE_PLAN_UUIDS[coverage][billingCycle];
-  const safeLicences = Math.max(5, Math.floor(licences));
-  const url = new URL('https://dashboard.mysentry.ai/website-auth/create-account');
+  const safeLicences = Math.max(2, Math.floor(licences));
+  const url = new URL('https://dashboard.mysentry.ai/create-saas-account');
   url.searchParams.set('plan', planUuid);
   url.searchParams.set('licences', String(safeLicences));
   return url.toString();

@@ -730,3 +730,11 @@
 - [x] Update Enterprise plan signup base URL to https://dashboard.mysentry.ai/website-auth/create-account (getEnterpriseSignupUrl in const.ts)
 - [x] Update enterprise-checkout.test.ts BASE constant to match new URL
 - [x] All 62 tests pass
+
+## Enterprise Pricing URL Updates
+- [x] Change Enterprise base URL from /website-auth/create-account to /create-saas-account
+- [x] Change minimum licences from 5 to 2 in getEnterpriseSignupUrl()
+- [x] Change initial licenses state from 5 to 2 in Pricing.tsx slider
+- [x] Change slider and input min attribute from 5 to 2 in Pricing.tsx
+- [x] Update enterprise-checkout.test.ts: new BASE URL, min=2 guardrail tests, 4 exact URL tests
+- [x] All 65 tests pass (3 new exact URL tests added)

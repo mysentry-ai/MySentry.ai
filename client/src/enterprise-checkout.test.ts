@@ -3,21 +3,21 @@
  *
  * Validates that getEnterpriseSignupUrl() produces the correct checkout URL for
  * all four Enterprise plan variants with dynamic licence counts, and that the
- * minimum-licence guardrail (min = 5) is enforced.
+ * minimum-licence guardrail (min = 2) is enforced.
  *
  * Test matrix from spec:
  *  1. Employees+Families Monthly + 5   → plan ...0005, licences=5
  *  2. Employees+Families Yearly  + 11  → plan ...0006, licences=11
  *  3. Employees Only     Monthly + 30  → plan ...0007, licences=30
  *  4. Employees Only     Yearly  + 75  → plan ...0008, licences=75
- *  5. Quantity 4                       → blocked/corrected to 5
+ *  5. Quantity 1                       → blocked/corrected to 2
  *  6. Non-Enterprise plans unchanged   → getSignupUrl still returns correct URLs
  */
 
 import { describe, it, expect } from 'vitest';
 import { getEnterpriseSignupUrl, getSignupUrl } from './const';
 
-const BASE = 'https://dashboard.mysentry.ai/website-auth/create-account';
+const BASE = 'https://dashboard.mysentry.ai/create-saas-account';
 
 describe('Enterprise Plan Checkout URL — getEnterpriseSignupUrl()', () => {
   // ── Test 1: Employees+Families Monthly + 5 ────────────────────────────────
@@ -56,25 +56,25 @@ describe('Enterprise Plan Checkout URL — getEnterpriseSignupUrl()', () => {
     expect(parsed.searchParams.get('licences')).toBe('75');
   });
 
-  // ── Test 5: Guardrail — quantity 4 is normalised to 5 ────────────────────
-  it('Test 5: Quantity 4 is blocked/corrected to 5 (minimum enforcement)', () => {
-    const url = getEnterpriseSignupUrl('employees_only', 'monthly', 4);
+  // ── Test 5: Guardrail — quantity 1 is normalised to 2 ────────────────────
+  it('Test 5: Quantity 1 is blocked/corrected to 2 (minimum enforcement)', () => {
+    const url = getEnterpriseSignupUrl('employees_only', 'monthly', 1);
     const parsed = new URL(url);
-    expect(parsed.searchParams.get('licences')).toBe('5');
+    expect(parsed.searchParams.get('licences')).toBe('2');
   });
 
-  // ── Guardrail: quantity 0 is normalised to 5 ─────────────────────────────
-  it('Guardrail: Quantity 0 is corrected to 5', () => {
+  // ── Guardrail: quantity 0 is normalised to 2 ─────────────────────────────
+  it('Guardrail: Quantity 0 is corrected to 2', () => {
     const url = getEnterpriseSignupUrl('employees_families', 'yearly', 0);
     const parsed = new URL(url);
-    expect(parsed.searchParams.get('licences')).toBe('5');
+    expect(parsed.searchParams.get('licences')).toBe('2');
   });
 
-  // ── Guardrail: negative quantity is normalised to 5 ──────────────────────
-  it('Guardrail: Negative quantity is corrected to 5', () => {
+  // ── Guardrail: negative quantity is normalised to 2 ──────────────────────
+  it('Guardrail: Negative quantity is corrected to 2', () => {
     const url = getEnterpriseSignupUrl('employees_only', 'monthly', -10);
     const parsed = new URL(url);
-    expect(parsed.searchParams.get('licences')).toBe('5');
+    expect(parsed.searchParams.get('licences')).toBe('2');
   });
 
   // ── Guardrail: query param name must be `licences`, NOT `licenses` ────────
@@ -91,15 +91,25 @@ describe('Enterprise Plan Checkout URL — getEnterpriseSignupUrl()', () => {
     expect(parsed.searchParams.get('licences')).toBe('500');
   });
 
-  // ── Guardrail: no stale licences=2 in any Enterprise URL ─────────────────
-  it('Guardrail: No stale licences=2 in Enterprise URLs (default is 5)', () => {
-    const url1 = getEnterpriseSignupUrl('employees_families', 'monthly', 5);
-    const url2 = getEnterpriseSignupUrl('employees_families', 'yearly', 5);
-    const url3 = getEnterpriseSignupUrl('employees_only', 'monthly', 5);
-    const url4 = getEnterpriseSignupUrl('employees_only', 'yearly', 5);
-    [url1, url2, url3, url4].forEach((url) => {
-      expect(new URL(url).searchParams.get('licences')).not.toBe('2');
-    });
+  // ── Exact URL validation for default licences=2 ──────────────────────────
+  it('Exact URL: Employee+Families Monthly with licences=2', () => {
+    const url = getEnterpriseSignupUrl('employees_families', 'monthly', 2);
+    expect(url).toBe('https://dashboard.mysentry.ai/create-saas-account?plan=550e8400-e29b-41d4-a716-446655440005&licences=2');
+  });
+
+  it('Exact URL: Employee+Families Yearly with licences=2', () => {
+    const url = getEnterpriseSignupUrl('employees_families', 'yearly', 2);
+    expect(url).toBe('https://dashboard.mysentry.ai/create-saas-account?plan=550e8400-e29b-41d4-a716-446655440006&licences=2');
+  });
+
+  it('Exact URL: Employee Only Monthly with licences=2', () => {
+    const url = getEnterpriseSignupUrl('employees_only', 'monthly', 2);
+    expect(url).toBe('https://dashboard.mysentry.ai/create-saas-account?plan=550e8400-e29b-41d4-a716-446655440007&licences=2');
+  });
+
+  it('Exact URL: Employee Only Yearly with licences=2', () => {
+    const url = getEnterpriseSignupUrl('employees_only', 'yearly', 2);
+    expect(url).toBe('https://dashboard.mysentry.ai/create-saas-account?plan=550e8400-e29b-41d4-a716-446655440008&licences=2');
   });
 });
 

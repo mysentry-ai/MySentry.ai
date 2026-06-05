@@ -265,7 +265,7 @@ export default function Pricing() {
   const [mode, setMode] = useState<Mode>("b2c");
   const [coverage, setCoverage] = useState<Coverage>("individual");
   const [billing, setBilling] = useState<Billing>("monthly");
-  const [licenses, setLicenses] = useState(5);
+  const [licenses, setLicenses] = useState(2);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
@@ -328,9 +328,9 @@ export default function Pricing() {
     }
   }, [mode, coverage, billing, licenses]);
 
-  /* License slider handler — minimum is 5 for Enterprise plans */
+  /* License slider handler — minimum is 2 for Enterprise plans */
   const handleSliderChange = useCallback((val: number) => {
-    const clamped = Math.max(5, Math.min(10000, val));
+    const clamped = Math.max(2, Math.min(10000, val));
     setLicenses(clamped);
   }, []);
 
@@ -450,7 +450,7 @@ export default function Pricing() {
                   <input
                     type="number"
                     value={licenses}
-                    min={5}
+                    min={2}
                     max={10000}
                     onChange={(e) => handleInputChange(e.target.value)}
                     className="w-[90px] px-3 py-2.5 text-lg font-bold border-2 border-[#E2E8F0] rounded-xl text-center text-[#0F172A] outline-none transition-colors focus:border-[#6ad990]"
@@ -458,13 +458,13 @@ export default function Pricing() {
                   </div>
                   <input
                     type="range"
-                    min={5}
+                    min={2}
                     max={500}
                     value={Math.min(licenses, 500)}
                     onChange={(e) => handleSliderChange(parseInt(e.target.value, 10))}
                     className="w-full accent-[#6ad990] h-2 rounded-full appearance-none cursor-pointer mb-6"
                     style={{
-                      background: `linear-gradient(to right, #6ad990 ${((Math.min(licenses, 500) - 5) / 495) * 100}%, #E2E8F0 ${((Math.min(licenses, 500) - 5) / 495) * 100}%)`,
+                      background: `linear-gradient(to right, #6ad990 ${((Math.min(licenses, 500) - 2) / 498) * 100}%, #E2E8F0 ${((Math.min(licenses, 500) - 2) / 498) * 100}%)`,
                     }}
                   />
                   <div className="flex gap-2 flex-wrap">
