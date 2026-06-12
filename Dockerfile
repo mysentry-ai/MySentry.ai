@@ -1,7 +1,5 @@
-# ─────────────────────────────────────────────────────────────────────────────
 # Stage 1 — deps
-#   Install ALL dependencies (dev + prod) so the build tools are available.
-# ─────────────────────────────────────────────────────────────────────────────
+# Install ALL dependencies (dev + prod) so the build tools are available.
 FROM node:22-alpine AS deps
 
 # Install pnpm via corepack (matches the version declared in package.json)
@@ -17,10 +15,8 @@ COPY patches ./patches
 RUN pnpm install --frozen-lockfile
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Stage 2 — build
-#   Compile the Vite frontend and esbuild server bundle.
-# ─────────────────────────────────────────────────────────────────────────────
+# Compile the Vite frontend and esbuild server bundle.
 FROM node:22-alpine AS builder
 
 RUN corepack enable && corepack prepare pnpm@10.4.1 --activate
@@ -38,10 +34,8 @@ COPY . .
 RUN NODE_ENV=production pnpm build
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Stage 3 — runtime
-#   Lean image: only production deps + built artefacts.
-# ─────────────────────────────────────────────────────────────────────────────
+# Lean image: only production deps + built artefacts.
 FROM node:22-alpine AS runtime
 
 RUN corepack enable && corepack prepare pnpm@10.4.1 --activate
@@ -61,6 +55,9 @@ COPY --from=builder /app/dist ./dist
 
 # Copy drizzle schema/migrations (needed at runtime for db:push if ever run)
 COPY --from=builder /app/drizzle ./drizzle
+
+# Copy environment file for runtime configuration
+COPY .env ./.env
 
 # Switch to non-root user
 USER appuser
