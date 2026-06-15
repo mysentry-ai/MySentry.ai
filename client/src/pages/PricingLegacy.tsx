@@ -178,10 +178,8 @@ export default function Pricing() {
 
   return (
     <Layout>
-      <SEO 
-        title="MySentry Pricing | Personal Safety Plans from $15/mo | 7-Day Free Trial" 
-        description="Choose your MySentry plan: Individual ($15/mo) or Family ($30/mo, up to 6 members). Includes fall detection, panic button, crash detection, and 24/7 professional monitoring. Try free for 7 days."
-        canonical="https://mysentry.ai/pricing"
+      <SEO
+        noindex
         schema={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -232,7 +230,6 @@ export default function Pricing() {
       <HeroSection
         label="Flexible Plans"
         title={<>Pricing and Plans<br/><span className="text-gray-600">Within Every Budget.</span></>}
-        description="Choose the protection that fits your life. Whether for yourself, your family, or your entire workforce, MySentry offers comprehensive safety & health monitoring with emergency response at an affordable price."
         imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zhjtYYsGkjNemizw.png"
         imageAlt="Safety Dispenser"
         showCta={false}

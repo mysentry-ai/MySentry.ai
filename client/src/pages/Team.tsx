@@ -107,37 +107,29 @@ const TeamSection = ({ title, subtitle, members, bgColor = "bg-white" }: { title
 export const Team = () => {
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
-      <SEO 
-        title="Meet the MySentry Team | Leadership & Advisory Board" 
-        description="Meet the team behind MySentry. Our leadership and advisory board bring decades of experience in safety technology, healthcare, and enterprise solutions."
-        canonical="https://mysentry.ai/team"
-      />
+      <SEO />
       <Navbar />
       
       <HeroSection
         label="Our Team"
         title={<>The Right Team<br/><span className="text-gray-600">For A Safer Tomorrow.</span></>}
-        description="At MySentry.ai, safety begins with empathy. Our team brings together innovators, AI experts, and wellness advocates driven by one shared purpose: to make safety and well-being accessible for everyone."
         imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/WMyuwyfaQGypncrA.jpg"
         imageAlt="MySentry Team"
       />
 
-      <TeamSection 
-        title="Leadership: Vision with Heart"
-        subtitle="Our leaders drive MySentry’s mission forward, building technology that protects, empowers, & connects."
+      <TeamSection
+        sub
         members={leadership}
       />
 
-      <TeamSection 
-        title="Board of Advisors: Guided by Experience"
-        subtitle="Industry pioneer who help us grow responsibly, stay people-first, and think beyond technology."
+      <TeamSection
+        sub
         members={advisors}
         bgColor="bg-gray-50"
       />
 
-      <TeamSection 
-        title="Marketing & Product Team: Turning Ideas Into Impact"
-        subtitle="The minds behind every experience, designing solutions that feel human, intuitive, and safe."
+      <TeamSection
+        sub
         members={productTeam}
       />
 

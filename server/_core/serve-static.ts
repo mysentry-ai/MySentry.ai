@@ -87,6 +87,7 @@ export function serveStatic(app: Express) {
       html = injectPlaceholder(html, "SSR_OG_TYPE", meta.ogType);
       html = injectPlaceholder(html, "SSR_OG_IMAGE", meta.ogImage);
       html = injectPlaceholder(html, "SSR_CANONICAL", canonicalUrl);
+      html = injectPlaceholder(html, "SSR_ROBOTS", meta.robots);
 
       res
         .status(200)

@@ -27,54 +27,54 @@ export const SITE_NAME = "MySentry";
 export const ROUTE_META: Record<string, RouteMeta> = {
   // ─── Core pages ───────────────────────────────────────────────────────────
   "/": {
-    title: "MySentry - 24/7 Personal Safety & Health Monitoring App",
+    title: "Personal Safety & Health Monitoring, 24/7",
     description:
-      "MySentry turns your smartphone into a 24/7 safety companion. Panic alarm, fall detection, crash detection, health monitoring, and live video emergency response. Start your free trial today.",
+      "Turn your phone into a 24/7 safety companion. Panic alarm, fall detection, health monitoring, and live emergency response. Start your free trial.",
   },
   "/about-us": {
-    title: "About MySentry | Our Mission to Make Safety Accessible",
+    title: "About MySentry | Our Mission & Story",
     description:
-      "Learn about MySentry's mission to provide 24/7 personal safety and health monitoring with emergency response. Founded to make professional-grade protection accessible to everyone.",
+      "MySentry was founded to make professional-grade safety accessible to everyone. Learn about our mission, team, and 24/7 emergency response platform.",
   },
   "/how-it-works": {
-    title: "How MySentry Works | Panic Button, Fall Detection & Monitoring",
+    title: "How MySentry Works | Panic Button & Monitoring",
     description:
-      "See how MySentry protects you in 3 simple steps. Panic button, fall detection, crash detection, health monitoring, and 24/7 professional response with live video. Try free for 7 days.",
+      "Panic button, fall detection, crash detection, and 24/7 professional response with live video. See how MySentry protects you in 3 simple steps.",
   },
   "/pricing": {
-    title: "MySentry Pricing | Personal Safety Plans from $15/mo",
+    title: "Pricing | Personal Safety Plans from $15/mo",
     description:
-      "Choose the protection that fits your life. Individual plans from $15/mo, Family plans from $30/mo. 24/7 professional monitoring, fall detection, panic alarm, and live video response. Start your 7-day free trial.",
+      "MySentry plans from $15/mo. Panic alarm, fall detection, crash detection, and 24/7 monitoring on every tier. Start your 7-day free trial.",
   },
   "/pricing-legacy": {
-    title: "MySentry Pricing | Personal Safety Plans from $15/mo",
+    title: "Legacy Pricing | Plans from $15/mo",
     description:
-      "Choose your MySentry plan: Individual ($15/mo) or Family ($30/mo, up to 6 members). Includes fall detection, panic button, crash detection, and 24/7 professional monitoring. Try free for 7 days.",
+      "Individual ($15/mo) or Family ($30/mo). Fall detection, panic button, crash detection, and 24/7 monitoring. Try free for 7 days.",
   },
   "/contact": {
-    title: "Contact MySentry | Get Help, Request a Demo, or Partner",
+    title: "Contact MySentry | Support & Sales",
     description:
-      "Contact MySentry for support, sales inquiries, partnership opportunities, or to schedule a demo. Our team is ready to help you find the right personal safety solution.",
+      "Get help, request a demo, or explore partnership opportunities. Our team is ready to help you find the right personal safety solution.",
   },
   "/team": {
-    title: "MySentry Team | Leadership & Advisory Board",
+    title: "Our Team | Leadership & Advisory Board",
     description:
       "Meet the team behind MySentry. Our leadership and advisory board bring decades of experience in safety technology, healthcare, and enterprise solutions.",
   },
   "/partner": {
-    title: "Become a MySentry Dealer | Partner Program for Safety Solutions",
+    title: "Become a MySentry Dealer | Partner Program",
     description:
-      "Join MySentry's dealer network. Offer AI-powered personal safety, health monitoring, and emergency response solutions to your clients. Competitive margins and full support.",
+      "Join MySentry's dealer network. Offer personal safety, health monitoring, and emergency response to your clients. Competitive margins and full support.",
   },
   "/partners": {
-    title: "MySentry Partners | Safety Technology Partnerships & Integrations",
+    title: "MySentry Partners | Technology & Channel",
     description:
-      "Explore MySentry's technology and channel partnerships. We work with leading safety, healthcare, and enterprise organizations to deliver comprehensive personal protection solutions.",
+      "Explore MySentry's technology and channel partnerships with leading safety, healthcare, and enterprise organizations delivering personal protection.",
   },
   "/privacy": {
     title: "Privacy Policy | MySentry",
     description:
-      "Read MySentry's privacy policy. Learn how we collect, use, and protect your personal data, health information, and location data in compliance with applicable regulations.",
+      "Read MySentry's privacy policy. How we collect, use, and protect your personal data, health information, and location data.",
   },
   "/terms": {
     title: "Terms & Conditions | MySentry",
@@ -84,56 +84,56 @@ export const ROUTE_META: Record<string, RouteMeta> = {
 
   // ─── Audience pages ───────────────────────────────────────────────────────
   "/employers": {
-    title: "Lone Worker Safety App for Employers | Fall Detection & Panic Button",
+    title: "Lone Worker Safety App for Employers",
     description:
-      "Protect your workforce with MySentry. 24/7 fall detection, panic buttons, health monitoring, and live video response for lone workers and field employees. Reduce liability and comply with OSHA.",
+      "Protect your workforce. Fall detection, panic buttons, health monitoring, and live video response for lone workers. Reduce liability, comply with OSHA.",
   },
   "/families": {
-    title: "Family Safety App | Crash Detection, GPS & Health Alerts",
+    title: "Family Safety App | GPS, Crash & Health Alerts",
     description:
-      "Keep your whole family safe with MySentry. Real-time GPS, crash detection, fall alerts, and health monitoring for kids, teens, parents, and grandparents. Start your 7-day free trial.",
+      "Keep your whole family safe with real-time GPS, crash detection, fall alerts, and health monitoring for kids, teens, parents, and grandparents. Try free.",
   },
   "/females": {
-    title: "Safety App for Women | Discreet Panic Button & 24/7 Monitoring",
+    title: "Safety App for Women | Panic Button & Monitoring",
     description:
-      "MySentry keeps women safe with a discreet panic button, live location sharing, and 24/7 professional monitoring. Walk, run, date, and travel with confidence. Start your free trial.",
+      "MySentry keeps women safe with a discreet panic button, live location, and 24/7 monitoring. Walk, run, commute, and travel with confidence.",
   },
   "/seniors": {
-    title: "Medical Alert App for Seniors | Fall Detection & Health Monitoring",
+    title: "Medical Alert App for Seniors | Fall Detection",
     description:
-      "MySentry helps seniors stay independent with 24/7 fall detection, health monitoring, and emergency response. No pendant needed, just your phone and smartwatch. Start your free trial.",
+      "MySentry helps seniors stay independent with fall detection, health monitoring, and emergency response. No pendant needed — just your phone and smartwatch.",
   },
 
   // ─── Nurses pages ─────────────────────────────────────────────────────────
   "/nurses": {
-    title: "Nurse Safety App | Panic Button, Fall Detection & Health Monitoring",
+    title: "Nurse Safety App | Panic Button & Monitoring",
     description:
-      "MySentry is the nurse safety app with a one-press panic alarm, fall detection, MeetSafe check-ins, and 24/7 professional monitoring. Built for home health, travel, ER, and night-shift nurses.",
+      "Panic button, fall detection, and 24/7 monitoring for nurses. Built for home health, travel, ER, and night-shift roles. Start free.",
   },
   "/nurses/er-trauma": {
-    title: "ER Nurse Safety App | Duress Alarm & Incident Monitoring",
+    title: "ER & Trauma Nurse Safety | Panic & Monitoring",
     description:
-      "MySentry gives ER and trauma nurses a discreet duress alarm, fall detection, and 24/7 monitoring for high-pressure shifts. Protect yourself on every shift. Start free.",
+      "Panic alarm, fall detection, and 24/7 monitoring for ER and trauma nurses on high-pressure shifts. Protect yourself on every shift. Start free.",
   },
   "/nurses/home-health": {
-    title: "Home Health Nurse Safety App | Lone Worker Protection",
+    title: "Home Health Nurse Safety App | Lone Worker",
     description:
-      "MySentry protects home health nurses working alone in patient homes. One-press panic alarm, MeetSafe check-ins, and 24/7 monitoring so help is always close. Start free.",
+      "Protect home health nurses working alone in patient homes. Panic alarm, MeetSafe check-ins, and 24/7 monitoring so help is always close. Start free.",
   },
   "/nurses/night-shift": {
-    title: "Night Shift Nurse Safety App | Crash Detection & 24/7 Monitoring",
+    title: "Night Shift Nurse Safety App | Crash Detection",
     description:
-      "MySentry protects night shift nurses during late-night commutes, parking lot walks, and post-shift drives home. Crash detection, panic alarm, and 24/7 monitoring. Start free.",
+      "MySentry protects night shift nurses during late-night commutes and post-shift drives. Crash detection, panic alarm, and 24/7 monitoring. Start free.",
   },
   "/nurses/travel-nurses": {
-    title: "Travel Nurse Safety App | Panic Button & 24/7 Monitoring",
+    title: "Travel Nurse Safety App | Panic & Monitoring",
     description:
-      "MySentry keeps travel nurses safe in unfamiliar cities, new facilities, and late-night commutes. Panic alarm, fall detection, and 24/7 monitoring on your phone and watch. Start free.",
+      "Keep travel nurses safe in unfamiliar cities and new facilities. Panic alarm, fall detection, and 24/7 monitoring on your phone and watch. Start free.",
   },
 
   // ─── Blog ─────────────────────────────────────────────────────────────────
   "/blogs": {
-    title: "Safety & Health Blog | Personal Safety Tips & Emergency Preparedness",
+    title: "MySentry Blog | Safety & Emergency Preparedness",
     description:
       "Expert advice on personal safety, fall prevention, family protection, and emergency preparedness. Read the latest from MySentry's safety and health blog.",
   },
@@ -142,7 +142,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/features": {
     title: "Safety & Monitoring Features | MySentry",
     description:
-      "Explore all of MySentry's powerful safety and health monitoring features. From panic alarms to fall detection, see how we protect you 24/7 with live video emergency response.",
+      "Panic alarm, fall detection, crash detection, health monitoring, and live video emergency response. See how MySentry protects you 24/7.",
   },
   "/features/panic-button-app": {
     title: "Panic Button App | One-Press Emergency Alarm with Live Video",
@@ -354,7 +354,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/safety-for/seniors-aging-in-place": {
     title: "Aging in Place Safety: Keep Seniors Safe at Home",
     description:
-      "Ensure aging in place safety for your parents. MySentry offers automatic fall detection, health monitoring, and 24/7 professional response. Keep loved ones safe at home.",
+      "Help seniors live independently with fall detection, health monitoring, and 24/7 response. Keep loved ones safe at home. Start free trial.",
   },
   "/safety-for/solo-travelers": {
     title: "Solo Travel Safety App | Stay Safe Anywhere in the World",

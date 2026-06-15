@@ -45,12 +45,9 @@ export default function ErTraumaNurses() {
   return (
     <Layout>
       <SEO
-        title="ER Nurse Safety App | Duress Alarm & Incident Monitoring | MySentry"
-        description="MySentry gives ER and trauma nurses a discreet duress alarm, fall detection, and 24/7 monitoring for high-pressure shifts. Start free."
-        canonical="https://mysentry.ai/nurses/er-trauma"
         schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
       />
-      <HeroSection label="ER and Trauma Nurse Safety" title={<>Safety for ER and Trauma Nurses<br /><span className="text-gray-600">When Every Second Counts</span></>} description="ER nurses face the highest rates of workplace violence in healthcare. MySentry gives you a discreet panic alarm, fall detection, and 24/7 monitoring so you can focus on your patients, not your own safety." imageSrc={HERO_IMAGE} imageAlt="ER nurse in hospital corridor" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
+      <HeroSection label="ER and Trauma Nurse Safety" title={<>Safety for ER and Trauma Nurses<br /><span className="text-gray-600">When Every Second Counts</span></>} imageSrc={HERO_IMAGE} imageAlt="ER nurse in hospital corridor" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
 
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container max-w-3xl">

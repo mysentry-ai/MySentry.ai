@@ -186,16 +186,11 @@ export default function Employers() {
 
   return (
     <Layout>
-      <SEO 
-        title="Lone Worker Safety App for Employers | Fall Detection & Panic Button | MySentry" 
-        description="Protect your workforce with MySentry. 24/7 fall detection, panic buttons, health monitoring, and live video response for lone workers and field employees. Reduce liability and comply with OSHA."
-        canonical="https://mysentry.ai/employers"
-      />
+      <SEO />
       
       <HeroSection
         label="Workforce Protection"
         title={<>Protect Your<br/><span className="text-gray-600">Greatest Asset.</span></>}
-        description="Workplace accidents happen fast. MySentry detects falls, crashes, and health emergencies instantly, alerting 24/7 professional monitoring with live video so help arrives fast. We provide objective evidence to protect your business from liability while ensuring your team gets home safe."
         imageSrc="/images/business-meeting-happy.jpg"
         imageAlt="Diverse team having a productive meeting"
         ctaText="BOOK A DEMO"

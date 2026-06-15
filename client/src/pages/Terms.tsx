@@ -5,16 +5,10 @@ import HeroSection from "@/components/HeroSection";
 export default function Terms() {
   return (
     <Layout>
-      <SEO 
-        title="Terms & Conditions | MySentry" 
-        description="Read the Terms and Conditions for using MySentry services, including the mobile app, website, and 24/7 monitoring platform."
-        canonical="https://mysentry.ai/terms"
-      />
+      <SEO />
       
       <HeroSection
         label="Legal"
-        title="Terms & Conditions"
-        description="Last Updated: January 2026"
         imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/IElpNKDyEyZQAZJG.jpg"
         imageAlt="Terms & Conditions"
       />

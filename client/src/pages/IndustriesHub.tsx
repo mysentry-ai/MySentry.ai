@@ -52,11 +52,7 @@ const industries = [
 export default function IndustriesHub() {
   return (
     <Layout>
-      <SEO
-        title="Industry Safety Solutions | MySentry"
-        description="MySentry offers tailored 24/7 safety monitoring for home healthcare, construction, retail, hospitality, real estate, education, and security industries."
-        canonical="https://mysentry.ai/industries"
-      />
+      <SEO />
       <section className="pt-32 pb-20 bg-gradient-to-b from-[#e8f5e9] to-white">
         <div className="container max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">

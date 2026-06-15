@@ -45,12 +45,9 @@ export default function HomeHealthNurses() {
   return (
     <Layout>
       <SEO
-        title="Home Health Nurse Safety App | Lone Worker Protection | MySentry"
-        description="MySentry protects home health nurses working alone in patient homes. One-press panic alarm, MeetSafe check-ins, and 24/7 monitoring so help is always close. Start free."
-        canonical="https://mysentry.ai/nurses/home-health"
         schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
       />
-      <HeroSection label="Home Health Nurse Safety" title={<>Safety for Home Health Nurses<br /><span className="text-gray-600">Working Alone</span></>} description="You walk into homes you have never seen before, alone. MySentry gives you a panic alarm, check-in timers, and 24/7 professional monitoring so someone always knows where you are." imageSrc={HERO_IMAGE} imageAlt="Home health nurse at patient's front door" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
+      <HeroSection label="Home Health Nurse Safety" title={<>Safety for Home Health Nurses<br /><span className="text-gray-600">Working Alone</span></>} imageSrc={HERO_IMAGE} imageAlt="Home health nurse at patient's front door" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
 
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container max-w-3xl">

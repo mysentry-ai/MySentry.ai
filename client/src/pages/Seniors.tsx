@@ -180,16 +180,11 @@ export default function Seniors() {
 
   return (
     <Layout>
-      <SEO 
-        title="Medical Alert App for Seniors | Fall Detection & Health Monitoring | MySentry" 
-        description="MySentry helps seniors stay independent with 24/7 fall detection, health monitoring, and emergency response. No pendant needed, just your phone and smartwatch. Start your free trial."
-        canonical="https://mysentry.ai/seniors"
-      />
+      <SEO />
       
       <HeroSection
         label="Independence & Dignity"
         title={<>Live Life on<br/><span className="text-gray-600">Your Own Terms.</span></>}
-        description="No bulky pendants. No stigma. Just a stylish smartwatch that protects you 24/7 with fall detection, health monitoring, and instant access to help. MySentry transforms raw wearable data into personalized insights and real-time safety alerts."
         imageSrc="/images/happy-senior-watch.jpg"
         imageAlt="Active senior enjoying life"
       />
@@ -276,9 +271,8 @@ export default function Seniors() {
       </section>
 
       {/* CTA SECTION */}
-      <GetStartedSection 
-        title="Ready to Live Fearlessly?"
-        subtitle="Join thousands of seniors who have reclaimed their independence with MySentry."
+      <GetStartedSection
+        sub
         ctaText="Start Your 7-Day Free Trial"
         image="/images/senior-couple-walking.jpg"
       />

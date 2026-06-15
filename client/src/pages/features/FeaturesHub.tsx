@@ -87,17 +87,12 @@ const features = [
 export default function FeaturesHub() {
   return (
     <Layout>
-      <SEO
-        title="Safety & Monitoring Features | MySentry"
-        description="Explore all of MySentry's powerful safety and health monitoring features. From panic alarms to fall detection, see how we protect you 24/7."
-        canonical="https://mysentry.ai/features"
-      />
+      <SEO />
 
       {/* Hero Section */}
       <HeroSection
         label="Complete Protection Suite"
         title={<>One App. Total<br/><span className="text-gray-600">Peace of Mind.</span></>}
-        description="Explore the powerful safety and health monitoring features that keep you protected and connected, 24/7. From panic alarms to health insights, MySentry has you covered."
         imageSrc="/images/hero-section.svg"
         imageAlt="MySentry safety features overview"
       />
@@ -225,8 +220,7 @@ export default function FeaturesHub() {
 
       {/* CTA Section */}
       <GetStartedSection
-        title="Experience Every Feature"
-        subtitle="Start your free trial and explore all of MySentry's safety and health monitoring features."
+        sub
         ctaText="Start Your 7-Day Free Trial"
       />
     </Layout>

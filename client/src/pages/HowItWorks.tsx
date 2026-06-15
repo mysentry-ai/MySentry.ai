@@ -13,10 +13,7 @@ import FAQs from "@/components/FAQs";
 export default function Features() {
   return (
     <Layout>
-      <SEO 
-        title="How MySentry Works | Panic Button, Fall Detection & 24/7 Monitoring" 
-        description="See how MySentry protects you in 3 simple steps. Panic button, fall detection, crash detection, health monitoring, and 24/7 professional response with live video. Try free for 7 days."
-        canonical="https://mysentry.ai/how-it-works"
+      <SEO
         schema={[
           {
             "@context": "https://schema.org",
@@ -93,7 +90,6 @@ export default function Features() {
       <HeroSection
         label="Advanced Protection System"
         title={<>Your Smartwatch Collects Data.<br/><span className="text-gray-600">MySentry Gives You Answers.</span></>}
-        description="MySentry transforms raw wearable data into personalized insights, real-time safety alerts, and proactive health guidance, all from your Apple Watch or Samsung Watch."
         imageSrc="/images/hero-section.svg"
         imageAlt="Happy senior checking smartwatch"
       />

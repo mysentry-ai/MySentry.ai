@@ -86,12 +86,16 @@ const DEFAULT_META: RouteMeta = {
 
 // ─── Public API ───────────────────────────────────────────────────────────────
 
+// Routes that should be excluded from search engine indexing
+const NOINDEX_ROUTES = new Set(["/pricing-legacy"]);
+
 export type ResolvedMeta = {
   title: string;          // Full title including "| MySentry" suffix
   description: string;
   ogType: string;
   ogImage: string;
   canonicalPath: string;  // The path used for the canonical URL
+  robots: string;         // e.g. "index,follow" or "noindex,follow"
 };
 
 /**
@@ -128,11 +132,14 @@ export async function resolveMeta(
     ? raw.title
     : `${raw.title}${titleSuffix}`;
 
+  const robots = NOINDEX_ROUTES.has(path) ? "noindex,follow" : "index,follow";
+
   return {
     title: fullTitle,
     description: raw.description,
     ogType: raw.ogType ?? "website",
     ogImage: raw.ogImage ?? DEFAULT_OG_IMAGE,
     canonicalPath: path,
+    robots,
   };
 }

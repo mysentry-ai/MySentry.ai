@@ -35,11 +35,7 @@ const comparisons = [
 export default function CompareHub() {
   return (
     <Layout>
-      <SEO
-        title="MySentry vs Competitors | Safety App Comparison"
-        description="Compare MySentry with Noonlight, Life360, FallCall, Google Personal Safety, and SOSecure/ADT. See which safety app is right for you."
-        canonical="https://mysentry.ai/compare"
-      />
+      <SEO />
       <section className="pt-32 pb-20 bg-gradient-to-b from-[#e8f5e9] to-white">
         <div className="container max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
