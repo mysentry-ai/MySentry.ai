@@ -3,6 +3,10 @@ import fs from "fs";
 import path from "path";
 import { resolveMeta } from "../seo/resolve-meta";
 
+// Hardcoded production origin — never derive from req.protocol which returns
+// 'http' when Express sits behind an AWS ALB that terminates SSL.
+const SITE_ORIGIN = "https://mysentry.ai";
+
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 
 /**
@@ -64,17 +68,18 @@ export function serveStatic(app: Express) {
     }
 
     try {
-      const baseUrl = `${req.protocol}://${req.get("host")}`;
       const cleanPath = req.originalUrl.split("?")[0]; // strip query string
 
       // Resolve meta (async — may hit DB for blog posts, cached 60s)
-      const meta = await resolveMeta(cleanPath, baseUrl);
+      const meta = await resolveMeta(cleanPath, SITE_ORIGIN);
 
       // Read template on every request so hot-reloads in staging work;
       // in production the OS page cache makes this effectively free.
       const template = fs.readFileSync(indexHtmlPath, "utf-8");
 
-      const canonicalUrl = `${baseUrl}${meta.canonicalPath}`;
+      // Always use SITE_ORIGIN so canonical/og:url are https:// even when
+      // Express is behind an ALB that forwards over plain HTTP.
+      const canonicalUrl = `${SITE_ORIGIN}${meta.canonicalPath}`;
 
       let html = template;
       html = injectPlaceholder(html, "SSR_TITLE", meta.title);
