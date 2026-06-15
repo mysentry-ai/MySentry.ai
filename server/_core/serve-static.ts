@@ -1,13 +1,32 @@
-import express, { type Express } from "express";
+import express, { type Express, type Request, type Response, type NextFunction } from "express";
 import fs from "fs";
 import path from "path";
+import { resolveMeta } from "../seo/resolve-meta";
+
+// ─── Helpers ──────────────────────────────────────────────────────────────────
+
+/**
+ * Replace SSR placeholder pairs in the HTML template.
+ * Pattern: <!--SSR_KEY-->default<!--/SSR_KEY-->
+ */
+function injectPlaceholder(html: string, key: string, value: string): string {
+  // Escape the value so it's safe inside HTML attribute values and text nodes
+  const escaped = value
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+  const re = new RegExp(`<!--${key}-->[\\s\\S]*?<!--\\/${key}-->`, "g");
+  return html.replace(re, escaped);
+}
+
+// ─── Main export ─────────────────────────────────────────────────────────────
 
 export function serveStatic(app: Express) {
   // Use process.cwd() so the path is always relative to the project root,
   // regardless of where the compiled bundle lives in the deployment container.
-  // import.meta.dirname can resolve to different locations depending on how
-  // esbuild bundles and where the production server runs.
   const distPath = path.resolve(process.cwd(), "dist", "public");
+  const indexHtmlPath = path.resolve(distPath, "index.html");
 
   if (!fs.existsSync(distPath)) {
     console.error(
@@ -15,7 +34,7 @@ export function serveStatic(app: Express) {
     );
   }
 
-  // Serve hashed assets with long-lived cache headers first (before catch-all)
+  // ── 1. Hashed assets — long-lived immutable cache ─────────────────────────
   app.use(
     "/_app",
     express.static(path.join(distPath, "_app"), {
@@ -24,10 +43,64 @@ export function serveStatic(app: Express) {
     })
   );
 
+  // ── 2. SSR meta injection for HTML requests ───────────────────────────────
+  // This middleware runs BEFORE express.static so that requests for "/" and
+  // other SPA routes get per-route meta injected before the HTML is sent.
+  // We only intercept requests that Accept text/html (browser navigation).
+  // Requests for static assets (JS, CSS, images) are passed through.
+  app.use(async (req: Request, res: Response, next: NextFunction) => {
+    const accept = req.headers.accept ?? "";
+    const isHtmlRequest = accept.includes("text/html");
+
+    // Only intercept HTML requests; let asset requests fall through to static
+    if (!isHtmlRequest) {
+      return next();
+    }
+
+    // Skip if the request looks like a real file (has an extension)
+    const urlPath = req.path;
+    if (/\.\w{2,5}$/.test(urlPath)) {
+      return next();
+    }
+
+    try {
+      const baseUrl = `${req.protocol}://${req.get("host")}`;
+      const cleanPath = req.originalUrl.split("?")[0]; // strip query string
+
+      // Resolve meta (async — may hit DB for blog posts, cached 60s)
+      const meta = await resolveMeta(cleanPath, baseUrl);
+
+      // Read template on every request so hot-reloads in staging work;
+      // in production the OS page cache makes this effectively free.
+      const template = fs.readFileSync(indexHtmlPath, "utf-8");
+
+      const canonicalUrl = `${baseUrl}${meta.canonicalPath}`;
+
+      let html = template;
+      html = injectPlaceholder(html, "SSR_TITLE", meta.title);
+      html = injectPlaceholder(html, "SSR_DESCRIPTION", meta.description);
+      html = injectPlaceholder(html, "SSR_OG_TYPE", meta.ogType);
+      html = injectPlaceholder(html, "SSR_OG_IMAGE", meta.ogImage);
+      html = injectPlaceholder(html, "SSR_CANONICAL", canonicalUrl);
+
+      res
+        .status(200)
+        .set("Content-Type", "text/html")
+        .send(html);
+    } catch (err) {
+      // Fallback: serve the raw template without injection
+      console.error("[SSR] Meta injection failed:", err);
+      res.sendFile(indexHtmlPath);
+    }
+  });
+
+  // ── 3. Static files (images, fonts, robots.txt, etc.) ────────────────────
+  // index.html is never served by this middleware because the SSR middleware
+  // above already handled all HTML requests.
   app.use(express.static(distPath));
 
-  // fall through to index.html if the file doesn't exist
-  app.use("*", (_req, res) => {
-    res.sendFile(path.resolve(distPath, "index.html"));
+  // ── 4. Final catch-all (should rarely be reached) ─────────────────────────
+  app.use("*", (_req: Request, res: Response) => {
+    res.sendFile(indexHtmlPath);
   });
 }
