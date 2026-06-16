@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express from "express";
+import shrinkRay from "shrink-ray-current";
 import { createServer } from "http";
 import net from "net";
 import path from "path";
@@ -35,6 +36,8 @@ async function startServer() {
   // Trust the X-Forwarded-* headers from the AWS ALB so that req.protocol,
   // req.secure, and req.ip reflect the real client values, not the ALB hop.
   app.set("trust proxy", 1);
+  // Brotli + gzip compression — must be first middleware so all responses are compressed
+  app.use(shrinkRay());
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
