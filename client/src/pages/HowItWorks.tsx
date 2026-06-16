@@ -136,10 +136,10 @@ export default function Features() {
                   </p>
                   <div className="flex gap-3">
                     <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-4 w-4" /> iOS
+                      <Smartphone className="h-4 w-4" /> iOS
                     </span>
                     <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android" className="h-4 w-4" /> Android
+                      <Smartphone className="h-4 w-4" /> Android
                     </span>
                   </div>
                 </div>
@@ -170,10 +170,10 @@ export default function Features() {
                   </p>
                   <div className="flex gap-3">
                     <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-4 w-4" /> Apple Watch
+                      <Watch className="h-4 w-4" /> Apple Watch
                     </span>
                     <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" className="h-4 w-auto" /> Galaxy Watch
+                      <Watch className="h-4 w-4" /> Galaxy Watch
                     </span>
                   </div>
                 </div>

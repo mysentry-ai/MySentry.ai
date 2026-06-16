@@ -1,4 +1,4 @@
-import { Check, X, Info } from "lucide-react";
+import { Check, X, Info, Smartphone } from "lucide-react";
 import { Link } from "wouter";
 import {
   Tooltip,
@@ -207,7 +207,7 @@ export default function ComparisonSection() {
 
               <div className="col-span-1 text-center pb-6">
                 <div className="mx-auto w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Smartphone_icon_-_Noun_Project_283536.svg/1024px-Smartphone_icon_-_Noun_Project_283536.svg.png" className="w-6 h-6 opacity-40" alt="App" />
+                  <Smartphone className="w-6 h-6 opacity-40" />
                 </div>
                 <h4 className="text-lg font-bold text-gray-400">Location Apps</h4>
                 <p className="text-xs text-gray-400 mt-1">e.g. Life360</p>
