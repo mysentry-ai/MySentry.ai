@@ -105,3 +105,9 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
+
+# Per dev's standing instruction — DO NOT commit .dockerignore to GitHub.
+# The production pipeline relies on the default (unfiltered) docker
+# build context. If .dockerignore is needed for local builds, keep it
+# locally but do not commit.
+.dockerignore
