@@ -2,8 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
-Disallow: /404
-Disallow: /pricing-legacy
 
 # Sitemap index (covers pages + blog)
 Sitemap: https://mysentry.ai/sitemap_index.xml
