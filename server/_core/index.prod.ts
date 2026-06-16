@@ -38,11 +38,6 @@ async function startServer() {
   app.set("trust proxy", 1);
   // Brotli + gzip compression via standard Express middleware
   app.use(compression());
-  // TEMPORARY DEBUG — remove after diagnosis
-  app.use((req, res, next) => {
-    console.log('[DEBUG] Accept-Encoding header:', req.headers['accept-encoding']);
-    next();
-  });
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
