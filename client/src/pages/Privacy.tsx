@@ -96,7 +96,7 @@ export const Privacy = () => {
         {/* Sticky TOC - Desktop */}
         <aside className="hidden lg:block w-64 flex-shrink-0">
           <div className="sticky top-24 bg-[#f0f7f4] p-6 rounded-2xl border border-[#386758]/20 max-h-[calc(100vh-120px)] overflow-y-auto">
-            <h3 className="text-lg font-bold text-gray-900 mb-6">On This Page</h3>
+            <p className="text-lg font-bold text-gray-900 mb-6"><strong>On This Page</strong></p>
             <nav className="space-y-2">
               {tableOfContents.map((item) => (
                 <a
@@ -162,7 +162,7 @@ export const Privacy = () => {
         {/* Main Content */}
         <main className="flex-1 max-w-4xl">
           <div id="privacy-content" className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
-            
+            <h1 className="text-3xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
             <p className="lead text-xl text-gray-900 font-medium mb-12">
               At MySentry.ai, our dedication to user privacy and security is paramount. In this Privacy Policy, we explain the types of personal information that may be collected through the MySentry app (referred to as "the App"), how this information might be used and shared, and the choices available to users with respect to their personal information.
             </p>
@@ -308,7 +308,13 @@ export const Privacy = () => {
             {/* Section 12 */}
             <h2 id="third-party-sharing" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">Sharing of Information with Third Parties and Service Providers</h2>
             <p className="text-gray-900 mb-6">
-              MySentry may share personal information with third parties only where necessary to operate, secure, support, and improve its services, or where otherwise permitted or required by law. These third parties may include cloud hosting and storage providers, communications providers, authentication providers, analytics and infrastructure providers, customer support vendors, professional monitoring providers, emergency contacts or other recipients designated by the user, emergency responders where appropriate, and device, camera, smart-home, or other integration partners that the user chooses to connect. MySentry may also disclose information in connection with legal requests, corporate transactions, or to protect rights, safety, and security. Where applicable, MySentry requires service providers and sub-processors to handle data subject to contractual, confidentiality, and data protection obligations.
+              MySentry may share personal information with third parties only where necessary to operate, secure, support, and improve its services, or where otherwise permitted or required by law.
+            </p>
+            <p className="text-gray-900 mb-6">
+              These third parties may include cloud hosting and storage providers, communications providers, authentication providers, analytics and infrastructure providers, customer support vendors, professional monitoring providers, emergency contacts or other recipients designated by the user, emergency responders where appropriate, and device, camera, smart-home, or other integration partners that the user chooses to connect.
+            </p>
+            <p className="text-gray-900 mb-6">
+              MySentry may also disclose information in connection with legal requests, corporate transactions, or to protect rights, safety, and security. Where applicable, MySentry requires service providers and sub-processors to handle data subject to contractual, confidentiality, and data protection obligations.
             </p>
 
             {/* Section 13 */}
