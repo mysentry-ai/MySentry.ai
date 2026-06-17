@@ -5,7 +5,7 @@ export default function AppleWatchIntegrationPage() {
     <SEOPageTemplate
       seoTitle="Apple Watch Safety: MySentry for Personal Protection | MySentry"
       seoDescription="Turn your Apple Watch into a personal safety device. MySentry adds fall detection, a panic alarm, and crash alerts. Get help fast, directly from your wrist."
-      canonical="https://www.mysentry.ai/integrations/apple-watch"
+      canonical="https://mysentry.ai/integrations/apple-watch"
       label="Apple Watch Integration"
       h1="Make Your Apple Watch a Personal Safety Device"
       problem="You rely on your Apple Watch for health and convenience, but what if you need help in a serious emergency like a fall or car accident? Your watch alone might not be enough."
@@ -90,8 +90,8 @@ export default function AppleWatchIntegrationPage() {
       ]}
       relatedLinks={[
         { text: "Compare MySentry to Other Medical Alert Devices", href: "/compare/medical-alert-devices-vs-mysentry" },
-        { text: "How Our 24/7 Monitoring Works", href: "/solutions/24-7-monitoring" },
-        { text: "MySentry for Seniors Living Alone", href: "/safety-for/seniors-living-alone" },
+        { text: "How Our 24/7 Monitoring Works", href: "/features" },
+        { text: "MySentry for Seniors Living Alone", href: "/safety-for/seniors-aging-in-place" },
       ]}
       heroImage="/images/integrations/mysentry-on-apple-watch.png"
     />

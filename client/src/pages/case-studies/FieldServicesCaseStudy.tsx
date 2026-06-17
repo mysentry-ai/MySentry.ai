@@ -7,7 +7,7 @@ const SEO = ({ seoTitle, seoDescription, canonical }: { seoTitle: string, seoDes
   <head>
     <title>{seoTitle}</title>
     <meta name="description" content={seoDescription} />
-    <link rel="canonical" href={`https://www.mysentry.ai${canonical}`} />
+    <link rel="canonical" href={`https://mysentry.ai${canonical}`} />
   </head>
 );
 const Section = ({ children, className }: { children: React.ReactNode, className?: string }) => <section className={`py-16 md:py-24 ${className}`}>{children}</section>;

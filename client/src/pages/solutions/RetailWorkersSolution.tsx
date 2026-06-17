@@ -27,7 +27,7 @@ export default function RetailWorkersSolution() {
             "We track the employee's location in real-time, ensuring help arrives exactly where it's needed, as quickly as possible.",
         },
       ]}
-      primaryCta={{ text: "Book a Demo", href: "/book-demo" }}
+      primaryCta={{ text: "Book a Demo", href: "/contact" }}
       secondaryCta={{
         text: "Start 7-Day Free Trial",
         href: "/pricing#pricing-plans",

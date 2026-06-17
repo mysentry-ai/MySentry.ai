@@ -111,11 +111,11 @@ export default function HomeHealthcareCaseStudy() {
         },
         {
           text: "Solutions for Healthcare",
-          href: "/solutions/healthcare",
+          href: "/solutions/home-healthcare",
         },
         {
           text: "Book a Demo",
-          href: "/book-demo",
+          href: "/contact",
         },
       ]}
     />

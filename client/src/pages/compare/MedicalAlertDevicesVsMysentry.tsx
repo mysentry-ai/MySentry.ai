@@ -6,7 +6,7 @@ export default function MedicalAlertDevicesVsMysentry() {
     <SEOPageTemplate
       seoTitle="Medical Alert Devices vs. MySentry: A Better Choice | MySentry"
       seoDescription="Compare MySentry to traditional medical alert devices. MySentry uses your phone for discreet safety, fall detection, and 24/7 monitoring. Get peace of mind today."
-      canonical="https://mysentry.ai/compare/medical-alert-devices"
+      canonical="https://mysentry.ai/compare/medical-alert-devices-vs-mysentry"
       
       label="Comparison"
       h1="Tired of Old Medical Alert Devices? Try MySentry."
@@ -68,7 +68,7 @@ faqs={[
 
 relatedLinks={[
           { text: "How MySentry Works", href: "/how-it-works" },
-          { text: "MySentry vs. Apple Watch Fall Detection", href: "/compare/apple-watch-fall-detection" },
+          { text: "MySentry vs. Apple Watch Fall Detection", href: "/compare/medical-alert-devices-vs-mysentry" },
           { text: "Pricing and Plans", href: "/pricing" }
         ]}
     />

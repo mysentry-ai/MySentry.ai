@@ -5,7 +5,7 @@ export default function SoloTravelersPage() {
     <SEOPageTemplate
       seoTitle="Solo Travel Safety App | MySentry"
       seoDescription="Solo travelers, explore confidently. MySentry is a safety app with 24/7 monitoring, panic alarms, and fall detection. Get help anywhere, anytime. Start your free trial."
-      canonical="https://www.mysentry.ai/safety-for/solo-travelers"
+      canonical="https://mysentry.ai/safety-for/solo-travelers"
       label="For Solo Travelers"
       h1="Solo Travel: Explore the World, Stay Safe with MySentry"
       problem="You're exploring a new place by yourself. Maybe you don't know the language, and no one knows where you are. What if something goes wrong? The fun of solo travel can quickly become stressful when you think about what could happen in a new spot."
@@ -88,8 +88,8 @@ export default function SoloTravelersPage() {
         },
       ]}
       relatedLinks={[
-        { text: "A Guide to Safe Solo Female Travel", href: "/guides/safe-solo-female-travel" },
-        { text: "MySentry vs. Apple Find My", href: "/compare/mysentry-vs-apple-find-my" },
+        { text: "A Guide to Safe Solo Female Travel", href: "/safety-for/solo-travelers" },
+        { text: "MySentry vs. Apple Find My", href: "/compare/medical-alert-devices-vs-mysentry" },
       ]}
       heroImage="/images/heroes/solo-traveler.jpg"
     />
