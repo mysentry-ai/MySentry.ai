@@ -90,7 +90,6 @@ export default function DeliveryDriversSolution() {
       relatedLinks={[
         { text: "How MySentry Works", href: "/how-it-works" },
         { text: "Pricing for Teams", href: "/pricing#pricing-plans" },
-        { text: "Case Study: SecureHaul Logistics", href: "/case-studies/securehaul-logistics" },
       ]}
       heroImage="/images/solutions/delivery-driver-hero.jpg"
     />

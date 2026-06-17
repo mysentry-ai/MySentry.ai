@@ -63,7 +63,6 @@ export default function RealEstateSolution() {
       ]}
       relatedLinks={[
         { text: "Safety Tips for Lone Workers", href: "/guides/lone-worker-safety" },
-        { text: "MySentry vs. Traditional Panic Buttons", href: "/compare/mysentry-vs-panic-buttons" },
       ]}
       heroImage="/images/solutions/real-estate-hero.jpg"
     />

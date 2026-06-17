@@ -54,7 +54,6 @@ export default function ProfessionalMonitoringGuide() {
       relatedLinks={[
         { text: "How MySentry Works", href: "/how-it-works" },
         { text: "Pricing Plans", href: "/pricing#pricing-plans" },
-        { text: "MySentry vs. Traditional Medical Alerts", href: "/guides/mysentry-vs-medical-alert" }
       ]}
     />
   );
