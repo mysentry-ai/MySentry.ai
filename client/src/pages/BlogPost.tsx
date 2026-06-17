@@ -32,7 +32,12 @@ const BlogPost = () => {
 
   // Fetch related posts
   const relatedQuery = trpc.blog.public.related.useQuery(
-    { categoryId: post?.categoryId ?? 0, excludeId: post?.id ?? 0, limit: 3 },
+    {
+      categoryId: post?.categoryId ?? 0,
+      excludeId: post?.id ?? 0,
+      tags: Array.isArray(post?.tags) ? (post.tags as string[]) : null,
+      limit: 4,
+    },
     { enabled: !!post?.categoryId && !!post?.id }
   );
   const relatedPosts = relatedQuery.data || [];
@@ -272,7 +277,7 @@ const BlogPost = () => {
             <h3 className="text-3xl font-medium text-gray-900 mb-12 text-center font-barlow">
               More from {categoryName || 'this category'}
             </h3>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {relatedPosts.map((rp) => (
                 <Link key={rp.id} href={`/blog/${rp.slug}`}>
                   <div className="group cursor-pointer">

@@ -929,10 +929,11 @@ Must include CTA: "Start 7-Day Free Trial" (use natural wording, not spammy)`;
       .input(z.object({
         categoryId: z.number(),
         excludeId: z.number(),
+        tags: z.array(z.string()).nullable().optional(),
         limit: z.number().optional(),
       }))
       .query(async ({ input }) => {
-        return getRelatedPosts(input.categoryId, input.excludeId, input.limit);
+        return getRelatedPosts(input.categoryId, input.excludeId, input.tags ?? null, input.limit);
       }),
 
     categories: publicProcedure.query(async () => {

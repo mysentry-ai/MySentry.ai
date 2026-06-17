@@ -44,7 +44,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#e8f5e9] border-t border-primary/10 pt-16 pb-8">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand Column */}
           <div className="space-y-4">
             <Link onClick={() => window.scrollTo(0, 0)} href="/" className="flex items-center gap-2">
@@ -187,6 +187,63 @@ export default function Footer() {
               <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/terms" className="text-gray-900 hover:text-primary transition-colors">
                   Terms & Conditions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Safety Resources */}
+          <div>
+            <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Safety Resources</h3>
+            <ul className="space-y-3 text-base font-medium">
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/seniors-aging-in-place" className="text-gray-900 hover:text-primary transition-colors">
+                  Seniors Aging in Place
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/solo-travelers" className="text-gray-900 hover:text-primary transition-colors">
+                  Solo Traveler Safety
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/women-living-alone" className="text-gray-900 hover:text-primary transition-colors">
+                  Women Living Alone
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/case-studies/home-healthcare" className="text-gray-900 hover:text-primary transition-colors">
+                  Home Healthcare Case Study
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/case-studies/real-estate" className="text-gray-900 hover:text-primary transition-colors">
+                  Real Estate Case Study
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/case-studies/field-services" className="text-gray-900 hover:text-primary transition-colors">
+                  Field Services Case Study
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/integrations/apple-watch" className="text-gray-900 hover:text-primary transition-colors">
+                  Apple Watch Integration
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/integrations/samsung-galaxy-watch" className="text-gray-900 hover:text-primary transition-colors">
+                  Samsung Galaxy Watch Integration
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/integrations/oura-ring" className="text-gray-900 hover:text-primary transition-colors">
+                  Oura Ring Integration
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/resources/employer-one-pager" className="text-gray-900 hover:text-primary transition-colors">
+                  Employer Safety Overview
                 </Link>
               </li>
             </ul>
