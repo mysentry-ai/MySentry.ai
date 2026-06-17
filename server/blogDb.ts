@@ -376,7 +376,7 @@ export async function getRelatedPosts(
           sql`${blogPosts.id} NOT IN (${sql.raw(excludeList.join(","))})`
         )
       )
-      .orderBy(desc(blogPosts.publishedAt))
+      .orderBy(sql`RAND()`)
       .limit(needed);
 
     for (const row of tier2) {
@@ -401,7 +401,7 @@ export async function getRelatedPosts(
           sql`${blogPosts.id} NOT IN (${sql.raw(excludeList2.join(","))})`
         )
       )
-      .orderBy(desc(blogPosts.publishedAt))
+      .orderBy(sql`RAND()`)
       .limit(needed);
 
     for (const row of tier3) {
