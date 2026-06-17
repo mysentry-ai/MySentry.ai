@@ -86,7 +86,7 @@ export default function Retail() {
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
-        { text: "Voice-Activated Panic Alarm", href: "/features/voice-activated-panic-alarm" },
+        { text: "Voice-Activated Panic Alarm", href: "/features" },
       ]}
     />
   );

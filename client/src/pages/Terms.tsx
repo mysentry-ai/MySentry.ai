@@ -189,7 +189,7 @@ export default function Terms() {
                 <strong>Email:</strong> <a href="mailto:support@mysentry.ai" className="text-primary hover:underline">support@mysentry.ai</a>
               </li>
               <li>
-                <strong>Website:</strong> <a href="https://www.mysentry.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">www.mysentry.ai</a>
+                <strong>Website:</strong> <a href="https://mysentry.ai" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">mysentry.ai</a>
               </li>
             </ul>
           </section>
