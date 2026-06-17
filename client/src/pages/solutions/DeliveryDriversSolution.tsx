@@ -5,7 +5,6 @@ export default function DeliveryDriversSolution() {
     <SEOPageTemplate
       seoTitle="Safety Solutions for Delivery Drivers | MySentry.ai"
       seoDescription="MySentry offers real-time safety monitoring for delivery drivers, including crash detection, panic alarms, and GPS tracking, to protect your fleet and lone workers."
-      canonical="https://www.mysentry.ai/solutions/delivery-drivers"
       label="Delivery Driver Safety"
       h1="Keeping Your Delivery Drivers Safe, Mile After Mile"
       problem="Delivery drivers face unpredictable neighborhoods, aggressive customers, and the increased risk of assault or robbery, especially during late-night deliveries. Companies often lack real-time safety monitoring for their fleet, leaving drivers vulnerable and without immediate support in emergencies."

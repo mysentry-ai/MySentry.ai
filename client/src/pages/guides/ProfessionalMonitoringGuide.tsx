@@ -5,7 +5,6 @@ export default function ProfessionalMonitoringGuide() {
     <SEOPageTemplate
       seoTitle="Professional Monitoring vs. App-Only Safety | MySentry"
       seoDescription="Professional monitoring provides 24/7 help. MySentry agents verify emergencies with live video and dispatch help fast, unlike app-only alerts. Get peace of mind today."
-      canonical="https://mysentry.ai/guides/professional-monitoring-vs-app-only"
       label="PERSONAL SAFETY"
       h1="Worried about getting help fast? Choose professional monitoring."
       problem="When an emergency strikes, every second counts. App-only solutions that just notify your personal contacts can lead to dangerous delays, especially if you're unable to respond."
