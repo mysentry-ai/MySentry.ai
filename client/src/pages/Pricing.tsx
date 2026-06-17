@@ -398,7 +398,7 @@ export default function Pricing() {
           <div className="flex flex-col gap-8">
 
             {/* Step 1: Coverage Type */}
-            <StepBlock stepNum={1}>
+            <StepBlock stepNum={1} title="Who is this plan for?">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <SelectCard
                   active={coverage === "individual"}
@@ -418,17 +418,20 @@ export default function Pricing() {
             </StepBlock>
 
             {/* Step 2: Plan Type */}
-            <StepBlock stepNum={planStepNum}>
+            <StepBlock stepNum={planStepNum} title="Select your plan">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <SelectCard
                   active
                   icon={<Shield className="w-6 h-6 text-[#2E7D6F]" />}
                   title={mode === "b2b" ? "Essential Safety for Employers" : "Essential Safety"}
+                  description="Comprehensive safety & health monitoring with emergency response."
                   badge={<span className="absolute -top-2.5 right-4 bg-[#2E7D6F] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">Most Popular</span>}
                 />
                 <SelectCard
                   disabled
                   icon={<HeartPulse className="w-6 h-6 text-[#64748B]" />}
+                  title="Longevity & Wellness"
+                  description="Advanced vitals tracking, virtual coach, and in-home testing."
                   badge={<span className="absolute -top-2.5 right-4 bg-[#E2E8F0] text-[#64748B] text-[11px] font-bold px-2.5 py-1 rounded-full">Coming Soon</span>}
                   titleClassName="text-[#64748B]"
                 />
@@ -437,7 +440,7 @@ export default function Pricing() {
 
             {/* Step 3 (B2B only): Number of Employees */}
             {mode === "b2b" && (
-              <StepBlock stepNum={licensesStepNum}>
+              <StepBlock stepNum={licensesStepNum} title="Number of Employees">
                 <div className="mt-2">
                   <div className="flex justify-between items-center mb-5">
                     <span className="text-[15px] font-semibold text-[#64748B]">Drag to adjust or type number:</span>
@@ -477,17 +480,21 @@ export default function Pricing() {
             )}
 
             {/* Step 3/4: Billing Duration */}
-            <StepBlock stepNum={billingStepNum}>
+            <StepBlock stepNum={billingStepNum} title="Select Billing Duration">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <SelectCard
                   active={billing === "monthly"}
                   onClick={() => setBilling("monthly")}
                   icon={<Calendar className="w-6 h-6 text-[#2E7D6F]" />}
+                  title="Monthly"
+                  description="Pay as you go, cancel anytime."
                 />
                 <SelectCard
                   active={billing === "yearly"}
                   onClick={() => setBilling("yearly")}
                   icon={<CalendarCheck className="w-6 h-6 text-[#2E7D6F]" />}
+                  title="Yearly"
+                  description="Save more with annual billing."
                   badge={<span className="absolute -top-2.5 right-4 bg-[#0F172A] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">Save 20%</span>}
                 />
               </div>
