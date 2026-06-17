@@ -5,7 +5,7 @@ export default function RealEstateSolution() {
     <SEOPageTemplate
       seoTitle="MySentry for Real Estate | Safety Solutions for Agents"
       seoDescription="Protect your agents with MySentry's discreet panic alarm and safety check-in features. Designed for the unique risks of the real estate industry."
-      canonical="https://www.mysentry.ai/solutions/real-estate"
+      canonical="https://mysentry.ai/solutions/real-estate"
       label="Real Estate Safety"
       h1="Peace of Mind for Real Estate Professionals"
       problem="Real estate agents often work alone, meeting strangers in vacant properties. This isolation, combined with the unpredictable nature of open houses, creates significant safety risks with no reliable way to discreetly signal for help."
@@ -15,7 +15,7 @@ export default function RealEstateSolution() {
         { title: "Use Smart Safety Tools", description: "Utilize features like MeetSafe for scheduled check-ins before showings and the silent panic alarm for immediate, discreet alerts." },
         { title: "Gain Instant Backup", description: "In an emergency, our 24/7 monitoring center receives the alert, sees the agent's live location and video, and dispatches help." },
       ]}
-      primaryCta={{ text: "Book a Demo", href: "/contact-sales" }}
+      primaryCta={{ text: "Book a Demo", href: "/contact" }}
       secondaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing#pricing-plans" }}
       directAnswer="MySentry offers a comprehensive safety solution for real estate professionals, including a silent panic alarm, automated safety check-ins (MeetSafe), and a 24/7 live video response service to provide immediate assistance and peace of mind."
       howItWorks={[

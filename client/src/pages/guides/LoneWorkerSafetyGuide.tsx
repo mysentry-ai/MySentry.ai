@@ -33,7 +33,7 @@ export default function LoneWorkerSafetyGuide() {
         },
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing#pricing-plans" }}
-      secondaryCta={{ text: "Book a Demo", href: "/contact-sales" }}
+      secondaryCta={{ text: "Book a Demo", href: "/contact" }}
       directAnswer="OSHA rule 1915.84 says employers must check on each lone worker regularly. Also, the General Duty Clause means employers must provide a safe workplace. This, plus the ethical duty to care, means employers must take steps to keep their employees safe."
       howItWorks={[
         "Panic alarms and apps let workers quickly and privately call for help in an emergency.",
