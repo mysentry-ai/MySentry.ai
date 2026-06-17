@@ -30,8 +30,8 @@ export default function Families() {
       image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/ILNBARpWjhgDooYL.jpg",
       icon: Car,
       tag: "Driving Safety",
-      link: "/how-it-works",
-      ctaText: "See How It Works"
+      link: "/use-cases/teen-driver-safety",
+      ctaText: "Teen Driver Safety Features"
     },
     {
       id: "elderly-parents",

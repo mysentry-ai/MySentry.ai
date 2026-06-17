@@ -72,7 +72,7 @@ proofBlocks={[
 	        { claim: "MySentry provides 24/7 professional monitoring with live video. Noonlight sends help based only on your location.", detail: "Live video helps MySentry agents understand the situation better for a more accurate emergency response." }
 	      ]}
 relatedLinks={[
-	        { text: "MySentry vs Citizen", href: "/compare/mysentry-vs-citizen" },
+	        { text: "MySentry vs FallCall", href: "/compare/fallcall-vs-mysentry" },
 	        { text: "Fall Detection Feature", href: "/features/fall-detection-app" },
 	        { text: "Pricing Plans", href: "/pricing" },
 	        { text: "How It Works", href: "/how-it-works" },

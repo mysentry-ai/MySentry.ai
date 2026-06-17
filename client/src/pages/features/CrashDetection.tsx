@@ -73,6 +73,7 @@ export default function CrashDetection() {
       relatedLinks={[
         { text: "Panic Alarm for Quick Help", href: "/features/panic-button-app" },
         { text: "24/7 Monitoring", href: "/features/24-7-professional-monitoring" },
+        { text: "Teen Driver Safety", href: "/use-cases/teen-driver-safety" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
       ]}

@@ -114,6 +114,10 @@ export function registerSitemapRoutes(app: Express) {
     res.redirect(301, "/features");
   });
 
+  app.get("/features/health-monitoring-app-with-alerts", (_req, res) => {
+    res.redirect(301, "/features/health-monitoring");
+  });
+
   // ── www → non-www redirect (production only) ──
   // Redirect www.mysentry.ai to mysentry.ai to prevent duplicate content
   app.use((req, res, next) => {

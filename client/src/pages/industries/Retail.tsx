@@ -84,6 +84,7 @@ export default function Retail() {
       relatedLinks={[
         { text: "Retail Employee Panic Button", href: "/features/panic-button-app" },
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
+        { text: "Retail Workers Safety Solution", href: "/solutions/retail-workers" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
         { text: "Voice-Activated Panic Alarm", href: "/features" },

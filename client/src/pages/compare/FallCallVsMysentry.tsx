@@ -96,6 +96,7 @@ export default function FallCallVsMysentry() {
       relatedLinks={[
         { text: "Panic Button", href: "/features/panic-button-app" },
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },
+        { text: "MySentry vs Google Personal Safety", href: "/compare/google-personal-safety-vs-mysentry" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
       ]}

@@ -90,6 +90,7 @@ export default function SOSecureAdtVsMysentry() {
       relatedLinks={[
         { text: "Panic Button for Seniors", href: "/features/panic-button-app" },
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },
+        { text: "MySentry vs FallCall", href: "/compare/fallcall-vs-mysentry" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "See How It Works", href: "/how-it-works" },
       ]}

@@ -246,6 +246,16 @@ export default function Footer() {
                   Employer Safety Overview
                 </Link>
               </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/guides/professional-monitoring" className="text-gray-900 hover:text-primary transition-colors">
+                  Professional Monitoring Guide
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/solutions/delivery-drivers" className="text-gray-900 hover:text-primary transition-colors">
+                  Delivery Driver Safety
+                </Link>
+              </li>
             </ul>
           </div>
 
