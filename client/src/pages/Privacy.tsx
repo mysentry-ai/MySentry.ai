@@ -88,8 +88,10 @@ export const Privacy = () => {
       
       <HeroSection
         label="Legal"
+        title="Privacy Policy"
         imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/IElpNKDyEyZQAZJG.jpg"
         imageAlt="Privacy Policy"
+        description=""
       />
 
       <div className="flex gap-8 max-w-7xl mx-auto px-4 py-12">
@@ -162,7 +164,7 @@ export const Privacy = () => {
         {/* Main Content */}
         <main className="flex-1 max-w-4xl">
           <div id="privacy-content" className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
-            <h1 className="text-3xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
+            <p className="text-3xl font-bold text-gray-900 mb-8">Privacy Policy</p>
             <p className="lead text-xl text-gray-900 font-medium mb-12">
               At MySentry.ai, our dedication to user privacy and security is paramount. In this Privacy Policy, we explain the types of personal information that may be collected through the MySentry app (referred to as "the App"), how this information might be used and shared, and the choices available to users with respect to their personal information.
             </p>
