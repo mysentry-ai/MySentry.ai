@@ -165,8 +165,11 @@ export const Privacy = () => {
         <main className="flex-1 max-w-4xl">
           <div id="privacy-content" className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
             <p className="text-3xl font-bold text-gray-900 mb-8">Privacy Policy</p>
+            <p className="lead text-xl text-gray-900 font-medium mb-6">
+              At MySentry.ai, our dedication to user privacy and security is paramount.
+            </p>
             <p className="lead text-xl text-gray-900 font-medium mb-12">
-              At MySentry.ai, our dedication to user privacy and security is paramount. In this Privacy Policy, we explain the types of personal information that may be collected through the MySentry app (referred to as "the App"), how this information might be used and shared, and the choices available to users with respect to their personal information.
+              In this Privacy Policy, we explain the types of personal information that may be collected through the MySentry app (referred to as "the App"), how this information might be used and shared, and the choices available to users with respect to their personal information.
             </p>
 
             {/* Section 1 */}
@@ -298,13 +301,19 @@ export const Privacy = () => {
             {/* Section 10 */}
             <h2 id="ai-features-model-training" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">AI Features and Model Training</h2>
             <p className="text-gray-900 mb-6">
-              MySentry may use automated, algorithmic, or AI-enabled features to support certain product capabilities. Unless specifically disclosed otherwise, personal data is not used to train general-purpose AI models in a manner inconsistent with this Privacy Policy or applicable law. Where customer data is used to develop, test, improve, tune, validate, or monitor AI-enabled features, MySentry will describe the categories of data involved, the purpose of such use, the safeguards applied, and any user choices or controls that are available. Where required by law, MySentry will obtain consent or provide an appropriate opt-out mechanism.
+              MySentry may use automated, algorithmic, or AI-enabled features to support certain product capabilities. Unless specifically disclosed otherwise, personal data is not used to train general-purpose AI models in a manner inconsistent with this Privacy Policy or applicable law.
+            </p>
+            <p className="text-gray-900 mb-6">
+              Where customer data is used to develop, test, improve, tune, validate, or monitor AI-enabled features, MySentry will describe the categories of data involved, the purpose of such use, the safeguards applied, and any user choices or controls that are available. Where required by law, MySentry will obtain consent or provide an appropriate opt-out mechanism.
             </p>
 
             {/* Section 11 */}
             <h2 id="data-retention" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">Data Retention</h2>
             <p className="text-gray-900 mb-6">
-              MySentry retains personal information only for as long as reasonably necessary for the purposes described in this Privacy Policy, including to provide the services requested by the user, maintain account functionality, support emergency response and safety-related workflows, investigate misuse or incidents, comply with legal obligations, resolve disputes, enforce agreements, and protect the rights, safety, and security of users, MySentry, and others. Retention periods may vary based on the type of data, the feature involved, user settings, whether the data relates to an active or past incident, and applicable legal or contractual requirements.
+              MySentry retains personal information only for as long as reasonably necessary for the purposes described in this Privacy Policy, including to provide the services requested by the user, maintain account functionality, support emergency response and safety-related workflows, investigate misuse or incidents, comply with legal obligations, resolve disputes, enforce agreements, and protect the rights, safety, and security of users, MySentry, and others.
+            </p>
+            <p className="text-gray-900 mb-6">
+              Retention periods may vary based on the type of data, the feature involved, user settings, whether the data relates to an active or past incident, and applicable legal or contractual requirements.
             </p>
 
             {/* Section 12 */}
@@ -316,43 +325,76 @@ export const Privacy = () => {
               These third parties may include cloud hosting and storage providers, communications providers, authentication providers, analytics and infrastructure providers, customer support vendors, professional monitoring providers, emergency contacts or other recipients designated by the user, emergency responders where appropriate, and device, camera, smart-home, or other integration partners that the user chooses to connect.
             </p>
             <p className="text-gray-900 mb-6">
-              MySentry may also disclose information in connection with legal requests, corporate transactions, or to protect rights, safety, and security. Where applicable, MySentry requires service providers and sub-processors to handle data subject to contractual, confidentiality, and data protection obligations.
+              MySentry may also disclose information in connection with legal requests, corporate transactions, or to protect rights, safety, and security.
+            </p>
+            <p className="text-gray-900 mb-6">
+              Where applicable, MySentry requires service providers and sub-processors to handle data subject to contractual, confidentiality, and data protection obligations.
             </p>
 
             {/* Section 13 */}
             <h2 id="privacy-rights-requests" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">Privacy Rights and Data Requests</h2>
             <p className="text-gray-900 mb-6">
-              Subject to applicable law, users may have the right to request access to personal information, request correction of inaccurate information, request deletion of certain information, object to or restrict certain processing, withdraw consent where processing is based on consent, and request a portable copy of eligible information. Users may exercise these rights through available in-app settings, by contacting MySentry through the contact details provided in this Privacy Policy, or by submitting a verified privacy request using the methods identified on our website. MySentry may take reasonable steps to verify the identity of the requester before processing certain requests.
+              Subject to applicable law, users may have the right to request access to personal information, request correction of inaccurate information, request deletion of certain information, object to or restrict certain processing, withdraw consent where processing is based on consent, and request a portable copy of eligible information.
+            </p>
+            <p className="text-gray-900 mb-6">
+              Users may exercise these rights through available in-app settings, by contacting MySentry through the contact details provided in this Privacy Policy, or by submitting a verified privacy request using the methods identified on our website.
+            </p>
+            <p className="text-gray-900 mb-6">
+              MySentry may take reasonable steps to verify the identity of the requester before processing certain requests.
             </p>
 
             {/* Section 14 */}
             <h2 id="opt-out-options" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">User Choices and Opt-Out Options</h2>
             <p className="text-gray-900 mb-6">
-              MySentry provides users with choices regarding certain categories of data use, depending on the feature, jurisdiction, and legal basis for processing. These choices may include opting out of promotional communications, managing device permissions such as location, camera, microphone, contacts, or notifications, disabling optional analytics or similar data collection where offered, adjusting cookie or tracking preferences where applicable, and controlling participation in certain AI-enabled or automated features where legally required or operationally supported. Some opt-out options may be available through device settings, browser controls, in-app settings, or by contacting MySentry directly.
+              MySentry provides users with choices regarding certain categories of data use, depending on the feature, jurisdiction, and legal basis for processing.
+            </p>
+            <p className="text-gray-900 mb-6">
+              These choices may include opting out of promotional communications, managing device permissions such as location, camera, microphone, contacts, or notifications, disabling optional analytics or similar data collection where offered, adjusting cookie or tracking preferences where applicable, and controlling participation in certain AI-enabled or automated features where legally required or operationally supported.
+            </p>
+            <p className="text-gray-900 mb-6">
+              Some opt-out options may be available through device settings, browser controls, in-app settings, or by contacting MySentry directly.
             </p>
 
             {/* Section 15 */}
             <h2 id="effect-of-opting-out" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">Effect of Opting Out of Certain Data Uses</h2>
             <p className="text-gray-900 mb-6">
-              Where MySentry offers a user choice to opt out of certain data uses, including model improvement or similar feature-development activities, that choice generally will not prevent the user from accessing core service functionality. However, opting out may reduce MySentry's ability to improve, personalize, test, or enhance certain AI-enabled, automated, or adaptive product capabilities over time. If a specific opt-out materially affects a feature or service experience, MySentry will disclose that impact at the point where the choice is offered or in the applicable product documentation.
+              Where MySentry offers a user choice to opt out of certain data uses, including model improvement or similar feature-development activities, that choice generally will not prevent the user from accessing core service functionality.
+            </p>
+            <p className="text-gray-900 mb-6">
+              However, opting out may reduce MySentry's ability to improve, personalize, test, or enhance certain AI-enabled, automated, or adaptive product capabilities over time. If a specific opt-out materially affects a feature or service experience, MySentry will disclose that impact at the point where the choice is offered or in the applicable product documentation.
             </p>
 
             {/* Section 16 */}
             <h2 id="authorized-access" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">When Authorized Personnel May Access Customer Data</h2>
             <p className="text-gray-900 mb-6">
-              Authorized MySentry personnel, service providers, or monitoring personnel may access customer data only when reasonably necessary for legitimate operational, safety, legal, or support-related purposes. This may include responding to an active emergency or assistance event, providing customer support, troubleshooting service issues, investigating abuse or security incidents, complying with legal obligations, enforcing policies or agreements, or maintaining and improving service integrity. Access to personal data is limited to authorized individuals with a legitimate need to know and is subject to applicable safeguards, confidentiality obligations, and access controls.
+              Authorized MySentry personnel, service providers, or monitoring personnel may access customer data only when reasonably necessary for legitimate operational, safety, legal, or support-related purposes.
+            </p>
+            <p className="text-gray-900 mb-6">
+              This may include responding to an active emergency or assistance event, providing customer support, troubleshooting service issues, investigating abuse or security incidents, complying with legal obligations, enforcing policies or agreements, or maintaining and improving service integrity.
+            </p>
+            <p className="text-gray-900 mb-6">
+              Access to personal data is limited to authorized individuals with a legitimate need to know and is subject to applicable safeguards, confidentiality obligations, and access controls.
             </p>
 
             {/* Section 17 */}
             <h2 id="user-data-control" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">How Users Can Access, Review, and Control Their Data</h2>
             <p className="text-gray-900 mb-6">
-              MySentry provides users with tools and settings to access, review, manage, and in some cases delete or modify certain categories of data associated with their account and service use. Depending on the feature, users may be able to review account information, emergency contacts, location-sharing preferences, connected devices, event history, communications records, recordings, images, or other user-generated or device-generated content through the application, account dashboard, or available support channels. The scope of available controls may vary depending on the type of data, the product feature, the source of the data, and legal or operational requirements.
+              MySentry provides users with tools and settings to access, review, manage, and in some cases delete or modify certain categories of data associated with their account and service use.
+            </p>
+            <p className="text-gray-900 mb-6">
+              Depending on the feature, users may be able to review account information, emergency contacts, location-sharing preferences, connected devices, event history, communications records, recordings, images, or other user-generated or device-generated content through the application, account dashboard, or available support channels.
+            </p>
+            <p className="text-gray-900 mb-6">
+              The scope of available controls may vary depending on the type of data, the product feature, the source of the data, and legal or operational requirements.
             </p>
 
             {/* Section 18 */}
             <h2 id="ai-updates" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">Updates to AI-Enabled Features and Service Capabilities</h2>
             <p className="text-gray-900 mb-6">
-              MySentry may update, enhance, refine, or modify AI-enabled, automated, or detection-related capabilities from time to time. When material changes are made, MySentry may inform users through one or more of the following: updates to this Privacy Policy or other legal documentation, in-app notices, release notes, help-center materials, onboarding updates, email communications, or other reasonable methods. Where required by law or where changes materially affect how personal data is processed, MySentry will provide additional notice and, if applicable, obtain consent or offer updated choices.
+              MySentry may update, enhance, refine, or modify AI-enabled, automated, or detection-related capabilities from time to time. When material changes are made, MySentry may inform users through one or more of the following: updates to this Privacy Policy or other legal documentation, in-app notices, release notes, help-center materials, onboarding updates, email communications, or other reasonable methods.
+            </p>
+            <p className="text-gray-900 mb-6">
+              Where required by law or where changes materially affect how personal data is processed, MySentry will provide additional notice and, if applicable, obtain consent or offer updated choices.
             </p>
 
             {/* Section 19 */}
@@ -363,8 +405,11 @@ export const Privacy = () => {
 
             {/* Section 20 */}
             <h2 id="contact-us" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">Contact Us</h2>
+            <p className="text-gray-900 mb-6">
+              For inquiries, concerns, or requests related to this Privacy Policy or the privacy practices of the MySentry App, users can reach us at <a href="mailto:support@mysentry.ai" className="text-[#386758] hover:underline">support@mysentry.ai</a>.
+            </p>
             <p className="text-gray-900 mb-12">
-              For inquiries, concerns, or requests related to this Privacy Policy or the privacy practices of the MySentry App, users can reach us at <a href="mailto:support@mysentry.ai" className="text-[#386758] hover:underline">support@mysentry.ai</a>. By utilizing the MySentry App, users agree to and authorize the gathering, utilization, and disclosure of their personal information as outlined in this Privacy Policy.
+              By utilizing the MySentry App, users agree to and authorize the gathering, utilization, and disclosure of their personal information as outlined in this Privacy Policy.
             </p>
           </div>
         </main>
