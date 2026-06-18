@@ -34,6 +34,14 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 async function startServer() {
   const app = express();
   const server = createServer(app);
+  // HSTS — tell browsers to always use HTTPS
+  app.use((_req, res, next) => {
+    res.setHeader(
+      'Strict-Transport-Security',
+      'max-age=31536000; includeSubDomains'
+    );
+    next();
+  });
   // Brotli + gzip compression via standard Express middleware
   app.use(compression());
   // Configure body parser with larger size limit for file uploads

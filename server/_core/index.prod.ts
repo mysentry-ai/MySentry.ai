@@ -36,6 +36,14 @@ async function startServer() {
   // Trust the X-Forwarded-* headers from the AWS ALB so that req.protocol,
   // req.secure, and req.ip reflect the real client values, not the ALB hop.
   app.set("trust proxy", 1);
+  // HSTS — tell browsers to always use HTTPS
+  app.use((_req, res, next) => {
+    res.setHeader(
+      'Strict-Transport-Security',
+      'max-age=31536000; includeSubDomains'
+    );
+    next();
+  });
   // Brotli + gzip compression via standard Express middleware
   app.use(compression());
   // Configure body parser with larger size limit for file uploads
