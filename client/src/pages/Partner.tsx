@@ -327,6 +327,7 @@ export const Partner = () => {
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/UoakOftbovNQJNav.jpg" 
                 alt="Dealer Dashboard Interface" 
                 className="relative rounded-3xl shadow-2xl border border-white/10"
+                loading="lazy"
               />
             </motion.div>
           </div>

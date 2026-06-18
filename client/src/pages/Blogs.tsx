@@ -97,6 +97,7 @@ const Blogs = () => {
                   src={featuredBlog.heroImageUrl || '/images/blog-placeholder.jpg'} 
                   alt={featuredBlog.heroImageAlt || featuredBlog.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
                 />
                 {featuredBlog.categoryId && categoryMap[featuredBlog.categoryId] && (
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#1a1a1a]">
@@ -146,6 +147,7 @@ const Blogs = () => {
                         src={blog.heroImageUrl || '/images/blog-placeholder.jpg'} 
                         alt={blog.heroImageAlt || blog.title} 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                        loading="lazy"
                       />
                       {blog.categoryId && categoryMap[blog.categoryId] && (
                         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#1a1a1a]">

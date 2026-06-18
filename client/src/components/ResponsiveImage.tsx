@@ -6,6 +6,7 @@ interface ResponsiveImageProps extends React.ImgHTMLAttributes<HTMLImageElement>
   alt: string;
   className?: string;
   sizes?: string;
+  fetchPriority?: "high" | "low" | "auto";
 }
 
 export default function ResponsiveImage({ 
@@ -13,6 +14,8 @@ export default function ResponsiveImage({
   alt, 
   className, 
   sizes = "(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px",
+  loading,
+  fetchPriority,
   ...props 
 }: ResponsiveImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -38,7 +41,8 @@ export default function ResponsiveImage({
       srcSet={generateSrcSet(src)}
       sizes={sizes}
       alt={alt}
-      loading="lazy"
+      loading={loading ?? "lazy"}
+      fetchPriority={fetchPriority}
       onLoad={() => setIsLoaded(true)}
       className={cn(
         "transition-opacity duration-300",

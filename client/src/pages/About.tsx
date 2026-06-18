@@ -17,6 +17,7 @@ export const About = () => {
             src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/QVNDUrAMsxMgicVc.jpg" 
             alt="MySentry Vision" 
             className="absolute inset-0 w-full h-full object-cover opacity-60"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
         </div>
@@ -93,6 +94,7 @@ export const About = () => {
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/QRKKwqMiGpYMAFfR.jpg" 
                 alt="MySentry Promise" 
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>

@@ -37,6 +37,8 @@ export default function HeroSection({
            src={imageSrc} 
            alt={imageAlt} 
            className="absolute inset-0 w-full h-full object-cover opacity-60"
+           loading="eager"
+           fetchPriority="high"
          />
          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
       </div>

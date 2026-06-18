@@ -196,6 +196,7 @@ export default function ComparisonSection() {
                       src="/images/logo.png" 
                       alt="MySentry" 
                       className="h-12 w-auto object-contain"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -215,7 +216,7 @@ export default function ComparisonSection() {
 
               <div className="col-span-1 text-center pb-6">
                 <div className="mx-auto w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3">
-                  <img src="https://static.thenounproject.com/png/4440884-200.png" className="w-6 h-6 opacity-40" alt="Alert" />
+                  <img src="https://static.thenounproject.com/png/4440884-200.png" className="w-6 h-6 opacity-40" alt="Alert" loading="lazy" />
                 </div>
                 <h4 className="text-lg font-bold text-gray-400">Senior Alerts</h4>
                 <p className="text-xs text-gray-400 mt-1">e.g. Medical Guardian</p>
@@ -223,7 +224,7 @@ export default function ComparisonSection() {
 
               <div className="col-span-1 text-center pb-6">
                 <div className="mx-auto w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3">
-                  <img src="https://static.thenounproject.com/png/3090399-200.png" className="w-6 h-6 opacity-40" alt="Watch" />
+                  <img src="https://static.thenounproject.com/png/3090399-200.png" className="w-6 h-6 opacity-40" alt="Watch" loading="lazy" />
                 </div>
                 <h4 className="text-lg font-bold text-gray-400">Wearables</h4>
                 <p className="text-xs text-gray-400 mt-1">e.g. Oura, Whoop</p>

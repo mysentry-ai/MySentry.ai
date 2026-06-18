@@ -28,6 +28,7 @@ export default function UGCSection() {
                 src={video.thumbnail} 
                 alt={video.title} 
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-300"
+                loading="lazy"
               />
               
               <div className="absolute inset-0 flex items-center justify-center">
