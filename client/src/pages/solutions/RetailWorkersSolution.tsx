@@ -27,7 +27,7 @@ export default function RetailWorkersSolution() {
             "We track the employee's location in real-time, ensuring help arrives exactly where it's needed, as quickly as possible.",
         },
       ]}
-      primaryCta={{ text: "Book a Demo", href: "/book-demo" }}
+      primaryCta={{ text: "Book a Demo", href: "/contact" }}
       secondaryCta={{
         text: "Start 7-Day Free Trial",
         href: "/pricing#pricing-plans",
@@ -91,10 +91,7 @@ export default function RetailWorkersSolution() {
           detail: "\"MySentry has given our team peace of mind. Knowing they have a direct line to help has made a huge difference.\" - Store Manager, National Clothing Retailer",
         },
       ]}
-      relatedLinks={[
-        { text: "Workplace Violence Prevention", href: "/guides/workplace-violence-prevention" },
-        { text: "Case Study: Luxury Retailer", href: "/case-studies/luxury-retailer" },
-      ]}
+      relatedLinks={[]}
       heroImage="/images/solutions/retail-hero.jpg"
     />
   );

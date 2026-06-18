@@ -99,6 +99,7 @@ export default function RealEstate() {
           text: "Safety for Lone Workers",
           href: "/use-cases/lone-worker-safety-app",
         },
+        { text: "Real Estate Safety Solution", href: "/solutions/real-estate" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
       ]}

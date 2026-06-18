@@ -62,9 +62,6 @@ export default function SeniorsAgingInPlace() {
   return (
     <Layout>
       <SEO
-        title="Aging in Place Safety: Keep Seniors Safe at Home | MySentry"
-        description="Ensure aging in place safety for your parents. MySentry offers automatic fall detection, health monitoring, and 24/7 professional response. Keep loved ones safe at home. Start your free trial."
-        canonical="https://mysentry.ai/safety-for/seniors-aging-in-place"
         schema={schema}
       />
 

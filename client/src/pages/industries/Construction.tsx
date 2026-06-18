@@ -58,6 +58,7 @@ export default function Construction() {
       relatedLinks={[
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },
+        { text: "Construction Safety Solution", href: "/solutions/construction" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
       ]}

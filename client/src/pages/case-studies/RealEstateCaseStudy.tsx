@@ -69,7 +69,7 @@ export default function RealEstateCaseStudy() {
       relatedLinks={[
         { text: "Learn more about how MySentry works", href: "/how-it-works" },
         { text: "See pricing plans", href: "/pricing#pricing-plans" },
-        { text: "Read another case study", href: "/case-studies/lone-worker-safety" },
+        { text: "Read another case study", href: "/use-cases/lone-worker-safety-app" },
       ]}
       heroImage="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
     />

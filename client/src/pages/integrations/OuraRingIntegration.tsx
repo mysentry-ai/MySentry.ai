@@ -5,7 +5,7 @@ export default function OuraRingIntegration() {
     <SEOPageTemplate
       seoTitle="Oura Ring Integration: Add 24/7 Safety | MySentry"
       seoDescription="Integrate your Oura Ring with MySentry for 24/7 emergency response. Get fall detection, panic alarms, and professional monitoring. Stay safe, get help fast."
-      canonical="https://www.mysentry.ai/integrations/oura-ring"
+      canonical="https://mysentry.ai/integrations/oura-ring"
       label="Integration"
       h1="Worried About Emergencies While Wearing Your Oura Ring?"
       problem="You love the health insights from your Oura Ring, but what happens in an emergency? A fall, a sudden health event, or a moment of panic can leave you vulnerable when you're alone."
@@ -95,7 +95,7 @@ export default function OuraRingIntegration() {
       relatedLinks={[
         { text: "How MySentry Works", href: "/how-it-works" },
         { text: "Pricing Plans", href: "/pricing" },
-        { text: "About Us", href: "/about" },
+        { text: "About Us", href: "/about-us" },
       ]}
     />
   );

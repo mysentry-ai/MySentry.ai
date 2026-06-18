@@ -13,10 +13,7 @@ import FAQs from "@/components/FAQs";
 export default function Features() {
   return (
     <Layout>
-      <SEO 
-        title="How MySentry Works | Panic Button, Fall Detection & 24/7 Monitoring" 
-        description="See how MySentry protects you in 3 simple steps. Panic button, fall detection, crash detection, health monitoring, and 24/7 professional response with live video. Try free for 7 days."
-        canonical="https://mysentry.ai/how-it-works"
+      <SEO
         schema={[
           {
             "@context": "https://schema.org",
@@ -93,7 +90,6 @@ export default function Features() {
       <HeroSection
         label="Advanced Protection System"
         title={<>Your Smartwatch Collects Data.<br/><span className="text-gray-600">MySentry Gives You Answers.</span></>}
-        description="MySentry transforms raw wearable data into personalized insights, real-time safety alerts, and proactive health guidance, all from your Apple Watch or Samsung Watch."
         imageSrc="/images/hero-section.svg"
         imageAlt="Happy senior checking smartwatch"
       />
@@ -140,10 +136,10 @@ export default function Features() {
                   </p>
                   <div className="flex gap-3">
                     <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-4 w-4" /> iOS
+                      <Smartphone className="h-4 w-4" /> iOS
                     </span>
                     <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" alt="Android" className="h-4 w-4" /> Android
+                      <Smartphone className="h-4 w-4" /> Android
                     </span>
                   </div>
                 </div>
@@ -174,10 +170,10 @@ export default function Features() {
                   </p>
                   <div className="flex gap-3">
                     <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple" className="h-4 w-4" /> Apple Watch
+                      <Watch className="h-4 w-4" /> Apple Watch
                     </span>
                     <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
-                      <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg" alt="Samsung" className="h-4 w-auto" /> Galaxy Watch
+                      <Watch className="h-4 w-4" /> Galaxy Watch
                     </span>
                   </div>
                 </div>

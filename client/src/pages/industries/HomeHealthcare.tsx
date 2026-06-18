@@ -72,6 +72,7 @@ export default function HomeHealthcare() {
       relatedLinks={[
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
         { text: "Panic Button", href: "/features/panic-button-app" },
+        { text: "Home Healthcare Safety Solution", href: "/solutions/home-healthcare" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
       ]}

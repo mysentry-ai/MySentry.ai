@@ -90,17 +90,12 @@ export const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
-      <SEO 
-        title="Contact MySentry | Get Help, Request a Demo, or Partner With Us" 
-        description="Contact MySentry for support, sales inquiries, partnership opportunities, or to schedule a demo. Our team is ready to help you find the right personal safety solution."
-        canonical="https://mysentry.ai/contact"
-      />
+      <SEO />
       <Navbar />
       
       <HeroSection
         label="Contact Us"
         title={<>We're Here<br/><span className="text-gray-600">To Help.</span></>}
-        description="Whether you have a question about our technology, need support, or just want to say hello, our team is ready to listen."
         imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/lLrpekajBLjvQSbU.jpg"
         imageAlt="Contact MySentry Support"
       />

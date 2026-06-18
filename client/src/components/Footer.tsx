@@ -191,7 +191,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/terms" className="text-gray-900 hover:text-primary transition-colors">
-                  Terms &amp; Conditions
+                  Terms & Conditions
                 </Link>
               </li>
             </ul>

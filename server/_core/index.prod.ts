@@ -1,6 +1,6 @@
 import "dotenv/config";
 import express from "express";
-import fs from "fs";
+import compression from "compression";
 import { createServer } from "http";
 import net from "net";
 import path from "path";
@@ -8,8 +8,7 @@ import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
-import compression from "compression";
-import { serveStatic, setupVite } from "./vite";
+import { serveStatic } from "./serve-static";
 import { registerSitemapRoutes } from "../sitemaps";
 
 function isPortAvailable(port: number): Promise<boolean> {
@@ -34,6 +33,9 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 async function startServer() {
   const app = express();
   const server = createServer(app);
+  // Trust the X-Forwarded-* headers from the AWS ALB so that req.protocol,
+  // req.secure, and req.ip reflect the real client values, not the ALB hop.
+  app.set("trust proxy", 1);
   // Brotli + gzip compression via standard Express middleware
   app.use(compression());
   // Configure body parser with larger size limit for file uploads
@@ -51,19 +53,11 @@ async function startServer() {
       createContext,
     })
   );
-  // Use static serving if dist/public exists (production build is present),
-  // otherwise fall back to Vite dev server. This is more robust than relying
-  // solely on NODE_ENV which may not be set correctly in all deployment environments.
-  const distPublicPath = path.resolve(process.cwd(), "dist", "public");
-  const hasBuiltAssets = fs.existsSync(distPublicPath) && fs.existsSync(path.join(distPublicPath, "index.html"));
-  if (process.env.NODE_ENV !== "development" && hasBuiltAssets) {
-    serveStatic(app);
-  } else {
-    if (!hasBuiltAssets && process.env.NODE_ENV !== "development") {
-      console.warn(`[Build] WARNING: dist/public not found at ${distPublicPath}. Falling back to Vite dev server.`);
-    }
-    await setupVite(app, server);
-  }
+  // Production entry: always serve static built assets.
+  // The dev branch (setupVite) is intentionally absent — this entry point is
+  // only used by the production build (esbuild target), ensuring vite and its
+  // plugins are never imported and never required at runtime.
+  serveStatic(app);
 
   const preferredPort = parseInt(process.env.PORT || "3000");
   const port = await findAvailablePort(preferredPort);

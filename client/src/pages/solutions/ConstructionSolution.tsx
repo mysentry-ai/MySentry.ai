@@ -27,7 +27,7 @@ export default function ConstructionSolutionPage() {
         description: 'Every event is logged, creating an automatic paper trail for OSHA and internal safety audits. Demonstrate your commitment to safety with concrete data.',
       },
     ],
-    primaryCta: { text: 'Book a Demo', href: '/book-demo' },
+    primaryCta: { text: 'Book a Demo', href: '/contact' },
     secondaryCta: { text: 'See Pricing', href: '/pricing' },
     directAnswer: 'The most effective way to enhance construction site safety is with an automated monitoring system like MySentry. It provides immediate fall detection, a panic alarm for conscious workers, and GPS tracking to locate individuals quickly, complementing traditional safety protocols with a layer of proactive, 24/7 protection.',
     howItWorks: [
@@ -93,7 +93,6 @@ export default function ConstructionSolutionPage() {
       },
     ],
     relatedLinks: [
-      { text: 'Fall Detection for Roofers', href: '/solutions/roofing' },
       { text: 'Lone Worker Safety Guide', href: '/guides/lone-worker-safety' },
       { text: 'How MySentry Works', href: '/how-it-works' },
     ],

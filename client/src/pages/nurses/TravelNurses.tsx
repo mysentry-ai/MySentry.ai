@@ -45,12 +45,9 @@ export default function TravelNurses() {
   return (
     <Layout>
       <SEO
-        title="Travel Nurse Safety App | Panic Button & 24/7 Monitoring | MySentry"
-        description="MySentry keeps travel nurses safe in unfamiliar cities, new facilities, and late-night commutes. Panic alarm, fall detection, and 24/7 monitoring on your phone and watch. Start free."
-        canonical="https://mysentry.ai/nurses/travel-nurses"
         schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
       />
-      <HeroSection label="Travel Nurse Safety" title={<>Safety for Travel Nurses<br /><span className="text-gray-600">in Every New City</span></>} description="New hospital. New neighborhood. New risks. MySentry gives you a panic alarm, check-in timers, and 24/7 backup wherever your next assignment takes you." imageSrc={HERO_IMAGE} imageAlt="Travel nurse with luggage outside hospital" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
+      <HeroSection label="Travel Nurse Safety" title={<>Safety for Travel Nurses<br /><span className="text-gray-600">in Every New City</span></>} imageSrc={HERO_IMAGE} imageAlt="Travel nurse with luggage outside hospital" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
 
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container max-w-3xl">

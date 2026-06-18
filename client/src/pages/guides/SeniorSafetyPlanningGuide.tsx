@@ -5,7 +5,7 @@ export default function SeniorSafetyPlanningGuide() {
     <SEOPageTemplate
       seoTitle="Senior Safety Planning Guide for Aging Parents | MySentry"
       seoDescription="Help your aging parents stay safe and independent at home. This guide shows you how to plan for their safety, prevent falls, and use MySentry for peace of mind."
-      canonical="https://mysentry.ai/guides/senior-safety-planning-guide"
+      canonical="https://mysentry.ai/guides/senior-safety-planning"
       label="SENIOR SAFETY"
       h1="Worried About Your Aging Parents' Safety at Home?"
       problem="As parents get older, new health and movement challenges can make daily life harder. Simple tasks we do without thinking can become risky, leading to falls or injuries that affect their independence and happiness."
@@ -77,9 +77,9 @@ export default function SeniorSafetyPlanningGuide() {
         },
       ]}
       relatedLinks={[
-        { text: "The Guide to Medical Alert Systems", href: "/guides/medical-alert-systems-guide" },
-        { text: "How to Pick the Best Medical Alert System", href: "/blog/how-to-choose-the-best-medical-alert-system" },
-        { text: "Fall Detection for Seniors: A Full Guide", href: "/guides/fall-detection-guide" },
+        { text: "The Guide to Medical Alert Systems", href: "/features" },
+        { text: "How to Pick the Best Medical Alert System", href: "/blog/how-to-choose-a-medical-alert-app-for-an-aging-parent" },
+        { text: "Fall Detection for Seniors: A Full Guide", href: "/features/fall-detection-app" },
         { text: "MySentry Prices and Plans", href: "/pricing" },
       ]}
     />

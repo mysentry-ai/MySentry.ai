@@ -5,7 +5,7 @@ export default function WomenLivingAlone() {
     <SEOPageTemplate
       seoTitle="Safety for Women Living Alone | MySentry"
       seoDescription="Women living alone can feel secure with MySentry. Get peace of mind with fall detection, voice-activated panic alarms, and 24/7 monitoring. Start your free trial today."
-      canonical="https://www.mysentry.ai/safety-for/women-living-alone"
+      canonical="https://mysentry.ai/safety-for/women-living-alone"
       label="For Women Living Alone"
       h1="Live Confidently, Independently, and Securely"
       problem="Walking to your car at night, entering an empty apartment, or jogging alone can bring worry. These concerns can take away from the joy of living independently."
@@ -75,7 +75,7 @@ export default function WomenLivingAlone() {
       ]}
       relatedLinks={[
         { text: "Compare MySentry to Traditional Medical Alert Devices", href: "/compare/medical-alert-devices-vs-mysentry" },
-        { text: "How MySentry Helps Seniors Live on Their Own", href: "/safety-for/seniors" },
+        { text: "How MySentry Helps Seniors Live on Their Own", href: "/safety-for/seniors-aging-in-place" },
       ]}
       heroImage="/images/hero-women-living-alone.png"
     />

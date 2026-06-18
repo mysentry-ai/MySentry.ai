@@ -316,19 +316,99 @@ export async function getPublishedPostBySlug(slug: string) {
   return result[0];
 }
 
-export async function getRelatedPosts(categoryId: number, excludeId: number, limit = 3) {
+export async function getRelatedPosts(
+  categoryId: number,
+  excludeId: number,
+  tags: string[] | null,
+  limit = 4
+) {
   const db = await getDb();
   if (!db) return [];
-  return db
-    .select()
-    .from(blogPosts)
-    .where(
-      and(
-        eq(blogPosts.status, "published"),
-        eq(blogPosts.categoryId, categoryId),
-        sql`${blogPosts.id} != ${excludeId}`
+
+  const collected: (typeof blogPosts.$inferSelect)[] = [];
+  const collectedIds = new Set<number>([excludeId]);
+
+  // Tier 1: posts sharing ≥1 tag with the current post, sorted by overlap count
+  if (tags && tags.length > 0) {
+    const tagConditions = tags.map(
+      (tag) => sql`JSON_CONTAINS(${blogPosts.tags}, ${JSON.stringify(tag)})`
+    );
+    const tier1Rows = await db
+      .select()
+      .from(blogPosts)
+      .where(
+        and(
+          eq(blogPosts.status, "published"),
+          sql`${blogPosts.id} != ${excludeId}`,
+          or(...tagConditions)
+        )
       )
-    )
-    .orderBy(desc(blogPosts.publishedAt))
-    .limit(limit);
+      .orderBy(desc(blogPosts.publishedAt))
+      .limit(limit * 4);
+
+    const scored = tier1Rows.map((row) => {
+      const rowTags: string[] = Array.isArray(row.tags) ? (row.tags as string[]) : [];
+      const overlap = rowTags.filter((t) => tags.includes(t)).length;
+      return { row, overlap };
+    });
+    scored.sort((a, b) => b.overlap - a.overlap);
+
+    for (const { row } of scored) {
+      if (collected.length >= limit) break;
+      if (!collectedIds.has(row.id)) {
+        collected.push(row);
+        collectedIds.add(row.id);
+      }
+    }
+  }
+
+  // Tier 2: same category fallback
+  if (collected.length < limit) {
+    const needed = limit - collected.length;
+    const excludeList = Array.from(collectedIds);
+    const tier2 = await db
+      .select()
+      .from(blogPosts)
+      .where(
+        and(
+          eq(blogPosts.status, "published"),
+          eq(blogPosts.categoryId, categoryId),
+          sql`${blogPosts.id} NOT IN (${sql.raw(excludeList.join(","))})`
+        )
+      )
+      .orderBy(sql`RAND()`)
+      .limit(needed);
+
+    for (const row of tier2) {
+      if (collected.length >= limit) break;
+      if (!collectedIds.has(row.id)) {
+        collected.push(row);
+        collectedIds.add(row.id);
+      }
+    }
+  }
+
+  // Tier 3: global fallback
+  if (collected.length < limit) {
+    const needed = limit - collected.length;
+    const excludeList2 = Array.from(collectedIds);
+    const tier3 = await db
+      .select()
+      .from(blogPosts)
+      .where(
+        and(
+          eq(blogPosts.status, "published"),
+          sql`${blogPosts.id} NOT IN (${sql.raw(excludeList2.join(","))})`
+        )
+      )
+      .orderBy(sql`RAND()`)
+      .limit(needed);
+
+    for (const row of tier3) {
+      if (collected.length >= limit) break;
+      collected.push(row);
+    }
+  }
+
+  return collected;
 }

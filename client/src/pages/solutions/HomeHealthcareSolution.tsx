@@ -24,7 +24,7 @@ export default function HomeHealthcareSolutionPage() {
           description: "MySentry helps you meet your duty of care and OSHA requirements. By providing a reliable safety solution, you not only protect your workers but also reduce liability risks and potentially lower insurance premiums.",
         },
       ]}
-      primaryCta={{ text: "Book a Demo", href: "/book-demo" }}
+      primaryCta={{ text: "Book a Demo", href: "/contact" }}
       secondaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing#pricing-plans" }}
       directAnswer="MySentry offers a lone worker safety solution specifically designed for the home healthcare industry, addressing the core challenges of worker vulnerability, lack of real-time visibility, and compliance pressures."
       howItWorks={[

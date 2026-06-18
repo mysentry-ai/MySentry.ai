@@ -26,7 +26,7 @@ interface SEOPageTemplateProps {
   // SEO
   seoTitle: string;
   seoDescription: string;
-  canonical: string;
+  canonical?: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
 
   // Hero Section

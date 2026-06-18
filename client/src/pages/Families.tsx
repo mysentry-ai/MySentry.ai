@@ -30,8 +30,8 @@ export default function Families() {
       image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/ILNBARpWjhgDooYL.jpg",
       icon: Car,
       tag: "Driving Safety",
-      link: "/how-it-works",
-      ctaText: "See How It Works"
+      link: "/use-cases/teen-driver-safety",
+      ctaText: "Teen Driver Safety Features"
     },
     {
       id: "elderly-parents",
@@ -180,16 +180,11 @@ export default function Families() {
 
   return (
     <Layout>
-      <SEO 
-        title="Family Safety App | Crash Detection, GPS & Health Alerts | MySentry" 
-        description="Keep your whole family safe with MySentry. Real-time GPS, crash detection, fall alerts, and health monitoring for kids, teens, parents, and grandparents. Start your 7-day free trial."
-        canonical="https://mysentry.ai/families"
-      />
+      <SEO />
       
       <HeroSection
         label="For Families with Teens + Aging Parents"
         title={<>Know They’re Safe.<br/><span className="text-gray-600">Without Constant Texting.</span></>}
-        description="Kids at school? Parents at home? Teenager driving? MySentry connects and protects your whole family. Setup automated real-time location updates, get crash/fall alerts, and know instantly if a loved one needs help."
         imageSrc="/images/family-hero-base.jpg"
         imageAlt="Happy family outdoors"
       />
@@ -275,9 +270,8 @@ export default function Families() {
       </section>
 
       {/* Get Started Section */}
-      <GetStartedSection 
-        title="Protect your whole family today."
-        subtitle="One simple app to keep everyone connected and safe."
+      <GetStartedSection
+        sub
         ctaText="Start Your 7-Day Free Trial"
         ctaLink="/pricing#pricing-plans"
       />

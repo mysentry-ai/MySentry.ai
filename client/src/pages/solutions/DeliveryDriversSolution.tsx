@@ -5,7 +5,6 @@ export default function DeliveryDriversSolution() {
     <SEOPageTemplate
       seoTitle="Safety Solutions for Delivery Drivers | MySentry.ai"
       seoDescription="MySentry offers real-time safety monitoring for delivery drivers, including crash detection, panic alarms, and GPS tracking, to protect your fleet and lone workers."
-      canonical="https://www.mysentry.ai/solutions/delivery-drivers"
       label="Delivery Driver Safety"
       h1="Keeping Your Delivery Drivers Safe, Mile After Mile"
       problem="Delivery drivers face unpredictable neighborhoods, aggressive customers, and the increased risk of assault or robbery, especially during late-night deliveries. Companies often lack real-time safety monitoring for their fleet, leaving drivers vulnerable and without immediate support in emergencies."
@@ -24,7 +23,7 @@ export default function DeliveryDriversSolution() {
           description: "In an emergency, such as a crash or panic alarm activation, MySentry instantly alerts the monitoring center and fleet manager.",
         },
       ]}
-      primaryCta={{ text: "Book a Demo", href: "/book-demo" }}
+      primaryCta={{ text: "Book a Demo", href: "/contact" }}
       directAnswer="MySentry provides a comprehensive safety solution for delivery drivers, featuring automatic crash detection, a voice-activated panic alarm, GPS tracking, and live video streaming. This allows for real-time monitoring and immediate response in case of an emergency, protecting lone workers on the road."
       howItWorks={[
         "The MySentry app uses smartphone sensors to detect a crash and automatically alerts our 24/7 monitoring center.",
@@ -90,7 +89,6 @@ export default function DeliveryDriversSolution() {
       relatedLinks={[
         { text: "How MySentry Works", href: "/how-it-works" },
         { text: "Pricing for Teams", href: "/pricing#pricing-plans" },
-        { text: "Case Study: SecureHaul Logistics", href: "/case-studies/securehaul-logistics" },
       ]}
       heroImage="/images/solutions/delivery-driver-hero.jpg"
     />

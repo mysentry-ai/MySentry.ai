@@ -40,11 +40,7 @@ const useCases = [
 export default function UseCasesHub() {
   return (
     <Layout>
-      <SEO
-        title="Who Uses MySentry | Safety App Use Cases"
-        description="Discover how MySentry protects women, families, seniors, lone workers, and healthcare workers with 24/7 safety monitoring and emergency response."
-        canonical="https://mysentry.ai/use-cases"
-      />
+      <SEO />
       <section className="pt-32 pb-20 bg-gradient-to-b from-[#e8f5e9] to-white">
         <div className="container max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">

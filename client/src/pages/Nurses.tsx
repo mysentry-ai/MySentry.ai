@@ -122,9 +122,6 @@ export default function Nurses() {
   return (
     <Layout>
       <SEO
-        title="Nurse Safety App | Panic Button, Fall Detection & Health Monitoring | MySentry"
-        description="MySentry is the nurse safety app with a one-press panic alarm, fall detection, MeetSafe check-ins, and 24/7 professional monitoring. Built for home health, travel, ER, and night-shift nurses. Start free."
-        canonical="https://mysentry.ai/nurses"
         schema={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -139,7 +136,6 @@ export default function Nurses() {
       <HeroSection
         label="Nurse Safety + Health Monitoring"
         title={<>Safety + Health Monitoring<br /><span className="text-gray-600">for Nurses, with Emergency Response</span></>}
-        description="One app for panic alerts, fall and crash detection, and health alerts, backed by 24/7 professional monitoring. Built for every shift, every setting."
         imageSrc={HERO_IMAGE}
         imageAlt="Confident nurse in hospital corridor holding smartphone"
         ctaText="Start Free Trial"

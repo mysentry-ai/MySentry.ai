@@ -349,9 +349,6 @@ export default function Pricing() {
   return (
     <Layout>
       <SEO
-        title="MySentry Pricing | Personal Safety Plans from $15/mo | 7-Day Free Trial"
-        description="Choose the protection that fits your life. Individual plans from $15/mo, Family plans from $30/mo. 24/7 professional monitoring, fall detection, panic alarm, and live video response. Start your 7-day free trial today."
-        canonical="https://mysentry.ai/pricing"
         schema={pricingSchema}
       />
 

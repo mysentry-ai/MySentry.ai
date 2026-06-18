@@ -45,12 +45,9 @@ export default function NightShiftNurses() {
   return (
     <Layout>
       <SEO
-        title="Night Shift Nurse Safety App | Crash Detection & 24/7 Monitoring | MySentry"
-        description="MySentry protects night shift nurses during late-night commutes, parking lot walks, and post-shift drives home. Crash detection, panic alarm, and 24/7 monitoring. Start free."
-        canonical="https://mysentry.ai/nurses/night-shift"
         schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
       />
-      <HeroSection label="Night Shift Nurse Safety" title={<>Safety for Night Shift Nurses<br /><span className="text-gray-600">Before, During, and After</span></>} description="The shift ends at 3am. The parking lot is empty. The drive home is long. MySentry gives you crash detection, a panic alarm, and 24/7 monitoring so the hardest part of your day doesn't become the most dangerous." imageSrc={HERO_IMAGE} imageAlt="Nurse walking to car in hospital parking lot at night" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
+      <HeroSection label="Night Shift Nurse Safety" title={<>Safety for Night Shift Nurses<br /><span className="text-gray-600">Before, During, and After</span></>} imageSrc={HERO_IMAGE} imageAlt="Nurse walking to car in hospital parking lot at night" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
 
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container max-w-3xl">

@@ -11,16 +11,10 @@ const Partners = () => {
 
   return (
     <div className="min-h-screen bg-background pt-24">
-      <SEO 
-        title="MySentry Partners | Safety Technology Partnerships & Integrations" 
-        description="Explore MySentry's technology and channel partnerships. We work with leading safety, healthcare, and enterprise organizations to deliver comprehensive personal protection solutions."
-        canonical="https://mysentry.ai/partners"
-      />
+      <SEO />
 
       <HeroSection
         label="Partnerships"
-        title="Partner With Purpose"
-        description="Join forces with the leader in AI-powered personal safety. Together, we can protect more lives and provide peace of mind to families everywhere."
         imageSrc="/images/partners-hero.jpg"
         imageAlt="Partner With Purpose"
       />

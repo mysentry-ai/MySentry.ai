@@ -5,7 +5,7 @@ export default function LoneWorkerSafetyGuide() {
     <SEOPageTemplate
       seoTitle="Lone Worker Safety Guide, Compliance | MySentry"
       seoDescription="Keep your lone workers safe and meet compliance. MySentry helps you understand OSHA rules, duty of care, and safety tech. Protect your team today."
-      canonical="https://mysentry.ai/guides/lone-worker-safety-compliance"
+      canonical="https://mysentry.ai/guides/lone-worker-safety"
       label="LONE WORKER SAFETY"
       h1="Worried About Lone Worker Safety? Protect Your Team and Stay Compliant."
       problem="A lone worker is an employee who works alone, without direct supervision. This can be a truck driver, a home healthcare aide, a real estate agent, or a farm worker. The main point is they don't have immediate help from co-workers."
@@ -33,7 +33,7 @@ export default function LoneWorkerSafetyGuide() {
         },
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing#pricing-plans" }}
-      secondaryCta={{ text: "Book a Demo", href: "/contact-sales" }}
+      secondaryCta={{ text: "Book a Demo", href: "/contact" }}
       directAnswer="OSHA rule 1915.84 says employers must check on each lone worker regularly. Also, the General Duty Clause means employers must provide a safe workplace. This, plus the ethical duty to care, means employers must take steps to keep their employees safe."
       howItWorks={[
         "Panic alarms and apps let workers quickly and privately call for help in an emergency.",

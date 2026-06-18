@@ -204,18 +204,12 @@ export const Partner = () => {
 
   return (
     <div className="min-h-screen bg-white font-sans text-[#1a1a1a]">
-      <SEO 
-        title="Become a MySentry Dealer | Partner Program for Safety Solutions" 
-        description="Join MySentry's dealer network. Offer AI-powered personal safety, health monitoring, and emergency response solutions to your clients. Competitive margins and full support."
-        canonical="https://mysentry.ai/partner"
-      />
+      <SEO />
       <Navbar />
       
       <div className="relative">
         <HeroSection
           label="Partner Program"
-          title="Join the Dealer Network"
-          description="Expand your business with the world's first AI-powered personal assistant for employee safety, security, and wellness."
           imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/PNeMojefSAcSjgAW.jpg"
           imageAlt="MySentry Partner Network"
           showCta={false}
@@ -368,7 +362,6 @@ export const Partner = () => {
               <div className="border-b border-gray-100">
                 <StepHeader 
                   step={1} 
-                  title="Company Information" 
                   isActive={currentStep === 1} 
                   isCompleted={completedSteps.includes(1)} 
                 />
@@ -434,7 +427,6 @@ export const Partner = () => {
               <div className="border-b border-gray-100">
                 <StepHeader 
                   step={2} 
-                  title="Primary Contact Information" 
                   isActive={currentStep === 2} 
                   isCompleted={completedSteps.includes(2)} 
                 />
@@ -492,7 +484,6 @@ export const Partner = () => {
               <div>
                 <StepHeader 
                   step={3} 
-                  title="Licensing Information" 
                   isActive={currentStep === 3} 
                   isCompleted={completedSteps.includes(3)} 
                 />
