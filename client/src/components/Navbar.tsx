@@ -110,7 +110,7 @@ const megaMenuSections = [
         title: "vs. Security Systems",
         icon: <Lock className="w-5 h-5 text-primary" />,
         items: [
-          { name: "MySentry vs. ADT SoSecure", desc: "Mobile safety comparison", href: "/compare/adt-vs-mysentry" },
+          { name: "MySentry vs. ADT SoSecure", desc: "Mobile safety comparison", href: "/compare/sosecure-adt-vs-mysentry" },
           { name: "Compare All", desc: "Side-by-side feature matrix", href: "/compare" },
         ],
       },

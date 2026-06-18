@@ -117,6 +117,9 @@ export function registerSitemapRoutes(app: Express) {
   app.get("/features/health-monitoring-app-with-alerts", (_req, res) => {
     res.redirect(301, "/features/health-monitoring");
   });
+  app.get("/compare/adt-vs-mysentry", (_req, res) => {
+    res.redirect(301, "/compare/sosecure-adt-vs-mysentry");
+  });
 
   // ── www → non-www redirect (production only) ──
   // Redirect www.mysentry.ai to mysentry.ai to prevent duplicate content
