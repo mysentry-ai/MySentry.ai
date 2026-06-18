@@ -33,9 +33,11 @@ export default function HeroSection({
   return (
     <section className={cn("relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden", className)}>
       <div className="absolute inset-0 z-0">
-         <ResponsiveImage 
-           src={imageSrc} 
-           alt={imageAlt} 
+         <img
+           srcSet="/images/hero-mobile.webp 768w, /images/hero-desktop.webp 1920w"
+           sizes="(max-width: 768px) 768px, 1920px"
+           src="/images/hero-desktop.webp"
+           alt={imageAlt}
            className="absolute inset-0 w-full h-full object-cover opacity-60"
            loading="eager"
            fetchPriority="high"
