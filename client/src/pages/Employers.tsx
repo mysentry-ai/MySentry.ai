@@ -91,8 +91,8 @@ export default function Employers() {
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
       icon: Stethoscope,
       tag: "Healthcare",
-      link: "/pricing",
-      ctaText: "Staff Safety"
+      link: "/nurses",
+      ctaText: "Nurse Safety Features"
     },
     {
       id: "real-estate",

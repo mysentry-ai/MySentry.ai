@@ -44,7 +44,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#e8f5e9] border-t border-primary/10 pt-16 pb-8">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand Column */}
           <div className="space-y-4">
             <Link onClick={() => window.scrollTo(0, 0)} href="/" className="flex items-center gap-2">
@@ -170,6 +170,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/nurses" className="text-gray-900 hover:text-primary transition-colors">
+                  Nurse Safety
+                </Link>
+              </li>
+              <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/blogs" className="text-gray-900 hover:text-primary transition-colors">
                   Blogs
                 </Link>
@@ -186,7 +191,136 @@ export default function Footer() {
               </li>
               <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/terms" className="text-gray-900 hover:text-primary transition-colors">
-                  Terms & Conditions
+                  Terms &amp; Conditions
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Safety Resources */}
+          <div>
+            <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Safety Resources</h3>
+            <ul className="space-y-3 text-base font-medium">
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/seniors-aging-in-place" className="text-gray-900 hover:text-primary transition-colors">
+                  Seniors Aging in Place
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/solo-travelers" className="text-gray-900 hover:text-primary transition-colors">
+                  Solo Traveler Safety
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/women-living-alone" className="text-gray-900 hover:text-primary transition-colors">
+                  Women Living Alone
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/case-studies/home-healthcare" className="text-gray-900 hover:text-primary transition-colors">
+                  Home Healthcare Case Study
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/case-studies/real-estate" className="text-gray-900 hover:text-primary transition-colors">
+                  Real Estate Case Study
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/case-studies/field-services" className="text-gray-900 hover:text-primary transition-colors">
+                  Field Services Case Study
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/integrations/apple-watch" className="text-gray-900 hover:text-primary transition-colors">
+                  Apple Watch Integration
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/integrations/samsung-galaxy-watch" className="text-gray-900 hover:text-primary transition-colors">
+                  Samsung Galaxy Watch Integration
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/integrations/oura-ring" className="text-gray-900 hover:text-primary transition-colors">
+                  Oura Ring Integration
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/resources/employer-one-pager" className="text-gray-900 hover:text-primary transition-colors">
+                  Employer Safety Overview
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/guides/professional-monitoring" className="text-gray-900 hover:text-primary transition-colors">
+                  Professional Monitoring Guide
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/solutions/delivery-drivers" className="text-gray-900 hover:text-primary transition-colors">
+                  Delivery Driver Safety
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Featured Guides */}
+          <div>
+            <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Featured Guides</h3>
+            <ul className="space-y-3 text-base font-medium">
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/employee-health-wellness-future" className="text-gray-900 hover:text-primary transition-colors">
+                  Employee Health &amp; Wellness
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/safety-strategy-reducing-liability" className="text-gray-900 hover:text-primary transition-colors">
+                  Safety Strategy &amp; Liability
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/what-happens-in-the-first-5-minutes-after-a-fall-why-speed-matters" className="text-gray-900 hover:text-primary transition-colors">
+                  After a Fall: Why Speed Matters
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/family-park-safety-guide" className="text-gray-900 hover:text-primary transition-colors">
+                  Family Park Safety Guide
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/family-road-trip-safety-summer-guide" className="text-gray-900 hover:text-primary transition-colors">
+                  Family Road Trip Safety
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/best-safety-app-for-nurses-2026" className="text-gray-900 hover:text-primary transition-colors">
+                  Best Safety App for Nurses
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/nurse-burnout-health-monitoring-mysentry" className="text-gray-900 hover:text-primary transition-colors">
+                  Nurse Burnout &amp; Health Monitoring
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/summer-safety-for-seniors-living-alone" className="text-gray-900 hover:text-primary transition-colors">
+                  Summer Safety for Seniors
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/lone-worker-heat-safety" className="text-gray-900 hover:text-primary transition-colors">
+                  Lone Worker Heat Safety
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/vacation-rental-safety-families" className="text-gray-900 hover:text-primary transition-colors">
+                  Vacation Rental Safety
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/power-outage-safety-for-seniors" className="text-gray-900 hover:text-primary transition-colors">
+                  Power Outage Safety for Seniors
                 </Link>
               </li>
             </ul>

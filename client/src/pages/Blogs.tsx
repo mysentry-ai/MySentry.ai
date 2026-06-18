@@ -18,7 +18,7 @@ const Blogs = () => {
   // Fetch posts from database
   const postsQuery = trpc.blog.public.list.useQuery({
     categoryId: categoryId ?? undefined,
-    limit: 50,
+    limit: 200,
   });
   const posts = postsQuery.data?.posts || [];
 
