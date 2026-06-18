@@ -92,6 +92,7 @@ export function serveStatic(app: Express) {
       res
         .status(200)
         .set("Content-Type", "text/html")
+        .set("Cache-Control", "no-cache")
         .send(html);
     } catch (err) {
       // Fallback: serve the raw template without injection
@@ -103,7 +104,20 @@ export function serveStatic(app: Express) {
   // ── 3. Static files (images, fonts, robots.txt, etc.) ────────────────────
   // index.html is never served by this middleware because the SSR middleware
   // above already handled all HTML requests.
-  app.use(express.static(distPath));
+  app.use(express.static(distPath, {
+    maxAge: "1y",
+    immutable: true,
+    setHeaders(res, filePath) {
+      // HTML, robots.txt, and sitemaps must always be re-fetched
+      if (
+        filePath.endsWith(".html") ||
+        filePath.endsWith(".txt") ||
+        filePath.endsWith(".xml")
+      ) {
+        res.setHeader("Cache-Control", "no-cache");
+      }
+    },
+  }));
 
   // ── 4. Final catch-all (should rarely be reached) ─────────────────────────
   app.use("*", (_req: Request, res: Response) => {
