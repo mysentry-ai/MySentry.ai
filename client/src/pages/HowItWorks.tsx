@@ -151,6 +151,7 @@ export default function Features() {
                     alt="Supported Smartphones" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
+                    width="1280" height="720"
                   />
                 </div>
               </div>
@@ -186,6 +187,7 @@ export default function Features() {
                     alt="Supported Smartwatches" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
+                    width="1280" height="720"
                   />
                 </div>
               </div>
@@ -308,7 +310,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="relative w-full">
-              <img src="/images/panic-alarm-feature.svg" alt="Panic Alarm - Phone showing triggered alarm and live video response" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" />
+              <img src="/images/panic-alarm-feature.svg" alt="Panic Alarm - Phone showing triggered alarm and live video response" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="255" height="313" />
             </div>
           </motion.div>
         </div>
@@ -325,7 +327,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/fall-detection-feature.svg" alt="Fall Detection - Phone and Watch showing fall detected alert" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" />
+              <img src="/images/fall-detection-feature.svg" alt="Fall Detection - Phone and Watch showing fall detected alert" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="259" height="302" />
             </div>
           </motion.div>
           <div>
@@ -389,7 +391,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/near-fall-detection-feature.svg" alt="Near-Fall Detection - Phone and Watch showing stumble alert" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" />
+              <img src="/images/near-fall-detection-feature.svg" alt="Near-Fall Detection - Phone and Watch showing stumble alert" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="259" height="302" />
             </div>
           </motion.div>
         </div>
@@ -406,7 +408,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/crash-detection-feature.svg" alt="Crash Detection - Phone and Watch showing crash detected alert" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" />
+              <img src="/images/crash-detection-feature.svg" alt="Crash Detection - Phone and Watch showing crash detected alert" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="258" height="301" />
             </div>
           </motion.div>
           <div>
@@ -470,7 +472,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/smart-connectivity-feature.svg" alt="Smart Connectivity - Three phones showing location sharing and family connections" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" />
+              <img src="/images/smart-connectivity-feature.svg" alt="Smart Connectivity - Three phones showing location sharing and family connections" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="349" height="279" />
             </div>
           </motion.div>
         </div>
@@ -487,7 +489,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/WebMysentry(10).svg" alt="Health Monitoring - Daily Health Vitals" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" />
+              <img src="/images/WebMysentry(10).svg" alt="Health Monitoring - Daily Health Vitals" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="386" height="356" />
             </div>
           </motion.div>
           <div>
@@ -545,7 +547,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/WebMysentry(12).svg" alt="Live Video Streaming - Video call and chat" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" />
+              <img src="/images/WebMysentry(12).svg" alt="Live Video Streaming - Video call and chat" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="255" height="313" />
             </div>
           </motion.div>
         </div>
@@ -562,7 +564,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/WebMysentry(11).svg" alt="MeetSafe - Meetings and Meet Safe with Voice" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" />
+              <img src="/images/WebMysentry(11).svg" alt="MeetSafe - Meetings and Meet Safe with Voice" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="255" height="313" />
             </div>
           </motion.div>
           <div>

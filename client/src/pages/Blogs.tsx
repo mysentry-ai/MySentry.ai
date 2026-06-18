@@ -98,6 +98,7 @@ const Blogs = () => {
                   alt={featuredBlog.heroImageAlt || featuredBlog.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
+                  width="800" height="500"
                 />
                 {featuredBlog.categoryId && categoryMap[featuredBlog.categoryId] && (
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#1a1a1a]">
@@ -148,6 +149,7 @@ const Blogs = () => {
                         alt={blog.heroImageAlt || blog.title} 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
+                        width="600" height="400"
                       />
                       {blog.categoryId && categoryMap[blog.categoryId] && (
                         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#1a1a1a]">

@@ -328,6 +328,7 @@ export const Partner = () => {
                 alt="Dealer Dashboard Interface" 
                 className="relative rounded-3xl shadow-2xl border border-white/10"
                 loading="lazy"
+                width="800" height="600"
               />
             </motion.div>
           </div>

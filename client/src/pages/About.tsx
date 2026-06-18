@@ -18,6 +18,7 @@ export const About = () => {
             alt="MySentry Vision" 
             className="absolute inset-0 w-full h-full object-cover opacity-60"
             loading="lazy"
+            width="1920" height="1080"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
         </div>
@@ -95,6 +96,7 @@ export const About = () => {
                 alt="MySentry Promise" 
                 className="w-full h-full object-cover"
                 loading="lazy"
+                width="800" height="600"
               />
             </div>
           </div>

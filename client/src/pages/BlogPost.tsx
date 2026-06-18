@@ -174,6 +174,7 @@ const BlogPost = () => {
               alt={post.heroImageAlt || post.title} 
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
+              width="1200" height="600"
             />
             {categoryName && (
               <div className="absolute top-4 left-4 sm:top-6 sm:left-6 bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider text-[#1a1a1a]">
@@ -288,6 +289,7 @@ const BlogPost = () => {
                         alt={rp.heroImageAlt || rp.title} 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"
+                        width="600" height="400"
                       />
                       {rp.categoryId && categoryMap[rp.categoryId] && (
                         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider text-[#1a1a1a]">

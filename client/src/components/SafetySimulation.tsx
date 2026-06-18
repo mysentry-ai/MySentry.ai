@@ -313,7 +313,7 @@ export default function SafetySimulation() {
                         >
                           <div className="flex items-center gap-3 mb-2">
                             <div className="h-10 w-10 rounded-full bg-gray-300 overflow-hidden border-2 border-green-500">
-                              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100&h=100" alt="Agent" loading="lazy" />
+                              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100&h=100" alt="Agent" loading="lazy" width="100" height="100" />
                             </div>
                             <div>
                               <div className="text-white text-sm font-bold">Agent Sarah</div>
