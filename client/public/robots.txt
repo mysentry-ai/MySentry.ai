@@ -3,5 +3,5 @@ Allow: /
 Disallow: /api/
 Disallow: /admin/
 
-# Sitemap index (covers pages + blog)
-Sitemap: https://mysentry.ai/sitemap_index.xml
+# Canonical sitemap
+Sitemap: https://mysentry.ai/sitemap.xml

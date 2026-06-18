@@ -129,8 +129,8 @@ export function registerSitemapRoutes(app: Express) {
     next();
   });
 
-  // ── Sitemap Index (served at both /sitemap.xml and /sitemap_index.xml) ──
-  // Serve identical content at both URLs to avoid redirects that Google flags
+  // ── Sitemap Index ──
+  // /sitemap.xml is canonical; /sitemap_index.xml 301-redirects to it
   const serveSitemapIndex = (_req: any, res: any) => {
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -145,8 +145,10 @@ export function registerSitemapRoutes(app: Express) {
     res.set("Cache-Control", "public, max-age=3600");
     res.send(xml);
   };
+  app.get("/sitemap_index.xml", (_req, res) => {
+    res.redirect(301, "/sitemap.xml");
+  });
   app.get("/sitemap.xml", serveSitemapIndex);
-  app.get("/sitemap_index.xml", serveSitemapIndex);
 
   // ── Pages Sitemap (static pages) ──
   app.get("/sitemap_pages.xml", (_req, res) => {
