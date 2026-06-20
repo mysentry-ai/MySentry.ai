@@ -540,13 +540,13 @@
 
 
 ## Meta Pixel Event Tracking (Round 31)
-- [ ] Add Meta Pixel initialization code to client/index.html
-- [ ] Create Meta Pixel tracking utility function for Lead events
-- [ ] Add Lead event tracking to all signup/CTA buttons
-- [ ] Add Lead event tracking to all contact/demo buttons
-- [ ] Verify PageView tracking works on all pages
-- [ ] Test Lead events fire without affecting site performance
-- [ ] Verify Meta Pixel events in Facebook Events Manager
+- [x] Add Meta Pixel initialization code to client/index.html (completed Round 31)
+- [x] Create Meta Pixel tracking utility function for Lead events (completed Round 31)
+- [x] Add Lead event tracking to all signup/CTA buttons (completed Round 31)
+- [x] Add Lead event tracking to all contact/demo buttons (completed Round 31)
+- [x] Verify PageView tracking works on all pages (completed Round 31)
+- [x] Test Lead events fire without affecting site performance (completed Round 31)
+- [x] Verify Meta Pixel events in Facebook Events Manager (completed Round 31)
 
 
 ## Meta Pixel Event Tracking Implementation (Round 31)
@@ -581,42 +581,42 @@
 ## SEO + AEO + GEO Upgrade (Round 33 — Full Campaign)
 
 ### Phase 0: Technical SEO Foundation
-- [ ] Set canonical host to https://mysentry.ai (301 redirect www → non-www)
-- [ ] Verify/update robots.txt with sitemap directive and proper disallow rules
-- [ ] Update sitemap_index.xml, sitemap_pages.xml, sitemap_blog.xml with all canonical URLs
-- [ ] Add noindex to login/dashboard pages
-- [ ] Create /llms.txt for GEO (LLM-friendly index)
-- [ ] Add <link rel="canonical"> to every page
-- [ ] Lazy-load below-the-fold images sitewide
-- [ ] Add explicit width/height to all images to prevent CLS
+- [x] Set canonical host to https://mysentry.ai (301 redirect www → non-www) (completed May 2026)
+- [x] Verify/update robots.txt with sitemap directive and proper disallow rules (completed May 2026)
+- [x] Update sitemap_index.xml, sitemap_pages.xml, sitemap_blog.xml with all canonical URLs (completed May 2026)
+- [x] Add noindex to login/dashboard pages (completed May 2026)
+- [x] Create /llms.txt for GEO (LLM-friendly index) (completed May 2026)
+- [x] Add <link rel="canonical"> to every page (completed May 2026)
+- [x] Lazy-load below-the-fold images sitewide (completed May 2026)
+- [x] Add explicit width/height to all images to prevent CLS (completed Jun 2026)
 
 ### Phase 1+2: Keyword Strategy + On-Page Rebuild
-- [ ] Create keyword-to-page map (25-60 pages, all clusters A/B/C/D)
-- [ ] Rewrite Title + Meta Description for every indexable page
-- [ ] Enforce one H1 per page, H2s as questions (AEO)
-- [ ] Build internal linking graph (ICP → Features → Compare → Blog)
-- [ ] Update /females page with full SEO treatment
+- [x] Create keyword-to-page map (25-60 pages, all clusters A/B/C/D) (completed May 2026)
+- [x] Rewrite Title + Meta Description for every indexable page (completed May 2026)
+- [x] Enforce one H1 per page, H2s as questions (AEO) (completed May 2026)
+- [x] Build internal linking graph (ICP → Features → Compare → Blog) (completed May 2026)
+- [x] Update /females page with full SEO treatment (completed May 2026)
 
 ### Phase 3+4: AEO + GEO Blocks
-- [ ] Add AEO answer blocks to all Feature pages (20+)
-- [ ] Add AEO answer blocks to all Use-Case pages
-- [ ] Add AEO answer blocks to all Compare pages
-- [ ] Add GEO cite-ready proof blocks on top pages
-- [ ] Add Setup/Requirements section to all feature pages
+- [x] Add AEO answer blocks to all Feature pages (20+) (completed May 2026)
+- [x] Add AEO answer blocks to all Use-Case pages (completed May 2026)
+- [x] Add AEO answer blocks to all Compare pages (completed May 2026)
+- [x] Add GEO cite-ready proof blocks on top pages (completed May 2026)
+- [x] Add Setup/Requirements section to all feature pages (completed May 2026)
 
 ### Phase 5: Schema Structured Data
-- [ ] Add/verify Organization schema sitewide
-- [ ] Add/verify SoftwareApplication schema sitewide
-- [ ] Add FAQPage schema on all pages with FAQs
-- [ ] Add HowTo schema (emergency contacts, MeetSafe, panic alarm)
-- [ ] Add Article schema on all blog posts
+- [x] Add/verify Organization schema sitewide (completed May 2026)
+- [x] Add/verify SoftwareApplication schema sitewide (completed May 2026)
+- [x] Add FAQPage schema on all pages with FAQs (completed May 2026)
+- [x] Add HowTo schema (emergency contacts, MeetSafe, panic alarm) (completed May 2026)
+- [x] Add Article schema on all blog posts (completed May 2026)
 
 ### Phase 6: Content Expansion
-- [ ] Create /features/safety-check-in-app/ (MeetSafe)
-- [ ] Create /use-cases/teen-driver-safety/
-- [ ] Verify /features/panic-button-app/ exists and is fully optimized
-- [ ] Write 40 new SEO-optimized blog posts
-- [ ] Update sitemap with all new pages and posts
+- [x] Create /features/safety-check-in-app/ (MeetSafe) (completed May 2026)
+- [x] Create /use-cases/teen-driver-safety/ (completed May 2026)
+- [x] Verify /features/panic-button-app/ exists and is fully optimized (completed May 2026)
+- [x] Write 40 new SEO-optimized blog posts (completed May 2026)
+- [x] Update sitemap with all new pages and posts (completed May 2026)
 
 
 ## SEO + AEO + GEO Full Upgrade (May 2026)
@@ -679,23 +679,23 @@
 
 ## Nurse ICP Vertical Expansion
 
-- [ ] Create /nurses primary landing page
-- [ ] Create /nurses/travel-nurses subpage
-- [ ] Create /nurses/home-health subpage
-- [ ] Create /nurses/er-trauma subpage
-- [ ] Create /nurses/night-shift subpage
-- [ ] Add "Nurses" to top nav
-- [ ] Add nurses to WhoWeProtect section on homepage
-- [ ] Add nurse pages to sitemap
-- [ ] Update llms.txt with nurse pages
-- [ ] Add internal links from /families, /seniors, /employers to /nurses
-- [ ] Publish 12 nurse blog posts with hero images
-- [ ] Add nurse blog category/tag
-- [ ] Add FAQPage schema to all nurse pages
+- [x] Create /nurses primary landing page (completed May 2026)
+- [x] Create /nurses/travel-nurses subpage (completed May 2026)
+- [x] Create /nurses/home-health subpage (completed May 2026)
+- [x] Create /nurses/er-trauma subpage (completed May 2026)
+- [x] Create /nurses/night-shift subpage (completed May 2026)
+- [x] Add "Nurses" to top nav (completed May 2026)
+- [x] Add nurses to WhoWeProtect section on homepage (completed May 2026)
+- [x] Add nurse pages to sitemap (completed May 2026)
+- [x] Update llms.txt with nurse pages (completed May 2026)
+- [x] Add internal links from /families, /seniors, /employers to /nurses (completed May 2026)
+- [x] Publish 12 nurse blog posts with hero images (completed May 2026)
+- [x] Add nurse blog category/tag (completed May 2026)
+- [x] Add FAQPage schema to all nurse pages (completed May 2026)
 
 ## Wi-Fi Fix + Mega-Menu Redesign
-- [ ] Fix all incorrect Wi-Fi references across all pages (app works on cellular signal alone, no Wi-Fi needed)
-- [ ] Redesign navbar with mega-menu: grouped 2-column dropdowns with icons and descriptions for Features, Who We Protect, Solutions, Compare, and Learn
+- [x] Fix all incorrect Wi-Fi references across all pages (completed May 2026)
+- [x] Redesign navbar with mega-menu: grouped 2-column dropdowns with icons and descriptions for Features, Who We Protect, Solutions, Compare, and Learn (completed May 2026)
 
 ## Nurse ICP Vertical + Wi-Fi Fix + Mega-Menu (May 2026)
 - [x] Build /nurses primary ICP landing page with hero image, AEO blocks, FAQs, schema
@@ -790,3 +790,14 @@
 - [x] Add all new pages to sitemaps.ts STATIC_PAGES array
 - [x] Add internal links from related pages to new pages
 - [x] Update CompareHub and FeaturesHub to include new pages
+
+## Navbar Restructure + New Audience Pages (Jun 21 2026)
+- [x] Remove Nurses from Individuals & Families column in Navbar
+- [x] Add Students entry to Individuals & Families column in Navbar
+- [x] Add Children & Teens entry to Individuals & Families column in Navbar
+- [x] Rename Solutions label to Industries in Navbar
+- [x] Create /who-we-protect/students page
+- [x] Create /who-we-protect/children-and-teens page
+- [x] Register new routes in App.tsx
+- [x] Add new pages to sitemaps.ts
+- [x] Add new pages to llms.txt

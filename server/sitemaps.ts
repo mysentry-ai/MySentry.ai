@@ -65,6 +65,8 @@ const STATIC_PAGES = [
   { url: "/who-we-protect/women", priority: "0.8", changefreq: "monthly" },
   { url: "/who-we-protect/employers", priority: "0.8", changefreq: "monthly" },
   { url: "/who-we-protect/drivers", priority: "0.8", changefreq: "monthly" },
+  { url: "/who-we-protect/students", priority: "0.8", changefreq: "monthly" },
+  { url: "/who-we-protect/children-and-teens", priority: "0.8", changefreq: "monthly" },
   // Solutions (Vertical-Specific BOFU)
   { url: "/solutions/home-healthcare", priority: "0.8", changefreq: "monthly" },
   { url: "/solutions/real-estate", priority: "0.8", changefreq: "monthly" },

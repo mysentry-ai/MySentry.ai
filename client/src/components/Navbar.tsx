@@ -45,9 +45,10 @@ const megaMenuSections = [
         icon: <Heart className="w-5 h-5 text-primary" />,
         items: [
           { name: "Women & Females", desc: "Personal safety for women on the go", href: "/females" },
-          { name: "Nurses", desc: "Safety for healthcare workers", href: "/nurses" },
           { name: "Seniors", desc: "Fall detection and medical alerts", href: "/seniors" },
           { name: "Families", desc: "Whole-family protection plan", href: "/families" },
+          { name: "Students", desc: "Campus and personal safety for students", href: "/who-we-protect/students" },
+          { name: "Children & Teens", desc: "Family tracking and teen driver safety", href: "/who-we-protect/children-and-teens" },
         ],
       },
       {
@@ -55,6 +56,7 @@ const megaMenuSections = [
         icon: <Briefcase className="w-5 h-5 text-primary" />,
         items: [
           { name: "Employers", desc: "Duty-of-care for your workforce", href: "/employers" },
+          { name: "Nurses & Healthcare", desc: "Safety for nurses and healthcare workers", href: "/nurses" },
           { name: "Lone Workers", desc: "Solo worker safety compliance", href: "/use-cases/lone-worker-safety-app" },
           { name: "Home Health Workers", desc: "Safety for in-home caregivers", href: "/use-cases/home-healthcare-worker-safety" },
           { name: "Travel Nurses", desc: "Safety across every assignment", href: "/nurses/travel-nurses" },
@@ -65,8 +67,8 @@ const megaMenuSections = [
   },
   {
     id: "solutions",
-    label: "SOLUTIONS",
-    header: "INDUSTRY SOLUTIONS",
+    label: "INDUSTRIES",
+    header: "INDUSTRIES",
     columns: [
       {
         title: "Field & Outdoor",

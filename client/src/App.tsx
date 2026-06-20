@@ -80,6 +80,8 @@ import WhoWeProtectSeniors from "./pages/who-we-protect/Seniors";
 import WhoWeProtectWomen from "./pages/who-we-protect/Women";
 import WhoWeProtectEmployers from "./pages/who-we-protect/Employers";
 import WhoWeProtectDrivers from "./pages/who-we-protect/Drivers";
+import WhoWeProtectStudents from "./pages/who-we-protect/Students";
+import WhoWeProtectChildrenAndTeens from "./pages/who-we-protect/ChildrenAndTeens";
 
 // Phase 2 - Solutions (Vertical-Specific BOFU)
 import HomeHealthcareSolution from "./pages/solutions/HomeHealthcareSolution";
@@ -194,6 +196,8 @@ function Router() {
       <Route path="/who-we-protect/women" component={WhoWeProtectWomen} />
       <Route path="/who-we-protect/employers" component={WhoWeProtectEmployers} />
       <Route path="/who-we-protect/drivers" component={WhoWeProtectDrivers} />
+      <Route path="/who-we-protect/students" component={WhoWeProtectStudents} />
+      <Route path="/who-we-protect/children-and-teens" component={WhoWeProtectChildrenAndTeens} />
 
       {/* Phase 2 - Solutions (Vertical-Specific BOFU) */}
       <Route path="/solutions/home-healthcare" component={HomeHealthcareSolution} />
