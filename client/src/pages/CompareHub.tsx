@@ -30,6 +30,36 @@ const comparisons = [
     description: "Compare traditional professional monitoring from SOSecure/ADT with MySentry's modern, app-based safety approach.",
     href: "/compare/sosecure-adt-vs-mysentry",
   },
+  {
+    title: "Medical Alert Devices vs MySentry",
+    description: "Old lanyard buttons vs a modern safety app. See which gives seniors more protection without the stigma.",
+    href: "/compare/medical-alert-devices-vs-mysentry",
+  },
+  {
+    title: "Oura Ring vs MySentry",
+    description: "Oura tracks sleep and recovery. MySentry adds fall detection, panic alarm, and 24/7 professional monitoring. See the full comparison.",
+    href: "/compare/oura-ring-vs-mysentry",
+  },
+  {
+    title: "WHOOP vs MySentry",
+    description: "WHOOP monitors strain and recovery. MySentry monitors your safety. See which one fits your life.",
+    href: "/compare/whoop-vs-mysentry",
+  },
+  {
+    title: "Medical Guardian vs MySentry",
+    description: "Medical Guardian requires a base station and monthly equipment fees. MySentry works on any iPhone or Android. Compare features and pricing.",
+    href: "/compare/medical-guardian-vs-mysentry",
+  },
+  {
+    title: "Lively vs MySentry",
+    description: "Lively requires proprietary hardware. MySentry turns your existing phone and watch into a full safety system.",
+    href: "/compare/lively-vs-mysentry",
+  },
+  {
+    title: "Apple Watch Fall Detection vs MySentry",
+    description: "Apple Watch detects falls but has no professional monitoring. MySentry adds 24/7 response, health alerts, and a panic button.",
+    href: "/compare/apple-watch-fall-detection-vs-mysentry",
+  },
 ];
 
 export default function CompareHub() {

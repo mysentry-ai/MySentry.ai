@@ -759,34 +759,34 @@
 ## AEO / SEO / GEO Improvement Plan (Jun 21 2026 Analysis)
 
 ### Modify Existing Pages
-- [ ] Homepage: rewrite H1 to single promise, add pricing line near CTA, per-audience CTA adaptation
-- [ ] /features/fall-detection-app: expand with fall detection device/watch/seniors/elderly/iPhone sections, Quick Answer, FAQ schema, comparison table, internal links
-- [ ] /features/panic-button-app: add women's safety, iPhone, Android language; add comparison table; deepen FAQs
-- [ ] /compare/life360-vs-mysentry: deepen comparison table, add crash detection angle, add alternatives framing, FAQ schema
-- [ ] /compare/sosecure-adt-vs-mysentry: add AEO framing, deepen table, add alternatives language, FAQ schema
+- [x] Homepage: rewrite H1 to single promise, add pricing line near CTA, per-audience CTA adaptation
+- [x] /features/fall-detection-app: expand with fall detection device/watch/seniors/elderly/iPhone sections, Quick Answer, FAQ schema, comparison table, internal links
+- [x] /features/panic-button-app: add women's safety, iPhone, Android language; add comparison table; deepen FAQs
+- [x] /compare/life360-vs-mysentry: deepen comparison table, add crash detection angle, add alternatives framing, FAQ schema
+- [x] /compare/sosecure-adt-vs-mysentry: add AEO framing, deepen table, add alternatives language, FAQ schema
 
 ### Build New Pages (Priority Order)
-- [ ] /personal-safety-app: flagship landing page (2,400/mo), Quick Answer, FAQ schema, comparison table vs location apps/senior alerts/wearables
-- [ ] /compare/oura-ring-vs-mysentry: 6,600/mo KD 6, honest feature table, Quick Answer, FAQ schema, no-subscription angle
-- [ ] /compare/whoop-vs-mysentry: 2,400/mo KD 0, honest feature table, Quick Answer, FAQ schema, no-subscription angle
-- [ ] /health-monitoring: pillar landing page, real-time heart rate/HRV/SpO2/health alerts, Quick Answer, FAQ schema
-- [ ] /features/health-monitoring: expand existing page with deep-dive, device compatibility, HRV/SpO2 details, FAQ schema
-- [ ] /medical-alert-system-for-seniors: 14,800/mo senior cluster, comparison table vs Life Alert/Medical Guardian/Lively, Quick Answer, FAQ schema
-- [ ] /who-we-protect/seniors: audience landing page with pain points, relevant features, CTA
-- [ ] /who-we-protect/women: audience landing page targeting safety app for women (260/mo KD 0)
-- [ ] /who-we-protect/employers: audience landing page targeting lone worker safety (140/mo KD 0)
-- [ ] /who-we-protect/drivers: audience landing page targeting crash detection (40/mo KD 0)
-- [ ] /compare/medical-guardian-vs-mysentry: AEO comparison page
-- [ ] /compare/lively-vs-mysentry: AEO comparison page
-- [ ] /compare/apple-watch-fall-detection-vs-mysentry: AEO comparison page (5,400/mo KD 9)
+- [x] /personal-safety-app: flagship landing page (2,400/mo), Quick Answer, FAQ schema, comparison table vs location apps/senior alerts/wearables
+- [x] /compare/oura-ring-vs-mysentry: 6,600/mo KD 6, honest feature table, Quick Answer, FAQ schema, no-subscription angle
+- [x] /compare/whoop-vs-mysentry: 2,400/mo KD 0, honest feature table, Quick Answer, FAQ schema, no-subscription angle
+- [x] /health-monitoring: pillar landing page, real-time heart rate/HRV/SpO2/health alerts, Quick Answer, FAQ schema
+- [x] /features/health-monitoring: expand existing page with deep-dive, device compatibility, HRV/SpO2 details, FAQ schema
+- [x] /medical-alert-system-for-seniors: 14,800/mo senior cluster, comparison table vs Life Alert/Medical Guardian/Lively, Quick Answer, FAQ schema
+- [x] /who-we-protect/seniors: audience landing page with pain points, relevant features, CTA
+- [x] /who-we-protect/women: audience landing page targeting safety app for women (260/mo KD 0)
+- [x] /who-we-protect/employers: audience landing page targeting lone worker safety (140/mo KD 0)
+- [x] /who-we-protect/drivers: audience landing page targeting crash detection (40/mo KD 0)
+- [x] /compare/medical-guardian-vs-mysentry: AEO comparison page
+- [x] /compare/lively-vs-mysentry: AEO comparison page
+- [x] /compare/apple-watch-fall-detection-vs-mysentry: AEO comparison page (5,400/mo KD 9)
 
 ### AEO Blog Posts
-- [ ] /blog/best-personal-safety-apps: roundup/listicle (NCOA/SafeWise structure), comparison table, MySentry as all-in-one pick
-- [ ] /blog/best-medical-alert-systems: roundup/listicle, comparison table, MySentry as modern pick
-- [ ] /blog/best-oura-and-whoop-alternatives: roundup article, comparison table, MySentry as health + safety pick
+- [x] /blog/best-personal-safety-apps: roundup/listicle (NCOA/SafeWise structure), comparison table, MySentry as all-in-one pick
+- [x] /blog/best-medical-alert-systems: roundup/listicle, comparison table, MySentry as modern pick
+- [x] /blog/best-oura-and-whoop-alternatives: roundup article, comparison table, MySentry as health + safety pick
 
 ### Sitemap & Routing
-- [ ] Register all new routes in App.tsx
-- [ ] Add all new pages to sitemaps.ts STATIC_PAGES array
-- [ ] Add internal links from related pages to new pages
-- [ ] Update CompareHub and FeaturesHub to include new pages
+- [x] Register all new routes in App.tsx
+- [x] Add all new pages to sitemaps.ts STATIC_PAGES array
+- [x] Add internal links from related pages to new pages
+- [x] Update CompareHub and FeaturesHub to include new pages

@@ -43,6 +43,23 @@
 - Google Personal Safety vs MySentry: https://mysentry.ai/compare/google-personal-safety-vs-mysentry
 - SOS Secure / ADT vs MySentry: https://mysentry.ai/compare/sosecure-adt-vs-mysentry
 - Medical Alert Devices vs MySentry: https://mysentry.ai/compare/medical-alert-devices-vs-mysentry
+- Oura Ring vs MySentry: https://mysentry.ai/compare/oura-ring-vs-mysentry
+- WHOOP vs MySentry: https://mysentry.ai/compare/whoop-vs-mysentry
+- Medical Guardian vs MySentry: https://mysentry.ai/compare/medical-guardian-vs-mysentry
+- Lively vs MySentry: https://mysentry.ai/compare/lively-vs-mysentry
+- Apple Watch Fall Detection vs MySentry: https://mysentry.ai/compare/apple-watch-fall-detection-vs-mysentry
+
+## Pillar Pages
+
+- Personal Safety App: https://mysentry.ai/personal-safety-app
+- Medical Alert System for Seniors: https://mysentry.ai/medical-alert-system-for-seniors
+
+## Who We Protect
+
+- Seniors: https://mysentry.ai/who-we-protect/seniors
+- Women: https://mysentry.ai/who-we-protect/women
+- Employers: https://mysentry.ai/who-we-protect/employers
+- Drivers: https://mysentry.ai/who-we-protect/drivers
 
 ## Industries
 
