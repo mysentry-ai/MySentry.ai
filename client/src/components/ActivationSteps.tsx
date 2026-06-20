@@ -19,152 +19,152 @@ export default function ActivationSteps() {
     families: [
       {
         step: "01",
-        title: "Choose Your Plan",
-        description: "Select the protection that fits your life.",
+        title: "Pick Your Plan",
+        description: "Individual or Family. Monthly or Yearly. Takes 60 seconds.",
         icon: CreditCard,
         details: [
-          "Visit Pricing & Plans page",
-          "Choose 'Individuals & Families' tab",
-          "Select Monthly or Yearly (Save 20%) billing",
-          "Choose 'Essential Safety' or 'Longevity & Wellness'"
+          "Go to Pricing and choose Individual or Family",
+          "Save 20% with annual billing",
+          "Essential Safety or Longevity & Wellness",
+          "7-day free trial, cancel any time"
         ]
       },
       {
         step: "02",
-        title: "Create Account",
-        description: "Securely set up your profile and payment.",
-        icon: User,
+        title: "Download the App",
+        description: "Available on iPhone and Android. Works with Apple Watch and Samsung Galaxy Watch.",
+        icon: Smartphone,
         details: [
-          "Enter your name, email, and phone",
-          "Provide secure payment details",
-          "Review and accept terms",
-          "Receive instant confirmation email"
+          "Download MySentry from the App Store or Google Play",
+          "Log in with your new account",
+          "Grant location, camera, and notification permissions",
+          "Connect your smartwatch for full protection"
         ]
       },
       {
         step: "03",
-        title: "Activate & Protect",
-        description: "Download the app and invite your circle.",
+        title: "Add Your Safety Circle",
+        description: "Add up to 3 emergency contacts. They get alerts when it matters.",
         icon: ShieldCheck,
         details: [
-          "Download MySentry app (iOS/Android)",
-          "Log in with your new account",
-          "Invite family members to join",
-          "Grant permissions for full protection"
+          "Add up to 3 trusted emergency contacts",
+          "Contacts receive alerts with your location and live video",
+          "Test your PANIC button in Test Mode first",
+          "You are now protected 24/7"
         ]
       }
     ],
     seniors: [
       {
         step: "01",
-        title: "Select Senior Plan",
-        description: "Simple, affordable protection for independence.",
+        title: "Pick Your Plan",
+        description: "Simple pricing, no hidden fees. Cancel any time.",
         icon: CreditCard,
         details: [
-          "Visit Pricing & Plans page",
-          "Choose 'Individuals & Families' tab",
-          "Select Monthly or Yearly (Save 20%) billing",
-          "Choose 'Essential Safety' or 'Longevity & Wellness'"
+          "Go to Pricing and choose Individual or Family",
+          "Save 20% with annual billing",
+          "Essential Safety or Longevity & Wellness",
+          "7-day free trial, cancel any time"
         ]
       },
       {
         step: "02",
-        title: "Easy Setup",
-        description: "Quick and secure account creation.",
-        icon: User,
+        title: "Set Up in Minutes",
+        description: "Works on the phone you already have. No new hardware required.",
+        icon: Smartphone,
         details: [
-          "Enter your contact information",
-          "Add payment method securely",
-          "Confirm your subscription",
-          "Check email for activation link"
+          "Download MySentry from the App Store or Google Play",
+          "Log in and complete your safety profile",
+          "Pair your Apple Watch or Samsung Watch (optional)",
+          "Grant location and notification permissions"
         ]
       },
       {
         step: "03",
-        title: "Stay Independent",
-        description: "Connect your devices and live confidently.",
+        title: "Live Confidently",
+        description: "Fall detection, health monitoring, and a PANIC button always on your wrist.",
         icon: ShieldCheck,
         details: [
-          "Download MySentry on your phone",
-          "Pair your smartwatch (optional)",
-          "Add emergency contacts",
-          "Enjoy 24/7 professional monitoring"
+          "Add a family member or caregiver as emergency contact",
+          "Fall detection activates automatically, no setup needed",
+          "Test your PANIC button in Test Mode",
+          "24/7 professional monitoring is active from day one"
         ]
       }
     ],
     females: [
       {
         step: "01",
-        title: "Choose Safety Plan",
-        description: "Empower yourself with 24/7 protection.",
+        title: "Pick Your Plan",
+        description: "Protection that fits your life and your budget.",
         icon: CreditCard,
         details: [
-          "Visit Pricing & Plans page",
-          "Choose 'Individuals & Families' tab",
-          "Select Monthly or Yearly (Save 20%) billing",
-          "Choose 'Essential Safety' or 'Longevity & Wellness'"
+          "Go to Pricing and choose Individual or Family",
+          "Save 20% with annual billing",
+          "Essential Safety or Longevity & Wellness",
+          "7-day free trial, cancel any time"
         ]
       },
       {
         step: "02",
-        title: "Secure Signup",
-        description: "Create your private, secure account.",
-        icon: User,
+        title: "Download and Connect",
+        description: "On your iPhone or Android in under 5 minutes.",
+        icon: Smartphone,
         details: [
-          "Enter your personal details",
-          "Set up secure payment",
-          "Review privacy policy",
-          "Get instant access credentials"
+          "Download MySentry from the App Store or Google Play",
+          "Connect your Apple Watch or Samsung Watch",
+          "Grant location, camera, and notification permissions",
+          "Enable voice activation for hands-free panic"
         ]
       },
       {
         step: "03",
-        title: "Go Anywhere",
-        description: "Activate features like MeetSafe and Panic.",
+        title: "Go Anywhere Safely",
+        description: "MeetSafe, voice-activated panic, and live video. You are never alone.",
         icon: ShieldCheck,
         details: [
-          "Download the MySentry app",
-          "Set up your safety network",
-          "Enable location services",
-          "Test your panic button (Test Mode)"
+          "Add up to 3 trusted emergency contacts",
+          "Use MeetSafe to share a live check-in with friends",
+          "Test your PANIC button in Test Mode",
+          "Voice-activate panic with 'Hey Siri, I need help'"
         ]
       }
     ],
     employers: [
       {
         step: "01",
-        title: "Define Your Needs",
-        description: "Tailored solutions for your workforce.",
+        title: "Get a Quote",
+        description: "Volume pricing for teams of any size. Instant estimate.",
         icon: Building2,
         details: [
-          "Visit Pricing & Plans page",
-          "Switch to 'Organizations' tab",
-          "Input number of seats required",
-          "View volume discounts instantly"
+          "Go to Pricing and switch to the Organizations tab",
+          "Enter your team size for instant volume pricing",
+          "Choose monthly or annual billing",
+          "Request a demo or start directly"
         ]
       },
       {
         step: "02",
-        title: "Company Setup",
-        description: "Streamlined onboarding employees.",
+        title: "Set Up Your Account",
+        description: "Admin dashboard ready in minutes.",
         icon: Mail,
         details: [
-          "Enter company & billing details",
-          "Apply any discount codes",
-          "Complete purchase securely",
-          "Receive admin dashboard access"
+          "Enter company and billing details",
+          "Complete purchase and receive admin access",
+          "Upload your employee list via CSV or manual entry",
+          "Employees receive invite emails automatically"
         ]
       },
       {
         step: "03",
-        title: "Start Protecting",
-        description: "Protect your most valuable assets.",
+        title: "Monitor Your Team",
+        description: "See who is protected and who needs attention.",
         icon: Users,
         details: [
-          "Log in to Admin Dashboard",
-          "Upload employee list (CSV or manual)",
-          "Employees receive invite emails",
-          "Monitor adoption and safety status"
+          "Employees download MySentry and activate",
+          "Monitor adoption and safety status from your dashboard",
+          "Receive alerts when any employee triggers a panic or fall",
+          "Generate duty-of-care reports for compliance"
         ]
       }
     ]

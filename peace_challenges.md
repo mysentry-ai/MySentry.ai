@@ -35,7 +35,7 @@
    - **Empathy:** You carry the heavy weight of responsibility, fearing that something will happen to your parents while you're busy with your kids.
    - **Agitation:** The constant "what if" stress is exhausting and distracts you from enjoying time with either generation.
    - **Call to Action:** Be present for everyone without being physically everywhere.
-   - **Ending:** MySentry's **Smart Connectivity** keeps you informed with automated check-ins and alerts, so you only need to worry when it really matters.
+   - **Ending:** MySentry's **Family Connectivity** keeps you informed with automated check-ins and alerts, so you only need to worry when it really matters.
 
 6. **The "Latchkey Kid" Worry**
    - **Problem:** Your child walks home from school or stays home alone for a few hours, and you worry about their safety during that gap.

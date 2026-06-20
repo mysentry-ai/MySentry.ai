@@ -310,7 +310,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="relative w-full">
-              <img src="/images/panic-alarm-feature.svg" alt="Panic Alarm - Phone showing triggered alarm and live video response" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="255" height="313" />
+              <img src="/images/frame-1.png" alt="MySentry PANIC button screen on iPhone showing one-tap emergency activation" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
             </div>
           </motion.div>
         </div>
@@ -327,7 +327,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/fall-detection-feature.svg" alt="Fall Detection - Phone and Watch showing fall detected alert" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="259" height="302" />
+              <img src="/images/frame-6.png" alt="MySentry fall detection alert screen showing automatic detection and 2-minute response window" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
             </div>
           </motion.div>
           <div>
@@ -438,7 +438,7 @@ export default function Features() {
       </section>
 
       {/* FEATURE 5: SMART CONNECTIVITY */}
-      <section id="smart-connectivity" className="py-24 bg-white scroll-mt-20">
+      <section id="family-connectivity" className="py-24 bg-white scroll-mt-20">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="order-2 lg:order-1">
             <div className="flex items-center gap-2 mb-6">
@@ -446,21 +446,21 @@ export default function Features() {
               <span className="text-purple-600 font-bold uppercase tracking-widest text-sm">Feature 05</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase leading-none tracking-tight mb-8 text-[#1a1a1a]">
-              Smart<br/>Connectivity.
+              Family<br/>Connectivity.
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Stay connected to your family without intrusive calls. See location, battery status, and activity levels in real-time.
+              Know your family is safe without a single phone call. Share live location with up to 2 trusted contacts, and they can see your location too. Battery status and activity levels update in real time so you always know they are okay.
             </p>
             <div className="grid grid-cols-2 gap-4">
               <div className="p-6 bg-purple-50 rounded-2xl border border-purple-100">
                 <Smartphone className="h-8 w-8 text-purple-600 mb-4" />
-                <h4 className="font-bold text-[#1a1a1a] mb-2">Real-Time GPS</h4>
-                <p className="text-sm text-gray-600">Know where they are, always.</p>
+                <h4 className="font-bold text-[#1a1a1a] mb-2">Live GPS Sharing</h4>
+                <p className="text-sm text-gray-600">Share location with up to 2 trusted contacts.</p>
               </div>
               <div className="p-6 bg-purple-50 rounded-2xl border border-purple-100">
                 <Users className="h-8 w-8 text-purple-600 mb-4" />
                 <h4 className="font-bold text-[#1a1a1a] mb-2">Emergency Contacts</h4>
-                <p className="text-sm text-gray-600">Share status with loved ones.</p>
+                <p className="text-sm text-gray-600">Instant alerts sent to your chosen contacts.</p>
               </div>
             </div>
           </div>
@@ -472,7 +472,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/smart-connectivity-feature.svg" alt="Smart Connectivity - Three phones showing location sharing and family connections" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="349" height="279" />
+              <img src="/images/iphone-175.png" alt="MySentry Family Connectivity screen showing live location sharing and emergency contacts" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
             </div>
           </motion.div>
         </div>
@@ -489,7 +489,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/WebMysentry(10).svg" alt="Health Monitoring - Daily Health Vitals" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="386" height="356" />
+              <img src="/images/frame-8.png" alt="MySentry health monitoring screen showing real-time SpO2, heart rate, HRV, and personalized health insights" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
             </div>
           </motion.div>
           <div>
@@ -547,7 +547,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/WebMysentry(12).svg" alt="Live Video Streaming - Video call and chat" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="255" height="313" />
+              <img src="/images/iphone-168.png" alt="MySentry live video streaming screen showing emergency video call to monitoring agent" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
             </div>
           </motion.div>
         </div>

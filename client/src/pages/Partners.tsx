@@ -15,6 +15,7 @@ const Partners = () => {
 
       <HeroSection
         label="Partnerships"
+        title="Partner With Purpose"
         imageSrc="/images/partners-hero.jpg"
         imageAlt="Partner With Purpose"
       />

@@ -738,3 +738,20 @@
 - [x] Change slider and input min attribute from 5 to 2 in Pricing.tsx
 - [x] Update enterprise-checkout.test.ts: new BASE URL, min=2 guardrail tests, 4 exact URL tests
 - [x] All 65 tests pass (3 new exact URL tests added)
+
+## Knowledgebase-Driven Content Refinement (Jun 2026)
+- [x] Save screenshot inventory and knowledgebase notes to reference file
+- [x] Refine homepage hero, monitoring story, and onboarding CTA to improve conversion
+- [x] Update features page to use real app screenshots (app-home.png, iphone-168.png, iphone-175.png, frame-1.png, frame-8.png, watch-home.png, watch-vitals.png, watch-panic.png)
+- [x] Add/refine user onboarding section explaining setup steps (download, create account, add contacts, start monitoring)
+- [x] Strengthen core monitoring narrative across homepage and features page
+- [x] Add chatbot CTA prompts in strategic locations to encourage questions
+- [x] Review and update pricing/plan descriptions to match knowledgebase features
+- [x] Verify all feature descriptions match the actual app capabilities from screenshots
+
+## Smart Connectivity Rename + Content Rules (Jun 2026)
+- [x] Rename "Smart Connectivity" to "Family Connectivity" in every file across the codebase
+- [x] Apply StoryBrand zero-cognitive-load copy to all new and updated sections
+- [x] Ensure no em-dashes and no AI writing patterns in any content
+- [x] Wire SafetyAdvisorWidget into App.tsx so it appears on all public pages
+- [x] Add SafetyAdvisorWidget to Layout.tsx (exclude admin pages)

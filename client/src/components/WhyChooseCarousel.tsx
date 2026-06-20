@@ -36,7 +36,7 @@ const slides = [
     icon: Shield,
     color: "indigo",
     title: "Liability Concerns.",
-    description: "\"Did we do enough?\" Smart Connectivity automatically logs location and safety status, providing a digital paper trail that proves your duty of care."
+    description: "\"Did we do enough?\" Family Connectivity automatically logs location and safety status, providing a digital paper trail that proves your duty of care."
   }
 ];
 

@@ -210,6 +210,7 @@ export const Partner = () => {
       <div className="relative">
         <HeroSection
           label="Partner Program"
+          title="Grow Your Business With MySentry"
           imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/PNeMojefSAcSjgAW.jpg"
           imageAlt="MySentry Partner Network"
           showCta={false}
@@ -363,7 +364,8 @@ export const Partner = () => {
               {/* Step 1: Company Information */}
               <div className="border-b border-gray-100">
                 <StepHeader 
-                  step={1} 
+                  step={1}
+                  title="Company Information"
                   isActive={currentStep === 1} 
                   isCompleted={completedSteps.includes(1)} 
                 />
@@ -428,7 +430,8 @@ export const Partner = () => {
               {/* Step 2: Primary Contact Information */}
               <div className="border-b border-gray-100">
                 <StepHeader 
-                  step={2} 
+                  step={2}
+                  title="Primary Contact"
                   isActive={currentStep === 2} 
                   isCompleted={completedSteps.includes(2)} 
                 />
@@ -485,7 +488,8 @@ export const Partner = () => {
               {/* Step 3: Licensing Information */}
               <div>
                 <StepHeader 
-                  step={3} 
+                  step={3}
+                  title="Licensing Information"
                   isActive={currentStep === 3} 
                   isCompleted={completedSteps.includes(3)} 
                 />
