@@ -59,9 +59,14 @@ interface SEOPageTemplateProps {
   proofBlocks?: ProofBlock[];
 
 
+   // Optional comparison table for AEO/GEO
+  comparisonTable?: {
+    heading: string;
+    columns: string[];
+    rows: { feature: string; values: string[] }[];
+  };
   // Internal links
   relatedLinks: { text: string; href: string }[];
-
   // Optional image
   heroImage?: string;
 }
@@ -87,6 +92,7 @@ export default function SEOPageTemplate({
   faqs,
   setupRequirements,
   proofBlocks,
+  comparisonTable,
   relatedLinks,
   heroImage,
 }: SEOPageTemplateProps) {
@@ -365,6 +371,37 @@ export default function SEOPageTemplate({
             </div>
           </div>
 
+
+          {/* Comparison Table (AEO/GEO) */}
+          {comparisonTable && (
+            <div className="mb-12">
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-[#1a1a1a] mb-6">
+                {comparisonTable.heading}
+              </h2>
+              <div className="overflow-x-auto rounded-2xl border border-gray-200">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-[#004F7B] text-white">
+                      <th className="text-left px-5 py-4 font-bold">Feature</th>
+                      {comparisonTable.columns.map((col, i) => (
+                        <th key={i} className={`text-left px-5 py-4 font-bold ${col === 'MySentry' ? 'text-[#6AD990]' : ''}`}>{col}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparisonTable.rows.map((row, i) => (
+                      <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                        <td className="px-5 py-3 font-medium text-[#1a1a1a]">{row.feature}</td>
+                        {row.values.map((val, j) => (
+                          <td key={j} className="px-5 py-3 text-gray-700">{val}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
 
           {/* Related Links */}
           <div className="border-t border-gray-200 pt-8">

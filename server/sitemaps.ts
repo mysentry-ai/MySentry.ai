@@ -53,6 +53,18 @@ const STATIC_PAGES = [
   { url: "/compare/google-personal-safety-vs-mysentry", priority: "0.7", changefreq: "monthly" },
   { url: "/compare/sosecure-adt-vs-mysentry", priority: "0.7", changefreq: "monthly" },
   { url: "/compare/medical-alert-devices-vs-mysentry", priority: "0.7", changefreq: "monthly" },
+  { url: "/compare/oura-ring-vs-mysentry", priority: "0.8", changefreq: "monthly" },
+  { url: "/compare/whoop-vs-mysentry", priority: "0.8", changefreq: "monthly" },
+  { url: "/compare/medical-guardian-vs-mysentry", priority: "0.8", changefreq: "monthly" },
+  { url: "/compare/lively-vs-mysentry", priority: "0.8", changefreq: "monthly" },
+  { url: "/compare/apple-watch-fall-detection-vs-mysentry", priority: "0.8", changefreq: "monthly" },
+  // New Pillar & Audience Pages
+  { url: "/personal-safety-app", priority: "0.9", changefreq: "monthly" },
+  { url: "/medical-alert-system-for-seniors", priority: "0.9", changefreq: "monthly" },
+  { url: "/who-we-protect/seniors", priority: "0.8", changefreq: "monthly" },
+  { url: "/who-we-protect/women", priority: "0.8", changefreq: "monthly" },
+  { url: "/who-we-protect/employers", priority: "0.8", changefreq: "monthly" },
+  { url: "/who-we-protect/drivers", priority: "0.8", changefreq: "monthly" },
   // Solutions (Vertical-Specific BOFU)
   { url: "/solutions/home-healthcare", priority: "0.8", changefreq: "monthly" },
   { url: "/solutions/real-estate", priority: "0.8", changefreq: "monthly" },

@@ -67,6 +67,19 @@ import FallCallVsMysentry from "./pages/compare/FallCallVsMysentry";
 import GooglePersonalSafetyVsMysentry from "./pages/compare/GooglePersonalSafetyVsMysentry";
 import SOSecureAdtVsMysentry from "./pages/compare/SOSecureAdtVsMysentry";
 import MedicalAlertDevicesVsMysentry from "./pages/compare/MedicalAlertDevicesVsMysentry";
+import OuraRingVsMysentry from "./pages/compare/OuraRingVsMysentry";
+import WhoopVsMysentry from "./pages/compare/WhoopVsMysentry";
+import MedicalGuardianVsMysentry from "./pages/compare/MedicalGuardianVsMysentry";
+import LivelyVsMysentry from "./pages/compare/LivelyVsMysentry";
+import AppleWatchFallDetectionVsMysentry from "./pages/compare/AppleWatchFallDetectionVsMysentry";
+
+// New SEO Pages - Audience & Pillar
+import PersonalSafetyApp from "./pages/PersonalSafetyApp";
+import MedicalAlertSystemForSeniors from "./pages/MedicalAlertSystemForSeniors";
+import WhoWeProtectSeniors from "./pages/who-we-protect/Seniors";
+import WhoWeProtectWomen from "./pages/who-we-protect/Women";
+import WhoWeProtectEmployers from "./pages/who-we-protect/Employers";
+import WhoWeProtectDrivers from "./pages/who-we-protect/Drivers";
 
 // Phase 2 - Solutions (Vertical-Specific BOFU)
 import HomeHealthcareSolution from "./pages/solutions/HomeHealthcareSolution";
@@ -168,6 +181,19 @@ function Router() {
       <Route path="/compare/google-personal-safety-vs-mysentry" component={GooglePersonalSafetyVsMysentry} />
       <Route path="/compare/sosecure-adt-vs-mysentry" component={SOSecureAdtVsMysentry} />
       <Route path="/compare/medical-alert-devices-vs-mysentry" component={MedicalAlertDevicesVsMysentry} />
+      <Route path="/compare/oura-ring-vs-mysentry" component={OuraRingVsMysentry} />
+      <Route path="/compare/whoop-vs-mysentry" component={WhoopVsMysentry} />
+      <Route path="/compare/medical-guardian-vs-mysentry" component={MedicalGuardianVsMysentry} />
+      <Route path="/compare/lively-vs-mysentry" component={LivelyVsMysentry} />
+      <Route path="/compare/apple-watch-fall-detection-vs-mysentry" component={AppleWatchFallDetectionVsMysentry} />
+
+      {/* New SEO Pages - Audience & Pillar */}
+      <Route path="/personal-safety-app" component={PersonalSafetyApp} />
+      <Route path="/medical-alert-system-for-seniors" component={MedicalAlertSystemForSeniors} />
+      <Route path="/who-we-protect/seniors" component={WhoWeProtectSeniors} />
+      <Route path="/who-we-protect/women" component={WhoWeProtectWomen} />
+      <Route path="/who-we-protect/employers" component={WhoWeProtectEmployers} />
+      <Route path="/who-we-protect/drivers" component={WhoWeProtectDrivers} />
 
       {/* Phase 2 - Solutions (Vertical-Specific BOFU) */}
       <Route path="/solutions/home-healthcare" component={HomeHealthcareSolution} />
