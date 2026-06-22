@@ -191,6 +191,7 @@ export default function Employers() {
       <HeroSection
         label="Workforce Protection"
         title={<>Protect Your<br/><span className="text-gray-600">Greatest Asset.</span></>}
+        subtitle="Real-time monitoring and instant emergency response for lone workers, field teams, and remote employees."
         imageSrc="/images/business-meeting-happy.jpg"
         imageAlt="Diverse team having a productive meeting"
         ctaText="BOOK A DEMO"

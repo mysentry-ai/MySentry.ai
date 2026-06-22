@@ -834,3 +834,12 @@
 - [x] Pricing page: strip hero to title + subtitle + toggle only
 - [x] Custom pages (Students, ChildrenAndTeens, SeniorsAgingInPlace): strip hero to title + subtitle + CTAs
 - [x] FieldServicesCaseStudy: strip hero to title + subtitle only
+
+## Who We Protect Hero Section Updates (Jun 23, 2026)
+- [x] HeroSection component: use imageSrc prop for background (was hardcoded to hero-desktop.webp)
+- [x] HeroSection component: add optional subtitle prop rendered below title
+- [x] Females.tsx: add subtitle to HeroSection ("Panic alarm, live monitoring, and real-time location sharing...")
+- [x] Families.tsx: add subtitle to HeroSection ("Real-time location, fall detection, and instant alerts...")
+- [x] Seniors.tsx: add subtitle to HeroSection ("Fall detection, health monitoring, and 24/7 emergency response...")
+- [x] Employers.tsx: add subtitle to HeroSection ("Real-time monitoring and instant emergency response...")
+- [x] Verify all four pages render correctly with contextual background images and subtitles

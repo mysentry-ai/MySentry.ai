@@ -185,8 +185,9 @@ export default function Seniors() {
       <HeroSection
         label="Independence & Dignity"
         title={<>Live Life on<br/><span className="text-gray-600">Your Own Terms.</span></>}
+        subtitle="Fall detection, health monitoring, and 24/7 emergency response for seniors living independently."
         imageSrc="/images/happy-senior-watch.jpg"
-        imageAlt="Active senior enjoying life"
+        imageAlt="Active senior enjoying life with smartwatch"
       />
 
       {/* PEACE: The Problem & Empathy */}

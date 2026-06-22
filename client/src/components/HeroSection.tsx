@@ -7,6 +7,7 @@ import { trackLeadEvent } from "@/lib/metaPixel";
 interface HeroSectionProps {
   label: string;
   title: React.ReactNode;
+  subtitle?: string;
   description?: string;
   imageSrc: string;
   imageAlt: string;
@@ -23,6 +24,7 @@ interface HeroSectionProps {
 export default function HeroSection({
   label,
   title,
+  subtitle,
   description,
   imageSrc,
   imageAlt,
@@ -38,14 +40,11 @@ export default function HeroSection({
     <section className={cn("relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden", className)}>
       <div className="absolute inset-0 z-0">
          <img
-           srcSet="/images/hero-mobile.webp 768w, /images/hero-desktop.webp 1920w"
-           sizes="(max-width: 768px) 768px, 1920px"
-           src="/images/hero-desktop.webp"
+           src={imageSrc}
            alt={imageAlt}
            className="absolute inset-0 w-full h-full object-cover opacity-60"
            loading="eager"
            fetchPriority="high"
-           width="1920" height="1080"
          />
          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
       </div>
@@ -61,9 +60,14 @@ export default function HeroSection({
             <LabelText variant="primary" className="mb-4 block">
               {label}
             </LabelText>
-            <HeroHeading className="text-[#1a1a1a] mb-8">
+            <HeroHeading className="text-[#1a1a1a] mb-4">
               {title}
             </HeroHeading>
+            {subtitle && (
+              <p className="text-lg md:text-xl text-gray-700 mb-8 max-w-lg">
+                {subtitle}
+              </p>
+            )}
             
             {children ? (
               children
