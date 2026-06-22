@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "Does MySentry work without a parent nearby?",
-    a: "MySentry works anywhere with a cellular or Wi-Fi signal. Emergency contacts receive real-time GPS location, SMS alerts, and push notifications the moment an incident is detected. Parents do not need to be nearby — they are notified instantly no matter where they are.",
+    a: "MySentry works anywhere with a cellular or Wi-Fi signal. Emergency contacts receive real-time GPS location, SMS alerts, and push notifications the moment an incident is detected. Parents do not need to be nearby. They are notified instantly no matter where they are.",
   },
   {
     q: "Can students use MySentry on an iPhone or Android?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "Can a student add their parents as emergency contacts?",
-    a: "Yes. Students can add up to three emergency contacts — parents, siblings, friends, or a resident advisor. Each contact receives SMS, push notification, and email alerts with real-time GPS location during an emergency.",
+    a: "Yes. Students can add up to three emergency contacts: parents, siblings, friends, or a resident advisor. Each contact receives SMS, push notification, and email alerts with real-time GPS location during an emergency.",
   },
 ];
 
@@ -40,7 +40,7 @@ const features = [
   {
     icon: <MapPin className="w-6 h-6 text-primary" />,
     title: "Real-Time Location",
-    desc: "Parents and emergency contacts see live GPS location the moment an alert fires — no guessing, no delay.",
+    desc: "Parents and emergency contacts see live GPS location the moment an alert fires. No guessing, no delay.",
   },
   {
     icon: <Shield className="w-6 h-6 text-primary" />,
@@ -82,7 +82,7 @@ export default function Students() {
     <Layout>
       <SEO
         title="Safety App for Students | MySentry"
-        description="MySentry keeps college students safe on and off campus. Panic button, fall detection, crash detection, and 24/7 professional monitoring — all on their existing iPhone or Android."
+        description="MySentry keeps college students safe on and off campus. Panic button, fall detection, crash detection, and 24/7 professional monitoring, all on their existing iPhone or Android."
         schema={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -148,7 +148,7 @@ export default function Students() {
                 Campus security covers the quad. It does not cover the walk home at midnight, the rideshare back from a party, or the apartment a student rents three blocks off campus. Most safety incidents happen in the gaps that campus systems cannot reach.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Parents worry. Students want independence. MySentry bridges that gap — giving students a discreet safety net they control, and giving parents real-time visibility when it matters most.
+                Parents worry. Students want independence. MySentry bridges that gap, giving students a discreet safety net they control, and giving parents real-time visibility when it matters most.
               </p>
               <ul className="space-y-3 mt-6">
                 {[
@@ -219,7 +219,7 @@ export default function Students() {
           <div className="space-y-6">
             {[
               { step: "1", title: "Download the app", desc: "Available on iOS and Android. Pairs with Apple Watch (Series 4+) and Samsung Galaxy Watch (Watch 4+) for wrist-based alerts." },
-              { step: "2", title: "Add emergency contacts", desc: "Add up to 3 contacts — parents, siblings, a roommate, or a trusted friend. They receive SMS, push notification, and email alerts with live GPS location." },
+              { step: "2", title: "Add emergency contacts", desc: "Add up to 3 contacts: parents, siblings, a roommate, or a trusted friend. They receive SMS, push notification, and email alerts with live GPS location." },
               { step: "3", title: "Choose a plan", desc: "Individual plan from $15/month. 7-day free trial included. No hardware to buy, no contract to sign." },
               { step: "4", title: "Go anywhere with confidence", desc: "Fall detection and health monitoring run in the background. Panic button is one tap away. MeetSafe timers keep contacts informed on late-night outings." },
             ].map((s, i) => (

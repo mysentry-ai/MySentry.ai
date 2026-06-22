@@ -7,11 +7,11 @@ import { Shield, MapPin, Bell, Heart, Car, CheckCircle, ArrowRight, Clock } from
 const faqs = [
   {
     q: "Can parents track their child's location with MySentry?",
-    a: "Yes. Emergency contacts on a child's MySentry account receive real-time GPS location alerts whenever an incident is detected — a fall, a crash, a panic alarm, or a missed check-in. MySentry is not a passive tracking app; it is an active safety system that alerts parents when something goes wrong.",
+    a: "Yes. Emergency contacts on a child's MySentry account receive real-time GPS location alerts whenever an incident is detected, whether a fall, a crash, a panic alarm, or a missed check-in. MySentry is not a passive tracking app; it is an active safety system that alerts parents when something goes wrong.",
   },
   {
     q: "Does MySentry have teen driver safety features?",
-    a: "Yes. MySentry's crash detection monitors GPS speed data and accelerometer impact patterns. If a teen is in a vehicle crash, MySentry automatically alerts parents and the 24/7 monitoring team with the teen's GPS location — without the teen needing to do anything.",
+    a: "Yes. MySentry's crash detection monitors GPS speed data and accelerometer impact patterns. If a teen is in a vehicle crash, MySentry automatically alerts parents and the 24/7 monitoring team with the teen's GPS location, without the teen needing to do anything.",
   },
   {
     q: "What age is MySentry designed for?",
@@ -35,7 +35,7 @@ const features = [
   {
     icon: <Car className="w-6 h-6 text-primary" />,
     title: "Crash Detection",
-    desc: "Detects vehicle crashes automatically. Parents receive GPS location and an alert the moment a crash is detected — no action required from the teen.",
+    desc: "Detects vehicle crashes automatically. Parents receive GPS location and an alert the moment a crash is detected. No action required from the teen.",
   },
   {
     icon: <Bell className="w-6 h-6 text-primary" />,
@@ -82,7 +82,7 @@ export default function ChildrenAndTeens() {
     <Layout>
       <SEO
         title="Safety App for Children and Teens | MySentry"
-        description="MySentry gives parents real peace of mind. Crash detection, panic button, fall detection, and 24/7 professional monitoring for teens — all on their existing iPhone or Android."
+        description="MySentry gives parents real peace of mind. Crash detection, panic button, fall detection, and 24/7 professional monitoring for teens, all on their existing iPhone or Android."
         schema={{
           "@context": "https://schema.org",
           "@type": "FAQPage",
@@ -148,7 +148,7 @@ export default function ChildrenAndTeens() {
                 Knowing where your teen is does not help if they are in a crash and cannot call. It does not help if they are in a dangerous situation and cannot speak. It does not help if they fall and lose consciousness.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                MySentry goes beyond location. It detects the emergency automatically, alerts parents and a professional monitoring team, and streams live video and GPS — so help is on the way before anyone has to make a call.
+                MySentry goes beyond location. It detects the emergency automatically, alerts parents and a professional monitoring team, and streams live video and GPS, so help is on the way before anyone has to make a call.
               </p>
               <ul className="space-y-3 mt-6">
                 {[

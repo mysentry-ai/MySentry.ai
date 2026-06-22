@@ -25,7 +25,7 @@ export const blogs: BlogPost[] = [
       <p class="lead">You have spent a lifetime building your independence. You have your own home, your own routine, and your own way of doing things. There is a deep satisfaction in brewing your own coffee in the morning and tending to your garden in the afternoon. But as we get older, a nagging worry can start to creep in. It starts as a whisper: "What if I slip on the stairs?" or "What if I feel dizzy while I'm out walking?"</p>
       <br />
       <h3>The Conflict Between Freedom and Fear</h3>
-      <p>It is a terrible choice to have to make. On one hand, you want to live your life freely—go for walks, visit friends, or just enjoy a quiet evening at home. On the other hand, family members might be pushing for "safer" living arrangements. They mean well, but their concern can feel like a cage. You shouldn't have to trade your dignity for their peace of mind.</p>
+      <p>It is a terrible choice to have to make. On one hand, you want to live your life freely, go for walks, visit friends, or just enjoy a quiet evening at home. On the other hand, family members might be pushing for "safer" living arrangements. They mean well, but their concern can feel like a cage. You shouldn't have to trade your dignity for their peace of mind.</p>
       <br />
       <p>For years, the only solution offered to seniors was a clunky plastic pendant. You know the one. It screams, "I'm old and frail!" Many seniors refuse to wear them because of the stigma attached. They end up leaving them on the nightstand or in a drawer, which renders them useless in an actual emergency. You need a solution that respects your dignity and fits your lifestyle, not a badge of vulnerability.</p>
       <br />

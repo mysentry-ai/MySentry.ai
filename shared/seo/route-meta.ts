@@ -101,7 +101,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/seniors": {
     title: "Medical Alert App for Seniors | Fall Detection",
     description:
-      "MySentry helps seniors stay independent with fall detection, health monitoring, and emergency response. No pendant needed — just your phone and smartwatch.",
+      "MySentry helps seniors stay independent with fall detection, health monitoring, and emergency response. No pendant needed. Just your phone and smartwatch.",
   },
 
   // ─── Nurses pages ─────────────────────────────────────────────────────────
@@ -309,7 +309,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/compare/medical-alert-devices-vs-mysentry": {
     title: "Medical Alert Devices vs MySentry | Modern Safety Comparison",
     description:
-      "Compare traditional medical alert devices with MySentry. No pendant required — MySentry uses your smartphone and smartwatch for fall detection and 24/7 monitoring.",
+      "Compare traditional medical alert devices with MySentry. No pendant required. MySentry uses your smartphone and smartwatch for fall detection and 24/7 monitoring.",
   },
   // Semrush-flagged duplicate — needs unique entry
   "/compare/mysentry-vs-citizen": {

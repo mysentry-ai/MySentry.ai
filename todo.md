@@ -843,3 +843,6 @@
 - [x] Seniors.tsx: add subtitle to HeroSection ("Fall detection, health monitoring, and 24/7 emergency response...")
 - [x] Employers.tsx: add subtitle to HeroSection ("Real-time monitoring and instant emergency response...")
 - [x] Verify all four pages render correctly with contextual background images and subtitles
+
+## Em Dash Removal (Jun 23, 2026)
+- [x] Remove all em dashes (—) from user-facing content across the entire website

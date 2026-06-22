@@ -185,7 +185,7 @@ export default function Families() {
       <HeroSection
         label="For Families with Teens + Aging Parents"
         title={<>Know They're Safe.<br/><span className="text-gray-600">Without Constant Texting.</span></>}
-        subtitle="Real-time location, fall detection, and instant alerts for your teens and aging parents — all in one app."
+        subtitle="Real-time location, fall detection, and instant alerts for your teens and aging parents, all in one app."
         imageSrc="/images/family-hero-base.jpg"
         imageAlt="Happy family spending time together"
       />

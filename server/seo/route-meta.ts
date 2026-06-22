@@ -309,7 +309,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/compare/medical-alert-devices-vs-mysentry": {
     title: "Medical Alert Devices vs MySentry | Modern Safety Comparison",
     description:
-      "Compare traditional medical alert devices with MySentry. No pendant required — MySentry uses your smartphone and smartwatch for fall detection and 24/7 monitoring.",
+      "Compare traditional medical alert devices with MySentry. No pendant required. MySentry uses your smartphone and smartwatch for fall detection and 24/7 monitoring.",
   },
   // Semrush-flagged duplicate — needs unique entry
   "/compare/mysentry-vs-citizen": {
