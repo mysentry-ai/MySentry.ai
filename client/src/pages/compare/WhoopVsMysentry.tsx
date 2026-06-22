@@ -7,7 +7,8 @@ export default function WhoopVsMysentry() {
       seoDescription="Whoop tracks strain, recovery, and sleep. MySentry adds 24/7 emergency monitoring, fall detection, a panic button, and live video response. See the full comparison."
       canonical="https://mysentry.ai/compare/whoop-vs-mysentry"
       label="COMPARISON"
-      h1="Whoop vs MySentry: Great Recovery Data. But Who Calls for Help?"
+      h1="Whoop vs MySentry"
+      h1Sub="Great Recovery Data. But Who Calls for Help?"
       problem="Whoop tells you how recovered you are. But if you collapse on a run or have a health event at home alone, your Whoop cannot call for help. You need a safety layer."
       empathy="Tracking your body is smart. But health data without emergency response leaves a gap. MySentry fills that gap without replacing the tools you already use."
       steps={[

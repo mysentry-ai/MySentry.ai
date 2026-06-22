@@ -812,3 +812,10 @@
 - [x] Update SEO default meta description to include full positioning
 - [x] Update AppDashboardShowcase heading to include health monitoring
 - [x] Update WhatWeProvide section heading to include health monitoring
+
+## Hero Typography and Tagline Improvements (Jun 22, 2026)
+- [x] Add tagline "Live Safe. Stay Healthy." under the logo in the Navbar
+- [x] Restructure homepage hero: StoryBrand-aligned H1 with zero cognitive load
+- [x] Add h1Sub prop to SEOPageTemplate for subtitle on new line with smaller font
+- [x] Update all 11 compare pages to use h1Sub for the subtitle part
+- [x] Update all SEO feature/use-case/who-we-protect pages to use h1Sub where applicable

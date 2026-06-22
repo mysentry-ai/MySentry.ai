@@ -9,7 +9,8 @@ export default function MedicalAlertDevicesVsMysentry() {
       canonical="https://mysentry.ai/compare/medical-alert-devices-vs-mysentry"
       
       label="Comparison"
-      h1="Tired of Old Medical Alert Devices? Try MySentry."
+      h1="Old Medical Alert Devices vs MySentry"
+      h1Sub="Why Families Are Switching to a Smarter Safety App"
       problem="Traditional medical alert devices carry a stigma. The visible pendants and lanyards can feel like a constant, public reminder of vulnerability, making many people hesitant to wear them."
       empathy="You value your independence and style. You should not have to choose between safety and dignity. You need a solution that fits your life, not one that defines it."
       

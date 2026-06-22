@@ -32,6 +32,8 @@ interface SEOPageTemplateProps {
   // Hero Section
   label: string;
   h1: string;
+  /** Optional subtitle shown below the h1 in a smaller, lighter style */
+  h1Sub?: string;
   problem: string;
   empathy: string;
   steps: Step[];
@@ -78,6 +80,7 @@ export default function SEOPageTemplate({
   schema,
   label,
   h1,
+  h1Sub,
   problem,
   empathy,
   steps,
@@ -145,9 +148,14 @@ export default function SEOPageTemplate({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">{label}</span>
-              <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-6 uppercase tracking-tighter">
+              <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-2 uppercase tracking-tighter">
                 {h1}
               </h1>
+              {h1Sub && (
+                <p className="text-lg md:text-xl font-sans font-medium text-gray-600 mb-6 leading-snug">
+                  {h1Sub}
+                </p>
+              )}
               <p className="text-lg text-gray-700 mb-4 leading-relaxed">{problem}</p>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed italic">{empathy}</p>
 

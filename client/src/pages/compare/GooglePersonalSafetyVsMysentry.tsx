@@ -8,7 +8,8 @@ export default function GooglePersonalSafetyVsMysentry() {
       seoDescription="Compare Google Personal Safety and MySentry.ai. See how crash detection, emergency sharing, and health monitoring differ. Find out which is right for you."
       canonical="https://mysentry.ai/compare/google-personal-safety-vs-mysentry"
       label="COMPARISON"
-      h1="Google Personal Safety vs. MySentry"
+      h1="Google Personal Safety vs MySentry"
+      h1Sub="Built-In Safety vs Dedicated 24/7 Emergency Response"
       problem="You need reliable safety features on your phone, but it's hard to know which app to trust."
       empathy="Choosing the right safety app feels overwhelming when your well-being is on the line. We've made the comparison clear and simple."
       steps={[

@@ -7,7 +7,8 @@ export default function OuraRingVsMysentry() {
       seoDescription="Oura Ring tracks sleep and recovery. MySentry adds 24/7 emergency monitoring, fall detection, a panic button, and live video response. See which one fits your needs."
       canonical="https://mysentry.ai/compare/oura-ring-vs-mysentry"
       label="COMPARISON"
-      h1="Oura Ring vs MySentry: What Happens When Your Health Data Needs to Save Your Life?"
+      h1="Oura Ring vs MySentry"
+      h1Sub="What Happens When Your Health Data Needs to Save Your Life?"
       problem="You track your health with a wearable. But when something goes wrong, your ring can't call for help. You need a safety layer that acts on the data your body is sending."
       empathy="Knowing your HRV and sleep score is valuable. But health data without emergency response is like a smoke detector with no alarm. MySentry closes that gap."
       steps={[

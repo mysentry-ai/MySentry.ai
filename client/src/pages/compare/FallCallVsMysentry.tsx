@@ -7,7 +7,8 @@ export default function FallCallVsMysentry() {
       seoDescription="Choosing a safety app is tough. Compare FallCall and MySentry to find the best fit for fall detection, emergency help, and health monitoring. Get peace of mind."
       canonical="https://mysentry.ai/compare/fallcall-vs-mysentry"
       label="COMPARISON"
-      h1="Worried About Falls? Compare MySentry and FallCall for Peace of Mind"
+      h1="FallCall vs MySentry"
+      h1Sub="Worried About Falls? Compare for Peace of Mind"
       problem="Choosing the right personal safety app for yourself or a loved one can be confusing. It's hard to know which features you really need."
       empathy="You want peace of mind knowing you've made the best choice for safety and independence. We're here to help you compare the details."
       steps={[

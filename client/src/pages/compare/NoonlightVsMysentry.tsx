@@ -8,7 +8,8 @@ export default function NoonlightVsMysentry() {
       seoDescription="Compare Noonlight and MySentry. Find the best safety app for you with features like panic alarms, fall detection, and 24/7 monitoring. Get peace of mind, start your free trial."
       canonical="https://mysentry.ai/compare/noonlight-vs-mysentry"
       label="COMPARISON"
-      h1="Noonlight vs. MySentry: Which Safety App Protects You Best?"
+      h1="Noonlight vs MySentry"
+      h1Sub="Which Safety App Protects You Best?"
       problem="You need a reliable personal safety app but are trying to decide between Noonlight and MySentry."
       empathy="Choosing the right safety app is a big decision. It's hard to know which one truly offers the best protection for your needs."
       steps={[
