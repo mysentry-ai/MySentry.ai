@@ -22,17 +22,18 @@ const FieldServicesCaseStudy = () => {
         seoDescription="Discover how a national field services company enhanced worker safety, achieved 100% OSHA compliance, and saw a 78% reduction in claims with MySentry."
         canonical="/case-studies/field-services"
       />
-      <div className="bg-[#f0f9f4] py-12 md:py-20">
-        <div className="container mx-auto px-4">
+      {/* Hero — title + subtitle only */}
+      <div className="min-h-[calc(100vh-80px)] flex items-center bg-[#f0f9f4]">
+        <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
             <p className="text-sm font-semibold text-green-700 uppercase tracking-wider">
               Case Study: Field Services
             </p>
-            <h1 className="font-heading mt-2 text-4xl md:text-5xl font-bold text-gray-800" style={{ fontFamily: '"Teko", sans-serif' }}>
-              Enhancing Lone Worker Safety and Achieving Full OSHA Compliance
+            <h1 className="font-heading mt-2 text-4xl md:text-[55px] font-bold text-gray-800 leading-tight uppercase tracking-tighter" style={{ fontFamily: '"Teko", sans-serif' }}>
+              Full OSHA Compliance. 78% Fewer Claims.
             </h1>
-            <p className="mt-4 text-lg text-gray-600">
-              How a leading field services company transformed its safety protocols and achieved a significant return on investment with MySentry's advanced monitoring solutions.
+            <p className="mt-4 text-lg md:text-xl text-gray-600">
+              How a national field services company transformed lone worker safety with MySentry.
             </p>
           </div>
         </div>

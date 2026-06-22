@@ -352,13 +352,13 @@ export default function Pricing() {
         schema={pricingSchema}
       />
 
-      {/* ─── Header with proper top spacing ─── */}
+      {/* Hero — title + subtitle + toggle */}
       <section className="text-center pt-28 md:pt-32 pb-10 px-5">
-        <h1 className="text-3xl md:text-4xl font-extrabold text-[#0F172A] uppercase tracking-tight mb-4">
-          Pricing and plans within every budget.
+        <h1 className="text-3xl md:text-[55px] font-extrabold text-[#0F172A] uppercase tracking-tight mb-3 leading-tight">
+          Simple, Transparent Pricing.
         </h1>
-        <p className="text-base text-[#64748B] font-medium max-w-[600px] mx-auto mb-8">
-          Choose the protection that fits your life. Whether for yourself, your family, or your entire workforce.
+        <p className="text-lg md:text-xl text-[#64748B] font-medium max-w-[600px] mx-auto mb-8">
+          Protection that fits your life and budget.
         </p>
 
         {/* B2C / B2B Toggle - white background */}

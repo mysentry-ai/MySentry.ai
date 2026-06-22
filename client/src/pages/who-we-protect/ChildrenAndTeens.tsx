@@ -94,29 +94,17 @@ export default function ChildrenAndTeens() {
         }}
       />
 
-      {/* Hero */}
-      <section className="pt-32 pb-20 bg-gradient-to-br from-[#e8f5e9] via-white to-[#f0fdf4]">
-        <div className="container max-w-6xl mx-auto px-4">
+      {/* Hero — title + subtitle + CTAs only */}
+      <section className="min-h-[calc(100vh-80px)] flex items-center bg-gradient-to-br from-[#e8f5e9] via-white to-[#f0fdf4]">
+        <div className="container max-w-6xl mx-auto px-4 py-16">
           <div className="max-w-3xl">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Children & Teens</span>
-            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-2 uppercase tracking-tighter">
+            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-3 uppercase tracking-tighter">
               Know Your Teen Is Always Safe.
             </h1>
-            <p className="text-xl text-primary font-semibold mb-6">
+            <p className="text-xl text-primary font-semibold mb-8">
               Real protection beyond simple location sharing.
             </p>
-            <p className="text-xl text-gray-600 mb-4 leading-relaxed">
-              New drivers, late-night activities, solo walks home. Teens face real risks and location sharing alone is not enough. MySentry adds crash detection, a panic button, fall detection, and a 24/7 monitoring team to the phone your teen already carries.
-            </p>
-
-            {/* Quick Answer AEO block */}
-            <div className="bg-white border-l-4 border-primary rounded-xl p-5 mb-8 shadow-sm">
-              <p className="text-sm font-bold text-primary uppercase tracking-wider mb-1">Quick Answer</p>
-              <p className="text-gray-700 leading-relaxed">
-                MySentry is a safety app for teens that combines crash detection, a panic button, fall detection, real-time GPS location sharing, and 24/7 professional monitoring in one app. It works on any iPhone or Android and requires no extra hardware. Family plans start at $30/month with a 7-day free trial.
-              </p>
-            </div>
-
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/pricing">
                 <button className="bg-primary text-white font-bold px-8 py-4 rounded-full hover:bg-primary/90 transition-all flex items-center gap-2">
@@ -129,6 +117,21 @@ export default function ChildrenAndTeens() {
                 </button>
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Overview — moved from hero */}
+      <section className="py-16 bg-white">
+        <div className="container max-w-4xl mx-auto px-4">
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            New drivers, late-night activities, solo walks home. Teens face real risks and location sharing alone is not enough. MySentry adds crash detection, a panic button, fall detection, and a 24/7 monitoring team to the phone your teen already carries.
+          </p>
+          <div className="bg-[#f0f9f4] border-l-4 border-primary rounded-xl p-5 shadow-sm">
+            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-1">Quick Answer</p>
+            <p className="text-gray-700 leading-relaxed">
+              MySentry is a safety app for teens that combines crash detection, a panic button, fall detection, real-time GPS location sharing, and 24/7 professional monitoring in one app. It works on any iPhone or Android and requires no extra hardware. Family plans start at $30/month with a 7-day free trial.
+            </p>
           </div>
         </div>
       </section>

@@ -65,19 +65,16 @@ export default function SeniorsAgingInPlace() {
         schema={schema}
       />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-[#e8f5e9] to-white">
-        <div className="container max-w-6xl mx-auto px-4">
+      {/* Hero — title + subtitle + CTAs only */}
+      <section className="min-h-[calc(100vh-80px)] flex items-center bg-gradient-to-b from-[#e8f5e9] to-white">
+        <div className="container max-w-6xl mx-auto px-4 py-16">
           <div className="max-w-3xl">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">SENIOR SAFETY</span>
-            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-6 uppercase tracking-tighter">
-              Keep Your Parents Safe at Home. Get Peace of Mind.
+            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-3 uppercase tracking-tighter">
+              Keep Your Parents Safe at Home.
             </h1>
-            <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-              Your mom wants to stay in her own home. She loves her garden, her neighbors, and the independence she has built over a lifetime. But you worry. What if she falls in the bathroom at 2 AM? What if her heart rate spikes and nobody notices?
-            </p>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              You are not alone in this worry. Over 36 million falls happen among older adults every year, and the fear of falling is one of the top reasons seniors lose their independence. But it does not have to be that way.
+            <p className="text-xl text-primary font-semibold mb-8">
+              Peace of mind without taking away their independence.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/pricing#pricing-plans">
@@ -93,6 +90,18 @@ export default function SeniorsAgingInPlace() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Overview — moved from hero */}
+      <section className="py-16 bg-white">
+        <div className="container max-w-4xl mx-auto px-4">
+          <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+            Your mom wants to stay in her own home. She loves her garden, her neighbors, and the independence she has built over a lifetime. But you worry. What if she falls in the bathroom at 2 AM? What if her heart rate spikes and nobody notices?
+          </p>
+          <p className="text-lg text-gray-600 leading-relaxed">
+            You are not alone in this worry. Over 36 million falls happen among older adults every year, and the fear of falling is one of the top reasons seniors lose their independence. But it does not have to be that way.
+          </p>
         </div>
       </section>
 

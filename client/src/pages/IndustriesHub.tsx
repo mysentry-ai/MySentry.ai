@@ -53,18 +53,29 @@ export default function IndustriesHub() {
   return (
     <Layout>
       <SEO />
-      <section className="pt-32 pb-20 bg-gradient-to-b from-[#e8f5e9] to-white">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
+      {/* Hero — title + subtitle + CTA only */}
+      <section className="min-h-[calc(100vh-80px)] flex items-center bg-gradient-to-b from-[#e8f5e9] to-white">
+        <div className="container max-w-6xl mx-auto px-4 py-16">
+          <div className="text-center">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Industries</span>
-            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-6 uppercase tracking-tighter">
+            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-3 uppercase tracking-tighter">
               Industry Safety Solutions
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              MySentry provides robust safety solutions for employees across a wide range of industries. Protect your lone workers and staff with 24/7 monitoring.
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+              Protect your lone workers and staff with 24/7 monitoring.
             </p>
+            <a href="/pricing">
+              <button className="bg-primary text-white font-bold px-8 py-4 rounded-full hover:bg-primary/90 transition-all inline-flex items-center gap-2">
+                Book a Demo <ArrowRight className="w-4 h-4" />
+              </button>
+            </a>
           </div>
+        </div>
+      </section>
 
+      {/* Industry Cards */}
+      <section className="py-20 bg-white">
+        <div className="container max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((ind) => (
               <Link key={ind.href} href={ind.href} onClick={() => window.scrollTo(0, 0)}>

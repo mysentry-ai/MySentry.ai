@@ -21,13 +21,12 @@ export default function Home() {
       <HeroSection
         label="Personal Safety and Health Monitoring with 24/7 Emergency Response"
         title="Always Someone Watching Over You."
-        description="MySentry watches over you around the clock. Panic alarm, fall detection, real-time health vitals, crash detection, and a live emergency response team ready the moment something goes wrong."
         imageSrc="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-family-multigenerational-E2GoJdiP8d3vSnxHi3L9fP.webp"
         imageAlt="Multi-generational family including grandmother, parents, and teenagers enjoying time together outdoors"
         phoneMockupSrc="/images/app-home.png"
         phoneMockupAlt="MySentry app dashboard showing real-time health vitals, emergency contacts, location sharing, and PANIC button"
       >
-        <ICPSelector className="mt-2" />
+        <ICPSelector className="mt-6" />
       </HeroSection>
 
       {/* Trust Signals Banner */}

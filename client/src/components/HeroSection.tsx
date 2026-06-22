@@ -64,11 +64,6 @@ export default function HeroSection({
             <HeroHeading className="text-[#1a1a1a] mb-8">
               {title}
             </HeroHeading>
-            {description && (
-              <HeroText className="text-gray-800 mb-10 font-medium">
-                {description}
-              </HeroText>
-            )}
             
             {children ? (
               children

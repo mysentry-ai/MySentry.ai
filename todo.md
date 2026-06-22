@@ -826,3 +826,11 @@
 - [x] Refine all Who We Protect page hero sections with StoryBrand zero-cognitive-load copy
 - [x] Refine all Industries page hero sections with StoryBrand zero-cognitive-load copy
 - [x] Refine all Compare page hero sections with StoryBrand zero-cognitive-load copy
+
+## Hero CTA Visibility Fix (Jun 23, 2026)
+- [x] SEOPageTemplate: strip hero to H1 + subtitle + CTAs only, move problem/empathy/steps below fold
+- [x] Homepage: ensure H1 + ICP selector + CTA visible on laptop without scrolling
+- [x] All hub pages (CompareHub, IndustriesHub, UseCasesHub): strip hero to title + subtitle + CTA
+- [x] Pricing page: strip hero to title + subtitle + toggle only
+- [x] Custom pages (Students, ChildrenAndTeens, SeniorsAgingInPlace): strip hero to title + subtitle + CTAs
+- [x] FieldServicesCaseStudy: strip hero to title + subtitle only

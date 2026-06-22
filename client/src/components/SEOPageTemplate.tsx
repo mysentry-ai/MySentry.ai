@@ -142,39 +142,22 @@ export default function SEOPageTemplate({
         schema={allSchemas}
       />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 bg-gradient-to-b from-[#e8f5e9] to-white">
-        <div className="container max-w-6xl mx-auto px-4">
+      {/* Hero Section — lean above-the-fold: label + H1 + subtitle + CTAs only */}
+      <section className="min-h-[calc(100vh-80px)] flex items-center bg-gradient-to-b from-[#e8f5e9] to-white">
+        <div className="container max-w-6xl mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">{label}</span>
-              <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-2 uppercase tracking-tighter">
+              <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-3 uppercase tracking-tighter">
                 {h1}
               </h1>
               {h1Sub && (
-                <p className="text-lg md:text-xl font-sans font-medium text-gray-600 mb-6 leading-snug">
+                <p className="text-lg md:text-xl font-sans font-medium text-gray-600 mb-8 leading-snug">
                   {h1Sub}
                 </p>
               )}
-              <p className="text-lg text-gray-700 mb-4 leading-relaxed">{problem}</p>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed italic">{empathy}</p>
 
-              {/* 3-Step Plan */}
-              <div className="space-y-4 mb-8">
-                {steps.map((step, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">
-                      {i + 1}
-                    </div>
-                    <div>
-                      <p className="font-bold text-[#1a1a1a]">{step.title}</p>
-                      <p className="text-gray-600 text-sm">{step.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTAs */}
+              {/* CTAs — immediately after subtitle, fully visible above fold */}
               <div className="flex flex-wrap gap-4">
                 <a href={primaryCta.href}>
                   <Button size="lg" className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#1a1a1a] font-bold text-lg px-8 py-6 rounded-full uppercase tracking-wider">
@@ -204,6 +187,29 @@ export default function SEOPageTemplate({
                 />
               </div>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* Problem + Empathy + Steps — first section below the fold */}
+      <section className="py-16 bg-white">
+        <div className="container max-w-4xl mx-auto px-4">
+          <p className="text-lg text-gray-700 mb-4 leading-relaxed">{problem}</p>
+          <p className="text-lg text-gray-600 mb-10 leading-relaxed italic">{empathy}</p>
+
+          {/* 3-Step Plan */}
+          <div className="space-y-6">
+            {steps.map((step, i) => (
+              <div key={i} className="flex items-start gap-4">
+                <div className="w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center text-sm font-bold shrink-0 mt-0.5">
+                  {i + 1}
+                </div>
+                <div>
+                  <p className="font-bold text-[#1a1a1a] text-lg">{step.title}</p>
+                  <p className="text-gray-600">{step.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
