@@ -8,6 +8,9 @@ export default function FamilySafetyApp() {
       canonical="https://mysentry.ai/use-cases/family-safety-app"
       label="USE CASE"
       h1="Worried About Your Family's Safety? MySentry Can Help."
+      h1Sub="One app to protect everyone you love."
+      heroDescription="Real-time location sharing, crash detection, panic button, and health monitoring for your whole family."
+      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-family-safety-mefr82ZSQwHKQykhJyfmsj.webp"
       problem="You worry about your family's safety when they're out alone, from your teenager driving to your elderly parent living independently."
       empathy="It's hard to have peace of mind when you can't be with them. You just want to know they are okay, no matter where they are."
       steps={[

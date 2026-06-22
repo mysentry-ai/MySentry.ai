@@ -9,6 +9,9 @@ export default function SafetyAppForWomen() {
       canonical="https://mysentry.ai/use-cases/safety-app-for-women"
       label="USE CASE"
       h1="For Women Who Want to Feel Safe and Independent"
+      h1Sub="Your personal safety net, always on."
+      heroDescription="Panic alarm, live video response, and real-time location sharing for women who walk, commute, or live alone."
+      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-safety-women-AnNQmUkZgkndJZ95kCXbP6.webp"
       problem="You want to live life on your own terms without constantly looking over your shoulder. But walking alone, dating, or living by yourself can feel risky."
       empathy="It's frustrating to feel like you have to choose between your freedom and your safety. You deserve to feel confident and protected, wherever you go."
       steps={[

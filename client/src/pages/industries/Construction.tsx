@@ -8,6 +8,7 @@ export default function Construction() {
       canonical="https://mysentry.ai/industries/construction"
       label="INDUSTRY"
       h1="Your Crew Goes Home Safe Every Day."
+      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-construction-5bQ9DwxJp9a7vdZqxBpTTM.webp"
       h1Sub="Protect workers on every job site, near or remote."
       heroDescription="Fall detection, panic alarm, and health monitoring for workers in high-risk environments."
       problem="Construction sites are full of dangers. It's hard to know if a worker is okay, especially if they are alone or in a far-off part of the job site."

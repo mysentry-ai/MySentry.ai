@@ -9,6 +9,7 @@ export default function Retail() {
       canonical="https://mysentry.ai/industries/retail"
       label="RETAIL INDUSTRY"
       h1="Your Retail Team Stays Safe, Every Shift."
+      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-retail-Fd3iSGrLHTmN4EKnB95zG3.webp"
       h1Sub="Protecting your staff is now simple and affordable."
       heroDescription="Panic alarm and live monitoring for staff working alone during opening, closing, or overnight shifts."
       problem="Retail work can be unpredictable. Your employees face risks from angry customers, theft, and working alone, especially during opening and closing."

@@ -846,3 +846,15 @@
 
 ## Em Dash Removal (Jun 23, 2026)
 - [x] Remove all em dashes (—) from user-facing content across the entire website
+
+## Who We Protect Subpages Full Update (Jun 23, 2026)
+- [x] Students.tsx: Add heroDescription (1-2 line summary below subtitle), add hero image
+- [x] ChildrenAndTeens.tsx: Add heroDescription (1-2 line summary below subtitle), add hero image
+- [x] Drivers.tsx: Add hero image
+- [x] Women.tsx: Add hero image
+- [x] Seniors.tsx (who-we-protect): Add hero image
+- [x] Employers.tsx (who-we-protect): Add hero image
+- [x] Review all pages for content sense and consistency
+- [x] Add heroImage + h1Sub + heroDescription to all use-cases pages (LoneWorker, HomeHealthcare, FamilySafety, MedicalAlert, SafetyForWomen, TeenDriver)
+- [x] Add heroImage to all industries pages (Construction, Education, HomeHealthcare, Hospitality, RealEstate, Retail, SecurityGuarding)
+- [x] Fix Team.tsx TypeScript error (sub prop not in type definition)

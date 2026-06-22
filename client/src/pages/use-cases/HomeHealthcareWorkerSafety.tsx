@@ -8,6 +8,9 @@ export default function HomeHealthcareWorkerSafety() {
       canonical="https://mysentry.ai/use-cases/home-healthcare-worker-safety"
       label="USE CASE"
       h1="Worried About Your Home Healthcare Team's Safety?"
+      h1Sub="Keep your caregivers safe on every home visit."
+      heroDescription="Panic alarm, fall detection, and live video response for healthcare workers visiting patients alone."
+      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-home-healthcare-FyAFPcaaseQ5VKXwe2ieTZ.webp"
       problem="Your caregivers work alone in private homes, exposing them to risks of assault, medical emergencies, or accidents with no one nearby to help."
       empathy="You worry about your team's safety and your organization's liability. It's a heavy burden to carry when your staff is vulnerable."
       steps={[

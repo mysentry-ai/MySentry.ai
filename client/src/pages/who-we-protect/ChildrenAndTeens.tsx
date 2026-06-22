@@ -94,28 +94,43 @@ export default function ChildrenAndTeens() {
         }}
       />
 
-      {/* Hero — title + subtitle + CTAs only */}
-      <section className="min-h-[calc(100vh-80px)] flex items-center bg-gradient-to-br from-[#e8f5e9] via-white to-[#f0fdf4]">
+      {/* Hero */}
+      <section className="min-h-[calc(100vh-80px)] flex items-center bg-gradient-to-b from-[#e8f5e9] to-white">
         <div className="container max-w-6xl mx-auto px-4 py-16">
-          <div className="max-w-3xl">
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Children & Teens</span>
-            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-3 uppercase tracking-tighter">
-              Know Your Teen Is Always Safe.
-            </h1>
-            <p className="text-xl text-primary font-semibold mb-8">
-              Real protection beyond simple location sharing.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/pricing">
-                <button className="bg-primary text-white font-bold px-8 py-4 rounded-full hover:bg-primary/90 transition-all flex items-center gap-2">
-                  Start Free Trial <ArrowRight className="w-4 h-4" />
-                </button>
-              </Link>
-              <Link href="/how-it-works">
-                <button className="border-2 border-primary text-primary font-bold px-8 py-4 rounded-full hover:bg-primary/5 transition-all">
-                  See How It Works
-                </button>
-              </Link>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Children & Teens</span>
+              <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-3 uppercase tracking-tighter">
+                Know Your Teen Is Always Safe.
+              </h1>
+              <p className="text-lg md:text-xl font-sans font-medium text-gray-600 mb-4 leading-snug">
+                Real protection beyond simple location sharing.
+              </p>
+              <p className="text-base text-gray-500 mb-8 leading-relaxed max-w-lg">
+                Crash detection, panic button, fall detection, and 24/7 professional monitoring for teens, all on their existing iPhone or Android.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/pricing">
+                  <button className="bg-primary text-white font-bold px-8 py-4 rounded-full hover:bg-primary/90 transition-all flex items-center gap-2">
+                    Start Free Trial <ArrowRight className="w-4 h-4" />
+                  </button>
+                </Link>
+                <Link href="/how-it-works">
+                  <button className="border-2 border-primary text-primary font-bold px-8 py-4 rounded-full hover:bg-primary/5 transition-all">
+                    See How It Works
+                  </button>
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <img
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-children-teens-KQbz7EA8GrpxXTDszpKTfr.webp"
+                alt="Teenager getting into car with parent watching from doorway, holding smartphone"
+                className="rounded-3xl shadow-2xl w-full object-cover"
+                loading="eager"
+                width={600}
+                height={400}
+              />
             </div>
           </div>
         </div>

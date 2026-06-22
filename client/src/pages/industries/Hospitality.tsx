@@ -9,6 +9,7 @@ export default function Hospitality() {
       canonical="https://mysentry.ai/industries/hospitality"
       label="INDUSTRY"
       h1="Your Hospitality Team Stays Safe."
+      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-hospitality-6jASxWDKrP6WWVd8AWcFRB.webp"
       h1Sub="Quick help for lone workers, every shift."
       heroDescription="Discreet panic alarm and instant response for housekeeping, maintenance, and night-shift staff."
       problem="Hospitality staff often work alone in guest rooms or quiet areas. This can make them feel unsafe if a threat, accident, or medical emergency happens and no one is around to help."
