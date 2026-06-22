@@ -29,10 +29,10 @@ export default function ChatbotNudge() {
             <MessageCircle className="w-8 h-8 text-primary" />
           </div>
           <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] mb-4">
-            Have Questions? Ask Our Safety Advisor
+            Still Have Questions? The MySentry Assistant Can Help
           </h2>
           <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-            Our AI-powered safety advisor is available 24/7 to answer any question about MySentry, how it works, which plan is right for you, and how to get set up in minutes.
+            Click the chat icon in the bottom-right corner to ask the MySentry Assistant anything. How it works, which plan fits you, how to set up your emergency contacts, or anything else on your mind.
           </p>
 
           <div className="flex flex-wrap gap-3 justify-center mb-8">
@@ -53,7 +53,7 @@ export default function ChatbotNudge() {
             className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-14 text-base transition-all hover:scale-105 shadow-lg inline-flex items-center gap-3"
           >
             <MessageCircle className="w-5 h-5" />
-            Chat with Our Safety Advisor
+            Ask the MySentry Assistant
           </button>
         </motion.div>
       </div>

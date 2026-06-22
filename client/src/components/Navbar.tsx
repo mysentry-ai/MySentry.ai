@@ -198,13 +198,13 @@ export default function Navbar() {
     >
       <div className="container flex items-center justify-between">
         {/* Logo + Tagline */}
-        <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
+        <Link href="/" className="flex flex-col items-start group flex-shrink-0">
           <img
             src="/images/logo.png"
             alt="MySentry"
             className="h-10 md:h-12 lg:h-14 w-auto transition-all duration-300 group-hover:scale-105"
           />
-          <span className="hidden lg:block text-[11px] font-bold uppercase tracking-widest text-primary">
+          <span className="hidden lg:block text-[10px] font-bold uppercase tracking-widest text-primary mt-0.5">
             Live Safe. Stay Healthy.
           </span>
         </Link>

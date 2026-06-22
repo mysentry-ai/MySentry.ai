@@ -19,7 +19,7 @@ const SUGGESTED_PROMPTS = [
 
 const WELCOME_MESSAGE: Message = {
   role: "assistant",
-  content: "Hi there! I'm your MySentry Safety Advisor. I can answer questions about how MySentry works, which plan suits you best, how to get set up, and anything else about your safety. What would you like to know?",
+  content: "Hi there! I'm the MySentry Assistant. Ask me anything about how MySentry works, which plan is right for you, how to get set up, or anything else about your safety. I'm here to help.",
 };
 
 export default function SafetyAdvisorWidget() {
@@ -125,8 +125,8 @@ export default function SafetyAdvisorWidget() {
             >
               <X className="w-3 h-3 text-gray-600" />
             </button>
-            <p className="text-sm font-medium text-gray-800">Have questions about MySentry?</p>
-            <p className="text-xs text-primary font-semibold mt-1">Ask our Safety Advisor</p>
+            <p className="text-sm font-medium text-gray-800">Have a question?</p>
+            <p className="text-xs text-primary font-semibold mt-1">Ask the MySentry Assistant</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -138,7 +138,7 @@ export default function SafetyAdvisorWidget() {
           "fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110",
           isOpen ? "bg-gray-800" : "bg-primary"
         )}
-        aria-label={isOpen ? "Close Safety Advisor" : "Open Safety Advisor"}
+        aria-label={isOpen ? "Close MySentry Assistant" : "Open MySentry Assistant"}
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
@@ -170,8 +170,8 @@ export default function SafetyAdvisorWidget() {
                 <MessageCircle className="w-5 h-5 text-white" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-white font-bold text-sm">MySentry Safety Advisor</p>
-                <p className="text-white/70 text-xs">Available 24/7 to answer your questions</p>
+              <p className="text-white font-bold text-sm">MySentry Assistant</p>
+              <p className="text-white/70 text-xs">Ask me anything about MySentry</p>
               </div>
               <button onClick={() => setIsOpen(false)} className="text-white/70 hover:text-white transition-colors" aria-label="Close">
                 <X className="w-5 h-5" />
