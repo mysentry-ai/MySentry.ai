@@ -7,7 +7,8 @@ export default function WhoWeProtectEmployers() {
       seoDescription="MySentry protects lone workers with 24/7 professional monitoring, automatic fall detection, a panic button, and live video response. No extra hardware. Scales from 5 to 500 workers."
       canonical="https://mysentry.ai/who-we-protect/employers"
       label="WHO WE PROTECT"
-      h1="Your Lone Workers Are Your Biggest Liability. MySentry Closes That Gap."
+      h1="Your Lone Workers Go Home Safe."
+      h1Sub="Protect your team and simplify safety compliance."
       problem="Your field technicians, home health aides, and late-shift workers are alone for hours at a time. If something happens, you may not know for hours. That is a safety failure and a legal exposure."
       empathy="You have a duty of care. And you want to meet it without burdening your workers with clunky hardware or complicated check-in procedures. MySentry gives your team real protection on the device they already carry."
       steps={[

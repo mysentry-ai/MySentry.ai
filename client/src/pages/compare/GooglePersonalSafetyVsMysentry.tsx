@@ -9,7 +9,7 @@ export default function GooglePersonalSafetyVsMysentry() {
       canonical="https://mysentry.ai/compare/google-personal-safety-vs-mysentry"
       label="COMPARISON"
       h1="Google Personal Safety vs MySentry"
-      h1Sub="Built-In Safety vs Dedicated 24/7 Emergency Response"
+      h1Sub="Built-in phone feature vs dedicated 24/7 response."
       problem="You need reliable safety features on your phone, but it's hard to know which app to trust."
       empathy="Choosing the right safety app feels overwhelming when your well-being is on the line. We've made the comparison clear and simple."
       steps={[

@@ -7,7 +7,8 @@ export default function Construction() {
       seoDescription="Keep construction workers safe with MySentry. Our app offers fall detection, panic alarms, and 24/7 monitoring for lone workers. Get help fast. Book a demo."
       canonical="https://mysentry.ai/industries/construction"
       label="INDUSTRY"
-      h1="Construction Workers Face Risks. MySentry Keeps Them Safe."
+      h1="Your Crew Goes Home Safe Every Day."
+      h1Sub="Protect workers on every job site, near or remote."
       problem="Construction sites are full of dangers. It's hard to know if a worker is okay, especially if they are alone or in a far-off part of the job site."
       empathy="You want your crew to be safe. You need a simple way to watch over them and get them help quickly in an emergency, without having to watch them all day."
       steps={[

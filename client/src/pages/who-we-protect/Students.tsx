@@ -99,11 +99,14 @@ export default function Students() {
         <div className="container max-w-6xl mx-auto px-4">
           <div className="max-w-3xl">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Students</span>
-            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-6 uppercase tracking-tighter">
-              The Safety App Built for Student Life
+            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-2 uppercase tracking-tighter">
+              Navigate Campus Life Safely.
             </h1>
+            <p className="text-xl text-primary font-semibold mb-6">
+              Your safety net, wherever you go.
+            </p>
             <p className="text-xl text-gray-600 mb-4 leading-relaxed">
-              Late-night walks. Rideshares alone. Living off campus for the first time. Students face real safety risks every day. MySentry gives students a panic button, fall detection, crash detection, and a 24/7 monitoring team — all on the phone they already carry.
+              Late-night walks, rideshares alone, living off campus for the first time. MySentry gives students a panic button, fall detection, crash detection, and a 24/7 monitoring team, all on the phone they already carry.
             </p>
 
             {/* Quick Answer AEO block */}

@@ -91,8 +91,9 @@ export default function FeaturesHub() {
 
       {/* Hero Section */}
       <HeroSection
-        label="Complete Protection Suite"
-        title={<>One App. Total<br/><span className="text-gray-600">Peace of Mind.</span></>}
+        label="Personal Safety and Health Monitoring"
+        title={<>Your Life,<br/><span className="text-primary">Fully Protected.</span></>}
+        description="All your safety needs in one app. Panic alarm, fall detection, health monitoring, and 24/7 emergency response."
         imageSrc="/images/hero-section.svg"
         imageAlt="MySentry safety features overview"
       />

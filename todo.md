@@ -819,3 +819,10 @@
 - [x] Add h1Sub prop to SEOPageTemplate for subtitle on new line with smaller font
 - [x] Update all 11 compare pages to use h1Sub for the subtitle part
 - [x] Update all SEO feature/use-case/who-we-protect pages to use h1Sub where applicable
+
+## Duplicate Widget and Hero Section Overhaul (Jun 23, 2026)
+- [x] Remove/hide the duplicate Manus platform green-leaf widget circle overlapping the chat button
+- [x] Refine Features hub and all individual feature page hero sections with StoryBrand zero-cognitive-load copy
+- [x] Refine all Who We Protect page hero sections with StoryBrand zero-cognitive-load copy
+- [x] Refine all Industries page hero sections with StoryBrand zero-cognitive-load copy
+- [x] Refine all Compare page hero sections with StoryBrand zero-cognitive-load copy

@@ -7,7 +7,8 @@ export default function WhoWeProtectSeniors() {
       seoDescription="MySentry protects seniors with automatic fall detection, a panic button, 24/7 professional monitoring, and live video response. Works on iPhone, Android, and Apple Watch. No pendant required."
       canonical="https://mysentry.ai/who-we-protect/seniors"
       label="WHO WE PROTECT"
-      h1="Your Parent Wants to Stay Independent. You Want to Know They're Safe."
+      h1="Know Your Parent Is Safe Right Now."
+      h1Sub="Peace of mind when they live alone."
       problem="Your parent lives alone. You worry every time the phone rings. They don't want to wear a pendant or feel like they need a babysitter. But one fall with no one around could change everything."
       empathy="Independence matters. Dignity matters. MySentry gives your parent both, while giving you the peace of mind you need to stop worrying every time you don't hear from them."
       steps={[

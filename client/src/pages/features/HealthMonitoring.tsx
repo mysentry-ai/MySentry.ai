@@ -7,7 +7,8 @@ export default function HealthMonitoring() {
       seoDescription="Monitor heart rate, SpO2, and HRV with MySentry's health monitoring app. Get instant alerts for changes and connect to emergency help. Start your free trial today."
       canonical="https://mysentry.ai/features/health-monitoring"
       label="FEATURE"
-      h1="Worried about health changes? Monitor vitals with MySentry."
+      h1="Peace of Mind About Your Health."
+      h1Sub="Track vitals and get instant alerts."
       problem="Keeping track of important health signs like heart rate, HRV, and SpO2 can be tough. You might worry about missing a change that signals a problem."
       empathy="It's normal to want peace of mind about your health or a loved one's well-being. You deserve a simple way to stay informed without constant stress."
       steps={[

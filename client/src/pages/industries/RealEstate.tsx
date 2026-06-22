@@ -7,7 +7,8 @@ export default function RealEstate() {
       seoDescription="Real estate agents, stay safe during showings. MySentry is a safety app with a panic alarm, fall detection, and 24/7 monitoring. Get help fast. Try it free."
       canonical="https://mysentry.ai/industries/real-estate"
       label="REAL ESTATE SAFETY"
-      h1="Worried About Safety During Showings? Get Help Fast."
+      h1="Complete Peace of Mind at Every Showing."
+      h1Sub="Never feel vulnerable during property tours."
       problem="Real estate agents often work alone, meeting new people in empty homes. This can feel risky, leaving you vulnerable with no easy way to call for help if something goes wrong."
       empathy="You enjoy helping clients find their perfect home, but your safety matters most. It's natural to feel uneasy walking into an empty property with someone you just met."
       steps={[

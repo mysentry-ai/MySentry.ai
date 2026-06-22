@@ -7,7 +7,8 @@ export default function ProfessionalMonitoring() {
       seoDescription="Worried about emergencies? MySentry's professional monitoring connects you to live agents 24/7. They respond to alerts and get you help fast. Get peace of mind, start your free trial."
       canonical="https://mysentry.ai/features/24-7-professional-monitoring"
       label="FEATURE"
-      h1="Never Face an Emergency Alone: 24/7 Professional Monitoring"
+      h1="Real Help. Real Fast. Every Time."
+      h1Sub="Our agents are always here for you."
       problem="You worry about what might happen if you have an emergency and can't call for help. Who will know you're in trouble?"
       empathy="It's stressful to think about facing a crisis alone. You deserve to know that someone is always ready to respond, no matter what."
       steps={[

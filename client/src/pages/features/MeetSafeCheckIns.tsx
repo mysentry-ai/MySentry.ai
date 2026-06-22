@@ -7,7 +7,8 @@ export default function MeetSafeCheckIns() {
       seoDescription="Feeling unsafe? MySentry's safety check-in app automatically alerts loved ones if you miss a check-in. Get peace of mind, start your free trial today."
       canonical="https://mysentry.ai/features/meetsafe-check-ins"
       label="FEATURE"
-      h1="Worried about meeting new people? MeetSafe is your safety check-in app."
+      h1="Feel Safe Meeting Anyone, Anywhere."
+      h1Sub="Meeting new people should never feel risky."
       problem="Going on a date, meeting someone new, or just walking home alone can feel risky. You want a simple way to let someone know you're okay, without constant texting."
       empathy="It's natural to want a little backup. MySentry's MeetSafe feature gives you a discreet safety net, so you can live your life with more confidence and less worry."
       steps={[

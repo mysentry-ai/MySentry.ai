@@ -7,7 +7,8 @@ export default function FallDetectionApp() {
       seoDescription="MySentry's fall detection app works on iPhone, Android, and Apple Watch. It automatically detects hard falls and sends a live alert to 24/7 professionals and your family. Start your free trial."
       canonical="https://mysentry.ai/features/fall-detection-app"
       label="FEATURE"
-      h1="A Fall Detection App That Calls for Help When You Can't."
+      h1="Help Arrives When You Need It Most."
+      h1Sub="Get help fast, even if you can't call out."
       problem="Falls are the leading cause of injury for adults over 65. Most happen when no one is nearby. If you or a loved one falls and can't reach a phone, minutes matter."
       empathy="You shouldn't have to choose between living independently and staying safe. The right fall detection app means help is always on the way, even when you can't ask for it."
       steps={[

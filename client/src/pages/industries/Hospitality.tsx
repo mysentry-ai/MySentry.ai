@@ -8,7 +8,8 @@ export default function Hospitality() {
       seoDescription="Keep hospitality staff safe with MySentry's app. It offers a panic button and fall detection for housekeepers and front desk workers. Get help fast. Book a demo today."
       canonical="https://mysentry.ai/industries/hospitality"
       label="INDUSTRY"
-      h1="Worried About Your Hospitality Team's Safety? MySentry Helps."
+      h1="Your Hospitality Team Stays Safe."
+      h1Sub="Quick help for lone workers, every shift."
       problem="Hospitality staff often work alone in guest rooms or quiet areas. This can make them feel unsafe if a threat, accident, or medical emergency happens and no one is around to help."
       empathy="You want your team to be safe. It shouldn't be a constant worry for you or for them to feel secure at work."
 steps={[

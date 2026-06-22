@@ -99,11 +99,14 @@ export default function ChildrenAndTeens() {
         <div className="container max-w-6xl mx-auto px-4">
           <div className="max-w-3xl">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Children & Teens</span>
-            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-6 uppercase tracking-tighter">
-              Know Your Teen Is Safe. Always.
+            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-2 uppercase tracking-tighter">
+              Know Your Teen Is Always Safe.
             </h1>
+            <p className="text-xl text-primary font-semibold mb-6">
+              Real protection beyond simple location sharing.
+            </p>
             <p className="text-xl text-gray-600 mb-4 leading-relaxed">
-              New drivers. Late-night activities. Solo walks home. Teens face real risks, and location sharing alone is not enough. MySentry adds crash detection, a panic button, fall detection, and a 24/7 monitoring team to the phone your teen already carries.
+              New drivers, late-night activities, solo walks home. Teens face real risks and location sharing alone is not enough. MySentry adds crash detection, a panic button, fall detection, and a 24/7 monitoring team to the phone your teen already carries.
             </p>
 
             {/* Quick Answer AEO block */}

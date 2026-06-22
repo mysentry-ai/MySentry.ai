@@ -9,7 +9,7 @@ export default function NoonlightVsMysentry() {
       canonical="https://mysentry.ai/compare/noonlight-vs-mysentry"
       label="COMPARISON"
       h1="Noonlight vs MySentry"
-      h1Sub="Which Safety App Protects You Best?"
+      h1Sub="Which safety app protects you best?"
       problem="You need a reliable personal safety app but are trying to decide between Noonlight and MySentry."
       empathy="Choosing the right safety app is a big decision. It's hard to know which one truly offers the best protection for your needs."
       steps={[

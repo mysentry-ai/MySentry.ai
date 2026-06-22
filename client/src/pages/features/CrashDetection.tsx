@@ -8,7 +8,8 @@ export default function CrashDetection() {
       seoDescription="Worried about car crashes? MySentry's automatic crash detection app alerts contacts and 24/7 monitoring. Get help fast, even if you can't call. Start your free trial."
       canonical="https://mysentry.ai/features/crash-detection"
       label="FEATURE"
-      h1="Car Crash? Get Help Fast with Automatic Detection"
+      h1="Help Arrives After Every Crash."
+      h1Sub="Get help fast, even if you can't call."
       problem="Car accidents are scary, and often leave you unable to call for help. When you're hurt and alone, every second counts."
       empathy="The worry of a crash, and not being able to get help, is real. You deserve peace of mind, knowing help is always on the way."
       steps={[

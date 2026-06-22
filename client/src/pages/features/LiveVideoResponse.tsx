@@ -7,7 +7,8 @@ export default function LiveVideoResponse() {
       seoDescription="MySentry's live video emergency response connects you to 24/7 agents who verify your situation, offer guidance, and dispatch help. Get peace of mind, start your free trial."
       canonical="https://mysentry.ai/features/live-video-response"
       label="FEATURE"
-      h1="Feeling unsafe? Get instant help with live video emergency response."
+      h1="Get Instant Help, Verified Safety."
+      h1Sub="Trained agents see and respond instantly."
       problem="When you're in a scary situation, you're not sure if it's a real emergency and you don't want to be alone."
       empathy="Feeling unsafe is frightening. MySentry's live video response means a trained professional can see what you see and help you instantly."
       steps={[

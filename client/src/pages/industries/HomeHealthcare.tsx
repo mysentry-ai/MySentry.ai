@@ -7,7 +7,8 @@ export default function HomeHealthcare() {
       seoDescription="MySentry protects home healthcare workers with a safety app. It offers panic alarms, fall detection, and 24/7 monitoring to keep your team safe. Learn more today."
       canonical="https://mysentry.ai/industries/home-healthcare"
       label="INDUSTRY"
-      h1="Home Healthcare Workers Deserve Safety, MySentry Delivers It"
+      h1="Home Healthcare Workers Stay Safe, Always."
+      h1Sub="Protect your team working alone in unfamiliar places."
       problem="Your home health aides, visiting nurses, and in-home caregivers work alone, often in new places. How do you keep them safe when you're not there?"
       empathy="It's stressful to worry about your team's safety. You need a simple, dependable way to protect them and meet your responsibilities."
       steps={[

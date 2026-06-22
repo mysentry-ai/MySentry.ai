@@ -8,7 +8,8 @@ export default function EmergencyContacts() {
       seoDescription="MySentry's emergency contacts app helps you instantly alert loved ones during an emergency. Share your location and status with a tap, keeping family informed and safe. Start your free trial today."
       canonical="https://mysentry.ai/features/emergency-contacts"
       label="FEATURE"
-      h1="Worried about loved ones in an emergency? Instantly alert your emergency contacts."
+      h1="Loved Ones Alerted. Help Arrives Fast."
+      h1Sub="Instantly notify family and friends with your location."
       problem="It's hard to quickly and reliably notify your family or friends when you're in an emergency. You need a simple way to send an alert with your location."
       empathy="Worrying about your loved ones' safety is natural. It's even more stressful when you can't reach them or know if they are okay."
       steps={[

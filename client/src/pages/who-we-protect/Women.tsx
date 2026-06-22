@@ -7,7 +7,8 @@ export default function WhoWeProtectWomen() {
       seoDescription="MySentry gives women a silent panic alarm, 24/7 professional monitoring, and live video response. Trigger by voice, phone tap, or Apple Watch. Stay safe walking, running, or working alone."
       canonical="https://mysentry.ai/who-we-protect/women"
       label="WHO WE PROTECT"
-      h1="You Shouldn't Have to Think Twice About Walking to Your Car."
+      h1="Feel Safe. Always Protected."
+      h1Sub="Your personal safety net, always on."
       problem="You walk to your car alone at night. You run before sunrise. You show homes to strangers. Every time, there is a small voice in the back of your head asking what you would do if something happened."
       empathy="That feeling is real. And it should not be the price of living your life. MySentry gives you a safety net that is always on, always ready, and never draws attention to itself."
       steps={[

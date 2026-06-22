@@ -7,7 +7,8 @@ export default function PanicButtonApp() {
       seoDescription="MySentry's panic button app works on iPhone and Android. One tap or voice command connects you to a 24/7 monitoring team by live video. Best panic button app for women, seniors, and lone workers. Start free."
       canonical="https://mysentry.ai/features/panic-button-app"
       label="FEATURE"
-      h1="The Panic Button App That Gets You Real Help, Fast."
+      h1="Always Feel Safe, Wherever You Go."
+      h1Sub="Get discreet, professional help when you need it most."
       problem="Feeling unsafe when you're alone is stressful. Whether you're walking to your car at night, working alone, or just want a safety net, you need help that arrives before things get worse."
       empathy="You deserve to feel safe everywhere you go. A silent, easy-to-use panic alarm in your pocket gives you that confidence without drawing attention to yourself."
       steps={[

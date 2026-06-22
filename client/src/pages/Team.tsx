@@ -57,7 +57,7 @@ const productTeam = [
   }
 ];
 
-const TeamSection = ({ title = "", subtitle = "", members, bgColor = "bg-white" }: { title?: string, subtitle?: string, members: typeof leadership, bgColor?: string, sub?: boolean }) => (
+const TeamSection = ({ title = "", subtitle = "", members, bgColor = "bg-white" }: { title?: string, subtitle?: string, members: typeof leadership, bgColor?: string }) => (
   <section className={`py-24 ${bgColor}`}>
     <div className="container mx-auto px-4">
       <div className="max-w-6xl mx-auto">
@@ -120,18 +120,15 @@ export const Team = () => {
       />
 
       <TeamSection
-        sub
         members={leadership}
       />
 
       <TeamSection
-        sub
         members={advisors}
         bgColor="bg-gray-50"
       />
 
       <TeamSection
-        sub
         members={productTeam}
       />
 

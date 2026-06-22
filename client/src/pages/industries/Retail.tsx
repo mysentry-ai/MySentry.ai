@@ -8,7 +8,8 @@ export default function Retail() {
       seoDescription="Keep your retail team safe with MySentry. Our app offers panic alarms, fall detection, and 24/7 monitoring, ensuring quick help for your employees. Learn more."
       canonical="https://mysentry.ai/industries/retail"
       label="RETAIL INDUSTRY"
-      h1="Protect Your Retail Team: A Safety App for Every Shift"
+      h1="Your Retail Team Stays Safe, Every Shift."
+      h1Sub="Protecting your staff is now simple and affordable."
       problem="Retail work can be unpredictable. Your employees face risks from angry customers, theft, and working alone, especially during opening and closing."
       empathy="You want to protect your team and create a safe work environment, but traditional security measures can be expensive and complex."
       steps={[

@@ -7,7 +7,8 @@ export default function WhoWeProtectDrivers() {
       seoDescription="MySentry detects car crashes automatically and sends help even if you cannot call. 24/7 professional monitoring, live video response, and instant family alerts with GPS. Works on iPhone and Android."
       canonical="https://mysentry.ai/who-we-protect/drivers"
       label="WHO WE PROTECT"
-      h1="A Crash Happens in a Second. MySentry Responds in the Next One."
+      h1="Help Arrives After Every Crash."
+      h1Sub="Help is on the way, even if you can't call."
       problem="You drive alone on highways, late at night, or in unfamiliar areas. If you are in a serious crash and cannot call for help, minutes matter. Most apps only call 911. MySentry sends a live video agent."
       empathy="You cannot predict a crash. But you can make sure that when one happens, help is already on the way before you have to do anything."
       steps={[

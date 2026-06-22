@@ -9,12 +9,20 @@ const questions = [
   "What is the difference between the Individual and Family plans?",
 ];
 
-export default function ChatbotNudge() {
-  const handleQuestionClick = (question: string) => {
-    // Dispatch a custom event that the chatbot widget can listen to
-    window.dispatchEvent(new CustomEvent("mysentry:chatbot:open", { detail: { message: question } }));
-  };
+// Opens the Flowise chat widget embedded in index.html
+function openFlowiseChat(message?: string) {
+  // The Flowise embed exposes a global window.Chatbot object
+  // Clicking the button element triggers the widget open
+  const btn = document.querySelector<HTMLElement>("flowise-chatbot")?.shadowRoot?.querySelector<HTMLElement>("button");
+  if (btn) {
+    btn.click();
+  } else {
+    // Fallback: dispatch the custom event in case a future widget listens
+    window.dispatchEvent(new CustomEvent("mysentry:chatbot:open", { detail: { message } }));
+  }
+}
 
+export default function ChatbotNudge() {
   return (
     <section className="py-20 bg-white">
       <div className="container max-w-4xl mx-auto">
@@ -39,7 +47,7 @@ export default function ChatbotNudge() {
             {questions.map((q) => (
               <button
                 key={q}
-                onClick={() => handleQuestionClick(q)}
+                onClick={() => openFlowiseChat(q)}
                 className="flex items-center gap-2 bg-white border border-primary/30 text-gray-700 hover:border-primary hover:text-primary hover:bg-primary/5 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-200 shadow-sm"
               >
                 <ChevronRight className="w-4 h-4 text-primary shrink-0" />
@@ -49,7 +57,7 @@ export default function ChatbotNudge() {
           </div>
 
           <button
-            onClick={() => handleQuestionClick("")}
+            onClick={() => openFlowiseChat()}
             className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-14 text-base transition-all hover:scale-105 shadow-lg inline-flex items-center gap-3"
           >
             <MessageCircle className="w-5 h-5" />

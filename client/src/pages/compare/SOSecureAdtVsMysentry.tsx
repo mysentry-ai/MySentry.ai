@@ -9,7 +9,7 @@ export default function SOSecureAdtVsMysentry() {
       canonical="https://mysentry.ai/compare/sosecure-adt-vs-mysentry"
       label="COMPARISON"
       h1="MySentry vs SOSecure and ADT"
-      h1Sub="Which Mobile Safety App Is the Better Choice?"
+      h1Sub="Which mobile safety app is the better choice?"
       problem="Choosing a personal safety solution is confusing. Traditional services feel outdated and expensive, but you want to know if a modern app provides real security."
       empathy="You need peace of mind for yourself or your loved ones, but you also need a solution that fits your lifestyle and budget. It's hard to know which service to trust."
       steps={[

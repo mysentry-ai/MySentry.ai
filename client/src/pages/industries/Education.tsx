@@ -7,7 +7,8 @@ export default function Education() {
       seoDescription="Keep your school safe with MySentry, a school safety app for staff and students. Get instant emergency alerts, fall detection, and 24/7 monitoring. Book a demo today."
       canonical="https://mysentry.ai/industries/education"
       label="EDUCATION"
-      h1="Protect Your School: A Safety App for Every Campus"
+      h1="Every Student and Staff Member Stays Safe."
+      h1Sub="Respond instantly to any campus emergency."
       problem="Schools face a challenge: how to quickly handle emergencies, from medical issues to security threats. Old systems are often slow and hard to use."
       empathy="You want a safe campus for students and staff. This is a big responsibility, and you need a tool you can trust when a crisis happens."
       steps={[

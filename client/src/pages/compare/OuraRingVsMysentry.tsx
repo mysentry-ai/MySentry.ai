@@ -8,7 +8,7 @@ export default function OuraRingVsMysentry() {
       canonical="https://mysentry.ai/compare/oura-ring-vs-mysentry"
       label="COMPARISON"
       h1="Oura Ring vs MySentry"
-      h1Sub="What Happens When Your Health Data Needs to Save Your Life?"
+      h1Sub="Great health data. But who calls for help?"
       problem="You track your health with a wearable. But when something goes wrong, your ring can't call for help. You need a safety layer that acts on the data your body is sending."
       empathy="Knowing your HRV and sleep score is valuable. But health data without emergency response is like a smoke detector with no alarm. MySentry closes that gap."
       steps={[
