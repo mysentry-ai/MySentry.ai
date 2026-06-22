@@ -16,19 +16,19 @@ const options: { id: ICPOption; label: string; icon: typeof User; description: s
     id: "myself",
     label: "Myself",
     icon: User,
-    description: "Personal safety for individuals, runners, commuters, and seniors"
+    description: "Personal safety and health monitoring with 24/7 emergency response for individuals, runners, commuters, and seniors"
   },
   {
     id: "family",
     label: "My Family",
     icon: Users,
-    description: "Protect your loved ones with real-time alerts and monitoring"
+    description: "Keep your whole family safe with real-time health monitoring, fall detection, crash detection, and 24/7 emergency response"
   },
   {
     id: "team",
     label: "My Team",
     icon: Building2,
-    description: "Lone worker protection, duty of care, and liability reduction"
+    description: "Lone worker safety, health monitoring, and 24/7 emergency response for duty-of-care compliance"
   }
 ];
 

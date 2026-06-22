@@ -7,10 +7,10 @@ export default function WhatWeProvide() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Our Promise</span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-6 text-[#1a1a1a]">
-            What We Provide
+            Personal Safety and Health Monitoring
           </h2>
           <p className="text-xl text-gray-600">
-            At MySentry, we deliver two things that matter most: Safety and Health.
+            MySentry delivers two things that matter most: your safety and your health, with 24/7 emergency response always ready.
           </p>
         </div>
 

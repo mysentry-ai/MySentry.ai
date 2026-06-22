@@ -8,7 +8,10 @@ import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "./oauth";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
-import compression from "compression";
+import { createRequire } from "module";
+const _require = createRequire(import.meta.url);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const compression = _require("compression") as () => any;
 import { serveStatic, setupVite } from "./vite";
 import { registerSitemapRoutes } from "../sitemaps";
 

@@ -19,8 +19,9 @@ export default function Home() {
 
       {/* Hero with ICP Selector and app screenshot */}
       <HeroSection
-        label="24/7 Personal Safety & Health Monitoring with Emergency Response"
-        title={<>Your Personal Safety<br/><span className="text-gray-600">Guardian. Always On.</span></>}
+        label="Personal Safety and Health Monitoring with 24/7 Emergency Response"
+        title={<>Live Safe.<br/><span className="text-gray-600">Stay Healthy.</span></>}
+        description="MySentry watches over you around the clock. Panic alarm, fall detection, real-time health vitals, crash detection, and a live emergency response team ready the moment something goes wrong."
         imageSrc="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-family-multigenerational-E2GoJdiP8d3vSnxHi3L9fP.webp"
         imageAlt="Multi-generational family including grandmother, parents, and teenagers enjoying time together outdoors"
         phoneMockupSrc="/images/app-home.png"

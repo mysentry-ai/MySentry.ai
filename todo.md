@@ -801,3 +801,14 @@
 - [x] Register new routes in App.tsx
 - [x] Add new pages to sitemaps.ts
 - [x] Add new pages to llms.txt
+
+## Tagline and Positioning Fix (Jun 22, 2026)
+- [x] Add "Live Safe. Stay Healthy." tagline visually in the homepage hero below the H1
+- [x] Add tagline to Footer brand column below the logo
+- [x] Update homepage hero H1 to lead with Personal Safety AND Health Monitoring
+- [x] Update ICPSelector descriptions to include health monitoring angle
+- [x] Update Footer brand description to full positioning phrase
+- [x] Sitewide: replace bare "personal safety" with "personal safety and health monitoring" in key copy
+- [x] Update SEO default meta description to include full positioning
+- [x] Update AppDashboardShowcase heading to include health monitoring
+- [x] Update WhatWeProvide section heading to include health monitoring

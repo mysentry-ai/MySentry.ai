@@ -50,8 +50,9 @@ export default function Footer() {
             <Link onClick={() => window.scrollTo(0, 0)} href="/" className="flex items-center gap-2">
               <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
             </Link>
+            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-1">Live Safe. Stay Healthy.</p>
             <p className="text-base text-gray-900 leading-relaxed font-medium">
-              24/7 Safety and Health Monitoring for everyone with Emergency Response.
+              Personal Safety and Health Monitoring with 24/7 Emergency Response.
             </p>
             <div className="flex gap-4 pt-2">
               <a 

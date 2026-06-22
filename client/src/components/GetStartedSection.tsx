@@ -9,6 +9,7 @@ interface GetStartedSectionProps {
   ctaText?: string;
   ctaLink?: string;
   image?: string;
+  sub?: boolean; // legacy prop, accepted but unused
 }
 
 export default function GetStartedSection({ 

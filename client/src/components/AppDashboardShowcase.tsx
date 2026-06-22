@@ -49,7 +49,7 @@ export default function AppDashboardShowcase() {
             The MySentry Dashboard
           </span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-6">
-            Everything You Need to Stay Safe, Right on Your Screen
+            Personal Safety and Health Monitoring, Right on Your Screen
           </h2>
           <p className="text-xl text-gray-600">
             The moment you open MySentry, you see what matters most: your health vitals, your emergency contacts, your location, and a PANIC button that is always one tap away.

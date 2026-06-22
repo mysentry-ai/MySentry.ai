@@ -1,6 +1,9 @@
 import "dotenv/config";
 import express from "express";
-import compression from "compression";
+import { createRequire } from "module";
+const _require = createRequire(import.meta.url);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const compression = _require("compression") as () => any;
 import { createServer } from "http";
 import net from "net";
 import path from "path";

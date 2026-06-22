@@ -57,7 +57,7 @@ const productTeam = [
   }
 ];
 
-const TeamSection = ({ title, subtitle, members, bgColor = "bg-white" }: { title: string, subtitle: string, members: typeof leadership, bgColor?: string }) => (
+const TeamSection = ({ title = "", subtitle = "", members, bgColor = "bg-white" }: { title?: string, subtitle?: string, members: typeof leadership, bgColor?: string, sub?: boolean }) => (
   <section className={`py-24 ${bgColor}`}>
     <div className="container mx-auto px-4">
       <div className="max-w-6xl mx-auto">

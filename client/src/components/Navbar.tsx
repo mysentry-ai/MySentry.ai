@@ -44,10 +44,10 @@ const megaMenuSections = [
         title: "Individuals & Families",
         icon: <Heart className="w-5 h-5 text-primary" />,
         items: [
-          { name: "Women & Females", desc: "Personal safety for women on the go", href: "/females" },
+          { name: "Women & Females", desc: "Personal safety and health monitoring for women on the go", href: "/females" },
           { name: "Seniors", desc: "Fall detection and medical alerts", href: "/seniors" },
           { name: "Families", desc: "Whole-family protection plan", href: "/families" },
-          { name: "Students", desc: "Campus and personal safety for students", href: "/who-we-protect/students" },
+          { name: "Students", desc: "Campus safety and health monitoring for students", href: "/who-we-protect/students" },
           { name: "Children & Teens", desc: "Family tracking and teen driver safety", href: "/who-we-protect/children-and-teens" },
         ],
       },
