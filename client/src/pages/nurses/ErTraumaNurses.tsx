@@ -47,7 +47,7 @@ export default function ErTraumaNurses() {
       <SEO
         schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
       />
-      <HeroSection label="ER and Trauma Nurse Safety" title={<>Safety for ER and Trauma Nurses<br /><span className="text-gray-600">When Every Second Counts</span></>} imageSrc={HERO_IMAGE} imageAlt="ER nurse in hospital corridor" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
+      <HeroSection label="ER and Trauma Nurse Safety" title={<>Safety for ER and Trauma Nurses<br /><span className="text-gray-600">When Every Second Counts</span></>} subtitle="Silent panic alarm, fall detection, and 24/7 professional monitoring for ER and trauma nurses facing workplace violence, high-stress shifts, and unpredictable patients." imageSrc={HERO_IMAGE} imageAlt="ER nurse in hospital corridor" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
 
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container max-w-3xl">

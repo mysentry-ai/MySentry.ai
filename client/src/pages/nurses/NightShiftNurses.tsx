@@ -47,7 +47,7 @@ export default function NightShiftNurses() {
       <SEO
         schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
       />
-      <HeroSection label="Night Shift Nurse Safety" title={<>Safety for Night Shift Nurses<br /><span className="text-gray-600">Before, During, and After</span></>} imageSrc={HERO_IMAGE} imageAlt="Nurse walking to car in hospital parking lot at night" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
+      <HeroSection label="Night Shift Nurse Safety" title={<>Safety for Night Shift Nurses<br /><span className="text-gray-600">Before, During, and After</span></>} subtitle="Panic alarm for the parking lot, crash detection for the drive home, and health monitoring for the shift itself. All connected to 24/7 professional agents." imageSrc={HERO_IMAGE} imageAlt="Nurse walking to car in hospital parking lot at night" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
 
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container max-w-3xl">

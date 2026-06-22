@@ -858,3 +858,10 @@
 - [x] Add heroImage + h1Sub + heroDescription to all use-cases pages (LoneWorker, HomeHealthcare, FamilySafety, MedicalAlert, SafetyForWomen, TeenDriver)
 - [x] Add heroImage to all industries pages (Construction, Education, HomeHealthcare, Hospitality, RealEstate, Retail, SecurityGuarding)
 - [x] Fix Team.tsx TypeScript error (sub prop not in type definition)
+
+## Nurses Pages - Add Subtitle/Explanation (Jun 23, 2026)
+- [x] /nurses: Add subtitle to HeroSection explaining what the page offers
+- [x] /nurses/travel-nurses: Add subtitle to HeroSection explaining what the page offers
+- [x] /nurses/home-health: Check and add subtitle if missing
+- [x] /nurses/er-trauma: Check and add subtitle if missing
+- [x] /nurses/night-shift: Check and add subtitle if missing

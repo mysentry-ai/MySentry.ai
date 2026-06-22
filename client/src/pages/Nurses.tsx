@@ -136,6 +136,7 @@ export default function Nurses() {
       <HeroSection
         label="Nurse Safety + Health Monitoring"
         title={<>Safety + Health Monitoring<br /><span className="text-gray-600">for Nurses, with Emergency Response</span></>}
+        subtitle="One-press panic alarm, fall detection, health monitoring, and 24/7 professional response for nurses working alone, on night shifts, or in high-risk environments."
         imageSrc={HERO_IMAGE}
         imageAlt="Confident nurse in hospital corridor holding smartphone"
         ctaText="Start Free Trial"

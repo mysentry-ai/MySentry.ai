@@ -47,7 +47,7 @@ export default function TravelNurses() {
       <SEO
         schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
       />
-      <HeroSection label="Travel Nurse Safety" title={<>Safety for Travel Nurses<br /><span className="text-gray-600">in Every New City</span></>} imageSrc={HERO_IMAGE} imageAlt="Travel nurse with luggage outside hospital" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
+      <HeroSection label="Travel Nurse Safety" title={<>Safety for Travel Nurses<br /><span className="text-gray-600">in Every New City</span></>} subtitle="Panic alarm, location sharing, and 24/7 monitoring that moves with you to every new assignment. Your safety setup works the same whether you are in your home city or across the country." imageSrc={HERO_IMAGE} imageAlt="Travel nurse with luggage outside hospital" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
 
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container max-w-3xl">

@@ -47,7 +47,7 @@ export default function HomeHealthNurses() {
       <SEO
         schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
       />
-      <HeroSection label="Home Health Nurse Safety" title={<>Safety for Home Health Nurses<br /><span className="text-gray-600">Working Alone</span></>} imageSrc={HERO_IMAGE} imageAlt="Home health nurse at patient's front door" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
+      <HeroSection label="Home Health Nurse Safety" title={<>Safety for Home Health Nurses<br /><span className="text-gray-600">Working Alone</span></>} subtitle="Check-in timers, panic alarm, and real-time location sharing for nurses making solo home visits. If you don't check in on time, help is dispatched automatically." imageSrc={HERO_IMAGE} imageAlt="Home health nurse at patient's front door" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
 
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container max-w-3xl">
