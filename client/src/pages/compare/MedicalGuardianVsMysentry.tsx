@@ -8,6 +8,7 @@ export default function MedicalGuardianVsMysentry() {
       label="COMPARISON"
       h1="Medical Guardian vs MySentry"
       h1Sub="Traditional device vs smartphone safety app."
+      heroDescription="Medical Guardian requires a separate device. MySentry works with the phone and watch you already own."
       problem="Your parent needs a medical alert system. Medical Guardian requires a dedicated device and a base unit. MySentry works on the smartphone they already own."
       empathy="Both options protect seniors. The right choice depends on your parent's lifestyle and whether they carry a smartphone."
       steps={[{ title: "Choose a Plan", description: "Plans start at $9.99/mo. No equipment fee. No long-term contract." }, { title: "Download the App", description: "Install on iPhone or Android. Pair with Apple Watch for wrist-based detection." }, { title: "Add Emergency Contacts", description: "Family members receive instant alerts with live GPS location." }]}

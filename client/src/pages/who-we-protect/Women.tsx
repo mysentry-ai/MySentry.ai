@@ -9,6 +9,7 @@ export default function WhoWeProtectWomen() {
       label="WHO WE PROTECT"
       h1="Feel Safe. Always Protected."
       h1Sub="Your personal safety net, always on."
+      heroDescription="Panic alarm, live video response, and real-time location sharing designed for women who walk, commute, or live alone."
       problem="You walk to your car alone at night. You run before sunrise. You show homes to strangers. Every time, there is a small voice in the back of your head asking what you would do if something happened."
       empathy="That feeling is real. And it should not be the price of living your life. MySentry gives you a safety net that is always on, always ready, and never draws attention to itself."
       steps={[

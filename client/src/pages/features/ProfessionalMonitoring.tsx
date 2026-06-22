@@ -9,6 +9,7 @@ export default function ProfessionalMonitoring() {
       label="FEATURE"
       h1="Real Help. Real Fast. Every Time."
       h1Sub="Our agents are always here for you."
+      heroDescription="Real people watching over you around the clock, ready to respond the moment something goes wrong."
       problem="You worry about what might happen if you have an emergency and can't call for help. Who will know you're in trouble?"
       empathy="It's stressful to think about facing a crisis alone. You deserve to know that someone is always ready to respond, no matter what."
       steps={[

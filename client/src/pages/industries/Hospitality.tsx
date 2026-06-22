@@ -10,6 +10,7 @@ export default function Hospitality() {
       label="INDUSTRY"
       h1="Your Hospitality Team Stays Safe."
       h1Sub="Quick help for lone workers, every shift."
+      heroDescription="Discreet panic alarm and instant response for housekeeping, maintenance, and night-shift staff."
       problem="Hospitality staff often work alone in guest rooms or quiet areas. This can make them feel unsafe if a threat, accident, or medical emergency happens and no one is around to help."
       empathy="You want your team to be safe. It shouldn't be a constant worry for you or for them to feel secure at work."
 steps={[

@@ -9,6 +9,7 @@ export default function Education() {
       label="EDUCATION"
       h1="Every Student and Staff Member Stays Safe."
       h1Sub="Respond instantly to any campus emergency."
+      heroDescription="Panic alarm, lockdown alerts, and live video for teachers, staff, and campus security."
       problem="Schools face a challenge: how to quickly handle emergencies, from medical issues to security threats. Old systems are often slow and hard to use."
       empathy="You want a safe campus for students and staff. This is a big responsibility, and you need a tool you can trust when a crisis happens."
       steps={[

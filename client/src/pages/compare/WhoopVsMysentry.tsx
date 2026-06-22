@@ -9,6 +9,7 @@ export default function WhoopVsMysentry() {
       label="COMPARISON"
       h1="Whoop vs MySentry"
       h1Sub="Great recovery data. But who calls for help?"
+      heroDescription="Whoop optimizes your training. MySentry protects your life with live emergency response."
       problem="Whoop tells you how recovered you are. But if you collapse on a run or have a health event at home alone, your Whoop cannot call for help. You need a safety layer."
       empathy="Tracking your body is smart. But health data without emergency response leaves a gap. MySentry fills that gap without replacing the tools you already use."
       steps={[

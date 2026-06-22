@@ -9,6 +9,7 @@ export default function LiveVideoResponse() {
       label="FEATURE"
       h1="Get Instant Help, Verified Safety."
       h1Sub="Trained agents see and respond instantly."
+      heroDescription="When an alert is triggered, a trained agent sees your situation in real time and coordinates the right help."
       problem="When you're in a scary situation, you're not sure if it's a real emergency and you don't want to be alone."
       empathy="Feeling unsafe is frightening. MySentry's live video response means a trained professional can see what you see and help you instantly."
       steps={[

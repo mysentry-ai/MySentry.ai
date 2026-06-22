@@ -9,6 +9,7 @@ export default function SecurityGuarding() {
       label="FOR SECURITY COMPANIES"
       h1="Your Security Guards Stay Safe and Connected."
       h1Sub="Instant help for every lone guard, every shift."
+      heroDescription="Live check-ins, panic alarm, and real-time health monitoring for guards working alone."
       problem="Your guards work alone, often in high-risk places. A simple fall, a health issue, or a threat can happen fast. Old check-in systems are slow and not always reliable."
       empathy="You want to keep your team safe, but you can't be everywhere. You need a trusted way to know your guards are okay, especially when they are out of sight."
       steps={[

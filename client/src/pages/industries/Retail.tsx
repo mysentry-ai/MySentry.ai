@@ -10,6 +10,7 @@ export default function Retail() {
       label="RETAIL INDUSTRY"
       h1="Your Retail Team Stays Safe, Every Shift."
       h1Sub="Protecting your staff is now simple and affordable."
+      heroDescription="Panic alarm and live monitoring for staff working alone during opening, closing, or overnight shifts."
       problem="Retail work can be unpredictable. Your employees face risks from angry customers, theft, and working alone, especially during opening and closing."
       empathy="You want to protect your team and create a safe work environment, but traditional security measures can be expensive and complex."
       steps={[

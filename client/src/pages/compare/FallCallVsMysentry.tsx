@@ -9,6 +9,7 @@ export default function FallCallVsMysentry() {
       label="COMPARISON"
       h1="FallCall vs MySentry"
       h1Sub="Compare fall detection apps for real peace of mind."
+      heroDescription="FallCall detects falls. MySentry adds live video response, health monitoring, and smartwatch support."
       problem="Choosing the right personal safety app for yourself or a loved one can be confusing. It's hard to know which features you really need."
       empathy="You want peace of mind knowing you've made the best choice for safety and independence. We're here to help you compare the details."
       steps={[

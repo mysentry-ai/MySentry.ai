@@ -9,6 +9,7 @@ export default function SafetyCheckInApp() {
       label="FEATURE"
       h1="Know You're Safe, Even When Alone."
       h1Sub="Help is dispatched if you miss a check-in."
+      heroDescription="Set a timer. If you don't check in, our team is alerted and your contacts are notified automatically."
       problem="You meet strangers for dates, property showings, or client visits, and no one knows exactly where you are or when to expect you back."
       empathy="That uneasy feeling before walking into an unfamiliar situation is real. You deserve a simple way to let someone know you're safe, without constantly texting."
       steps={[

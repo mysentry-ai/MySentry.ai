@@ -10,6 +10,7 @@ export default function EmergencyContacts() {
       label="FEATURE"
       h1="Loved Ones Alerted. Help Arrives Fast."
       h1Sub="Instantly notify family and friends with your location."
+      heroDescription="Your chosen people get a text with your live GPS map the instant an alert is triggered."
       problem="It's hard to quickly and reliably notify your family or friends when you're in an emergency. You need a simple way to send an alert with your location."
       empathy="Worrying about your loved ones' safety is natural. It's even more stressful when you can't reach them or know if they are okay."
       steps={[

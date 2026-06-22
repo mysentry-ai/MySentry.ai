@@ -9,6 +9,7 @@ export default function FallDetectionApp() {
       label="FEATURE"
       h1="Help Arrives When You Need It Most."
       h1Sub="Get help fast, even if you can't call out."
+      heroDescription="MySentry detects a fall and connects you to a live agent within 2 minutes, even if you can't move or speak."
       problem="Falls are the leading cause of injury for adults over 65. Most happen when no one is nearby. If you or a loved one falls and can't reach a phone, minutes matter."
       empathy="You shouldn't have to choose between living independently and staying safe. The right fall detection app means help is always on the way, even when you can't ask for it."
       steps={[

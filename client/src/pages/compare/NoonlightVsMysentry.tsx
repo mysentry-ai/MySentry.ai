@@ -10,6 +10,7 @@ export default function NoonlightVsMysentry() {
       label="COMPARISON"
       h1="Noonlight vs MySentry"
       h1Sub="Which safety app protects you best?"
+      heroDescription="Both connect you to help. MySentry adds live video, health monitoring, and smartwatch integration."
       problem="You need a reliable personal safety app but are trying to decide between Noonlight and MySentry."
       empathy="Choosing the right safety app is a big decision. It's hard to know which one truly offers the best protection for your needs."
       steps={[

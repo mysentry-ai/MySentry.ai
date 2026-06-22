@@ -9,6 +9,7 @@ export default function Life360VsMysentry() {
       label="COMPARISON"
       h1="Life360 vs MySentry"
       h1Sub="Location tracking vs full safety monitoring."
+      heroDescription="Life360 shows where your family is. MySentry responds when something goes wrong."
       problem="You want to keep your family safe, but you're not sure whether a location-sharing app like Life360 is enough or whether you need something more."
       empathy="Choosing the right safety tool for your family is a big decision. You need clear, honest information about what each app actually does before you commit."
       steps={[

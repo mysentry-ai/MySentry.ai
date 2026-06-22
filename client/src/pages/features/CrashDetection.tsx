@@ -10,6 +10,7 @@ export default function CrashDetection() {
       label="FEATURE"
       h1="Help Arrives After Every Crash."
       h1Sub="Get help fast, even if you can't call."
+      heroDescription="Your phone detects the impact and automatically alerts our 24/7 team with your exact location and live video."
       problem="Car accidents are scary, and often leave you unable to call for help. When you're hurt and alone, every second counts."
       empathy="The worry of a crash, and not being able to get help, is real. You deserve peace of mind, knowing help is always on the way."
       steps={[

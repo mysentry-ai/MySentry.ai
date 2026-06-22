@@ -9,6 +9,7 @@ export default function HomeHealthcare() {
       label="INDUSTRY"
       h1="Home Healthcare Workers Stay Safe, Always."
       h1Sub="Protect your team working alone in unfamiliar places."
+      heroDescription="Panic alarm, live location sharing, and check-in timers for caregivers visiting patients alone."
       problem="Your home health aides, visiting nurses, and in-home caregivers work alone, often in new places. How do you keep them safe when you're not there?"
       empathy="It's stressful to worry about your team's safety. You need a simple, dependable way to protect them and meet your responsibilities."
       steps={[

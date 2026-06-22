@@ -8,6 +8,7 @@ export default function AppleWatchFallDetectionVsMysentry() {
       label="COMPARISON"
       h1="Apple Watch Fall Detection vs MySentry"
       h1Sub="One calls 911. The other sends a live agent."
+      heroDescription="Apple Watch calls 911. MySentry sends a live agent who can see your situation and coordinate help."
       problem="Apple Watch detects falls and calls 911. That is a good start. But a 911 call does not alert your family, does not send a live video agent, and does not give the dispatcher your health profile."
       empathy="Apple Watch fall detection is a useful built-in feature. MySentry builds on it with a professional monitoring layer that gives your family and a trained agent the full picture."
       steps={[{ title: "Download MySentry", description: "Get the app on iPhone. Pair with your Apple Watch for wrist-based detection." }, { title: "Add Emergency Contacts", description: "Family members receive instant alerts with live GPS location." }, { title: "Use Both Together", description: "Apple Watch fall detection and MySentry work side by side. MySentry adds the monitoring layer Apple Watch does not have." }]}

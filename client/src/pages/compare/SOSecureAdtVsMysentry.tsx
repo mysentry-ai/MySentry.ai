@@ -10,6 +10,7 @@ export default function SOSecureAdtVsMysentry() {
       label="COMPARISON"
       h1="MySentry vs SOSecure and ADT"
       h1Sub="Which mobile safety app is the better choice?"
+      heroDescription="SoSecure by ADT offers basic alerts. MySentry adds live video, health monitoring, and smartwatch triggers."
       problem="Choosing a personal safety solution is confusing. Traditional services feel outdated and expensive, but you want to know if a modern app provides real security."
       empathy="You need peace of mind for yourself or your loved ones, but you also need a solution that fits your lifestyle and budget. It's hard to know which service to trust."
       steps={[

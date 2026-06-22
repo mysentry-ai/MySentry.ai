@@ -8,6 +8,7 @@ export default function LivelyVsMysentry() {
       label="COMPARISON"
       h1="Lively vs MySentry"
       h1Sub="Which senior safety app is right for your family?"
+      heroDescription="Lively offers a medical alert button. MySentry adds fall detection, health monitoring, and live video response."
       problem="You want a safety app for your parent that detects falls, connects to a monitoring center, and alerts your family. Both Lively and MySentry do this. The differences matter."
       empathy="Choosing the right safety app for a parent is stressful. Here is a clear, factual comparison so you can make the right call."
       steps={[{ title: "Choose a Plan", description: "Plans start at $9.99/mo. No equipment fee. No long-term contract." }, { title: "Download the App", description: "Install on iPhone or Android. Pair with Apple Watch for wrist-based detection." }, { title: "Add Emergency Contacts", description: "Family members receive instant alerts with live GPS location." }]}

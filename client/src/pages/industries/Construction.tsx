@@ -9,6 +9,7 @@ export default function Construction() {
       label="INDUSTRY"
       h1="Your Crew Goes Home Safe Every Day."
       h1Sub="Protect workers on every job site, near or remote."
+      heroDescription="Fall detection, panic alarm, and health monitoring for workers in high-risk environments."
       problem="Construction sites are full of dangers. It's hard to know if a worker is okay, especially if they are alone or in a far-off part of the job site."
       empathy="You want your crew to be safe. You need a simple way to watch over them and get them help quickly in an emergency, without having to watch them all day."
       steps={[

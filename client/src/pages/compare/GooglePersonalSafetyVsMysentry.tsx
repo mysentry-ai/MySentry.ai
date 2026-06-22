@@ -10,6 +10,7 @@ export default function GooglePersonalSafetyVsMysentry() {
       label="COMPARISON"
       h1="Google Personal Safety vs MySentry"
       h1Sub="Built-in phone feature vs dedicated 24/7 response."
+      heroDescription="Google's built-in safety features are basic. MySentry provides dedicated 24/7 professional monitoring."
       problem="You need reliable safety features on your phone, but it's hard to know which app to trust."
       empathy="Choosing the right safety app feels overwhelming when your well-being is on the line. We've made the comparison clear and simple."
       steps={[

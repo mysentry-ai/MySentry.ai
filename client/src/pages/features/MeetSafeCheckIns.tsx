@@ -9,6 +9,7 @@ export default function MeetSafeCheckIns() {
       label="FEATURE"
       h1="Feel Safe Meeting Anyone, Anywhere."
       h1Sub="Meeting new people should never feel risky."
+      heroDescription="Share your meeting details with a trusted contact. If you don't check in afterward, help is on the way."
       problem="Going on a date, meeting someone new, or just walking home alone can feel risky. You want a simple way to let someone know you're okay, without constant texting."
       empathy="It's natural to want a little backup. MySentry's MeetSafe feature gives you a discreet safety net, so you can live your life with more confidence and less worry."
       steps={[

@@ -34,6 +34,8 @@ interface SEOPageTemplateProps {
   h1: string;
   /** Optional subtitle shown below the h1 in a smaller, lighter style */
   h1Sub?: string;
+  /** Short 1-2 line description shown below subtitle, above CTAs */
+  heroDescription?: string;
   problem: string;
   empathy: string;
   steps: Step[];
@@ -81,6 +83,7 @@ export default function SEOPageTemplate({
   label,
   h1,
   h1Sub,
+  heroDescription,
   problem,
   empathy,
   steps,
@@ -152,10 +155,16 @@ export default function SEOPageTemplate({
                 {h1}
               </h1>
               {h1Sub && (
-                <p className="text-lg md:text-xl font-sans font-medium text-gray-600 mb-8 leading-snug">
+                <p className="text-lg md:text-xl font-sans font-medium text-gray-600 mb-4 leading-snug">
                   {h1Sub}
                 </p>
               )}
+              {heroDescription && (
+                <p className="text-base text-gray-500 mb-8 leading-relaxed max-w-lg">
+                  {heroDescription}
+                </p>
+              )}
+              {!heroDescription && h1Sub && <div className="mb-4" />}
 
               {/* CTAs — immediately after subtitle, fully visible above fold */}
               <div className="flex flex-wrap gap-4">

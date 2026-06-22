@@ -9,6 +9,7 @@ export default function PanicButtonApp() {
       label="FEATURE"
       h1="Always Feel Safe, Wherever You Go."
       h1Sub="Get discreet, professional help when you need it most."
+      heroDescription="One tap on your phone or watch silently alerts a live monitoring team and shares your location with loved ones."
       problem="Feeling unsafe when you're alone is stressful. Whether you're walking to your car at night, working alone, or just want a safety net, you need help that arrives before things get worse."
       empathy="You deserve to feel safe everywhere you go. A silent, easy-to-use panic alarm in your pocket gives you that confidence without drawing attention to yourself."
       steps={[

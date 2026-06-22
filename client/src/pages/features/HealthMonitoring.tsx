@@ -9,6 +9,7 @@ export default function HealthMonitoring() {
       label="FEATURE"
       h1="Peace of Mind About Your Health."
       h1Sub="Track vitals and get instant alerts."
+      heroDescription="Continuous heart rate, SpO2, and HRV tracking with instant alerts when something looks wrong."
       problem="Keeping track of important health signs like heart rate, HRV, and SpO2 can be tough. You might worry about missing a change that signals a problem."
       empathy="It's normal to want peace of mind about your health or a loved one's well-being. You deserve a simple way to stay informed without constant stress."
       steps={[
