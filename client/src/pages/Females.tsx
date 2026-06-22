@@ -186,7 +186,7 @@ export default function Females() {
       <HeroSection
         label="Personal Safety Reimagined"
         title={<>Freedom To Go<br/><span className="text-gray-600">Anywhere.</span></>}
-        subtitle="Panic alarm, live monitoring, and real-time location sharing designed for women who walk, commute, or live alone."
+        subtitle="Panic alarm, live health monitoring, and real-time location sharing designed for women who walk, commute, or live alone."
         imageSrc="/images/hero-female-active.jpg"
         imageAlt="Confident woman checking smartwatch while jogging"
       />
