@@ -865,3 +865,7 @@
 - [x] /nurses/home-health: Check and add subtitle if missing
 - [x] /nurses/er-trauma: Check and add subtitle if missing
 - [x] /nurses/night-shift: Check and add subtitle if missing
+
+## Oura Ring Integration Page Fix (Jul 8, 2026)
+- [x] Change Oura Ring page to "Coming Soon" - not yet integrated
+- [x] Fix broken hero image on /integrations/oura-ring
