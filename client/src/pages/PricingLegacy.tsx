@@ -205,7 +205,7 @@ export default function Pricing() {
               "name": "What devices are compatible with MySentry?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "MySentry works with iPhone (iOS 14+), Android phones (Android 10+), Apple Watch (Series 4+), and most Wear OS smartwatches. Our app is optimized for both smartphones and wearables."
+                "text": "MySentry works with iPhone (iOS 14+), Android phones (Android 10+), Apple Watch (Series 7+), and most Wear OS smartwatches. Our app is optimized for both smartphones and wearables."
               }
             },
             {
@@ -576,7 +576,7 @@ export default function Pricing() {
               },
               {
                 q: "What devices are compatible with MySentry?",
-                a: "MySentry works with iPhone (iOS 14+), Android phones (Android 10+), Apple Watch (Series 4+), and most Wear OS smartwatches. Our app is optimized for both smartphones and wearables."
+                a: "MySentry works with iPhone (iOS 14+), Android phones (Android 10+), Apple Watch (Series 7+), and most Wear OS smartwatches. Our app is optimized for both smartphones and wearables."
               },
               {
                 q: "How does the 24/7 professional monitoring work?",

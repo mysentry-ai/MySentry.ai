@@ -15,6 +15,9 @@ import {
   Car,
   PersonStanding,
   ArrowRight,
+  MapPin,
+  PhoneCall,
+  Route,
 } from "lucide-react";
 
 const features = [
@@ -76,11 +79,35 @@ const features = [
   },
   {
     title: "MeetSafe Check-Ins",
-    description: "Set safety timers for meetings or appointments. If you don't check in, your contacts and our team are alerted automatically.",
+    description: "Schedule a meeting. When it ends, MySentry sends you a Safety Check Alert. If you don't respond, your Panic Alarm is triggered automatically.",
     href: "/features/meetsafe-check-ins",
     icon: Activity,
     color: "bg-amber-100",
     iconColor: "text-amber-600",
+  },
+  {
+    title: "Family Connectivity",
+    description: "Share your location on a schedule or in real time. Request a trusted contact's location when you're worried. Up to 5 emergency contacts.",
+    href: "/features/family-connectivity",
+    icon: MapPin,
+    color: "bg-cyan-100",
+    iconColor: "text-cyan-600",
+  },
+  {
+    title: "Automated Call",
+    description: "Schedule a realistic fake incoming call to help you exit any uncomfortable or unsafe situation, discreetly and without confrontation.",
+    href: "/features/automated-call",
+    icon: PhoneCall,
+    color: "bg-rose-100",
+    iconColor: "text-rose-600",
+  },
+  {
+    title: "Secure Route",
+    description: "Set a route before your journey. MySentry monitors for major deviations and checks on you if you drift off path.",
+    href: "/features/secure-route",
+    icon: Route,
+    color: "bg-lime-100",
+    iconColor: "text-lime-600",
   },
 ];
 

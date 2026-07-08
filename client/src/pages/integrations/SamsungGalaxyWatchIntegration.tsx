@@ -17,9 +17,9 @@ export default function SamsungGalaxyWatchIntegration() {
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry adds fall detection, a panic alarm, and 24/7 professional monitoring to your Samsung Galaxy Watch. When a fall is detected or you trigger an alarm, our monitoring team is notified with your GPS location and live video from your phone. If you don't respond within 2 minutes of a fall, an alert is sent automatically."
+      directAnswer="MySentry adds fall detection, a panic alarm, and 24/7 professional monitoring to your Samsung Galaxy Watch. When a fall is detected or you trigger an alarm, our monitoring team is notified with your GPS location and live video from your phone. If you do not respond to the Safety Check Alert, an alert is sent automatically."
       howItWorks={[
-        "Automatic Fall Detection: If you fall, MySentry detects it and alerts our 24/7 monitoring center within 2 minutes if you do not respond.",
+        "Automatic Fall Detection: If you fall, MySentry detects it and alerts our 24/7 monitoring center if you do not respond to the Safety Check Alert.",
         "Instant Panic Alarm: Trigger a panic alarm with a simple voice command, a tap on your watch face, or through your smartphone.",
         "Health & GPS Monitoring: Keeps an eye on your heart rate and SpO2 levels, and provides GPS location to emergency contacts when an alert is triggered.",
       ]}
@@ -34,13 +34,13 @@ export default function SamsungGalaxyWatchIntegration() {
         "Galaxy Watch users who want peace of mind for themselves and their families.",
       ]}
       notIdealFor={[
-        "Users without a compatible Samsung Galaxy Watch (Series 4 or newer).",
+        "Users without a compatible Samsung Galaxy Watch (Series 6 or newer).",
         "Individuals who do not have an Android smartphone.",
         "People who are uncomfortable with sharing health data from their watch.",
       ]}
       keyTakeaways={[
         "MySentry works with Samsung Galaxy Watch 4 and newer models.",
-        "Fall detection sends an automatic alert if you don't respond within 2 minutes.",
+        "Fall detection sends an automatic alert if you do not respond to the Safety Check Alert.",
         "Panic alarm works by watch tap, phone tap, or voice command.",
         "Requires an Android smartphone with the MySentry app installed.",
       ]}
@@ -55,7 +55,7 @@ export default function SamsungGalaxyWatchIntegration() {
         },
         {
           question: "How does the fall detection work?",
-          answer: "MySentry uses the motion sensors in your Galaxy Watch to detect the impact of a fall. If a fall is detected, it will initiate an alert sequence. If you do not cancel the alert within 2 minutes, our 24/7 monitoring center is notified.",
+          answer: "MySentry uses the motion sensors in your Galaxy Watch to detect the impact of a fall. If a fall is detected, it will initiate an alert sequence. If you do not respond to the Safety Check Alert, our 24/7 monitoring center is notified.",
         },
         {
           question: "Is my health data secure?",

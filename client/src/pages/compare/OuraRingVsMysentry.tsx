@@ -33,7 +33,7 @@ export default function OuraRingVsMysentry() {
         "MySentry monitors your health and safety in the background on your iPhone or Android phone.",
         "Your paired Apple Watch or Samsung Galaxy Watch tracks heart rate, HRV, and SpO2 continuously.",
         "If a health alert threshold is crossed, the app notifies you and your emergency contacts.",
-        "If a fall or crash is detected, you have 2 minutes to confirm you are okay.",
+        "If a fall or crash is detected, you receive a Safety Check Alert to confirm you are okay.",
         "If you do not respond, or if you trigger the panic alarm, a trained agent starts a live video call.",
         "The agent assesses your situation and dispatches the right help.",
       ]}
@@ -88,7 +88,7 @@ export default function OuraRingVsMysentry() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) or Android (8.0+). Recommended: Apple Watch (Series 4+) or Samsung Galaxy Watch (4+) for health monitoring and wrist-based panic activation.",
+        devices: "iPhone (iOS 15+) or Android (8.0+). Recommended: Apple Watch (Series 7+) or Samsung Galaxy Watch (4+) for health monitoring and wrist-based panic activation.",
         permissions: "Location (always on), motion and fitness, microphone, camera, and notifications.",
         connectivity: "Cellular or Wi-Fi required for alerts and live video response.",
         limitations: "MySentry does not track sleep stages or body temperature. Health monitoring requires a paired smartwatch.",
@@ -124,7 +124,7 @@ export default function OuraRingVsMysentry() {
           { feature: "Works on iPhone", values: ["Yes", "Yes"] },
           { feature: "Works on Android", values: ["Yes", "Yes"] },
           { feature: "Form factor", values: ["Smartphone + optional watch", "Ring"] },
-          { feature: "Monthly subscription", values: ["From $9.99/mo", "$5.99/mo (after ring purchase)"] },
+          { feature: "Monthly subscription", values: ["From $15/mo", "$5.99/mo (after ring purchase)"] },
         ],
       }}
       relatedLinks={[

@@ -70,7 +70,7 @@ export default function Life360VsMysentry() {
         },
         {
           question: "Does Life360 have fall detection?",
-          answer: "No. Life360 does not have automatic fall detection. MySentry detects hard falls automatically using your phone and smartwatch sensors, and alerts our monitoring team if you do not respond within 2 minutes.",
+          answer: "No. Life360 does not have automatic fall detection. MySentry detects hard falls automatically using your phone and smartwatch sensors, and alerts our monitoring team if you do not respond to the Safety Check Alert.",
         },
         {
           question: "Does Life360 have crash detection?",
@@ -86,7 +86,7 @@ export default function Life360VsMysentry() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 4+) or Samsung Galaxy Watch (4+).",
+        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 7+) or Samsung Galaxy Watch (4+).",
         permissions: "Location (always on), motion and fitness, microphone, camera, and notifications.",
         connectivity: "Cellular or Wi-Fi required for alerts and live video response.",
         limitations: "Continuous passive location sharing is not a core feature. MySentry shares location when an alert is triggered.",
@@ -98,7 +98,7 @@ export default function Life360VsMysentry() {
         },
         {
           claim: "Automatic fall and crash detection",
-          detail: "MySentry detects hard falls and crashes using phone and smartwatch sensors. If you do not respond within 2 minutes, an alert is sent automatically.",
+          detail: "MySentry detects hard falls and crashes using phone and smartwatch sensors. If you do not respond to the Safety Check Alert, an alert is sent automatically.",
         },
         {
           claim: "Real-time health monitoring",
@@ -121,7 +121,7 @@ export default function Life360VsMysentry() {
           { feature: "Works on iPhone", values: ["Yes", "Yes"] },
           { feature: "Works on Android", values: ["Yes", "Yes"] },
           { feature: "Apple Watch support", values: ["Yes", "No"] },
-          { feature: "Monthly subscription", values: ["From $9.99/mo", "From $12.99/mo"] },
+          { feature: "Monthly subscription", values: ["From $15/mo", "From $12.99/mo"] },
         ],
       }}
       relatedLinks={[

@@ -53,7 +53,7 @@ export default function Retail() {
         },
         {
           question: "What if an employee is working alone in a stockroom?",
-          answer: "MySentry is perfect for lone worker protection. The fall detection and timed MeetSafe check-ins ensure that if an employee has an accident or medical emergency while alone, an alert is sent automatically within 2 minutes.",
+          answer: "MySentry is perfect for lone worker protection. The fall detection and timed MeetSafe check-ins ensure that if an employee has an accident or medical emergency while alone, an alert is sent automatically if there is no response.",
         },
         {
           question: "How does this integrate with our existing security systems?",
@@ -73,7 +73,7 @@ export default function Retail() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
         connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
@@ -82,7 +82,7 @@ export default function Retail() {
         { claim: "Retail workers can trigger discreet panic alerts during robbery or threat situations.", detail: "Silent activation via smartphone tap, smartwatch tap, or voice command alerts monitoring agents without drawing attention." },
         { claim: "Live video provides real-time evidence for law enforcement response.", detail: "Monitoring agents can share live video with police to improve response accuracy and speed." },
         { claim: "MeetSafe check-ins protect employees working alone during opening and closing shifts.", detail: "Timed safety check-ins ensure someone is monitoring the employee during vulnerable periods." },
-        { claim: "Automatic fall detection gets help within 2 minutes for lone workers.", detail: "If an employee falls and can't respond, an alert is sent to monitoring agents within 2 minutes, ensuring rapid assistance." }
+        { claim: "Automatic fall detection gets help quickly for lone workers.", detail: "If an employee falls and can't respond, an alert is sent to monitoring agents if there is no response, ensuring rapid assistance." }
       ]}
       relatedLinks={[
         { text: "Retail Employee Panic Button", href: "/features/panic-button-app" },

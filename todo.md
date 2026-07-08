@@ -869,3 +869,45 @@
 ## Oura Ring Integration Page Fix (Jul 8, 2026)
 - [x] Change Oura Ring page to "Coming Soon" - not yet integrated
 - [x] Fix broken hero image on /integrations/oura-ring
+
+## Full KB Sync Audit - Jul 8, 2026
+
+### Critical Inaccuracies to Fix
+- [ ] Apple Watch: Change "Series 4 and newer" to "Series 7 and newer" across ALL pages
+- [ ] Samsung Watch: Confirm correct series (Series 6+) across all pages
+- [ ] Pricing: Remove "$9.99/mo" references - correct price is $15/month individual
+- [ ] Pricing: Remove "Mental Health Coach Access (StressGuru.ai)" - not in KB
+- [ ] Fall Detection: Fix "2 minutes" response time - iOS is ~60-90 sec (Apple), Android is 60 sec (MySentry)
+- [ ] Fall Detection: Clarify it requires a smartwatch (not phone-only)
+- [ ] Crash Detection: Clarify it uses phone AND supported smartwatch sensors
+- [ ] Panic Alarm: Add iPhone limitations (shake sensitivity coming soon, volume button coming soon)
+- [ ] Panic Alarm: Add Android voice note (Google Assistant only, not Gemini)
+- [ ] Live video: iPhone only works when app is in foreground (not background/lock screen)
+
+### Feature Pages to Update with Accurate KB Content
+- [ ] /features/panic-button-app - Add trigger method details, iPhone limitations, offline mode
+- [ ] /features/fall-detection-app - Fix response time, add smartwatch requirement, iOS vs Android differences
+- [ ] /features/health-monitoring - Add personalized baseline explanation, two alert zones, metrics by watch type
+- [ ] /features/meet-safe-check-ins - Add Google Calendar import and AI Avatar setup methods
+- [ ] /features/crash-detection - Add smartwatch sensor detail
+- [ ] /features/emergency-contacts - Add Loud Check-In feature, Responder role details
+- [ ] /features/safety-check-in-app - Review and update with Safety Check Alert explanation
+
+### Integration Pages to Fix
+- [ ] /integrations/apple-watch - Fix Series 4 to Series 7, update metrics list (HRV, Respiratory Rate, etc.)
+- [ ] /integrations/samsung-galaxy-watch - Fix Series number, add planned/not-supported metrics
+
+### Compare Pages to Fix
+- [ ] All compare pages: Change "$9.99/mo" to "$15/mo" for MySentry pricing
+- [ ] /compare/apple-watch-fall-detection - Fix Series 4 to Series 7
+
+### New Pages to Create
+- [ ] /features/secure-route - New feature page for Secure Route
+- [ ] /features/automated-call - New feature page for Automated Call
+- [ ] /features/family-connectivity - New feature page for Family Connectivity
+- [ ] /integrations/ring - New Ring integration page ($4.99/camera/month, Ring App Store billing)
+
+### Pricing Page Updates
+- [ ] Remove StressGuru/Mental Health Coach from features list
+- [ ] Ensure trial flow is accurate (7-day, no credit card, force-logout after trial)
+- [ ] Add note about Family plan: owner + 5 member seats (owner does not consume a seat)

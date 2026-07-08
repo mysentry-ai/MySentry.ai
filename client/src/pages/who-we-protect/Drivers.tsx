@@ -24,16 +24,16 @@ export default function WhoWeProtectDrivers() {
         },
         {
           title: "Drive with Confidence",
-          description: "MySentry runs in the background. If a crash is detected and you do not respond within 2 minutes, a trained agent calls for help.",
+          description: "MySentry runs in the background. If a crash is detected and you do not respond to the Safety Check Alert, a trained agent calls for help.",
         },
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry includes automatic crash detection that uses your phone's accelerometer and gyroscope to detect a serious collision. If a crash is detected and you do not respond within 2 minutes, a 24/7 monitoring agent starts a live video call to your phone, and your emergency contacts receive your live GPS location. If you cannot respond, the agent dispatches local emergency services with your location."
+      directAnswer="MySentry includes automatic crash detection that uses your phone's accelerometer and gyroscope to detect a serious collision. If a crash is detected and you do not respond to the Safety Check Alert, a 24/7 monitoring agent starts a live video call to your phone, and your emergency contacts receive your live GPS location. If you cannot respond, the agent dispatches local emergency services with your location."
       howItWorks={[
         "MySentry monitors your phone's sensors in the background while you drive.",
         "If a serious impact is detected, the app prompts you to confirm you are okay.",
-        "You have 2 minutes to respond. If you do not, an alert is sent automatically.",
+        "You have a short window to confirm you are safe. If you do not respond, an alert is sent automatically.",
         "A trained agent starts a live video call to your phone.",
         "Your emergency contacts receive your live GPS location instantly.",
         "The agent dispatches emergency services with your location if needed.",
@@ -65,7 +65,7 @@ export default function WhoWeProtectDrivers() {
       faqs={[
         {
           question: "Does MySentry have crash detection?",
-          answer: "Yes. MySentry detects serious vehicle collisions automatically using your phone's sensors. If a crash is detected and you do not respond within 2 minutes, a 24/7 monitoring agent starts a live video call and your emergency contacts receive your live GPS location.",
+          answer: "Yes. MySentry detects serious vehicle collisions automatically using your phone's sensors. If a crash is detected and you do not respond to the Safety Check Alert, a 24/7 monitoring agent starts a live video call and your emergency contacts receive your live GPS location.",
         },
         {
           question: "How is MySentry crash detection different from iPhone crash detection?",
@@ -81,7 +81,7 @@ export default function WhoWeProtectDrivers() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 4+) or Samsung Galaxy Watch (4+).",
+        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 7+) or Samsung Galaxy Watch (4+).",
         permissions: "Location (always on), motion and fitness, microphone, camera, and notifications.",
         connectivity: "Cellular signal required for alerts and live video.",
         limitations: "Detection accuracy depends on phone placement in the vehicle.",

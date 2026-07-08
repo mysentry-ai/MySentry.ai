@@ -38,6 +38,9 @@ import LiveVideoResponse from "./pages/features/LiveVideoResponse";
 import HealthMonitoring from "./pages/features/HealthMonitoring";
 import MeetSafeCheckIns from "./pages/features/MeetSafeCheckIns";
 import SafetyCheckInApp from "./pages/features/SafetyCheckInApp";
+import FamilyConnectivity from "./pages/features/FamilyConnectivity";
+import AutomatedCall from "./pages/features/AutomatedCall";
+import SecureRoute from "./pages/features/SecureRoute";
 
 // SEO Pages - Use Cases
 import UseCasesHub from "./pages/UseCasesHub";
@@ -106,6 +109,7 @@ import EmployerOnePager from "./pages/resources/EmployerOnePager";
 import AppleWatchIntegration from "./pages/integrations/AppleWatchIntegration";
 import SamsungGalaxyWatchIntegration from "./pages/integrations/SamsungGalaxyWatchIntegration";
 import OuraRingIntegration from "./pages/integrations/OuraRingIntegration";
+import RingIntegration from "./pages/integrations/RingIntegration";
 
 // Phase 2 - Guides (Authority Content)
 import LoneWorkerSafetyGuide from "./pages/guides/LoneWorkerSafetyGuide";
@@ -154,6 +158,9 @@ function Router() {
       <Route path="/features/health-monitoring" component={HealthMonitoring} />
       <Route path="/features/meetsafe-check-ins" component={MeetSafeCheckIns} />
       <Route path="/features/safety-check-in-app" component={SafetyCheckInApp} />
+      <Route path="/features/family-connectivity" component={FamilyConnectivity} />
+      <Route path="/features/automated-call" component={AutomatedCall} />
+      <Route path="/features/secure-route" component={SecureRoute} />
 
       {/* SEO Pages - Use Cases */}
       <Route path="/use-cases" component={UseCasesHub} />
@@ -222,6 +229,7 @@ function Router() {
       <Route path="/integrations/apple-watch" component={AppleWatchIntegration} />
       <Route path="/integrations/samsung-galaxy-watch" component={SamsungGalaxyWatchIntegration} />
       <Route path="/integrations/oura-ring" component={OuraRingIntegration} />
+      <Route path="/integrations/ring" component={RingIntegration} />
 
       {/* Phase 2 - Guides (Authority Content) */}
       <Route path="/guides/lone-worker-safety" component={LoneWorkerSafetyGuide} />

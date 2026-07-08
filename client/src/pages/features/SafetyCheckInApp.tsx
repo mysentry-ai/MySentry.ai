@@ -9,23 +9,23 @@ export default function SafetyCheckInApp() {
       label="FEATURE"
       h1="Know You're Safe, Even When Alone."
       h1Sub="Help is dispatched if you miss a check-in."
-      heroDescription="Set a timer. If you don't check in, our team is alerted and your contacts are notified automatically."
+      heroDescription="Schedule a meeting in MeetSafe. When it ends, MySentry sends you a Safety Check Alert. If you don't respond, help is automatically on the way."
       problem="You meet strangers for dates, property showings, or client visits, and no one knows exactly where you are or when to expect you back."
       empathy="That uneasy feeling before walking into an unfamiliar situation is real. You deserve a simple way to let someone know you're safe, without constantly texting."
       steps={[
-        { title: "Set a Check-In Timer", description: "Before your meeting, date, or solo activity, open MySentry and set a timed check-in for 15 minutes to 8 hours." },
-        { title: "Go About Your Activity", description: "MySentry runs quietly in the background. When the timer is about to expire, you get a notification to confirm you're safe." },
-        { title: "Miss a Check-In? Help Is On the Way", description: "If you don't dismiss the timer, our 24/7 monitoring agents are automatically alerted with your GPS location and can dispatch help." },
+        { title: "Schedule a Meeting", description: "Open the MeetSafe tab in the MySentry app and add your meeting with a title, date, time, and expected duration." },
+        { title: "Go to Your Meeting", description: "MySentry runs quietly in the background. When your meeting ends, the app sends you a Safety Check Alert asking if you're okay." },
+        { title: "Confirm Safe or Get Help", description: "Tap 'I'm Safe' to close the alert. If you say you're not safe, or don't respond, your Panic Alarm is triggered and your emergency contacts and monitoring team are notified." },
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="A safety check-in app sends timed alerts to a monitoring service or emergency contacts when you don't confirm you're safe. MySentry's MeetSafe feature lets you set check-in timers before meetings, dates, or solo activities. If the timer expires without dismissal, 24/7 professional agents are alerted with your live GPS location and can dispatch emergency services."
+      directAnswer="MySentry's MeetSafe is a meeting safety feature. You schedule a meeting in the app with a title, date, time, and duration. When the meeting ends, MySentry sends you a Safety Check Alert. If you confirm you're safe, nothing happens. If you say you're not safe, or don't respond, your Panic Alarm is automatically triggered, alerting your emergency contacts and the 24/7 monitoring team with your live location."
       howItWorks={[
-        "Open the MySentry app and tap 'MeetSafe' to start a new check-in timer.",
-        "Choose a duration (15 minutes to 8 hours) based on your activity.",
-        "When the timer is about to expire, you receive a push notification to confirm you're safe.",
-        "If you dismiss the notification, the timer resets or ends. If you don't respond, 24/7 agents are alerted.",
-        "Agents receive your GPS location and can attempt live video contact or dispatch local emergency services.",
+        "Open the MeetSafe tab in the MySentry app and tap + to add a new meeting.",
+        "Add a title, date, time, and expected duration for your meeting.",
+        "When the meeting ends, MySentry sends you a Safety Check Alert.",
+        "Tap 'I'm Safe' to confirm. If you say you're not safe, or don't respond, your Panic Alarm is triggered.",
+        "Your emergency contacts and 24/7 monitoring team are notified with your live GPS location.",
       ]}
       afterAlert={[
         "Our 24/7 monitoring team receives an automatic alert with your last known GPS location.",
@@ -45,7 +45,7 @@ export default function SafetyCheckInApp() {
         "Replacing a full GPS tracking system for fleet management.",
       ]}
       keyTakeaways={[
-        "Set timed check-ins from 15 minutes to 8 hours for any solo activity.",
+        "Schedule any meeting in MeetSafe. MySentry automatically checks on you when it ends.",
         "Missed check-ins automatically alert 24/7 professional monitoring agents with your GPS location.",
         "Works alongside Panic Alarm and Fall Detection for layered safety coverage.",
       ]}
@@ -76,14 +76,14 @@ export default function SafetyCheckInApp() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
         connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
       }}
       proofBlocks={[
         { claim: "MeetSafe check-ins use timed safety intervals that trigger automatic alerts if not dismissed.", detail: "Users set a timer before meetings or appointments. If the timer expires without dismissal, 24/7 agents are alerted with location." },
-        { claim: "Check-in timers can be customized for different scenarios from 15 minutes to 8 hours.", detail: "Flexible timing accommodates short client meetings, long shifts, or extended outdoor activities." },
+        { claim: "MeetSafe works for any meeting: dates, client visits, solo activities, or late-night shifts.", detail: "Add a title, date, time, and duration. MySentry checks on you automatically when the meeting ends." },
         { claim: "Missed check-ins trigger a multi-step response: agent contact, emergency contact notification, and 911 dispatch.", detail: "The escalation process ensures appropriate response without overwhelming users with false alarms." }
       ]}
       relatedLinks={[

@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "What age is MySentry designed for?",
-    a: "MySentry is designed for teenagers and young adults who carry a smartphone. The app works on any iPhone (iOS 15+) or Android (10+) and pairs with Apple Watch (Series 4+) and Samsung Galaxy Watch (Watch 4+). Parents typically set up the account and add themselves as emergency contacts.",
+    a: "MySentry is designed for teenagers and young adults who carry a smartphone. The app works on any iPhone (iOS 15+) or Android (10+) and pairs with Apple Watch (Series 7+) and Samsung Galaxy Watch (Watch 4+). Parents typically set up the account and add themselves as emergency contacts.",
   },
   {
     q: "How does MySentry differ from Find My or Life360 for teens?",
@@ -50,7 +50,7 @@ const features = [
   {
     icon: <Shield className="w-6 h-6 text-primary" />,
     title: "Fall Detection",
-    desc: "Automatic fall detection via phone and smartwatch. If a teen falls and cannot respond, MySentry alerts parents and the monitoring team within 2 minutes.",
+    desc: "Automatic fall detection via phone and smartwatch. If a teen falls and cannot respond, MySentry sends a Safety Check Alert and alerts parents and the monitoring team if there is no response.",
   },
   {
     icon: <Clock className="w-6 h-6 text-primary" />,
@@ -233,7 +233,7 @@ export default function ChildrenAndTeens() {
           </div>
           <div className="space-y-6">
             {[
-              { step: "1", title: "Download the app on your teen's phone", desc: "Available on iOS (iPhone) and Android. Pairs with Apple Watch (Series 4+) and Samsung Galaxy Watch (Watch 4+) for wrist-based alerts." },
+              { step: "1", title: "Download the app on your teen's phone", desc: "Available on iOS (iPhone) and Android. Pairs with Apple Watch (Series 7+) and Samsung Galaxy Watch (Watch 4+) for wrist-based alerts." },
               { step: "2", title: "Add parents as emergency contacts", desc: "Up to 3 emergency contacts. Each receives SMS, push notification, and email alerts with live GPS location during an emergency." },
               { step: "3", title: "Choose a plan", desc: "Family plan from $30/month covers multiple family members. Individual plan from $15/month. 7-day free trial included." },
               { step: "4", title: "Crash detection and fall detection run automatically", desc: "No action needed from your teen. If a crash or fall is detected, MySentry alerts parents and the monitoring team immediately." },

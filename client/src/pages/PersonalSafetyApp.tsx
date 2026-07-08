@@ -30,7 +30,7 @@ export default function PersonalSafetyApp() {
       howItWorks={[
         "MySentry runs quietly in the background on your iPhone or Android phone.",
         "The app continuously monitors your movement and health data from your phone and paired smartwatch.",
-        "If a fall or crash is detected, the app prompts you to confirm you are okay. You have 2 minutes to respond.",
+        "If a fall or crash is detected, the app prompts you to confirm you are okay. You have a short window to respond.",
         "If you do not respond, or if you trigger the panic alarm by voice, tap, or smartwatch, an alert is sent to our 24/7 monitoring center.",
         "A trained agent starts a live video call to see what is happening and assess the situation.",
         "Your emergency contacts receive an instant text with your live GPS location.",
@@ -59,7 +59,7 @@ export default function PersonalSafetyApp() {
         "MySentry is the only personal safety app that combines fall detection, crash detection, health monitoring, and 24/7 live video emergency response in one app.",
         "Works on iPhone and Android. No extra hardware required.",
         "Three ways to trigger the panic alarm: voice command, smartphone tap, or smartwatch tap.",
-        "Automatic fall detection alerts our monitoring team if you do not respond within 2 minutes.",
+        "Automatic fall detection alerts our monitoring team if you do not respond to the Safety Check Alert.",
         "Real-time health monitoring tracks heart rate, HRV, and SpO2 through your paired smartwatch.",
       ]}
       faqs={[
@@ -73,7 +73,7 @@ export default function PersonalSafetyApp() {
         },
         {
           question: "Is there a free personal safety app?",
-          answer: "MySentry offers a 7-day free trial that gives you full access to all features, including fall detection, panic alarm, health monitoring, and 24/7 professional monitoring. After the trial, a subscription is required. Plans start from $9.99 per month.",
+          answer: "MySentry offers a 7-day free trial that gives you full access to all features, including fall detection, panic alarm, health monitoring, and 24/7 professional monitoring. After the trial, a subscription is required. Plans start from $15 per month.",
         },
         {
           question: "How is MySentry different from other personal safety apps?",
@@ -89,7 +89,7 @@ export default function PersonalSafetyApp() {
         },
         {
           question: "What personal safety apps work with Apple Watch?",
-          answer: "MySentry integrates with Apple Watch (Series 4 and later) to provide wrist-based fall detection, a one-tap panic alarm from the watch face, and health monitoring including heart rate and SpO2. The Apple Watch integration improves fall detection accuracy and makes the panic alarm faster to trigger.",
+          answer: "MySentry integrates with Apple Watch (Series 7 and newer) to provide wrist-based fall detection, a one-tap panic alarm from the watch face, and health monitoring including heart rate and SpO2. The Apple Watch integration improves fall detection accuracy and makes the panic alarm faster to trigger.",
         },
         {
           question: "Is MySentry a good safety app for women?",
@@ -97,7 +97,7 @@ export default function PersonalSafetyApp() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 4+) or Samsung Galaxy Watch (4+) for wrist-based features.",
+        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 7+) or Samsung Galaxy Watch (4+) for wrist-based features.",
         permissions: "Location (always on), motion and fitness, microphone, camera, and background app refresh.",
         connectivity: "Cellular or Wi-Fi required to send alerts and connect live video calls.",
         limitations: "Health monitoring features require a compatible paired smartwatch. Voice activation requires the app to be running in the background.",
@@ -117,7 +117,7 @@ export default function PersonalSafetyApp() {
         },
         {
           claim: "2-minute fall detection response window",
-          detail: "After a fall is detected, you have 2 minutes to confirm you are okay. If you do not respond, an alert is sent automatically to our monitoring team and your emergency contacts.",
+          detail: "After a fall is detected, you receive a Safety Check Alert to confirm you are okay. If you do not respond, an alert is sent automatically to our monitoring team and your emergency contacts.",
         },
       ]}
       comparisonTable={{
@@ -134,7 +134,7 @@ export default function PersonalSafetyApp() {
           { feature: "Works on Android", values: ["Yes", "Yes", "Yes", "Yes", "No"] },
           { feature: "Apple Watch support", values: ["Yes", "No", "No", "No", "No"] },
           { feature: "Extra hardware required", values: ["No", "No", "No", "No", "Yes"] },
-          { feature: "Monthly subscription", values: ["From $9.99/mo", "From $9.99/mo", "Free / $2.99/mo", "From $12.99/mo", "From $29.95/mo"] },
+          { feature: "Monthly subscription", values: ["From $15/mo", "From $15/mo", "Free / $2.99/mo", "From $12.99/mo", "From $29.95/mo"] },
         ],
       }}
       relatedLinks={[

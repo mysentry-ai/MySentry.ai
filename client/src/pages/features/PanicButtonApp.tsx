@@ -28,7 +28,7 @@ export default function PanicButtonApp() {
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="A panic button app is a mobile application that lets you send a silent emergency alert with your live GPS location to a 24/7 professional monitoring service and your pre-selected emergency contacts. MySentry's panic button works on iPhone and Android. You can activate it with a single tap in the app, a tap on your Apple Watch or Samsung Galaxy Watch, or a voice command. A trained agent then starts a live video call to assess your situation and dispatch help if needed."
+      directAnswer="A panic button app is a mobile application that lets you send a silent emergency alert with your live GPS location to a 24/7 professional monitoring service and your pre-selected emergency contacts. MySentry's panic button works on iPhone and Android. You can activate it with a single tap in the app, a tap on your Apple Watch or Samsung Galaxy Watch, or a voice command. On Android, you can say 'Hey Google, open panic on MySentry' or 'Hey Google, show panic on MySentry' using Google Assistant. On iPhone, voice activation works via Siri. When triggered, a 10-second countdown begins before the alarm is sent, giving you a moment to cancel if needed. A trained agent then starts a live video call to assess your situation and dispatch help if needed."
       howItWorks={[
         "Activate the panic alarm with a single tap in the app, on your Apple Watch or Samsung Galaxy Watch, or by using a voice command.",
         "Your live GPS location is securely shared with our 24/7 professional monitoring center.",
@@ -85,7 +85,15 @@ export default function PanicButtonApp() {
         },
         {
           question: "Can I activate the panic alarm with my voice?",
-          answer: "Yes. MySentry supports voice activation, so you can trigger an alarm hands-free when you cannot reach your phone. You can also use a smartwatch tap or the button in the app.",
+          answer: "Yes. On Android, say 'Hey Google, open panic on MySentry' or 'Hey Google, show panic on MySentry' using Google Assistant. Note: this only works with Google Assistant, not Gemini. On iPhone, voice activation works via Siri. You can also use a smartwatch tap or the button in the app.",
+        },
+        {
+          question: "Does the panic alarm work when I have no internet connection?",
+          answer: "Yes, with limitations. If you are offline, you can still trigger the panic alarm via shake, volume button (Android), or in-app tap. Your location is shared by SMS to your emergency contacts. However, live audio/video and the 10-second countdown are not available offline. The alarm is sent as soon as connectivity is restored.",
+        },
+        {
+          question: "Does the iPhone volume button trigger work?",
+          answer: "Volume button panic trigger for iPhone is coming soon. Currently, iPhone users can trigger the alarm via the app, Apple Watch, or Siri voice command.",
         },
         {
           question: "What happens if I trigger the alarm by accident?",
@@ -101,10 +109,10 @@ export default function PanicButtonApp() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 4+) or Samsung Galaxy Watch (4+) for wrist-based panic activation.",
+        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 7+) or Samsung Galaxy Watch (Series 6+) for wrist-based panic activation.",
         permissions: "Location (always on), microphone (for voice activation and live audio), camera (for live video response), and notifications.",
         connectivity: "Cellular or Wi-Fi required to send alerts and connect the live video call.",
-        limitations: "Voice activation requires the app to be running in the background. Live video requires a stable data connection.",
+        limitations: "Live video on iPhone only works when the app is in the foreground. Volume button trigger for iPhone is coming soon. Android voice activation requires Google Assistant (not Gemini). Live video requires a stable data connection.",
       }}
       proofBlocks={[
         {
@@ -137,7 +145,7 @@ export default function PanicButtonApp() {
           { feature: "Fall detection", values: ["Yes", "No", "No", "No"] },
           { feature: "Health monitoring", values: ["Yes", "No", "No", "No"] },
           { feature: "Emergency contact alerts", values: ["Yes", "Yes", "Yes", "Yes"] },
-          { feature: "Monthly subscription", values: ["From $9.99/mo", "Free / $2.99/mo", "From $9.99/mo", "From $12.99/mo"] },
+          { feature: "Monthly subscription", values: ["From $15/mo", "Free / $2.99/mo", "From $15/mo", "From $12.99/mo"] },
         ],
       }}
       relatedLinks={[

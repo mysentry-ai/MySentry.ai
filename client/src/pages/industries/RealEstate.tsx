@@ -87,7 +87,7 @@ export default function RealEstate() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
         connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and how you wear it. Battery life changes based on your device and how you use features. Health monitoring needs a compatible smartwatch."

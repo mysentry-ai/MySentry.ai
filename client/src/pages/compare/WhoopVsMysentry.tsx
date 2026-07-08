@@ -32,7 +32,7 @@ export default function WhoopVsMysentry() {
       howItWorks={[
         "MySentry monitors your safety in the background while you train, work, or go about your day.",
         "Your paired Apple Watch or Samsung Galaxy Watch tracks heart rate, HRV, and SpO2.",
-        "If a fall or crash is detected, you have 2 minutes to confirm you are okay.",
+        "If a fall or crash is detected, you receive a Safety Check Alert to confirm you are okay.",
         "If you do not respond, or if you trigger the panic alarm, a trained agent starts a live video call.",
         "Your emergency contacts receive your live GPS location instantly.",
         "The agent dispatches the right help based on what they see.",
@@ -88,7 +88,7 @@ export default function WhoopVsMysentry() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) or Android (8.0+). Recommended: Apple Watch (Series 4+) or Samsung Galaxy Watch (4+) for health monitoring and wrist-based panic activation.",
+        devices: "iPhone (iOS 15+) or Android (8.0+). Recommended: Apple Watch (Series 7+) or Samsung Galaxy Watch (4+) for health monitoring and wrist-based panic activation.",
         permissions: "Location (always on), motion and fitness, microphone, camera, and notifications.",
         connectivity: "Cellular or Wi-Fi required for alerts and live video response.",
         limitations: "MySentry does not track training strain or detailed recovery scores. Health monitoring requires a paired smartwatch.",
@@ -100,7 +100,7 @@ export default function WhoopVsMysentry() {
         },
         {
           claim: "Automatic fall detection during solo training",
-          detail: "MySentry detects hard falls using phone and smartwatch sensors. If you fall during a run or workout and do not respond within 2 minutes, an alert is sent automatically.",
+          detail: "MySentry detects hard falls using phone and smartwatch sensors. If you fall during a run or workout and do not respond to the Safety Check Alert, an alert is sent automatically.",
         },
         {
           claim: "Panic alarm with three triggers",
@@ -125,7 +125,7 @@ export default function WhoopVsMysentry() {
           { feature: "Works on iPhone", values: ["Yes", "Yes (companion app)"] },
           { feature: "Works on Android", values: ["Yes", "Yes (companion app)"] },
           { feature: "Form factor", values: ["Smartphone + optional watch", "Proprietary band"] },
-          { feature: "Monthly subscription", values: ["From $9.99/mo", "From $30/mo"] },
+          { feature: "Monthly subscription", values: ["From $15/mo", "From $30/mo"] },
         ],
       }}
       relatedLinks={[

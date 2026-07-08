@@ -45,7 +45,7 @@ export default function ProfessionalMonitoringGuide() {
         "The monthly cost for monitoring is small for the peace of mind it brings."
       ]}
       faqs={[
-        { question: "What happens if I fall and can't get up?", answer: "Our monitoring agent will see you on the camera, confirm you need help, and send emergency services right away, even if you can't speak. This happens within 2 minutes of a detected fall." },
+        { question: "What happens if I fall and can't get up?", answer: "Our monitoring agent will see you on the camera, confirm you need help, and send emergency services right away, even if you can't speak. This happens quickly after a detected fall." },
         { question: "Is professional monitoring expensive?", answer: "There is a monthly fee, but it's a small cost for 24/7 protection and peace of mind. It's often much less than the potential cost of slow medical help." },
         { question: "How is this different from just calling 911?", answer: "MySentry agents give 911 confirmed, real-time information. This leads to a faster, more accurate response. If you can't speak or are confused, our agents act for you." },
         { question: "Can I use a voice command to get help?", answer: "Yes, you can quietly trigger a panic alarm with a voice command, smartphone tap, or smartwatch tap. An agent will immediately check your video feed and help you." }

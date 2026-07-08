@@ -63,14 +63,14 @@ export default function CrashDetection() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for watch features.",
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for watch features.",
         permissions: "Location services (always on for GPS tracking), notifications, microphone (for voice panic alarm), camera (for live video response).",
         connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Crash detection accuracy depends on sensor quality. Battery life changes based on your device and how you use features. Health monitoring needs a compatible smartwatch."
       }}
       proofBlocks={[
         { claim: "Crash detection uses phone sensors to find sudden stops that look like car crashes.", detail: "The app checks accelerometer data patterns that match crash signs and sends automatic alerts." },
-        { claim: "If you don't respond in 2 minutes, 24/7 agents get an alert with your GPS location and live video.", detail: "This countdown gives you time to cancel false alarms from things like speed bumps or dropping your phone." }
+        { claim: "If you don't respond to the Safety Check Alert, 24/7 agents get an alert with your GPS location and live video.", detail: "This countdown gives you time to cancel false alarms from things like speed bumps or dropping your phone." }
       ]}
       relatedLinks={[
         { text: "Panic Alarm for Quick Help", href: "/features/panic-button-app" },

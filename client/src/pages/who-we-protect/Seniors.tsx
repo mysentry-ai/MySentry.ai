@@ -16,7 +16,7 @@ export default function WhoWeProtectSeniors() {
       steps={[
         {
           title: "Pick a Plan",
-          description: "Plans start at $9.99 per month. No long-term contract. No equipment fee.",
+          description: "Plans start at $15 per month. No long-term contract. No equipment fee.",
         },
         {
           title: "Download and Set Up",
@@ -32,7 +32,7 @@ export default function WhoWeProtectSeniors() {
       directAnswer="MySentry is a safety app for seniors that works on a smartphone or Apple Watch. It includes automatic fall detection, a one-tap panic alarm, 24/7 professional monitoring with live video response, and real-time health monitoring. When an alarm is triggered, family members receive an instant text with live GPS location. No pendant, no base unit, and no landline required."
       howItWorks={[
         "MySentry runs quietly in the background on your parent's iPhone or Android phone.",
-        "If a hard fall is detected, the app prompts them to confirm they are okay within 2 minutes.",
+        "If a hard fall is detected, the app sends a Safety Check Alert and they have up to 90 seconds to confirm they are okay.",
         "If they do not respond, or if they press the panic button on their phone or Apple Watch, an alert is sent immediately.",
         "A trained agent starts a live video call to see what is happening.",
         "You and other family members receive an instant text with their live GPS location.",
@@ -80,7 +80,7 @@ export default function WhoWeProtectSeniors() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 4+) or Samsung Galaxy Watch (4+).",
+        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 7+) or Samsung Galaxy Watch (4+).",
         permissions: "Location (always on), motion and fitness, microphone, camera, and background app refresh.",
         connectivity: "Cellular signal required. Works anywhere with cell coverage.",
         limitations: "Requires a smartphone. Not suitable for seniors who do not use a smartphone regularly.",

@@ -33,7 +33,7 @@ export default function WhoWeProtectEmployers() {
       howItWorks={[
         "Each worker installs MySentry on their iPhone or Android phone.",
         "MySentry monitors their safety in the background while they work.",
-        "If a fall is detected, the worker has 2 minutes to confirm they are okay.",
+        "If a fall is detected, the worker receives a Safety Check Alert and has 60 seconds to confirm they are okay.",
         "If they do not respond, or if they trigger the panic alarm, an alert is sent to our 24/7 monitoring team and your safety manager.",
         "A trained agent starts a live video call to the worker's phone.",
         "The agent dispatches the right help and keeps your safety manager informed.",
@@ -82,7 +82,7 @@ export default function WhoWeProtectEmployers() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) or Android (8.0+) for each worker. Optional: Apple Watch (Series 4+) or Samsung Galaxy Watch (4+).",
+        devices: "iPhone (iOS 15+) or Android (8.0+) for each worker. Optional: Apple Watch (Series 7+) or Samsung Galaxy Watch (4+).",
         permissions: "Location (always on), motion and fitness, microphone, camera, and notifications.",
         connectivity: "Cellular signal required. Works anywhere with cell coverage.",
         limitations: "Requires workers to carry a smartphone during their shift.",

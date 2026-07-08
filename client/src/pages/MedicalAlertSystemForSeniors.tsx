@@ -13,7 +13,7 @@ export default function MedicalAlertSystemForSeniors() {
       steps={[
         {
           title: "Choose a Plan",
-          description: "Visit mysentry.ai and pick the plan that fits your family. Plans start at $9.99 per month with no long-term contract.",
+          description: "Visit mysentry.ai and pick the plan that fits your family. Plans start at $15 per month with no long-term contract.",
         },
         {
           title: "Download the App",
@@ -26,10 +26,10 @@ export default function MedicalAlertSystemForSeniors() {
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="A medical alert system for seniors is a service that monitors an older adult's safety and sends help when they need it. Traditional systems use a pendant and a base unit. MySentry is a modern medical alert system that works on a smartphone or Apple Watch. It includes automatic fall detection, a panic button, 24/7 professional monitoring with live video response, and real-time health monitoring. No pendant, no base unit, and no landline required. Plans start at $9.99 per month."
+      directAnswer="A medical alert system for seniors is a service that monitors an older adult's safety and sends help when they need it. Traditional systems use a pendant and a base unit. MySentry is a modern medical alert system that works on a smartphone or Apple Watch. It includes automatic fall detection, a panic button, 24/7 professional monitoring with live video response, and real-time health monitoring. No pendant, no base unit, and no landline required. Plans start at $15 per month."
       howItWorks={[
         "MySentry runs in the background on your parent's iPhone or Android phone.",
-        "If a hard fall is detected, the app prompts them to confirm they are okay. They have 2 minutes to respond.",
+        "If a hard fall is detected, the app prompts them to confirm they are okay. They receive a Safety Check Alert with a short window to respond.",
         "If they do not respond, or if they press the panic button on their phone or Apple Watch, an alert is sent to our 24/7 monitoring center.",
         "A trained agent starts a live video call to see what is happening and speak with your parent.",
         "You and other emergency contacts receive an instant text with their live GPS location.",
@@ -55,10 +55,10 @@ export default function MedicalAlertSystemForSeniors() {
       ]}
       keyTakeaways={[
         "MySentry is a medical alert system that works on a smartphone or Apple Watch. No pendant or base unit required.",
-        "Automatic fall detection sends an alert if your parent does not respond within 2 minutes.",
+        "Automatic fall detection sends an alert if your parent does not respond to the Safety Check Alert.",
         "A trained agent responds by live video, not just a phone call.",
         "Family members receive instant alerts with live GPS location.",
-        "Plans start at $9.99 per month with no long-term contract.",
+        "Plans start at $15 per month with no long-term contract.",
       ]}
       faqs={[
         {
@@ -79,23 +79,23 @@ export default function MedicalAlertSystemForSeniors() {
         },
         {
           question: "Can family members be notified when a fall is detected?",
-          answer: "Yes. When a fall alert is triggered and your parent does not respond within 2 minutes, you and other emergency contacts receive an automatic text with their name and a link to their live GPS location. You can track their position in real time.",
+          answer: "Yes. When a fall alert is triggered and your parent does not respond to the Safety Check Alert, you and other emergency contacts receive an automatic text with their name and a link to their live GPS location. You can track their position in real time.",
         },
         {
           question: "Is there a medical alert app for seniors without a monthly fee?",
-          answer: "MySentry requires a subscription starting at $9.99 per month, which includes 24/7 professional monitoring. There is no free tier that includes monitoring. A 7-day free trial gives you full access to all features before you commit.",
+          answer: "MySentry requires a subscription starting at $15 per month, which includes 24/7 professional monitoring. There is no free tier that includes monitoring. A 7-day free trial gives you full access to all features before you commit.",
         },
         {
           question: "Does MySentry work with Apple Watch?",
-          answer: "Yes. MySentry integrates with Apple Watch (Series 4 and later) to provide wrist-based fall detection, a one-tap panic alarm from the watch face, and health monitoring. For seniors who prefer not to carry their phone, the Apple Watch provides a convenient way to trigger the panic alarm.",
+          answer: "Yes. MySentry integrates with Apple Watch (Series 7 and newer) to provide wrist-based fall detection, a one-tap panic alarm from the watch face, and health monitoring. For seniors who prefer not to carry their phone, the Apple Watch provides a convenient way to trigger the panic alarm.",
         },
         {
           question: "What is the cheapest medical alert system for seniors?",
-          answer: "MySentry plans start at $9.99 per month with no equipment fee and no long-term contract. Traditional medical alert systems typically cost $29.95 to $49.95 per month, plus a one-time equipment fee. MySentry is one of the most affordable options that includes 24/7 professional monitoring.",
+          answer: "MySentry plans start at $15 per month with no equipment fee and no long-term contract. Traditional medical alert systems typically cost $29.95 to $49.95 per month, plus a one-time equipment fee. MySentry is one of the most affordable options that includes 24/7 professional monitoring.",
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 4+) or Samsung Galaxy Watch (4+) for wrist-based fall detection and panic alarm.",
+        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 7+) or Samsung Galaxy Watch (4+) for wrist-based fall detection and panic alarm.",
         permissions: "Location (always on), motion and fitness, microphone, camera, and background app refresh.",
         connectivity: "Cellular signal required. Works anywhere with cell coverage, including outside the home.",
         limitations: "Requires a smartphone. Not suitable for seniors who do not own or use a smartphone regularly.",
@@ -103,7 +103,7 @@ export default function MedicalAlertSystemForSeniors() {
       proofBlocks={[
         {
           claim: "Automatic fall detection with a 2-minute response window",
-          detail: "MySentry detects hard falls automatically. Your parent has 2 minutes to confirm they are okay. If they do not respond, an alert is sent to our 24/7 monitoring team and your family.",
+          detail: "MySentry detects hard falls automatically. Your parent receives a Safety Check Alert to confirm they are okay. If they do not respond, an alert is sent to our 24/7 monitoring team and your family.",
         },
         {
           claim: "Live video response from a trained agent",
@@ -130,7 +130,7 @@ export default function MedicalAlertSystemForSeniors() {
           { feature: "Smartphone app", values: ["Yes", "No", "Yes (companion)", "Yes"] },
           { feature: "Apple Watch support", values: ["Yes", "No", "No", "No"] },
           { feature: "Extra hardware required", values: ["No", "Yes (pendant + base)", "Yes (device)", "Yes (device)"] },
-          { feature: "Monthly subscription", values: ["From $9.99/mo", "From $49.95/mo", "From $29.95/mo", "From $24.99/mo"] },
+          { feature: "Monthly subscription", values: ["From $15/mo", "From $49.95/mo", "From $29.95/mo", "From $24.99/mo"] },
           { feature: "Long-term contract", values: ["No", "3 years", "No", "No"] },
         ],
       }}

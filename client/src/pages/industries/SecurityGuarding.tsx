@@ -55,7 +55,7 @@ export default function SecurityGuarding() {
         { question: "How much does the monitoring service cost?", answer: "We have flexible plans based on how many users you have. Please book a demo with our team for a detailed price based on your company's needs." },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always on for GPS tracking), notifications, microphone (for voice panic alarm), camera (for live video response).",
         connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and how it's worn. Battery life changes with device and feature use. Health monitoring needs a compatible smartwatch."

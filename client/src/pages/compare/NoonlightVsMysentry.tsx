@@ -48,7 +48,7 @@ faqs={[
 	        },
 	        {
 	          question: "Does Noonlight have fall detection?",
-	          answer: "No, Noonlight does not offer automatic fall detection. MySentry uses your phone\'s sensors to detect a fall and send an alert automatically, even if you can\'t reach your phone. The response window is 2 minutes.",
+	          answer: "No, Noonlight does not offer automatic fall detection. MySentry uses your phone\'s sensors to detect a fall and send an alert automatically, even if you can\'t reach your phone. The response window is 60-90 seconds depending on your device.",
 	        },
 	        {
 	          question: "What is the main difference in your monitoring service?",
@@ -64,7 +64,7 @@ faqs={[
 	        },
 	      ]}
 setupRequirements={{
-	        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+	        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for wearable features.",
 	        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
 	        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
 	        limitations: "How well fall detection works depends on sensor quality and where you wear your device. Battery life changes based on your device and how you use features. Health monitoring needs a compatible smartwatch."

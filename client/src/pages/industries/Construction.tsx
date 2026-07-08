@@ -29,7 +29,7 @@ export default function Construction() {
       ]}
       afterAlert={[
         "Our 24/7 monitoring team gets the alert and the worker's location.",
-        "They try to reach the worker by phone and text. If it's a fall, they wait 2 minutes for a response.",
+        "They try to reach the worker by phone and text. If it's a fall, they wait for the Safety Check Alert response window.",
         "If the worker doesn't answer or says they need help, we send local emergency services.",
         "We also tell your company's contacts what happened.",
       ]}
@@ -48,7 +48,7 @@ export default function Construction() {
         { question: "How much does the service cost for a construction company?", answer: "Our price depends on how many workers you want to protect. We have flexible plans for teams of all sizes. Please book a demo or visit our pricing page for more details." },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
         connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "Fall detection accuracy depends on sensor quality and how the device is worn. Battery life changes based on device and how much the features are used. Health monitoring needs a compatible smartwatch."

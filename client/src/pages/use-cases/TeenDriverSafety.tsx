@@ -20,11 +20,11 @@ export default function TeenDriverSafety() {
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="A teen driver safety app uses smartphone sensors to detect car crashes and automatically alert parents and emergency services. MySentry's crash detection identifies sudden deceleration patterns consistent with vehicle collisions. If a crash is detected and the teen doesn't respond within 2 minutes, 24/7 professional monitoring agents are alerted with GPS location and live video to coordinate emergency response."
+      directAnswer="A teen driver safety app uses smartphone sensors to detect car crashes and automatically alert parents and emergency services. MySentry's crash detection identifies sudden deceleration patterns consistent with vehicle collisions. If a crash is detected and the teen doesn't respond to the Safety Check Alert, 24/7 professional monitoring agents are alerted with GPS location and live video to coordinate emergency response."
       howItWorks={[
         "Your teen installs the MySentry app on their smartphone (iPhone or Android).",
         "Crash detection uses the phone's accelerometer and GPS to monitor for sudden deceleration events.",
-        "If a crash signature is detected, the app starts a 2-minute countdown with an alarm.",
+        "If a crash signature is detected, the app sends a Safety Check Alert with an audible alarm.",
         "If your teen is conscious and it's a false alarm (speed bump, phone drop), they can cancel the alert.",
         "If they don't respond, 24/7 agents are alerted with their GPS location and can establish live video contact.",
         "Parents and emergency contacts are notified simultaneously. Emergency services are dispatched if needed.",
@@ -47,7 +47,7 @@ export default function TeenDriverSafety() {
       ]}
       keyTakeaways={[
         "Crash detection runs automatically with no action required from your teen.",
-        "A 2-minute countdown prevents false alarms from speed bumps or phone drops.",
+        "A short response window prevents false alarms from speed bumps or phone drops.",
         "24/7 professional agents respond with GPS location and live video if your teen can't call for help.",
       ]}
       faqs={[
@@ -57,7 +57,7 @@ export default function TeenDriverSafety() {
         },
         {
           question: "What if the app detects a false crash from a speed bump or pothole?",
-          answer: "When a potential crash is detected, a 2-minute countdown starts with an audible alarm. If your teen is fine, they simply dismiss the alert. Only if they don't respond are monitoring agents notified.",
+          answer: "When a potential crash is detected, a Safety Check Alert starts with an audible alarm. If your teen is fine, they simply dismiss the alert. Only if they don't respond are monitoring agents notified.",
         },
         {
           question: "Will I be notified even if my teen can call me themselves?",
@@ -77,14 +77,14 @@ export default function TeenDriverSafety() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
         connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates.",
         limitations: "Crash detection accuracy depends on sensor quality and crash severity. Very low-speed collisions may not trigger detection. Battery life varies by device and feature usage."
       }}
       proofBlocks={[
         { claim: "Crash detection uses phone accelerometer data to identify sudden deceleration patterns consistent with vehicle collisions.", detail: "The algorithm distinguishes crash signatures from normal driving events like speed bumps or hard braking." },
-        { claim: "A 2-minute countdown allows conscious users to cancel false alarms before agents are notified.", detail: "This prevents unnecessary emergency responses while ensuring unresponsive users still receive help." },
+        { claim: "A short response window allows conscious users to cancel false alarms before agents are notified.", detail: "This prevents unnecessary emergency responses while ensuring unresponsive users still receive help." },
         { claim: "Parents receive automatic notifications with GPS coordinates within seconds of a detected crash.", detail: "Notifications are sent simultaneously to all designated emergency contacts and the 24/7 monitoring team." }
       ]}
       relatedLinks={[

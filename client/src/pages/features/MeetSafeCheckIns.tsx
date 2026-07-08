@@ -3,100 +3,101 @@ import SEOPageTemplate from "@/components/SEOPageTemplate";
 export default function MeetSafeCheckIns() {
   return (
     <SEOPageTemplate
-      seoTitle="Safety Check-In App for Peace of Mind | MySentry"
-      seoDescription="Feeling unsafe? MySentry's safety check-in app automatically alerts loved ones if you miss a check-in. Get peace of mind, start your free trial today."
+      seoTitle="MeetSafe: Meeting Safety Check-In App | MySentry"
+      seoDescription="Schedule any meeting, date, or appointment in MySentry's MeetSafe. If you don't check in afterward, your Panic Alarm triggers automatically. Start your 7-day free trial."
       canonical="https://mysentry.ai/features/meetsafe-check-ins"
       label="FEATURE"
-      h1="Feel Safe Meeting Anyone, Anywhere."
-      h1Sub="Meeting new people should never feel risky."
-      heroDescription="Share your meeting details with a trusted contact. If you don't check in afterward, help is on the way."
-      problem="Going on a date, meeting someone new, or just walking home alone can feel risky. You want a simple way to let someone know you're okay, without constant texting."
+      h1="Schedule a Meeting. MySentry Has Your Back."
+      h1Sub="Add a meeting to MeetSafe. If you don't check in afterward, help is automatically on the way."
+      heroDescription="MeetSafe lets you schedule any meeting, date, or appointment inside the app. When the meeting ends, MySentry sends you a Safety Check Alert. If you say you're not safe, or don't respond, it automatically triggers your Panic Alarm."
+      problem="Going on a date, meeting a new client, or walking to your car alone at night can feel risky. You want a simple way to make sure someone knows you're okay, without constant texting."
       empathy="It's natural to want a little backup. MySentry's MeetSafe feature gives you a discreet safety net, so you can live your life with more confidence and less worry."
       steps={[
         {
-          title: "Set a Timer",
+          title: "Add a Meeting",
           description:
-            "Before a date, a solo trip, or any situation where you want extra peace of mind, open the MySentry app and set a MeetSafe timer for how long you expect to be.",
+            "Open the MeetSafe tab in the MySentry app and tap the + button. Add a title, set the date, time, and expected duration.",
         },
         {
-          title: "Live Your Life",
+          title: "Go to Your Meeting",
           description:
-            "MySentry runs quietly in the background. If you're safe, simply check in before the timer expires to confirm you're okay. No need to do anything else.",
+            "MySentry runs quietly in the background. When your meeting time ends, the app sends you a Safety Check Alert asking if you're okay.",
         },
         {
-          title: "Get Help if Needed",
+          title: "Confirm Safe or Get Help",
           description:
-            "If you don't check in, MySentry automatically triggers an alert, sending your location and status to your pre-selected emergency contacts so they can get you help.",
+            "Tap 'I'm Safe' to close the alert. If you say you're not safe, or don't respond, MeetSafe automatically triggers your Panic Alarm and notifies your emergency contacts and monitoring team.",
         },
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry's MeetSafe is a safety check-in app. You set a timer before activities like dates or meeting someone new. If you don't confirm you're safe before the timer ends, the app automatically alerts your emergency contacts with your location. This gives you a safety net."
+      directAnswer="MeetSafe is MySentry's meeting safety feature. You schedule a meeting inside the app with a title, date, time, and duration. When the meeting ends, MySentry sends you a Safety Check Alert asking if you're safe. If you confirm you're safe, nothing happens. If you say you're not safe, or don't respond within the timeout, MeetSafe automatically triggers your Panic Alarm, alerting your emergency contacts and the 24/7 monitoring team with your live location."
       howItWorks={[
-        "Set a safety timer for any duration before you start your activity.",
-        "The app will remind you to check in as the timer nears its end.",
-        "Simply tap a button in the app to confirm you are safe.",
-        "If you fail to check in, an automatic alert is sent to your emergency contacts.",
+        "Schedule a meeting in the MeetSafe tab with a title, date, time, and expected duration.",
+        "When the meeting time ends, MySentry sends you a Safety Check Alert.",
+        "Tap 'I'm Safe' to confirm everything is fine.",
+        "If you say you're not safe, or don't respond, MeetSafe automatically triggers your Panic Alarm.",
       ]}
       afterAlert={[
-        "Your emergency contacts receive a text message with your name and a link to your live location.",
+        "Your emergency contacts receive a notification with your name and a link to your live location.",
         "They can see your last known location on a map and your phone's battery level.",
         "If you have 24/7 professional monitoring, our agents also receive the alert.",
         "Our certified agents will review the situation and can dispatch emergency services if needed.",
       ]}
       bestFor={[
         "Online daters and people meeting new friends.",
-        "Solo travelers and adventurers.",
-        "Real estate agents, home healthcare workers, and other lone workers.",
+        "Real estate agents showing properties alone.",
+        "Home healthcare workers on solo visits.",
+        "Anyone meeting a stranger or working late alone.",
       ]}
       notIdealFor={[
-        "Situations requiring immediate, life-threatening emergency response.",
-        "Areas without a reliable internet or GPS connection.",
+        "Situations requiring immediate, life-threatening emergency response (use the Panic Alarm directly).",
+        "Areas without a reliable cellular signal.",
       ]}
       keyTakeaways={[
-        "Automates safety check-ins so you don't have to remember.",
-        "Discreetly alerts your contacts if you miss a check-in.",
-        "Provides peace of mind for you and your loved ones.",
+        "Schedule any meeting in the app. MySentry checks on you when it ends.",
+        "A missed check-in automatically triggers your Panic Alarm.",
+        "No manual texting or check-in calls needed.",
       ]}
       faqs={[
         {
-          question: "How does the MeetSafe safety check-in work?",
+          question: "How does MeetSafe work?",
           answer:
-            "You set a timer in the MySentry app for your activity. If you don't mark yourself as safe before the timer expires, the app automatically sends an alert with your location to your chosen emergency contacts.",
+            "You add a meeting in the MeetSafe tab with a title, date, time, and duration. When the meeting ends, MySentry sends you a Safety Check Alert. If you confirm you're safe, the alert closes. If you say you're not safe, or don't respond, your Panic Alarm is automatically triggered.",
         },
         {
-          question: "Is this a good app for online dating safety?",
+          question: "Is MeetSafe good for date safety?",
           answer:
-            "Yes, MeetSafe is an ideal date safety app. It provides an automatic, discreet way to ensure someone is notified if a date doesn't go as planned and you're unable to signal for help yourself.",
+            "Yes. MeetSafe is ideal for first dates or meeting someone new. Add the meeting beforehand, and if anything goes wrong and you can't respond, your emergency contacts and monitoring team are automatically alerted with your location.",
         },
         {
-          question: "Can I adjust the timer after I set it?",
+          question: "Can I extend or cancel a MeetSafe meeting?",
           answer:
-            "Yes, you can easily extend or cancel the MeetSafe timer at any point from within the MySentry app as your plans change.",
+            "Yes. You can extend or cancel a scheduled meeting from within the app at any time before the Safety Check Alert is sent.",
         },
         {
           question: "What information do my emergency contacts receive?",
           answer:
-            "If an alert is triggered, your contacts receive a text message with your name, a notification that you missed a safety check-in, and a link to a live map showing your GPS location.",
+            "If a MeetSafe alert escalates to a Panic Alarm, your contacts receive a notification with your name and a link to your live GPS location.",
         },
         {
-          question: "Does the safety check-in app require an internet connection?",
+          question: "Does MeetSafe require an internet connection?",
           answer:
-            "Yes, MySentry requires a cellular signal to set timers, send notifications, and trigger alerts. No Wi-Fi is needed. Your location services must also be enabled.",
+            "Yes, MySentry requires a cellular signal to send Safety Check Alerts and trigger the Panic Alarm. No Wi-Fi is needed, but a cellular signal must be available.",
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 4+) and Samsung Galaxy Watch for wearable features.",
+        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for wearable features.",
         permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
-        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+        connectivity: "Works on cellular signal. No Wi-Fi is required.",
+        limitations: "MeetSafe requires a cellular signal to send Safety Check Alerts. In areas with no signal, the alert cannot be sent until signal returns.",
       }}
       proofBlocks={[
-        { claim: "MeetSafe check-ins use timed safety intervals that trigger automatic alerts if not dismissed.", detail: "Users set a timer before meetings or appointments. If the timer expires without dismissal, 24/7 agents are alerted with location." },
-        { claim: "Check-in timers can be customized for different scenarios from 15 minutes to 8 hours.", detail: "Flexible timing accommodates short client meetings, long shifts, or extended outdoor activities." }
+        { claim: "MeetSafe sends a Safety Check Alert when your scheduled meeting ends.", detail: "If you don't respond or say you're not safe, your Panic Alarm is automatically triggered, alerting emergency contacts and the 24/7 monitoring team." },
+        { claim: "MeetSafe is built for real-world safety scenarios: dates, client meetings, solo work visits.", detail: "Any situation where you want a silent safety net without constant manual check-ins." },
       ]}
       relatedLinks={[
-        { text: "Panic Button", href: "/features/panic-button-app" },
+        { text: "Panic Alarm", href: "/features/panic-button-app" },
         { text: "Live Video Response", href: "/features/live-video-response" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },

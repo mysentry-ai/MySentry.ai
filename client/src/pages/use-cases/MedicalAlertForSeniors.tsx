@@ -56,7 +56,7 @@ export default function MedicalAlertForSeniors() {
         { question: "Is the MySentry medical alert system app hard to set up?", answer: "No, it's easy. Just go to mysentry.ai, pick your plan, and make an account online. Then download the MySentry app from the App Store or Google Play and log in. Most people are set up in just a few minutes." },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15 and newer) and Android (12 and newer) smartphones. Apple Watch (Series 4 and newer) and Samsung Galaxy Watch for features you wear.",
+        devices: "iPhone (iOS 15 and newer) and Android (12 and newer) smartphones. Apple Watch (Series 7 and newer) and Samsung Galaxy Watch for features you wear.",
         permissions: "Location services (always on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video help).",
         connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
         limitations: "How well fall detection works depends on sensor quality and where you wear the device. Battery life changes based on your device and how you use features. Health tracking needs a smartwatch that works with the app."
@@ -64,7 +64,7 @@ export default function MedicalAlertForSeniors() {
       proofBlocks={[
         { claim: "MySentry turns your smartphone and smartwatch into a medical alert system.", detail: "You don't need a separate device. The app works on phones and watches seniors already have or can easily get." },
         { claim: "Health tracking watches heart rate, heart rate variability, and blood oxygen all the time.", detail: "Unusual readings send alerts to our 24/7 monitoring team and chosen family caregivers." },
-        { claim: "Fall detection works by itself, so seniors don't need to press a button.", detail: "If a fall is detected and the user doesn't respond within 2 minutes, help is sent automatically." }
+        { claim: "Fall detection works by itself, so seniors don't need to press a button.", detail: "If a fall is detected and the user doesn't respond to the Safety Check Alert, help is sent automatically." }
       ]}
       relatedLinks={[
         { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },

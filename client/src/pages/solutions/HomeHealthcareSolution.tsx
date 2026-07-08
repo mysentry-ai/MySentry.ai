@@ -13,7 +13,7 @@ export default function HomeHealthcareSolutionPage() {
       steps={[
         {
           title: "Immediate Help When It Matters Most",
-          description: "With our automatic fall detection and a discreet panic alarm, your team is never truly alone. If a fall occurs, an alert is sent within 2 minutes. In any emergency, a simple voice command, a tap on their smartphone, or a press on their smartwatch instantly summons help.",
+          description: "With our automatic fall detection and a discreet panic alarm, your team is never truly alone. If a fall occurs, an alert is sent automatically if there is no response. In any emergency, a simple voice command, a tap on their smartphone, or a press on their smartwatch instantly summons help.",
         },
         {
           title: "Real-Time Visibility for Your Agency",

@@ -26,8 +26,8 @@ const features = [
   },
   {
     icon: MapPin,
-    title: "Live Location Sharing",
-    desc: "Share your real-time location with family and loved ones. They see exactly where you are, updated every 15 minutes or on demand.",
+    title: "Family Connectivity",
+    desc: "Stay connected with your family. Share your real-time location, check in, and let loved ones know you are safe, all from the home screen.",
     color: "text-blue-600",
     bg: "bg-blue-50",
   },
@@ -52,7 +52,7 @@ export default function AppDashboardShowcase() {
             Personal Safety and Health Monitoring, Right on Your Screen
           </h2>
           <p className="text-xl text-gray-600">
-            The moment you open MySentry, you see what matters most: your health vitals, your emergency contacts, your location, and a PANIC button that is always one tap away.
+            The moment you open MySentry, you see what matters most: your emergency contacts, your Family Connectivity status, your Health Monitoring, and a PANIC button that is always one tap away.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export default function AppDashboardShowcase() {
               <div className="relative z-10 bg-[#1a1a1a] rounded-[3rem] p-3 shadow-2xl">
                 <img
                   src="/images/app-home.png"
-                  alt="MySentry app dashboard showing health vitals, emergency contacts, location sharing, and PANIC button"
+                  alt="MySentry app home screen showing the PANIC button, emergency contacts, Family Connectivity, and Health Monitoring with Watch Connected"
                   className="w-[280px] rounded-[2.5rem]"
                   loading="lazy"
                   width="280" height="606"

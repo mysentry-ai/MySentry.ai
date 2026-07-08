@@ -34,7 +34,8 @@ const FEATURES_B2C = [
   "5 Emergency Contacts",
   "MeetSafe (Optional)",
   "Automated Call (Optional)",
-  "Mental Health Coach Access (StressGuru.ai)",
+  "Secure Route Monitoring",
+  "Family Connectivity & Location Sharing",
 ];
 
 const FEATURES_B2B = [

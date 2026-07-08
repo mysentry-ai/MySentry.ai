@@ -67,7 +67,7 @@ export default function WhoWeProtectWomen() {
         },
         {
           question: "Can I use MySentry when I run alone?",
-          answer: "Yes. MySentry runs in the background while you run. You can trigger the panic alarm by voice or Apple Watch tap without stopping. Fall detection is also active, so if you fall during a run and do not respond within 2 minutes, an alert is sent automatically.",
+          answer: "Yes. MySentry runs in the background while you run. You can trigger the panic alarm by voice or Apple Watch tap without stopping. Fall detection is also active, so if you fall during a run and do not respond to the Safety Check Alert, an alert is sent automatically.",
         },
         {
           question: "Is there a safety app for real estate agents?",
@@ -79,7 +79,7 @@ export default function WhoWeProtectWomen() {
         },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 4+) or Samsung Galaxy Watch (4+).",
+        devices: "iPhone (iOS 15+) or Android (8.0+). Optional: Apple Watch (Series 7+) or Samsung Galaxy Watch (4+).",
         permissions: "Location (always on), microphone (for voice activation), camera (for live video), and notifications.",
         connectivity: "Cellular or Wi-Fi required for alerts and live video.",
         limitations: "Voice activation requires the app to be running in the background.",

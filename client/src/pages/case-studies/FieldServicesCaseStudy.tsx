@@ -69,7 +69,7 @@ const FieldServicesCaseStudy = () => {
                   MySentry was deployed company-wide, providing a comprehensive safety net for every lone worker. The solution included automatic fall and crash detection, proactive health monitoring, and precise GPS tracking for rapid location identification.
                 </p>
                 <p className="text-lg text-gray-700">
-                  Each technician was equipped with a discreet wearable device and a smartphone app, ensuring they were always connected. In the event of a fall, an alert is automatically sent to the monitoring center within 2 minutes, enabling immediate dispatch of emergency services. This proactive approach closed the company's OSHA compliance gaps and created a much safer working environment.
+                  Each technician was equipped with a discreet wearable device and a smartphone app, ensuring they were always connected. In the event of a fall, an alert is automatically sent to the monitoring center if there is no response, enabling immediate dispatch of emergency services. This proactive approach closed the company's OSHA compliance gaps and created a much safer working environment.
                 </p>
               </div>
             </div>

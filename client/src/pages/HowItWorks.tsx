@@ -29,7 +29,7 @@ export default function Features() {
               {
                 "@type": "HowToStep",
                 "name": "Pair Your Watch",
-                "text": "Connect your Apple Watch (Series 6+) or Samsung Galaxy Watch (Watch 6+) to start real-time health and safety monitoring."
+                "text": "Connect your Apple Watch (Series 7 or newer) or Samsung Galaxy Watch (Series 6 or newer) to start real-time health and safety monitoring."
               },
               {
                 "@type": "HowToStep",
@@ -55,7 +55,7 @@ export default function Features() {
                 "name": "Do I need to buy a new device to use MySentry?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No! MySentry works with Apple Watch (Series 6+) and Samsung Galaxy Watch (Watch 6+). No expensive, stigmatizing hardware required."
+                  "text": "No! MySentry works with Apple Watch (Series 7 or newer) and Samsung Galaxy Watch (Series 6 or newer). No expensive, stigmatizing hardware required."
                 }
               },
               {
@@ -71,7 +71,7 @@ export default function Features() {
                 "name": "How does the Fall Detection work?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "MySentry uses motion sensors in your smartwatch to detect hard falls. If you don't respond within 2 minutes or mark yourself unsafe, emergency contacts and 24/7 monitoring are notified immediately with your location."
+                  "text": "MySentry uses motion sensors in your smartwatch to detect hard falls. If you don't respond within 60 seconds (Android) or 60-90 seconds (iOS) or mark yourself unsafe, emergency contacts and 24/7 monitoring are notified immediately with your location."
                 }
               },
               {
@@ -327,7 +327,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/frame-6.png" alt="MySentry fall detection alert screen showing automatic detection and 2-minute response window" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
+              <img src="/images/frame-6.png" alt="MySentry fall detection alert screen showing automatic detection and safety check timeout" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
             </div>
           </motion.div>
           <div>
@@ -340,7 +340,7 @@ export default function Features() {
               <span className="text-gray-500">Automatically.</span>
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-10">
-              Hard fall? Your watch and phone detect it and call for help if you don't respond within 2 minutes. Need help sooner? Trigger the panic alarm instantly with your voice or a tap.
+              Hard fall? Your smartwatch detects it and sends a Safety Check Alert. If you don't respond, help is automatically dispatched to your location. Need help sooner? Trigger the panic alarm instantly with your voice or a tap.
             </p>
             <div className="grid grid-cols-2 gap-6">
               {[

@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "Can students use MySentry on an iPhone or Android?",
-    a: "Yes. MySentry is available on both iOS (iPhone) and Android. It also works with Apple Watch (Series 4 and later) and Samsung Galaxy Watch (Watch 4 and later) for wrist-based fall detection and panic alerts.",
+    a: "Yes. MySentry is available on both iOS (iPhone) and Android. It also works with Apple Watch (Series 7 and newer) and Samsung Galaxy Watch (Watch 4 and later) for wrist-based fall detection and panic alerts.",
   },
   {
     q: "What happens if a student is in a car accident?",
@@ -45,7 +45,7 @@ const features = [
   {
     icon: <Shield className="w-6 h-6 text-primary" />,
     title: "Fall Detection",
-    desc: "Automatic fall detection via phone and smartwatch. If a student falls and cannot respond, MySentry alerts the monitoring team within 2 minutes.",
+    desc: "Automatic fall detection via phone and smartwatch. If a student falls and cannot respond, MySentry sends a Safety Check Alert and alerts the monitoring team if there is no response.",
   },
   {
     icon: <Clock className="w-6 h-6 text-primary" />,
@@ -233,7 +233,7 @@ export default function Students() {
           </div>
           <div className="space-y-6">
             {[
-              { step: "1", title: "Download the app", desc: "Available on iOS and Android. Pairs with Apple Watch (Series 4+) and Samsung Galaxy Watch (Watch 4+) for wrist-based alerts." },
+              { step: "1", title: "Download the app", desc: "Available on iOS and Android. Pairs with Apple Watch (Series 7+) and Samsung Galaxy Watch (Watch 4+) for wrist-based alerts." },
               { step: "2", title: "Add emergency contacts", desc: "Add up to 3 contacts: parents, siblings, a roommate, or a trusted friend. They receive SMS, push notification, and email alerts with live GPS location." },
               { step: "3", title: "Choose a plan", desc: "Individual plan from $15/month. 7-day free trial included. No hardware to buy, no contract to sign." },
               { step: "4", title: "Go anywhere with confidence", desc: "Fall detection and health monitoring run in the background. Panic button is one tap away. MeetSafe timers keep contacts informed on late-night outings." },

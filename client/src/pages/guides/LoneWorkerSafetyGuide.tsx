@@ -37,7 +37,7 @@ export default function LoneWorkerSafetyGuide() {
       directAnswer="OSHA rule 1915.84 says employers must check on each lone worker regularly. Also, the General Duty Clause means employers must provide a safe workplace. This, plus the ethical duty to care, means employers must take steps to keep their employees safe."
       howItWorks={[
         "Panic alarms and apps let workers quickly and privately call for help in an emergency.",
-        "Automatic fall detection systems sense when a worker falls and send an alert within 2 minutes.",
+        "Automatic fall detection systems sense when a worker falls and send an alert if there is no response.",
         "GPS tracking shows where lone workers are, which is key in an emergency.",
         "Automated check-in systems ask workers to confirm they are safe at set times.",
       ]}
@@ -82,7 +82,7 @@ export default function LoneWorkerSafetyGuide() {
       ]}
       proofBlocks={[]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) or Android (10+) smartphone. Apple Watch (Series 4+) or Samsung Galaxy Watch for wrist-based features.",
+        devices: "iPhone (iOS 15+) or Android (10+) smartphone. Apple Watch (Series 7+) or Samsung Galaxy Watch for wrist-based features.",
         permissions: "Location services (always-on), notifications, microphone for voice activation.",
         connectivity: "Cellular signal is all that is needed. No Wi-Fi required. Even with a weak signal, the app sends a text alert with your GPS coordinates. Alerts queue and send the moment signal returns.",
         limitations: "Does not replace a formal lone worker safety policy or OSHA compliance documentation. Health monitoring requires a compatible smartwatch."

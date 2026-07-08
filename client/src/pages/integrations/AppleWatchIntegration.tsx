@@ -16,7 +16,7 @@ export default function AppleWatchIntegrationPage() {
         { title: "Enable Data Sharing", description: "Allow health and location data for full protection." },
       ]}
       primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing#pricing-plans" }}
-      directAnswer="MySentry works with your Apple Watch (Series 4 and newer) to add a strong layer of personal safety. It brings powerful features like fall detection from your wrist, a panic alarm on your watch face, continuous heart rate monitoring, and automatic crash detection. This helps make sure you get help when you need it most."
+      directAnswer="MySentry works with your Apple Watch (Series 7 and newer) to add a strong layer of personal safety. It brings powerful features like fall detection from your wrist, a panic alarm on your watch face, continuous heart rate monitoring, and automatic crash detection. This helps make sure you get help when you need it most."
       howItWorks={[
         "Get the MySentry app from the App Store and easily connect it with your Apple Watch.",
         "Give the app permission to use your health and location data. This turns on important safety features like fall detection and GPS tracking.",
@@ -35,7 +35,7 @@ export default function AppleWatchIntegrationPage() {
         "Drivers who want extra protection with automatic crash detection.",
       ]}
       notIdealFor={[
-        "People without an Apple Watch (Series 4 or newer).",
+        "People without an Apple Watch (Series 7 or newer).",
         "Users who do not want to share health and location data.",
         "Those who need a medical alert device with a special button worn around the neck or wrist.",
       ]}
@@ -43,7 +43,7 @@ export default function AppleWatchIntegrationPage() {
         "Adds an important safety layer to your Apple Watch.",
         "Includes fall detection, a panic alarm, and crash detection.",
         "Easy to set up and works smoothly with your watch.",
-        "Needs Apple Watch Series 4 or newer with watchOS 9+.",
+        "Needs Apple Watch Series 7 or newer with watchOS 10+.",
         "Supported by a 24/7 professional monitoring service.",
       ]}
       faqs={[
@@ -61,7 +61,7 @@ export default function AppleWatchIntegrationPage() {
         },
         {
           question: "What do I need to use MySentry with my Apple Watch?",
-          answer: "You will need an Apple Watch Series 4 or newer running watchOS 9 or later, paired with a compatible iPhone. You also need to create your account and sign up for a monitoring plan at mysentry.ai, then download the MySentry app from the App Store.",
+          answer: "You will need an Apple Watch Series 7 or newer running watchOS 10 or later, paired with a compatible iPhone. You also need to create your account and sign up for a monitoring plan at mysentry.ai, then download the MySentry app from the App Store.",
         },
         {
           question: "How is the panic alarm triggered?",
@@ -69,7 +69,7 @@ export default function AppleWatchIntegrationPage() {
         },
       ]}
       setupRequirements={{
-        devices: "Apple Watch Series 4 or newer running watchOS 9 or later, paired with a compatible iPhone.",
+        devices: "Apple Watch Series 7 or newer running watchOS 10 or later, paired with a compatible iPhone.",
         permissions: "You must give the app permission to use your location and health data for all features to work.",
         connectivity: "Your iPhone needs an active cellular signal. Wi-Fi is not required.",
         limitations: "Fall detection does not catch 100% of falls. For crash detection, you must have your iPhone with you in the car.",
@@ -77,7 +77,7 @@ export default function AppleWatchIntegrationPage() {
       proofBlocks={[
         {
           claim: "Works with Your Watch",
-          detail: "Compatible with Apple Watch Series 4 and newer.",
+          detail: "Compatible with Apple Watch Series 7 and newer.",
         },
         {
           claim: "Always-On Safety",
