@@ -19,7 +19,7 @@ export const Privacy = () => {
     { title: "Requesting Data Deletion", id: "requesting-data-deletion" },
     { title: "Privacy for Children", id: "privacy-children" },
     { title: "How We Use Personal Information", id: "how-we-use-personal-information" },
-    { title: "AI Features and Model Training", id: "ai-features-model-training" },
+    { title: "Artificial Intelligence (AI) and Automated Data Processing", id: "artificial-intelligence-ai-and-automated-data-processing" },
     { title: "Data Retention", id: "data-retention" },
     { title: "Sharing of Information with Third Parties", id: "third-party-sharing" },
     { title: "Privacy Rights and Data Requests", id: "privacy-rights-requests" },
@@ -299,12 +299,18 @@ export const Privacy = () => {
             </p>
 
             {/* Section 10 */}
-            <h2 id="ai-features-model-training" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">AI Features and Model Training</h2>
+            <h2 id="artificial-intelligence-ai-and-automated-data-processing" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">Artificial Intelligence (AI) and Automated Data Processing</h2>
             <p className="text-gray-900 mb-6">
-              MySentry may use automated, algorithmic, or AI-enabled features to support certain product capabilities. Unless specifically disclosed otherwise, personal data is not used to train general-purpose AI models in a manner inconsistent with this Privacy Policy or applicable law.
+              We are committed to ensuring that personal data entrusted to us is handled in a secure, transparent, and responsible manner. Personal data collected through our services is not disclosed, transmitted, licensed, sold, or otherwise made available to any external or third-party artificial intelligence systems, machine learning platforms, generative AI services, or data processing providers for the purpose of model training, model improvement, inference, profiling, or any other AI-related activity.
             </p>
             <p className="text-gray-900 mb-6">
-              Where customer data is used to develop, test, improve, tune, validate, or monitor AI-enabled features, MySentry will describe the categories of data involved, the purpose of such use, the safeguards applied, and any user choices or controls that are available. Where required by law, MySentry will obtain consent or provide an appropriate opt-out mechanism.
+              Where automated processing is utilized, it is limited exclusively to the functionality necessary for the operation, maintenance, security, performance, and delivery of our services, and is conducted solely for the purposes expressly described in this Privacy Policy. Such automated processing does not involve the use of customer data for the training, fine-tuning, validation, monitoring, or enhancement of external artificial intelligence or machine learning models.
+            </p>
+            <p className="text-gray-900 mb-6">
+              We implement appropriate technical, administrative, and organizational safeguards designed to protect personal data against unauthorized access, disclosure, alteration, loss, or misuse. We do not authorize or permit any third party to access, retain, process, or otherwise use customer data for independent AI development, commercial exploitation, research, or any purpose inconsistent with this Privacy Policy or applicable data protection laws.
+            </p>
+            <p className="text-gray-900 mb-6">
+              Should we introduce any AI-enabled functionality that materially changes how customer data is processed, we will update this Privacy Policy accordingly and, where required by applicable law, provide appropriate notice and obtain any necessary user consent before such processing takes place.
             </p>
 
             {/* Section 11 */}
