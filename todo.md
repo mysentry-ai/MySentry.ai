@@ -911,3 +911,29 @@
 - [ ] Remove StressGuru/Mental Health Coach from features list
 - [ ] Ensure trial flow is accurate (7-day, no credit card, force-logout after trial)
 - [ ] Add note about Family plan: owner + 5 member seats (owner does not consume a seat)
+
+## MySentry x Ring Integration (Jul 14, 2026)
+- [ ] Add Ring announcement pill banner to homepage hero section
+- [ ] Add Ring announcement section to homepage (two-column layout with visual flow diagram)
+- [ ] Create full /ring landing page with 9 sections
+- [ ] Section 1: Hero with headline, subheadline, CTA, trust line, visual dashboard mockup
+- [ ] Section 2: Why Add MySentry to Ring? (5 benefit cards)
+- [ ] Section 3: How It Works (step-by-step horizontal/vertical timeline)
+- [ ] Section 4: More Than a Camera Alert (connected system grid)
+- [ ] Section 5: Pricing / Offer Section (pricing table)
+- [ ] Section 6: Family Safety Section
+- [ ] Section 7: Use Cases Section (5 cards)
+- [ ] Section 8: Final CTA Block
+- [ ] Section 9: FAQ Accordion (11 questions)
+- [ ] Register /ring route in App.tsx
+- [ ] Mobile-responsive design with sticky mobile CTA
+- [ ] SEO meta tags for /ring page
+
+## MySentry x Ring Integration Pages (Jul 29, 2026)
+- [x] Add Ring announcement pill banner to homepage hero section
+- [x] Create RingAnnouncementSection component (homepage, after TrustBanner)
+- [x] Create /ring dedicated landing page (9 sections: Hero, Why Add MySentry, How It Works, More Than a Camera Alert, Pricing, Family Safety, Use Cases, Final CTA, FAQ)
+- [x] Register /ring route in App.tsx
+- [x] Add SEO component with title/description/canonical to /ring page
+- [x] Fix CTA section background to use brand-compliant dark green (not black)
+- [x] TypeScript check passed (exit 0)

@@ -111,6 +111,9 @@ import SamsungGalaxyWatchIntegration from "./pages/integrations/SamsungGalaxyWat
 import OuraRingIntegration from "./pages/integrations/OuraRingIntegration";
 import RingIntegration from "./pages/integrations/RingIntegration";
 
+// Ring Landing Page
+import RingLandingPage from "./pages/RingLandingPage";
+
 // Phase 2 - Guides (Authority Content)
 import LoneWorkerSafetyGuide from "./pages/guides/LoneWorkerSafetyGuide";
 import ProfessionalMonitoringGuide from "./pages/guides/ProfessionalMonitoringGuide";
@@ -224,6 +227,9 @@ function Router() {
 
       {/* Phase 2 - Resources */}
       <Route path="/resources/employer-one-pager" component={EmployerOnePager} />
+
+      {/* Ring Landing Page */}
+      <Route path="/ring" component={RingLandingPage} />
 
       {/* Phase 2 - Integrations (Wearable Pages) */}
       <Route path="/integrations/apple-watch" component={AppleWatchIntegration} />

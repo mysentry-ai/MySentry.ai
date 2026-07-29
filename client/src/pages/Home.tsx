@@ -10,6 +10,9 @@ import TestimonialSection from "@/components/TestimonialSection";
 import WhatWeProvide from "@/components/WhatWeProvide";
 import AppDashboardShowcase from "@/components/AppDashboardShowcase";
 import ChatbotNudge from "@/components/ChatbotNudge";
+import { Link } from "wouter";
+import { Camera } from "lucide-react";
+import RingAnnouncementSection from "@/components/RingAnnouncementSection";
 
 
 export default function Home() {
@@ -26,11 +29,25 @@ export default function Home() {
         phoneMockupSrc="/images/app-home.png"
         phoneMockupAlt="MySentry app home screen showing the PANIC button, emergency contacts, Family Connectivity, and Health Monitoring with Watch Connected"
       >
-        <ICPSelector className="mt-6" />
+        {/* Ring announcement pill banner */}
+        <Link
+          href="/ring"
+          className="inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm border border-primary/30 text-[#1a1a1a] rounded-full px-4 py-2 text-sm font-semibold shadow-md hover:shadow-lg hover:border-primary transition-all mb-5 group"
+        >
+          <span className="flex items-center justify-center w-6 h-6 bg-primary/10 rounded-full">
+            <Camera className="w-3.5 h-3.5 text-primary" />
+          </span>
+          <span>New: MySentry now works with Ring</span>
+          <span className="text-primary text-xs font-bold group-hover:translate-x-0.5 transition-transform">Learn More →</span>
+        </Link>
+        <ICPSelector className="mt-2" />
       </HeroSection>
 
       {/* Trust Signals Banner */}
       <TrustBanner />
+
+      {/* MySentry × Ring Integration Announcement */}
+      <RingAnnouncementSection />
 
       {/* App Dashboard Showcase - core monitoring story */}
       <AppDashboardShowcase />
