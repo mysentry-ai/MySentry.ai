@@ -937,3 +937,6 @@
 - [x] Add SEO component with title/description/canonical to /ring page
 - [x] Fix CTA section background to use brand-compliant dark green (not black)
 - [x] TypeScript check passed (exit 0)
+
+## Ring Navbar Item (Jul 29, 2026)
+- [x] Add "RING" as standalone top-level nav item linking to /ring
