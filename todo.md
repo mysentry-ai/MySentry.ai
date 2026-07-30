@@ -940,3 +940,22 @@
 
 ## Ring Navbar Item (Jul 29, 2026)
 - [x] Add "RING" as standalone top-level nav item linking to /ring
+
+## Ring Homepage Redesign (Jul 30, 2026)
+- [ ] Create RingTopBanner component (animated scrolling marquee, full-width, below navbar)
+- [ ] Rewrite RingAnnouncementSection with approved copy, two-column layout, animated infographic
+- [ ] Create RingReminderBanner component (later in page, price comparison card)
+- [ ] Wire all three into Home.tsx at correct positions
+- [ ] Remove old pill banner from HeroSection children in Home.tsx
+- [ ] QA Round 1: Copy and messaging check
+- [ ] QA Round 2: UX and conversion check
+- [ ] QA Round 3: Design and responsiveness check
+
+## Ring Homepage Redesign (Session 2)
+- [x] Create RingTopBanner.tsx - animated scrolling marquee, full-width below navbar, $4.99/month offer
+- [x] Rewrite RingAnnouncementSection.tsx - two-column layout, approved copy, animated step infographic
+- [x] Create RingReminderBanner.tsx - later-in-page reminder with price comparison card ($15 vs $4.99)
+- [x] Wire all three Ring components into Home.tsx at correct positions
+- [x] Remove old Ring pill banner from HeroSection children in Home.tsx
+- [x] Confirmed zero TypeScript errors
+- [x] Confirmed zero em dashes in all Ring components and Home.tsx
