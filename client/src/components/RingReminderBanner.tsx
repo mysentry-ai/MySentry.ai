@@ -4,9 +4,9 @@ import { ArrowRight } from "lucide-react";
 
 /**
  * Later homepage reminder banner for Ring Appstore offer.
- * Premium split layout with copy on left, Group1000007976.png and price card on right.
- * Refined (not harsh) price comparison showing $15 vs $4.99 with 67% savings.
- * No placeholder text. Uses real visual asset.
+ * Premium split layout with copy on left, mobile mockup and floating price card on right.
+ * Mobile mockup (247PersonalSafety...) with floating price comparison card.
+ * Grey text throughout, refined styling.
  */
 export default function RingReminderBanner() {
   return (
@@ -23,7 +23,7 @@ export default function RingReminderBanner() {
 
             {/* ── Left: Copy and CTA ── */}
             <div className="p-8 md:p-12 flex flex-col justify-center">
-              <h3 className="text-2xl md:text-3xl font-heading font-bold text-[#1a1a1a] mb-4 leading-tight">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-gray-800 mb-4 leading-tight">
                 Complete Your Safety Setup with MySentry
               </h3>
 
@@ -44,33 +44,33 @@ export default function RingReminderBanner() {
               </Link>
             </div>
 
-            {/* ── Right: Visual + Price Card ── */}
-            <div className="relative bg-gradient-to-br from-[#f7faf8] to-white p-8 md:p-12 flex flex-col items-center justify-center gap-8">
+            {/* ── Right: Mobile Mockup with Floating Price Card ── */}
+            <div className="relative bg-gradient-to-br from-[#f7faf8] to-white p-8 md:p-12 flex items-center justify-center min-h-[500px] md:min-h-[600px]">
 
-              {/* Supporting visual - Group1000007976.png */}
+              {/* Mobile mockup - centered */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="w-full max-w-sm"
+                className="relative z-10 w-48 md:w-56"
               >
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/LawJSBlijHQLelUI.png"
-                  alt="Live location, contact view, battery level, and Ring camera feed integration"
-                  className="w-full h-auto rounded-2xl shadow-md"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/nnMAAKsVbJPcoFWV.png"
+                  alt="MySentry app home screen showing PANIC button, emergency contacts, and health monitoring"
+                  className="w-full h-auto drop-shadow-2xl"
                 />
               </motion.div>
 
-              {/* Elegant price comparison card */}
+              {/* Floating price comparison card - positioned absolutely */}
               <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20, x: 30 }}
+                whileInView={{ opacity: 1, y: 0, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="w-full max-w-sm"
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="absolute bottom-8 right-4 md:bottom-12 md:right-8 z-20 w-56 md:w-64"
               >
-                <div className="bg-white rounded-2xl border border-gray-200 shadow-md overflow-hidden">
+                <div className="bg-white rounded-2xl border border-gray-200 shadow-2xl overflow-hidden backdrop-blur-sm">
 
                   {/* Card header */}
                   <div className="bg-gradient-to-r from-primary/10 to-primary/5 px-6 py-4 border-b border-gray-100">
@@ -101,6 +101,21 @@ export default function RingReminderBanner() {
                   </div>
 
                 </div>
+              </motion.div>
+
+              {/* Decorative background visual - Group1000007976.png as subtle background */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="absolute inset-0 z-0 opacity-40 pointer-events-none"
+              >
+                <img
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/LawJSBlijHQLelUI.png"
+                  alt="Background visual"
+                  className="w-full h-full object-cover rounded-3xl"
+                />
               </motion.div>
 
             </div>

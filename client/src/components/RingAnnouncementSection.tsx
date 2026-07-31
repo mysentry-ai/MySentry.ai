@@ -5,43 +5,46 @@ import { Camera, MapPin, Radio, Users, Shield, ArrowRight } from "lucide-react";
 /**
  * Main Ring Appstore announcement section with premium two-column layout.
  * Left: Approved copy with badge, headline, subheadline, body, offer line, CTA, trust line.
- * Right: Layered visual composition with phone mockup and floating cards showing response journey.
- * Uses visual assets: 247PersonalSafety&HealthMonitoringwithEmergencyResponse(3).png (phone)
- * and Group1000007974(1).png (emotional background).
+ * Right: Layered visual composition with emotional background and floating cards showing numbered response journey.
+ * Uses visual assets: Group1000007974(1).png (emotional background).
  */
 
 const floatingCards = [
   {
     id: "panic",
+    number: "1",
     icon: Shield,
     label: "Panic Alarm Triggered",
-    position: "top-0 -left-8",
+    position: "top-0 left-0",
     delay: 0.1,
     color: "bg-red-50 text-red-600 border-red-100",
   },
   {
-    id: "location",
-    icon: MapPin,
-    label: "Live Location Shared",
-    position: "top-1/3 -right-6",
+    id: "broadcast",
+    number: "2",
+    icon: Radio,
+    label: "Live Broadcast Started",
+    position: "top-1/4 right-0",
     delay: 0.3,
-    color: "bg-blue-50 text-blue-600 border-blue-100",
+    color: "bg-green-50 text-green-600 border-green-100",
   },
   {
-    id: "camera",
-    icon: Camera,
-    label: "Ring Camera Feed Added",
-    position: "bottom-1/4 -left-4",
+    id: "location",
+    number: "3",
+    icon: MapPin,
+    label: "Live Location Shared",
+    position: "bottom-1/3 left-4",
     delay: 0.5,
-    color: "bg-[#1a6bff]/10 text-[#1a6bff] border-[#1a6bff]/20",
+    color: "bg-amber-50 text-amber-600 border-amber-100",
   },
   {
     id: "team",
+    number: "4",
     icon: Users,
     label: "Monitoring Team Notified",
-    position: "bottom-0 -right-8",
+    position: "bottom-0 right-2",
     delay: 0.7,
-    color: "bg-primary/10 text-primary border-primary/20",
+    color: "bg-purple-50 text-purple-600 border-purple-100",
   },
 ];
 
@@ -65,12 +68,12 @@ export default function RingAnnouncementSection() {
             </span>
 
             {/* Headline */}
-            <h2 className="text-3xl md:text-[2.5rem] font-heading font-bold text-[#1a1a1a] mb-4 leading-tight">
+            <h2 className="text-3xl md:text-[2.5rem] font-heading font-bold text-gray-800 mb-4 leading-tight">
               Home Security Meets Personal Emergency Response
             </h2>
 
             {/* Subheadline */}
-            <p className="text-lg text-gray-700 font-semibold mb-6 leading-snug">
+            <p className="text-lg text-gray-600 font-semibold mb-6 leading-snug">
               Ring protects your home. MySentry helps protect you wherever you go.
             </p>
 
@@ -124,52 +127,39 @@ export default function RingAnnouncementSection() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="relative h-[500px] md:h-[600px] flex items-center justify-center"
           >
-            {/* Background emotional visual */}
+            {/* Background emotional visual - direct image placement */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="absolute inset-0 flex items-center justify-center z-0"
+              className="absolute inset-0 flex items-center justify-center z-0 rounded-3xl overflow-hidden"
             >
               <img
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/lBpMTERFjfzPUjYU.png"
                 alt="Emergency response moment with MySentry and Ring"
-                className="w-full h-full object-cover rounded-3xl shadow-2xl"
+                className="w-full h-full object-cover"
               />
             </motion.div>
 
-            {/* Central phone mockup */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85, y: 20 }}
-              whileInView={{ opacity: 1, scale: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative z-10 w-48 md:w-56 drop-shadow-2xl"
-            >
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/nnMAAKsVbJPcoFWV.png"
-                alt="MySentry app showing Panic button, Ring subscription, emergency contacts, family connectivity, and health monitoring"
-                className="w-full h-auto"
-              />
-            </motion.div>
-
-            {/* Floating cards around phone */}
+            {/* Floating numbered cards around the visual */}
             {floatingCards.map((card) => (
               <motion.div
                 key={card.id}
-                initial={{ opacity: 0, scale: 0.8 }}
+                initial={{ opacity: 0, scale: 0.7 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: card.delay }}
-                className={`absolute ${card.position} z-20 w-40 md:w-48`}
+                className={`absolute ${card.position} z-20 w-44 md:w-52`}
               >
-                <div className={`${card.color} border rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm`}>
-                  <div className="flex items-center gap-3">
-                    <span className={`flex items-center justify-center w-10 h-10 rounded-lg shrink-0 ${card.color.split(" ").slice(0, 2).join(" ")}`}>
-                      <card.icon className="w-5 h-5" />
-                    </span>
-                    <p className="text-sm font-bold text-[#1a1a1a] leading-tight">{card.label}</p>
+                <div className={`${card.color} border rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm flex items-start gap-3`}>
+                  {/* Number badge */}
+                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white font-bold text-sm shrink-0">
+                    {card.number}
+                  </div>
+                  {/* Content */}
+                  <div className="flex-1">
+                    <p className="text-sm font-bold text-gray-800 leading-tight">{card.label}</p>
                   </div>
                 </div>
               </motion.div>
@@ -187,10 +177,10 @@ export default function RingAnnouncementSection() {
                 </linearGradient>
               </defs>
               {/* Subtle connecting lines - kept minimal for premium feel */}
-              <line x1="50%" y1="10%" x2="50%" y2="50%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.4" />
-              <line x1="50%" y1="50%" x2="80%" y2="35%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.3" />
-              <line x1="50%" y1="50%" x2="20%" y2="60%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.3" />
-              <line x1="50%" y1="50%" x2="75%" y2="85%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.3" />
+              <line x1="50%" y1="20%" x2="50%" y2="50%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.3" />
+              <line x1="50%" y1="50%" x2="75%" y2="35%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.2" />
+              <line x1="50%" y1="50%" x2="25%" y2="65%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.2" />
+              <line x1="50%" y1="50%" x2="70%" y2="80%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.2" />
             </svg>
           </motion.div>
 

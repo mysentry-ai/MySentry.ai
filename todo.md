@@ -959,3 +959,16 @@
 - [x] Remove old Ring pill banner from HeroSection children in Home.tsx
 - [x] Confirmed zero TypeScript errors
 - [x] Confirmed zero em dashes in all Ring components and Home.tsx
+
+## Ring Appstore Co-Marketing Homepage Redesign (Session 3)
+- [x] Read and extract approved copy from MySentry x Ring co-marketing Word document
+- [x] Upload all four visual assets to S3 (main app mockup, emotional background, storytelling visual, trust badge)
+- [x] Create RingHeroBottomBanner.tsx - premium offer banner at bottom of hero section ($4.99/month, soft styling, no marquee)
+- [x] Redesign RingAnnouncementSection.tsx - two-column layout with approved copy, layered visuals, floating cards showing 5-step panic response journey
+- [x] Redesign RingReminderBanner.tsx - later-in-page reminder with Group1000007976.png and refined price comparison card
+- [x] Update Navbar.tsx - remove NEW icon from Ring nav item, change label to "Ring Appstore"
+- [x] Wire all components into Home.tsx in correct order
+- [x] QA Round 1: Content Accuracy - no forbidden phrases, correct pricing ($4.99, $15, Save 67%)
+- [x] QA Round 2: Layout Accuracy - components in correct order, visual assets properly integrated
+- [x] QA Round 3: Design Quality - TypeScript 0 errors, no em-dashes, no placeholder text, animations and premium styling present
+- [x] Save checkpoint version 6572fbcf

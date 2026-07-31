@@ -20,10 +20,10 @@ export default function RingHeroBottomBanner() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           {/* Left: Text */}
           <div className="flex-1 text-center sm:text-left">
-            <p className="text-sm md:text-base font-semibold text-[#1a1a1a] leading-snug">
+            <p className="text-sm md:text-base font-semibold text-gray-700 leading-snug">
               Ring users can get MySentry for <span className="text-primary font-bold">$4.99/month</span> on the Ring Appstore.
             </p>
-            <p className="text-xs md:text-sm text-gray-600 mt-1">
+            <p className="text-xs md:text-sm text-gray-500 mt-1">
               Save 67% on personal emergency response.
             </p>
           </div>
