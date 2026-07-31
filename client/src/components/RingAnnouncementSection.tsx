@@ -5,46 +5,50 @@ import { Camera, MapPin, Radio, Users, Shield, ArrowRight } from "lucide-react";
 /**
  * Main Ring Appstore announcement section with premium two-column layout.
  * Left: Approved copy with badge, headline, subheadline, body, offer line, CTA, trust line.
- * Right: Layered visual composition with emotional background and floating cards showing numbered response journey.
- * Uses visual assets: Group1000007974(1).png (emotional background).
+ * Right: Mobile mockup (247PersonalSafety...) centered with numbered flow cards floating around it.
+ * No background image placeholder - only mobile mockup.
  */
 
 const floatingCards = [
   {
     id: "panic",
     number: "1",
-    icon: Shield,
     label: "Panic Alarm Triggered",
-    position: "top-0 left-0",
+    position: "top-12 -left-8 md:left-0",
     delay: 0.1,
-    color: "bg-red-50 text-red-600 border-red-100",
+    bgColor: "bg-red-50",
+    textColor: "text-red-700",
+    borderColor: "border-red-200",
   },
   {
     id: "broadcast",
     number: "2",
-    icon: Radio,
     label: "Live Broadcast Started",
-    position: "top-1/4 right-0",
+    position: "top-1/3 -right-6 md:right-0",
     delay: 0.3,
-    color: "bg-green-50 text-green-600 border-green-100",
+    bgColor: "bg-green-50",
+    textColor: "text-green-700",
+    borderColor: "border-green-200",
   },
   {
     id: "location",
     number: "3",
-    icon: MapPin,
     label: "Live Location Shared",
-    position: "bottom-1/3 left-4",
+    position: "bottom-1/3 -left-8 md:left-0",
     delay: 0.5,
-    color: "bg-amber-50 text-amber-600 border-amber-100",
+    bgColor: "bg-blue-50",
+    textColor: "text-blue-700",
+    borderColor: "border-blue-200",
   },
   {
     id: "team",
     number: "4",
-    icon: Users,
     label: "Monitoring Team Notified",
-    position: "bottom-0 right-2",
+    position: "bottom-12 -right-6 md:right-0",
     delay: 0.7,
-    color: "bg-purple-50 text-purple-600 border-purple-100",
+    bgColor: "bg-purple-50",
+    textColor: "text-purple-700",
+    borderColor: "border-purple-200",
   },
 ];
 
@@ -119,7 +123,7 @@ export default function RingAnnouncementSection() {
             </p>
           </motion.div>
 
-          {/* ── Right Column: Layered Visual Composition ── */}
+          {/* ── Right Column: Mobile Mockup with Numbered Flow Cards ── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -127,61 +131,41 @@ export default function RingAnnouncementSection() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="relative h-[500px] md:h-[600px] flex items-center justify-center"
           >
-            {/* Background emotional visual - direct image placement */}
+            {/* Mobile mockup - centered, no background */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="absolute inset-0 flex items-center justify-center z-0 rounded-3xl overflow-hidden"
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative z-10 w-48 md:w-56"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/lBpMTERFjfzPUjYU.png"
-                alt="Emergency response moment with MySentry and Ring"
-                className="w-full h-full object-cover"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/nnMAAKsVbJPcoFWV.png"
+                alt="MySentry app home screen showing PANIC button, emergency contacts, and health monitoring"
+                className="w-full h-auto drop-shadow-2xl"
               />
             </motion.div>
 
-            {/* Floating numbered cards around the visual */}
+            {/* Floating numbered cards around the mobile mockup */}
             {floatingCards.map((card) => (
               <motion.div
                 key={card.id}
-                initial={{ opacity: 0, scale: 0.7 }}
+                initial={{ opacity: 0, scale: 0.6 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: card.delay }}
-                className={`absolute ${card.position} z-20 w-44 md:w-52`}
+                className={`absolute ${card.position} z-20 w-40 md:w-48`}
               >
-                <div className={`${card.color} border rounded-2xl px-4 py-3 shadow-lg backdrop-blur-sm flex items-start gap-3`}>
+                <div className={`${card.bgColor} ${card.borderColor} border-2 rounded-xl px-3 py-2.5 shadow-lg flex items-center gap-2.5`}>
                   {/* Number badge */}
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white font-bold text-sm shrink-0">
+                  <div className="flex items-center justify-center w-7 h-7 rounded-full bg-white font-bold text-sm shrink-0 shadow-sm">
                     {card.number}
                   </div>
-                  {/* Content */}
-                  <div className="flex-1">
-                    <p className="text-sm font-bold text-gray-800 leading-tight">{card.label}</p>
-                  </div>
+                  {/* Label */}
+                  <p className={`${card.textColor} text-xs font-bold leading-tight`}>{card.label}</p>
                 </div>
               </motion.div>
             ))}
-
-            {/* Soft connecting lines (subtle) */}
-            <svg
-              className="absolute inset-0 w-full h-full z-5 pointer-events-none"
-              style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.05))" }}
-            >
-              <defs>
-                <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="rgba(26, 107, 255, 0.2)" />
-                  <stop offset="100%" stopColor="rgba(26, 107, 255, 0.05)" />
-                </linearGradient>
-              </defs>
-              {/* Subtle connecting lines - kept minimal for premium feel */}
-              <line x1="50%" y1="20%" x2="50%" y2="50%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.3" />
-              <line x1="50%" y1="50%" x2="75%" y2="35%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.2" />
-              <line x1="50%" y1="50%" x2="25%" y2="65%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.2" />
-              <line x1="50%" y1="50%" x2="70%" y2="80%" stroke="url(#lineGrad)" strokeWidth="1.5" opacity="0.2" />
-            </svg>
           </motion.div>
 
         </div>
