@@ -255,12 +255,11 @@ export default function Navbar() {
           <Link
             href="/ring"
             className={cn(
-              "px-3 py-2 text-[12px] font-bold tracking-wider transition-all hover:text-primary relative group font-heading uppercase whitespace-nowrap flex items-center gap-1",
+              "px-3 py-2 text-[12px] font-bold tracking-wider transition-all hover:text-primary relative group font-heading uppercase whitespace-nowrap",
               isActive("/ring") ? "!text-primary" : "!text-black"
             )}
           >
-            <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-[#1c8c3c] text-white text-[8px] font-black mr-0.5">NEW</span>
-            RING
+            Ring Appstore
             <span className={cn("absolute -bottom-1 left-3 right-3 h-[2px] bg-primary transition-all duration-300 scale-x-0 group-hover:scale-x-100 origin-left", isActive("/ring") ? "scale-x-100" : "")} />
           </Link>
         </div>
@@ -385,11 +384,10 @@ export default function Navbar() {
             </Link>
             <Link
               href="/ring"
-              className={cn("flex items-center gap-2 text-[18px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 py-4", isActive("/ring") ? "text-primary" : "text-black")}
+              className={cn("text-[18px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 py-4 block", isActive("/ring") ? "text-primary" : "text-black")}
               onClick={() => setIsOpen(false)}
             >
-              <span className="inline-flex items-center justify-center px-1.5 py-0.5 rounded bg-[#1c8c3c] text-white text-[9px] font-black">NEW</span>
-              RING
+              Ring Appstore
             </Link>
 
             {/* Expandable mega sections */}

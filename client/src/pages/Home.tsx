@@ -20,9 +20,6 @@ export default function Home() {
     <Layout>
       <SEO />
 
-      {/* Ring Appstore announcement - full-width scrolling marquee below navbar */}
-      <RingTopBanner />
-
       {/* Hero with ICP Selector and app screenshot */}
       <HeroSection
         label="Personal Safety and Health Monitoring with 24/7 Emergency Response"
@@ -34,6 +31,9 @@ export default function Home() {
       >
         <ICPSelector className="mt-2" />
       </HeroSection>
+
+      {/* Ring Appstore offer banner - premium announcement at bottom of hero */}
+      <RingTopBanner />
 
       {/* Trust Signals Banner */}
       <TrustBanner />
