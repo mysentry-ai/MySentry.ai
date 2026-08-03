@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import type { Transition } from "framer-motion";
 import { ArrowRight, AlertCircle, Radio, MapPin, Camera, Users } from "lucide-react";
 import { useState } from "react";
 
@@ -9,12 +8,12 @@ import { useState } from "react";
  * Left: Approved copy with badge, headline, body, offer line, CTA, trust line.
  * Right: Mobile mockup + 5 animated numbered flow cards showing panic response steps.
  *
- * Micro-animations:
- * - Phone mockup: fade-in + rises from below (y: 40 → 0)
- * - Panic button icon: soft infinite pulse via scale keyframes
- * - Step cards: staggered top-to-bottom entrance (y: 20 → 0, opacity 0 → 1)
- * - Save 67% badge: subtle glow pulse animation
- * - CTA arrow: translateX on hover
+ * Micro-animations (all using correct Framer Motion API — transition as separate prop):
+ * - Phone mockup: fade-in + rises from below (whileInView)
+ * - Panic button overlay: soft infinite pulse (animate + transition as separate props)
+ * - Step cards: staggered top-to-bottom entrance (whileInView with delay)
+ * - Save 67% badge: subtle glow pulse (animate + transition as separate props)
+ * - CTA arrow: translateX on hover (animate controlled by state)
  * - Mobile responsive: stacked layout with mockup above cards on small screens
  */
 
@@ -61,31 +60,6 @@ const flowSteps = [
   },
 ];
 
-/* Panic button pulse keyframes */
-const panicPulse = {
-  scale: [1, 1.18, 1],
-  opacity: [1, 0.75, 1],
-  transition: {
-    duration: 1.8,
-    repeat: Infinity,
-    ease: "easeInOut" as const,
-  } as Transition,
-};
-
-/* Save 67% glow keyframes */
-const glowPulse = {
-  boxShadow: [
-    "0 0 0px 0px rgba(34,197,94,0)",
-    "0 0 8px 3px rgba(34,197,94,0.55)",
-    "0 0 0px 0px rgba(34,197,94,0)",
-  ],
-  transition: {
-    duration: 2.2,
-    repeat: Infinity,
-    ease: "easeInOut" as const,
-  } as Transition,
-};
-
 export default function RingAnnouncementSection() {
   const [arrowHovered, setArrowHovered] = useState(false);
 
@@ -127,8 +101,20 @@ export default function RingAnnouncementSection() {
               <span className="w-px h-4 bg-gray-200 hidden sm:block" />
               <span className="text-sm font-bold text-primary">Ring Appstore: $4.99/month</span>
               <span className="w-px h-4 bg-gray-200 hidden sm:block" />
+              {/* ✅ FIXED: transition is a separate prop, not nested inside animate */}
               <motion.span
-                animate={glowPulse}
+                animate={{
+                  boxShadow: [
+                    "0 0 0px 0px rgba(34,197,94,0)",
+                    "0 0 10px 4px rgba(34,197,94,0.6)",
+                    "0 0 0px 0px rgba(34,197,94,0)",
+                  ],
+                }}
+                transition={{
+                  duration: 2.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="text-xs font-black text-white bg-primary rounded-full px-2.5 py-0.5"
               >
                 Save 67%
@@ -179,10 +165,18 @@ export default function RingAnnouncementSection() {
                 className="w-[200px] sm:w-[220px] md:w-[200px] h-auto drop-shadow-xl"
                 loading="lazy"
               />
-              {/* Panic button pulse overlay — positioned over the PANIC button area */}
+              {/* ✅ FIXED: Panic button pulse — transition is a separate prop */}
               <motion.div
-                animate={panicPulse}
-                className="absolute left-1/2 -translate-x-1/2 top-[52%] w-14 h-14 rounded-full bg-red-500/20 pointer-events-none"
+                animate={{
+                  scale: [1, 1.25, 1],
+                  opacity: [0.6, 0.2, 0.6],
+                }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="absolute left-1/2 -translate-x-1/2 top-[52%] w-14 h-14 rounded-full bg-red-500/30 pointer-events-none"
               />
             </motion.div>
 
