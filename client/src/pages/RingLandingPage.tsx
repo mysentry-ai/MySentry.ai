@@ -118,11 +118,11 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
 export default function RingLandingPage() {
   const steps = [
-    { icon: Camera, title: "Connect Your Ring Camera", desc: "Link your eligible Ring camera to MySentry through the Ring appstore experience." },
+    { icon: Camera, title: "Connect Your Ring Camera", desc: "Link your Ring camera to MySentry through the Ring appstore experience." },
     { icon: Shield, title: "Activate MySentry", desc: "Start your free trial and set up your Panic Alarm, emergency contacts, and safety preferences." },
     { icon: Phone, title: "Trigger a Panic Alarm", desc: "Use tap, volume button, shake, voice, smartwatch, crash detection, or fall detection to trigger an alarm." },
     { icon: Radio, title: "Live Broadcast Starts", desc: "After the countdown, MySentry activates a live broadcast with key safety information." },
-    { icon: Users, title: "Monitoring Team and Contacts Get Context", desc: "The monitoring team and emergency contacts can access the live broadcast, including location, audio/video, battery status, and Ring camera feed when available." },
+    { icon: Users, title: "Monitoring Team + Contacts Get Notified", desc: "The monitoring team and emergency contacts can access the live broadcast, including location, audio/video, battery status, and Ring camera feed when available." },
   ];
 
   const benefits = [
@@ -154,9 +154,9 @@ export default function RingLandingPage() {
   const familyUses = ["Families", "Seniors living independently", "Caregivers", "Parents", "People living alone", "Shared households"];
 
   const pricingRows = [
-    { cameras: "1 camera", price: "$4.99/mo", plan: "Individual — 1 user" },
-    { cameras: "2 cameras", price: "$9.98/mo", plan: "Individual — 1 user" },
-    { cameras: "3 cameras", price: "$14.97/mo", plan: "Individual — 1 user" },
+    { cameras: "1 camera", price: "$4.99/mo", plan: "Individual 1 user" },
+    { cameras: "2 cameras", price: "$9.98/mo", plan: "Individual 1 user" },
+    { cameras: "3 cameras", price: "$14.97/mo", plan: "Individual 1 user" },
     { cameras: "4+ cameras", price: "Tiered accordingly", plan: "Family — up to 6 users" },
   ];
 
@@ -174,11 +174,15 @@ export default function RingLandingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Copy */}
             <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-              <span className="inline-flex items-center gap-2 bg-white border border-primary/20 text-primary rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-5 shadow-sm">
-                <Camera className="w-3.5 h-3.5" /> MySentry for Ring Users
+              {/* Badge — visual editor: mt-[25px] */}
+              <span className="inline-flex items-center gap-2 bg-white border border-primary/20 text-primary rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-5 shadow-sm mt-[25px]">
+                <Camera className="w-3.5 h-3.5" /> Available on the Ring App Store
               </span>
-              <h1 className="text-4xl md:text-[3.2rem] font-heading font-bold text-[#1a1a1a] leading-tight mb-5">
-                Add Live Safety Response to Your Ring Cameras
+              {/* Headline — visual editor: text-[45px] font-semibold */}
+              <h1 className="text-[45px] font-heading font-semibold text-[#1a1a1a] leading-tight mb-5">
+                Ring protects your home.{" "}
+                <br className="hidden sm:block" />
+                MySentry helps protect you wherever you go.
               </h1>
               <p className="text-lg text-gray-700 mb-4 leading-relaxed">
                 Your Ring cameras help you see what's happening. MySentry helps you act when it matters by connecting your Panic Alarm, live broadcast, monitoring team, emergency contacts, and Ring camera feed into one safety flow.
@@ -190,7 +194,7 @@ export default function RingLandingPage() {
                 <PrimaryCTA />
                 <SecondaryCTA href="#how-it-works" label="How It Works" />
               </div>
-              <p className="text-xs text-gray-400">Available for eligible Ring users through the Ring appstore.</p>
+              <p className="text-xs text-gray-400">Available for Ring users through the Ring Appstore.</p>
             </motion.div>
 
             {/* Visual dashboard mockup */}
@@ -198,53 +202,53 @@ export default function RingLandingPage() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.2 }}
-              className="hidden lg:block"
+              className="relative hidden lg:block"
             >
-              <div className="bg-white rounded-3xl shadow-2xl p-6 border border-gray-100 max-w-sm mx-auto">
-                <div className="flex items-center gap-2 mb-5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-                  <span className="text-xs text-gray-400 ml-2 font-mono">MySentry × Ring</span>
+              {/* Mock dashboard card */}
+              <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 max-w-md ml-auto">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-3 h-3 rounded-full bg-red-400 animate-pulse" />
+                  <span className="text-sm font-bold text-[#1a1a1a]">MySentry — Panic Alarm Active</span>
                 </div>
-                {/* Panic button card */}
-                <div className="bg-red-50 border border-red-100 rounded-2xl p-4 mb-3 flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-red-500 flex items-center justify-center shadow-lg">
-                    <Shield className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-[#1a1a1a] text-sm">Panic Alarm Active</p>
-                    <p className="text-xs text-gray-500">Live broadcast started</p>
+                {/* Ring camera feed row */}
+                <div className="bg-[#0a0a0a] rounded-2xl overflow-hidden mb-4 aspect-video flex items-center justify-center">
+                  <div className="text-center">
+                    <Camera className="w-8 h-8 text-white/30 mx-auto mb-2" />
+                    <p className="text-white/50 text-xs">Ring Camera Feed</p>
                   </div>
                 </div>
-                {/* Ring camera card */}
-                <div className="bg-[#1a6bff]/5 border border-[#1a6bff]/20 rounded-2xl p-4 mb-3 flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#1a6bff]/10 flex items-center justify-center">
-                    <Camera className="w-5 h-5 text-[#1a6bff]" />
+                {/* Info rows */}
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3">
+                    <Camera className="w-4 h-4 text-[#1a6bff]" />
+                    <div>
+                      <p className="font-semibold text-[#1a1a1a] text-sm">Ring Camera Feed</p>
+                      <p className="text-xs text-green-600 font-medium">Live: Front Door</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-[#1a1a1a] text-sm">Ring Camera Feed</p>
-                    <p className="text-xs text-green-600 font-medium">Live — Front Door</p>
+                  {/* Location card */}
+                  <div className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3">
+                    <MapPin className="w-4 h-4 text-blue-500" />
+                    <div>
+                      <p className="font-semibold text-[#1a1a1a] text-sm">Live Location</p>
+                      <p className="text-xs text-gray-500">Sharing with monitoring team</p>
+                    </div>
                   </div>
-                </div>
-                {/* Location card */}
-                <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 mb-3 flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-blue-600" />
+                  {/* Battery */}
+                  <div className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3">
+                    <Battery className="w-4 h-4 text-yellow-500" />
+                    <div>
+                      <p className="font-semibold text-[#1a1a1a] text-sm">Battery Status</p>
+                      <p className="text-xs text-gray-500">87% — Shared with team</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-[#1a1a1a] text-sm">Live Location</p>
-                    <p className="text-xs text-gray-500">Shared with monitoring team</p>
-                  </div>
-                </div>
-                {/* Contacts card */}
-                <div className="bg-purple-50 border border-purple-100 rounded-2xl p-4 flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-purple-100 flex items-center justify-center">
-                    <Users className="w-5 h-5 text-purple-600" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-[#1a1a1a] text-sm">Emergency Contacts</p>
-                    <p className="text-xs text-gray-500">3 contacts notified</p>
+                  {/* Contacts */}
+                  <div className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3">
+                    <Users className="w-4 h-4 text-purple-500" />
+                    <div>
+                      <p className="font-semibold text-[#1a1a1a] text-sm">Emergency Contacts</p>
+                      <p className="text-xs text-gray-500">3 contacts notified</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -258,11 +262,13 @@ export default function RingLandingPage() {
         <div className="container">
           <div className="text-center mb-14">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">The Value</span>
+            {/* Headline — visual editor: ml-[268px] mr-[258px] (these are centering nudges; keep max-w-2xl mx-auto) */}
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] max-w-2xl mx-auto">
-              Ring Shows You What's Happening. MySentry Helps You Respond.
+              A Complete Safety Solution for Home and Personal Protection
             </h2>
-            <p className="text-gray-600 mt-4 max-w-xl mx-auto">
-              Your Ring cameras are already an important part of your home security. MySentry does not replace them. It works with them.
+            {/* Subtext — visual editor: mt-[19px] pr-[41px] max-w-xl mx-auto */}
+            <p className="text-gray-600 mt-[19px] max-w-xl mx-auto pr-[41px]">
+              Ring supports home security. MySentry adds personal emergency response that goes with you.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -307,7 +313,8 @@ export default function RingLandingPage() {
                   <div className="flex-1 h-0.5 bg-gray-200" style={{ visibility: i === steps.length - 1 ? "hidden" : "visible" }} />
                 </div>
                 <span className="text-xs font-bold text-primary uppercase tracking-widest mb-1">Step {i + 1}</span>
-                <h3 className="font-bold text-[#1a1a1a] text-sm mb-1">{step.title}</h3>
+                {/* h3 — visual editor: mb-[2px] */}
+                <h3 className="font-bold text-[#1a1a1a] text-sm mb-[2px]">{step.title}</h3>
                 <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
               </div>
             ))}
@@ -347,7 +354,7 @@ export default function RingLandingPage() {
               More Than a Camera Alert
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              A camera alert can tell you something happened. MySentry helps create an action flow around that moment.
+              MySentry helps turn an emergency moment into a connected response.
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
@@ -399,10 +406,7 @@ export default function RingLandingPage() {
               </div>
             ))}
           </div>
-          {/* Pricing note */}
-          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4 mb-8 text-sm text-yellow-800">
-            <strong>Note:</strong> Pricing details are subject to final confirmation. Please verify the exact public pricing language before publishing.
-          </div>
+          {/* Pricing note removed per visual editor intent */}
           <div className="text-center">
             <PrimaryCTA className="mb-3" />
             <p className="text-xs text-gray-400 mt-3">Cancel anytime. Ring and MySentry subscriptions are separate.</p>
@@ -417,49 +421,34 @@ export default function RingLandingPage() {
             <div>
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Family Plan</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] mb-5">
-                Protect More Than One Person
+                Safety for the Whole Household
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                For homes with multiple Ring cameras and multiple people to protect, MySentry supports a Family Plan for up to 6 members when 4 or more cameras are connected.
+                The MySentry Family Plan supports up to 6 users under one subscription. Each member has their own Panic Alarm, emergency contacts, and safety profile.
               </p>
-              <p className="text-gray-600 mb-8 leading-relaxed">This makes MySentry useful for:</p>
-              <div className="flex flex-wrap gap-2 mb-8">
+              <ul className="space-y-3 mb-8">
                 {familyUses.map((use) => (
-                  <span key={use} className="inline-flex items-center gap-1.5 bg-primary/10 text-primary rounded-full px-4 py-2 text-sm font-semibold">
-                    <Check className="w-3.5 h-3.5" />
-                    {use}
-                  </span>
+                  <li key={use} className="flex items-center gap-3">
+                    <Check className="w-4 h-4 text-primary flex-shrink-0" />
+                    <span className="text-gray-700 text-sm">{use}</span>
+                  </li>
                 ))}
-              </div>
-              <Link
-                href="/families"
-                className="inline-flex items-center gap-2 border-2 border-primary text-primary font-bold rounded-full px-7 py-3 hover:bg-primary hover:text-white transition-all"
-              >
-                Explore Family Protection
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              </ul>
+              <PrimaryCTA />
             </div>
-            <div className="bg-gradient-to-br from-[#e8f5e9] to-[#f0f7ff] rounded-3xl p-8 flex flex-col gap-4">
-              <div className="flex items-center gap-3 bg-white rounded-2xl p-4 shadow-sm">
-                <Users className="w-8 h-8 text-primary" />
-                <div>
-                  <p className="font-bold text-[#1a1a1a] text-sm">Family Plan</p>
-                  <p className="text-xs text-gray-500">Up to 6 members with 4+ cameras</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 bg-white rounded-2xl p-4 shadow-sm">
-                <Camera className="w-8 h-8 text-[#1a6bff]" />
-                <div>
-                  <p className="font-bold text-[#1a1a1a] text-sm">Multiple Ring Cameras</p>
-                  <p className="text-xs text-gray-500">Connect 4+ cameras for full coverage</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3 bg-white rounded-2xl p-4 shadow-sm">
-                <Shield className="w-8 h-8 text-green-600" />
-                <div>
-                  <p className="font-bold text-[#1a1a1a] text-sm">Everyone Protected</p>
-                  <p className="text-xs text-gray-500">Seniors, caregivers, parents, and more</p>
-                </div>
+            <div className="bg-gradient-to-br from-primary/5 to-blue-50 rounded-3xl p-8 border border-primary/10">
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: "Up to 6 users", icon: Users },
+                  { label: "Shared Ring cameras", icon: Camera },
+                  { label: "Individual alarms", icon: Shield },
+                  { label: "Separate contacts", icon: Phone },
+                ].map((item) => (
+                  <div key={item.label} className="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100">
+                    <item.icon className="w-6 h-6 text-primary mx-auto mb-2" />
+                    <p className="text-xs font-semibold text-[#1a1a1a]">{item.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -469,21 +458,24 @@ export default function RingLandingPage() {
       {/* ─── 7. USE CASES ─── */}
       <section className="py-20 bg-[#f8faf8]">
         <div className="container">
-          <div className="text-center mb-12">
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Use Cases</span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a]">
-              When MySentry Can Help
+          <div className="text-center mb-14">
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">When It Matters</span>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] mb-4">
+              Built for Real Situations
             </h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              MySentry is designed for moments when you need more than a camera notification.
+            </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {useCases.map((uc, i) => (
               <motion.div
                 key={uc.title}
-                initial={{ opacity: 0, y: 16 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.07 }}
-                className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow"
               >
                 <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <uc.icon className="w-5 h-5 text-primary" />
@@ -497,7 +489,8 @@ export default function RingLandingPage() {
       </section>
 
       {/* ─── 8. FINAL CTA ─── */}
-      <section className="py-24 bg-gradient-to-br from-[#1a3a1a] to-[#1e5c2e] text-white">
+      {/* Visual editor: final backgroundColor was set to #6ad990 — applied as bg-[#6ad990] */}
+      <section className="py-24 bg-[#6ad990] text-white">
         <div className="container text-center max-w-2xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
