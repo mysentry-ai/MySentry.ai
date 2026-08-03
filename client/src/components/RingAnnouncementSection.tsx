@@ -113,13 +113,13 @@ export default function RingAnnouncementSection() {
           {/* ── Right Column: Mobile Mockup + Flow Cards ── */}
           <div className="flex flex-col lg:flex-row items-start gap-6">
 
-            {/* Mobile Mockup */}
+            {/* Mobile Mockup — slight top offset to align with cards */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="flex-shrink-0 mx-auto lg:mx-0"
+              className="flex-shrink-0 mx-auto lg:mx-0 mt-[18px]"
             >
               <img
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zKfQzXtIiNkDQVAL.png"
@@ -129,8 +129,8 @@ export default function RingAnnouncementSection() {
               />
             </motion.div>
 
-            {/* 5 Flow Cards */}
-            <div className="flex flex-col gap-3 w-full">
+            {/* 5 Flow Cards — pushed down to align with mockup mid-section */}
+            <div className="flex flex-col gap-[4px] w-full mt-[90px]">
               {flowSteps.map((step, i) => {
                 const Icon = step.icon;
                 return (
@@ -141,7 +141,7 @@ export default function RingAnnouncementSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.45, delay: 0.1 + i * 0.12 }}
                     whileHover={{ scale: 1.03, x: 4 }}
-                    className={`flex items-center gap-3 rounded-xl border px-4 py-3 shadow-sm cursor-default ${step.color}`}
+                    className={`flex items-center gap-3 rounded-xl border px-4 shadow-sm cursor-default h-[49px] ${step.color}`}
                   >
                     {/* Number badge */}
                     <span className={`flex-shrink-0 w-6 h-6 rounded-full ${step.badgeColor} text-white text-[11px] font-black flex items-center justify-center`}>
