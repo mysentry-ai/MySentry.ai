@@ -60,21 +60,21 @@ export default function RingReminderBanner() {
               </Link>
             </div>
 
-            {/* ── Right: Mobile Mockup ── */}
-            <div className="relative bg-gradient-to-br from-[#f7faf8] to-white p-8 md:p-12 flex items-center justify-center min-h-[500px] md:min-h-[600px]">
+            {/* ── Right: Mother with Phone Image ── */}
+            <div className="relative overflow-hidden flex items-center justify-center min-h-[500px] md:min-h-[600px]">
 
-              {/* Mobile mockup - centered, no background */}
+              {/* Mother with phone image - full bleed, no background */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.85 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="relative z-10 w-48 md:w-56"
+                className="absolute inset-0 z-0"
               >
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/nnMAAKsVbJPcoFWV.png"
-                  alt="MySentry app home screen showing PANIC button, emergency contacts, and health monitoring"
-                  className="w-full h-auto drop-shadow-2xl"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/PpLEDwHxoIbVfWhh.png"
+                  alt="Woman holding phone showing MySentry app"
+                  className="w-full h-full object-cover object-top"
                 />
               </motion.div>
 
