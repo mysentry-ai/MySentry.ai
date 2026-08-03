@@ -52,7 +52,8 @@ const flowSteps = [
   },
   {
     number: 5,
-    label: "Monitoring Team and Contacts Notified",
+    // Updated label per visual editor intent
+    label: "Monitoring Team + Emergency Contacts Notified",
     icon: Users,
     color: "bg-purple-50 border-purple-200 text-purple-700",
     iconColor: "text-purple-500",
@@ -101,7 +102,7 @@ export default function RingAnnouncementSection() {
               <span className="w-px h-4 bg-gray-200 hidden sm:block" />
               <span className="text-sm font-bold text-primary">Ring Appstore: $4.99/month</span>
               <span className="w-px h-4 bg-gray-200 hidden sm:block" />
-              {/* ✅ FIXED: transition is a separate prop, not nested inside animate */}
+              {/* ✅ transition is a separate prop, not nested inside animate */}
               <motion.span
                 animate={{
                   boxShadow: [
@@ -148,10 +149,12 @@ export default function RingAnnouncementSection() {
 
           {/* ── Right Column: Mobile Mockup + Flow Cards ── */}
           {/* On mobile: stacked vertically (mockup on top, cards below).
-              On desktop: side-by-side (mockup left, cards right). */}
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:items-start">
+              On desktop: side-by-side (mockup left, cards right).
+              Visual editor: mt-[3px] mr-[4px] applied from inline style edits */}
+          <div className="flex flex-col items-center gap-6 lg:flex-row lg:items-start mt-[3px] mr-[4px]">
 
-            {/* Mobile Mockup — fades in and rises from below */}
+            {/* Mobile Mockup — fades in and rises from below
+                Visual editor: ml-[104px] -mt-[2px] mb-[4px] applied from inline style edits */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -162,10 +165,10 @@ export default function RingAnnouncementSection() {
               <img
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zKfQzXtIiNkDQVAL.png"
                 alt="MySentry app showing PANIC button, emergency contacts, and health monitoring"
-                className="w-[200px] sm:w-[220px] md:w-[200px] h-auto drop-shadow-xl"
+                className="w-[200px] sm:w-[220px] md:w-[200px] h-auto drop-shadow-xl ml-[104px] -mt-[2px] mb-[4px]"
                 loading="lazy"
               />
-              {/* ✅ FIXED: Panic button pulse — transition is a separate prop */}
+              {/* ✅ Panic button pulse — transition is a separate prop */}
               <motion.div
                 animate={{
                   scale: [1, 1.25, 1],
@@ -180,7 +183,8 @@ export default function RingAnnouncementSection() {
               />
             </motion.div>
 
-            {/* 5 Flow Cards — staggered top-to-bottom entrance */}
+            {/* 5 Flow Cards — staggered top-to-bottom entrance
+                Visual editor: card label text-[12px] font-normal */}
             <div className="flex flex-col gap-[4px] w-full lg:mt-[90px]">
               {flowSteps.map((step, i) => {
                 const Icon = step.icon;
@@ -200,8 +204,8 @@ export default function RingAnnouncementSection() {
                     </span>
                     {/* Icon */}
                     <Icon className={`w-4 h-4 flex-shrink-0 ${step.iconColor}`} />
-                    {/* Label */}
-                    <span className="text-sm font-semibold leading-snug">
+                    {/* Label — visual editor set to 12px / font-normal */}
+                    <span className="text-[12px] font-normal leading-snug">
                       {step.label}
                     </span>
                   </motion.div>
