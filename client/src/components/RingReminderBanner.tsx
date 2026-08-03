@@ -35,7 +35,7 @@ export default function RingReminderBanner() {
                 <img
                   src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/tBeRfeegjUlLnzcw.png"
                   alt="Ring and MySentry logos"
-                  className="h-10 w-auto"
+                  className="h-[70px] w-auto"
                 />
               </motion.div>
 
