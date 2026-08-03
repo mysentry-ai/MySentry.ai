@@ -35,7 +35,7 @@ export default function RingTopBanner() {
           {repeated.map((text, i) => (
             <span
               key={i}
-              className="flex items-center gap-3 px-8 text-[13px] font-medium whitespace-nowrap"
+              className="flex items-center gap-3 px-8 text-sm font-medium whitespace-nowrap"
             >
               <span className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-primary/80 text-white text-[9px] font-black shrink-0">
                 ●

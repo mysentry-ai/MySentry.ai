@@ -76,7 +76,7 @@ export default function RingReminderBanner() {
 
             {/* ── Left: Copy and CTA ── */}
             <div className="p-8 md:p-12 flex flex-col justify-center">
-              <h3 className="text-2xl md:text-3xl font-heading font-bold text-gray-800 mb-4 leading-tight">
+              <h3 className="text-2xl md:text-3xl font-heading font-bold text-gray-800 mb-4 leading-tight" style={{fontWeight: '600'}}>
                 Complete Your Safety Setup with MySentry
               </h3>
 
@@ -171,7 +171,7 @@ export default function RingReminderBanner() {
 
                   {/* Card header */}
                   <div className="bg-gradient-to-r from-primary/10 to-primary/5 px-6 py-4 border-b border-gray-100">
-                    <p className="text-xs font-bold uppercase tracking-widest text-primary">MySentry Pricing</p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-primary"></p>
                   </div>
 
                   {/* Regular price */}

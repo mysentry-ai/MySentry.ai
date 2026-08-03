@@ -197,7 +197,7 @@ export default function ComparisonSection() {
                       alt="MySentry" 
                       className="h-12 w-auto object-contain"
                       loading="lazy"
-                      width="360" height="160"
+                      width="360" height="160" style={{width: '100px', height: '50px'}}
                     />
                   </div>
                 </div>
