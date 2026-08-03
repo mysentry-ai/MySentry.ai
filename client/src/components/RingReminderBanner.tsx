@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
  * Later homepage reminder banner for Ring Appstore offer.
  * Displays Ring + MySentry logo above heading.
  * Left: Copy and CTA.
- * Right: Mobile mockup showing the MySentry app.
+ * Right: Mother-with-phone image, full bleed.
  */
 
 export default function RingReminderBanner() {
@@ -23,7 +23,7 @@ export default function RingReminderBanner() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
 
             {/* ── Left: Copy and CTA ── */}
-            <div className="p-8 md:p-12 flex flex-col justify-center">
+            <div className="p-8 md:p-12 flex flex-col justify-center min-h-[500px] md:min-h-[627px]">
               {/* Ring + MySentry Logo */}
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
@@ -61,64 +61,16 @@ export default function RingReminderBanner() {
             </div>
 
             {/* ── Right: Mother with Phone Image ── */}
-            <div className="relative overflow-hidden flex items-center justify-center min-h-[500px] md:min-h-[600px]">
-
-              {/* Mother with phone image - full bleed, no background */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
+            <div className="relative overflow-hidden min-h-[500px] md:min-h-[627px]">
+              <motion.img
+                initial={{ opacity: 0, scale: 0.97 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                className="absolute inset-0 z-0"
-              >
-                <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/PpLEDwHxoIbVfWhh.png"
-                  alt="Woman holding phone showing MySentry app"
-                  className="w-full h-full object-cover object-top"
-                />
-              </motion.div>
-
-              {/* Floating pricing card - positioned absolutely */}
-              <motion.div
-                initial={{ opacity: 0, y: 20, x: 30 }}
-                whileInView={{ opacity: 1, y: 0, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="absolute bottom-8 right-4 md:bottom-12 md:right-8 z-20 w-56 md:w-64"
-              >
-                <div className="bg-white rounded-2xl border border-gray-200 shadow-2xl overflow-hidden backdrop-blur-sm">
-
-                  {/* Card header */}
-                  <div className="bg-gradient-to-r from-primary/10 to-primary/5 px-6 py-4 border-b border-gray-100">
-                    <p className="text-xs font-bold uppercase tracking-widest text-primary">MySentry Pricing</p>
-                  </div>
-
-                  {/* Regular price */}
-                  <div className="px-6 py-4 border-b border-gray-100 bg-gray-50/50">
-                    <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-2">Regular Price</p>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-xl font-bold text-gray-400 line-through">$15</span>
-                      <span className="text-xs text-gray-400 font-medium">/month</span>
-                    </div>
-                  </div>
-
-                  {/* Ring Appstore price - highlighted */}
-                  <div className="px-6 py-5 bg-gradient-to-r from-primary/8 to-transparent border-b border-primary/10">
-                    <p className="text-[11px] font-semibold text-primary uppercase tracking-wide mb-2">Ring Appstore Price</p>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-black text-primary">$4.99</span>
-                      <span className="text-sm text-gray-600 font-semibold">/month</span>
-                    </div>
-                  </div>
-
-                  {/* Savings badge */}
-                  <div className="px-6 py-4 bg-primary text-center">
-                    <p className="text-white text-sm font-black tracking-wide">You Save 67%</p>
-                  </div>
-
-                </div>
-              </motion.div>
-
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/PpLEDwHxoIbVfWhh.png"
+                alt="Woman holding phone showing MySentry app"
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
             </div>
 
           </div>
