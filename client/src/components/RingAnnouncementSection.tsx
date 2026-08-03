@@ -1,11 +1,21 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import type { Transition } from "framer-motion";
 import { ArrowRight, AlertCircle, Radio, MapPin, Camera, Users } from "lucide-react";
+import { useState } from "react";
 
 /**
  * Main Ring Appstore announcement section.
  * Left: Approved copy with badge, headline, body, offer line, CTA, trust line.
  * Right: Mobile mockup + 5 animated numbered flow cards showing panic response steps.
+ *
+ * Micro-animations:
+ * - Phone mockup: fade-in + rises from below (y: 40 → 0)
+ * - Panic button icon: soft infinite pulse via scale keyframes
+ * - Step cards: staggered top-to-bottom entrance (y: 20 → 0, opacity 0 → 1)
+ * - Save 67% badge: subtle glow pulse animation
+ * - CTA arrow: translateX on hover
+ * - Mobile responsive: stacked layout with mockup above cards on small screens
  */
 
 const flowSteps = [
@@ -51,7 +61,34 @@ const flowSteps = [
   },
 ];
 
+/* Panic button pulse keyframes */
+const panicPulse = {
+  scale: [1, 1.18, 1],
+  opacity: [1, 0.75, 1],
+  transition: {
+    duration: 1.8,
+    repeat: Infinity,
+    ease: "easeInOut" as const,
+  } as Transition,
+};
+
+/* Save 67% glow keyframes */
+const glowPulse = {
+  boxShadow: [
+    "0 0 0px 0px rgba(34,197,94,0)",
+    "0 0 8px 3px rgba(34,197,94,0.55)",
+    "0 0 0px 0px rgba(34,197,94,0)",
+  ],
+  transition: {
+    duration: 2.2,
+    repeat: Infinity,
+    ease: "easeInOut" as const,
+  } as Transition,
+};
+
 export default function RingAnnouncementSection() {
+  const [arrowHovered, setArrowHovered] = useState(false);
+
   return (
     <section className="py-24 bg-white border-t border-gray-100" id="ring-announcement">
       <div className="container">
@@ -84,23 +121,36 @@ export default function RingAnnouncementSection() {
               </p>
             </div>
 
-            {/* Offer Line */}
+            {/* Offer Line — Save 67% has glow pulse */}
             <div className="inline-flex flex-wrap items-center gap-3 bg-gradient-to-r from-primary/5 to-transparent border border-primary/20 rounded-2xl px-5 py-3 mb-8 shadow-sm">
               <span className="text-sm text-gray-500 line-through">Regular price: $15/month</span>
               <span className="w-px h-4 bg-gray-200 hidden sm:block" />
               <span className="text-sm font-bold text-primary">Ring Appstore: $4.99/month</span>
               <span className="w-px h-4 bg-gray-200 hidden sm:block" />
-              <span className="text-xs font-black text-white bg-primary rounded-full px-2.5 py-0.5">Save 67%</span>
+              <motion.span
+                animate={glowPulse}
+                className="text-xs font-black text-white bg-primary rounded-full px-2.5 py-0.5"
+              >
+                Save 67%
+              </motion.span>
             </div>
 
-            {/* CTA */}
+            {/* CTA — arrow slides right on hover */}
             <div className="mb-6">
               <Link
                 href="/ring"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full px-8 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg text-sm"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full px-8 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg text-sm group"
+                onMouseEnter={() => setArrowHovered(true)}
+                onMouseLeave={() => setArrowHovered(false)}
               >
                 Learn in Detail
-                <ArrowRight className="w-4 h-4" />
+                <motion.span
+                  animate={{ x: arrowHovered ? 5 : 0 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                  className="flex items-center"
+                >
+                  <ArrowRight className="w-4 h-4" />
+                </motion.span>
               </Link>
             </div>
 
@@ -111,35 +161,42 @@ export default function RingAnnouncementSection() {
           </motion.div>
 
           {/* ── Right Column: Mobile Mockup + Flow Cards ── */}
-          <div className="flex flex-col lg:flex-row items-start gap-6">
+          {/* On mobile: stacked vertically (mockup on top, cards below).
+              On desktop: side-by-side (mockup left, cards right). */}
+          <div className="flex flex-col items-center gap-6 lg:flex-row lg:items-start">
 
-            {/* Mobile Mockup — slight top offset to align with cards */}
+            {/* Mobile Mockup — fades in and rises from below */}
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="flex-shrink-0 mx-auto lg:mx-0 mt-[18px]"
+              transition={{ duration: 0.75, delay: 0.1, ease: "easeOut" }}
+              className="flex-shrink-0 mt-0 lg:mt-[18px] relative"
             >
               <img
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zKfQzXtIiNkDQVAL.png"
                 alt="MySentry app showing PANIC button, emergency contacts, and health monitoring"
-                className="w-[180px] md:w-[200px] h-auto drop-shadow-xl"
+                className="w-[200px] sm:w-[220px] md:w-[200px] h-auto drop-shadow-xl"
                 loading="lazy"
+              />
+              {/* Panic button pulse overlay — positioned over the PANIC button area */}
+              <motion.div
+                animate={panicPulse}
+                className="absolute left-1/2 -translate-x-1/2 top-[52%] w-14 h-14 rounded-full bg-red-500/20 pointer-events-none"
               />
             </motion.div>
 
-            {/* 5 Flow Cards — pushed down to align with mockup mid-section */}
-            <div className="flex flex-col gap-[4px] w-full mt-[90px]">
+            {/* 5 Flow Cards — staggered top-to-bottom entrance */}
+            <div className="flex flex-col gap-[4px] w-full lg:mt-[90px]">
               {flowSteps.map((step, i) => {
                 const Icon = step.icon;
                 return (
                   <motion.div
                     key={step.number}
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.45, delay: 0.1 + i * 0.12 }}
+                    transition={{ duration: 0.4, delay: 0.15 + i * 0.13, ease: "easeOut" }}
                     whileHover={{ scale: 1.03, x: 4 }}
                     className={`flex items-center gap-3 rounded-xl border px-4 shadow-sm cursor-default h-[49px] ${step.color}`}
                   >
