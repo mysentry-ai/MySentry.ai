@@ -259,7 +259,7 @@ export default function Navbar() {
               isActive("/ring") ? "!text-primary" : "!text-blue-600"
             )}
           >
-            Ring Appstore
+            Ring
             <span className={cn("absolute -bottom-1 left-3 right-3 h-[2px] bg-primary transition-all duration-300 scale-x-0 group-hover:scale-x-100 origin-left", isActive("/ring") ? "scale-x-100" : "")} />
           </Link>
         </div>

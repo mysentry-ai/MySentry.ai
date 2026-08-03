@@ -57,7 +57,7 @@ export default function HeroSection({
             transition={{ duration: 0.8 }}
             className="max-w-2xl pt-4 md:pt-8"
           >
-            <LabelText variant="primary" className="mb-6 block text-xs font-medium">
+            <LabelText variant="primary" className="mb-6 block text-xs font-medium w-full max-w-sm">
               {label}
             </LabelText>
             <HeroHeading className="text-[#1a1a1a] mb-4">

@@ -27,16 +27,16 @@ export default function RingAnnouncementSection() {
             </span>
 
             {/* Headline */}
-            <h2 className="text-3xl md:text-4xl font-heading font-semibold text-gray-800 mb-4 leading-tight">
+            <h2 className="text-2xl md:text-3xl font-heading font-semibold text-gray-800 mb-4 leading-tight">
               Ring protects your home. MySentry helps protect you wherever you go.
             </h2>
 
             {/* Body Copy */}
             <div className="space-y-4 text-gray-600 leading-relaxed mb-8">
-              <p className="text-sm font-light">
+              <p className="text-sm font-light text-gray-500">
                 Now available on the Ring App Store, MySentry gives Ring users access to a complete safety solution that connects home security with personal safety.
               </p>
-              <p className="text-sm font-light">
+              <p className="text-sm font-light text-gray-500">
                 When you trigger a MySentry Panic Alarm, your live location, audio and video broadcast, battery status, and connected Ring camera feed can be shared with the monitoring team and emergency contacts.
               </p>
             </div>

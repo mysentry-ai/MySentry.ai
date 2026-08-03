@@ -76,12 +76,12 @@ export default function RingReminderBanner() {
 
             {/* ── Left: Copy and CTA ── */}
             <div className="p-8 md:p-12 flex flex-col justify-center">
-              <h3 className="text-2xl md:text-3xl font-heading font-bold text-gray-800 mb-4 leading-tight" style={{fontWeight: '600'}}>
+              <h3 className="text-2xl md:text-3xl font-heading font-semibold text-gray-800 mb-4 leading-tight max-w-sm">
                 Complete Your Safety Setup with MySentry
               </h3>
 
               <p className="text-gray-600 leading-relaxed mb-4">
-                Your Ring cameras support home security. MySentry adds personal emergency response that goes with you. Ring users can access MySentry through the Ring Appstore for $4.99/month instead of the regular $15/month plan.
+                Your Ring cameras support home security. MySentry adds personal emergency response that goes with you. Ring users can access MySentry through the Ring Appstore for $4.99/month.
               </p>
 
               <p className="text-sm font-semibold text-primary mb-8">
