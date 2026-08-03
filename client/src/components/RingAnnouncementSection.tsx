@@ -5,16 +5,15 @@ import { useState } from "react";
 
 /**
  * Main Ring Appstore announcement section.
- * Left: Approved copy with badge, headline, body, offer line, CTA, trust line.
- * Right: Mobile mockup + 5 animated numbered flow cards showing panic response steps.
+ * Left column: Approved copy with badge, headline, body, offer line, CTA, trust line.
+ * Right column: Two independent sub-columns — phone mockup (left) and flow cards (right).
  *
- * Micro-animations (all using correct Framer Motion API — transition as separate prop):
+ * Micro-animations:
  * - Phone mockup: fade-in + rises from below (whileInView)
- * - Panic button overlay: soft infinite pulse (animate + transition as separate props)
  * - Step cards: staggered top-to-bottom entrance (whileInView with delay)
  * - Save 67% badge: subtle glow pulse (animate + transition as separate props)
  * - CTA arrow: translateX on hover (animate controlled by state)
- * - Mobile responsive: stacked layout with mockup above cards on small screens
+ * - Mobile responsive: stacked layout on small screens
  */
 
 const flowSteps = [
@@ -52,7 +51,6 @@ const flowSteps = [
   },
   {
     number: 5,
-    // Updated label per visual editor intent
     label: "Monitoring Team + Emergency Contacts Notified",
     icon: Users,
     color: "bg-purple-50 border-purple-200 text-purple-700",
@@ -87,7 +85,7 @@ export default function RingAnnouncementSection() {
             </h2>
 
             {/* Body Copy */}
-            <div className="space-y-4 text-gray-600 leading-relaxed mb-8">
+            <div className="space-y-4 leading-relaxed mb-8">
               <p className="text-sm font-light text-gray-500">
                 Now available on the Ring App Store, MySentry gives Ring users access to a complete safety solution that connects home security with personal safety.
               </p>
@@ -102,7 +100,6 @@ export default function RingAnnouncementSection() {
               <span className="w-px h-4 bg-gray-200 hidden sm:block" />
               <span className="text-sm font-bold text-primary">Ring Appstore: $4.99/month</span>
               <span className="w-px h-4 bg-gray-200 hidden sm:block" />
-              {/* ✅ transition is a separate prop, not nested inside animate */}
               <motion.span
                 animate={{
                   boxShadow: [
@@ -126,7 +123,7 @@ export default function RingAnnouncementSection() {
             <div className="mb-6">
               <Link
                 href="/ring"
-                className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full px-8 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg text-sm group"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full px-8 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg text-sm"
                 onMouseEnter={() => setArrowHovered(true)}
                 onMouseLeave={() => setArrowHovered(false)}
               >
@@ -147,45 +144,27 @@ export default function RingAnnouncementSection() {
             </p>
           </motion.div>
 
-          {/* ── Right Column: Mobile Mockup + Flow Cards ── */}
-          {/* On mobile: stacked vertically (mockup on top, cards below).
-              On desktop: side-by-side (mockup left, cards right).
-              Visual editor: mt-[3px] mr-[4px] applied from inline style edits */}
-          <div className="flex flex-col items-center gap-6 lg:flex-row lg:items-start mt-[3px] mr-[4px]">
+          {/* ── Right Column: Phone Mockup + Flow Cards (treated separately) ── */}
+          <div className="flex flex-col gap-8 lg:flex-row lg:gap-6 lg:items-start">
 
-            {/* Mobile Mockup — fades in and rises from below
-                Visual editor: ml-[104px] -mt-[2px] mb-[4px] applied from inline style edits */}
+            {/* Phone Mockup — independent, fades in and rises from below */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.75, delay: 0.1, ease: "easeOut" }}
-              className="flex-shrink-0 mt-0 lg:mt-[18px] relative"
+              className="flex-shrink-0 flex justify-center lg:justify-start"
             >
               <img
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zKfQzXtIiNkDQVAL.png"
                 alt="MySentry app showing PANIC button, emergency contacts, and health monitoring"
-                className="w-[200px] sm:w-[220px] md:w-[200px] h-auto drop-shadow-xl ml-[104px] -mt-[2px] mb-[4px]"
+                className="w-[180px] sm:w-[200px] h-auto drop-shadow-xl"
                 loading="lazy"
-              />
-              {/* ✅ Panic button pulse — transition is a separate prop */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.25, 1],
-                  opacity: [0.6, 0.2, 0.6],
-                }}
-                transition={{
-                  duration: 1.8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute left-1/2 -translate-x-1/2 top-[52%] w-14 h-14 rounded-full bg-red-500/30 pointer-events-none"
               />
             </motion.div>
 
-            {/* 5 Flow Cards — staggered top-to-bottom entrance
-                Visual editor: card label text-[12px] font-normal */}
-            <div className="flex flex-col gap-[4px] w-full lg:mt-[90px]">
+            {/* Flow Cards — independent, staggered top-to-bottom entrance */}
+            <div className="flex flex-col gap-2 flex-1">
               {flowSteps.map((step, i) => {
                 const Icon = step.icon;
                 return (
@@ -196,7 +175,7 @@ export default function RingAnnouncementSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.15 + i * 0.13, ease: "easeOut" }}
                     whileHover={{ scale: 1.03, x: 4 }}
-                    className={`flex items-center gap-3 rounded-xl border px-4 shadow-sm cursor-default h-[49px] ${step.color}`}
+                    className={`flex items-center gap-3 rounded-xl border px-4 shadow-sm cursor-default h-[48px] ${step.color}`}
                   >
                     {/* Number badge */}
                     <span className={`flex-shrink-0 w-6 h-6 rounded-full ${step.badgeColor} text-white text-[11px] font-black flex items-center justify-center`}>
@@ -204,7 +183,7 @@ export default function RingAnnouncementSection() {
                     </span>
                     {/* Icon */}
                     <Icon className={`w-4 h-4 flex-shrink-0 ${step.iconColor}`} />
-                    {/* Label — visual editor set to 12px / font-normal */}
+                    {/* Label */}
                     <span className="text-[12px] font-normal leading-snug">
                       {step.label}
                     </span>
