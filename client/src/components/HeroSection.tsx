@@ -101,7 +101,7 @@ export default function HeroSection({
                 <img
                   src={phoneMockupSrc}
                   alt={phoneMockupAlt}
-                  className="relative z-10 w-[350px] md:w-[400px] lg:w-[420px] xl:w-[480px] drop-shadow-2xl rounded-[2.5rem]"
+                  className="relative z-10 w-[350px] md:w-[400px] lg:w-[420px] xl:w-[480px] drop-shadow-2xl rounded-[2.5rem] -mb-[145px]"
                   loading="eager"
                   width="480" height="1040"
                 />
