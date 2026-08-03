@@ -1,53 +1,13 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, Radio, MapPin, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 /**
  * Later homepage reminder banner for Ring Appstore offer.
  * Displays Ring + MySentry logo above heading.
  * Left: Copy and CTA.
- * Right: Mobile mockup with animated flow cards showing the response journey.
- * Flow cards have icons, numbers, and prominent animations.
+ * Right: Mobile mockup showing the MySentry app.
  */
-
-const flowSteps = [
-  {
-    id: "panic",
-    number: "1",
-    icon: Shield,
-    label: "Panic Alarm Triggered",
-    position: "top-8 -left-12 md:left-0",
-    delay: 0.1,
-    bgColor: "bg-red-50",
-    textColor: "text-red-700",
-    borderColor: "border-red-200",
-    iconColor: "text-red-600",
-  },
-  {
-    id: "broadcast",
-    number: "2",
-    icon: Radio,
-    label: "Live Broadcast Started",
-    position: "top-1/3 -right-10 md:right-0",
-    delay: 0.3,
-    bgColor: "bg-green-50",
-    textColor: "text-green-700",
-    borderColor: "border-green-200",
-    iconColor: "text-green-600",
-  },
-  {
-    id: "location",
-    number: "3",
-    icon: MapPin,
-    label: "Live Location Shared",
-    position: "bottom-1/3 -left-12 md:left-0",
-    delay: 0.5,
-    bgColor: "bg-blue-50",
-    textColor: "text-blue-700",
-    borderColor: "border-blue-200",
-    iconColor: "text-blue-600",
-  },
-];
 
 export default function RingReminderBanner() {
   return (
@@ -73,7 +33,7 @@ export default function RingReminderBanner() {
                 className="mb-6"
               >
                 <img
-                  src="https://s3.us-east-1.amazonaws.com/manus-webdev-assets/2EQxSqKCJBwVvJGj.png"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/tBeRfeegjUlLnzcw.png"
                   alt="Ring and MySentry logos"
                   className="h-10 w-auto"
                 />
@@ -100,7 +60,7 @@ export default function RingReminderBanner() {
               </Link>
             </div>
 
-            {/* ── Right: Mobile Mockup with Animated Flow Cards ── */}
+            {/* ── Right: Mobile Mockup ── */}
             <div className="relative bg-gradient-to-br from-[#f7faf8] to-white p-8 md:p-12 flex items-center justify-center min-h-[500px] md:min-h-[600px]">
 
               {/* Mobile mockup - centered, no background */}
@@ -112,55 +72,11 @@ export default function RingReminderBanner() {
                 className="relative z-10 w-48 md:w-56"
               >
                 <img
-                  src="https://s3.us-east-1.amazonaws.com/manus-webdev-assets/nnMAAKsVbJPcoFWV.png"
+                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/nnMAAKsVbJPcoFWV.png"
                   alt="MySentry app home screen showing PANIC button, emergency contacts, and health monitoring"
                   className="w-full h-auto drop-shadow-2xl"
                 />
               </motion.div>
-
-              {/* Animated flow cards with icons and numbers */}
-              {flowSteps.map((step) => {
-                const IconComponent = step.icon;
-                return (
-                  <motion.div
-                    key={step.id}
-                    initial={{ opacity: 0, scale: 0.5, y: 20 }}
-                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ 
-                      duration: 0.6, 
-                      delay: step.delay,
-                      type: "spring",
-                      stiffness: 100,
-                      damping: 12
-                    }}
-                    whileHover={{ scale: 1.08, transition: { duration: 0.3 } }}
-                    className={`absolute ${step.position} z-20 w-44 md:w-52`}
-                  >
-                    <div className={`${step.bgColor} ${step.borderColor} border-2 rounded-2xl px-4 py-3 shadow-xl backdrop-blur-sm flex items-start gap-3 hover:shadow-2xl transition-shadow`}>
-                      
-                      {/* Icon and Number Container */}
-                      <div className="relative shrink-0">
-                        {/* Number badge - positioned absolutely over icon */}
-                        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-white font-bold text-sm shadow-md absolute -top-2 -right-2 z-10 border-2 border-white">
-                          {step.number}
-                        </div>
-                        {/* Icon */}
-                        <div className={`${step.iconColor} p-2 bg-white rounded-lg shadow-sm`}>
-                          <IconComponent className="w-5 h-5" />
-                        </div>
-                      </div>
-
-                      {/* Label */}
-                      <div className="flex-1 pt-1">
-                        <p className={`${step.textColor} text-sm font-bold leading-tight`}>
-                          {step.label}
-                        </p>
-                      </div>
-                    </div>
-                  </motion.div>
-                );
-              })}
 
               {/* Floating pricing card - positioned absolutely */}
               <motion.div
