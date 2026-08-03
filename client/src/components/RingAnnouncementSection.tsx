@@ -158,13 +158,13 @@ export default function RingAnnouncementSection() {
               <img
                 src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zKfQzXtIiNkDQVAL.png"
                 alt="MySentry app showing PANIC button, emergency contacts, and health monitoring"
-                className="w-[180px] sm:w-[200px] h-auto drop-shadow-xl"
+                className="h-auto drop-shadow-xl mr-[3px] ml-[35px] w-[234px]"
                 loading="lazy"
               />
             </motion.div>
 
             {/* Flow Cards — independent, staggered top-to-bottom entrance */}
-            <div className="flex flex-col gap-2 flex-1">
+            <div className="flex flex-col gap-2 flex-1 pt-[17px]">
               {flowSteps.map((step, i) => {
                 const Icon = step.icon;
                 return (
@@ -175,7 +175,7 @@ export default function RingAnnouncementSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.15 + i * 0.13, ease: "easeOut" }}
                     whileHover={{ scale: 1.03, x: 4 }}
-                    className={`flex items-center gap-3 rounded-xl border px-4 shadow-sm cursor-default h-[48px] ${step.color}`}
+                    className={`flex items-center gap-3 rounded-xl border pr-[8px] pl-[11px] shadow-sm cursor-default h-[48px] mt-[6px] mb-[6px] ${step.color}`}
                   >
                     {/* Number badge */}
                     <span className={`flex-shrink-0 w-6 h-6 rounded-full ${step.badgeColor} text-white text-[11px] font-black flex items-center justify-center`}>
