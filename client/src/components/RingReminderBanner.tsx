@@ -4,10 +4,10 @@ import { ArrowRight, Shield, Radio, MapPin, Users } from "lucide-react";
 
 /**
  * Later homepage reminder banner for Ring Appstore offer.
+ * Displays Ring + MySentry logo above heading.
  * Left: Copy and CTA.
- * Right: Mobile mockup (247PersonalSafety...) with animated flow cards showing the response journey.
+ * Right: Mobile mockup with animated flow cards showing the response journey.
  * Flow cards have icons, numbers, and prominent animations.
- * No background image - mobile mockup only.
  */
 
 const flowSteps = [
@@ -47,18 +47,6 @@ const flowSteps = [
     borderColor: "border-blue-200",
     iconColor: "text-blue-600",
   },
-  {
-    id: "team",
-    number: "4",
-    icon: Users,
-    label: "Monitoring Team Notified",
-    position: "bottom-8 -right-10 md:right-0",
-    delay: 0.7,
-    bgColor: "bg-purple-50",
-    textColor: "text-purple-700",
-    borderColor: "border-purple-200",
-    iconColor: "text-purple-600",
-  },
 ];
 
 export default function RingReminderBanner() {
@@ -76,6 +64,21 @@ export default function RingReminderBanner() {
 
             {/* ── Left: Copy and CTA ── */}
             <div className="p-8 md:p-12 flex flex-col justify-center">
+              {/* Ring + MySentry Logo */}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="mb-6"
+              >
+                <img
+                  src="https://s3.us-east-1.amazonaws.com/manus-webdev-assets/2EQxSqKCJBwVvJGj.png"
+                  alt="Ring and MySentry logos"
+                  className="h-10 w-auto"
+                />
+              </motion.div>
+
               <h3 className="text-2xl md:text-3xl font-heading font-semibold text-gray-800 mb-4 leading-tight max-w-sm">
                 Complete Your Safety Setup with MySentry
               </h3>
@@ -109,7 +112,7 @@ export default function RingReminderBanner() {
                 className="relative z-10 w-48 md:w-56"
               >
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/nnMAAKsVbJPcoFWV.png"
+                  src="https://s3.us-east-1.amazonaws.com/manus-webdev-assets/nnMAAKsVbJPcoFWV.png"
                   alt="MySentry app home screen showing PANIC button, emergency contacts, and health monitoring"
                   className="w-full h-auto drop-shadow-2xl"
                 />
@@ -171,7 +174,7 @@ export default function RingReminderBanner() {
 
                   {/* Card header */}
                   <div className="bg-gradient-to-r from-primary/10 to-primary/5 px-6 py-4 border-b border-gray-100">
-                    <p className="text-xs font-bold uppercase tracking-widest text-primary"></p>
+                    <p className="text-xs font-bold uppercase tracking-widest text-primary">MySentry Pricing</p>
                   </div>
 
                   {/* Regular price */}
