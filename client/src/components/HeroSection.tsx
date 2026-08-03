@@ -101,9 +101,9 @@ export default function HeroSection({
                 <img
                   src={phoneMockupSrc}
                   alt={phoneMockupAlt}
-                  className="relative z-10 w-[280px] xl:w-[320px] drop-shadow-2xl rounded-[2.5rem]"
+                  className="relative z-10 w-[350px] md:w-[400px] lg:w-[420px] xl:w-[480px] drop-shadow-2xl rounded-[2.5rem]"
                   loading="eager"
-                  width="320" height="693"
+                  width="480" height="1040"
                 />
               </motion.div>
             </motion.div>
