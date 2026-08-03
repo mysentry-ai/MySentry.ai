@@ -37,7 +37,7 @@ export default function HeroSection({
   phoneMockupAlt = "MySentry app dashboard",
 }: HeroSectionProps) {
   return (
-    <section className={cn("relative min-h-screen flex items-center bg-[#e8f5e9] pt-24 pb-20 overflow-hidden", className)}>
+    <section className={cn("relative min-h-screen flex items-center bg-[#e8f5e9] pt-32 md:pt-40 lg:pt-24 pb-20 overflow-hidden", className)}>
       <div className="absolute inset-0 z-0">
          <img
            src={imageSrc}
@@ -49,15 +49,15 @@ export default function HeroSection({
          <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
       </div>
 
-      <div className="container relative z-20">
+      <div className="container relative z-20 mt-8 md:mt-12 lg:mt-0">
         <div className={cn("flex items-center gap-12", phoneMockupSrc ? "lg:grid lg:grid-cols-2" : "")}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl"
+            className="max-w-2xl pt-4 md:pt-8"
           >
-            <LabelText variant="primary" className="mb-4 block">
+            <LabelText variant="primary" className="mb-6 block">
               {label}
             </LabelText>
             <HeroHeading className="text-[#1a1a1a] mb-4">
@@ -91,7 +91,11 @@ export default function HeroSection({
               transition={{ duration: 0.9, delay: 0.2 }}
               className="hidden lg:flex justify-center items-end"
             >
-              <div className="relative">
+              <motion.div
+                animate={{ y: [0, -15, 0] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="relative"
+              >
                 {/* Subtle glow behind the phone */}
                 <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-75" />
                 <img
@@ -101,7 +105,7 @@ export default function HeroSection({
                   loading="eager"
                   width="320" height="693"
                 />
-              </div>
+              </motion.div>
             </motion.div>
           )}
         </div>

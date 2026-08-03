@@ -1,56 +1,13 @@
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import { Camera, MapPin, Radio, Users, Shield, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 /**
  * Main Ring Appstore announcement section with premium two-column layout.
  * Left: Approved copy with badge, headline, subheadline, body, offer line, CTA, trust line.
- * Right: Mobile mockup (247PersonalSafety...) centered with numbered flow cards floating around it.
- * No background image placeholder - only mobile mockup.
+ * Right: Mother with phone image as primary visual with floating pricing card overlay.
+ * Simplified layout without flow cards.
  */
-
-const floatingCards = [
-  {
-    id: "panic",
-    number: "1",
-    label: "Panic Alarm Triggered",
-    position: "top-12 -left-8 md:left-0",
-    delay: 0.1,
-    bgColor: "bg-red-50",
-    textColor: "text-red-700",
-    borderColor: "border-red-200",
-  },
-  {
-    id: "broadcast",
-    number: "2",
-    label: "Live Broadcast Started",
-    position: "top-1/3 -right-6 md:right-0",
-    delay: 0.3,
-    bgColor: "bg-green-50",
-    textColor: "text-green-700",
-    borderColor: "border-green-200",
-  },
-  {
-    id: "location",
-    number: "3",
-    label: "Live Location Shared",
-    position: "bottom-1/3 -left-8 md:left-0",
-    delay: 0.5,
-    bgColor: "bg-blue-50",
-    textColor: "text-blue-700",
-    borderColor: "border-blue-200",
-  },
-  {
-    id: "team",
-    number: "4",
-    label: "Monitoring Team Notified",
-    position: "bottom-12 -right-6 md:right-0",
-    delay: 0.7,
-    bgColor: "bg-purple-50",
-    textColor: "text-purple-700",
-    borderColor: "border-purple-200",
-  },
-];
 
 export default function RingAnnouncementSection() {
   return (
@@ -67,7 +24,6 @@ export default function RingAnnouncementSection() {
           >
             {/* Badge */}
             <span className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-6">
-              <Camera className="w-3.5 h-3.5" />
               Available on the Ring Appstore
             </span>
 
@@ -123,49 +79,70 @@ export default function RingAnnouncementSection() {
             </p>
           </motion.div>
 
-          {/* ── Right Column: Mobile Mockup with Numbered Flow Cards ── */}
+          {/* ── Right Column: Mother with Phone Image + Floating Pricing Card ── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="relative h-[500px] md:h-[600px] flex items-center justify-center"
+            className="relative h-[500px] md:h-[650px] flex items-center justify-center"
           >
-            {/* Mobile mockup - centered, no background */}
+            {/* Mother with phone image - centered */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative z-10 w-48 md:w-56"
+              className="relative z-10 w-full max-w-xs md:max-w-sm"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/nnMAAKsVbJPcoFWV.png"
-                alt="MySentry app home screen showing PANIC button, emergency contacts, and health monitoring"
-                className="w-full h-auto drop-shadow-2xl"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/NgnjiRdpGycUJmmW.png"
+                alt="Woman holding phone displaying MySentry app with emergency features and health monitoring"
+                className="w-full h-auto object-contain"
               />
             </motion.div>
 
-            {/* Floating numbered cards around the mobile mockup */}
-            {floatingCards.map((card) => (
-              <motion.div
-                key={card.id}
-                initial={{ opacity: 0, scale: 0.6 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: card.delay }}
-                className={`absolute ${card.position} z-20 w-40 md:w-48`}
-              >
-                <div className={`${card.bgColor} ${card.borderColor} border-2 rounded-xl px-3 py-2.5 shadow-lg flex items-center gap-2.5`}>
-                  {/* Number badge */}
-                  <div className="flex items-center justify-center w-7 h-7 rounded-full bg-white font-bold text-sm shrink-0 shadow-sm">
-                    {card.number}
-                  </div>
-                  {/* Label */}
-                  <p className={`${card.textColor} text-xs font-bold leading-tight`}>{card.label}</p>
+            {/* Floating pricing card - positioned absolutely bottom-right */}
+            <motion.div
+              initial={{ opacity: 0, y: 20, x: 30 }}
+              whileInView={{ opacity: 1, y: 0, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="absolute bottom-4 right-4 md:bottom-8 md:right-8 z-20 w-56 md:w-64"
+            >
+              <div className="bg-white rounded-2xl border border-gray-200 shadow-2xl overflow-hidden backdrop-blur-sm">
+
+                {/* Card header */}
+                <div className="bg-gradient-to-r from-primary/10 to-primary/5 px-6 py-4 border-b border-gray-100">
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary">MySentry Pricing</p>
                 </div>
-              </motion.div>
-            ))}
+
+                {/* Regular price */}
+                <div className="px-6 py-4 border-b border-gray-100 bg-gray-50/50">
+                  <p className="text-[11px] font-semibold text-gray-500 uppercase tracking-wide mb-2">Regular Price</p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-xl font-bold text-gray-400 line-through">$15</span>
+                    <span className="text-xs text-gray-400 font-medium">/month</span>
+                  </div>
+                </div>
+
+                {/* Ring Appstore price - highlighted */}
+                <div className="px-6 py-5 bg-gradient-to-r from-primary/8 to-transparent border-b border-primary/10">
+                  <p className="text-[11px] font-semibold text-primary uppercase tracking-wide mb-2">Ring Appstore Price</p>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl font-black text-primary">$4.99</span>
+                    <span className="text-sm text-gray-600 font-semibold">/month</span>
+                  </div>
+                </div>
+
+                {/* Savings badge */}
+                <div className="px-6 py-4 bg-primary text-center">
+                  <p className="text-white text-sm font-black tracking-wide">You Save 67%</p>
+                </div>
+
+              </div>
+            </motion.div>
+
           </motion.div>
 
         </div>

@@ -26,8 +26,8 @@ export default function Home() {
         title="Always Someone Watching Over You."
         imageSrc="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-family-multigenerational-E2GoJdiP8d3vSnxHi3L9fP.webp"
         imageAlt="Multi-generational family including grandmother, parents, and teenagers enjoying time together outdoors"
-        phoneMockupSrc="/images/app-home.png"
-        phoneMockupAlt="MySentry app home screen showing the PANIC button, emergency contacts, Family Connectivity, and Health Monitoring with Watch Connected"
+        phoneMockupSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/BzgBcDcalRQkMtut.webp"
+        phoneMockupAlt="MySentry app on multiple devices showing personal safety features, health monitoring, and emergency response capabilities"
       >
         <ICPSelector className="mt-2" />
       </HeroSection>
