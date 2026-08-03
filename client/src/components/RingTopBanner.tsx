@@ -29,7 +29,7 @@ export default function RingTopBanner() {
         }
       `}</style>
 
-      <div className="flex items-center h-10">
+      <div className="flex items-center h-10 bg-gray-400">
         {/* Scrolling text */}
         <div className="ring-marquee-track">
           {repeated.map((text, i) => (
