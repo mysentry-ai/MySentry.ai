@@ -4,8 +4,8 @@ import { ArrowRight } from "lucide-react";
 
 /**
  * Main Ring Appstore announcement section with premium two-column layout.
- * Left: Approved copy with badge, headline, subheadline, body, offer line, CTA, trust line.
- * Right: Visual area with previous design elements.
+ * Left: Approved copy with badge, headline, body, offer line, CTA, trust line.
+ * Right: Mother with phone image as primary visual.
  */
 
 export default function RingAnnouncementSection() {
@@ -67,21 +67,20 @@ export default function RingAnnouncementSection() {
             </p>
           </motion.div>
 
-          {/* ── Right Column: Visual Area ── */}
+          {/* ── Right Column: Mother with Phone Image ── */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="relative h-[500px] md:h-[600px] flex items-center justify-center"
+            className="relative flex items-center justify-center"
           >
-            {/* Placeholder for visual - can be customized */}
-            <div className="w-full h-full bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl border border-gray-200 flex items-center justify-center">
-              <div className="text-center text-gray-400">
-                <p className="text-sm font-medium">Visual Area</p>
-                <p className="text-xs">Previous design elements</p>
-              </div>
-            </div>
+            <img
+              src="https://s3.us-east-1.amazonaws.com/manus-webdev-assets/NgnjiRdpGycUJmmW.png"
+              alt="Mother holding phone with MySentry app"
+              className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain"
+              loading="lazy"
+            />
           </motion.div>
 
         </div>
