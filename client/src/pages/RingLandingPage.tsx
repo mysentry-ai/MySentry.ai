@@ -318,22 +318,8 @@ export default function RingLandingPage() {
                   <div className="w-3 h-3 rounded-full bg-red-400 animate-pulse" />
                   <span className="text-sm font-bold text-[#1a1a1a]">MySentry — Panic Alarm Active</span>
                 </div>
-                {/* Ring camera feed row */}
-                <div className="bg-[#0a0a0a] rounded-2xl overflow-hidden mb-4 aspect-video flex items-center justify-center">
-                  <div className="text-center">
-                    <Camera className="w-8 h-8 text-white/30 mx-auto mb-2" />
-                    <p className="text-white/50 text-xs">Ring Camera Feed</p>
-                  </div>
-                </div>
                 {/* Info rows */}
                 <div className="space-y-3">
-                  <div className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3">
-                    <Camera className="w-4 h-4 text-[#1a6bff]" />
-                    <div>
-                      <p className="font-semibold text-[#1a1a1a] text-sm">Ring Camera Feed</p>
-                      <p className="text-xs text-green-600 font-medium">Live: Front Door</p>
-                    </div>
-                  </div>
                   {/* Location card */}
                   <div className="flex items-center gap-3 bg-gray-50 rounded-xl px-4 py-3">
                     <MapPin className="w-4 h-4 text-blue-500" />
