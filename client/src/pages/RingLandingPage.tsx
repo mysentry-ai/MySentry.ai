@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import {
@@ -13,6 +13,8 @@ import {
   Video,
   Phone,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Check,
   ArrowRight,
   Mic,
@@ -23,6 +25,112 @@ import {
   Heart,
 } from "lucide-react";
 import { trackLeadEvent } from "@/lib/metaPixel";
+
+const BANNER_SLIDES = [
+  {
+    id: 1,
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/tEgnkIBmbJqdCHOJ.webp",
+    alt: "Banner 1: Your Ring Camera. Your Choice.",
+  },
+  {
+    id: 2,
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/EJRLIibINmGoxdqW.webp",
+    alt: "Banner 2: One Tap Starts Your Emergency Response",
+  },
+  {
+    id: 3,
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/NnmYAYbrAFvzspEv.webp",
+    alt: "Banner 3: Stay Connected During the Emergency",
+  },
+];
+
+function BannerSlider() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(1);
+
+  const goTo = useCallback((index: number, dir: number) => {
+    setDirection(dir);
+    setCurrent(index);
+  }, []);
+
+  const prev = useCallback(() => {
+    goTo((current - 1 + BANNER_SLIDES.length) % BANNER_SLIDES.length, -1);
+  }, [current, goTo]);
+
+  const next = useCallback(() => {
+    goTo((current + 1) % BANNER_SLIDES.length, 1);
+  }, [current, goTo]);
+
+  // Auto-advance every 5s
+  useEffect(() => {
+    const timer = setInterval(next, 5000);
+    return () => clearInterval(timer);
+  }, [next]);
+
+  const variants = {
+    enter: (dir: number) => ({ x: dir > 0 ? "100%" : "-100%", opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (dir: number) => ({ x: dir > 0 ? "-100%" : "100%", opacity: 0 }),
+  };
+
+  return (
+    <div className="relative w-full overflow-hidden bg-black select-none">
+      <AnimatePresence initial={false} custom={direction} mode="popLayout">
+        <motion.div
+          key={current}
+          custom={direction}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+          transition={{ duration: 0.55, ease: "easeInOut" }}
+          className="w-full"
+        >
+          <img
+            src={BANNER_SLIDES[current].src}
+            alt={BANNER_SLIDES[current].alt}
+            className="w-full h-auto block"
+            draggable={false}
+          />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Prev / Next arrows */}
+      <button
+        onClick={prev}
+        aria-label="Previous banner"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-colors"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+      <button
+        onClick={next}
+        aria-label="Next banner"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/30 hover:bg-black/50 text-white flex items-center justify-center transition-colors"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+
+      {/* Dot indicators labeled 1, 2, 3 */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex items-center gap-3">
+        {BANNER_SLIDES.map((slide, i) => (
+          <button
+            key={slide.id}
+            onClick={() => goTo(i, i > current ? 1 : -1)}
+            aria-label={`Go to banner ${i + 1}`}
+            className={`w-7 h-7 rounded-full text-xs font-bold transition-all ${
+              i === current
+                ? "bg-white text-[#1a1a1a] shadow-md scale-110"
+                : "bg-white/40 text-white hover:bg-white/70"
+            }`}
+          >
+            {i + 1}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 const RING_CTA_LINK = "/pricing#pricing-plans";
 
@@ -301,8 +409,8 @@ export default function RingLandingPage() {
               One Panic Alarm. More Context. Faster Support.
             </h2>
           </div>
-          {/* Desktop horizontal timeline */}
-          <div className="hidden md:flex items-start gap-4 mb-12">
+          {/* Desktop horizontal timeline — step labels only, no descriptions */}
+          <div className="hidden md:flex items-start gap-4">
             {steps.map((step, i) => (
               <div key={step.title} className="flex-1 flex flex-col items-center text-center">
                 <div className="relative flex items-center w-full mb-4">
@@ -313,14 +421,12 @@ export default function RingLandingPage() {
                   <div className="flex-1 h-0.5 bg-gray-200" style={{ visibility: i === steps.length - 1 ? "hidden" : "visible" }} />
                 </div>
                 <span className="text-xs font-bold text-primary uppercase tracking-widest mb-1">Step {i + 1}</span>
-                {/* h3 — visual editor: mb-[2px] */}
                 <h3 className="font-bold text-[#1a1a1a] text-sm mb-[2px]">{step.title}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{step.desc}</p>
               </div>
             ))}
           </div>
-          {/* Mobile vertical timeline */}
-          <div className="md:hidden flex flex-col gap-6 mb-12">
+          {/* Mobile vertical timeline — step labels only */}
+          <div className="md:hidden flex flex-col gap-6">
             {steps.map((step, i) => (
               <div key={step.title} className="flex gap-4">
                 <div className="flex flex-col items-center">
@@ -329,21 +435,18 @@ export default function RingLandingPage() {
                   </div>
                   {i < steps.length - 1 && <div className="w-0.5 flex-1 bg-gray-200 mt-2" />}
                 </div>
-                <div className="pb-6">
+                <div className="pb-4">
                   <span className="text-xs font-bold text-primary uppercase tracking-widest">Step {i + 1}</span>
-                  <h3 className="font-bold text-[#1a1a1a] mt-0.5 mb-1">{step.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{step.desc}</p>
+                  <h3 className="font-bold text-[#1a1a1a] mt-0.5">{step.title}</h3>
                 </div>
               </div>
             ))}
           </div>
-          {/* CTA block */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 text-center max-w-lg mx-auto">
-            <h3 className="font-bold text-[#1a1a1a] text-xl mb-4">Ready to add MySentry to your Ring setup?</h3>
-            <PrimaryCTA />
-          </div>
         </div>
       </section>
+
+      {/* ─── 3b. BANNER SLIDER ─── */}
+      <BannerSlider />
 
       {/* ─── 4. MORE THAN A CAMERA ALERT ─── */}
       <section className="py-20 bg-white">
