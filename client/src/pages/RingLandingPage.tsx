@@ -132,7 +132,7 @@ function BannerSlider() {
   );
 }
 
-const RING_CTA_LINK = "/pricing#pricing-plans";
+const RING_CTA_LINK = "https://ring.com/appstore/mysentry?q=mysen";
 
 function PrimaryCTA({ className = "" }: { className?: string }) {
   return (
