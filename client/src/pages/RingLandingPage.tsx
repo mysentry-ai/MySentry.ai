@@ -754,7 +754,7 @@ export default function RingLandingPage() {
             transition={{ duration: 0.7 }}
           >
             <Camera className="w-12 h-12 text-primary mx-auto mb-6" />
-            <h2 className="text-[50px] font-heading font-bold mb-5 text-center">
+            <h2 className="text-[50px] font-heading font-bold mb-[25px] text-center">
               Turn Your Ring Setup Into a Connected Safety System
             </h2>
             <p className="text-white mb-[30px] leading-relaxed text-center max-w-2xl mx-auto">
@@ -790,8 +790,6 @@ export default function RingLandingPage() {
           </div>
           {/* Final bottom CTA */}
           <div className="text-center mt-14">
-            <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">Ready to Add MySentry to Your Ring Setup?</h3>
-            <p className="text-gray-600 mb-6">Start your free trial today and connect your Ring cameras to MySentry's live safety response system.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <PrimaryCTA />
             </div>
