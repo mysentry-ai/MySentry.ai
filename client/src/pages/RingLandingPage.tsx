@@ -387,7 +387,27 @@ export default function RingLandingPage() {
 
       {/* ─── 3. HOW IT WORKS — removed per user request ─── */}
 
-      {/* ─── 3b. BANNER SLIDER ─── */}
+      {/* ─── 3b. BANNER SLIDER INTRO ─── */}
+      <section className="py-16 bg-white text-center">
+        <div className="container max-w-3xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-3 block">How It Works Together</span>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] mb-4">
+              Ring Watches Your Home. MySentry Watches Over You.
+            </h2>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              When a Panic Alarm is triggered, MySentry immediately connects your emergency contacts and 24/7 monitoring team with your live location, audio, video, and your Ring camera feed. One tap. Complete context. Faster support.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ─── 3c. BANNER SLIDER ─── */}
       <BannerSlider />
 
       {/* ─── 4. MORE THAN A CAMERA ALERT ─── */}
@@ -459,17 +479,17 @@ export default function RingLandingPage() {
         </div>
       </section>
 
-      {/* ─── 6. FAMILY SAFETY ─── */}
+      {/* ─── 6. FAMILY SAFETY + PHONE MOCKUPS ─── */}
       <section className="py-20 bg-white">
-        <div className="container max-w-4xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="container max-w-5xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
             <div>
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Family Plan</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] mb-5">
                 Safety for the Whole Household
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                The MySentry Family Plan supports up to 6 users under one subscription. Each member has their own Panic Alarm, emergency contacts, and safety profile.
+                The MySentry Family Plan supports up to 6 users under one subscription. Each member has their own Panic Alarm, emergency contacts, and safety profile. Ring cameras are shared across the household so everyone benefits from the same home coverage.
               </p>
               <ul className="space-y-3 mb-8">
                 {familyUses.map((use) => (
@@ -496,6 +516,55 @@ export default function RingLandingPage() {
                 ))}
               </div>
             </div>
+          </div>
+
+          {/* Phone mockups row */}
+          <div className="text-center mb-10">
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">The App Experience</span>
+            <h3 className="text-2xl md:text-3xl font-heading font-bold text-[#1a1a1a] mb-3">
+              Two apps. One complete safety system.
+            </h3>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              MySentry lives on your phone and watch. Ring lives on your cameras. Together they give you and your family full coverage at home and on the go.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            {/* MySentry home screen */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex flex-col items-center gap-4"
+            >
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/JbaBOEeIbpgHfPlZ.png"
+                alt="MySentry app home screen showing Panic Alarm, emergency contacts, and Ring subscription"
+                className="w-[220px] drop-shadow-2xl"
+              />
+              <div className="text-center">
+                <p className="font-bold text-[#1a1a1a] mb-1">MySentry App</p>
+                <p className="text-gray-500 text-sm">Panic Alarm, emergency contacts, health monitoring, and your Ring subscription all in one place.</p>
+              </div>
+            </motion.div>
+            {/* Ring cameras screen */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.12 }}
+              className="flex flex-col items-center gap-4"
+            >
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/GvDINfEprdchXgVS.png"
+                alt="Ring cameras screen showing live front door camera feed connected to MySentry"
+                className="w-[220px] drop-shadow-2xl"
+              />
+              <div className="text-center">
+                <p className="font-bold text-[#1a1a1a] mb-1">Ring Camera Feed</p>
+                <p className="text-gray-500 text-sm">Your Ring cameras connect to MySentry. During an active alarm, the live feed is shared with your monitoring team and emergency contacts.</p>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -536,11 +605,11 @@ export default function RingLandingPage() {
                 She had a medical episode. Her daughter was 400 miles away.
               </h3>
               <p className="text-white/80 text-sm leading-relaxed max-w-md">
-                MySentry detected the fall and triggered an alert within 2 minutes. Her daughter and the 24/7 monitoring team were notified instantly with her live location and status.
+                MySentry detected the fall and triggered an alert within 2 minutes. Her daughter and the 24/7 monitoring team were notified instantly with her live location, status, and the live Ring camera feed from her living room.
               </p>
               <div className="mt-5 flex items-center gap-2">
                 <Shield className="w-4 h-4 text-primary" />
-                <span className="text-white/70 text-xs font-semibold">Fall Detection + Emergency Contact Alert + Monitoring Team</span>
+                <span className="text-white/70 text-xs font-semibold">Fall Detection + Ring Camera Feed + Emergency Contact Alert + Monitoring Team</span>
               </div>
             </div>
           </motion.div>
@@ -570,7 +639,7 @@ export default function RingLandingPage() {
                   Kids playing outside. Parents staying connected.
                 </h3>
                 <p className="text-white/70 text-xs leading-relaxed">
-                  Ring watches the yard. MySentry keeps the whole family covered with a Panic Alarm and live monitoring.
+                  Ring cameras watch the yard and front door. MySentry keeps every family member covered with individual Panic Alarms, live location sharing, and 24/7 monitoring.
                 </p>
               </div>
             </motion.div>
@@ -598,7 +667,7 @@ export default function RingLandingPage() {
                   She made it home. Her parents knew the moment she walked in.
                 </h3>
                 <p className="text-white/70 text-xs leading-relaxed">
-                  Ring camera at the front door. MySentry on her phone. Parents get peace of mind without hovering.
+                  The Ring doorbell camera confirmed she arrived. MySentry on her phone means she has a Panic Alarm if anything goes wrong. Parents get peace of mind without hovering.
                 </p>
               </div>
             </motion.div>
@@ -626,7 +695,7 @@ export default function RingLandingPage() {
                 </span>
                 <p className="text-white/60 text-[10px] font-semibold uppercase tracking-widest mb-1">The Williams family, Chicago</p>
                 <h3 className="font-bold text-white text-sm leading-snug">
-                  A health episode at home. Help was already on the way.
+                  A health episode at home. The monitoring team saw it on the Ring feed before anyone called.
                 </h3>
               </div>
             </motion.div>
@@ -651,7 +720,7 @@ export default function RingLandingPage() {
                 </span>
                 <p className="text-white/60 text-[10px] font-semibold uppercase tracking-widest mb-1">David, 38 — Traveling for work</p>
                 <h3 className="font-bold text-white text-sm leading-snug">
-                  Away from home. Still in control.
+                  Away from home. Ring cameras and MySentry kept him connected to every corner of his house.
                 </h3>
               </div>
             </motion.div>
@@ -676,7 +745,7 @@ export default function RingLandingPage() {
                 </span>
                 <p className="text-white/60 text-[10px] font-semibold uppercase tracking-widest mb-1">Michelle, 41 — Home office, Seattle</p>
                 <h3 className="font-bold text-white text-sm leading-snug">
-                  Home alone all day. Protected all day.
+                  Home alone all day. Ring at the door. MySentry on her wrist. Protected all day.
                 </h3>
               </div>
             </motion.div>
@@ -707,7 +776,7 @@ export default function RingLandingPage() {
                   Her mom lives alone. She sleeps better knowing MySentry is watching.
                 </h3>
                 <p className="text-white/70 text-xs leading-relaxed">
-                  Families caring for elderly parents remotely get instant alerts when something is wrong, not just a missed call.
+                  Jennifer gets instant MySentry alerts with live location and status — plus the Ring camera feed from her mother's home — when something is wrong. Not just a missed call.
                 </p>
               </div>
             </motion.div>
@@ -735,7 +804,7 @@ export default function RingLandingPage() {
                   Ring protects the home. MySentry protects the people.
                 </h3>
                 <p className="text-white/70 text-xs leading-relaxed">
-                  Together, they create a complete safety ecosystem for every member of your household, wherever they are.
+                  Ring cameras protect the home. MySentry protects the people inside it. Together, they create a complete safety ecosystem for every member of your household, wherever they are.
                 </p>
               </div>
             </motion.div>
