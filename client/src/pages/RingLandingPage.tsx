@@ -386,50 +386,7 @@ export default function RingLandingPage() {
         </div>
       </section>
 
-      {/* ─── 3. HOW IT WORKS ─── */}
-      <section id="how-it-works" className="py-20 bg-[#f8faf8]">
-        <div className="container">
-          <div className="text-center mb-14">
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Step by Step</span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a]">
-              One Panic Alarm. More Context. Faster Support.
-            </h2>
-          </div>
-          {/* Desktop horizontal timeline — step labels only, no descriptions */}
-          <div className="hidden md:flex items-start gap-4">
-            {steps.map((step, i) => (
-              <div key={step.title} className="flex-1 flex flex-col items-center text-center">
-                <div className="relative flex items-center w-full mb-4">
-                  <div className="flex-1 h-0.5 bg-gray-200" style={{ visibility: i === 0 ? "hidden" : "visible" }} />
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-md flex-shrink-0 z-10">
-                    <step.icon className="w-5 h-5 text-white" />
-                  </div>
-                  <div className="flex-1 h-0.5 bg-gray-200" style={{ visibility: i === steps.length - 1 ? "hidden" : "visible" }} />
-                </div>
-                <span className="text-xs font-bold text-primary uppercase tracking-widest mb-1">Step {i + 1}</span>
-                <h3 className="font-bold text-[#1a1a1a] text-sm mb-[2px]">{step.title}</h3>
-              </div>
-            ))}
-          </div>
-          {/* Mobile vertical timeline — step labels only */}
-          <div className="md:hidden flex flex-col gap-6">
-            {steps.map((step, i) => (
-              <div key={step.title} className="flex gap-4">
-                <div className="flex flex-col items-center">
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md flex-shrink-0">
-                    <step.icon className="w-4 h-4 text-white" />
-                  </div>
-                  {i < steps.length - 1 && <div className="w-0.5 flex-1 bg-gray-200 mt-2" />}
-                </div>
-                <div className="pb-4">
-                  <span className="text-xs font-bold text-primary uppercase tracking-widest">Step {i + 1}</span>
-                  <h3 className="font-bold text-[#1a1a1a] mt-0.5">{step.title}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ─── 3. HOW IT WORKS — removed per user request ─── */}
 
       {/* ─── 3b. BANNER SLIDER ─── */}
       <BannerSlider />
@@ -544,10 +501,10 @@ export default function RingLandingPage() {
         </div>
       </section>
 
-      {/* ─── 7. USE CASES ─── */}
-      <section className="py-20 bg-[#f8faf8]">
+      {/* ─── 7. USE CASES — Humanistic persona cards ─── */}
+      <section className="py-24 bg-[#f8faf8]">
         <div className="container">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">When It Matters</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] mb-4">
               Built for Real Situations
@@ -556,24 +513,139 @@ export default function RingLandingPage() {
               MySentry is designed for moments when you need more than a camera notification.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {useCases.map((uc, i) => (
-              <motion.div
-                key={uc.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow"
-              >
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <uc.icon className="w-5 h-5 text-primary" />
+
+          {/* Row 1: Sarah — large feature card with phone mockup */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="bg-gradient-to-br from-[#e8f5e9] to-[#d0f0da] rounded-3xl p-8 flex flex-col justify-between min-h-[340px] relative overflow-hidden"
+            >
+              <div className="relative z-10">
+                <span className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-5">
+                  <Home className="w-3 h-3" /> At Home
+                </span>
+                <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1">Sarah, 34 — Working from home</p>
+                <h3 className="text-2xl font-heading font-bold text-[#1a1a1a] mb-3 leading-snug">
+                  "I heard something downstairs. I didn't want to call 911 yet."
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed max-w-sm">
+                  Sarah triggered a silent Panic Alarm. Her Ring camera feed and live location were instantly shared with the monitoring team and her husband — without making a sound.
+                </p>
+              </div>
+              <div className="mt-6 flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center">
+                  <Shield className="w-4 h-4 text-primary" />
                 </div>
-                <h3 className="font-bold text-[#1a1a1a] mb-2">{uc.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{uc.desc}</p>
-              </motion.div>
-            ))}
+                <span className="text-sm font-semibold text-gray-700">Panic Alarm + Ring Camera Feed activated</span>
+              </div>
+            </motion.div>
+
+            {/* Phone mockup card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-[#1a1a1a] rounded-3xl p-8 flex items-center justify-center min-h-[340px]"
+            >
+              <img
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/dJtzWYlEKDkYROHg.png"
+                alt="MySentry Ring home screen showing Panic button and emergency contacts"
+                className="h-[300px] w-auto object-contain drop-shadow-2xl"
+              />
+            </motion.div>
           </div>
+
+          {/* Row 2: Three smaller persona cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <span className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-4">
+                <Car className="w-3 h-3" /> On the Road
+              </span>
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">Marcus, 28 — Late-night commuter</p>
+              <h3 className="font-bold text-[#1a1a1a] mb-2 leading-snug">His car was rear-ended on an empty road.</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Crash detection triggered automatically. His emergency contacts received his live location and audio feed within seconds.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.12 }}
+              className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <span className="inline-flex items-center gap-1.5 bg-purple-50 text-purple-600 text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-4">
+                <Heart className="w-3 h-3" /> Family
+              </span>
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">Linda, 71 — Living independently</p>
+              <h3 className="font-bold text-[#1a1a1a] mb-2 leading-snug">She fell in the kitchen. No one was home.</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Fall detection activated her alarm. Her daughter and the monitoring team were notified with her location and battery status instantly.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.19 }}
+              className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <span className="inline-flex items-center gap-1.5 bg-orange-50 text-orange-600 text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-4">
+                <Mic className="w-3 h-3" /> Voice Trigger
+              </span>
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">James, 42 — Caregiver</p>
+              <h3 className="font-bold text-[#1a1a1a] mb-2 leading-snug">His hands were full. He couldn't reach his phone.</h3>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                A voice command triggered the alarm. The monitoring team received his live audio feed and location without him touching his device.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Row 3: Wide card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="bg-gradient-to-r from-primary/10 to-blue-50 rounded-3xl p-8 flex flex-col sm:flex-row items-center gap-8"
+          >
+            <div className="flex-1">
+              <span className="inline-flex items-center gap-1.5 bg-white text-primary text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-4 shadow-sm">
+                <Watch className="w-3 h-3" /> Smartwatch
+              </span>
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-1">Priya, 38 — Running solo at night</p>
+              <h3 className="text-xl font-heading font-bold text-[#1a1a1a] mb-3 leading-snug">
+                "I felt unsafe. I didn't want to stop running to reach my phone."
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed max-w-lg">
+                A tap on her smartwatch triggered the Panic Alarm. Her emergency contacts received her live GPS location and audio feed — all while she kept moving.
+              </p>
+            </div>
+            <div className="flex-shrink-0 flex items-center gap-4">
+              <div className="bg-white rounded-2xl p-4 shadow-md text-center w-36">
+                <Watch className="w-6 h-6 text-primary mx-auto mb-2" />
+                <p className="text-xs font-bold text-[#1a1a1a]">Smartwatch Trigger</p>
+                <p className="text-[10px] text-gray-400 mt-0.5">One tap. Instant alarm.</p>
+              </div>
+              <div className="bg-white rounded-2xl p-4 shadow-md text-center w-36">
+                <MapPin className="w-6 h-6 text-blue-500 mx-auto mb-2" />
+                <p className="text-xs font-bold text-[#1a1a1a]">Live Location</p>
+                <p className="text-[10px] text-gray-400 mt-0.5">Shared with contacts</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
