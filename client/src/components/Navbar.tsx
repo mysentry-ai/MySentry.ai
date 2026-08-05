@@ -255,8 +255,8 @@ export default function Navbar() {
           <Link
             href="/ring"
             className={cn(
-              "px-3 py-2 text-[12px] font-semibold tracking-wider transition-all hover:text-primary relative group font-heading uppercase whitespace-nowrap",
-              isActive("/ring") ? "!text-primary" : "!text-blue-600"
+              "px-3 py-2 text-[12px] font-semibold tracking-wider transition-all relative group font-heading uppercase whitespace-nowrap",
+              isActive("/ring") ? "!text-[#007BC2]" : "!text-[#007BC2]"
             )}
           >
             Ring

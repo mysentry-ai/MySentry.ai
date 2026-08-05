@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -29,17 +28,17 @@ import { trackLeadEvent } from "@/lib/metaPixel";
 const BANNER_SLIDES = [
   {
     id: 1,
-    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/ozVYFldRngspjPAZ.svg",
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/GzpPXCbNdEngHizk.svg",
     alt: "Banner 1: Your Ring Camera. Your Choice.",
   },
   {
     id: 2,
-    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/kCLkvVLDcKZPEDZR.svg",
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/XOiGexWvFbFqTfBN.svg",
     alt: "Banner 2: One Tap Starts Your Emergency Response",
   },
   {
     id: 3,
-    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/SgnJkwkGuzmdMTTK.svg",
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/gJAzedDaZvliUBsh.svg",
     alt: "Banner 3: Stay Connected During the Emergency",
   },
 ];
@@ -136,14 +135,16 @@ const RING_CTA_LINK = "https://ring.com/appstore/mysentry?q=mysen";
 
 function PrimaryCTA({ className = "" }: { className?: string }) {
   return (
-    <Link
+    <a
       href={RING_CTA_LINK}
+      target="_blank"
+      rel="noopener noreferrer"
       onClick={trackLeadEvent}
       className={`inline-flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full px-8 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg ${className}`}
     >
       Start Free with Ring
       <ArrowRight className="w-4 h-4" />
-    </Link>
+    </a>
   );
 }
 
@@ -538,7 +539,7 @@ export default function RingLandingPage() {
               className="flex flex-col items-center gap-4"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/JbaBOEeIbpgHfPlZ.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/JueFNKWucxAyvIwu.png"
                 alt="MySentry app home screen showing Panic Alarm, emergency contacts, and Ring subscription"
                 className="w-[220px] drop-shadow-2xl"
               />
@@ -556,7 +557,7 @@ export default function RingLandingPage() {
               className="flex flex-col items-center gap-4"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/GvDINfEprdchXgVS.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/qKOQFkpbfBadjlLJ.png"
                 alt="Ring cameras screen showing live front door camera feed connected to MySentry"
                 className="w-[220px] drop-shadow-2xl"
               />
@@ -591,7 +592,7 @@ export default function RingLandingPage() {
             className="relative rounded-3xl overflow-hidden mb-8 min-h-[420px] group"
           >
             <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/GIWTqdizTcNuFqLe.png"
+              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/BbppbgbqJxLfuGtU.png"
               alt="Elderly African American woman alone at home needing help"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
@@ -625,7 +626,7 @@ export default function RingLandingPage() {
               className="relative rounded-3xl overflow-hidden min-h-[320px] group"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/XIocornhCZAyYPVh.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/ObhkOUrtCZKmakLY.png"
                 alt="Hispanic family watching children play in backyard"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -653,7 +654,7 @@ export default function RingLandingPage() {
               className="relative rounded-3xl overflow-hidden min-h-[320px] group"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/XweOCvIoRCGDxOeK.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/wMPRYwQXkKUopNbN.png"
                 alt="Teenage girl arriving home safely from school"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -684,7 +685,7 @@ export default function RingLandingPage() {
               className="relative rounded-3xl overflow-hidden min-h-[280px] group"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/QkDMEnOfThdUQUoC.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/uJYXVLzEDZLlNwgo.png"
                 alt="African American couple dealing with a health emergency in the kitchen"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -709,7 +710,7 @@ export default function RingLandingPage() {
               className="relative rounded-3xl overflow-hidden min-h-[280px] group"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/jwcovbGxLYSsSMrK.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/NHHkoMhUZunbgqaW.png"
                 alt="Homeowner monitoring his home remotely from an airport"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -734,7 +735,7 @@ export default function RingLandingPage() {
               className="relative rounded-3xl overflow-hidden min-h-[280px] group"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/vQLBPdleaopVbzCv.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/XlAAIttkaGhBjmBf.png"
                 alt="Asian American woman working from home safely"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -762,7 +763,7 @@ export default function RingLandingPage() {
               className="relative rounded-3xl overflow-hidden min-h-[300px] group"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/jDwUunAspkFjJwWc.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/ktlrhoChnzCUXbaB.png"
                 alt="Adult daughter video calling elderly mother to check on her"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -790,7 +791,7 @@ export default function RingLandingPage() {
               className="relative rounded-3xl overflow-hidden min-h-[300px] group"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/RblmWJiQFbHKrSTA.png"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/aUGvYdujEXXMFIqe.png"
                 alt="Multicultural American family in their bright living room"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
@@ -830,14 +831,16 @@ export default function RingLandingPage() {
               Your Ring cameras are already helping you monitor your home. MySentry adds a live safety response layer when you need action, context, and support.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
+              <a
                 href={RING_CTA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={trackLeadEvent}
                 className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full px-8 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
               >
                 Activate MySentry with Ring
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -868,14 +871,16 @@ export default function RingLandingPage() {
 
       {/* Sticky mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-100 shadow-lg px-4 py-3">
-        <Link
+        <a
           href={RING_CTA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={trackLeadEvent}
           className="flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full w-full py-4 text-base hover:bg-primary/90 transition-all"
         >
           Start Free with Ring
           <ArrowRight className="w-4 h-4" />
-        </Link>
+        </a>
       </div>
     </Layout>
   );
