@@ -300,7 +300,6 @@ export default function RingLandingPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <PrimaryCTA />
-                <SecondaryCTA href="#how-it-works" label="How It Works" />
               </div>
               <p className="text-xs text-gray-400">Available for Ring users through the Ring Appstore.</p>
             </motion.div>
@@ -755,10 +754,10 @@ export default function RingLandingPage() {
             transition={{ duration: 0.7 }}
           >
             <Camera className="w-12 h-12 text-primary mx-auto mb-6" />
-            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-5">
+            <h2 className="text-[50px] font-heading font-bold mb-5 text-center">
               Turn Your Ring Setup Into a Connected Safety System
             </h2>
-            <p className="text-gray-300 mb-8 leading-relaxed">
+            <p className="text-white mb-[30px] leading-relaxed text-center max-w-2xl mx-auto">
               Your Ring cameras are already helping you monitor your home. MySentry adds a live safety response layer when you need action, context, and support.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
@@ -769,13 +768,6 @@ export default function RingLandingPage() {
               >
                 Activate MySentry with Ring
                 <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href={RING_CTA_LINK}
-                onClick={trackLeadEvent}
-                className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-bold rounded-full px-8 py-4 hover:bg-white/20 transition-all"
-              >
-                Start Free Trial
               </Link>
             </div>
           </motion.div>
@@ -802,7 +794,6 @@ export default function RingLandingPage() {
             <p className="text-gray-600 mb-6">Start your free trial today and connect your Ring cameras to MySentry's live safety response system.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <PrimaryCTA />
-              <SecondaryCTA href="#how-it-works" label="See How It Works" />
             </div>
           </div>
         </div>
