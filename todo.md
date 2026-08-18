@@ -975,3 +975,6 @@
 
 ## GitHub Website Image Archive (August 2026)
 - [x] Inventory, archive, validate, and push every image currently referenced by the live website to GitHub with a tracked manifest
+
+## Blog Page Visibility Fix (August 2026)
+- [x] Diagnose and restore blog posts on the /blogs page, verify rendering, and synchronize the correction to GitHub

@@ -1,0 +1,112 @@
+import { Link } from "wouter";
+import { ArrowRight, Scale } from "lucide-react";
+import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
+import GetStartedSection from "@/components/GetStartedSection";
+
+const comparisons = [
+  {
+    title: "Noonlight vs MySentry",
+    description: "Compare Noonlight and MySentry on panic button features, monitoring, fall detection, health tracking, and live video response.",
+    href: "/compare/noonlight-vs-mysentry",
+  },
+  {
+    title: "Life360 vs MySentry",
+    description: "See how Life360's location sharing stacks up against MySentry's emergency response, health monitoring, and professional monitoring.",
+    href: "/compare/life360-vs-mysentry",
+  },
+  {
+    title: "FallCall vs MySentry",
+    description: "Both target seniors, but MySentry adds live video, health monitoring, crash detection, and MeetSafe check-ins.",
+    href: "/compare/fallcall-vs-mysentry",
+  },
+  {
+    title: "Google Personal Safety vs MySentry",
+    description: "Google offers free crash detection, but MySentry provides 24/7 professional monitoring, health tracking, and more.",
+    href: "/compare/google-personal-safety-vs-mysentry",
+  },
+  {
+    title: "SOSecure / ADT vs MySentry",
+    description: "Compare traditional professional monitoring from SOSecure/ADT with MySentry's modern, app-based safety approach.",
+    href: "/compare/sosecure-adt-vs-mysentry",
+  },
+  {
+    title: "Medical Alert Devices vs MySentry",
+    description: "Old lanyard buttons vs a modern safety app. See which gives seniors more protection without the stigma.",
+    href: "/compare/medical-alert-devices-vs-mysentry",
+  },
+  {
+    title: "Oura Ring vs MySentry",
+    description: "Oura tracks sleep and recovery. MySentry adds fall detection, panic alarm, and 24/7 professional monitoring. See the full comparison.",
+    href: "/compare/oura-ring-vs-mysentry",
+  },
+  {
+    title: "WHOOP vs MySentry",
+    description: "WHOOP monitors strain and recovery. MySentry monitors your safety. See which one fits your life.",
+    href: "/compare/whoop-vs-mysentry",
+  },
+  {
+    title: "Medical Guardian vs MySentry",
+    description: "Medical Guardian requires a base station and monthly equipment fees. MySentry works on any iPhone or Android. Compare features and pricing.",
+    href: "/compare/medical-guardian-vs-mysentry",
+  },
+  {
+    title: "Lively vs MySentry",
+    description: "Lively requires proprietary hardware. MySentry turns your existing phone and watch into a full safety system.",
+    href: "/compare/lively-vs-mysentry",
+  },
+  {
+    title: "Apple Watch Fall Detection vs MySentry",
+    description: "Apple Watch detects falls but has no professional monitoring. MySentry adds 24/7 response, health alerts, and a panic button.",
+    href: "/compare/apple-watch-fall-detection-vs-mysentry",
+  },
+];
+
+export default function CompareHub() {
+  return (
+    <Layout>
+      <SEO />
+      {/* Hero — title + subtitle + CTA only */}
+      <section className="min-h-[calc(100vh-80px)] flex items-center bg-gradient-to-b from-[#e8f5e9] to-white">
+        <div className="container max-w-6xl mx-auto px-4 py-16">
+          <div className="text-center">
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">Comparisons</span>
+            <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-3 uppercase tracking-tighter">
+              How MySentry Compares
+            </h1>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+              See how we stack up. Make the best choice for your safety.
+            </p>
+            <a href="/pricing">
+              <button className="bg-primary text-white font-bold px-8 py-4 rounded-full hover:bg-primary/90 transition-all inline-flex items-center gap-2">
+                Start Free Trial <ArrowRight className="w-4 h-4" />
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Cards */}
+      <section className="py-20 bg-white">
+        <div className="container max-w-6xl mx-auto px-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {comparisons.map((comp) => (
+              <Link key={comp.href} href={comp.href} onClick={() => window.scrollTo(0, 0)}>
+                <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 cursor-pointer h-full">
+                  <Scale className="w-10 h-10 text-primary mb-4" />
+                  <h2 className="text-xl font-bold text-[#1a1a1a] mb-3">{comp.title}</h2>
+                  <p className="text-gray-600 mb-4 leading-relaxed">{comp.description}</p>
+                  <span className="inline-flex items-center text-primary font-bold text-sm">
+                    Read Comparison <ArrowRight className="ml-1 w-4 h-4" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+      <GetStartedSection />
+    </Layout>
+  );
+}
