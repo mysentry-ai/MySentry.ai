@@ -7,6 +7,7 @@ import SEO from '../components/SEO';
 import { ArrowLeft, Clock, Calendar, Share2, Facebook, Twitter, Linkedin, Loader2 } from 'lucide-react';
 import BlogCTA from '../components/BlogCTA';
 import { Link } from 'wouter';
+import { fallbackBlogCategories, getFallbackBlogPostBySlug, getFallbackRelatedPosts } from '@/lib/blogFallback';
 
 const BlogPost = () => {
   const [match, params] = useRoute('/blog/:slug');
@@ -19,7 +20,10 @@ const BlogPost = () => {
     { enabled: !!slug }
   );
 
-  const post = postQuery.data?.post;
+  const apiPost = postQuery.data?.post;
+  const fallbackPost = !postQuery.isLoading && !apiPost ? getFallbackBlogPostBySlug(slug) : null;
+  const post = apiPost || fallbackPost;
+  const useFallbackPost = !apiPost && !!fallbackPost;
   const isRedirect = postQuery.data?.redirect;
   const newSlug = postQuery.data?.newSlug;
 
@@ -40,15 +44,17 @@ const BlogPost = () => {
     },
     { enabled: !!post?.categoryId && !!post?.id }
   );
-  const relatedPosts = relatedQuery.data || [];
+  const relatedPosts = useFallbackPost
+    ? getFallbackRelatedPosts(post?.categoryId ?? 0, post?.id ?? 0)
+    : relatedQuery.data || [];
 
   // Fetch categories for name lookup
   const categoriesQuery = trpc.blog.public.categories.useQuery();
   const categoryMap = useMemo(() => {
     const map: Record<number, string> = {};
-    (categoriesQuery.data || []).forEach(c => { map[c.id] = c.name; });
+    (useFallbackPost ? fallbackBlogCategories : categoriesQuery.data || []).forEach(c => { map[c.id] = c.name; });
     return map;
-  }, [categoriesQuery.data]);
+  }, [categoriesQuery.data, useFallbackPost]);
 
   // Scroll to top on mount
   useEffect(() => {
@@ -88,6 +94,8 @@ const BlogPost = () => {
   }
 
   const categoryName = post.categoryId ? categoryMap[post.categoryId] : null;
+  const postUpdatedAt = post.updatedAt;
+  const postHeroImageCaption = post.heroImageCaption;
 
   return (
     <div className="min-h-screen bg-[#fcfbf9] font-sans text-gray-900">
@@ -108,7 +116,7 @@ const BlogPost = () => {
             description: post.metaDescription || post.excerpt || '',
             image: post.heroImageUrl || undefined,
             datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
-            dateModified: post.updatedAt ? new Date(post.updatedAt).toISOString() : undefined,
+            dateModified: postUpdatedAt ? new Date(postUpdatedAt).toISOString() : undefined,
             author: {
               "@type": "Organization",
               name: post.authorName || "MySentry Editorial Team",
@@ -181,9 +189,9 @@ const BlogPost = () => {
                 {categoryName}
               </div>
             )}
-            {post.heroImageCaption && (
+            {postHeroImageCaption && (
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                <p className="text-white text-sm text-center">{post.heroImageCaption}</p>
+                <p className="text-white text-sm text-center">{postHeroImageCaption}</p>
               </div>
             )}
           </div>

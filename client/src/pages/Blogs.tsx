@@ -7,26 +7,32 @@ import { Link } from 'wouter';
 import { ArrowRight, Clock, Calendar, Loader2 } from 'lucide-react';
 import HeroSection from "@/components/HeroSection";
 import { trpc } from '@/lib/trpc';
+import { fallbackBlogCategories, fallbackBlogPosts } from '@/lib/blogFallback';
 
 const Blogs = () => {
   const [categoryId, setCategoryId] = useState<number | null>(null);
 
   // Fetch categories
   const categoriesQuery = trpc.blog.public.categories.useQuery();
-  const categories = categoriesQuery.data || [];
+  const remoteCategories = categoriesQuery.data || [];
 
   // Fetch posts from database
   const postsQuery = trpc.blog.public.list.useQuery({
     categoryId: categoryId ?? undefined,
     limit: 200,
   });
-  const posts = postsQuery.data?.posts || [];
+  const remotePosts = postsQuery.data?.posts || [];
+  const useFallbackPosts = !postsQuery.isLoading && remotePosts.length === 0;
+  const categories = useFallbackPosts ? fallbackBlogCategories : remoteCategories;
+  const posts = useFallbackPosts
+    ? fallbackBlogPosts.filter((post) => categoryId === null || post.categoryId === categoryId)
+    : remotePosts;
 
   // Featured blog (first published post)
   const featuredBlog = categoryId === null ? posts[0] : null;
   const gridPosts = categoryId === null ? posts.slice(1) : posts;
 
-  const isLoading = postsQuery.isLoading;
+  const isLoading = postsQuery.isLoading && !useFallbackPosts;
 
   // Build a category name lookup
   const categoryMap = useMemo(() => {
@@ -186,7 +192,7 @@ const Blogs = () => {
           </AnimatePresence>
         )}
 
-        {!isLoading && posts.length === 0 && (
+        {!isLoading && posts.length === 0 && !useFallbackPosts && (
           <div className="text-center py-20">
             <p className="text-xl text-gray-500 font-light">No articles found in this category.</p>
             <button 
