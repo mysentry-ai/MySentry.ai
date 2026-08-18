@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -28,17 +29,17 @@ import { trackLeadEvent } from "@/lib/metaPixel";
 const BANNER_SLIDES = [
   {
     id: 1,
-    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/GzpPXCbNdEngHizk.svg",
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/tEgnkIBmbJqdCHOJ.webp",
     alt: "Banner 1: Your Ring Camera. Your Choice.",
   },
   {
     id: 2,
-    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/XOiGexWvFbFqTfBN.svg",
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/EJRLIibINmGoxdqW.webp",
     alt: "Banner 2: One Tap Starts Your Emergency Response",
   },
   {
     id: 3,
-    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/gJAzedDaZvliUBsh.svg",
+    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/NnmYAYbrAFvzspEv.webp",
     alt: "Banner 3: Stay Connected During the Emergency",
   },
 ];
@@ -131,20 +132,18 @@ function BannerSlider() {
   );
 }
 
-const RING_CTA_LINK = "https://ring.com/appstore/mysentry?q=mysen";
+const RING_CTA_LINK = "/pricing#pricing-plans";
 
 function PrimaryCTA({ className = "" }: { className?: string }) {
   return (
-    <a
+    <Link
       href={RING_CTA_LINK}
-      target="_blank"
-      rel="noopener noreferrer"
       onClick={trackLeadEvent}
       className={`inline-flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full px-8 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg ${className}`}
     >
       Start Free with Ring
       <ArrowRight className="w-4 h-4" />
-    </a>
+    </Link>
   );
 }
 
@@ -301,6 +300,7 @@ export default function RingLandingPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <PrimaryCTA />
+                <SecondaryCTA href="#how-it-works" label="How It Works" />
               </div>
               <p className="text-xs text-gray-400">Available for Ring users through the Ring Appstore.</p>
             </motion.div>
@@ -386,29 +386,52 @@ export default function RingLandingPage() {
         </div>
       </section>
 
-      {/* ─── 3. HOW IT WORKS — removed per user request ─── */}
-
-      {/* ─── 3b. BANNER SLIDER INTRO ─── */}
-      <section className="py-16 bg-white text-center">
-        <div className="container max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-          >
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-3 block">How It Works Together</span>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] mb-4">
-              Ring Watches Your Home. MySentry Watches Over You.
+      {/* ─── 3. HOW IT WORKS ─── */}
+      <section id="how-it-works" className="py-20 bg-[#f8faf8]">
+        <div className="container">
+          <div className="text-center mb-14">
+            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Step by Step</span>
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a]">
+              One Panic Alarm. More Context. Faster Support.
             </h2>
-            <p className="text-gray-600 text-lg leading-relaxed">
-              When a Panic Alarm is triggered, MySentry immediately connects your emergency contacts and 24/7 monitoring team with your live location, audio, video, and your Ring camera feed. One tap. Complete context. Faster support.
-            </p>
-          </motion.div>
+          </div>
+          {/* Desktop horizontal timeline — step labels only, no descriptions */}
+          <div className="hidden md:flex items-start gap-4">
+            {steps.map((step, i) => (
+              <div key={step.title} className="flex-1 flex flex-col items-center text-center">
+                <div className="relative flex items-center w-full mb-4">
+                  <div className="flex-1 h-0.5 bg-gray-200" style={{ visibility: i === 0 ? "hidden" : "visible" }} />
+                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center shadow-md flex-shrink-0 z-10">
+                    <step.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="flex-1 h-0.5 bg-gray-200" style={{ visibility: i === steps.length - 1 ? "hidden" : "visible" }} />
+                </div>
+                <span className="text-xs font-bold text-primary uppercase tracking-widest mb-1">Step {i + 1}</span>
+                <h3 className="font-bold text-[#1a1a1a] text-sm mb-[2px]">{step.title}</h3>
+              </div>
+            ))}
+          </div>
+          {/* Mobile vertical timeline — step labels only */}
+          <div className="md:hidden flex flex-col gap-6">
+            {steps.map((step, i) => (
+              <div key={step.title} className="flex gap-4">
+                <div className="flex flex-col items-center">
+                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-md flex-shrink-0">
+                    <step.icon className="w-4 h-4 text-white" />
+                  </div>
+                  {i < steps.length - 1 && <div className="w-0.5 flex-1 bg-gray-200 mt-2" />}
+                </div>
+                <div className="pb-4">
+                  <span className="text-xs font-bold text-primary uppercase tracking-widest">Step {i + 1}</span>
+                  <h3 className="font-bold text-[#1a1a1a] mt-0.5">{step.title}</h3>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* ─── 3c. BANNER SLIDER ─── */}
+      {/* ─── 3b. BANNER SLIDER ─── */}
       <BannerSlider />
 
       {/* ─── 4. MORE THAN A CAMERA ALERT ─── */}
@@ -480,17 +503,17 @@ export default function RingLandingPage() {
         </div>
       </section>
 
-      {/* ─── 6. FAMILY SAFETY + PHONE MOCKUPS ─── */}
+      {/* ─── 6. FAMILY SAFETY ─── */}
       <section className="py-20 bg-white">
-        <div className="container max-w-5xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div className="container max-w-4xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Family Plan</span>
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] mb-5">
                 Safety for the Whole Household
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                The MySentry Family Plan supports up to 6 users under one subscription. Each member has their own Panic Alarm, emergency contacts, and safety profile. Ring cameras are shared across the household so everyone benefits from the same home coverage.
+                The MySentry Family Plan supports up to 6 users under one subscription. Each member has their own Panic Alarm, emergency contacts, and safety profile.
               </p>
               <ul className="space-y-3 mb-8">
                 {familyUses.map((use) => (
@@ -518,297 +541,38 @@ export default function RingLandingPage() {
               </div>
             </div>
           </div>
-
-          {/* Phone mockups row */}
-          <div className="text-center mb-10">
-            <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">The App Experience</span>
-            <h3 className="text-2xl md:text-3xl font-heading font-bold text-[#1a1a1a] mb-3">
-              Two apps. One complete safety system.
-            </h3>
-            <p className="text-gray-600 max-w-xl mx-auto">
-              MySentry lives on your phone and watch. Ring lives on your cameras. Together they give you and your family full coverage at home and on the go.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-            {/* MySentry home screen */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="flex flex-col items-center gap-4"
-            >
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/JueFNKWucxAyvIwu.png"
-                alt="MySentry app home screen showing Panic Alarm, emergency contacts, and Ring subscription"
-                className="w-[220px] drop-shadow-2xl"
-              />
-              <div className="text-center">
-                <p className="font-bold text-[#1a1a1a] mb-1">MySentry App</p>
-                <p className="text-gray-500 text-sm">Panic Alarm, emergency contacts, health monitoring, and your Ring subscription all in one place.</p>
-              </div>
-            </motion.div>
-            {/* Ring cameras screen */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.12 }}
-              className="flex flex-col items-center gap-4"
-            >
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/qKOQFkpbfBadjlLJ.png"
-                alt="Ring cameras screen showing live front door camera feed connected to MySentry"
-                className="w-[220px] drop-shadow-2xl"
-              />
-              <div className="text-center">
-                <p className="font-bold text-[#1a1a1a] mb-1">Ring Camera Feed</p>
-                <p className="text-gray-500 text-sm">Your Ring cameras connect to MySentry. During an active alarm, the live feed is shared with your monitoring team and emergency contacts.</p>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </section>
 
-      {/* ─── 7. USE CASES — Photorealistic story-driven layout ─── */}
-      <section className="py-24 bg-[#f8faf8]">
+      {/* ─── 7. USE CASES ─── */}
+      <section className="py-20 bg-[#f8faf8]">
         <div className="container">
-          <div className="text-center mb-16">
+          <div className="text-center mb-14">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">When It Matters</span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] mb-4">
               Built for Real Situations
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              Ring protects your home. MySentry protects the people inside it. Together, they cover every moment that matters.
+              MySentry is designed for moments when you need more than a camera notification.
             </p>
           </div>
-
-          {/* ── STORY ROW 1: Hero wide card — Elderly woman (fall) ── */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.65 }}
-            className="relative rounded-3xl overflow-hidden mb-8 min-h-[420px] group"
-          >
-            <img
-              src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/BbppbgbqJxLfuGtU.png"
-              alt="Elderly African American woman alone at home needing help"
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-transparent" />
-            <div className="relative z-10 p-10 flex flex-col justify-end h-full min-h-[420px]">
-              <span className="inline-flex items-center gap-1.5 bg-primary text-white text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-4 w-fit">
-                <Heart className="w-3 h-3" /> Senior Safety
-              </span>
-              <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">Dorothy, 74 — Living independently in Atlanta</p>
-              <h3 className="text-2xl md:text-3xl font-heading font-bold text-white mb-3 leading-snug max-w-lg">
-                She had a medical episode. Her daughter was 400 miles away.
-              </h3>
-              <p className="text-white/80 text-sm leading-relaxed max-w-md">
-                MySentry detected the fall and triggered an alert within 2 minutes. Her daughter and the 24/7 monitoring team were notified instantly with her live location, status, and the live Ring camera feed from her living room.
-              </p>
-              <div className="mt-5 flex items-center gap-2">
-                <Shield className="w-4 h-4 text-primary" />
-                <span className="text-white/70 text-xs font-semibold">Fall Detection + Ring Camera Feed + Emergency Contact Alert + Monitoring Team</span>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* ── STORY ROW 2: Two side-by-side cards ── */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-            {/* Hispanic family backyard */}
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative rounded-3xl overflow-hidden min-h-[320px] group"
-            >
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/ObhkOUrtCZKmakLY.png"
-                alt="Hispanic family watching children play in backyard"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="relative z-10 p-7 flex flex-col justify-end h-full min-h-[320px]">
-                <span className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-3 w-fit">
-                  <Users className="w-3 h-3" /> Family Safety
-                </span>
-                <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">The Ramirez family, Texas</p>
-                <h3 className="font-bold text-white text-lg leading-snug mb-2">
-                  Kids playing outside. Parents staying connected.
-                </h3>
-                <p className="text-white/70 text-xs leading-relaxed">
-                  Ring cameras watch the yard and front door. MySentry keeps every family member covered with individual Panic Alarms, live location sharing, and 24/7 monitoring.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Teen arriving home */}
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.08 }}
-              className="relative rounded-3xl overflow-hidden min-h-[320px] group"
-            >
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/wMPRYwQXkKUopNbN.png"
-                alt="Teenage girl arriving home safely from school"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="relative z-10 p-7 flex flex-col justify-end h-full min-h-[320px]">
-                <span className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-3 w-fit">
-                  <Home className="w-3 h-3" /> Child Safety
-                </span>
-                <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">Emma, 15 — Arriving home after school</p>
-                <h3 className="font-bold text-white text-lg leading-snug mb-2">
-                  She made it home. Her parents knew the moment she walked in.
-                </h3>
-                <p className="text-white/70 text-xs leading-relaxed">
-                  The Ring doorbell camera confirmed she arrived. MySentry on her phone means she has a Panic Alarm if anything goes wrong. Parents get peace of mind without hovering.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* ── STORY ROW 3: Three smaller image cards ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-            {/* Kitchen emergency */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.04 }}
-              className="relative rounded-3xl overflow-hidden min-h-[280px] group"
-            >
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/uJYXVLzEDZLlNwgo.png"
-                alt="African American couple dealing with a health emergency in the kitchen"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-              <div className="relative z-10 p-6 flex flex-col justify-end h-full min-h-[280px]">
-                <span className="inline-flex items-center gap-1.5 bg-red-500/80 text-white text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-2 w-fit">
-                  <Activity className="w-3 h-3" /> Health Emergency
-                </span>
-                <p className="text-white/60 text-[10px] font-semibold uppercase tracking-widest mb-1">The Williams family, Chicago</p>
-                <h3 className="font-bold text-white text-sm leading-snug">
-                  A health episode at home. The monitoring team saw it on the Ring feed before anyone called.
-                </h3>
-              </div>
-            </motion.div>
-
-            {/* Remote homeowner at airport */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="relative rounded-3xl overflow-hidden min-h-[280px] group"
-            >
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/NHHkoMhUZunbgqaW.png"
-                alt="Homeowner monitoring his home remotely from an airport"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-              <div className="relative z-10 p-6 flex flex-col justify-end h-full min-h-[280px]">
-                <span className="inline-flex items-center gap-1.5 bg-blue-500/80 text-white text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-2 w-fit">
-                  <Camera className="w-3 h-3" /> Remote Monitoring
-                </span>
-                <p className="text-white/60 text-[10px] font-semibold uppercase tracking-widest mb-1">David, 38 — Traveling for work</p>
-                <h3 className="font-bold text-white text-sm leading-snug">
-                  Away from home. Ring cameras and MySentry kept him connected to every corner of his house.
-                </h3>
-              </div>
-            </motion.div>
-
-            {/* WFH personal safety */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.16 }}
-              className="relative rounded-3xl overflow-hidden min-h-[280px] group"
-            >
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/XlAAIttkaGhBjmBf.png"
-                alt="Asian American woman working from home safely"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-              <div className="relative z-10 p-6 flex flex-col justify-end h-full min-h-[280px]">
-                <span className="inline-flex items-center gap-1.5 bg-purple-500/80 text-white text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-2 w-fit">
-                  <Home className="w-3 h-3" /> Work From Home
-                </span>
-                <p className="text-white/60 text-[10px] font-semibold uppercase tracking-widest mb-1">Michelle, 41 — Home office, Seattle</p>
-                <h3 className="font-bold text-white text-sm leading-snug">
-                  Home alone all day. Ring at the door. MySentry on her wrist. Protected all day.
-                </h3>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* ── STORY ROW 4: Two final cards ── */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Remote family care */}
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative rounded-3xl overflow-hidden min-h-[300px] group"
-            >
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/ktlrhoChnzCUXbaB.png"
-                alt="Adult daughter video calling elderly mother to check on her"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="relative z-10 p-7 flex flex-col justify-end h-full min-h-[300px]">
-                <span className="inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-3 w-fit">
-                  <Heart className="w-3 h-3" /> Remote Family Care
-                </span>
-                <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">Jennifer and her mother, Ruth</p>
-                <h3 className="font-bold text-white text-lg leading-snug mb-2">
-                  Her mom lives alone. She sleeps better knowing MySentry is watching.
-                </h3>
-                <p className="text-white/70 text-xs leading-relaxed">
-                  Jennifer gets instant MySentry alerts with live location and status — plus the Ring camera feed from her mother's home — when something is wrong. Not just a missed call.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Multicultural family morning */}
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.08 }}
-              className="relative rounded-3xl overflow-hidden min-h-[300px] group"
-            >
-              <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/aUGvYdujEXXMFIqe.png"
-                alt="Multicultural American family in their bright living room"
-                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="relative z-10 p-7 flex flex-col justify-end h-full min-h-[300px]">
-                <span className="inline-flex items-center gap-1.5 bg-primary/80 text-white text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-3 w-fit">
-                  <Shield className="w-3 h-3" /> Complete Protection
-                </span>
-                <p className="text-white/60 text-xs font-semibold uppercase tracking-widest mb-1">The Thompson family, California</p>
-                <h3 className="font-bold text-white text-lg leading-snug mb-2">
-                  Ring protects the home. MySentry protects the people.
-                </h3>
-                <p className="text-white/70 text-xs leading-relaxed">
-                  Ring cameras protect the home. MySentry protects the people inside it. Together, they create a complete safety ecosystem for every member of your household, wherever they are.
-                </p>
-              </div>
-            </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {useCases.map((uc, i) => (
+              <motion.div
+                key={uc.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+                className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <uc.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-bold text-[#1a1a1a] mb-2">{uc.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{uc.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -824,23 +588,28 @@ export default function RingLandingPage() {
             transition={{ duration: 0.7 }}
           >
             <Camera className="w-12 h-12 text-primary mx-auto mb-6" />
-            <h2 className="text-[50px] font-heading font-bold mb-[25px] text-center">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold mb-5">
               Turn Your Ring Setup Into a Connected Safety System
             </h2>
-            <p className="text-white mb-[30px] leading-relaxed text-center max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-8 leading-relaxed">
               Your Ring cameras are already helping you monitor your home. MySentry adds a live safety response layer when you need action, context, and support.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <a
+              <Link
                 href={RING_CTA_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
                 onClick={trackLeadEvent}
                 className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full px-8 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
               >
                 Activate MySentry with Ring
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
+              <Link
+                href={RING_CTA_LINK}
+                onClick={trackLeadEvent}
+                className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-bold rounded-full px-8 py-4 hover:bg-white/20 transition-all"
+              >
+                Start Free Trial
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -862,8 +631,11 @@ export default function RingLandingPage() {
           </div>
           {/* Final bottom CTA */}
           <div className="text-center mt-14">
+            <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">Ready to Add MySentry to Your Ring Setup?</h3>
+            <p className="text-gray-600 mb-6">Start your free trial today and connect your Ring cameras to MySentry's live safety response system.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <PrimaryCTA />
+              <SecondaryCTA href="#how-it-works" label="See How It Works" />
             </div>
           </div>
         </div>
@@ -871,16 +643,14 @@ export default function RingLandingPage() {
 
       {/* Sticky mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-100 shadow-lg px-4 py-3">
-        <a
+        <Link
           href={RING_CTA_LINK}
-          target="_blank"
-          rel="noopener noreferrer"
           onClick={trackLeadEvent}
           className="flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full w-full py-4 text-base hover:bg-primary/90 transition-all"
         >
           Start Free with Ring
           <ArrowRight className="w-4 h-4" />
-        </a>
+        </Link>
       </div>
     </Layout>
   );

@@ -972,3 +972,6 @@
 - [x] QA Round 2: Layout Accuracy - components in correct order, visual assets properly integrated
 - [x] QA Round 3: Design Quality - TypeScript 0 errors, no em-dashes, no placeholder text, animations and premium styling present
 - [x] Save checkpoint version 6572fbcf
+
+## GitHub Website Image Archive (August 2026)
+- [ ] Inventory, archive, validate, and push every image currently referenced by the live website to GitHub with a tracked manifest
