@@ -211,7 +211,7 @@ export const Partner = () => {
         <HeroSection
           label="Partner Program"
           title="Grow Your Business With MySentry"
-          imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/PNeMojefSAcSjgAW.jpg"
+          imageSrc="/images/cdn/PNeMojefSAcSjgAW.jpg"
           imageAlt="MySentry Partner Network"
           showCta={false}
         >
@@ -325,7 +325,7 @@ export const Partner = () => {
             >
               <div className="absolute inset-0 bg-[#4ADE80] rounded-3xl blur-3xl opacity-20" />
               <img 
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/UoakOftbovNQJNav.jpg" 
+                src="/images/cdn/UoakOftbovNQJNav.jpg" 
                 alt="Dealer Dashboard Interface" 
                 className="relative rounded-3xl shadow-2xl border border-white/10"
                 loading="lazy"

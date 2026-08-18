@@ -8,7 +8,7 @@ export default function Education() {
       canonical="https://mysentry.ai/industries/education"
       label="EDUCATION"
       h1="Every Student and Staff Member Stays Safe."
-      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-education-4DHESJUqiXguF98VFasMWP.webp"
+      heroImage="/images/cdn/hero-education-4DHESJUqiXguF98VFasMWP.webp"
       h1Sub="Respond instantly to any campus emergency."
       heroDescription="Panic alarm, lockdown alerts, and live video for teachers, staff, and campus security."
       problem="Schools face a challenge: how to quickly handle emergencies, from medical issues to security threats. Old systems are often slow and hard to use."

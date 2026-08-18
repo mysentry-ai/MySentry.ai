@@ -124,7 +124,7 @@ export default function Students() {
             </div>
             <div className="hidden lg:block">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-students-AhMp9iSA4mHvg8MTyQsypF.webp"
+                src="/images/cdn/hero-students-AhMp9iSA4mHvg8MTyQsypF.webp"
                 alt="College students walking confidently across campus with smartphones"
                 className="rounded-3xl shadow-2xl w-full object-cover"
                 loading="eager"

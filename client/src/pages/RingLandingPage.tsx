@@ -29,17 +29,17 @@ import { trackLeadEvent } from "@/lib/metaPixel";
 const BANNER_SLIDES = [
   {
     id: 1,
-    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/tEgnkIBmbJqdCHOJ.webp",
+    src: "/images/cdn/tEgnkIBmbJqdCHOJ.webp",
     alt: "Banner 1: Your Ring Camera. Your Choice.",
   },
   {
     id: 2,
-    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/EJRLIibINmGoxdqW.webp",
+    src: "/images/cdn/EJRLIibINmGoxdqW.webp",
     alt: "Banner 2: One Tap Starts Your Emergency Response",
   },
   {
     id: 3,
-    src: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/NnmYAYbrAFvzspEv.webp",
+    src: "/images/cdn/NnmYAYbrAFvzspEv.webp",
     alt: "Banner 3: Stay Connected During the Emergency",
   },
 ];

@@ -10,7 +10,7 @@ export default function WhoWeProtectSeniors() {
       h1="Know Your Parent Is Safe Right Now."
       h1Sub="Peace of mind when they live alone."
       heroDescription="Fall detection, health monitoring, and 24/7 live response so they can stay independent with confidence."
-      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-seniors-GDMy4PR8ZHWo3LgjYq5hwt.webp"
+      heroImage="/images/cdn/hero-seniors-GDMy4PR8ZHWo3LgjYq5hwt.webp"
       problem="Your parent lives alone. You worry every time the phone rings. They don't want to wear a pendant or feel like they need a babysitter. But one fall with no one around could change everything."
       empathy="Independence matters. Dignity matters. MySentry gives your parent both, while giving you the peace of mind you need to stop worrying every time you don't hear from them."
       steps={[

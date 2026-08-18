@@ -115,7 +115,7 @@ export const Team = () => {
       <HeroSection
         label="Our Team"
         title={<>The Right Team<br/><span className="text-gray-600">For A Safer Tomorrow.</span></>}
-        imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/WMyuwyfaQGypncrA.jpg"
+        imageSrc="/images/cdn/WMyuwyfaQGypncrA.jpg"
         imageAlt="MySentry Team"
       />
 

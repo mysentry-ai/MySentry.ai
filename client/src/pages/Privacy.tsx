@@ -89,7 +89,7 @@ export const Privacy = () => {
       <HeroSection
         label="Legal"
         title="Privacy Policy"
-        imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/IElpNKDyEyZQAZJG.jpg"
+        imageSrc="/images/cdn/IElpNKDyEyZQAZJG.jpg"
         imageAlt="Privacy Policy"
         description=""
       />

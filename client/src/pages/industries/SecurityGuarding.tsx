@@ -8,7 +8,7 @@ export default function SecurityGuarding() {
       canonical="https://mysentry.ai/industries/security-guarding"
       label="FOR SECURITY COMPANIES"
       h1="Your Security Guards Stay Safe and Connected."
-      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-security-guarding-FXiXEkuXAA52WM5JyAYyu7.webp"
+      heroImage="/images/cdn/hero-security-guarding-FXiXEkuXAA52WM5JyAYyu7.webp"
       h1Sub="Instant help for every lone guard, every shift."
       heroDescription="Live check-ins, panic alarm, and real-time health monitoring for guards working alone."
       problem="Your guards work alone, often in high-risk places. A simple fall, a health issue, or a threat can happen fast. Old check-in systems are slow and not always reliable."

@@ -96,7 +96,7 @@ export const Contact = () => {
       <HeroSection
         label="Contact Us"
         title={<>We're Here<br/><span className="text-gray-600">To Help.</span></>}
-        imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/lLrpekajBLjvQSbU.jpg"
+        imageSrc="/images/cdn/lLrpekajBLjvQSbU.jpg"
         imageAlt="Contact MySentry Support"
       />
 

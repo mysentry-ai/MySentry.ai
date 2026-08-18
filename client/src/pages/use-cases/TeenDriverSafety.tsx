@@ -10,7 +10,7 @@ export default function TeenDriverSafety() {
       h1="Keep Your Teen Driver Safe: Automatic Crash Detection for Peace of Mind"
       h1Sub="Know the moment something happens."
       heroDescription="Automatic crash detection, instant alerts, and live video response for teen drivers on the road."
-      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-teen-driver-S2s3YeKcp6pBhrarVhpJn3.webp"
+      heroImage="/images/cdn/hero-teen-driver-S2s3YeKcp6pBhrarVhpJn3.webp"
       problem="Your teenager just got their license, and every time they take the car, you worry about accidents on unfamiliar roads, distracted driving, or breakdowns in isolated areas."
       empathy="Handing over the keys is one of the hardest moments as a parent. You want to give them independence, but you also want to know they're safe. That constant worry doesn't have to be your reality."
       steps={[

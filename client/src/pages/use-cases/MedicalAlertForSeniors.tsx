@@ -11,7 +11,7 @@ export default function MedicalAlertForSeniors() {
       h1="Worried About Falls? Get Peace of Mind with MySentry's Medical Alert App"
       h1Sub="No pendant. No base station. Just their phone."
       heroDescription="Automatic fall detection, health monitoring, and 24/7 live response for seniors who want to stay independent."
-      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-medical-alert-seniors-brbwAEw3QrMxYqBqfMTxKC.webp"
+      heroImage="/images/cdn/hero-medical-alert-seniors-brbwAEw3QrMxYqBqfMTxKC.webp"
       problem="Traditional medical alert systems can be expensive, complicated, and don't work outside the home. Seniors want to maintain their independence without sacrificing safety."
       empathy="You want peace of mind knowing your loved ones are protected, and they want to feel secure without feeling limited. It's about safety with dignity."
       steps={[

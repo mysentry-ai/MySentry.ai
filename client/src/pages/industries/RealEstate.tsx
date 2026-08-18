@@ -8,7 +8,7 @@ export default function RealEstate() {
       canonical="https://mysentry.ai/industries/real-estate"
       label="REAL ESTATE SAFETY"
       h1="Complete Peace of Mind at Every Showing."
-      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-real-estate-dAoBKmzF88UvcCt9qLwiSC.webp"
+      heroImage="/images/cdn/hero-real-estate-dAoBKmzF88UvcCt9qLwiSC.webp"
       h1Sub="Never feel vulnerable during property tours."
       heroDescription="Silent panic alarm and live video response for agents showing properties to strangers."
       problem="Real estate agents often work alone, meeting new people in empty homes. This can feel risky, leaving you vulnerable with no easy way to call for help if something goes wrong."

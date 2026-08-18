@@ -10,7 +10,7 @@ export default function WhoWeProtectEmployers() {
       h1="Your Lone Workers Go Home Safe."
       h1Sub="Protect your team and simplify safety compliance."
       heroDescription="One app covers panic alarm, fall detection, health monitoring, and lone worker check-ins for your entire team."
-      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-employers-WnPSZ2hE3S9vMko2bCkbw7.webp"
+      heroImage="/images/cdn/hero-employers-WnPSZ2hE3S9vMko2bCkbw7.webp"
       problem="Your field technicians, home health aides, and late-shift workers are alone for hours at a time. If something happens, you may not know for hours. That is a safety failure and a legal exposure."
       empathy="You have a duty of care. And you want to meet it without burdening your workers with clunky hardware or complicated check-in procedures. MySentry gives your team real protection on the device they already carry."
       steps={[
