@@ -978,3 +978,9 @@
 
 ## Blog Page Visibility Fix (August 2026)
 - [x] Diagnose and restore blog posts on the /blogs page, verify rendering, and synchronize the correction to GitHub
+
+## SSR_TITLE Rendering Bug Fix (August 2026)
+- [x] Diagnose root cause of visible SSR_TITLE on the website
+- [x] Fix the SSR_TITLE rendering without breaking SEO metadata
+- [x] Verify fix across all major pages
+- [x] Confirm SEO metadata (title, meta description, OG tags) remains intact

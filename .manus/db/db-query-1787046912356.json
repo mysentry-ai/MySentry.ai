@@ -1,0 +1,13 @@
+{
+  "query": "SELECT COUNT(*) as total_local_hero FROM blog_posts WHERE heroImageUrl LIKE '/images/blog/%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Mig8qsURabZmP9.root --database 5pk35fzRuLVvrjtZdt4C3R --execute SELECT COUNT(*) as total_local_hero FROM blog_posts WHERE heroImageUrl LIKE '/images/blog/%';",
+  "rows": [
+    {
+      "total_local_hero": "99"
+    }
+  ],
+  "messages": [],
+  "stdout": "total_local_hero\n99\n",
+  "stderr": "",
+  "execution_time_ms": 261
+}

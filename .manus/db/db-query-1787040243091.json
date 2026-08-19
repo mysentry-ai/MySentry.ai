@@ -1,0 +1,70 @@
+{
+  "query": "SELECT DISTINCT heroImageUrl FROM blog_posts WHERE heroImageUrl IS NOT NULL AND heroImageUrl LIKE 'https://%' LIMIT 20 OFFSET 20;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Mig8qsURabZmP9.root --database 5pk35fzRuLVvrjtZdt4C3R --execute SELECT DISTINCT heroImageUrl FROM blog_posts WHERE heroImageUrl IS NOT NULL AND heroImageUrl LIKE 'https://%' LIMIT 20 OFFSET 20;",
+  "rows": [
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/pTyPEJckGNzaIRzG.png"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/eqEZqcGkPQXyvppc.jpg"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/JgLTeeorJzqwbEtp.png"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/tIcfLIyqogocnrLS.jpeg"
+    },
+    {
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1774532207001-djmqo7ht-dementia-wandering-safety.jpg"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/MwifuYusKPOhMaDR.png"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zCpJUxlBRxlTKrjt.png"
+    },
+    {
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1772193413800-0bx91nmf-mysentry-outdoor-fall-prevention-seniors-featured.jpg"
+    },
+    {
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1779369939287-raz78znp-mysentry-solo-travel-safety-for-women-featured.jpg"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/tlajQqiVDGWdHZUN.png"
+    },
+    {
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1773926211461-kc4w7vx7-mysentry-solo-female-hiking-safety-featured.jpg"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/FtdPWdNwEoQLmBEE.jpg"
+    },
+    {
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1781616337635-854i8cch-mysentry-senior-outdoor-safety-summer-walking-featured.jpg"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/rViXHrecojmcdfXX.png"
+    },
+    {
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782220793497-n7aw1wau-mysentry-women-running-alone-safety-featured.jpg"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/hIvZAkRFRNCjIHic.jpg"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/sNzmfpLtYKJkAXyr.png"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/bjrQJVBKtMpCMTfr.png"
+    },
+    {
+      "heroImageUrl": "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/jrUpZJxwiLqQQerD.png"
+    },
+    {
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782394527752-ilz6kzyg-mysentry-retail-worker-safety-panic-button-featured.jpg"
+    }
+  ],
+  "messages": [],
+  "stdout": "heroImageUrl\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/pTyPEJckGNzaIRzG.png\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/eqEZqcGkPQXyvppc.jpg\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/JgLTeeorJzqwbEtp.png\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/tIcfLIyqogocnrLS.jpeg\nhttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1774532207001-djmqo7ht-dementia-wandering-safety.jpg\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/MwifuYusKPOhMaDR.png\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zCpJUxlBRxlTKrjt.png\nhttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1772193413800-0bx91nmf-mysentry-outdoor-fall-prevention-seniors-featured.jpg\nhttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1779369939287-raz78znp-mysentry-solo-travel-safety-for-women-featured.jpg\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/tlajQqiVDGWdHZUN.png\nhttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1773926211461-kc4w7vx7-mysentry-solo-female-hiking-safety-featured.jpg\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/FtdPWdNwEoQLmBEE.jpg\nhttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1781616337635-854i8cch-mysentry-senior-outdoor-safety-summer-walking-featured.jpg\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/rViXHrecojmcdfXX.png\nhttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782220793497-n7aw1wau-mysentry-women-running-alone-safety-featured.jpg\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/hIvZAkRFRNCjIHic.jpg\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/sNzmfpLtYKJkAXyr.png\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/bjrQJVBKtMpCMTfr.png\nhttps://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/jrUpZJxwiLqQQerD.png\nhttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782394527752-ilz6kzyg-mysentry-retail-worker-safety-panic-button-featured.jpg\n",
+  "stderr": "",
+  "execution_time_ms": 989
+}

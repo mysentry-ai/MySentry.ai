@@ -1,0 +1,14 @@
+{
+  "query": "SELECT id, ogImageUrl FROM blog_posts WHERE ogImageUrl LIKE 'https://%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Mig8qsURabZmP9.root --database 5pk35fzRuLVvrjtZdt4C3R --execute SELECT id, ogImageUrl FROM blog_posts WHERE ogImageUrl LIKE 'https://%';",
+  "rows": [
+    {
+      "id": "750001",
+      "ogImageUrl": "https://mysentry.ai/blog-images/dementia-wandering-safety.jpg"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\togImageUrl\n750001\thttps://mysentry.ai/blog-images/dementia-wandering-safety.jpg\n",
+  "stderr": "",
+  "execution_time_ms": 279
+}

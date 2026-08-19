@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE blog_posts SET heroImageUrl = CONCAT('/images/blog/', SUBSTRING_INDEX(heroImageUrl, '/', -1)) WHERE heroImageUrl LIKE 'https://d2xsxph8kpxj0f.cloudfront.net%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Mig8qsURabZmP9.root --database 5pk35fzRuLVvrjtZdt4C3R --execute UPDATE blog_posts SET heroImageUrl = CONCAT('/images/blog/', SUBSTRING_INDEX(heroImageUrl, '/', -1)) WHERE heroImageUrl LIKE 'https://d2xsxph8kpxj0f.cloudfront.net%';",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 1193
+}

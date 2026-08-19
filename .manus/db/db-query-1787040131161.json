@@ -1,0 +1,50 @@
+{
+  "query": "SELECT id, heroImageUrl FROM blog_posts WHERE heroImageUrl IS NOT NULL AND heroImageUrl != '' ORDER BY id DESC LIMIT 10;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Mig8qsURabZmP9.root --database 5pk35fzRuLVvrjtZdt4C3R --execute SELECT id, heroImageUrl FROM blog_posts WHERE heroImageUrl IS NOT NULL AND heroImageUrl != '' ORDER BY id DESC LIMIT 10;",
+  "rows": [
+    {
+      "id": "1860001",
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1783430149288-yrg6ju5v-mysentry-women-parking-lot-safety-guide-featured.jpg"
+    },
+    {
+      "id": "1830001",
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782999347008-gl33xodq-mysentry-women-walking-alone-at-night-safety-plan-featured.jpg"
+    },
+    {
+      "id": "1800001",
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782826047599-1jcp196g-mysentry-senior-medication-heat-safety-featured.jpg"
+    },
+    {
+      "id": "1770001",
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782394527752-ilz6kzyg-mysentry-retail-worker-safety-panic-button-featured.jpg"
+    },
+    {
+      "id": "1740001",
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782220793497-n7aw1wau-mysentry-women-running-alone-safety-featured.jpg"
+    },
+    {
+      "id": "1710001",
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1781616337635-854i8cch-mysentry-senior-outdoor-safety-summer-walking-featured.jpg"
+    },
+    {
+      "id": "1620001",
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1781010778983-x9yg4xhu-mysentry-power-outage-safety-for-seniors-featured.jpg"
+    },
+    {
+      "id": "1530001",
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1779973927273-u02djeb8-mysentry-vacation-rental-safety-families-featured.jpg"
+    },
+    {
+      "id": "1500001",
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1779801267146-f8wetnw4-mysentry-lone-worker-heat-safety-featured.jpg"
+    },
+    {
+      "id": "1470001",
+      "heroImageUrl": "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1779369939287-raz78znp-mysentry-solo-travel-safety-for-women-featured.jpg"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\theroImageUrl\n1860001\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1783430149288-yrg6ju5v-mysentry-women-parking-lot-safety-guide-featured.jpg\n1830001\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782999347008-gl33xodq-mysentry-women-walking-alone-at-night-safety-plan-featured.jpg\n1800001\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782826047599-1jcp196g-mysentry-senior-medication-heat-safety-featured.jpg\n1770001\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782394527752-ilz6kzyg-mysentry-retail-worker-safety-panic-button-featured.jpg\n1740001\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1782220793497-n7aw1wau-mysentry-women-running-alone-safety-featured.jpg\n1710001\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1781616337635-854i8cch-mysentry-senior-outdoor-safety-summer-walking-featured.jpg\n1620001\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1781010778983-x9yg4xhu-mysentry-power-outage-safety-for-seniors-featured.jpg\n1530001\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1779973927273-u02djeb8-mysentry-vacation-rental-safety-families-featured.jpg\n1500001\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1779801267146-f8wetnw4-mysentry-lone-worker-heat-safety-featured.jpg\n1470001\thttps://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/blog-images/1779369939287-raz78znp-mysentry-solo-travel-safety-for-women-featured.jpg\n",
+  "stderr": "",
+  "execution_time_ms": 407
+}

@@ -1,0 +1,18 @@
+{
+  "query": "SELECT DISTINCT SUBSTRING_INDEX(heroImageUrl, '/', 3) AS url_domain, COUNT(*) AS cnt FROM blog_posts WHERE heroImageUrl IS NOT NULL AND heroImageUrl != '' GROUP BY url_domain ORDER BY cnt DESC LIMIT 20;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Mig8qsURabZmP9.root --database 5pk35fzRuLVvrjtZdt4C3R --execute SELECT DISTINCT SUBSTRING_INDEX(heroImageUrl, '/', 3) AS url_domain, COUNT(*) AS cnt FROM blog_posts WHERE heroImageUrl IS NOT NULL AND heroImageUrl != '' GROUP BY url_domain ORDER BY cnt DESC LIMIT 20;",
+  "rows": [
+    {
+      "url_domain": "https://files.manuscdn.com",
+      "cnt": "71"
+    },
+    {
+      "url_domain": "https://d2xsxph8kpxj0f.cloudfront.net",
+      "cnt": "28"
+    }
+  ],
+  "messages": [],
+  "stdout": "url_domain\tcnt\nhttps://files.manuscdn.com\t71\nhttps://d2xsxph8kpxj0f.cloudfront.net\t28\n",
+  "stderr": "",
+  "execution_time_ms": 948
+}

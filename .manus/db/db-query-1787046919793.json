@@ -1,0 +1,13 @@
+{
+  "query": "SELECT COUNT(*) as remaining_cdn_og FROM blog_posts WHERE ogImageUrl LIKE 'https://%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway03.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 2Mig8qsURabZmP9.root --database 5pk35fzRuLVvrjtZdt4C3R --execute SELECT COUNT(*) as remaining_cdn_og FROM blog_posts WHERE ogImageUrl LIKE 'https://%';",
+  "rows": [
+    {
+      "remaining_cdn_og": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "remaining_cdn_og\n1\n",
+  "stderr": "",
+  "execution_time_ms": 262
+}
