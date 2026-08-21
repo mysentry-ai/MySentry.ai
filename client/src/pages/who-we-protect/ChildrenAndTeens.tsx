@@ -124,7 +124,7 @@ export default function ChildrenAndTeens() {
             </div>
             <div className="hidden lg:block">
               <img
-                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-children-teens-KQbz7EA8GrpxXTDszpKTfr.webp"
+                src="/images/cdn/hero-children-teens-KQbz7EA8GrpxXTDszpKTfr.webp"
                 alt="Teenager getting into car with parent watching from doorway, holding smartphone"
                 className="rounded-3xl shadow-2xl w-full object-cover"
                 loading="eager"

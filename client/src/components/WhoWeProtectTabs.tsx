@@ -26,7 +26,7 @@ const tabs: TabContent[] = [
     icon: Heart,
     headline: "Age Independently, Live Confidently",
     description: "MySentry helps seniors stay in the home they love with fall detection, health monitoring, and 24/7 professional response. No stigmatizing lanyard needed. Just your phone and smartwatch working together to keep you safe.",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/aLIErUBBQTfmnErS.jpg",
+    image: "/images/cdn/aLIErUBBQTfmnErS.jpg",
     features: [
       "Fall and near-fall detection with automatic alerts",
       "24/7 heart rate, HRV, and SpO2 monitoring",
@@ -42,7 +42,7 @@ const tabs: TabContent[] = [
     icon: Users,
     headline: "Protect the People Who Matter Most",
     description: "From teen drivers to aging parents, MySentry gives your whole family a safety net. Crash detection, panic alarms, and real-time location sharing keep everyone connected when it counts. You only get alerts when something actually needs your attention.",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/ILNBARpWjhgDooYL.jpg",
+    image: "/images/cdn/ILNBARpWjhgDooYL.jpg",
     features: [
       "Crash detection with instant family notification",
       "User-activated panic alarm for children and teens",
@@ -58,7 +58,7 @@ const tabs: TabContent[] = [
     icon: Shield,
     headline: "Walk, Run, and Live with Confidence",
     description: "MySentry gives women a discreet, always-on safety companion. Whether you are running solo, commuting late, or meeting someone new, a single voice command or watch tap connects you to live professional monitoring with video evidence.",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/xVvXipIagbMzyabU.jpg",
+    image: "/images/cdn/xVvXipIagbMzyabU.jpg",
     features: [
       "Discreet panic button via voice, phone, or watch",
       "Live video and audio evidence for responders",
@@ -74,7 +74,7 @@ const tabs: TabContent[] = [
     icon: Building2,
     headline: "Duty of Care, Delivered Automatically",
     description: "Your lone workers face unpredictable environments with no backup. MySentry provides panic buttons, fall detection, and health monitoring that connect directly to your security team or 911. Reduce liability and protect your people with objective evidence.",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/eqjbpbDEheKCczzG.jpg",
+    image: "/images/cdn/eqjbpbDEheKCczzG.jpg",
     features: [
       "Lone worker protection with panic and fall detection",
       "Live video and audio for incident documentation",

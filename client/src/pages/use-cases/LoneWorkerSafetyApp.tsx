@@ -11,7 +11,7 @@ export default function LoneWorkerSafetyApp() {
       h1="Keep Your Lone Workers Safe, 24/7"
       h1Sub="Real-time protection for employees who work alone."
       heroDescription="Panic alarm, fall detection, check-in timers, and 24/7 professional monitoring on their existing smartphone."
-      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-lone-worker-JfxZMZUbkeVn8y8gsYxau5.webp"
+      heroImage="/images/cdn/hero-lone-worker-JfxZMZUbkeVn8y8gsYxau5.webp"
       problem="Your employees work alone, often in remote or high-risk environments. You need a reliable way to ensure their safety and get them help fast in an emergency."
       empathy="Worrying about your team's safety is stressful. It’s hard to focus on work when you're not sure if your people are okay."
       steps={[

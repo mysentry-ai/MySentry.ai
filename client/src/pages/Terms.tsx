@@ -10,7 +10,7 @@ export default function Terms() {
       <HeroSection
         label="Legal"
         title="Terms & Conditions"
-        imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/IElpNKDyEyZQAZJG.jpg"
+        imageSrc="/images/cdn/IElpNKDyEyZQAZJG.jpg"
         imageAlt="Terms & Conditions"
       />
 

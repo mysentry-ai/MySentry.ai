@@ -156,7 +156,7 @@ export default function RingAnnouncementSection() {
               className="flex-shrink-0 flex justify-center lg:justify-start"
             >
               <img
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zKfQzXtIiNkDQVAL.png"
+                src="/images/cdn/zKfQzXtIiNkDQVAL.png"
                 alt="MySentry app showing PANIC button, emergency contacts, and health monitoring"
                 className="h-auto drop-shadow-xl mr-[3px] ml-[35px] w-[234px]"
                 loading="lazy"

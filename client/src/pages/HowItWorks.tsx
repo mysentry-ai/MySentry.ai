@@ -147,7 +147,7 @@ export default function Features() {
               <div className="order-2 lg:order-2">
                 <div className="aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
                   <img 
-                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/tWbqvldwXwmZtLzQ.jpg" 
+                    src="/images/cdn/tWbqvldwXwmZtLzQ.jpg" 
                     alt="Supported Smartphones" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
@@ -183,7 +183,7 @@ export default function Features() {
               <div className="order-2 lg:order-1">
                 <div className="aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
                   <img 
-                    src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/IElpNKDyEyZQAZJG.jpg" 
+                    src="/images/cdn/IElpNKDyEyZQAZJG.jpg" 
                     alt="Supported Smartwatches" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     loading="lazy"
@@ -238,7 +238,7 @@ export default function Features() {
       <section className="relative min-h-[60vh] flex items-center bg-[#f8fafc] overflow-hidden">
         <div className="absolute inset-0 z-0">
            <ResponsiveImage 
-             src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/fSRwJPgxLWLxasuV.jpg" 
+             src="/images/cdn/fSRwJPgxLWLxasuV.jpg" 
              alt="Active senior lifestyle" 
              className="absolute inset-0 w-full h-full object-cover"
            />

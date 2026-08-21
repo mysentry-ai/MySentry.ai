@@ -8,7 +8,7 @@ import GetStartedSection from "@/components/GetStartedSection";
 import { motion } from "framer-motion";
 import { AlertCircle, Heart, Clock, MapPin, ArrowRight, Zap, Activity, Users, Home } from "lucide-react";
 
-const HERO_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/brsrMeZqzKnRPjcC.jpg";
+const HERO_IMAGE = "/images/cdn/brsrMeZqzKnRPjcC.jpg";
 const LOGIN_URL = "https://dashboard.mysentry.ai/website-auth?redirect_url=login";
 
 const problems = [

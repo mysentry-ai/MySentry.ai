@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Bell, Heart, Activity, Shield, ArrowRight, Clock } from "lucide-react";
 import GetStartedSection from "@/components/GetStartedSection";
 
-const HERO_IMAGE = "https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-oura-ring-integration-gVAVE7WXQAwHMQbbzBA9nB.webp";
+const HERO_IMAGE = "/images/cdn/hero-oura-ring-integration-gVAVE7WXQAwHMQbbzBA9nB.webp";
 
 const plannedFeatures = [
   { icon: Heart, title: "Health Data Sync", body: "MySentry will securely access your Oura Ring's health data including HRV, SpO2, heart rate, and body temperature for early health change detection." },

@@ -230,7 +230,7 @@ export default function Pricing() {
       <HeroSection
         label="Flexible Plans"
         title={<>Pricing and Plans<br/><span className="text-gray-600">Within Every Budget.</span></>}
-        imageSrc="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/zhjtYYsGkjNemizw.png"
+        imageSrc="/images/cdn/zhjtYYsGkjNemizw.png"
         imageAlt="Safety Dispenser"
         showCta={false}
       />

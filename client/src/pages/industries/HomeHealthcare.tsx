@@ -8,7 +8,7 @@ export default function HomeHealthcare() {
       canonical="https://mysentry.ai/industries/home-healthcare"
       label="INDUSTRY"
       h1="Home Healthcare Workers Stay Safe, Always."
-      heroImage="https://d2xsxph8kpxj0f.cloudfront.net/310519663247484611/5pk35fzRuLVvrjtZdt4C3R/hero-home-healthcare-FyAFPcaaseQ5VKXwe2ieTZ.webp"
+      heroImage="/images/cdn/hero-home-healthcare-FyAFPcaaseQ5VKXwe2ieTZ.webp"
       h1Sub="Protect your team working alone in unfamiliar places."
       heroDescription="Panic alarm, live location sharing, and check-in timers for caregivers visiting patients alone."
       problem="Your home health aides, visiting nurses, and in-home caregivers work alone, often in new places. How do you keep them safe when you're not there?"

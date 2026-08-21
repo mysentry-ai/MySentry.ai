@@ -33,7 +33,7 @@ export default function RingReminderBanner() {
                 className="mb-6"
               >
                 <img
-                  src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/tBeRfeegjUlLnzcw.png"
+                  src="/images/cdn/tBeRfeegjUlLnzcw.png"
                   alt="Ring and MySentry logos"
                   className="h-[70px] w-auto"
                 />
@@ -67,7 +67,7 @@ export default function RingReminderBanner() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663247484611/PpLEDwHxoIbVfWhh.png"
+                src="/images/cdn/PpLEDwHxoIbVfWhh.png"
                 alt="Woman holding phone showing MySentry app"
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />
