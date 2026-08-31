@@ -32,7 +32,7 @@ describe("route-aware SEO rendering", () => {
     expect(meta.found).toBe(true);
     expect(meta.canonicalPath).toBe("/pricing");
     expect(meta.robots).toBe("index,follow");
-    expect(html).toContain(`<title>${meta.title}</title>`);
+    expect(html).toContain(`<title data-rh="true">${meta.title}</title>`);
     expect(html).toContain('rel="canonical" href="https://mysentry.ai/pricing"');
     expect(html).toContain("<h1>");
     expect(html).toContain('type="application/ld+json"');
@@ -53,6 +53,53 @@ describe("route-aware SEO rendering", () => {
       expect(meta.robots, route).toBe("noindex,follow");
       expect(html, route).not.toContain('type="application/ld+json"');
     }
+  });
+
+  it("keeps the Oura route explicitly unavailable, noindex, and schema-free", async () => {
+    const meta = await resolveMeta("/integrations/oura-ring", "https://mysentry.ai");
+    const html = renderSeoHtml(template, meta);
+
+    expect(meta.title).toContain("Coming Soon");
+    expect(meta.description).toContain("not currently available");
+    expect(meta.canonicalPath).toBe("/integrations/oura-ring");
+    expect(meta.robots).toBe("noindex,follow");
+    expect(html).not.toContain('type="application/ld+json"');
+  });
+
+  it("serves unique indexable metadata for every nurse specialty route", async () => {
+    const routes = [
+      "/nurses/home-health",
+      "/nurses/travel-nurses",
+      "/nurses/er-trauma",
+      "/nurses/night-shift",
+    ];
+    const titles = new Set<string>();
+
+    for (const route of routes) {
+      const meta = await resolveMeta(route, "https://mysentry.ai");
+      expect(meta.found, route).toBe(true);
+      expect(meta.canonicalPath, route).toBe(route);
+      expect(meta.robots, route).toBe("index,follow");
+      expect(meta.title, route).toMatch(/Nurse Safety App/);
+      expect(meta.description.length, route).toBeGreaterThan(80);
+      expect(CANONICAL_REDIRECTS[route], route).toBeUndefined();
+      titles.add(meta.title);
+    }
+
+    expect(titles.size).toBe(routes.length);
+  });
+
+  it("consolidates senior commercial intent into one canonical conversion route", async () => {
+    const canonicalRoute = "/use-cases/medical-alert-app-for-seniors";
+    const meta = await resolveMeta(canonicalRoute, "https://mysentry.ai");
+
+    expect(meta.found).toBe(true);
+    expect(meta.robots).toBe("index,follow");
+    expect(meta.title).toContain("Family Caregivers");
+    expect(meta.description).toContain("individual and family paths");
+    expect(CANONICAL_REDIRECTS["/medical-alert-system-for-seniors"]).toBe(canonicalRoute);
+    expect(CANONICAL_REDIRECTS["/who-we-protect/seniors"]).toBe(canonicalRoute);
+    expect(CANONICAL_REDIRECTS["/safety-for/seniors-aging-in-place"]).toBe(canonicalRoute);
   });
 
   it("returns a true not-found metadata state without public schema", async () => {

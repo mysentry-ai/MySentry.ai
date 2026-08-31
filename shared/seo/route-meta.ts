@@ -99,36 +99,36 @@ export const ROUTE_META: Record<string, RouteMeta> = {
       "MySentry keeps women safe with a discreet panic button, live location, and 24/7 monitoring. Walk, run, commute, and travel with confidence.",
   },
   "/seniors": {
-    title: "Safety and Fall Alert App for Older Adults",
+    title: "Personal Safety App for Older Adults and Families",
     description:
-      "Review MySentry supported-device fall alerts, Panic Alarm, Safety Checks, trusted contacts, wellness context, monitoring, and limitations for older adults.",
+      "Explore respectful, consent-based safety planning for independent older adults, trusted family members, and caregivers, with clear setup and limits.",
   },
 
   // ─── Nurses pages ─────────────────────────────────────────────────────────
   "/nurses": {
     title: "Personal Safety App for Nurses",
     description:
-      "Review MySentry Panic Alarm, Safety Checks, eligible incident detection, trusted contacts, monitoring, requirements, and limitations for nurses.",
+      "Explore setting-specific personal-safety planning for home health, travel, ER and trauma, and night-shift nurses, including requirements and limitations.",
   },
   "/nurses/er-trauma": {
-    title: "ER & Trauma Nurse Safety | Panic & Monitoring",
+    title: "ER and Trauma Nurse Safety App and Duress Planning",
     description:
-      "Panic alarm, fall detection, and 24/7 monitoring for ER and trauma nurses on high-pressure shifts. Protect yourself on every shift. Start free.",
+      "See how MySentry can supplement facility procedures with eligible personal alerts, trusted contacts, setup guidance, and clear limitations.",
   },
   "/nurses/home-health": {
-    title: "Home Health Nurse Safety App | Lone Worker",
+    title: "Home Health Nurse Safety App and Solo Visit Planning",
     description:
-      "Protect home health nurses working alone in patient homes. Panic alarm, MeetSafe check-ins, and 24/7 monitoring so help is always close. Start free.",
+      "Explore user-activated alerts, Safety Checks, trusted contacts, setup needs, and limitations for home health nurses working in private homes.",
   },
   "/nurses/night-shift": {
-    title: "Night Shift Nurse Safety App | Crash Detection",
+    title: "Night Shift Nurse Safety App and Check-In Planning",
     description:
-      "MySentry protects night shift nurses during late-night commutes and post-shift drives. Crash detection, panic alarm, and 24/7 monitoring. Start free.",
+      "Prepare for after-hours transitions, parking, and commutes with Safety Checks, eligible alerts, trusted contacts, and clear limitations.",
   },
   "/nurses/travel-nurses": {
-    title: "Travel Nurse Safety App | Panic & Monitoring",
+    title: "Travel Nurse Safety App for New Assignments",
     description:
-      "Keep travel nurses safe in unfamiliar cities and new facilities. Panic alarm, fall detection, and 24/7 monitoring on your phone and watch. Start free.",
+      "Plan for unfamiliar facilities, housing, parking, and commutes with eligible MySentry alerts, trusted contacts, setup guidance, and limitations.",
   },
 
   // ─── Blog ─────────────────────────────────────────────────────────────────
@@ -213,9 +213,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
       "Review permission-based family safety tools, trusted contacts, alerts, Safety Checks, supported devices, privacy boundaries, and service limitations.",
   },
   "/use-cases/medical-alert-app-for-seniors": {
-    title: "Senior Safety App for Families and Caregivers",
+    title: "Medical Alert App for Seniors and Family Caregivers",
     description:
-      "Review MySentry senior safety planning for families, including supported-device alerts, Safety Checks, trusted contacts, monitoring eligibility, privacy, and limitations.",
+      "Compare individual and family paths for supported-device alerts, Safety Checks, trusted contacts, eligible monitoring, privacy, setup, and limitations.",
   },
   "/use-cases/lone-worker-safety-app": {
     title: "Lone Worker Safety App | Panic Alarm & 24/7 Monitoring",
@@ -433,9 +433,10 @@ export const ROUTE_META: Record<string, RouteMeta> = {
       "Review current Samsung Galaxy Watch eligibility, setup, supported controls, wearable wellness context, monitoring, and important limitations for MySentry.",
   },
   "/integrations/oura-ring": {
-    title: "Oura Ring and MySentry | Integration Status",
+    title: "Oura Ring and MySentry Coming Soon",
     description:
-      "Review the current status of a potential Oura Ring connection with MySentry. No production Oura integration is represented as available on this page.",
+      "Explore MySentry's future vision for permission-based Oura Ring wellness context and personal safety. The integration is not currently available.",
+    ogImage: "/images/cdn/hero-oura-ring-integration-gVAVE7WXQAwHMQbbzBA9nB.webp",
   },
 
   // ─── Additional public routes ─────────────────────────────────────────────
@@ -443,11 +444,6 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     title: "Personal Safety App With Monitoring",
     description:
       "Review the MySentry Panic Alarm, Safety Checks, eligible device detection, trusted contacts, professional monitoring, requirements, and limitations.",
-  },
-  "/medical-alert-system-for-seniors": {
-    title: "Senior Safety and Fall Alert App",
-    description:
-      "Review MySentry supported-device fall alerts, Panic Alarm, Safety Checks, trusted contacts, professional monitoring, and limitations for older adults.",
   },
   "/who-we-protect/women": {
     title: "Personal Safety Support for Women | MySentry",

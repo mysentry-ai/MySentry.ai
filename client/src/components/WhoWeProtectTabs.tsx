@@ -25,16 +25,16 @@ const tabs: TabContent[] = [
     label: "Seniors",
     icon: Heart,
     headline: "Age Independently, Live Confidently",
-    description: "MySentry helps seniors stay in the home they love with fall detection, health monitoring, and 24/7 professional response. No stigmatizing lanyard needed. Just your phone and smartwatch working together to keep you safe.",
+    description: "MySentry can add eligible personal alerts, Safety Checks, supported-device events, trusted contacts, and professional monitoring options to a broader plan for living independently. The older adult stays in control of permissions and sharing.",
     image: "/images/cdn/aLIErUBBQTfmnErS.jpg",
     features: [
-      "Fall and near-fall detection with automatic alerts",
-      "24/7 heart rate, HRV, and SpO2 monitoring",
-      "Voice-activated panic alarm for hands-free help",
-      "Automated check-ins so family worries less"
+      "User-activated alerts on eligible configurations",
+      "Safety Checks for planned activities",
+      "Supported-device events with clear limitations",
+      "Trusted-contact coordination based on consent"
     ],
-    ctaText: "Explore Senior Safety",
-    ctaLink: "/seniors"
+    ctaText: "Open the Senior Decision Guide",
+    ctaLink: "/use-cases/medical-alert-app-for-seniors"
   },
   {
     id: "families",

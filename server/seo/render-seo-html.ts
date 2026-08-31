@@ -17,7 +17,16 @@ function escapeJson(value: unknown): string {
 }
 
 function replaceTitle(html: string, value: string): string {
-  return html.replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(value)}</title>`);
+  return html.replace(
+    /<title(?:\s[^>]*)?>[\s\S]*?<\/title>/i,
+    `<title data-rh="true">${escapeHtml(value)}</title>`
+  );
+}
+
+function markHelmetOwned(tag: string): string {
+  return /\sdata-rh=["'][^"']*["']/i.test(tag)
+    ? tag
+    : tag.replace(/\s*\/?>(?=[^>]*$)/, match => ` data-rh="true"${match}`);
 }
 
 function replaceMeta(
@@ -36,7 +45,7 @@ function replaceMeta(
   if (!match) {
     return html.replace(
       "</head>",
-      `  <meta ${selector}="${key}" content="${escaped}" />\n  </head>`
+      `  <meta data-rh="true" ${selector}="${key}" content="${escaped}" />\n  </head>`
     );
   }
 
@@ -44,7 +53,7 @@ function replaceMeta(
   const nextTag = /content=["'][^"']*["']/i.test(tag)
     ? tag.replace(/content=["'][^"']*["']/i, `content="${escaped}"`)
     : tag.replace(/>$/, ` content="${escaped}" />`);
-  return html.replace(tag, nextTag);
+  return html.replace(tag, markHelmetOwned(nextTag));
 }
 
 function replaceCanonical(html: string, canonicalUrl: string): string {
@@ -52,13 +61,13 @@ function replaceCanonical(html: string, canonicalUrl: string): string {
   const expression = /<link\s+[^>]*rel=["']canonical["'][^>]*>/i;
   const match = html.match(expression);
   if (!match) {
-    return html.replace("</head>", `  <link rel="canonical" href="${escaped}" />\n  </head>`);
+    return html.replace("</head>", `  <link data-rh="true" rel="canonical" href="${escaped}" />\n  </head>`);
   }
   const tag = match[0];
   const nextTag = /href=["'][^"']*["']/i.test(tag)
     ? tag.replace(/href=["'][^"']*["']/i, `href="${escaped}"`)
     : tag.replace(/>$/, ` href="${escaped}" />`);
-  return html.replace(tag, nextTag);
+  return html.replace(tag, markHelmetOwned(nextTag));
 }
 
 function buildBreadcrumbs(path: string): Array<{ name: string; url: string }> {
@@ -190,7 +199,7 @@ export function renderSeoHtml(template: string, meta: ResolvedMeta): string {
   html = replaceCanonical(html, canonicalUrl);
 
   const schemaMarkup = buildSchemas(meta, canonicalUrl)
-    .map((schema, index) => `<script id="ssr-schema-${index}" type="application/ld+json">${escapeJson(schema)}</script>`)
+    .map((schema, index) => `<script data-rh="true" id="ssr-schema-${index}" type="application/ld+json">${escapeJson(schema)}</script>`)
     .join("\n    ");
   if (schemaMarkup) {
     html = html.replace("</head>", `    ${schemaMarkup}\n  </head>`);

@@ -42,7 +42,7 @@ const features = [
 
 export default function AppDashboardShowcase() {
   return (
-    <section className="py-24 bg-[#f0f9f0]">
+    <section className="overflow-x-hidden bg-[#f0f9f0] py-24">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">

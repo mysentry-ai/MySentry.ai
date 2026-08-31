@@ -52,14 +52,18 @@
 ## Pillar Pages
 
 - Personal Safety App: https://mysentry.ai/personal-safety-app
-- Medical Alert System for Seniors: https://mysentry.ai/medical-alert-system-for-seniors
+- Medical Alert App for Seniors and Family Caregivers: https://mysentry.ai/use-cases/medical-alert-app-for-seniors
 
 ## Who We Protect
 
-- Seniors: https://mysentry.ai/who-we-protect/seniors
+- Seniors: https://mysentry.ai/seniors
 - Women: https://mysentry.ai/who-we-protect/women
 - Employers: https://mysentry.ai/who-we-protect/employers
 - Drivers: https://mysentry.ai/who-we-protect/drivers
+- Home Health Nurses: https://mysentry.ai/nurses/home-health
+- Travel Nurses: https://mysentry.ai/nurses/travel-nurses
+- ER and Trauma Nurses: https://mysentry.ai/nurses/er-trauma
+- Night Shift Nurses: https://mysentry.ai/nurses/night-shift
 - Students: https://mysentry.ai/who-we-protect/students
 - Children & Teens: https://mysentry.ai/who-we-protect/children-and-teens
 

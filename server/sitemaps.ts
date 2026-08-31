@@ -12,6 +12,10 @@ const STATIC_PAGES = [
   { url: "/pricing", priority: "0.9", changefreq: "monthly" },
   { url: "/females", priority: "0.9", changefreq: "monthly" },
   { url: "/nurses", priority: "0.9", changefreq: "monthly" },
+  { url: "/nurses/home-health", priority: "0.8", changefreq: "monthly" },
+  { url: "/nurses/travel-nurses", priority: "0.8", changefreq: "monthly" },
+  { url: "/nurses/er-trauma", priority: "0.8", changefreq: "monthly" },
+  { url: "/nurses/night-shift", priority: "0.8", changefreq: "monthly" },
   { url: "/seniors", priority: "0.9", changefreq: "monthly" },
   { url: "/families", priority: "0.9", changefreq: "monthly" },
   { url: "/employers", priority: "0.9", changefreq: "monthly" },
@@ -45,7 +49,6 @@ const STATIC_PAGES = [
   { url: "/compare", priority: "0.7", changefreq: "monthly" },
   // New Pillar & Audience Pages
   { url: "/personal-safety-app", priority: "0.9", changefreq: "monthly" },
-  { url: "/medical-alert-system-for-seniors", priority: "0.9", changefreq: "monthly" },
   // Solutions (Vertical-Specific BOFU)
   { url: "/solutions/delivery-drivers", priority: "0.8", changefreq: "monthly" },
   // Safety For (Audience-Specific BOFU)

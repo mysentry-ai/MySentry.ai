@@ -80,7 +80,6 @@ import FitnessWearablesComparison from "./pages/compare/FitnessWearablesComparis
 
 // New SEO Pages - Audience & Pillar
 import PersonalSafetyApp from "./pages/PersonalSafetyApp";
-import MedicalAlertSystemForSeniors from "./pages/MedicalAlertSystemForSeniors";
 import WhoWeProtectSeniors from "./pages/who-we-protect/Seniors";
 import WhoWeProtectWomen from "./pages/who-we-protect/Women";
 import WhoWeProtectEmployers from "./pages/who-we-protect/Employers";
@@ -141,10 +140,10 @@ function Router() {
       <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/females" component={Females} />
       <Route path="/nurses" component={Nurses} />
-      <Route path="/nurses/travel-nurses">{() => <RedirectRoute to="/nurses#travel-nurses" />}</Route>
-      <Route path="/nurses/home-health">{() => <RedirectRoute to="/nurses#home-health" />}</Route>
-      <Route path="/nurses/er-trauma">{() => <RedirectRoute to="/nurses#er-trauma" />}</Route>
-      <Route path="/nurses/night-shift">{() => <RedirectRoute to="/nurses#night-shift" />}</Route>
+      <Route path="/nurses/travel-nurses" component={TravelNurses} />
+      <Route path="/nurses/home-health" component={HomeHealthNurses} />
+      <Route path="/nurses/er-trauma" component={ErTraumaNurses} />
+      <Route path="/nurses/night-shift" component={NightShiftNurses} />
       <Route path="/seniors" component={Seniors} />
       <Route path="/families" component={Families} />
       <Route path="/employers" component={Employers} />
@@ -215,7 +214,7 @@ function Router() {
 
       {/* New SEO Pages - Audience & Pillar */}
       <Route path="/personal-safety-app" component={PersonalSafetyApp} />
-      <Route path="/medical-alert-system-for-seniors" component={MedicalAlertSystemForSeniors} />
+      <Route path="/medical-alert-system-for-seniors">{() => <RedirectRoute to="/use-cases/medical-alert-app-for-seniors" />}</Route>
       <Route path="/who-we-protect/seniors">{() => <RedirectRoute to="/use-cases/medical-alert-app-for-seniors" />}</Route>
       <Route path="/who-we-protect/women">{() => <RedirectRoute to="/use-cases/safety-app-for-women" />}</Route>
       <Route path="/who-we-protect/employers">{() => <RedirectRoute to="/use-cases/lone-worker-safety-app" />}</Route>

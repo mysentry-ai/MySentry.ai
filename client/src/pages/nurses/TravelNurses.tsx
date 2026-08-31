@@ -1,168 +1,64 @@
-import Layout from "@/components/Layout";
-import SEO from "@/components/SEO";
-import { Button } from "@/components/ui/button";
-import { SectionHeading, BodyText, LabelText } from "@/components/ui/typography";
-import HeroSection from "@/components/HeroSection";
-import { Link } from "wouter";
-import GetStartedSection from "@/components/GetStartedSection";
-import { motion } from "framer-motion";
-import { AlertCircle, Heart, Clock, MapPin, ArrowRight, Zap, Activity, Users, Car } from "lucide-react";
-
-const HERO_IMAGE = "/images/cdn/rUMdMJIpZDvPYyBm.jpg";
-const LOGIN_URL = "https://dashboard.mysentry.ai/website-auth?redirect_url=login";
-
-const problems = [
-  { icon: MapPin, color: "bg-red-100 text-red-600", title: "1. Unfamiliar housing and neighborhoods.", body: "Every new assignment drops you into a city you don't know. You're figuring out which streets are safe, which parking lots are well-lit, and which neighbors you can trust, all while starting a new job." },
-  { icon: Users, color: "bg-blue-100 text-blue-600", title: "2. New facilities with unknown colleagues.", body: "You don't have the same rapport with coworkers that staff nurses build over years. If something goes wrong on a shift, you may not know who to call or how fast backup will arrive." },
-  { icon: Car, color: "bg-purple-100 text-purple-600", title: "3. Late-night commutes and parking lots.", body: "Walking to your car at 2am in a city you arrived in three weeks ago is a different kind of risk. You need a backup plan that travels with you." }
-];
-
-const features = [
-  { icon: Zap, title: "Panic Alarm", body: "One press on your phone or watch sends your GPS location and live video to 24/7 monitoring agents. No unlocking. No dialing." },
-  { icon: Clock, title: "MeetSafe Check-Ins", body: "Set a timer before a solo commute or late-night errand. If you don't check in, your contacts and monitoring agents are notified automatically." },
-  { icon: Activity, title: "Fall Detection", body: "Your phone and watch detect sudden falls and trigger an alert if you don't respond within 30 seconds." },
-  { icon: Users, title: "Emergency Contacts", body: "Up to five contacts receive real-time alerts with your location and live status whenever an alert is triggered." },
-  { icon: Heart, title: "Health Alerts", body: "Continuous monitoring of heart rate and SpO2 flags abnormal readings during long or stressful shifts." }
-];
-
-const steps = [
-  { step: "1", title: "Alert is triggered", body: "You press the panic button, a fall is detected, or a check-in timer expires." },
-  { step: "2", title: "Agents are notified promptly", body: "24/7 monitoring agents receive your GPS location, live video, and audio within seconds." },
-  { step: "3", title: "Situation is assessed", body: "Agents verify the alert and attempt to reach you. If there is no response, they escalate immediately." },
-  { step: "4", title: "The alert is reviewed for possible escalation", body: "Emergency services are contacted with your exact location and situation details. Your emergency contacts are also notified." }
-];
-
-const faqs = [
-  { q: "Does it work in new cities?", a: "Yes. MySentry works anywhere you have a cellular signal. No Wi-Fi is required. Your GPS location, panic alarm, and health monitoring all work the same whether you are in your home city or on your twentieth travel assignment." },
-  { q: "What if I don't know the area?", a: "MySentry shares your real-time GPS location with 24/7 monitoring agents and your emergency contacts. Even if you don't know the address, agents can pinpoint your location and contact emergency services when appropriate to you." },
-  { q: "Does it work on Apple Watch?", a: "Yes. MySentry works on Apple Watch and Samsung Galaxy Watch. You can trigger a panic alarm directly from your wrist without touching your phone." },
-  { q: "Does it work without hotel Wi-Fi?", a: "Yes. MySentry runs on your phone's cellular data connection. Hotel Wi-Fi is not required. If you do connect to Wi-Fi, the app uses it as a bonus, but it is never a dependency." },
-  { q: "Is it different from a medical alert system?", a: "Yes. Medical alert systems are designed for falls at home, typically for seniors. MySentry is a full safety platform built for active professionals, covering panic alarms, crash detection, health alerts, and 24/7 monitoring in any environment." },
-  { q: "Can I use it while driving?", a: "Yes. Crash detection is active while you drive. If your phone detects a significant impact and you don't respond, an alert is sent automatically. You can also trigger the panic alarm hands-free using voice activation." }
-];
+import { Building2, Car, ClipboardCheck, Home, MapPin, Radio, Smartphone, Users } from "lucide-react";
+import NurseSpecialtyPage from "@/components/NurseSpecialtyPage";
 
 export default function TravelNurses() {
   return (
-    <Layout>
-      <SEO
-        schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
-      />
-      <HeroSection label="Travel Nurse Safety" title={<>Safety for Travel Nurses<br /><span className="text-gray-600">in Every New City</span></>} subtitle="Panic alarm, location sharing, and 24/7 monitoring that moves with you to every new assignment. Your safety setup works the same whether you are in your home city or across the country." imageSrc={HERO_IMAGE} imageAlt="Travel nurse with luggage outside hospital" ctaText="Review Plans and Eligibility" ctaLink={LOGIN_URL} />
-
-      <section className="py-16 bg-white border-b border-gray-100">
-        <div className="container max-w-3xl">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">What is a travel nurse safety app?</h2>
-          <p className="text-lg text-gray-700 leading-relaxed">A travel nurse safety app is a mobile app that gives travel nurses a fast way to call for help, share their location, and stay connected to emergency contacts and professional monitoring agents, no matter which city their current assignment is in. MySentry works on your phone and smartwatch, so your safety setup moves with you every time you relocate.</p>
-          <div className="mt-6 flex flex-wrap gap-4">
-            {[{ label: "Works in any city", value: "Nationwide coverage" }, { label: "Response time", value: "Timing varies" }, { label: "Monitoring", value: "24/7 professional agents" }].map((s, i) => (
-              <div key={i} className="bg-primary/5 rounded-xl px-5 py-3 text-center flex-1 min-w-[140px]">
-                <div className="text-xl font-bold text-primary">{s.value}</div>
-                <div className="text-xs text-gray-600 mt-1">{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 bg-white">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center mb-20">
-            <LabelText className="text-red-500">The Reality</LabelText>
-            <SectionHeading>Travel nursing is rewarding.<br /><span className="text-muted-foreground">It also puts you in unfamiliar situations constantly.</span></SectionHeading>
-            <BodyText className="text-xl">You adapt fast. But adapting to a new city every 13 weeks means you are always the person who doesn't know the neighborhood yet.</BodyText>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {problems.map((p, i) => { const Icon = p.icon; return (
-              <motion.div key={i} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: i * 0.1 }} className="p-8 rounded-[2rem] bg-gray-50 border border-gray-100 hover:shadow-xl transition-all duration-300 group">
-                <div className={`h-14 w-14 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform ${p.color}`}><Icon className="h-7 w-7" /></div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{p.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{p.body}</p>
-              </motion.div>
-            ); })}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 bg-[#f8fafc]">
-        <div className="container">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <LabelText className="text-primary">Every Assignment, Every City</LabelText>
-            <SectionHeading>What MySentry does for travel nurses</SectionHeading>
-            <BodyText>Five tools that work together so your safety setup is always ready, no matter where you land.</BodyText>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {features.map((f, i) => { const Icon = f.icon; return (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: i * 0.08 }} className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 hover:shadow-lg transition-all">
-                <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5"><Icon className="h-6 w-6 text-primary" /></div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{f.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{f.body}</p>
-              </motion.div>
-            ); })}
-          </div>
-          <div className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/nurses"><Button variant="outline" className="rounded-full px-8 h-12 font-semibold border-primary text-primary hover:bg-primary/5">All Nurse Safety Features</Button></Link>
-            <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8 h-12">Review Plans and Eligibility <ArrowRight className="ml-2 h-4 w-4" /></Button></a>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 bg-white">
-        <div className="container max-w-4xl">
-          <div className="text-center mb-16">
-            <LabelText className="text-primary">Step by Step</LabelText>
-            <SectionHeading>What happens after you trigger an alert</SectionHeading>
-          </div>
-          <div className="space-y-6">
-            {steps.map((s, i) => (
-              <motion.div key={i} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, delay: i * 0.1 }} className="flex gap-6 items-start bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                <div className="h-12 w-12 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg shrink-0">{s.step}</div>
-                <div><h3 className="text-lg font-bold text-gray-900 mb-1">{s.title}</h3><p className="text-gray-600">{s.body}</p></div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 bg-[#f8fafc] border-y border-gray-100">
-        <div className="container max-w-4xl">
-          <h2 className="text-lg font-bold text-gray-900 mb-5 text-center">Explore related features</h2>
-          <div className="flex flex-wrap gap-3 justify-center">
-            {[{ label: "Panic Button App", href: "/features/panic-button-app" }, { label: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" }, { label: "Emergency Contacts", href: "/features/emergency-contacts" }, { label: "MeetSafe Check-Ins", href: "/features/safety-check-in-app" }, { label: "Health Monitoring", href: "/features/health-monitoring" }, { label: "All Nurse Safety", href: "/nurses" }, { label: "Pricing", href: "/pricing" }].map((l, i) => (
-              <Link key={i} href={l.href}><span className="inline-flex items-center gap-1 px-4 py-2 rounded-full border border-primary/30 text-primary text-sm font-medium hover:bg-primary/5 transition-colors">{l.label} <ArrowRight className="h-3 w-3" /></span></Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-32 bg-white">
-        <div className="container max-w-3xl">
-          <div className="text-center mb-12"><LabelText className="text-primary">Common Questions</LabelText><SectionHeading>Travel nurse safety app FAQ</SectionHeading></div>
-          <div className="space-y-4">
-            {faqs.map((faq, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: i * 0.05 }} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                <h3 className="font-bold text-gray-900 mb-2">{faq.q}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <GetStartedSection />
-
-      <section className="py-24 bg-white">
-        <div className="container">
-          <div className="bg-[#003d60] rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none"><div className="absolute top-[-50%] left-[-20%] w-[80%] h-[80%] rounded-full bg-primary blur-[150px]" /></div>
-            <div className="relative z-10 max-w-3xl mx-auto">
-              <h2 className="text-5xl md:text-6xl font-heading font-bold text-white mb-8 uppercase tracking-tight">You Move. Your Safety Moves With You.</h2>
-              <p className="text-xl text-gray-300 mb-12 leading-relaxed">Review current plans, eligibility, billing terms, and enrollment requirements.</p>
-              <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-16 text-lg transition-all hover:scale-105 shadow-xl">Review Plans and Eligibility</Button></a>
-              <p className="text-gray-400 text-sm mt-6">Secure checkout. Cancel anytime.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Layout>
+    <NurseSpecialtyPage
+      seoTitle="Travel Nurse Safety App for New Assignments"
+      seoDescription="Plan for unfamiliar facilities, housing, parking, and commutes with eligible MySentry alerts, trusted contacts, setup guidance, and limitations."
+      canonical="https://mysentry.ai/nurses/travel-nurses"
+      label="Travel Nurse Safety"
+      h1="A safety setup you can review for every new assignment."
+      heroDescription="A new contract can change your facility, housing, parking, commute, local contacts, and escalation procedures at the same time. MySentry can provide a consistent personal-safety layer while you learn the rules and resources in each location."
+      heroImage="/images/cdn/rUMdMJIpZDvPYyBm.jpg"
+      heroAlt="Travel nurse reviewing a new assignment route and facility information"
+      directAnswer="MySentry can help an eligible travel nurse prepare user-activated alerts, Safety Checks, trusted contacts, permitted incident context, and eligible monitoring for a new assignment. The setup travels with the nurse only when the phone, supported device, plan, permissions, connectivity, region, and service remain eligible. It does not replace facility onboarding, local security, employer procedures, housing judgment, or emergency services."
+      problemsHeading="A new assignment changes more than the unit."
+      problemsIntro="The first days of a contract require practical safety decisions across work, housing, and travel. Three transitions deserve a deliberate plan."
+      problems={[
+        { icon: Building2, title: "An unfamiliar facility has unfamiliar rules", description: "Duress systems, badge access, security numbers, staff entrances, reporting expectations, and after-hours procedures can differ from the nurse's previous assignment." },
+        { icon: Home, title: "Temporary housing changes the routine", description: "Entrances, parking, building access, neighborhood routes, roommates, and property contacts may all be new. A familiar personal setup still needs local verification." },
+        { icon: Car, title: "Commutes and support networks reset", description: "A new route, schedule, transit option, and time zone can affect who is available to check in. Trusted contacts need the current address and an understood role." },
+      ]}
+      fitHeading="Keep one personal layer, then localize it."
+      fitIntro="MySentry can provide familiar alert and check-in tools, but every assignment should begin with a fresh review of facility policy, regional eligibility, trusted contacts, routes, permissions, and connectivity."
+      tools={[
+        { icon: Smartphone, title: "Consistent personal alert access", description: "Use eligible phone or supported wearable controls according to the current configuration while learning the facility's approved internal procedures." },
+        { icon: ClipboardCheck, title: "Assignment-specific Safety Checks", description: "Plan timed check-ins for an unfamiliar commute, parking transition, or other eligible activity when a configured check-in adds value." },
+        { icon: Users, title: "Updated trusted contacts", description: "Choose people who are awake, reachable, and familiar with the current assignment, housing location, and expected next step." },
+        { icon: MapPin, title: "Permitted context for the current location", description: "Supported alert context may help orient a contact or eligible monitoring workflow when permissions, settings, app state, and connectivity allow it." },
+      ]}
+      workflowHeading="Reset the plan at the start of each contract."
+      workflowIntro="A configuration that made sense in one city or facility may not fit the next. Treat each assignment as a new setup review."
+      workflow={[
+        { title: "Learn the local safety resources", description: "Save facility security, staffing, supervisor, housing, transportation, and emergency contacts. Confirm staff entrances, parking, escorts, and reporting procedures." },
+        { title: "Update people and places", description: "Review trusted contacts, home and work addresses, commute details, time zones, notification permissions, and who should act on an alert or missed check-in." },
+        { title: "Confirm technical eligibility", description: "Check the current phone, wearable, software, plan, region, permissions, battery, and connection before assuming a previously used feature will operate." },
+        { title: "Practice before a stressful moment", description: "Test the selected alert or Safety Check workflow and keep facility and local emergency options accessible as the primary approved resources." },
+      ]}
+      limitations={[
+        "Availability can change by device, software, plan, permission, connection, region, and service terms, so a past setup does not guarantee future eligibility.",
+        "Indoor location, temporary housing Wi-Fi, parking structures, and rural routes may reduce or interrupt connectivity and available context.",
+        "MySentry does not verify housing safety, screen a neighborhood, approve a commute, replace facility orientation, or override employer procedures.",
+        "Detection, delivery, monitoring contact, escalation, emergency-service response, arrival, and outcomes are not guaranteed.",
+      ]}
+      evidenceText="CDC and NIOSH healthcare-worker guidance recognizes offsite work, schedule changes, fatigue, procedures, and training as relevant parts of healthcare safety. For a travel nurse, that supports a repeatable personal checklist that is updated for each employer and location."
+      faqs={[
+        { question: "Can I use the same MySentry setup in every assignment?", answer: "Not without review. Confirm device, plan, permissions, connectivity, regional availability, monitoring eligibility, facility policy, and trusted contacts for each contract." },
+        { question: "Does MySentry replace facility security or a staff duress system?", answer: "No. Learn and follow the facility's approved security, duress, reporting, and emergency procedures. MySentry is only a supplemental personal layer." },
+        { question: "Can I use a Safety Check for a new commute?", answer: "A Safety Check may be useful for an eligible planned activity. Set a realistic duration, confirm who may receive the configured follow-up, and maintain a direct emergency option." },
+        { question: "Will it work in parking garages or temporary housing?", answer: "Operation is not guaranteed in any location. Building materials, app state, battery, permissions, and network availability can affect delivery and context." },
+        { question: "Can contacts see my location all the time?", answer: "MySentry does not describe unrestricted continuous access. Supported location sharing follows the selected feature, permissions, settings, and active workflow." },
+        { question: "Do I need to change trusted contacts when I change time zones?", answer: "Review them. A useful contact should understand the assignment, know the current address, be reachable during the relevant hours, and know what action is expected." },
+        { question: "Does supported-device detection guarantee an alert after a fall or crash?", answer: "No. Detection depends on eligible hardware, how it is carried or worn, settings, permissions, app state, connectivity, and event conditions." },
+        { question: "Can my staffing agency or facility provide coverage?", answer: "Employers can review workforce options. Eligibility, employee consent, policy alignment, devices, permissions, regions, and service terms must be confirmed before any rollout." },
+      ]}
+      relatedLinks={[
+        { text: "Nurse Safety Hub", href: "/nurses" },
+        { text: "Night Shift Nurses", href: "/nurses/night-shift" },
+        { text: "Panic Alarm App", href: "/features/panic-button-app" },
+        { text: "Safety Check-In App", href: "/features/safety-check-in-app" },
+      ]}
+    />
   );
 }

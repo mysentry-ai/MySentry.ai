@@ -1012,3 +1012,29 @@
 - [x] Fix the SSR_TITLE rendering without breaking SEO metadata
 - [x] Verify fix across all major pages
 - [x] Confirm SEO metadata (title, meta description, OG tags) remains intact
+
+## Oura Ring Coming Soon Page Redesign (September 2026)
+- [x] Audit the current Oura route, metadata, local assets, noindex treatment, and related wearable pages
+- [x] Remove the accidental tracked `client/src/src` duplicate tree that conflicts with the real application source and blocks TypeScript compilation
+- [x] Define an honest customer story that clearly states Oura Ring integration is not currently available
+- [x] Build a polished hero with a visible Coming Soon status, aspirational value proposition, and current-feature CTA
+- [x] Add story-driven problem, future-value, expected workflow, privacy, compatibility, and availability sections without promising unverified capabilities
+- [x] Add visible FAQs and eligible structured data that clearly distinguish current MySentry features from possible future Oura support
+- [x] Preserve noindex status until the integration, supported models, permissions, regional availability, and launch terms are verified
+- [x] Add or update targeted tests for Oura status language, metadata, indexability, links, local images, and prohibited claims
+- [ ] Verify the complete Oura page on desktop and mobile, save a checkpoint, and push the approved update to GitHub
+
+## Nurse Specialty and Senior Buyer Journey Rebuild (September 2026)
+- [x] Audit the nurse hub and the four existing specialty routes for content depth, search intent, metadata, links, images, contrast, and conversion gaps
+- [x] Research current safety challenges and buyer considerations for home health, travel, ER and trauma, and night-shift nurses using authoritative sources
+- [x] Rebuild `/nurses/home-health` as a complete conversion page for nurses working alone in patient homes and community settings
+- [x] Rebuild `/nurses/travel-nurses` as a complete conversion page for temporary assignments, unfamiliar locations, housing, parking, and commutes
+- [x] Rebuild `/nurses/er-trauma` as a complete conversion page for high-pressure clinical settings, workplace violence planning, and employer coordination
+- [x] Rebuild `/nurses/night-shift` as a complete conversion page for after-hours parking, corridors, commutes, fatigue-aware planning, and check-ins
+- [x] Link every nurse-hub specialty card to its canonical page and fix all pale-green card text to use accessible dark-green or logo-blue treatments
+- [x] Audit the canonical senior routes to prevent duplicate search intent and establish one clear hierarchy for older adults, adult children, caregivers, and family-plan buyers
+- [x] Research older-adult safety, aging-in-place, caregiver burden, family decision-making, privacy, and product-selection concerns using authoritative sources
+- [x] Strengthen the senior hub for the protected older adult and the adult daughter or family caregiver who often evaluates and buys the service
+- [x] Strengthen the canonical senior conversion page with individual and family-plan pathways, objections, setup, privacy, limitations, FAQs, and clear calls to action
+- [x] Add targeted tests for nurse and senior metadata, page structure, links, contrast, images, claims, and responsive behavior
+- [ ] Verify all affected nurse, senior, Oura, and pricing paths on desktop and mobile, save a checkpoint, and push the complete update to GitHub

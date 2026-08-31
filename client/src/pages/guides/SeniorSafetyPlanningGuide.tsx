@@ -60,7 +60,7 @@ export default function SeniorSafetyPlanningGuide() {
       relatedLinks={[
         { text: "Safety for Seniors", href: "/seniors" },
         { text: "Fall Detection App", href: "/features/fall-detection-app" },
-        { text: "Senior Safety App", href: "/medical-alert-system-for-seniors" },
+        { text: "Senior Safety App", href: "/use-cases/medical-alert-app-for-seniors" },
         { text: "Compare Plans", href: "/pricing" },
       ]}
     />

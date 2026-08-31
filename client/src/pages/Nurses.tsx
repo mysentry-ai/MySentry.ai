@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { Building2, Car, CheckCircle2, HeartPulse, Moon, ShieldCheck, Stethoscope } from "lucide-react";
+import { ArrowRight, Building2, Car, CheckCircle2, Moon, ShieldCheck, Stethoscope } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import HeroSection from "@/components/HeroSection";
@@ -7,24 +7,28 @@ import HeroSection from "@/components/HeroSection";
 const specializations = [
   {
     id: "home-health",
+    href: "/nurses/home-health",
     icon: Car,
     title: "Home Health Nurses",
     description: "Prepare Panic Alarm access, Safety Checks, trusted contacts, and an agency response plan before entering unfamiliar or isolated locations.",
   },
   {
     id: "travel-nurses",
+    href: "/nurses/travel-nurses",
     icon: Building2,
     title: "Travel Nurses",
     description: "Review device support, local contacts, parking and commute plans, permissions, and connectivity when starting a new assignment.",
   },
   {
     id: "er-trauma",
+    href: "/nurses/er-trauma",
     icon: Stethoscope,
     title: "ER and Trauma Nurses",
     description: "Use personal safety tools as a supplement to employer procedures, security resources, training, and workplace violence controls.",
   },
   {
     id: "night-shift",
+    href: "/nurses/night-shift",
     icon: Moon,
     title: "Night Shift Nurses",
     description: "Plan check-ins and trusted-contact workflows for quieter corridors, parking areas, commutes, and other after-hours transitions.",
@@ -147,12 +151,21 @@ export default function Nurses() {
             <h2 className="mt-4 text-4xl font-bold text-[#0b2f4f]">One hub for four nurse safety contexts</h2>
           </div>
           <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {specializations.map(({ id, icon: Icon, title, description }) => (
-              <article id={id} key={id} className="scroll-mt-28 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+            {specializations.map(({ id, href, icon: Icon, title, description }) => (
+              <Link
+                id={id}
+                key={id}
+                href={href}
+                className="group scroll-mt-28 rounded-3xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-[#007bc2]/50 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#007bc2] focus-visible:ring-offset-2"
+              >
                 <Icon className="h-8 w-8 text-[#007bc2]" aria-hidden="true" />
                 <h3 className="mt-5 text-2xl font-bold text-[#0b2f4f]">{title}</h3>
                 <p className="mt-3 leading-relaxed text-slate-600">{description}</p>
-              </article>
+                <span className="mt-5 inline-flex items-center gap-2 font-bold text-[#006a9c]">
+                  Explore this nurse setting
+                  <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" aria-hidden="true" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>

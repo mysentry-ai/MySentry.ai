@@ -56,7 +56,7 @@ const megaMenuSections = [
           { name: "Employers", desc: "Supplemental workforce safety tools", href: "/employers" },
           { name: "Nurses & Healthcare", desc: "Safety for nurses and healthcare workers", href: "/nurses" },
           { name: "Lone Workers", desc: "Check-ins, alerts, and response planning", href: "/use-cases/lone-worker-safety-app" },
-          { name: "Travel Nurses", desc: "Safety across every assignment", href: "/nurses#travel-nurses" },
+          { name: "Travel Nurses", desc: "Safety planning for every new assignment", href: "/nurses/travel-nurses" },
         ],
       },
     ],
