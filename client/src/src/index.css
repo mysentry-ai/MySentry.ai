@@ -1,0 +1,431 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 400;
+  src: local('Proxima Nova Regular');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 600;
+  src: local('Proxima Nova Semibold');
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  font-weight: 700;
+  src: local('Proxima Nova Bold');
+}
+
+@theme inline {
+  --font-sans: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-heading: "Proxima Nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  /* MySentry Official Brand Colors - Refined for Consistency */
+  --primary: #004F7B; /* MySentry Blue - Primary Brand Color */
+  --primary-foreground: #ffffff; /* White */
+  
+  --secondary: #386758; /* Dark Green */
+  --secondary-foreground: #ffffff;
+  
+  --background: #ffffff; /* White Background */
+  --foreground: #232020; /* Dark Grey Text */
+  
+  --card: #ffffff; /* Pure White Cards */
+  --card-foreground: #232020; /* Dark text on cards */
+  
+  --popover: #ffffff;
+  --popover-foreground: #232020;
+  
+  --muted: #F5F7F7; /* Very Light Grey for backgrounds */
+  --muted-foreground: #5C5C5C; /* Medium Grey for secondary text */
+  
+  --accent: #6AD990; /* Light Green Accent */
+  --accent-foreground: #232020;
+  
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  
+  --border: #E5E7EB; /* Light Grey Border */
+  --input: #E5E7EB;
+  --ring: #004F7B; /* Blue Ring */
+  
+  --radius: 2rem; /* Rounded corners like Ouraring */
+  
+  --chart-1: #004F7B; /* Blue */
+  --chart-2: #386758; /* Dark Green */
+  --chart-3: #6AD990; /* Light Green */
+  --chart-4: #232020; /* Dark Grey */
+  --chart-5: #D2D9D9; /* Light Grey */
+  
+  --sidebar: #ffffff;
+  --sidebar-foreground: #232020;
+  --sidebar-primary: #004F7B;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #6AD990;
+  --sidebar-accent-foreground: #232020;
+  --sidebar-border: #D2D9D9;
+  --sidebar-ring: #004F7B;
+}
+
+.dark {
+  /* Dark Mode (if needed) */
+  --primary: #6AD990; /* Light Green for visibility */
+  --primary-foreground: #232020;
+  
+  --secondary: #386758;
+  --secondary-foreground: #ffffff;
+  
+  --background: #232020; /* Dark Grey Background */
+  --foreground: #ffffff;
+  
+  --card: #2a2a2a;
+  --card-foreground: #ffffff;
+  
+  --popover: #2a2a2a;
+  --popover-foreground: #ffffff;
+  
+  --muted: #3a3a3a;
+  --muted-foreground: #D2D9D9;
+  
+  --accent: #004F7B;
+  --accent-foreground: #ffffff;
+  
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  
+  --border: #3a3a3a;
+  --input: #3a3a3a;
+  --ring: #6AD990;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    font-size: 16px; /* Standard base font size */
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    color: var(--foreground);
+    line-height: 1.6;
+  }
+  
+  /* Typography defaults - relying on Tailwind utility classes in components */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold tracking-tight text-foreground;
+    font-weight: 700 !important;
+  }
+  
+  p {
+    @apply text-foreground leading-relaxed;
+  }
+
+  /* Button Standardization */
+  .btn-primary {
+    @apply bg-primary text-white font-bold uppercase tracking-wider rounded-full px-8 h-14 text-base transition-all hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary border-2 border-primary font-bold uppercase tracking-wider rounded-full px-8 h-14 text-base transition-all hover:bg-gray-50 shadow-sm hover:shadow-md flex items-center justify-center;
+  }
+  
+  .btn-accent {
+    @apply bg-accent text-foreground font-bold uppercase tracking-wider rounded-full px-8 h-14 text-base transition-all hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center;
+  }
+
+  /* Exception for white text on dark/primary backgrounds - Removed !important overrides to allow component flexibility */
+  .text-white {
+    color: #ffffff;
+  }
+  
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    max-width: 1280px; /* Standardized max-width */
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    h1 { font-size: 2.5rem !important; line-height: 1.1 !important; }
+    h2 { font-size: 2rem !important; line-height: 1.2 !important; }
+    h3 { font-size: 1.5rem !important; }
+    p { font-size: 1rem !important; line-height: 1.6 !important; }
+    .container { padding-left: 1rem; padding-right: 1rem; }
+    
+    /* Ensure touch targets are large enough */
+    button, a {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+  
+  /* MySentry Brand Utilities */
+  .brand-card {
+    @apply bg-white border border-border rounded-3xl p-8 shadow-sm hover:shadow-md transition-all duration-300;
+  }
+  
+  .brand-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary;
+  }
+  
+  .brand-text {
+    @apply text-primary font-bold;
+  }
+
+  /* Visual Effects */
+  .glass-panel {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-2 shadow-xl;
+  }
+}
+
+/* ===== ADMIN LIGHT THEME OVERRIDE =====
+   Admin pages set data-admin-light on <html>.
+   This forces ALL elements (including Radix portals) to use light-mode colors,
+   overriding the global dark theme. */
+html[data-admin-light] [data-radix-popper-content-wrapper],
+html[data-admin-light] [data-radix-popper-content-wrapper] *,
+html[data-admin-light] [role="dialog"],
+html[data-admin-light] [role="dialog"] *,
+html[data-admin-light] [role="alertdialog"],
+html[data-admin-light] [role="alertdialog"] *,
+html[data-admin-light] [data-radix-select-viewport],
+html[data-admin-light] [data-radix-select-viewport] * {
+  --popover: #ffffff;
+  --popover-foreground: #232020;
+  --accent: #e8f5e9;
+  --accent-foreground: #232020;
+  --muted: #F5F7F7;
+  --muted-foreground: #5C5C5C;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --background: #ffffff;
+  --foreground: #232020;
+  --card: #ffffff;
+  --card-foreground: #232020;
+}
+
+html[data-admin-light] [data-slot="select-content"] {
+  background-color: #ffffff !important;
+  color: #232020 !important;
+  border-color: #E5E7EB !important;
+}
+
+html[data-admin-light] [data-slot="select-item"] {
+  color: #232020 !important;
+}
+
+html[data-admin-light] [data-slot="select-item"]:hover,
+html[data-admin-light] [data-slot="select-item"]:focus,
+html[data-admin-light] [data-slot="select-item"][data-highlighted] {
+  background-color: #e8f5e9 !important;
+  color: #232020 !important;
+}
+
+html[data-admin-light] [data-slot="dropdown-menu-content"] {
+  background-color: #ffffff !important;
+  color: #232020 !important;
+  border-color: #E5E7EB !important;
+}
+
+html[data-admin-light] [data-slot="dropdown-menu-item"] {
+  color: #232020 !important;
+}
+
+html[data-admin-light] [data-slot="dropdown-menu-item"]:hover,
+html[data-admin-light] [data-slot="dropdown-menu-item"]:focus,
+html[data-admin-light] [data-slot="dropdown-menu-item"][data-highlighted] {
+  background-color: #e8f5e9 !important;
+  color: #232020 !important;
+}
+
+/* ===== SHARED BLOG CONTENT STYLES =====
+   Ensures consistent rendering across:
+   - Public blog page (BlogPost.tsx)
+   - WYSIWYG editor (TipTapEditor.tsx)
+   - Editor preview modal (BlogEditor.tsx)
+   - AI Wizard draft preview (AIWizard.tsx)
+*/
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6 {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 600;
+  color: #111827;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.3;
+}
+
+.blog-content h2 {
+  font-size: 1.75rem;
+}
+
+.blog-content h3 {
+  font-size: 1.375rem;
+}
+
+.blog-content h4 {
+  font-size: 1.125rem;
+}
+
+.blog-content p {
+  color: #111827;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  font-weight: 300;
+}
+
+.blog-content a {
+  color: #386758;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.blog-content a:hover {
+  text-decoration: underline;
+}
+
+.blog-content strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+.blog-content li {
+  color: #111827;
+  line-height: 1.9;
+}
+
+.blog-content blockquote {
+  border-left: 4px solid #386758;
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: #111827;
+  background-color: #f9fafb;
+  padding: 1rem 1rem 1rem 1.5rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.blog-content img {
+  border-radius: 0.75rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-content table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.blog-content table th,
+.blog-content table td {
+  border: 1px solid #e5e7eb;
+  padding: 0.75rem;
+  color: #111827;
+}
+
+.blog-content table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+/* Legal pages (Privacy, Terms) */
+#privacy-content *,
+#terms-content * {
+  color: #111827;
+}
