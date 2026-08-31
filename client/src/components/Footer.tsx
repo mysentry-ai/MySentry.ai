@@ -48,7 +48,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-4">
             <Link onClick={() => window.scrollTo(0, 0)} href="/" className="flex items-center gap-2">
-              <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
+              <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" width="360" height="160" loading="lazy" />
             </Link>
             <p className="text-sm font-bold text-[#255044] uppercase tracking-wider mb-1">Live Safe. Stay Healthy.</p>
             <p className="text-base text-gray-900 leading-relaxed font-medium">

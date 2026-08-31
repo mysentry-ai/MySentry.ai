@@ -144,6 +144,9 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
                 src={item.image}
                 alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                width="800"
+                height="600"
+                loading="lazy"
               />
               <div className={cn(
                 "absolute inset-0 transition-opacity duration-500",

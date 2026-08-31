@@ -160,6 +160,8 @@ export default function RingAnnouncementSection() {
                 alt="MySentry app showing PANIC button, emergency contacts, and health monitoring"
                 className="h-auto drop-shadow-xl mr-[3px] ml-[35px] w-[234px]"
                 loading="lazy"
+                width="509"
+                height="1006"
               />
             </motion.div>
 

@@ -196,6 +196,9 @@ export default function Navbar() {
             src="/images/logo.png"
             alt="MySentry"
             className="h-10 md:h-12 lg:h-14 w-auto transition-all duration-300 group-hover:scale-105"
+            width="360"
+            height="160"
+            loading="eager"
           />
           <span className="hidden lg:block text-[8px] font-semibold uppercase tracking-widest text-[#255044] mt-0.5">
             Live Safe. Stay Healthy.
@@ -346,7 +349,7 @@ export default function Navbar() {
         <div className="fixed inset-0 z-[9999] bg-white flex flex-col xl:hidden overflow-y-auto h-[100dvh] w-screen animate-in slide-in-from-right duration-300">
           <div className="container py-6 flex items-center justify-between border-b border-gray-100 bg-white sticky top-0 z-10">
             <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
-              <img src="/images/logo.png" alt="MySentry" className="h-10 w-auto" />
+              <img src="/images/logo.png" alt="MySentry" className="h-10 w-auto" width="360" height="160" loading="eager" />
             </Link>
             <button onClick={() => setIsOpen(false)} className="p-2">
               <X className="h-8 w-8 text-black" />

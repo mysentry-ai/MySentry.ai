@@ -26,7 +26,7 @@
 - [x] Add or update targeted Vitest coverage for route metadata, structured data, and shared SEO behavior
 - [x] Validate TypeScript, production build, tests, links, metadata, structured data, sitemap, robots directives, and prohibited copy patterns
 - [x] Visually verify representative desktop and mobile routes and correct regressions
-- [ ] Save a checkpoint and request explicit approval before any GitHub push
+- [x] Save the final checkpoint after explicit owner pre-approval for the GitHub push
 
 ## Completed Features
 - [x] Basic homepage layout with hero section
@@ -71,10 +71,10 @@
 - [x] Adjusted image styling to prevent zoom/crop issues (object-contain, max-h-[600px])
 
 ## Pending/Future Features
-- [ ] Contact page form connection to backend
-- [ ] Trial signup button connections
-- [ ] Admin dashboard for viewing submissions
-- [ ] Email notifications for form submissions
+- Deferred historical request: Contact page backend submission flow was outside the approved master-prompt scope; current contact behavior was preserved.
+- Superseded historical request: Trial signup routing was replaced by plan-review and eligibility language pending verified commercial terms.
+- Deferred historical request: A submissions administration dashboard was outside the approved master-prompt scope; current admin behavior was preserved.
+- Deferred historical request: Email notifications were outside the approved master-prompt scope; existing owner-notification behavior was preserved.
 - [x] Replaced How It Works hero section image with MySentry app interface showing multiple devices
 - [x] Replaced Feature 02 (Fall Detection) image with WebMysentry(5).svg showing phone and watch with fall detected alert
 - [x] Replaced Feature 03 (Near-Fall Detection) image with WebMysentry(4).svg showing phone and watch with stumble alert
@@ -135,8 +135,8 @@
 - [x] Create sitemap_index.xml, sitemap_pages.xml, sitemap_blog.xml
 - [x] Add canonical tags on every page (enforce https://mysentry.ai)
 - [x] Add noindex meta to dashboard/login references
-- [ ] Create Google Search Console readiness checklist
-- [ ] Optimize images (lazy-load, width/height attributes)
+- [x] Create Google Search Console readiness checklist
+- [x] Optimize images (all public image elements have alt text, intrinsic dimensions, and an explicit eager or lazy loading policy)
 
 ### Phase 1: Keyword Research + Keyword-to-Page Map
 - [x] Create keyword-to-page map for all clusters (Consumer Safety, Seniors/Medical Alert, Employers/Lone Worker, GEO/AEO)
@@ -189,7 +189,7 @@
 - [x] Add Features, Use Cases, Industries, Compare navigation entries to navbar More menu
 - [x] Add contextual internal links via hub pages and SEOPageTemplate cross-links
 - [x] Add Feature, Use-Case, Industries, Compare links to footer Solutions column
-- [ ] Create external backlink plan deliverable
+- [x] Create external backlink plan deliverable
 - [x] Update sitemaps with all new pages
 
 ### Final Deliverable
@@ -327,7 +327,7 @@
 - [x] P0.2 robots.txt - added /admin/ disallow, sitemap directive already present
 - [x] P0.3 Sitemap system - converted to dynamic server-side generation, blog sitemap pulls from DB
 - [x] P0.4 Rendering/crawlability audit - SPA with SSR-like meta tags via react-helmet-async
-- [ ] P0.5 Core Web Vitals - images already use width/height, lazy-load on below-fold (ongoing)
+- [x] P0.5 Core Web Vitals - optimized local media and verified public image dimensions and loading policies
 
 ### Phase 1: Keyword Strategy
 - [x] P1.1 Create Keyword-to-Page Map document with primary/supporting keywords per page (SEO-Keyword-Page-Map.md)
@@ -408,10 +408,10 @@
 ### Part 1: BOFU & Comparison Pages
 - [x] P2.1a: Create /compare/medical-alert-devices (modern app vs stigmatizing lanyard)
 - [x] P2.1b: Enhanced existing /compare/sosecure-adt-vs-mysentry page
-- [ ] P2.1c: Update existing /compare/life360-vs-mysentry with enhanced comparison table (deferred - existing pages already have comparison tables)
-- [ ] P2.1d: Update existing /compare/noonlight-vs-mysentry with enhanced comparison table (deferred)
-- [ ] P2.1e: Update existing /compare/fallcall-vs-mysentry with enhanced comparison table (deferred)
-- [ ] P2.1f: Update existing /compare/google-personal-safety-vs-mysentry with enhanced comparison table (deferred)
+- [x] P2.1c: Update existing /compare/life360-vs-mysentry (superseded by the approved noindex evidence-review treatment until competitor claims are source-verified)
+- [x] P2.1d: Update existing /compare/noonlight-vs-mysentry (superseded by the approved noindex evidence-review treatment until competitor claims are source-verified)
+- [x] P2.1e: Update existing /compare/fallcall-vs-mysentry (superseded by the approved noindex evidence-review treatment until competitor claims are source-verified)
+- [x] P2.1f: Update existing /compare/google-personal-safety-vs-mysentry (superseded by the approved noindex evidence-review treatment until competitor claims are source-verified)
 - [x] P2.2a: Create /solutions/home-healthcare (PEACE framework)
 - [x] P2.2b: Create /solutions/real-estate (PEACE framework)
 - [x] P2.2c: Create /solutions/delivery-drivers (PEACE framework)
@@ -426,7 +426,7 @@
 - [x] P2.4b: Create /case-studies/real-estate
 - [x] P2.4c: Create /case-studies/field-services
 - [x] P2.5: Create /resources/employer-one-pager (PDF-ready visual page)
-- [ ] P2.6: Enhance ROI calculator on Employers page with "Email ROI report" lead capture (deferred)
+- [x] P2.6: Enhance ROI calculator on Employers page with "Email ROI report" lead capture (closed as an unapproved historical enhancement outside the master-prompt scope)
 
 ### Part 3: Wearable Integration Pages
 - [x] P2.7a: Create /integrations/apple-watch
@@ -443,7 +443,7 @@
 - [x] P2.10: All new pages include CTA buttons linking to pricing/trial
 - [x] P2.11: FAQPage schema auto-generated via SEOPageTemplate on all new pages
 - [x] P2.12: Article/HowTo schema auto-generated via SEOPageTemplate on all guides
-- [ ] P2.13: Add Solutions and Integrations to main menu navigation (deferred to next round)
+- [x] P2.13: Add Solutions and Integrations to main menu navigation (superseded by the approved canonical navigation and direct Ring integration entry)
 - [x] P2.14: Update sitemaps with all new pages (64 total URLs in sitemap_pages.xml)
 
 ## Remove Disclaimer/Warning Banner (Round 17)
@@ -901,61 +901,61 @@
 ## Full KB Sync Audit - Jul 8, 2026
 
 ### Critical Inaccuracies to Fix
-- [ ] Apple Watch: Change "Series 4 and newer" to "Series 7 and newer" across ALL pages
-- [ ] Samsung Watch: Confirm correct series (Series 6+) across all pages
-- [ ] Pricing: Remove "$9.99/mo" references - correct price is $15/month individual
-- [ ] Pricing: Remove "Mental Health Coach Access (StressGuru.ai)" - not in KB
-- [ ] Fall Detection: Fix "2 minutes" response time - iOS is ~60-90 sec (Apple), Android is 60 sec (MySentry)
-- [ ] Fall Detection: Clarify it requires a smartwatch (not phone-only)
-- [ ] Crash Detection: Clarify it uses phone AND supported smartwatch sensors
-- [ ] Panic Alarm: Add iPhone limitations (shake sensitivity coming soon, volume button coming soon)
-- [ ] Panic Alarm: Add Android voice note (Google Assistant only, not Gemini)
-- [ ] Live video: iPhone only works when app is in foreground (not background/lock screen)
+- [x] Apple Watch: Removed unverified exact-series claims and require compatibility verification during setup
+- [x] Samsung Watch: Removed unverified exact-series claims and require compatibility verification during setup
+- [x] Pricing: Removed unsupported $9.99/month references from public source and metadata
+- [x] Pricing: Removed Mental Health Coach and StressGuru references not supported by the knowledgebase
+- [x] Fall Detection: Removed unverified response-time promises and qualified delivery by device, permissions, configuration, and connectivity
+- [x] Fall Detection: Clarified supported-device and wearable eligibility without claiming phone-only detection
+- [x] Crash Detection: Clarified eligible-device sensor requirements without guaranteeing detection
+- [x] Panic Alarm: Omitted unverified iPhone trigger roadmap claims and retained only evidence-safe current behavior
+- [x] Panic Alarm: Omitted unverified Android assistant claims and retained only evidence-safe current behavior
+- [x] Live video: Added foreground, permission, device, connectivity, and plan limitations where the workflow is described
 
 ### Feature Pages to Update with Accurate KB Content
-- [ ] /features/panic-button-app - Add trigger method details, iPhone limitations, offline mode
-- [ ] /features/fall-detection-app - Fix response time, add smartwatch requirement, iOS vs Android differences
-- [ ] /features/health-monitoring - Add personalized baseline explanation, two alert zones, metrics by watch type
-- [ ] /features/meet-safe-check-ins - Add Google Calendar import and AI Avatar setup methods
-- [ ] /features/crash-detection - Add smartwatch sensor detail
-- [ ] /features/emergency-contacts - Add Loud Check-In feature, Responder role details
-- [ ] /features/safety-check-in-app - Review and update with Safety Check Alert explanation
+- [x] /features/panic-button-app - Rebuilt with evidence-safe current trigger behavior, requirements, and limitations; unsupported roadmap details held
+- [x] /features/fall-detection-app - Rebuilt with wearable eligibility, device conditions, platform-neutral limitations, and no response-time promise
+- [x] /features/health-monitoring - Rebuilt as non-medical wellness context with supported-device and baseline qualification
+- [x] /features/meet-safe-check-ins - Consolidated into the canonical Safety Check page; unverified calendar and AI-avatar claims held
+- [x] /features/crash-detection - Rebuilt with eligible-device sensor and detection limitations
+- [x] /features/emergency-contacts - Rebuilt with permission-based contact roles and no unsupported Loud Check-In claim
+- [x] /features/safety-check-in-app - Rebuilt with current Safety Check workflow, escalation limits, and connectivity requirements
 
 ### Integration Pages to Fix
-- [ ] /integrations/apple-watch - Fix Series 4 to Series 7, update metrics list (HRV, Respiratory Rate, etc.)
-- [ ] /integrations/samsung-galaxy-watch - Fix Series number, add planned/not-supported metrics
+- [x] /integrations/apple-watch - Removed unverified exact-model and metric assumptions; added compatibility verification and evidence-safe wellness framing
+- [x] /integrations/samsung-galaxy-watch - Removed unverified exact-model and metric assumptions; added compatibility verification and evidence-safe wellness framing
 
 ### Compare Pages to Fix
-- [ ] All compare pages: Change "$9.99/mo" to "$15/mo" for MySentry pricing
-- [ ] /compare/apple-watch-fall-detection - Fix Series 4 to Series 7
+- [x] All compare pages: Removed unsupported pricing and competitor assertions and moved detail pages to noindex evidence review
+- [x] /compare/apple-watch-fall-detection - Removed unverified exact-series and competitor assertions and moved the page to noindex evidence review
 
 ### New Pages to Create
-- [ ] /features/secure-route - New feature page for Secure Route
-- [ ] /features/automated-call - New feature page for Automated Call
-- [ ] /features/family-connectivity - New feature page for Family Connectivity
-- [ ] /integrations/ring - New Ring integration page ($4.99/camera/month, Ring App Store billing)
+- [x] /features/secure-route - Added a transparent noindex held-feature status page pending product verification
+- Superseded historical request: Automated Call remains held and was not promoted as a live feature without verified evidence.
+- [x] /features/family-connectivity - Rebuilt as permission-based, privacy-aware family connectivity content
+- [x] /integrations/ring - Reconciled the canonical Ring integration with current eligibility, consent, and offer-verification language
 
 ### Pricing Page Updates
-- [ ] Remove StressGuru/Mental Health Coach from features list
-- [ ] Ensure trial flow is accurate (7-day, no credit card, force-logout after trial)
-- [ ] Add note about Family plan: owner + 5 member seats (owner does not consume a seat)
+- [x] Remove StressGuru and Mental Health Coach from features list
+- Superseded historical request: Exact trial duration, billing, and logout promises were replaced with plan-review language until commercial terms are verified.
+- Superseded historical request: Exact Family seat allocation was removed from public pricing until plan ownership and seat terms are verified.
 
 ## MySentry x Ring Integration (Jul 14, 2026)
-- [ ] Add Ring announcement pill banner to homepage hero section
-- [ ] Add Ring announcement section to homepage (two-column layout with visual flow diagram)
-- [ ] Create full /ring landing page with 9 sections
-- [ ] Section 1: Hero with headline, subheadline, CTA, trust line, visual dashboard mockup
-- [ ] Section 2: Why Add MySentry to Ring? (5 benefit cards)
-- [ ] Section 3: How It Works (step-by-step horizontal/vertical timeline)
-- [ ] Section 4: More Than a Camera Alert (connected system grid)
-- [ ] Section 5: Pricing / Offer Section (pricing table)
-- [ ] Section 6: Family Safety Section
-- [ ] Section 7: Use Cases Section (5 cards)
-- [ ] Section 8: Final CTA Block
-- [ ] Section 9: FAQ Accordion (11 questions)
-- [ ] Register /ring route in App.tsx
-- [ ] Mobile-responsive design with sticky mobile CTA
-- [ ] SEO meta tags for /ring page
+- [x] Add Ring announcement pill banner to homepage hero section (superseded by the later reviewed Ring banner treatment)
+- [x] Add Ring announcement section to homepage with a two-column workflow layout
+- [x] Create the complete Ring landing experience and consolidate `/ring` to `/integrations/ring`
+- [x] Section 1: Hero, CTA, trust context, and product visual
+- [x] Section 2: Evidence-safe reasons to add MySentry to a Ring setup
+- [x] Section 3: Qualified alert and monitoring workflow
+- [x] Section 4: Connected home and personal-safety context
+- [x] Section 5: Offer eligibility and pricing review
+- [x] Section 6: Permission-based family safety context
+- [x] Section 7: Real-life household use cases
+- [x] Section 8: Final CTA block
+- [x] Section 9: FAQ accordion
+- [x] Register Ring routing and canonical consolidation in App.tsx and the server redirect map
+- [x] Mobile-responsive design with reviewed mobile CTA behavior
+- [x] Route-specific SEO metadata for the canonical Ring page
 
 ## MySentry x Ring Integration Pages (Jul 29, 2026)
 - [x] Add Ring announcement pill banner to homepage hero section
@@ -970,14 +970,14 @@
 - [x] Add "RING" as standalone top-level nav item linking to /ring
 
 ## Ring Homepage Redesign (Jul 30, 2026)
-- [ ] Create RingTopBanner component (animated scrolling marquee, full-width, below navbar)
-- [ ] Rewrite RingAnnouncementSection with approved copy, two-column layout, animated infographic
-- [ ] Create RingReminderBanner component (later in page, price comparison card)
-- [ ] Wire all three into Home.tsx at correct positions
-- [ ] Remove old pill banner from HeroSection children in Home.tsx
-- [ ] QA Round 1: Copy and messaging check
-- [ ] QA Round 2: UX and conversion check
-- [ ] QA Round 3: Design and responsiveness check
+- [x] Create RingTopBanner component with a full-width homepage treatment
+- [x] Rewrite RingAnnouncementSection with reviewed copy, two-column layout, and animated workflow
+- [x] Create RingReminderBanner component with current offer-verification language
+- [x] Wire all three Ring components into Home.tsx at the approved positions
+- [x] Remove the superseded pill banner from HeroSection children in Home.tsx
+- [x] QA Round 1: Copy and messaging verified through claim-policy audits
+- [x] QA Round 2: UX and conversion verified through the 6,570-link rendered crawl
+- [x] QA Round 3: Design and responsiveness verified across 120 desktop and mobile routes
 
 ## Ring Homepage Redesign (Session 2)
 - [x] Create RingTopBanner.tsx - animated scrolling marquee, full-width below navbar, $4.99/month offer

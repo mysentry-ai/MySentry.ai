@@ -91,6 +91,9 @@ function BannerSlider() {
             alt={BANNER_SLIDES[current].alt}
             className="w-full h-auto block"
             draggable={false}
+            width="2048"
+            height="801"
+            loading="lazy"
           />
         </motion.div>
       </AnimatePresence>

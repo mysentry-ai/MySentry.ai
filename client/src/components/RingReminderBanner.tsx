@@ -36,6 +36,9 @@ export default function RingReminderBanner() {
                   src="/images/cdn/tBeRfeegjUlLnzcw.png"
                   alt="Ring and MySentry logos"
                   className="h-[70px] w-auto"
+                  width="85"
+                  height="64"
+                  loading="lazy"
                 />
               </motion.div>
 
@@ -70,6 +73,9 @@ export default function RingReminderBanner() {
                 src="/images/cdn/PpLEDwHxoIbVfWhh.png"
                 alt="Woman holding phone showing MySentry app"
                 className="absolute inset-0 w-full h-full object-cover object-top"
+                width="1086"
+                height="1448"
+                loading="lazy"
               />
             </div>
 

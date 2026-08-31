@@ -16,6 +16,8 @@ export default function ResponsiveImage({
   sizes = "(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px",
   loading,
   fetchPriority,
+  width = 1200,
+  height = 675,
   ...props 
 }: ResponsiveImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -43,6 +45,8 @@ export default function ResponsiveImage({
       alt={alt}
       loading={loading ?? "lazy"}
       fetchPriority={fetchPriority}
+      width={width}
+      height={height}
       onLoad={() => setIsLoaded(true)}
       className={cn(
         "transition-opacity duration-300",
