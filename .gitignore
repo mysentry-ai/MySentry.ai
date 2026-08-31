@@ -111,3 +111,4 @@ temp/
 # build context. If .dockerignore is needed for local builds, keep it
 # locally but do not commit.
 .dockerignore
+.project-config.json

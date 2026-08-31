@@ -1,5 +1,30 @@
 # MySentry Website TODO
 
+## SEO, AEO, and GEO Master Prompt Implementation (August 2026)
+- [x] Extract and classify every requirement in MySentry_Manus_1.6_Max_Website_SEO_AEO_GEO_Master_Prompt.docx
+- [x] Audit every registered public route against the document's content, SEO, AEO, GEO, accessibility, conversion, and internal-linking requirements
+- [x] Create a page-by-page implementation matrix with required copy, metadata, schema, FAQ, CTA, and structural changes
+- [x] Receive explicit Gate A approval for the proposed audit, URL map, overlap analysis, and technical direction
+- [ ] Reconcile feature status, device compatibility, monitoring, pricing, trial, and integration claims against approved evidence
+- [ ] Classify testimonials, ratings, user counts, case-study metrics, medical language, and competitor claims by evidence status
+- [ ] Draft approved, qualified, held, and removal wording for every high-risk claim group
+- [ ] Create the staging-only Gate C implementation scope and acceptance tests for owner approval
+- [x] Receive explicit owner pre-approval for all remaining gates, verified implementation, and final GitHub push
+- [ ] Implement meaningful route-specific initial HTML, metadata parity, schema foundations, and true 404 handling
+- [ ] Apply conservative claim governance across all public source pages and database-backed blog content
+- [ ] Apply approved URL merges, redirects, sitemap rules, navigation changes, and internal-link updates
+- [ ] Run full-site raw HTML, rendered parity, claim, punctuation, image, accessibility, link, route, schema, and responsive validation
+- [ ] Push the complete verified implementation to zigroninc/MySentry.ai main
+- [ ] Implement shared SEO, structured-data, navigation, accessibility, and reusable content improvements
+- [ ] Refine the homepage and primary conversion pages according to the approved master prompt
+- [ ] Refine product, feature, comparison, pricing, and integration pages according to the approved master prompt
+- [ ] Refine audience, worker, employer, senior, family, and personal-safety pages according to the approved master prompt
+- [ ] Refine company, support, resources, blog, and all remaining indexed pages according to the approved master prompt
+- [ ] Add or update targeted Vitest coverage for route metadata, structured data, and shared SEO behavior
+- [ ] Validate TypeScript, production build, tests, links, metadata, structured data, sitemap, robots directives, and prohibited copy patterns
+- [ ] Visually verify representative desktop and mobile routes and correct regressions
+- [ ] Save a checkpoint and request explicit approval before any GitHub push
+
 ## Completed Features
 - [x] Basic homepage layout with hero section
 - [x] Navigation menu with all pages
