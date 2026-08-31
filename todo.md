@@ -1022,7 +1022,7 @@
 - [x] Add visible FAQs and eligible structured data that clearly distinguish current MySentry features from possible future Oura support
 - [x] Preserve noindex status until the integration, supported models, permissions, regional availability, and launch terms are verified
 - [x] Add or update targeted tests for Oura status language, metadata, indexability, links, local images, and prohibited claims
-- [ ] Verify the complete Oura page on desktop and mobile, save a checkpoint, and push the approved update to GitHub
+- [x] Verify the complete Oura page on desktop and mobile, save a checkpoint, and push the approved update to GitHub
 
 ## Nurse Specialty and Senior Buyer Journey Rebuild (September 2026)
 - [x] Audit the nurse hub and the four existing specialty routes for content depth, search intent, metadata, links, images, contrast, and conversion gaps
@@ -1037,4 +1037,4 @@
 - [x] Strengthen the senior hub for the protected older adult and the adult daughter or family caregiver who often evaluates and buys the service
 - [x] Strengthen the canonical senior conversion page with individual and family-plan pathways, objections, setup, privacy, limitations, FAQs, and clear calls to action
 - [x] Add targeted tests for nurse and senior metadata, page structure, links, contrast, images, claims, and responsive behavior
-- [ ] Verify all affected nurse, senior, Oura, and pricing paths on desktop and mobile, save a checkpoint, and push the complete update to GitHub
+- [x] Verify all affected nurse, senior, Oura, and pricing paths on desktop and mobile, save a checkpoint, and push the complete update to GitHub
