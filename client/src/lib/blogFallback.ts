@@ -18,6 +18,8 @@ export type PublicFallbackBlogPost = {
   metaTitle: string;
   metaDescription: string;
   ogImageUrl: string;
+  isIndexed: boolean;
+  isFollowed: boolean;
 };
 
 const categoryIdByName = {
@@ -53,6 +55,8 @@ export const fallbackBlogPosts: PublicFallbackBlogPost[] = blogs
     metaTitle: `${blog.title} | MySentry Safety & Health Hub`,
     metaDescription: blog.excerpt,
     ogImageUrl: blog.image,
+    isIndexed: true,
+    isFollowed: true,
   }))
   .sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
 

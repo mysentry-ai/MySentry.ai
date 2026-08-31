@@ -19,7 +19,7 @@ import { getEnterpriseSignupUrl, getSignupUrl } from './const';
 
 const BASE = 'https://dashboard.mysentry.ai/create-saas-account';
 
-describe('Enterprise Plan Checkout URL — getEnterpriseSignupUrl()', () => {
+describe('Enterprise Plan Checkout URL  -  getEnterpriseSignupUrl()', () => {
   // ── Test 1: Employees+Families Monthly + 5 ────────────────────────────────
   it('Test 1: Employees+Families Monthly + 5 → plan 0005, licences=5', () => {
     const url = getEnterpriseSignupUrl('employees_families', 'monthly', 5);
@@ -56,7 +56,7 @@ describe('Enterprise Plan Checkout URL — getEnterpriseSignupUrl()', () => {
     expect(parsed.searchParams.get('licences')).toBe('75');
   });
 
-  // ── Test 5: Guardrail — quantity 1 is normalised to 2 ────────────────────
+  // ── Test 5: Guardrail  -  quantity 1 is normalised to 2 ────────────────────
   it('Test 5: Quantity 1 is blocked/corrected to 2 (minimum enforcement)', () => {
     const url = getEnterpriseSignupUrl('employees_only', 'monthly', 1);
     const parsed = new URL(url);
@@ -113,7 +113,7 @@ describe('Enterprise Plan Checkout URL — getEnterpriseSignupUrl()', () => {
   });
 });
 
-describe('Non-Enterprise Plans — getSignupUrl() unchanged', () => {
+describe('Non-Enterprise Plans  -  getSignupUrl() unchanged', () => {
   it('Individual Monthly → plan 0001 (no licences param)', () => {
     const url = getSignupUrl('individual', 'monthly');
     expect(url).toContain('550e8400-e29b-41d4-a716-446655440001');

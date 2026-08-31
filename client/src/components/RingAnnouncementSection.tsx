@@ -6,7 +6,7 @@ import { useState } from "react";
 /**
  * Main Ring Appstore announcement section.
  * Left column: Approved copy with badge, headline, body, offer line, CTA, trust line.
- * Right column: Two independent sub-columns — phone mockup (left) and flow cards (right).
+ * Right column: Two independent sub-columns  -  phone mockup (left) and flow cards (right).
  *
  * Micro-animations:
  * - Phone mockup: fade-in + rises from below (whileInView)
@@ -94,7 +94,7 @@ export default function RingAnnouncementSection() {
               </p>
             </div>
 
-            {/* Offer Line — Save 67% has glow pulse */}
+            {/* Offer Line  -  Save 67% has glow pulse */}
             <div className="inline-flex flex-wrap items-center gap-3 bg-gradient-to-r from-primary/5 to-transparent border border-primary/20 rounded-2xl px-5 py-3 mb-8 shadow-sm">
               <span className="text-sm text-gray-500 line-through">Regular price: $15/month</span>
               <span className="w-px h-4 bg-gray-200 hidden sm:block" />
@@ -119,10 +119,10 @@ export default function RingAnnouncementSection() {
               </motion.span>
             </div>
 
-            {/* CTA — arrow slides right on hover */}
+            {/* CTA  -  arrow slides right on hover */}
             <div className="mb-6">
               <Link
-                href="/ring"
+                href="/integrations/ring"
                 className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full px-8 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg text-sm"
                 onMouseEnter={() => setArrowHovered(true)}
                 onMouseLeave={() => setArrowHovered(false)}
@@ -147,7 +147,7 @@ export default function RingAnnouncementSection() {
           {/* ── Right Column: Phone Mockup + Flow Cards (treated separately) ── */}
           <div className="flex flex-col gap-8 lg:flex-row lg:gap-6 lg:items-start">
 
-            {/* Phone Mockup — independent, fades in and rises from below */}
+            {/* Phone Mockup  -  independent, fades in and rises from below */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -163,7 +163,7 @@ export default function RingAnnouncementSection() {
               />
             </motion.div>
 
-            {/* Flow Cards — independent, staggered top-to-bottom entrance */}
+            {/* Flow Cards  -  independent, staggered top-to-bottom entrance */}
             <div className="flex flex-col gap-2 flex-1 pt-[17px]">
               {flowSteps.map((step, i) => {
                 const Icon = step.icon;

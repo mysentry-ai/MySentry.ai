@@ -2,6 +2,8 @@ import { Express } from "express";
 import { getDb } from "./db";
 import { blogPosts } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
+import { isHeldBlogSlug } from "../shared/seo/content-governance";
+import { CANONICAL_REDIRECTS } from "../shared/seo/redirects";
 
 // All known static pages with their priorities and change frequencies
 const STATIC_PAGES = [
@@ -10,10 +12,6 @@ const STATIC_PAGES = [
   { url: "/pricing", priority: "0.9", changefreq: "monthly" },
   { url: "/females", priority: "0.9", changefreq: "monthly" },
   { url: "/nurses", priority: "0.9", changefreq: "monthly" },
-  { url: "/nurses/travel-nurses", priority: "0.8", changefreq: "monthly" },
-  { url: "/nurses/home-health", priority: "0.8", changefreq: "monthly" },
-  { url: "/nurses/er-trauma", priority: "0.8", changefreq: "monthly" },
-  { url: "/nurses/night-shift", priority: "0.8", changefreq: "monthly" },
   { url: "/seniors", priority: "0.9", changefreq: "monthly" },
   { url: "/families", priority: "0.9", changefreq: "monthly" },
   { url: "/employers", priority: "0.9", changefreq: "monthly" },
@@ -26,7 +24,6 @@ const STATIC_PAGES = [
   { url: "/features/emergency-contacts", priority: "0.8", changefreq: "monthly" },
   { url: "/features/live-video-response", priority: "0.8", changefreq: "monthly" },
   { url: "/features/health-monitoring", priority: "0.8", changefreq: "monthly" },
-  { url: "/features/meetsafe-check-ins", priority: "0.8", changefreq: "monthly" },
   { url: "/features/safety-check-in-app", priority: "0.8", changefreq: "monthly" },
   // Use Cases
   { url: "/use-cases", priority: "0.8", changefreq: "monthly" },
@@ -34,7 +31,6 @@ const STATIC_PAGES = [
   { url: "/use-cases/family-safety-app", priority: "0.8", changefreq: "monthly" },
   { url: "/use-cases/medical-alert-app-for-seniors", priority: "0.8", changefreq: "monthly" },
   { url: "/use-cases/lone-worker-safety-app", priority: "0.8", changefreq: "monthly" },
-  { url: "/use-cases/home-healthcare-worker-safety", priority: "0.8", changefreq: "monthly" },
   { url: "/use-cases/teen-driver-safety", priority: "0.8", changefreq: "monthly" },
   // Industries
   { url: "/industries", priority: "0.7", changefreq: "monthly" },
@@ -45,58 +41,30 @@ const STATIC_PAGES = [
   { url: "/industries/real-estate", priority: "0.7", changefreq: "monthly" },
   { url: "/industries/education", priority: "0.7", changefreq: "monthly" },
   { url: "/industries/security-guarding", priority: "0.7", changefreq: "monthly" },
-  // Compare
+  // Comparison hub. Detail pages remain noindex until official-source review is complete.
   { url: "/compare", priority: "0.7", changefreq: "monthly" },
-  { url: "/compare/noonlight-vs-mysentry", priority: "0.7", changefreq: "monthly" },
-  { url: "/compare/life360-vs-mysentry", priority: "0.7", changefreq: "monthly" },
-  { url: "/compare/fallcall-vs-mysentry", priority: "0.7", changefreq: "monthly" },
-  { url: "/compare/google-personal-safety-vs-mysentry", priority: "0.7", changefreq: "monthly" },
-  { url: "/compare/sosecure-adt-vs-mysentry", priority: "0.7", changefreq: "monthly" },
-  { url: "/compare/medical-alert-devices-vs-mysentry", priority: "0.7", changefreq: "monthly" },
-  { url: "/compare/oura-ring-vs-mysentry", priority: "0.8", changefreq: "monthly" },
-  { url: "/compare/whoop-vs-mysentry", priority: "0.8", changefreq: "monthly" },
-  { url: "/compare/medical-guardian-vs-mysentry", priority: "0.8", changefreq: "monthly" },
-  { url: "/compare/lively-vs-mysentry", priority: "0.8", changefreq: "monthly" },
-  { url: "/compare/apple-watch-fall-detection-vs-mysentry", priority: "0.8", changefreq: "monthly" },
   // New Pillar & Audience Pages
   { url: "/personal-safety-app", priority: "0.9", changefreq: "monthly" },
   { url: "/medical-alert-system-for-seniors", priority: "0.9", changefreq: "monthly" },
-  { url: "/who-we-protect/seniors", priority: "0.8", changefreq: "monthly" },
-  { url: "/who-we-protect/women", priority: "0.8", changefreq: "monthly" },
-  { url: "/who-we-protect/employers", priority: "0.8", changefreq: "monthly" },
-  { url: "/who-we-protect/drivers", priority: "0.8", changefreq: "monthly" },
-  { url: "/who-we-protect/students", priority: "0.8", changefreq: "monthly" },
-  { url: "/who-we-protect/children-and-teens", priority: "0.8", changefreq: "monthly" },
   // Solutions (Vertical-Specific BOFU)
-  { url: "/solutions/home-healthcare", priority: "0.8", changefreq: "monthly" },
-  { url: "/solutions/real-estate", priority: "0.8", changefreq: "monthly" },
   { url: "/solutions/delivery-drivers", priority: "0.8", changefreq: "monthly" },
-  { url: "/solutions/construction", priority: "0.8", changefreq: "monthly" },
-  { url: "/solutions/retail-workers", priority: "0.8", changefreq: "monthly" },
   // Safety For (Audience-Specific BOFU)
-  { url: "/safety-for/women-living-alone", priority: "0.8", changefreq: "monthly" },
-  { url: "/safety-for/seniors-aging-in-place", priority: "0.8", changefreq: "monthly" },
   { url: "/safety-for/solo-travelers", priority: "0.8", changefreq: "monthly" },
-  // Case Studies
-  { url: "/case-studies/home-healthcare", priority: "0.7", changefreq: "monthly" },
-  { url: "/case-studies/real-estate", priority: "0.7", changefreq: "monthly" },
-  { url: "/case-studies/field-services", priority: "0.7", changefreq: "monthly" },
   // Resources
   { url: "/resources/employer-one-pager", priority: "0.7", changefreq: "monthly" },
   // Integrations (Wearable Pages)
   { url: "/integrations/apple-watch", priority: "0.8", changefreq: "monthly" },
   { url: "/integrations/samsung-galaxy-watch", priority: "0.8", changefreq: "monthly" },
-  { url: "/integrations/oura-ring", priority: "0.8", changefreq: "monthly" },
+  { url: "/integrations/ring", priority: "0.8", changefreq: "monthly" },
   // Guides (Authority Content)
   { url: "/guides/lone-worker-safety", priority: "0.7", changefreq: "monthly" },
-  { url: "/guides/professional-monitoring", priority: "0.7", changefreq: "monthly" },
   { url: "/guides/senior-safety-planning", priority: "0.7", changefreq: "monthly" },
   // Info pages
   { url: "/blogs", priority: "0.8", changefreq: "daily" },
   { url: "/about-us", priority: "0.6", changefreq: "monthly" },
   { url: "/contact", priority: "0.6", changefreq: "monthly" },
   { url: "/team", priority: "0.5", changefreq: "monthly" },
-  { url: "/partner", priority: "0.6", changefreq: "monthly" },
+  { url: "/partners", priority: "0.6", changefreq: "monthly" },
   { url: "/privacy", priority: "0.3", changefreq: "yearly" },
   { url: "/terms", priority: "0.3", changefreq: "yearly" },
 ];
@@ -120,19 +88,14 @@ function formatDate(date: Date | string | null): string {
 
 export function registerSitemapRoutes(app: Express) {
   // ── Static 301 redirects ──
-  app.get("/blog/protecting-teen-drivers", (_req, res) => {
-    res.redirect(301, "/blogs");
+  Object.entries(CANONICAL_REDIRECTS).forEach(([source, target]) => {
+    app.get(source, (_req, res) => {
+      res.redirect(301, target);
+    });
   });
 
-  app.get("/features/voice-activated-panic-alarm", (_req, res) => {
-    res.redirect(301, "/features");
-  });
-
-  app.get("/features/health-monitoring-app-with-alerts", (_req, res) => {
-    res.redirect(301, "/features/health-monitoring");
-  });
-  app.get("/compare/adt-vs-mysentry", (_req, res) => {
-    res.redirect(301, "/compare/sosecure-adt-vs-mysentry");
+  app.get("/blogs/:slug", (req, res) => {
+    res.redirect(301, `/blog/${encodeURIComponent(req.params.slug)}`);
   });
 
   // ── www → non-www redirect (production only) ──
@@ -201,6 +164,7 @@ ${urls}
         .where(eq(blogPosts.status, "published"));
 
       const urls = posts
+        .filter((post: { slug: string }) => !isHeldBlogSlug(post.slug))
         .map(
           (post: { slug: string; publishedAt: Date | null; updatedAt: Date | null }) => `  <url>
     <loc>${BASE_URL}/blog/${escapeXml(post.slug)}</loc>

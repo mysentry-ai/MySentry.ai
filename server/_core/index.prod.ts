@@ -39,7 +39,7 @@ async function startServer() {
   // Trust the X-Forwarded-* headers from the AWS ALB so that req.protocol,
   // req.secure, and req.ip reflect the real client values, not the ALB hop.
   app.set("trust proxy", 1);
-  // HSTS — tell browsers to always use HTTPS
+  // HSTS: tell browsers to always use HTTPS
   app.use((_req, res, next) => {
     res.setHeader(
       'Strict-Transport-Security',
@@ -65,7 +65,7 @@ async function startServer() {
     })
   );
   // Production entry: always serve static built assets.
-  // The dev branch (setupVite) is intentionally absent — this entry point is
+  // The dev branch (setupVite) is intentionally absent. This entry point is
   // only used by the production build (esbuild target), ensuring vite and its
   // plugins are never imported and never required at runtime.
   serveStatic(app);

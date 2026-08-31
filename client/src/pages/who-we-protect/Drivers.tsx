@@ -4,11 +4,11 @@ export default function WhoWeProtectDrivers() {
   return (
     <SEOPageTemplate
       seoTitle="Crash Detection App for Drivers | 24/7 Monitoring | MySentry"
-      seoDescription="MySentry detects car crashes automatically and sends help even if you cannot call. 24/7 professional monitoring, live video response, and instant family alerts with GPS. Works on iPhone and Android."
+      seoDescription="MySentry detects car crashes automatically and sends help even if you cannot call. 24/7 professional monitoring, live video response, and prompt family alerts with GPS. Works on iPhone and Android."
       canonical="https://mysentry.ai/who-we-protect/drivers"
       label="WHO WE PROTECT"
       h1="Help Arrives After Every Crash."
-      h1Sub="Help is on the way, even if you can't call."
+      h1Sub="The configured alert workflow is active, even if you can't call."
       heroDescription="Crash detection, automatic alerts, and live video response for anyone who spends time on the road."
       heroImage="/images/cdn/hero-drivers-2tf2voUCE3vZwoxWyjJ55z.webp"
       problem="You drive alone on highways, late at night, or in unfamiliar areas. If you are in a serious crash and cannot call for help, minutes matter. Most apps only call 911. MySentry sends a live video agent."
@@ -27,7 +27,7 @@ export default function WhoWeProtectDrivers() {
           description: "MySentry runs in the background. If a crash is detected and you do not respond to the Safety Check Alert, a trained agent calls for help.",
         },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
       directAnswer="MySentry includes automatic crash detection that uses your phone's accelerometer and gyroscope to detect a serious collision. If a crash is detected and you do not respond to the Safety Check Alert, a 24/7 monitoring agent starts a live video call to your phone, and your emergency contacts receive your live GPS location. If you cannot respond, the agent dispatches local emergency services with your location."
       howItWorks={[
@@ -35,7 +35,7 @@ export default function WhoWeProtectDrivers() {
         "If a serious impact is detected, the app prompts you to confirm you are okay.",
         "You have a short window to confirm you are safe. If you do not respond, an alert is sent automatically.",
         "A trained agent starts a live video call to your phone.",
-        "Your emergency contacts receive your live GPS location instantly.",
+        "Your emergency contacts receive your live GPS location promptly.",
         "The agent dispatches emergency services with your location if needed.",
       ]}
       afterAlert={[
@@ -59,7 +59,7 @@ export default function WhoWeProtectDrivers() {
       keyTakeaways={[
         "Automatic crash detection works without pressing a button.",
         "A trained agent responds by live video, not just a 911 call.",
-        "Emergency contacts receive your live GPS location instantly.",
+        "Emergency contacts receive your live GPS location promptly.",
         "Works on iPhone and Android. No extra hardware required.",
       ]}
       faqs={[
@@ -69,7 +69,7 @@ export default function WhoWeProtectDrivers() {
         },
         {
           question: "How is MySentry crash detection different from iPhone crash detection?",
-          answer: "iPhone crash detection calls 911 directly. MySentry connects you to a trained 24/7 monitoring agent who starts a live video call to see your situation before dispatching help. Your family also receives your live GPS location instantly. MySentry provides a more complete response than a direct 911 call.",
+          answer: "iPhone crash detection calls 911 directly. MySentry connects you to a trained 24/7 monitoring agent who starts a live video call to see your situation before dispatching help. Your family also receives your live GPS location promptly. MySentry provides a more complete response than a direct 911 call.",
         },
         {
           question: "Can MySentry detect a crash if my phone is in my bag?",

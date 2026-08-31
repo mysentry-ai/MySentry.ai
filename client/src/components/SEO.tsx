@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { ROUTE_META, SITE_NAME, DEFAULT_OG_IMAGE } from "@shared/seo/route-meta";
 
 /**
- * SEO component — injects per-page meta tags via react-helmet-async.
+ * SEO component  -  injects per-page meta tags via react-helmet-async.
  *
  * The Express SSR layer already injects the correct title, description,
  * og:*, canonical, and twitter:* tags into index.html before the page
@@ -10,8 +10,8 @@ import { ROUTE_META, SITE_NAME, DEFAULT_OG_IMAGE } from "@shared/seo/route-meta"
  * after React hydrates, keeping the SPA experience correct for users.
  *
  * title and description are optional. When omitted, the component reads
- * from ROUTE_META[window.location.pathname] — the same source used by
- * the SSR middleware — so SSR and post-hydration Helmet produce identical
+ * from ROUTE_META[window.location.pathname]  -  the same source used by
+ * the SSR middleware  -  so SSR and post-hydration Helmet produce identical
  * meta (Scenario A). This is the correct behaviour for JS-rendering
  * crawlers such as Googlebot and Semrush.
  *
@@ -29,6 +29,7 @@ interface SEOProps {
   image?: string;
   type?: "website" | "article";
   noindex?: boolean;
+  nofollow?: boolean;
   schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
@@ -39,29 +40,36 @@ export default function SEO({
   image,
   type = "website",
   noindex = false,
+  nofollow = false,
   schema,
 }: SEOProps) {
   // ── Title resolution ──────────────────────────────────────────────────────
   // Priority:
   //   1. Explicit title prop (from inline <SEO title="..."> or SEOPageTemplate)
-  //   2. ROUTE_META[currentPathname] — same source as SSR middleware (Scenario A)
+  //   2. ROUTE_META[currentPathname]  -  same source as SSR middleware (Scenario A)
   //   3. Hardcoded SITE_TITLE as last-resort fallback
   const suffix = ` | ${SITE_NAME}`;
 
   let resolvedTitle: string | undefined = title;
   let resolvedDescription: string | undefined = description;
   let resolvedImage: string | undefined = image;
+  let resolvedCanonical = canonical;
+  let resolvedNoindex = noindex;
+  let resolvedNofollow = nofollow;
 
   if (typeof window !== "undefined") {
     const routeMeta = ROUTE_META[window.location.pathname];
-    if (!resolvedTitle && routeMeta) {
+    if (routeMeta) {
       resolvedTitle = routeMeta.title;
-    }
-    if (!resolvedDescription && routeMeta) {
       resolvedDescription = routeMeta.description;
-    }
-    if (!resolvedImage && routeMeta?.ogImage) {
-      resolvedImage = routeMeta.ogImage;
+      resolvedImage = routeMeta.ogImage ?? DEFAULT_OG_IMAGE;
+      resolvedCanonical = `https://mysentry.ai${window.location.pathname}`;
+      resolvedNoindex = [
+        "/pricing-legacy",
+        "/features/secure-route",
+        "/integrations/oura-ring",
+      ].includes(window.location.pathname);
+      resolvedNofollow = false;
     }
   }
 
@@ -80,7 +88,7 @@ export default function SEO({
 
   // ── Canonical URL ─────────────────────────────────────────────────────────
   const getCanonicalUrl = () => {
-    if (canonical) return canonical;
+    if (resolvedCanonical) return resolvedCanonical;
     if (typeof window === "undefined") return "https://mysentry.ai";
     return `https://mysentry.ai${window.location.pathname}`;
   };
@@ -94,7 +102,7 @@ export default function SEO({
     url: "https://mysentry.ai",
     logo: "https://mysentry.ai/favicon.svg",
     description:
-      "24/7 Safety and Health Monitoring with Emergency Response. Panic alarm, fall detection, crash detection, health alerts, emergency contacts, live video response, and professional monitoring.",
+      "Personal safety and wellness support with panic alerts, supported-device safety signals, emergency contacts, and professional monitoring options.",
     sameAs: [
       "https://www.facebook.com/MySentryAi",
       "https://www.instagram.com/mysentry.ai/",
@@ -108,34 +116,63 @@ export default function SEO({
     },
   };
 
-  const softwareSchema = {
+  const websiteSchema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
+    "@type": "WebSite",
+    "@id": "https://mysentry.ai/#website",
     name: "MySentry",
-    applicationCategory: "HealthApplication",
-    operatingSystem: "iOS, Android",
-    offers: {
-      "@type": "Offer",
-      price: "15.00",
-      priceCurrency: "USD",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      reviewCount: "312",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    description:
-      "24/7 Safety and Health Monitoring app with panic alarm, fall detection, crash detection, health monitoring, live video response, and professional emergency monitoring.",
     url: "https://mysentry.ai",
+    publisher: { "@id": "https://mysentry.ai/#organization" },
   };
 
-  const allSchemas: Record<string, unknown>[] = [
-    organizationSchema,
-    softwareSchema,
-  ];
-  if (schema) {
+  const webpageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${canonicalUrl}#webpage`,
+    url: canonicalUrl,
+    name: fullTitle,
+    ...(resolvedDescription ? { description: resolvedDescription } : {}),
+    isPartOf: { "@id": "https://mysentry.ai/#website" },
+    about: { "@id": "https://mysentry.ai/#organization" },
+  };
+
+  const canonicalPath = (() => {
+    try {
+      return new URL(canonicalUrl).pathname;
+    } catch {
+      return "/";
+    }
+  })();
+  const breadcrumbParts = canonicalPath.split("/").filter(Boolean);
+  const breadcrumbSchema = breadcrumbParts.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Home",
+            item: "https://mysentry.ai",
+          },
+          ...breadcrumbParts.map((part, index) => ({
+            "@type": "ListItem",
+            position: index + 2,
+            name: part
+              .split("-")
+              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+              .join(" "),
+            item: `https://mysentry.ai/${breadcrumbParts.slice(0, index + 1).join("/")}`,
+          })),
+        ],
+      }
+    : null;
+
+  const allSchemas: Record<string, unknown>[] = resolvedNoindex
+    ? []
+    : [organizationSchema, websiteSchema, webpageSchema];
+  if (!resolvedNoindex && breadcrumbSchema) allSchemas.push(breadcrumbSchema);
+  if (!resolvedNoindex && schema) {
     if (Array.isArray(schema)) {
       allSchemas.push(...schema);
     } else {
@@ -158,11 +195,10 @@ export default function SEO({
       <meta name="theme-color" content="#004F7B" />
 
       {/* Robots */}
-      {noindex ? (
-        <meta name="robots" content="noindex, nofollow" />
-      ) : (
-        <meta name="robots" content="index, follow" />
-      )}
+      <meta
+        name="robots"
+        content={`${resolvedNoindex ? "noindex" : "index"},${resolvedNofollow ? "nofollow" : "follow"}`}
+      />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />

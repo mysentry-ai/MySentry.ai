@@ -26,7 +26,7 @@ export default function Families() {
       id: "teen-driving",
       title: "Teen Drivers",
       subtitle: "Peace of mind on the road",
-      description: "Monitor your teen's driving habits and get instant alerts if a crash occurs. We send help immediately, even if they can't call for it themselves.",
+      description: "Monitor your teen's driving habits and get prompt alerts if a crash occurs. We send help immediately, even if they can't call for it themselves.",
       image: "/images/cdn/ILNBARpWjhgDooYL.jpg",
       icon: Car,
       tag: "Driving Safety",
@@ -59,7 +59,7 @@ export default function Families() {
       id: "emergency-contacts",
       title: "Emergency Network",
       subtitle: "Connected protection",
-      description: "If one family member triggers an alert, everyone is notified instantly. Coordinate help and stay connected during any emergency situation.",
+      description: "If one family member triggers an alert, everyone is notified promptly. Coordinate help and stay connected during any emergency situation.",
       image: "/images/cdn/tAHfwpNPPCjQWnND.jpg",
       icon: Users,
       tag: "Emergency Contacts",
@@ -125,7 +125,7 @@ export default function Families() {
       id: "pet-walking",
       title: "Dog Walking",
       subtitle: "Safe evening walks",
-      description: "Walking the family dog at night? Carry MySentry for instant access to help if you encounter aggressive animals or strangers.",
+      description: "Walking the family dog at night? Carry MySentry for prompt access to help if you encounter aggressive animals or strangers.",
       image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?q=80&w=2670&auto=format&fit=crop",
       icon: Dog,
       tag: "Pet Safety",
@@ -185,7 +185,7 @@ export default function Families() {
       <HeroSection
         label="For Families with Teens + Aging Parents"
         title={<>Know They're Safe.<br/><span className="text-gray-600">Without Constant Texting.</span></>}
-        subtitle="Real-time location, fall detection, and instant alerts for your teens and aging parents, all in one app."
+        subtitle="Real-time location, fall detection, and prompt alerts for your teens and aging parents, all in one app."
         imageSrc="/images/family-hero-base.jpg"
         imageAlt="Happy family spending time together"
       />
@@ -273,7 +273,7 @@ export default function Families() {
       {/* Get Started Section */}
       <GetStartedSection
         sub
-        ctaText="Start Your 7-Day Free Trial"
+        ctaText="Review Plans and Eligibility"
         ctaLink="/pricing#pricing-plans"
       />
     </Layout>

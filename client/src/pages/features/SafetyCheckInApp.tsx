@@ -3,94 +3,63 @@ import SEOPageTemplate from "@/components/SEOPageTemplate";
 export default function SafetyCheckInApp() {
   return (
     <SEOPageTemplate
-      seoTitle="Safety Check-In App: Timed Alerts & Monitoring | MySentry"
-      seoDescription="MySentry's safety check-in app offers timed alerts for solo activities, meetings, or dates. Miss a check-in? 24/7 agents get your GPS location and dispatch help. Start free."
+      seoTitle="Safety Check-In App for Planned Activities | MySentry"
+      seoDescription="Schedule a MySentry safety check-in for an activity or meeting and understand how missed check-ins can continue an eligible alert workflow."
       canonical="https://mysentry.ai/features/safety-check-in-app"
-      label="FEATURE"
-      h1="Know You're Safe, Even When Alone."
-      h1Sub="Help is dispatched if you miss a check-in."
-      heroDescription="Schedule a meeting in MeetSafe. When it ends, MySentry sends you a Safety Check Alert. If you don't respond, help is automatically on the way."
-      problem="You meet strangers for dates, property showings, or client visits, and no one knows exactly where you are or when to expect you back."
-      empathy="That uneasy feeling before walking into an unfamiliar situation is real. You deserve a simple way to let someone know you're safe, without constantly texting."
+      label="Feature"
+      h1="Plan a Check-In Before You Go"
+      h1Sub="Set a time for MySentry to ask whether you are safe."
+      heroDescription="MySentry safety check-ins help you prepare for a meeting, visit, shift, commute, or solo activity. If you do not confirm your status, the configured alert workflow may continue and share permitted context when supported."
+      problem="When you enter an unfamiliar or isolated situation, someone may not know where you are or when to expect you back."
+      empathy="A scheduled check-in can create a clear plan without constant texting, continuous surveillance, or an unsupported promise that help is already on the way."
       steps={[
-        { title: "Schedule a Meeting", description: "Open the MeetSafe tab in the MySentry app and add your meeting with a title, date, time, and expected duration." },
-        { title: "Go to Your Meeting", description: "MySentry runs quietly in the background. When your meeting ends, the app sends you a Safety Check Alert asking if you're okay." },
-        { title: "Confirm Safe or Get Help", description: "Tap 'I'm Safe' to close the alert. If you say you're not safe, or don't respond, your Panic Alarm is triggered and your emergency contacts and monitoring team are notified." },
+        { title: "Schedule the Activity", description: "Add the activity, expected time, and any supported check-in details in MySentry." },
+        { title: "Respond to the Check-In", description: "When prompted, confirm that you are safe or use the available alert option if you want support." },
+        { title: "Continue the Configured Workflow", description: "If you do not respond, an eligible alert may continue according to your plan, settings, permissions, connectivity, and region." },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
-      secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry's MeetSafe is a meeting safety feature. You schedule a meeting in the app with a title, date, time, and duration. When the meeting ends, MySentry sends you a Safety Check Alert. If you confirm you're safe, nothing happens. If you say you're not safe, or don't respond, your Panic Alarm is automatically triggered, alerting your emergency contacts and the 24/7 monitoring team with your live location."
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
+      secondaryCta={{ text: "Review the Panic Alarm", href: "/features/panic-button-app" }}
+      directAnswer="A MySentry safety check-in is a scheduled prompt that asks whether you are safe after a planned activity. If you do not confirm your status, the configured alert workflow may route permitted context to trusted contacts and eligible professional monitoring. It does not guarantee emergency dispatch or arrival."
       howItWorks={[
-        "Open the MeetSafe tab in the MySentry app and tap + to add a new meeting.",
-        "Add a title, date, time, and expected duration for your meeting.",
-        "When the meeting ends, MySentry sends you a Safety Check Alert.",
-        "Tap 'I'm Safe' to confirm. If you say you're not safe, or don't respond, your Panic Alarm is triggered.",
-        "Your emergency contacts and 24/7 monitoring team are notified with your live GPS location.",
+        "Add a supported activity or meeting and expected time in MySentry.",
+        "Review the contacts, permissions, and alert preferences for the check-in.",
+        "Respond to the Safety Check Alert when it appears.",
+        "If the check-in remains unresolved, the configured eligible workflow may continue with available permitted context.",
       ]}
       afterAlert={[
-        "Our 24/7 monitoring team receives an automatic alert with your last known GPS location.",
-        "Agents attempt to reach you via the app's live video and audio connection.",
-        "Your designated emergency contacts are notified simultaneously.",
-        "If we cannot confirm your safety, local emergency services are dispatched to your location.",
+        "A monitoring agent may review available context for an eligible alert.",
+        "The agent may attempt contact through supported channels.",
+        "Configured trusted contacts or emergency services may be notified when appropriate.",
+        "Delivery, timing, contact, escalation, response, and arrival are not guaranteed.",
       ]}
-      bestFor={[
-        "Women meeting dates or strangers for the first time.",
-        "Real estate agents showing properties to unknown clients.",
-        "Lone workers on remote job sites or during after-hours shifts.",
-        "Anyone doing solo outdoor activities like hiking or running.",
-        "Home healthcare workers visiting patients alone.",
-      ]}
-      notIdealFor={[
-        "Situations requiring instant emergency response (use the Panic Alarm instead).",
-        "Replacing a full GPS tracking system for fleet management.",
-      ]}
+      bestFor={["Dates, client meetings, and property visits", "Solo shifts, home visits, and field work", "Running, hiking, commuting, or other planned activities"]}
+      notIdealFor={["An emergency already in progress, when a direct Panic Alarm or emergency call may be more appropriate", "Covert tracking or monitoring", "Use without a supported device, required permissions, or connection"]}
       keyTakeaways={[
-        "Schedule any meeting in MeetSafe. MySentry automatically checks on you when it ends.",
-        "Missed check-ins automatically alert 24/7 professional monitoring agents with your GPS location.",
-        "Works alongside Panic Alarm and Fall Detection for layered safety coverage.",
+        "Schedule the check-in before the activity.",
+        "Respond when prompted to confirm your status.",
+        "A missed check-in may continue a configured alert workflow, but it does not guarantee dispatch or arrival.",
       ]}
       faqs={[
-        {
-          question: "How long can I set a safety check-in timer for?",
-          answer: "You can set timers from 15 minutes to 8 hours. This flexibility covers everything from a quick coffee meeting to a full work shift or a long hike.",
-        },
-        {
-          question: "What happens if I forget to dismiss the check-in?",
-          answer: "If the timer expires without dismissal, MySentry's 24/7 monitoring agents are automatically alerted. They receive your GPS location and will attempt to contact you via the app. If they can't reach you, they notify your emergency contacts and can dispatch local emergency services.",
-        },
-        {
-          question: "Can I cancel a check-in timer early?",
-          answer: "Yes, you can dismiss or cancel the timer at any time directly from the app or your smartwatch. This prevents any false alarms.",
-        },
-        {
-          question: "Is the safety check-in different from the panic button?",
-          answer: "Yes. The panic button is for immediate emergencies where you need help right now. The safety check-in is a proactive, timed alert for situations where you want someone monitoring your status over a period of time. Both features work together for comprehensive safety.",
-        },
-        {
-          question: "Do my emergency contacts get notified for every check-in?",
-          answer: "No, your emergency contacts are only notified if you miss a check-in and the 24/7 monitoring team cannot confirm your safety. Routine check-in dismissals do not trigger any notifications.",
-        },
-        {
-          question: "Can I use safety check-ins on my smartwatch?",
-          answer: "Yes, you can start, extend, and dismiss MeetSafe check-in timers directly from your Apple Watch or Samsung Galaxy Watch without needing to pull out your phone.",
-        },
+        { question: "What is a safety check-in?", answer: "It is a scheduled MySentry prompt that asks whether you are safe after a planned activity or meeting." },
+        { question: "What happens if I miss the check-in?", answer: "The configured eligible alert workflow may continue and route permitted context for review. Trusted contacts or emergency services may be notified when appropriate." },
+        { question: "Can I change or cancel a check-in?", answer: "Use the available MySentry controls to review, change, extend, or close a supported check-in before it continues to the next step." },
+        { question: "Does a missed check-in guarantee emergency services?", answer: "No. Alert delivery, monitoring contact, escalation, emergency-service response, and arrival depend on the circumstances and are not guaranteed." },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for wearable features.",
-        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
-        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+        devices: "A currently supported smartphone and MySentry app. Optional watch controls require an eligible configuration.",
+        permissions: "Notifications, location, background, contact, audio, or video permissions depend on the workflow you configure.",
+        connectivity: "Prompts, alerts, and shared context require an available supported connection.",
+        limitations: "MySentry cannot guarantee prompt delivery, monitoring contact, escalation, emergency-service response, or arrival and is not a substitute for calling emergency services.",
       }}
       proofBlocks={[
-        { claim: "MeetSafe check-ins use timed safety intervals that trigger automatic alerts if not dismissed.", detail: "Users set a timer before meetings or appointments. If the timer expires without dismissal, 24/7 agents are alerted with location." },
-        { claim: "MeetSafe works for any meeting: dates, client visits, solo activities, or late-night shifts.", detail: "Add a title, date, time, and duration. MySentry checks on you automatically when the meeting ends." },
-        { claim: "Missed check-ins trigger a multi-step response: agent contact, emergency contact notification, and 911 dispatch.", detail: "The escalation process ensures appropriate response without overwhelming users with false alarms." }
+        { claim: "Scheduled safety prompt", detail: "A user can prepare a check-in before a meeting or activity and respond when MySentry asks for status." },
+        { claim: "Configurable next steps", detail: "Any later alert follows the supported plan, contacts, settings, permissions, connection, and region." },
       ]}
       relatedLinks={[
-        { text: "Panic Button App", href: "/features/panic-button-app" },
-        { text: "Safety App for Women", href: "/use-cases/safety-app-for-women" },
-        { text: "Lone Worker Safety App", href: "/use-cases/lone-worker-safety-app" },
-        { text: "Pricing Plans", href: "/pricing" },
+        { text: "Panic Alarm App", href: "/features/panic-button-app" },
+        { text: "Emergency Contacts", href: "/features/emergency-contacts" },
+        { text: "Professional Monitoring", href: "/features/24-7-professional-monitoring" },
+        { text: "Compare Plans", href: "/pricing" },
       ]}
     />
   );

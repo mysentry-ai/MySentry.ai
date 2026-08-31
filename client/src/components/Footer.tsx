@@ -50,7 +50,7 @@ export default function Footer() {
             <Link onClick={() => window.scrollTo(0, 0)} href="/" className="flex items-center gap-2">
               <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" />
             </Link>
-            <p className="text-sm font-bold text-primary uppercase tracking-wider mb-1">Live Safe. Stay Healthy.</p>
+            <p className="text-sm font-bold text-[#255044] uppercase tracking-wider mb-1">Live Safe. Stay Healthy.</p>
             <p className="text-base text-gray-900 leading-relaxed font-medium">
               Personal Safety and Health Monitoring with 24/7 Emergency Response.
             </p>
@@ -120,7 +120,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/females" className="text-gray-900 hover:text-primary transition-colors">
-                  For Females
+                  For Women
                 </Link>
               </li>
               <li>
@@ -166,7 +166,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/partner" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/partners" className="text-gray-900 hover:text-primary transition-colors">
                   Partners
                 </Link>
               </li>
@@ -203,7 +203,7 @@ export default function Footer() {
             <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Safety Resources</h3>
             <ul className="space-y-3 text-base font-medium">
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/seniors-aging-in-place" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/use-cases/medical-alert-app-for-seniors" className="text-gray-900 hover:text-primary transition-colors">
                   Seniors Aging in Place
                 </Link>
               </li>
@@ -213,7 +213,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/women-living-alone" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/use-cases/safety-app-for-women" className="text-gray-900 hover:text-primary transition-colors">
                   Women Living Alone
                 </Link>
               </li>
@@ -244,7 +244,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/integrations/oura-ring" className="text-gray-900 hover:text-primary transition-colors">
-                  Oura Ring Integration
+                  Oura Ring Status
                 </Link>
               </li>
               <li>
@@ -253,7 +253,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/guides/professional-monitoring" className="text-gray-900 hover:text-primary transition-colors">
+                <Link onClick={() => window.scrollTo(0, 0)} href="/features/24-7-professional-monitoring" className="text-gray-900 hover:text-primary transition-colors">
                   Professional Monitoring Guide
                 </Link>
               </li>
@@ -358,6 +358,9 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-primary/10 pt-8 text-center text-sm">
+          <p className="mx-auto mb-4 max-w-5xl text-xs leading-relaxed text-gray-700">
+            MySentry is a supplemental personal safety and wellness service, not a substitute for calling 911 or local emergency services. It does not diagnose, treat, cure, or prevent medical conditions. Feature availability and alert delivery can depend on plan, supported device, operating system, permissions, connectivity, account eligibility, and region. Monitoring teams review available alert context and may contact emergency services when appropriate; response and arrival times are not guaranteed.
+          </p>
           <p className="text-black font-medium">&copy; 2026 MySentry.ai. All rights reserved.</p>
         </div>
       </div>

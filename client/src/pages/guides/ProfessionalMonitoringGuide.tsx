@@ -4,17 +4,17 @@ export default function ProfessionalMonitoringGuide() {
   return (
     <SEOPageTemplate
       seoTitle="Professional Monitoring vs. App-Only Safety | MySentry"
-      seoDescription="Professional monitoring provides 24/7 help. MySentry agents verify emergencies with live video and dispatch help fast, unlike app-only alerts. Get peace of mind today."
+      seoDescription="Professional monitoring provides 24/7 help. MySentry agents verify emergencies with live video and contact emergency services when appropriate fast, unlike app-only alerts. Get peace of mind today."
       label="PERSONAL SAFETY"
       h1="Worried about getting help fast? Choose professional monitoring."
       problem="When an emergency strikes, every second counts. App-only solutions that just notify your personal contacts can lead to dangerous delays, especially if you're unable to respond."
       empathy="Choosing the right safety system can be overwhelming, and it's hard to know if you're truly protected. You need a solution that offers immediate, professional help when you need it most."
       steps={[
         { title: "Trigger an Alert", description: "MySentry detects a fall, or you can use a voice command, smartphone tap, or smartwatch tap to trigger a panic alarm." },
-        { title: "Instant Video Verification", description: "A live monitoring agent immediately looks at your camera feed to see what's happening." },
+        { title: "Prompt Video Verification", description: "A live monitoring agent immediately looks at your camera feed to see what's happening." },
         { title: "Emergency Dispatch", description: "The agent confirms the emergency and sends the right help with exact details." },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing#pricing-plans" }}
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing#pricing-plans" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
       directAnswer="Professional monitoring gives you immediate, 24/7 help from trained agents. They can see what's happening and send help, even if you can't speak. App-only systems just tell your contacts, which can cause dangerous delays."
       howItWorks={[

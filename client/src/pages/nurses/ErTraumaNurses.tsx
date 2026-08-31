@@ -27,9 +27,9 @@ const features = [
 
 const steps = [
   { step: "1", title: "Alert is triggered", body: "You press the panic button silently, a fall is detected, or a health alert fires." },
-  { step: "2", title: "Agents are notified instantly", body: "24/7 monitoring agents receive your GPS location, live video, and audio within seconds." },
+  { step: "2", title: "Agents are notified promptly", body: "24/7 monitoring agents receive your GPS location, live video, and audio within seconds." },
   { step: "3", title: "Situation is assessed", body: "Agents verify the alert and attempt to reach you. If there is no response, they escalate immediately." },
-  { step: "4", title: "Help is dispatched", body: "Emergency services are contacted with your exact location and situation details. Your emergency contacts are also notified." }
+  { step: "4", title: "The alert is reviewed for possible escalation", body: "Emergency services are contacted with your exact location and situation details. Your emergency contacts are also notified." }
 ];
 
 const faqs = [
@@ -47,14 +47,14 @@ export default function ErTraumaNurses() {
       <SEO
         schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
       />
-      <HeroSection label="ER and Trauma Nurse Safety" title={<>Safety for ER and Trauma Nurses<br /><span className="text-gray-600">When Every Second Counts</span></>} subtitle="Silent panic alarm, fall detection, and 24/7 professional monitoring for ER and trauma nurses facing workplace violence, high-stress shifts, and unpredictable patients." imageSrc={HERO_IMAGE} imageAlt="ER nurse in hospital corridor" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
+      <HeroSection label="ER and Trauma Nurse Safety" title={<>Safety for ER and Trauma Nurses<br /><span className="text-gray-600">When Every Second Counts</span></>} subtitle="Silent panic alarm, fall detection, and 24/7 professional monitoring for ER and trauma nurses facing workplace violence, high-stress shifts, and unpredictable patients." imageSrc={HERO_IMAGE} imageAlt="ER nurse in hospital corridor" ctaText="Review Plans and Eligibility" ctaLink={LOGIN_URL} />
 
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container max-w-3xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">What is a duress alarm for nurses?</h2>
           <p className="text-lg text-gray-700 leading-relaxed">A duress alarm for nurses is a discreet way to call for help when a patient or visitor becomes threatening, without making a sound that could escalate the situation. MySentry's silent panic alarm sends your GPS location and live audio to 24/7 monitoring agents the moment you press the button on your phone or watch, so backup is on the way before the situation gets worse.</p>
           <div className="mt-6 flex flex-wrap gap-4">
-            {[{ label: "Silent alarm mode", value: "No audible sound" }, { label: "Response time", value: "Under 60 seconds" }, { label: "Monitoring", value: "24/7 professional agents" }].map((s, i) => (
+            {[{ label: "Silent alarm mode", value: "No audible sound" }, { label: "Response time", value: "Timing varies" }, { label: "Monitoring", value: "24/7 professional agents" }].map((s, i) => (
               <div key={i} className="bg-primary/5 rounded-xl px-5 py-3 text-center flex-1 min-w-[140px]">
                 <div className="text-xl font-bold text-primary">{s.value}</div>
                 <div className="text-xs text-gray-600 mt-1">{s.label}</div>
@@ -101,7 +101,7 @@ export default function ErTraumaNurses() {
           </div>
           <div className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/nurses"><Button variant="outline" className="rounded-full px-8 h-12 font-semibold border-primary text-primary hover:bg-primary/5">All Nurse Safety Features</Button></Link>
-            <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8 h-12">Start Free Trial <ArrowRight className="ml-2 h-4 w-4" /></Button></a>
+            <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8 h-12">Review Plans and Eligibility <ArrowRight className="ml-2 h-4 w-4" /></Button></a>
           </div>
         </div>
       </section>
@@ -124,7 +124,7 @@ export default function ErTraumaNurses() {
         <div className="container max-w-4xl">
           <h2 className="text-lg font-bold text-gray-900 mb-5 text-center">Explore related features</h2>
           <div className="flex flex-wrap gap-3 justify-center">
-            {[{ label: "Panic Button App", href: "/features/panic-button-app" }, { label: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" }, { label: "Emergency Contacts", href: "/features/emergency-contacts" }, { label: "MeetSafe Check-Ins", href: "/features/meetsafe-check-ins" }, { label: "Health Monitoring", href: "/features/health-monitoring" }, { label: "All Nurse Safety", href: "/nurses" }, { label: "Pricing", href: "/pricing" }].map((l, i) => (
+            {[{ label: "Panic Button App", href: "/features/panic-button-app" }, { label: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" }, { label: "Emergency Contacts", href: "/features/emergency-contacts" }, { label: "MeetSafe Check-Ins", href: "/features/safety-check-in-app" }, { label: "Health Monitoring", href: "/features/health-monitoring" }, { label: "All Nurse Safety", href: "/nurses" }, { label: "Pricing", href: "/pricing" }].map((l, i) => (
               <Link key={i} href={l.href}><span className="inline-flex items-center gap-1 px-4 py-2 rounded-full border border-primary/30 text-primary text-sm font-medium hover:bg-primary/5 transition-colors">{l.label} <ArrowRight className="h-3 w-3" /></span></Link>
             ))}
           </div>
@@ -153,8 +153,8 @@ export default function ErTraumaNurses() {
             <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none"><div className="absolute top-[-50%] left-[-20%] w-[80%] h-[80%] rounded-full bg-primary blur-[150px]" /></div>
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-5xl md:text-6xl font-heading font-bold text-white mb-8 uppercase tracking-tight">You Handle the Emergencies. We Handle Your Safety.</h2>
-              <p className="text-xl text-gray-300 mb-12 leading-relaxed">Start your 7-day free trial. No credit card required.</p>
-              <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-16 text-lg transition-all hover:scale-105 shadow-xl">Start Free Trial</Button></a>
+              <p className="text-xl text-gray-300 mb-12 leading-relaxed">Review current plans, eligibility, billing terms, and enrollment requirements.</p>
+              <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-16 text-lg transition-all hover:scale-105 shadow-xl">Review Plans and Eligibility</Button></a>
               <p className="text-gray-400 text-sm mt-6">Secure checkout. Cancel anytime.</p>
             </div>
           </div>

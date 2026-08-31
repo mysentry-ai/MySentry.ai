@@ -10,21 +10,30 @@
 
 import { getDb } from "../db";
 import { blogPosts } from "../../drizzle/schema";
-import { eq } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import {
   ROUTE_META,
   DEFAULT_OG_IMAGE,
   SITE_NAME,
   type RouteMeta,
 } from "../../shared/seo/route-meta";
+import { isHeldBlogSlug } from "../../shared/seo/content-governance";
+import { absoluteBlogImageUrl } from "../../shared/seo/blog-assets";
 
 // ─── Blog meta cache ──────────────────────────────────────────────────────────
 
-type CacheEntry = { meta: RouteMeta; expiresAt: number };
+type BlogMeta = RouteMeta & {
+  authorName?: string | null;
+  publishedAt?: Date | null;
+  updatedAt?: Date | null;
+  isIndexed?: boolean;
+  isFollowed?: boolean;
+};
+
+type CacheEntry = { meta: BlogMeta; expiresAt: number };
 const blogCache = new Map<string, CacheEntry>();
 const BLOG_CACHE_TTL_MS = 60_000; // 60 seconds
-
-async function resolveBlogMeta(slug: string): Promise<RouteMeta | null> {
+async function resolveBlogMeta(slug: string): Promise<BlogMeta | null> {
   const cacheKey = `/blog/${slug}`;
   const cached = blogCache.get(cacheKey);
   if (cached && Date.now() < cached.expiresAt) {
@@ -43,9 +52,14 @@ async function resolveBlogMeta(slug: string): Promise<RouteMeta | null> {
         metaDescription: blogPosts.metaDescription,
         ogImageUrl: blogPosts.ogImageUrl,
         heroImageUrl: blogPosts.heroImageUrl,
+        authorName: blogPosts.authorName,
+        publishedAt: blogPosts.publishedAt,
+        updatedAt: blogPosts.updatedAt,
+        isIndexed: blogPosts.isIndexed,
+        isFollowed: blogPosts.isFollowed,
       })
       .from(blogPosts)
-      .where(eq(blogPosts.slug, slug))
+      .where(and(eq(blogPosts.slug, slug), eq(blogPosts.status, "published")))
       .limit(1);
 
     if (!rows.length) return null;
@@ -53,25 +67,31 @@ async function resolveBlogMeta(slug: string): Promise<RouteMeta | null> {
     const post = rows[0];
 
     // Prefer explicit SEO fields over generic title/excerpt
-    const resolvedTitle = post.metaTitle ?? post.title;
+    const resolvedTitle = post.metaTitle?.trim() || post.title;
     const resolvedDescription =
-      post.metaDescription ??
-      post.excerpt ??
+      post.metaDescription?.trim() ||
+      post.excerpt?.trim() ||
       `Read "${post.title}" on the MySentry blog.`;
-    const resolvedImage =
-      post.ogImageUrl ?? post.heroImageUrl ?? DEFAULT_OG_IMAGE;
+    const resolvedImage = absoluteBlogImageUrl(
+      post.ogImageUrl ?? post.heroImageUrl
+    ) ?? DEFAULT_OG_IMAGE;
 
-    const meta: RouteMeta = {
+    const meta: BlogMeta = {
       title: resolvedTitle,
       description: resolvedDescription,
       ogType: "article",
       ogImage: resolvedImage,
+      authorName: post.authorName,
+      publishedAt: post.publishedAt,
+      updatedAt: post.updatedAt,
+      isIndexed: post.isIndexed,
+      isFollowed: post.isFollowed,
     };
 
     blogCache.set(cacheKey, { meta, expiresAt: Date.now() + BLOG_CACHE_TTL_MS });
     return meta;
   } catch {
-    // DB unavailable — return null so caller falls back to default
+    // If the database is unavailable, return null so the caller uses the default.
     return null;
   }
 }
@@ -79,15 +99,20 @@ async function resolveBlogMeta(slug: string): Promise<RouteMeta | null> {
 // ─── Default fallback ─────────────────────────────────────────────────────────
 
 const DEFAULT_META: RouteMeta = {
-  title: "MySentry - 24/7 Personal Safety & Health Monitoring App",
+  title: "MySentry Personal Safety and Wellness App",
   description:
-    "MySentry turns your smartphone into a 24/7 safety companion. Panic alarm, fall detection, crash detection, health monitoring, and live video emergency response. Start your free trial today.",
+    "Review MySentry Panic Alarm, Safety Checks, eligible incident detection, supported wellness signals, trusted contacts, professional monitoring, requirements, and limitations.",
 };
 
 // ─── Public API ───────────────────────────────────────────────────────────────
 
 // Routes that should be excluded from search engine indexing
-const NOINDEX_ROUTES = new Set(["/pricing-legacy"]);
+const NOINDEX_ROUTES = new Set([
+  "/pricing-legacy",
+  "/features/secure-route",
+  "/integrations/oura-ring",
+]);
+const PRIVATE_ROUTE_PREFIXES = ["/admin"];
 
 export type ResolvedMeta = {
   title: string;          // Full title including "| MySentry" suffix
@@ -96,6 +121,13 @@ export type ResolvedMeta = {
   ogImage: string;
   canonicalPath: string;  // The path used for the canonical URL
   robots: string;         // e.g. "index,follow" or "noindex,follow"
+  found: boolean;
+  routeType: "static" | "article" | "not-found";
+  heading: string;
+  summary: string;
+  authorName?: string;
+  publishedAt?: string;
+  updatedAt?: string;
 };
 
 /**
@@ -109,22 +141,47 @@ export async function resolveMeta(
   // Normalize: strip trailing slash (except root "/")
   const path = urlPath.length > 1 ? urlPath.replace(/\/$/, "") : urlPath;
 
-  let raw: RouteMeta | null = null;
+  let raw: BlogMeta | null = null;
+  let routeType: ResolvedMeta["routeType"] = "not-found";
+  let canonicalPath = path;
+  let editorialHold = false;
 
   // 1. Static route lookup
   if (ROUTE_META[path]) {
     raw = ROUTE_META[path];
+    routeType = "static";
+  }
+  // Private application routes must remain reachable but never indexable.
+  else if (PRIVATE_ROUTE_PREFIXES.some(prefix => path === prefix || path.startsWith(`${prefix}/`))) {
+    raw = {
+      title: "MySentry Administration",
+      description: "Private MySentry administration area.",
+    };
+    routeType = "static";
   }
   // 2. Dynamic blog route: /blog/:slug or /blogs/:slug
   else if (/^\/blogs?\/(.+)$/.test(path)) {
     const slug = path.replace(/^\/blogs?\//, "");
+    editorialHold = isHeldBlogSlug(slug);
     raw = await resolveBlogMeta(slug);
+    if (raw) {
+      routeType = "article";
+      canonicalPath = `/blog/${slug}`;
+      if (editorialHold) {
+        raw = {
+          ...raw,
+          title: `${raw.title} | Editorial Review`,
+          description:
+            "This MySentry article is temporarily unavailable while product, safety, medical, legal, or comparison claims are reviewed.",
+          ogType: "website",
+          isIndexed: false,
+        };
+      }
+    }
   }
 
-  // 3. Fallback
-  if (!raw) {
-    raw = DEFAULT_META;
-  }
+  const found = raw !== null;
+  if (!raw) raw = DEFAULT_META;
 
   // Append "| MySentry" suffix unless the title already ends with it
   const titleSuffix = ` | ${SITE_NAME}`;
@@ -132,14 +189,34 @@ export async function resolveMeta(
     ? raw.title
     : `${raw.title}${titleSuffix}`;
 
-  const robots = NOINDEX_ROUTES.has(path) ? "noindex,follow" : "index,follow";
+  const isPrivateRoute = PRIVATE_ROUTE_PREFIXES.some(
+    prefix => path === prefix || path.startsWith(`${prefix}/`)
+  );
+  const robots = !found
+    ? "noindex,nofollow"
+    : isPrivateRoute
+      ? "noindex,nofollow"
+    : routeType === "article"
+      ? `${raw.isIndexed === false || editorialHold ? "noindex" : "index"},${raw.isFollowed === false ? "nofollow" : "follow"}`
+      : NOINDEX_ROUTES.has(path) || path.startsWith("/compare/") || path.startsWith("/case-studies/")
+        ? "noindex,follow"
+        : "index,follow";
 
   return {
     title: fullTitle,
     description: raw.description,
     ogType: raw.ogType ?? "website",
     ogImage: raw.ogImage ?? DEFAULT_OG_IMAGE,
-    canonicalPath: path,
+    canonicalPath,
     robots,
+    found,
+    routeType,
+    heading: found ? raw.title.replace(/\s*\|\s*MySentry\s*$/i, "") : "Page not found",
+    summary: found
+      ? raw.description
+      : "The page you requested is not available. Use the links below to continue exploring MySentry.",
+    authorName: raw.authorName ?? undefined,
+    publishedAt: raw.publishedAt?.toISOString(),
+    updatedAt: raw.updatedAt?.toISOString(),
   };
 }

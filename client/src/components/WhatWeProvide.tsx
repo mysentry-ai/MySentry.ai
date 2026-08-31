@@ -5,12 +5,12 @@ export default function WhatWeProvide() {
     <section className="py-24 bg-white">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">Our Promise</span>
+          <span className="text-[#255044] font-bold uppercase tracking-widest text-sm mb-4 block">How MySentry Helps</span>
           <h2 className="text-4xl md:text-5xl font-heading font-bold uppercase tracking-tight mb-6 text-[#1a1a1a]">
             Personal Safety and Health Monitoring
           </h2>
           <p className="text-xl text-gray-600">
-            MySentry delivers two things that matter most: your safety and your health, with 24/7 emergency response always ready.
+            MySentry brings user-activated safety tools, supported-device detection, wellness signals, trusted contacts, and eligible professional monitoring into one connected experience.
           </p>
         </div>
 
@@ -25,22 +25,22 @@ export default function WhatWeProvide() {
               <li className="flex gap-4">
                 <Zap className="h-6 w-6 text-blue-600 shrink-0" />
                 <div>
-                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">Immediate Detection</h4>
-                  <p className="text-gray-600">Whether it's a fall, accident, or sudden emergency, MySentry detects issues instantly.</p>
+                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">Supported-Device Detection</h4>
+                  <p className="text-gray-600">Compatible phone and watch sensors may identify fall-like or crash-like events. Detection depends on device, settings, connectivity, and conditions.</p>
                 </div>
               </li>
               <li className="flex gap-4">
                 <Phone className="h-6 w-6 text-blue-600 shrink-0" />
                 <div>
                   <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">24/7 Professional Monitoring</h4>
-                  <p className="text-gray-600">Alerts are sent to your emergency contacts and MySentry's professional monitoring team, so help can be dispatched even if you're unable to reach out.</p>
+                  <p className="text-gray-600">Eligible alerts may be routed to the monitoring team and trusted contacts. Agents can review available context and coordinate next steps when appropriate.</p>
                 </div>
               </li>
               <li className="flex gap-4">
                 <ShieldCheck className="h-6 w-6 text-blue-600 shrink-0" />
                 <div>
-                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">Seamless Protection</h4>
-                  <p className="text-gray-600">Works quietly in the background, so you're always protected without having to think about it.</p>
+                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">Configured Safety Tools</h4>
+                  <p className="text-gray-600">Set up contacts, permissions, devices, and alert preferences before you need them. No system can detect or resolve every event.</p>
                 </div>
               </li>
             </ul>
@@ -56,22 +56,22 @@ export default function WhatWeProvide() {
               <li className="flex gap-4">
                 <Activity className="h-6 w-6 text-green-600 shrink-0" />
                 <div>
-                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">Vital Tracking</h4>
-                  <p className="text-gray-600">Monitors key health metrics like heart rate, blood pressure, and oxygen levels in real time.</p>
+                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">Supported Wellness Signals</h4>
+                  <p className="text-gray-600">View available signals such as heart rate, HRV, blood oxygen, and activity from a compatible wearable. Signal availability varies by device.</p>
                 </div>
               </li>
               <li className="flex gap-4">
                 <Bell className="h-6 w-6 text-green-600 shrink-0" />
                 <div>
-                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">Health Alerts</h4>
-                  <p className="text-gray-600">If something is wrong, you'll get an alert before it becomes an emergency.</p>
+                  <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">Wellness Notifications</h4>
+                  <p className="text-gray-600">Supported devices may surface notifications about available wellness signals. These notifications are informational and are not a diagnosis or emergency prediction.</p>
                 </div>
               </li>
               <li className="flex gap-4">
                 <HeartPulse className="h-6 w-6 text-green-600 shrink-0" />
                 <div>
                   <h4 className="font-bold text-lg text-[#1a1a1a] mb-1">24/7 Professional Monitoring</h4>
-                  <p className="text-gray-600">Emergencies are sent to your emergency contacts and MySentry's professional monitoring team, so help can be dispatched even if you're unable to reach out.</p>
+                  <p className="text-gray-600">When a safety alert is active, permitted wellness context may be available to the monitoring workflow. Availability depends on plan, device, permissions, connectivity, and region.</p>
                 </div>
               </li>
             </ul>

@@ -75,7 +75,7 @@ export default function Pricing() {
       annualPrice: currentYearlyTotal,
       yearlySavings: currentYearlySavings,
       description: "Full protection with health monitoring and 24/7 agents.",
-      cta: "START 7-DAY FREE TRIAL",
+      cta: "REVIEW PLANS AND ELIGIBILITY",
       highlighted: true,
       comingSoon: false,
       features: [
@@ -99,7 +99,7 @@ export default function Pricing() {
       price: longevityMonthly,
       annualPrice: longevityAnnualTotal,
       description: "Advanced health insights with predictive analytics.",
-      cta: "START 7-DAY FREE TRIAL",
+      cta: "REVIEW PLANS AND ELIGIBILITY",
       highlighted: false,
       comingSoon: true,
       features: [
@@ -186,10 +186,10 @@ export default function Pricing() {
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "What's included in the 7-day free trial?",
+              "name": "What's included in any introductory offer displayed during enrollment?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Your free trial includes full access to all Essential Safety features including 24/7 professional monitoring, fall detection, crash detection, and real-time health alerts. A credit card is required to start, but if you cancel within 7 days you won't be charged."
+                "text": "Review the current plan, supported features, monitoring eligibility, billing terms, and any introductory offer displayed during enrollment before subscribing."
               }
             },
             {
@@ -528,13 +528,13 @@ export default function Pricing() {
           <div className="text-center mb-16">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Simple Online Signup</span>
             <h2 className="text-4xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-tight">How to Get Started</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">No in-app purchases. No complicated setup. Create your account online and start your free trial in minutes.</p>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">No in-app purchases. No complicated setup. Create your account online and review current plans and eligibility in minutes.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {[
-              { step: "1", title: "Choose Your Plan", description: "Select Individual or Family, and pick Monthly or Yearly billing. Click 'Start 7-Day Free Trial' to begin.", icon: "💳", link: getSignupUrl('individual', 'monthly') },
-              { step: "2", title: "Create Your Account Online", description: "You will be taken to our secure signup portal at dashboard.mysentry.ai. Enter your details and payment method to activate your free trial. A credit card is required, but you won't be charged if you cancel within 7 days.", icon: "🖥️", link: getSignupUrl('individual', 'monthly') },
+              { step: "1", title: "Choose Your Plan", description: "Select Individual or Family, and pick Monthly or Yearly billing. Click 'Review Plans and Eligibility' to begin.", icon: "💳", link: getSignupUrl('individual', 'monthly') },
+              { step: "2", title: "Create Your Account Online", description: "You will be taken to the MySentry enrollment portal to review the current plan, billing terms, eligibility, and any introductory offer before subscribing.", icon: "🖥️", link: getSignupUrl('individual', 'monthly') },
               { step: "3", title: "Download the App & Log In", description: "Once your account is active, download the MySentry app from the App Store or Google Play. Log in with your credentials and you are protected.", icon: "📱", link: undefined }
             ].map((item, i) => (
               item.link ? (
@@ -567,8 +567,8 @@ export default function Pricing() {
           <div className="max-w-3xl mx-auto space-y-6">
             {[
               {
-                q: "What's included in the 7-day free trial?",
-                a: "Your free trial includes full access to all Essential Safety features including 24/7 professional monitoring, fall detection, crash detection, and real-time health alerts. A credit card is required to start, but if you cancel within 7 days you won't be charged."
+                q: "What's included in any introductory offer displayed during enrollment?",
+                a: "Review the current plan, supported features, monitoring eligibility, billing terms, and any introductory offer displayed during enrollment before subscribing."
               },
               {
                 q: "Can I switch between Individual and Family plans?",
@@ -588,11 +588,11 @@ export default function Pricing() {
               },
               {
                 q: "How do I sign up for MySentry?",
-                a: "MySentry does not offer in-app purchases. To get started, click 'Start 7-Day Free Trial' on this page, which takes you to our secure signup portal. There you create your account and choose your payment method. Once your account is active, you download the MySentry app from the App Store or Google Play and log in."
+                a: "MySentry does not offer in-app purchases. To get started, click 'Review Plans and Eligibility' on this page, which takes you to our secure signup portal. There you create your account and choose your payment method. Once your account is active, you download the MySentry app from the App Store or Google Play and log in."
               },
               {
                 q: "Can I purchase MySentry through the App Store or Google Play?",
-                a: "No. All MySentry subscriptions are purchased directly through our website at mysentry.ai. After creating your account online, you simply download the free MySentry app and log in with your credentials. This allows us to offer you a 7-day free trial and flexible plan management."
+                a: "No. All MySentry subscriptions are purchased directly through our website at mysentry.ai. After creating your account online, you simply download the free MySentry app and log in with your credentials. This allows us to offer you any introductory offer displayed during enrollment and flexible plan management."
               }
             ].map((faq, i) => (
               <div key={i} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">

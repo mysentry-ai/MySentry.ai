@@ -25,7 +25,7 @@ export default function HomeHealthcareWorkerSafety() {
             "Your team gets a simple panic button, automatic fall detection, and proactive safety checks for high-risk visits.",
         },
         {
-          title: "Respond Instantly",
+          title: "Respond Promptly",
           description:
             "When an alert is triggered, our 24/7 monitoring center coordinates an immediate response, protecting your employee and your organization.",
         },

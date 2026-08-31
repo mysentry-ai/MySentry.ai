@@ -157,7 +157,7 @@ export default function SafetySimulation() {
                     completed={status === "verifying" || status === "alerting" || status === "connected"}
                     icon={Shield}
                     label="Event Detected"
-                    desc="Sensors identify emergency instantly"
+                    desc="Sensors identify emergency promptly"
                   />
                   {(activeScenario === "fall" || activeScenario === "health") && (
                     <ResponseStep 

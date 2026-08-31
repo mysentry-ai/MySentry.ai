@@ -1,26 +1,26 @@
-import { Shield, Users, Clock, Star } from "lucide-react";
+import { Shield, UserCheck, Smartphone, Headphones } from "lucide-react";
 import { motion } from "framer-motion";
 
 const stats = [
   {
-    icon: Users,
-    value: "100,000+",
-    label: "Users Protected"
-  },
-  {
-    icon: Clock,
-    value: "24/7",
-    label: "Professional Monitoring"
+    icon: UserCheck,
+    value: "User-Activated",
+    label: "Panic alerts"
   },
   {
     icon: Shield,
-    value: "2 min",
-    label: "Fall Detection Response"
+    value: "Consent-Based",
+    label: "Context sharing"
   },
   {
-    icon: Star,
-    value: "4.8/5",
-    label: "User Rating"
+    icon: Smartphone,
+    value: "Supported Devices",
+    label: "Phone and watch options"
+  },
+  {
+    icon: Headphones,
+    value: "Human Review",
+    label: "Monitoring workflow"
   }
 ];
 
@@ -36,7 +36,7 @@ export default function TrustBanner() {
           className="text-center"
         >
           <p className="text-sm font-semibold uppercase tracking-widest text-gray-500 mb-6">
-            Trusted by 100,000+ users for 24/7 peace of mind
+            Designed around clear user controls and connected safety workflows
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, index) => {

@@ -32,7 +32,7 @@ export default function Employers() {
       id: "health-incidents",
       title: "Health Incidents",
       subtitle: "Immediate medical response",
-      description: "Detect heart attacks, heat exhaustion, or other health crises instantly. Our monitoring center dispatches EMS with precise location data to save precious minutes.",
+      description: "Use supported wearable wellness signals as additional context during an eligible alert. MySentry does not diagnose medical events or guarantee emergency-service response.",
       image: "/images/cdn/PXvJZfCsLMkaKlOl.jpg",
       icon: Heart,
       tag: "Medical Response",
@@ -43,7 +43,7 @@ export default function Employers() {
       id: "driver-safety",
       title: "Driver Safety",
       subtitle: "Protect your fleet",
-      description: "Automatic crash detection for delivery drivers and field agents. We alert emergency services instantly if a severe impact is detected.",
+      description: "Eligible crash detection for delivery drivers and field agents may begin a safety check and configured alert workflow after a crash-like event.",
       image: "/images/cdn/ygjcYkgKzWhbNlUG.jpg",
       icon: Car,
       tag: "Fleet Safety",
@@ -120,7 +120,7 @@ export default function Employers() {
       id: "hospitality",
       title: "Hotel Staff",
       subtitle: "Room service safety",
-      description: "Housekeepers and room service staff entering guest rooms alone need protection. Panic buttons provide instant security backup.",
+      description: "Housekeepers and room service staff entering guest rooms alone need protection. Panic buttons provide prompt security backup.",
       image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2670&auto=format&fit=crop",
       icon: Hotel,
       tag: "Hospitality",
@@ -153,7 +153,7 @@ export default function Employers() {
       id: "logistics",
       title: "Logistics & Trucking",
       subtitle: "Road safety",
-      description: "Monitor driver fatigue and health on long hauls. Crash detection automatically alerts emergency services on remote highways.",
+      description: "Support drivers on long hauls with eligible crash detection and wearable wellness context. A possible crash may begin a configured safety check and alert workflow.",
       image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2670&auto=format&fit=crop",
       icon: Truck,
       tag: "Logistics",
@@ -164,7 +164,7 @@ export default function Employers() {
       id: "education",
       title: "School Staff",
       subtitle: "Campus security",
-      description: "Teachers and administrators can instantly alert security during campus emergencies or lockdowns with a single tap.",
+      description: "Teachers and administrators can promptly alert security during campus emergencies or lockdowns with a single tap.",
       image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2670&auto=format&fit=crop",
       icon: School,
       tag: "Education",
@@ -191,7 +191,7 @@ export default function Employers() {
       <HeroSection
         label="Workforce Protection"
         title={<>Protect Your<br/><span className="text-gray-600">Greatest Asset.</span></>}
-        subtitle="Real-time monitoring and instant emergency response for lone workers, field teams, and remote employees."
+        subtitle="User-activated alerts, eligible incident detection, scheduled check-ins, and professional monitoring for lone workers and field teams."
         imageSrc="/images/business-meeting-happy.jpg"
         imageAlt="Diverse team having a productive meeting"
         ctaText="BOOK A DEMO"
@@ -400,7 +400,7 @@ export default function Employers() {
               {
                 icon: Shield,
                 title: "Deploy & Protect",
-                description: "Onboard your team and start monitoring safety instantly.",
+                description: "Onboard your team and start monitoring safety promptly.",
                 color: "bg-[#004F7B]"
               }
             ].map((step, index) => (

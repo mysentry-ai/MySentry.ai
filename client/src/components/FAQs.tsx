@@ -45,7 +45,7 @@ export default function FAQs() {
     },
     {
       question: "What do the upcoming features cost?",
-      answer: "Upcoming features like Near-Fall Detection, Realtime Health Assessment, and 30-Day Predictive Analysis will be included in specific subscription tiers. Pricing details for these advanced features will be announced upon their release."
+      answer: "Roadmap capabilities are not presented as available until their status, supported devices, plan eligibility, and terms are confirmed."
     }
   ];
 

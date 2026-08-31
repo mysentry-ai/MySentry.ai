@@ -4,7 +4,7 @@ export default function RealEstate() {
   return (
     <SEOPageTemplate
       seoTitle="Real Estate Agent Safety App for Showings | MySentry"
-      seoDescription="Real estate agents, stay safe during showings. MySentry is a safety app with a panic alarm, fall detection, and 24/7 monitoring. Get help fast. Try it free."
+      seoDescription="Real estate agents, stay safe during showings. MySentry is a safety app with a panic alarm, fall detection, and 24/7 monitoring. Get help fast. Review Plans and Eligibility."
       canonical="https://mysentry.ai/industries/real-estate"
       label="REAL ESTATE SAFETY"
       h1="Complete Peace of Mind at Every Showing."
@@ -35,7 +35,7 @@ export default function RealEstate() {
       directAnswer="A real estate agent safety app helps protect agents during their work. MySentry offers a panic alarm, automatic fall and crash detection, and 24/7 professional monitoring. This ensures agents get immediate help in an emergency, whether at a showing, open house, or while traveling."
       howItWorks={[
         "Activate a MeetSafe timer before a showing. We'll monitor you for the set time.",
-        "If you feel unsafe, trigger the panic alarm. Our 24/7 response team gets an instant alert.",
+        "If you feel unsafe, trigger the panic alarm. Our 24/7 response team gets an prompt alert.",
         "Automatic fall detection sends an alert if you fall, even if you can't react.",
         "Our certified agents can see your live video, track your location, and send emergency services.",
       ]}
@@ -102,7 +102,7 @@ export default function RealEstate() {
           text: "Safety for Lone Workers",
           href: "/use-cases/lone-worker-safety-app",
         },
-        { text: "Real Estate Safety Solution", href: "/solutions/real-estate" },
+        { text: "Real Estate Safety Solution", href: "/industries/real-estate" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
       ]}

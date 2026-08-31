@@ -5,7 +5,7 @@ export default function MedicalAlertForSeniors() {
   return (
     <SEOPageTemplate
       seoTitle="Medical Alert App for Seniors: Stay Safe | MySentry"
-      seoDescription="MySentry helps seniors stay safe and independent with a medical alert app. It offers fall detection, health alerts, and 24/7 monitoring. Get peace of mind, start your free trial."
+      seoDescription="MySentry helps seniors stay safe and independent with a medical alert app. It offers fall detection, health alerts, and 24/7 monitoring. Get peace of mind, review current plans and eligibility."
       canonical="https://mysentry.ai/use-cases/medical-alert-app-for-seniors"
       label="FOR SENIORS"
       h1="Worried About Falls? Get Peace of Mind with MySentry's Medical Alert App"
@@ -19,7 +19,7 @@ export default function MedicalAlertForSeniors() {
         { title: "Enable Safety Features", description: "Activate fall detection, set up emergency contacts, and customize health alerts like heart rate and SpO2 monitoring." },
         { title: "Live with Peace of Mind", description: "MySentry's 24/7 monitoring team is always on standby. If an alert is triggered, we're there to help, day or night." },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
       directAnswer="MySentry is a medical alert app for seniors that turns a smartphone into a personal safety device. It includes automatic fall detection, health tracking, and a 24/7 professional monitoring service. This offers a modern, affordable choice for active seniors compared to older medical alert systems."
       howItWorks={[

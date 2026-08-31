@@ -23,7 +23,7 @@ import {
 const features = [
   {
     title: "Panic Button App",
-    description: "Instantly alert our 24/7 team and emergency contacts with a single tap or voice command. Silent, fast, and reliable when you need help most.",
+    description: "Start a user-activated alert from supported app, watch, or configured voice controls. Routing and shared context depend on plan, permissions, connectivity, and region.",
     href: "/features/panic-button-app",
     icon: ShieldCheck,
     color: "bg-blue-100",
@@ -31,7 +31,7 @@ const features = [
   },
   {
     title: "Fall Detection App",
-    description: "Automatic alerts if a fall is detected, even if you can't respond. Your smartwatch senses the impact and sends help immediately.",
+    description: "A supported watch or phone may identify a fall-like event and begin a check-in. Detection and any later escalation depend on device and service conditions.",
     href: "/features/fall-detection-app",
     icon: PersonStanding,
     color: "bg-orange-100",
@@ -39,7 +39,7 @@ const features = [
   },
   {
     title: "Crash Detection",
-    description: "Detects car accidents using your phone's sensors and automatically sends for help with your precise location.",
+    description: "Supported phone sensors may identify a crash-like event and begin an alert workflow that can share permitted location context for review.",
     href: "/features/crash-detection",
     icon: Car,
     color: "bg-red-100",
@@ -47,7 +47,7 @@ const features = [
   },
   {
     title: "24/7 Professional Monitoring",
-    description: "Our certified team is always ready to respond to any alert. Real people, real-time, around the clock.",
+    description: "Eligible alerts can be reviewed by a professional monitoring team at any time. Contact and escalation timing varies with alert and service conditions.",
     href: "/features/24-7-professional-monitoring",
     icon: Phone,
     color: "bg-purple-100",
@@ -55,7 +55,7 @@ const features = [
   },
   {
     title: "Emergency Contacts",
-    description: "Keep your trusted friends and family informed during an emergency. They receive instant alerts with your live location.",
+    description: "Add up to 5 trusted contacts who can receive permitted alert context, such as available location or status, when a safety workflow starts.",
     href: "/features/emergency-contacts",
     icon: Users,
     color: "bg-teal-100",
@@ -63,7 +63,7 @@ const features = [
   },
   {
     title: "Live Video Response",
-    description: "Share live video with our monitoring team to get the right help, faster. Visual verification means a more accurate response.",
+    description: "When enabled and available, live video can give the monitoring team additional context during an eligible alert. Sharing follows user permissions.",
     href: "/features/live-video-response",
     icon: Video,
     color: "bg-indigo-100",
@@ -71,7 +71,7 @@ const features = [
   },
   {
     title: "Health Monitoring",
-    description: "Track key health metrics like HRV, SpO2, and heart rate in real time. Get alerts before a health event becomes an emergency.",
+    description: "View supported wellness signals such as HRV, blood oxygen, heart rate, and activity from compatible devices. MySentry does not diagnose or predict medical emergencies.",
     href: "/features/health-monitoring",
     icon: HeartPulse,
     color: "bg-green-100",
@@ -79,15 +79,15 @@ const features = [
   },
   {
     title: "MeetSafe Check-Ins",
-    description: "Schedule a meeting. When it ends, MySentry sends you a Safety Check Alert. If you don't respond, your Panic Alarm is triggered automatically.",
-    href: "/features/meetsafe-check-ins",
+    description: "Schedule a check-in for a meeting or activity. If you do not confirm your status, the app can continue the alert flow configured in your settings.",
+    href: "/features/safety-check-in-app",
     icon: Activity,
     color: "bg-amber-100",
     iconColor: "text-amber-600",
   },
   {
     title: "Family Connectivity",
-    description: "Share your location on a schedule or in real time. Request a trusted contact's location when you're worried. Up to 5 emergency contacts.",
+    description: "Keep up to 5 trusted contacts ready for an alert. Family members receive permitted alert context instead of continuous access to private wellness data.",
     href: "/features/family-connectivity",
     icon: MapPin,
     color: "bg-cyan-100",
@@ -101,14 +101,6 @@ const features = [
     color: "bg-rose-100",
     iconColor: "text-rose-600",
   },
-  {
-    title: "Secure Route",
-    description: "Set a route before your journey. MySentry monitors for major deviations and checks on you if you drift off path.",
-    href: "/features/secure-route",
-    icon: Route,
-    color: "bg-lime-100",
-    iconColor: "text-lime-600",
-  },
 ];
 
 export default function FeaturesHub() {
@@ -119,8 +111,8 @@ export default function FeaturesHub() {
       {/* Hero Section */}
       <HeroSection
         label="Personal Safety and Health Monitoring"
-        title={<>Your Life,<br/><span className="text-primary">Fully Protected.</span></>}
-        imageSrc="/images/hero-section.svg"
+        title={<>Your Safety Tools,<br/><span className="text-primary">Connected.</span></>}
+        imageSrc="/images/features-hero-800w.jpg"
         imageAlt="MySentry safety features overview"
       />
 
@@ -135,7 +127,7 @@ export default function FeaturesHub() {
               Safety & Health Features
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              Each feature is designed to work seamlessly together, creating a comprehensive safety net that adapts to your life.
+              Choose current safety tools that fit your routine, supported devices, permissions, and plan. Each feature has its own eligibility and limitations.
             </p>
           </div>
 
@@ -189,7 +181,7 @@ export default function FeaturesHub() {
               How They Work Together
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              MySentry's features don't work in isolation. They form a connected safety ecosystem that protects you from every angle.
+              MySentry brings activation, available context, trusted contacts, and eligible monitoring into one configurable workflow.
             </p>
           </div>
 
@@ -206,7 +198,7 @@ export default function FeaturesHub() {
               </div>
               <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">Detect</h3>
               <p className="text-gray-600 leading-relaxed">
-                Falls, crashes, health anomalies, and panic triggers are detected automatically by your phone and smartwatch sensors.
+                A user can start a Panic Alarm. Supported devices may also identify fall-like or crash-like events and begin a check-in.
               </p>
             </motion.div>
 
@@ -222,7 +214,7 @@ export default function FeaturesHub() {
               </div>
               <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">Verify</h3>
               <p className="text-gray-600 leading-relaxed">
-                Live video response lets our monitoring team see what's happening in real time, ensuring the right type of help is dispatched.
+                The monitoring team may review the context you permit, including available location, audio, or video, when the feature and connection support it.
               </p>
             </motion.div>
 
@@ -238,7 +230,7 @@ export default function FeaturesHub() {
               </div>
               <h3 className="text-2xl font-bold text-[#1a1a1a] mb-4">Respond</h3>
               <p className="text-gray-600 leading-relaxed">
-                Our 24/7 professional team coordinates with emergency services and your contacts to get you the help you need, fast.
+                Agents may attempt contact, notify trusted contacts, or coordinate with emergency services when appropriate. Response and arrival are not guaranteed.
               </p>
             </motion.div>
           </div>
@@ -248,7 +240,7 @@ export default function FeaturesHub() {
       {/* CTA Section */}
       <GetStartedSection
         sub
-        ctaText="Start Your 7-Day Free Trial"
+        ctaText="Review Plans and Eligibility"
       />
     </Layout>
   );

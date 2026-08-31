@@ -4,29 +4,29 @@ export default function SamsungGalaxyWatchIntegration() {
   return (
     <SEOPageTemplate
       seoTitle="Samsung Galaxy Watch Safety App | MySentry"
-      seoDescription="Turn your Samsung Galaxy Watch into a safety device. MySentry adds fall detection, panic alarm, and 24/7 monitoring to your Galaxy Watch. Start your free trial."
+      seoDescription="Review current MySentry eligibility, setup requirements, and limitations for supported Samsung Galaxy Watch and Android configurations."
       canonical="https://mysentry.ai/integrations/samsung-galaxy-watch"
       label="Integration"
       h1="Turn Your Samsung Galaxy Watch Into a Personal Safety Device"
-      problem="You love your Samsung Galaxy Watch, but it doesn't call for help when something goes wrong. You need safety features built into the device you already wear every day."
-      empathy="Your watch is already on your wrist. We built MySentry to add the safety layer it's missing, without asking you to carry anything new."
+      problem="You want to understand whether your Samsung watch and Android phone can support MySentry safety controls and eligible monitoring workflows."
+      empathy="Compatibility can vary by watch model, operating system, phone, permissions, plan, and region. Confirm the current requirements before enrolling."
       steps={[
         { title: "Step 1: Download", description: "Download the MySentry app on your Android smartphone." },
-        { title: "Step 2: Pair", description: "Pair the app with your Samsung Galaxy Watch." },
-        { title: "Step 3: Enable", description: "Enable data sharing with Samsung Health to get the most out of MySentry." },
+        { title: "Step 2: Confirm Compatibility", description: "Verify your watch model, Wear OS version, phone, plan, and regional eligibility with MySentry support." },
+        { title: "Step 3: Configure Permissions", description: "Pair supported devices and enable only the permissions needed for the features you choose." },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry adds fall detection, a panic alarm, and 24/7 professional monitoring to your Samsung Galaxy Watch. When a fall is detected or you trigger an alarm, our monitoring team is notified with your GPS location and live video from your phone. If you do not respond to the Safety Check Alert, an alert is sent automatically."
+      directAnswer="MySentry may support user-activated alerts, supported-device fall detection, permitted location or video context, and eligible professional monitoring on compatible Samsung watch and Android configurations. Current model, operating-system, plan, permission, connectivity, and regional requirements must be confirmed before use."
       howItWorks={[
-        "Automatic Fall Detection: If you fall, MySentry detects it and alerts our 24/7 monitoring center if you do not respond to the Safety Check Alert.",
-        "Instant Panic Alarm: Trigger a panic alarm with a simple voice command, a tap on your watch face, or through your smartphone.",
-        "Health & GPS Monitoring: Keeps an eye on your heart rate and SpO2 levels, and provides GPS location to emergency contacts when an alert is triggered.",
+        "Supported-Device Detection: A compatible device may identify a fall-like event and begin a check-in or configured alert workflow.",
+        "User-Activated Panic Alarm: Start an alert from available watch, phone, or configured voice controls.",
+        "Permitted Context: Supported wellness signals and location may be available during an alert when the device, settings, and permissions allow.",
       ]}
       afterAlert={[
-        "Immediate Contact: Our monitoring team speaks to you directly through your smartphone.",
-        "Emergency Dispatch: If needed, we dispatch local emergency services to your GPS location.",
-        "Family Notification: Your designated emergency contacts are notified of the situation.",
+        "Alert Review: An eligible alert may be routed to the professional monitoring workflow.",
+        "Contact Attempt: An agent may try to contact you using available account and device information.",
+        "Conditional Escalation: Trusted contacts or emergency services may be notified when appropriate. Timing, response, and arrival are not guaranteed.",
       ]}
       bestFor={[
         "Active seniors who use a Samsung Galaxy Watch.",
@@ -34,20 +34,20 @@ export default function SamsungGalaxyWatchIntegration() {
         "Galaxy Watch users who want peace of mind for themselves and their families.",
       ]}
       notIdealFor={[
-        "Users without a compatible Samsung Galaxy Watch (Series 6 or newer).",
+        "Users whose watch, phone, operating system, plan, region, or permissions are not currently supported.",
         "Individuals who do not have an Android smartphone.",
         "People who are uncomfortable with sharing health data from their watch.",
       ]}
       keyTakeaways={[
-        "MySentry works with Samsung Galaxy Watch 4 and newer models.",
-        "Fall detection sends an automatic alert if you do not respond to the Safety Check Alert.",
-        "Panic alarm works by watch tap, phone tap, or voice command.",
-        "Requires an Android smartphone with the MySentry app installed.",
+        "Confirm the current supported watch, Wear OS, Android phone, plan, and regional requirements before enrolling.",
+        "Detection is not guaranteed and depends on compatible sensors, settings, connectivity, and conditions.",
+        "Available Panic Alarm controls depend on the supported device and configuration.",
+        "An eligible Android smartphone with the MySentry app is required for supported watch workflows.",
       ]}
       faqs={[
         {
           question: "Which Samsung Galaxy Watch models are compatible?",
-          answer: "MySentry is compatible with the Samsung Galaxy Watch 4 and any newer models running Wear OS 3 or higher.",
+          answer: "Compatibility requirements can change. Confirm the supported Galaxy Watch models, Wear OS versions, Android phones, plans, and regions with MySentry support before enrolling.",
         },
         {
           question: "Do I need my phone with me for it to work?",
@@ -55,23 +55,22 @@ export default function SamsungGalaxyWatchIntegration() {
         },
         {
           question: "How does the fall detection work?",
-          answer: "MySentry uses the motion sensors in your Galaxy Watch to detect the impact of a fall. If a fall is detected, it will initiate an alert sequence. If you do not respond to the Safety Check Alert, our 24/7 monitoring center is notified.",
+          answer: "On a supported configuration, device sensors may identify a fall-like event and begin a check-in or configured alert workflow. No detection system identifies every event.",
         },
         {
           question: "Is my health data secure?",
-          answer: "Absolutely. Your health data is encrypted and securely stored. We only share relevant information with emergency services during an active alert.",
+          answer: "MySentry applies documented security and privacy controls. Data access and sharing depend on your settings, permissions, plan, connected services, and the applicable privacy policy. Do not enable permissions you do not want to use.",
         },
       ]}
       setupRequirements={{
-        devices: "Samsung Galaxy Watch 4 or newer and a compatible Android smartphone.",
-        permissions: "Enable data sharing with Samsung Health for full functionality.",
-        connectivity: "Requires a constant Bluetooth connection between your watch and smartphone.",
-        limitations: "MySentry is not a substitute for professional medical advice. Health monitoring is for informational purposes only.",
+        devices: "A currently supported Samsung Galaxy Watch and eligible Android smartphone. Confirm exact models and software versions before enrollment.",
+        permissions: "Enable only the watch, phone, location, video, microphone, notification, or wellness permissions required for the features you choose.",
+        connectivity: "Supported workflows require available device connectivity. Bluetooth, cellular service, Wi-Fi, and background permissions can affect operation.",
+        limitations: "MySentry is not a replacement for calling emergency services and is not a medical device. Detection, monitoring, contact, escalation, and arrival are not guaranteed.",
       }}
       proofBlocks={[
-        { claim: "2 Minute Fall Detection Time", detail: "If a fall is detected, MySentry waits 2 minutes for you to respond before alerting our 24/7 monitoring center." },
-        { claim: "Automatic Crash Detection", detail: "In the event of a car accident, MySentry can automatically detect the crash and alert our monitoring center." },
-        { claim: "User Testimonial", detail: "I feel so much safer knowing MySentry is on my wrist. It is the best of both worlds: the smartwatch I love and the protection I need. - Sarah L., MySentry User" },
+        { claim: "Compatibility Comes First", detail: "MySentry presents Samsung watch features only for configurations that meet current device, software, plan, permission, connectivity, and regional requirements." },
+        { claim: "User-Controlled Permissions", detail: "Location, audio, video, wellness, and contact context is governed by feature availability and the permissions you enable." },
       ]}
       relatedLinks={[
         { text: "Apple Watch Integration", href: "/integrations/apple-watch" },
@@ -79,7 +78,7 @@ export default function SamsungGalaxyWatchIntegration() {
         { text: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" },
         { text: "Pricing Plans", href: "/pricing" },
       ]}
-      heroImage="/images/integrations/samsung-galaxy-watch-hero.png"
+      heroImage="/images/cdn/IElpNKDyEyZQAZJG.jpg"
     />
   );
 }

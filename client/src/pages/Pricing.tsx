@@ -25,31 +25,29 @@ const PRICING = {
 
 const FEATURES_B2C = [
   "Panic Alarm (Voice, Button, Watch)",
-  "Fall Detection",
-  "Crash Detection",
-  "Real-Time Personalized Health Monitoring",
-  "24/7 Professional Monitoring",
-  "Live Video Response",
-  "Automated Location Sharing",
+  "Supported-Device Fall Detection",
+  "Supported-Device Crash Detection",
+  "Supported Wellness Signals",
+  "Eligible 24/7 Professional Monitoring",
+  "Permitted Live Video During Alerts",
+  "Permitted Location Sharing During Alerts",
   "5 Emergency Contacts",
   "MeetSafe (Optional)",
   "Automated Call (Optional)",
-  "Secure Route Monitoring",
-  "Family Connectivity & Location Sharing",
+  "Alert-Based Family Connectivity",
 ];
 
 const FEATURES_B2B = [
-  "All Essential Safety Features",
-  "Video Evidence for Claims",
+  "Eligible Essential Safety Features",
+  "Permitted Incident Context",
   "Dedicated Account Manager",
-  "API Integration",
-  "Protect Your Workers Everywhere",
-  "SOS Alerts",
-  "Proactive Monitoring & Analysis",
-  "Instant Incident Response",
-  "Video Evidence for Police",
-  "Real-time Location Tracking",
-  "IoT Integrations",
+  "Configurable Rollout Support",
+  "User-Activated SOS Alerts",
+  "Supported-Device Detection",
+  "Professional Alert Review",
+  "Trusted Contact Workflows",
+  "Employee and Family Options",
+  "Contact Us for Device and Regional Eligibility",
 ];
 
 const QUICK_EMPLOYEE_COUNTS = [10, 50, 100, 500];
@@ -63,15 +61,6 @@ type Billing = "monthly" | "yearly";
 function formatMoney(amount: number): string {
   return "$" + amount.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
-
-/* ─── Schema for SEO ─── */
-const pricingSchema = {
-  "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "MySentry Pricing",
-  description: "Choose the protection that fits your life. Personal safety plans starting from $15/mo with 7-day free trial.",
-  url: "https://mysentry.ai/pricing",
-};
 
 /* ─── Custom Quote Modal ─── */
 function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boolean; onClose: () => void; defaultEmployees: number }) {
@@ -329,7 +318,7 @@ export default function Pricing() {
     }
   }, [mode, coverage, billing, licenses]);
 
-  /* License slider handler — minimum is 2 for Enterprise plans */
+  /* License slider handler  -  minimum is 2 for Enterprise plans */
   const handleSliderChange = useCallback((val: number) => {
     const clamped = Math.max(2, Math.min(10000, val));
     setLicenses(clamped);
@@ -349,11 +338,9 @@ export default function Pricing() {
 
   return (
     <Layout>
-      <SEO
-        schema={pricingSchema}
-      />
+      <SEO />
 
-      {/* Hero — title + subtitle + toggle */}
+      {/* Hero  -  title + subtitle + toggle */}
       <section className="text-center pt-28 md:pt-32 pb-10 px-5">
         <h1 className="text-3xl md:text-[55px] font-extrabold text-[#0F172A] uppercase tracking-tight mb-3 leading-tight">
           Simple, Transparent Pricing.
@@ -369,7 +356,7 @@ export default function Pricing() {
             className={cn(
               "flex items-center gap-2 px-6 md:px-8 py-3 rounded-full text-sm md:text-[15px] font-bold transition-all duration-300",
               mode === "b2c"
-                ? "bg-[#6ad990] text-white shadow-[0_4px_10px_rgba(97,197,39,0.3)]"
+                ? "bg-[#004F7B] text-white shadow-[0_4px_10px_rgba(0,79,123,0.24)]"
                 : "bg-transparent text-[#64748B] hover:text-[#0F172A]"
             )}
           >
@@ -381,7 +368,7 @@ export default function Pricing() {
             className={cn(
               "flex items-center gap-2 px-6 md:px-8 py-3 rounded-full text-sm md:text-[15px] font-bold transition-all duration-300",
               mode === "b2b"
-                ? "bg-[#6ad990] text-white shadow-[0_4px_10px_rgba(97,197,39,0.3)]"
+                ? "bg-[#004F7B] text-white shadow-[0_4px_10px_rgba(0,79,123,0.24)]"
                 : "bg-transparent text-[#64748B] hover:text-[#0F172A]"
             )}
           >
@@ -419,22 +406,14 @@ export default function Pricing() {
             </StepBlock>
 
             {/* Step 2: Plan Type */}
-            <StepBlock stepNum={planStepNum} title="Select your plan">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <StepBlock id="pricing-plans" stepNum={planStepNum} title="Select your plan">
+              <div className="grid grid-cols-1 gap-4">
                 <SelectCard
                   active
                   icon={<Shield className="w-6 h-6 text-[#2E7D6F]" />}
                   title={mode === "b2b" ? "Essential Safety for Employers" : "Essential Safety"}
-                  description="Comprehensive safety & health monitoring with emergency response."
+                  description="Connected safety tools, supported wellness signals, trusted contacts, and eligible monitoring in one current plan."
                   badge={<span className="absolute -top-2.5 right-4 bg-[#2E7D6F] text-white text-[11px] font-bold px-2.5 py-1 rounded-full">Most Popular</span>}
-                />
-                <SelectCard
-                  disabled
-                  icon={<HeartPulse className="w-6 h-6 text-[#64748B]" />}
-                  title="Longevity & Wellness"
-                  description="Advanced vitals tracking, virtual coach, and in-home testing."
-                  badge={<span className="absolute -top-2.5 right-4 bg-[#E2E8F0] text-[#64748B] text-[11px] font-bold px-2.5 py-1 rounded-full">Coming Soon</span>}
-                  titleClassName="text-[#64748B]"
                 />
               </div>
             </StepBlock>
@@ -470,7 +449,7 @@ export default function Pricing() {
                       <button
                         key={count}
                         onClick={() => setLicenses(count)}
-                        className="bg-[#F1F5F9] border border-transparent px-4 py-2 rounded-full text-[13px] font-semibold text-[#64748B] cursor-pointer transition-all hover:bg-white hover:border-[#6ad990] hover:text-[#6ad990]"
+                        className="bg-[#F1F5F9] border border-transparent px-4 py-2 rounded-full text-[13px] font-semibold text-[#475569] cursor-pointer transition-all hover:bg-white hover:border-[#004F7B] hover:text-[#004F7B]"
                       >
                         {count}{count === 500 ? "+" : ""}
                       </button>
@@ -517,7 +496,7 @@ export default function Pricing() {
                   {formatMoney(calculated.displayPrice)}
                 </div>
                 {calculated.costPerUser && (
-                  <div className="text-sm font-bold text-[#6ad990] mt-1">{calculated.costPerUser}</div>
+                  <div className="text-sm font-bold text-[#255044] mt-1">{calculated.costPerUser}</div>
                 )}
                 <div className="text-[15px] text-[#64748B] font-medium mt-2">{calculated.cycleLabel}</div>
               </div>
@@ -526,7 +505,7 @@ export default function Pricing() {
               <div className="py-6 border-t border-b border-[#E2E8F0] flex flex-col gap-3 mb-6">
                 {features.map((feat, i) => (
                   <div key={i} className="flex items-start gap-3 text-sm font-medium text-[#334155]">
-                    <Check className="w-4 h-4 text-[#6ad990] mt-0.5 shrink-0" />
+                    <Check className="w-4 h-4 text-[#255044] mt-0.5 shrink-0" />
                     <span>{feat}</span>
                   </div>
                 ))}
@@ -543,9 +522,9 @@ export default function Pricing() {
               {/* CTA Buttons */}
               <button
                 onClick={handleCheckout}
-                className="w-full py-4.5 bg-[#6ad990] text-white border-none rounded-xl text-base font-bold cursor-pointer transition-all shadow-[0_4px_15px_rgba(97,197,39,0.3)] hover:translate-y-[-2px] hover:shadow-[0_8px_20px_rgba(97,197,39,0.4)] flex justify-center items-center gap-2.5"
+                className="w-full py-4.5 bg-[#004F7B] text-white border-none rounded-xl text-base font-bold cursor-pointer transition-all shadow-[0_4px_15px_rgba(0,79,123,0.24)] hover:translate-y-[-2px] hover:bg-[#003A5B] hover:shadow-[0_8px_20px_rgba(0,79,123,0.3)] flex justify-center items-center gap-2.5"
               >
-                {mode === "b2c" ? "Start 7-Day Free Trial" : "Proceed with Payment"}
+                {mode === "b2c" ? "Review Plans and Eligibility" : "Proceed with Payment"}
               </button>
 
               {mode === "b2b" && (
@@ -556,6 +535,9 @@ export default function Pricing() {
                   Customized Quotation
                 </button>
               )}
+              <p className="mt-5 text-xs leading-relaxed text-[#64748B]">
+                Feature availability depends on plan, supported device, permissions, connectivity, region, and third-party services. MySentry is not a substitute for calling 911 or local emergency services and is not a medical device.
+              </p>
             </div>
           </div>
         </div>
@@ -580,9 +562,9 @@ export default function Pricing() {
 
 /* ─── Sub-components ─── */
 
-function StepBlock({ stepNum, title, children }: { stepNum: number; title: string; children: React.ReactNode }) {
+function StepBlock({ stepNum, title, children, id }: { stepNum: number; title: string; children: React.ReactNode; id?: string }) {
   return (
-    <div className="bg-white rounded-3xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-white/50">
+    <div id={id} className="scroll-mt-28 bg-white rounded-3xl p-8 shadow-[0_10px_30px_rgba(0,0,0,0.03)] border border-white/50">
       <h2 className="text-lg font-bold text-[#0F172A] mb-6 flex items-center gap-3">
         <span className="bg-[#DCFCE7] text-[#2E7D6F] w-7 h-7 rounded-full flex items-center justify-center text-sm font-extrabold">
           {stepNum}

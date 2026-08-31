@@ -30,7 +30,7 @@ export default function RingHeroBottomBanner() {
 
           {/* Right: CTA */}
           <Link
-            href="/ring"
+            href="/integrations/ring"
             className="inline-flex items-center gap-2 bg-primary text-white font-bold rounded-full px-6 py-2.5 hover:bg-primary/90 transition-all hover:scale-105 shadow-md text-sm whitespace-nowrap shrink-0"
           >
             Explore More

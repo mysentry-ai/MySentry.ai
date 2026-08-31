@@ -65,7 +65,7 @@ export default function SeniorsAgingInPlace() {
         schema={schema}
       />
 
-      {/* Hero — title + subtitle + CTAs only */}
+      {/* Hero  -  title + subtitle + CTAs only */}
       <section className="min-h-[calc(100vh-80px)] flex items-center bg-gradient-to-b from-[#e8f5e9] to-white">
         <div className="container max-w-6xl mx-auto px-4 py-16">
           <div className="max-w-3xl">
@@ -79,7 +79,7 @@ export default function SeniorsAgingInPlace() {
             <div className="flex flex-wrap gap-4">
               <Link href="/pricing#pricing-plans">
                 <Button size="lg" className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#1a1a1a] font-bold text-lg px-8 py-6 rounded-full uppercase tracking-wider">
-                  Start 7-Day Free Trial
+                  Review Plans and Eligibility
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
@@ -93,7 +93,7 @@ export default function SeniorsAgingInPlace() {
         </div>
       </section>
 
-      {/* Overview — moved from hero */}
+      {/* Overview  -  moved from hero */}
       <section className="py-16 bg-white">
         <div className="container max-w-4xl mx-auto px-4">
           <p className="text-lg text-gray-700 mb-4 leading-relaxed">
@@ -140,7 +140,7 @@ export default function SeniorsAgingInPlace() {
               {
                 icon: <Shield className="w-8 h-8 text-primary" />,
                 title: "Automatic Fall Detection",
-                description: "Advanced sensors detect when your parent falls, even if they cannot press a button. Our monitoring center is alerted in seconds and help arrives in under 2 minutes."
+                description: "Advanced sensors detect when your parent falls, even if they cannot press a button. Our monitoring center is alerted in seconds and help arrives in a few steps."
               },
               {
                 icon: <Heart className="w-8 h-8 text-primary" />,
@@ -160,7 +160,7 @@ export default function SeniorsAgingInPlace() {
               {
                 icon: <Users className="w-8 h-8 text-primary" />,
                 title: "Family Notifications",
-                description: "You receive instant alerts when something happens. Stay informed about your parent's safety without hovering or micromanaging their daily life."
+                description: "You receive prompt alerts when something happens. Stay informed about your parent's safety without hovering or micromanaging their daily life."
               },
               {
                 icon: <Clock className="w-8 h-8 text-primary" />,
@@ -206,7 +206,7 @@ export default function SeniorsAgingInPlace() {
               {
                 step: "3",
                 title: "Add Yourself as an Emergency Contact",
-                description: "You will receive instant notifications whenever an alert triggers. Our 24/7 professional monitoring team handles the emergency response while keeping you informed every step of the way."
+                description: "You will receive prompt notifications whenever an alert triggers. Our 24/7 professional monitoring team handles the emergency response while keeping you informed every step of the way."
               }
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-6">

@@ -18,18 +18,17 @@ const megaMenuSections = [
         items: [
           { name: "Panic Button App", desc: "One-tap silent SOS with live video", href: "/features/panic-button-app" },
           { name: "Fall Detection", desc: "Automatic fall alerts with GPS", href: "/features/fall-detection-app" },
-          { name: "Crash Detection", desc: "Vehicle crash auto-alert", href: "/features/crash-detection" },
-          { name: "Live Video Response", desc: "Real-time video to responders", href: "/features/live-video-response" },
+          { name: "Crash Detection", desc: "Eligible device crash signals", href: "/features/crash-detection" },
+          { name: "Alert Video Context", desc: "Permitted video during supported alerts", href: "/features/live-video-response" },
         ],
       },
       {
         title: "Monitoring & Wellness",
         icon: <Activity className="w-5 h-5 text-primary" />,
         items: [
-          { name: "24/7 Professional Monitoring", desc: "Always-on trained response team", href: "/features/24-7-professional-monitoring" },
-          { name: "Health Monitoring", desc: "Heart rate, SpO2, HRV tracking", href: "/features/health-monitoring" },
-          { name: "Safety Check-Ins", desc: "Scheduled wellness check-ins", href: "/features/safety-check-in-app" },
-          { name: "MeetSafe Check-Ins", desc: "Date and meeting safety timers", href: "/features/meetsafe-check-ins" },
+          { name: "24/7 Professional Monitoring", desc: "Trained agents for eligible alerts", href: "/features/24-7-professional-monitoring" },
+          { name: "Wellness Signals", desc: "Supported wearable context", href: "/features/health-monitoring" },
+          { name: "Safety Checks", desc: "Timed check-ins and follow-up alerts", href: "/features/safety-check-in-app" },
         ],
       },
     ],
@@ -44,22 +43,20 @@ const megaMenuSections = [
         title: "Individuals & Families",
         icon: <Heart className="w-5 h-5 text-primary" />,
         items: [
-          { name: "Women & Females", desc: "Personal safety and health monitoring for women on the go", href: "/females" },
-          { name: "Seniors", desc: "Fall detection and medical alerts", href: "/seniors" },
-          { name: "Families", desc: "Whole-family protection plan", href: "/families" },
-          { name: "Students", desc: "Campus safety and health monitoring for students", href: "/who-we-protect/students" },
-          { name: "Children & Teens", desc: "Family tracking and teen driver safety", href: "/who-we-protect/children-and-teens" },
+          { name: "Women", desc: "Panic alerts, check-ins, and trusted contacts", href: "/use-cases/safety-app-for-women" },
+          { name: "Older Adults", desc: "Supported fall alerts and safety checks", href: "/use-cases/medical-alert-app-for-seniors" },
+          { name: "Families", desc: "Permission-based family safety tools", href: "/use-cases/family-safety-app" },
+          { name: "Teen Drivers", desc: "Eligible crash signals and alert context", href: "/use-cases/teen-driver-safety" },
         ],
       },
       {
         title: "Workers & Employers",
         icon: <Briefcase className="w-5 h-5 text-primary" />,
         items: [
-          { name: "Employers", desc: "Duty-of-care for your workforce", href: "/employers" },
+          { name: "Employers", desc: "Supplemental workforce safety tools", href: "/employers" },
           { name: "Nurses & Healthcare", desc: "Safety for nurses and healthcare workers", href: "/nurses" },
-          { name: "Lone Workers", desc: "Solo worker safety compliance", href: "/use-cases/lone-worker-safety-app" },
-          { name: "Home Health Workers", desc: "Safety for in-home caregivers", href: "/use-cases/home-healthcare-worker-safety" },
-          { name: "Travel Nurses", desc: "Safety across every assignment", href: "/nurses/travel-nurses" },
+          { name: "Lone Workers", desc: "Check-ins, alerts, and response planning", href: "/use-cases/lone-worker-safety-app" },
+          { name: "Travel Nurses", desc: "Safety across every assignment", href: "/nurses#travel-nurses" },
         ],
       },
     ],
@@ -74,7 +71,7 @@ const megaMenuSections = [
         title: "Field & Outdoor",
         icon: <Building2 className="w-5 h-5 text-primary" />,
         items: [
-          { name: "Construction", desc: "Job site safety compliance", href: "/industries/construction" },
+          { name: "Construction", desc: "Supplemental job-site safety tools", href: "/industries/construction" },
           { name: "Real Estate", desc: "Agent safety on property visits", href: "/industries/real-estate" },
           { name: "Delivery & Drivers", desc: "Road and route worker safety", href: "/solutions/delivery-drivers" },
           { name: "Security Guarding", desc: "Guard tour and lone patrol safety", href: "/industries/security-guarding" },
@@ -99,26 +96,22 @@ const megaMenuSections = [
     header: "HOW WE COMPARE",
     columns: [
       {
-        title: "vs. Safety Apps",
+        title: "Comparison Resources",
         icon: <Scale className="w-5 h-5 text-primary" />,
         items: [
-          { name: "MySentry vs. Noonlight", desc: "Full-feature comparison", href: "/compare/noonlight-vs-mysentry" },
-          { name: "MySentry vs. Life360", desc: "Family tracking comparison", href: "/compare/life360-vs-mysentry" },
-          { name: "MySentry vs. FallCall", desc: "Senior safety comparison", href: "/compare/fallcall-vs-mysentry" },
-          { name: "MySentry vs. Google Safety", desc: "Built-in vs. dedicated app", href: "/compare/google-personal-safety-vs-mysentry" },
+          { name: "Comparison Guide", desc: "Questions to verify before choosing", href: "/compare" },
+          { name: "Current MySentry Features", desc: "Review supported capabilities and limits", href: "/features" },
+          { name: "Plans and Eligibility", desc: "Review current plan information", href: "/pricing" },
         ],
       },
       {
-        title: "vs. Wearables & Medical Alerts",
+        title: "Category Reviews",
         icon: <Lock className="w-5 h-5 text-primary" />,
         items: [
-          { name: "MySentry vs. ADT SoSecure", desc: "Mobile safety comparison", href: "/compare/sosecure-adt-vs-mysentry" },
-          { name: "MySentry vs. Oura Ring", desc: "Health tracking comparison", href: "/compare/oura-ring-vs-mysentry" },
-          { name: "MySentry vs. WHOOP", desc: "Fitness vs. safety", href: "/compare/whoop-vs-mysentry" },
-          { name: "MySentry vs. Medical Guardian", desc: "Modern app vs. legacy device", href: "/compare/medical-guardian-vs-mysentry" },
-          { name: "MySentry vs. Lively", desc: "No hardware required", href: "/compare/lively-vs-mysentry" },
-          { name: "MySentry vs. Apple Watch Fall Detection", desc: "App vs. built-in detection", href: "/compare/apple-watch-fall-detection-vs-mysentry" },
-          { name: "Compare All", desc: "Side-by-side feature matrix", href: "/compare" },
+          { name: "Fitness Wearables Review", desc: "Compare wellness and safety categories", href: "/compare/fitness-wearables-vs-mysentry" },
+          { name: "Traditional Alert Review", desc: "Compare equipment and service models", href: "/compare/traditional-medical-alerts-vs-mysentry" },
+          { name: "Apple Watch Compatibility", desc: "Review eligible MySentry support", href: "/integrations/apple-watch" },
+          { name: "Samsung Watch Compatibility", desc: "Review eligible MySentry support", href: "/integrations/samsung-galaxy-watch" },
         ],
       },
     ],
@@ -133,7 +126,7 @@ const megaMenuSections = [
         title: "Guides & Research",
         icon: <BookOpen className="w-5 h-5 text-primary" />,
         items: [
-          { name: "Lone Worker Safety Guide", desc: "Complete compliance guide", href: "/guides/lone-worker-safety" },
+          { name: "Lone Worker Safety Guide", desc: "Hazards, check-ins, roles, and limitations", href: "/guides/lone-worker-safety" },
           { name: "Blog", desc: "Safety tips and expert articles", href: "/blogs" },
           { name: "How It Works", desc: "See MySentry in action", href: "/how-it-works" },
         ],
@@ -144,7 +137,7 @@ const megaMenuSections = [
         items: [
           { name: "About Us", desc: "Our mission and story", href: "/about-us" },
           { name: "Our Team", desc: "Meet the people behind MySentry", href: "/team" },
-          { name: "Partners", desc: "Become a reseller or partner", href: "/partner" },
+          { name: "Partners", desc: "Become a reseller or partner", href: "/partners" },
           { name: "Contact Us", desc: "Get in touch with our team", href: "/contact" },
         ],
       },
@@ -204,7 +197,7 @@ export default function Navbar() {
             alt="MySentry"
             className="h-10 md:h-12 lg:h-14 w-auto transition-all duration-300 group-hover:scale-105"
           />
-          <span className="hidden lg:block text-[8px] font-medium uppercase tracking-widest text-primary mt-0.5">
+          <span className="hidden lg:block text-[8px] font-semibold uppercase tracking-widest text-[#255044] mt-0.5">
             Live Safe. Stay Healthy.
           </span>
         </Link>
@@ -253,14 +246,14 @@ export default function Navbar() {
 
           {/* Static: Ring */}
           <Link
-            href="/ring"
+            href="/integrations/ring"
             className={cn(
               "px-3 py-2 text-[12px] font-semibold tracking-wider transition-all hover:text-primary relative group font-heading uppercase whitespace-nowrap",
-              isActive("/ring") ? "!text-primary" : "!text-blue-600"
+              isActive("/integrations/ring") ? "!text-[#004F7B]" : "!text-[#007BC2]"
             )}
           >
             Ring
-            <span className={cn("absolute -bottom-1 left-3 right-3 h-[2px] bg-primary transition-all duration-300 scale-x-0 group-hover:scale-x-100 origin-left", isActive("/ring") ? "scale-x-100" : "")} />
+            <span className={cn("absolute -bottom-1 left-3 right-3 h-[2px] bg-primary transition-all duration-300 scale-x-0 group-hover:scale-x-100 origin-left", isActive("/integrations/ring") ? "scale-x-100" : "")} />
           </Link>
         </div>
 
@@ -268,13 +261,13 @@ export default function Navbar() {
         <div className="hidden xl:flex items-center gap-3 flex-shrink-0">
           <Link
             href="/pricing#pricing-plans"
-            className="inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-5 h-10 text-xs shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 bg-primary text-white hover:bg-primary/90 whitespace-nowrap"
+            className="inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-5 h-10 text-xs shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 bg-[#004F7B] text-white hover:bg-[#003A5B] whitespace-nowrap"
           >
-            Start 7-Day Free Trial
+            Review Plans and Eligibility
           </Link>
           <a
             href={getMySentryLoginUrl()}
-            className="inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-5 h-10 text-xs transition-all duration-300 border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white whitespace-nowrap"
+            className="inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-5 h-10 text-xs transition-all duration-300 border-2 border-[#004F7B] bg-white/95 text-[#004F7B] hover:bg-[#004F7B] hover:text-white whitespace-nowrap shadow-sm"
           >
             Login
           </a>
@@ -284,7 +277,7 @@ export default function Navbar() {
         <div className="xl:hidden flex items-center gap-2">
           <a
             href={getMySentryLoginUrl()}
-            className="inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-4 h-9 text-xs transition-all duration-300 border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-white"
+            className="inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-4 h-9 text-xs transition-all duration-300 border-2 border-[#004F7B] bg-white/95 text-[#004F7B] hover:bg-[#004F7B] hover:text-white shadow-sm"
           >
             Login
           </a>
@@ -383,8 +376,8 @@ export default function Navbar() {
               PRICING
             </Link>
             <Link
-              href="/ring"
-              className={cn("text-[18px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 py-4 block", isActive("/ring") ? "text-primary" : "text-black")}
+              href="/integrations/ring"
+              className={cn("text-[18px] font-heading font-bold uppercase tracking-tight transition-colors hover:text-primary border-b border-gray-100 py-4 block", isActive("/integrations/ring") ? "text-primary" : "text-black")}
               onClick={() => setIsOpen(false)}
             >
               Ring Appstore
@@ -437,14 +430,14 @@ export default function Navbar() {
             <div className="pt-8 pb-12 space-y-4">
               <Link
                 href="/pricing#pricing-plans"
-                className="inline-flex items-center justify-center w-full bg-primary text-white rounded-full h-14 text-lg font-bold uppercase tracking-wider"
+                className="inline-flex items-center justify-center w-full bg-[#004F7B] text-white rounded-full h-14 text-lg font-bold uppercase tracking-wider hover:bg-[#003A5B]"
                 onClick={() => setIsOpen(false)}
               >
-                Start 7-Day Free Trial
+                Review Plans and Eligibility
               </Link>
               <a
                 href={getMySentryLoginUrl()}
-                className="inline-flex items-center justify-center w-full border-2 border-primary text-primary bg-transparent rounded-full h-14 text-lg font-bold uppercase tracking-wider hover:bg-primary hover:text-white transition-all duration-300"
+                className="inline-flex items-center justify-center w-full border-2 border-[#004F7B] text-[#004F7B] bg-white rounded-full h-14 text-lg font-bold uppercase tracking-wider hover:bg-[#004F7B] hover:text-white transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 Login

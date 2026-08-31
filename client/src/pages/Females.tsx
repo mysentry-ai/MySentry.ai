@@ -16,7 +16,7 @@ export default function Females() {
       id: "jogging-safety",
       title: "Jogging Alone",
       subtitle: "Run with confidence",
-      description: "Feel safe on your evening runs. Our GPS tracking and instant panic button mean you're never truly alone, even on secluded paths.",
+      description: "Feel safe on your evening runs. Our GPS tracking and prompt panic button mean you're never truly alone, even on secluded paths.",
       image: "/images/cdn/QdzYaPQAsxOLXDfq.jpg",
       icon: Activity,
       tag: "Active Safety",
@@ -27,7 +27,7 @@ export default function Females() {
       id: "dating-safety",
       title: "Dating Safety",
       subtitle: "Meet new people securely",
-      description: "Use MeetSafe mode to set check-in timers for dates. If you don't check in, we automatically alert your emergency contacts and monitoring center.",
+      description: "Set a Safety Check for a date or meeting. If the check-in remains unresolved, an eligible alert workflow may notify configured contacts and monitoring.",
       image: "/images/cdn/jwsBikltRBgQccmM.jpg",
       icon: Heart,
       tag: "MeetSafe",
@@ -38,7 +38,7 @@ export default function Females() {
       id: "rideshare-safety",
       title: "Rideshare Safety",
       subtitle: "Travel without fear",
-      description: "Share your live trip status with loved ones. If your ride goes off-route or stops unexpectedly, we can intervene immediately.",
+      description: "Share permitted trip context with trusted contacts and use a configured Safety Check for rides or unfamiliar routes.",
       image: "/images/cdn/qXCtvayqOUrsAGzG.jpg",
       icon: Car,
       tag: "Travel Safe",
@@ -49,7 +49,7 @@ export default function Females() {
       id: "discreet-alert",
       title: "Discreet Alerts",
       subtitle: "Call for help silently",
-      description: "In uncomfortable situations, trigger a silent alarm without raising suspicion. Our agents listen in and send help while you stay safe.",
+      description: "In an uncomfortable situation, use an available discreet Panic Alarm control. An eligible agent may review permitted context and coordinate next steps.",
       image: "/images/cdn/SaerIMGjvrMVAmaP.jpg",
       icon: Shield,
       tag: "Silent Panic",
@@ -60,7 +60,7 @@ export default function Females() {
       id: "campus-safety",
       title: "Campus Safety",
       subtitle: "Walk home safely",
-      description: "Late night study session? Walking back to your dorm? MySentry is your virtual companion, ensuring you get home safe every time.",
+      description: "For a late study session or walk to your dorm, prepare a Safety Check and keep supported Panic Alarm controls available.",
       image: "/images/cdn/tAHfwpNPPCjQWnND.jpg",
       icon: MapPin,
       tag: "Student Safety",
@@ -115,7 +115,7 @@ export default function Females() {
       id: "parking-garage",
       title: "Parking Garages",
       subtitle: "Navigate dark spaces",
-      description: "Parking garages can be intimidating. Keep MySentry active on your wrist, ready to trigger a loud siren or silent alarm instantly.",
+      description: "Parking garages can be intimidating. Keep MySentry active on your wrist, ready to trigger a loud siren or silent alarm promptly.",
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop",
       icon: Car,
       tag: "Urban Safety",
@@ -186,7 +186,7 @@ export default function Females() {
       <HeroSection
         label="Personal Safety Reimagined"
         title={<>Freedom To Go<br/><span className="text-gray-600">Anywhere.</span></>}
-        subtitle="Panic alarm, live health monitoring, and real-time location sharing designed for women who walk, commute, or live alone."
+        subtitle="Panic Alarm, supported wearable wellness signals, and permission-based location context for women who walk, commute, or live alone."
         imageSrc="/images/hero-female-active.jpg"
         imageAlt="Confident woman checking smartwatch while jogging"
       />
@@ -217,7 +217,7 @@ export default function Females() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">1. Phones are too slow.</h3>
               <p className="text-gray-600 leading-relaxed">
-                In an emergency, you don't have time to unlock your phone and dial 911. You need a way to call for help instantly and discreetly.
+                In an emergency, you don't have time to unlock your phone and dial 911. You need a way to call for help promptly and discreetly.
               </p>
             </motion.div>
 
@@ -247,7 +247,7 @@ export default function Females() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">3. Location isn't enough.</h3>
               <p className="text-gray-600 leading-relaxed">
-                Sharing your location is great, but it doesn't stop an attack. You need someone who can see what's happening and send police immediately.
+                Location alone does not resolve an unsafe situation. A user-activated alert can add monitoring review and permitted context to your safety plan.
               </p>
             </motion.div>
           </div>
@@ -284,7 +284,7 @@ export default function Females() {
               <span className="text-primary">confident.</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-              Don't let fear hold you back. With MySentry, you can live your life fully, knowing that you're never truly alone.
+              MySentry adds a configurable safety workflow so you can prepare for solo activities without promising that every incident will be prevented or resolved.
             </p>
           </div>
 
@@ -303,7 +303,7 @@ export default function Females() {
               {
                 icon: Heart,
                 title: "Peace of Mind",
-                desc: "Your loved ones know you're safe, and you know help is always there."
+                desc: "Trusted contacts may receive permitted alert context while your private wellness information remains restricted."
               }
             ].map((item, i) => (
               <motion.div
@@ -337,11 +337,11 @@ export default function Females() {
                 Take Back Your Freedom.
               </h2>
               <p className="text-xl text-gray-300 mb-12 leading-relaxed">
-                Start your 7-day free trial. Safety that fits your lifestyle.
+                Review current plans and eligibility. Safety that fits your lifestyle.
               </p>
               <Link href="/pricing#pricing-plans">
                 <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-20 text-xl transition-all hover:scale-105 shadow-xl">
-                  START 7-DAY FREE TRIAL
+                  REVIEW PLANS AND ELIGIBILITY
                 </Button>
               </Link>
             </div>

@@ -97,7 +97,7 @@ export function LabelText({ children, className, as: Component = "span", variant
     <Component
       className={cn(
         "font-bold tracking-widest uppercase text-sm mb-4 block",
-        variant === "primary" ? "text-primary" : "text-muted-foreground",
+        variant === "primary" ? "text-[#255044]" : "text-muted-foreground",
         variant === "white" && "text-white/90",
         className
       )}

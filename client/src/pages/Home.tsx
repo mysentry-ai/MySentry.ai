@@ -5,14 +5,13 @@ import ICPSelector from "@/components/ICPSelector";
 import TrustBanner from "@/components/TrustBanner";
 import WhoWeProtectTabs from "@/components/WhoWeProtectTabs";
 import HowItWorksDemo from "@/components/HowItWorksDemo";
-import ComparisonSection from "@/components/ComparisonSection";
-import TestimonialSection from "@/components/TestimonialSection";
 import WhatWeProvide from "@/components/WhatWeProvide";
 import AppDashboardShowcase from "@/components/AppDashboardShowcase";
 import ChatbotNudge from "@/components/ChatbotNudge";
 import RingTopBanner from "@/components/RingTopBanner";
 import RingAnnouncementSection from "@/components/RingAnnouncementSection";
 import RingReminderBanner from "@/components/RingReminderBanner";
+import ProductAnswerBlock from "@/components/ProductAnswerBlock";
 
 
 export default function Home() {
@@ -22,7 +21,7 @@ export default function Home() {
 
       {/* Hero with ICP Selector and app screenshot */}
       <HeroSection
-        label="Personal Safety and Health Monitoring with 24/7 Emergency Response"
+        label="Personal Safety, Wellness Signals, and 24/7 Professional Monitoring"
         title="Always Someone Watching Over You."
         imageSrc="/images/cdn/hero-family-multigenerational-E2GoJdiP8d3vSnxHi3L9fP.webp"
         imageAlt="Multi-generational family including grandmother, parents, and teenagers enjoying time together outdoors"
@@ -31,6 +30,8 @@ export default function Home() {
       >
         <ICPSelector className="mt-2" />
       </HeroSection>
+
+      <ProductAnswerBlock />
 
       {/* Ring Appstore offer banner - premium announcement at bottom of hero */}
       <RingTopBanner />
@@ -69,11 +70,6 @@ export default function Home() {
       {/* Chatbot nudge - encourage questions */}
       <ChatbotNudge />
 
-      {/* Testimonials */}
-      <TestimonialSection />
-
-      {/* Comparison Section */}
-      <ComparisonSection />
     </Layout>
   );
 }

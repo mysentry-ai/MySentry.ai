@@ -24,12 +24,12 @@ export default function Features() {
               {
                 "@type": "HowToStep",
                 "name": "Create Your Account Online",
-                "text": "Visit mysentry.ai, choose your plan, and create your account online in under 2 minutes. Then download the MySentry app from the App Store or Google Play."
+                "text": "Visit mysentry.ai, choose your plan, and create your account online in a few steps. Then download the MySentry app from the App Store or Google Play."
               },
               {
                 "@type": "HowToStep",
                 "name": "Pair Your Watch",
-                "text": "Connect your Apple Watch (Series 7 or newer) or Samsung Galaxy Watch (Series 6 or newer) to start real-time health and safety monitoring."
+                "text": "Connect a currently supported watch configuration if you want to use eligible wearable-dependent safety or wellness features. Confirm compatibility before enrollment."
               },
               {
                 "@type": "HowToStep",
@@ -47,7 +47,7 @@ export default function Features() {
                 "name": "How is MySentry different from the health tracking my Apple Watch or Samsung Watch already does?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Your watch collects vitals. MySentry explains what they mean and alerts you when something's wrong. We use AI to learn your personal baseline and detect anomalies in real-time, connected to 24/7 professional monitoring."
+                  "text": "A supported watch may provide eligible wellness signals and motion events to MySentry. The app can organize available information for alerts and monitoring workflows, but it is not a medical device and does not diagnose a health condition."
                 }
               },
               {
@@ -55,7 +55,7 @@ export default function Features() {
                 "name": "Do I need to buy a new device to use MySentry?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "No! MySentry works with Apple Watch (Series 7 or newer) and Samsung Galaxy Watch (Series 6 or newer). No expensive, stigmatizing hardware required."
+                  "text": "A supported smartphone is required. Some fall, motion, or wellness features also require a currently supported watch and configuration. Confirm device eligibility before enrollment."
                 }
               },
               {
@@ -71,7 +71,7 @@ export default function Features() {
                 "name": "How does the Fall Detection work?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "MySentry uses motion sensors in your smartwatch to detect hard falls. If you don't respond within 60 seconds (Android) or 60-90 seconds (iOS) or mark yourself unsafe, emergency contacts and 24/7 monitoring are notified immediately with your location."
+                  "text": "On a supported watch, motion signals may identify an event consistent with a fall and start the configured alert workflow. Detection, delivery, contact, monitoring review, and escalation depend on device, permissions, connectivity, plan status, system availability, and incident conditions."
                 }
               },
               {
@@ -79,18 +79,19 @@ export default function Features() {
                 "name": "Is my health data private and secure?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes. All health information is stored on encrypted servers, never shared with third parties without permission, and accessed only when you explicitly allow it."
+                  "text": "MySentry describes security and permission controls in its Privacy Policy. Data handling, service-provider access, retention, and user choices should be reviewed there before enrollment."
                 }
               }
             ]
           }
         ]}
       />
+      <div className="overflow-x-clip">
       
       <HeroSection
         label="Advanced Protection System"
         title={<>Your Smartwatch Collects Data.<br/><span className="text-gray-600">MySentry Gives You Answers.</span></>}
-        imageSrc="/images/hero-section.svg"
+        imageSrc="/images/how-it-works-hero.png"
         imageAlt="Happy senior checking smartwatch"
       />
 
@@ -109,14 +110,14 @@ export default function Features() {
         <div className="container relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
-              Universal Compatibility
+              Device Requirements
             </span>
             <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase leading-none tracking-tight mb-6 text-[#1a1a1a]">
-              Use The Devices<br/>
-              <span className="text-gray-500">You Already Own.</span>
+              Confirm The Devices<br/>
+              <span className="text-gray-500">Your Features Need.</span>
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed">
-              No need to buy expensive, stigmatizing medical alert hardware. MySentry works seamlessly with the technology you use every day.
+              Start with a supported smartphone. Some safety and wellness features may also require an eligible watch, permissions, connectivity, and plan configuration.
             </p>
           </div>
 
@@ -132,7 +133,7 @@ export default function Features() {
                     <h3 className="text-3xl font-bold text-[#1a1a1a]">Smartphones</h3>
                   </div>
                   <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                    Full support for both major platforms. Your phone is the hub of your safety network, connecting you to help instantly.
+                    A supported smartphone is the account and alert hub. Confirm the current operating-system, permission, connectivity, and plan requirements before enrollment.
                   </p>
                   <div className="flex gap-3">
                     <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
@@ -168,7 +169,7 @@ export default function Features() {
                     <h3 className="text-3xl font-bold text-[#1a1a1a]">Smartwatches</h3>
                   </div>
                   <p className="text-xl text-gray-600 mb-6 leading-relaxed">
-                    Advanced health monitoring and fall detection right on your wrist. Works independently or with your phone.
+                    Eligible watch configurations can provide supported motion events and wellness signals. Availability and behavior vary by device, operating system, permissions, and connection state.
                   </p>
                   <div className="flex gap-3">
                     <span className="px-4 py-2 bg-white border border-gray-200 rounded-full text-sm font-bold text-gray-800 flex items-center gap-2 shadow-sm">
@@ -201,11 +202,11 @@ export default function Features() {
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
               <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="px-3 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full text-xs font-bold uppercase tracking-wider">Coming Soon</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full text-xs font-bold uppercase tracking-wider">Compatibility Review</span>
                 </div>
                 <h3 className="text-3xl font-bold mb-2">Expanding Our Ecosystem</h3>
                 <p className="text-gray-400 max-w-xl">
-                  We are actively developing support for smart rings and fitness bands to give you even more ways to stay protected.
+                  Smart-ring and fitness-band support is not presented as available. Confirm the current supported-device list before choosing a plan.
                 </p>
               </div>
               <div className="flex gap-4 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
@@ -292,7 +293,7 @@ export default function Features() {
               {[
                 "One-tap panic button on phone and watch",
                 "Voice activation ('Hey Siri Need Help')",
-                "Instant live video connection",
+                "Prompt live video connection",
                 "Automatic location & health data sharing"
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-4 border-b border-gray-100 pb-4 last:border-0">
@@ -340,14 +341,14 @@ export default function Features() {
               <span className="text-gray-500">Automatically.</span>
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-10">
-              Hard fall? Your smartwatch detects it and sends a Safety Check Alert. If you don't respond, help is automatically dispatched to your location. Need help sooner? Trigger the panic alarm instantly with your voice or a tap.
+              Hard fall? Your smartwatch detects it and sends a Safety Check Alert. If you don't respond, help is automatically dispatched to your location. Need help sooner? Trigger the panic alarm promptly with your voice or a tap.
             </p>
             <div className="grid grid-cols-2 gap-6">
               {[
-                { title: "Instant", desc: "Panic Alarm" },
+                { title: "Prompt", desc: "Panic Alarm" },
                 { title: "Hands-Free", desc: "Auto-Activation" },
                 { title: "Any Angle", desc: "360° Monitoring" },
-                { title: "Live Video", desc: "Instant Context" }
+                { title: "Live Video", desc: "Prompt Context" }
               ].map((item, i) => (
                 <div key={i} className="border border-green-200 bg-white/50 p-6 rounded-xl hover:bg-white transition-colors shadow-sm">
                   <h4 className="text-3xl font-bold text-[#1a1a1a] mb-1">{item.title}</h4>
@@ -418,10 +419,10 @@ export default function Features() {
             </div>
             <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase leading-none tracking-tight mb-8 text-[#1a1a1a]">
               Crash Detection.<br/>
-              Instant Response.
+              Prompt Response.
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-10">
-              Driving alone? If you crash, MySentry detects the impact and calls for help instantly. We send your exact GPS location to first responders when every second counts.
+              Driving alone? If you crash, MySentry detects the impact and calls for help promptly. We send your exact GPS location to first responders when every second counts.
             </p>
             <div className="flex gap-4">
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-md px-6 py-3 rounded-full border border-green-200 shadow-sm">
@@ -449,18 +450,18 @@ export default function Features() {
               Family<br/>Connectivity.
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Know your family is safe without a single phone call. Share live location with up to 2 trusted contacts, and they can see your location too. Battery status and activity levels update in real time so you always know they are okay.
+              Share selected alert and location context with configured trusted contacts when permissions, connectivity, and the chosen workflow allow it. MySentry does not provide unrestricted or guaranteed continuous tracking.
             </p>
             <div className="grid grid-cols-2 gap-4">
               <div className="p-6 bg-purple-50 rounded-2xl border border-purple-100">
                 <Smartphone className="h-8 w-8 text-purple-600 mb-4" />
-                <h4 className="font-bold text-[#1a1a1a] mb-2">Live GPS Sharing</h4>
-                <p className="text-sm text-gray-600">Share location with up to 2 trusted contacts.</p>
+                <h4 className="font-bold text-[#1a1a1a] mb-2">Permitted Location Sharing</h4>
+                <p className="text-sm text-gray-600">Share selected location context with configured trusted contacts when enabled.</p>
               </div>
               <div className="p-6 bg-purple-50 rounded-2xl border border-purple-100">
                 <Users className="h-8 w-8 text-purple-600 mb-4" />
                 <h4 className="font-bold text-[#1a1a1a] mb-2">Emergency Contacts</h4>
-                <p className="text-sm text-gray-600">Instant alerts sent to your chosen contacts.</p>
+                <p className="text-sm text-gray-600">Prompt alerts sent to your chosen contacts.</p>
               </div>
             </div>
           </div>
@@ -489,7 +490,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/frame-8.png" alt="MySentry health monitoring screen showing real-time SpO2, heart rate, HRV, and personalized health insights" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
+              <img src="/images/frame-8.png" alt="MySentry wellness screen showing available signals and trend context on a supported device" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
             </div>
           </motion.div>
           <div>
@@ -498,13 +499,13 @@ export default function Features() {
               <span className="text-pink-600 font-bold uppercase tracking-widest text-sm">Feature 06</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase leading-none tracking-tight mb-8 text-[#1a1a1a]">
-              Personalized<br/>Health Insights.
+              Wellness<br/>Signal Context.
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-6">
-              MySentry establishes your unique "normal" for key vitals using AI. Instead of generic ranges, you get insights tailored to YOUR body.
+              MySentry can organize supported wellness signals and trends from an eligible device. These signals are informational and are not a diagnosis or substitute for professional medical advice.
             </p>
             <p className="text-xl text-gray-700 leading-relaxed mb-10">
-              <strong>Heart Rate Anomaly Detection:</strong> We continuously compare your live heart rate against your baseline. If we detect a "Risky Zone" pattern, you get an alert. If it hits the "Critical Zone," we notify emergency contacts immediately.
+              <strong>Supported wellness alerts:</strong> Depending on the device and configuration, the app may flag selected signal changes for review. An alert does not confirm a medical event, and delivery or contact is not guaranteed.
             </p>
             <div className="flex flex-wrap gap-3">
               {["Personalized Baselines", "Anomaly Detection", "SpO2 Oxygen", "HRV Stress", "Sleep Quality"].map((tag, i) => (
@@ -529,13 +530,13 @@ export default function Features() {
               Live Video<br/>Streaming.
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              During an emergency, seeing is believing. MySentry automatically streams live video to our monitoring center, giving agents critical context to dispatch the right help.
+              During an eligible alert, permissioned live video may provide additional incident context to the monitoring workflow. Availability depends on permissions, connectivity, plan eligibility, and system conditions.
             </p>
             <div className="bg-indigo-50 p-8 rounded-2xl border border-indigo-100 flex items-center gap-6">
               <Video className="h-10 w-10 text-indigo-600" />
               <div>
-                <h4 className="text-xl font-bold text-[#1a1a1a] mb-1">Evidence Capture</h4>
-                <p className="text-gray-600">Video is securely recorded and can be used as evidence for accidents or assaults.</p>
+                <h4 className="text-xl font-bold text-[#1a1a1a] mb-1">Incident Context</h4>
+                <p className="text-gray-600">Review recording, retention, access, and sharing behavior in the current product and Privacy Policy.</p>
               </div>
             </div>
           </div>
@@ -573,10 +574,10 @@ export default function Features() {
               <span className="text-teal-600 font-bold uppercase tracking-widest text-sm">Feature 08</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase leading-none tracking-tight mb-8 text-[#1a1a1a]">
-              MeetSafe<br/>Timer.
+              Safety Check<br/>Timer.
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-10">
-              Meeting someone new? Set a timer. If you don't cancel it, we'll call to check on you. If you don't answer, we send help to your last known location.
+              Set a Safety Check for a planned activity. If the timer is not resolved, the configured workflow may attempt a check-in or alert based on plan status, permissions, connectivity, and current feature behavior.
             </p>
             <div className="flex flex-col gap-4">
               <div className="flex items-center gap-4">
@@ -589,13 +590,13 @@ export default function Features() {
                 <div className="h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center">
                   <Phone className="h-5 w-5 text-teal-600" />
                 </div>
-                <span className="text-lg font-medium text-gray-800">Automatic check-in call</span>
+                <span className="text-lg font-medium text-gray-800">Configured check-in workflow</span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center">
                   <ShieldAlert className="h-5 w-5 text-teal-600" />
                 </div>
-                <span className="text-lg font-medium text-gray-800">Escalation to emergency services</span>
+                <span className="text-lg font-medium text-gray-800">Conditional alert escalation</span>
               </div>
             </div>
           </div>
@@ -609,18 +610,19 @@ export default function Features() {
       <section className="py-32 bg-[#003d60] text-white text-center">
         <div className="container max-w-4xl">
           <h2 className="text-5xl md:text-7xl font-heading font-bold uppercase tracking-tighter mb-8">
-            Ready for Total Protection?
+            Ready to Review MySentry?
           </h2>
           <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-            Join thousands of users who trust MySentry for their safety and health monitoring.
+            Review current plans, supported devices, eligibility, privacy controls, monitoring availability, and service limitations.
           </p>
           <Link href="/pricing#pricing-plans">
             <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-8 md:px-12 h-16 md:h-20 text-lg md:text-xl transition-all hover:scale-105 shadow-2xl w-full md:w-auto whitespace-normal md:whitespace-nowrap">
-              Start Your 7-Day Free Trial
+              Review Plans and Eligibility
             </Button>
           </Link>
         </div>
       </section>
+      </div>
     </Layout>
   );
 }

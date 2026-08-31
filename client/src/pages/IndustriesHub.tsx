@@ -13,7 +13,7 @@ const industries = [
   },
   {
     title: "Construction",
-    description: "Ensure safety for workers on hazardous job sites with fall detection, crash alerts, and instant emergency response.",
+    description: "Ensure safety for workers on hazardous job sites with fall detection, crash alerts, and prompt emergency response.",
     href: "/industries/construction",
     icon: HardHat,
   },
@@ -53,7 +53,7 @@ export default function IndustriesHub() {
   return (
     <Layout>
       <SEO />
-      {/* Hero — title + subtitle + CTA only */}
+      {/* Hero  -  title + subtitle + CTA only */}
       <section className="min-h-[calc(100vh-80px)] flex items-center bg-gradient-to-b from-[#e8f5e9] to-white">
         <div className="container max-w-6xl mx-auto px-4 py-16">
           <div className="text-center">

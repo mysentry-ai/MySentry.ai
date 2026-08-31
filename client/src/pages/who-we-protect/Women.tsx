@@ -27,14 +27,14 @@ export default function WhoWeProtectWomen() {
           description: "MySentry runs in the background. If you ever need help, one tap or one word connects you to a live agent who can see your situation and send help.",
         },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
       directAnswer="MySentry is a personal safety app for women that includes a silent panic alarm (activated by voice, phone tap, or Apple Watch tap), 24/7 professional monitoring with live video response, automatic fall detection, and real-time GPS location sharing with emergency contacts. It works on iPhone and Android without any extra hardware."
       howItWorks={[
         "Activate the panic alarm silently by voice, phone tap, or Apple Watch tap.",
-        "Our 24/7 monitoring team receives your alert and your live GPS location instantly.",
+        "Our 24/7 monitoring team receives your alert and your live GPS location promptly.",
         "A trained agent starts a live video call to see what is happening.",
-        "Your emergency contacts receive an instant text with your live location.",
+        "Your emergency contacts receive an prompt text with your live location.",
         "The agent coordinates the right response, from reassurance to a 911 dispatch.",
       ]}
       afterAlert={[
@@ -57,7 +57,7 @@ export default function WhoWeProtectWomen() {
       keyTakeaways={[
         "Three silent panic triggers: voice, phone tap, Apple Watch tap.",
         "A trained agent responds by live video within seconds.",
-        "Emergency contacts receive your live GPS location instantly.",
+        "Emergency contacts receive your live GPS location promptly.",
         "Works on iPhone and Android. No extra hardware required.",
       ]}
       faqs={[
@@ -87,7 +87,7 @@ export default function WhoWeProtectWomen() {
       proofBlocks={[
         { claim: "Three silent panic triggers", detail: "Voice command, phone tap, or Apple Watch tap. No need to unlock your phone or open an app." },
         { claim: "Live video response from a trained agent", detail: "Unlike apps that only send a text to a friend, MySentry connects you to a real person who can see your situation." },
-        { claim: "Live GPS location shared instantly", detail: "Your emergency contacts receive your live location the moment an alarm is triggered." },
+        { claim: "Live GPS location shared promptly", detail: "Your emergency contacts receive your live location the moment an alarm is triggered." },
       ]}
       relatedLinks={[
         { text: "Panic Button App", href: "/features/panic-button-app" },

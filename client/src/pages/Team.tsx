@@ -10,7 +10,7 @@ const leadership = [
   {
     name: "Qasim Mueen",
     role: "Chief Executive Officer (CEO)",
-    bio: "Co-Founder & CEO of Zigron (Multi-million-dollar IT Services company) & FraudLens and DentaLens (Medical and Dental FWA Solutions) – acquired. Fmr. Partner Abode Systems (Smart Home Security sold to NICE S.P.A. for $50M). Co-Founder TransparentHands.org.",
+    bio: "Co-Founder & CEO of Zigron (Multi-million-dollar IT Services company) & FraudLens and DentaLens (Medical and Dental FWA Solutions), acquired. Fmr. Partner Abode Systems (Smart Home Security sold to NICE S.P.A. for $50M). Co-Founder TransparentHands.org.",
     image: "/images/team-zigron.png",
     linkedin: "https://www.linkedin.com/in/zigron/"
   },

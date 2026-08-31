@@ -598,7 +598,7 @@ export default function BlogEditor({ token, postId }: BlogEditorProps) {
           {/* CTA Preview Indicator */}
           <div className="mt-4 rounded-xl border-2 border-dashed border-[#386758]/30 bg-[#386758]/5 p-6 text-center">
             <p className="text-sm font-medium text-[#386758]">
-              ✦ "Start 7-Day Free Trial" CTA block will appear here on the published blog
+              ✦ "Review Plans and Eligibility" CTA block will appear here on the published blog
             </p>
             <p className="text-xs text-gray-400 mt-1">Preview this post to see the full CTA</p>
           </div>

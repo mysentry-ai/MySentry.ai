@@ -3,64 +3,63 @@ import SEOPageTemplate from "@/components/SEOPageTemplate";
 export default function HealthMonitoring() {
   return (
     <SEOPageTemplate
-      seoTitle="Health Monitoring App: Track Vitals & Get Alerts | MySentry"
-      seoDescription="Monitor heart rate, SpO2, and HRV with MySentry's health monitoring app. Get instant alerts for changes and connect to emergency help. Start your free trial today."
+      seoTitle="Wearable Wellness Signals and Alerts | MySentry"
+      seoDescription="View supported wellness signals from compatible wearables and understand MySentry permissions, alert settings, and non-medical limitations."
       canonical="https://mysentry.ai/features/health-monitoring"
-      label="FEATURE"
-      h1="Peace of Mind About Your Health."
-      h1Sub="Heart rate, HRV, SpO2, respiratory rate, and wrist temperature. All tracked continuously."
-      heroDescription="MySentry monitors six key health vitals through your smartwatch and builds a personal 7-day baseline. When your readings deviate from your normal, you and your emergency contacts are alerted automatically."
-      problem="Keeping track of important health signs like heart rate, HRV, and SpO2 can be tough. You might worry about missing a change that signals a problem."
-      empathy="It's normal to want peace of mind about your health or a loved one's well-being. You deserve a simple way to stay informed without constant stress."
+      label="Feature"
+      h1="Supported Wellness Signals in One Safety App"
+      h1Sub="Review available heart rate, HRV, blood oxygen, activity, and related device data."
+      heroDescription="MySentry can display wellness signals made available by a compatible wearable. Supported signals vary by device and are informational only. MySentry does not diagnose, predict, treat, cure, or prevent a medical condition."
+      problem="Wellness data can be spread across devices and apps, making it difficult to understand what is available during a personal safety workflow."
+      empathy="You deserve clear information about what the app can show, who can access it, and what it cannot tell you."
       steps={[
-        { title: "Create Your Account Online", description: "Visit mysentry.ai, choose your plan, and create your account. Then download the MySentry app from the App Store or Google Play." },
-        { title: "Connect Your Wearable Device", description: "Easily link your compatible smartwatch or health tracker to start syncing your data." },
-        { title: "View Your Health Vitals", description: "See your real-time health information on your personal dashboard and set your alert preferences." },
+        { title: "Confirm Device Support", description: "Verify the current supported wearable, phone, software, plan, and regional requirements." },
+        { title: "Choose Permissions", description: "Connect eligible services and enable only the wellness and safety permissions you want to use." },
+        { title: "Review Available Signals", description: "Use the MySentry dashboard to view supported wellness information made available by your connected device." },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
-      secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry's health monitoring app tracks vital signs like heart rate, HRV, and SpO2 in real-time using your wearable device. It helps you understand health trends and automatically alerts you and your emergency contacts to important changes, providing peace of mind around the clock."
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
+      secondaryCta={{ text: "Review Supported Devices", href: "/integrations/apple-watch" }}
+      directAnswer="MySentry wellness features display supported signals supplied by compatible devices, such as heart rate, HRV, blood oxygen, and activity. Signal availability and timing depend on the device, settings, permissions, app state, and connectivity. The information is not medical advice, a diagnosis, or a prediction of an emergency."
       howItWorks={[
-        "MySentry connects securely with your compatible smartwatch or health tracker to collect your health data.",
-        "It continuously monitors six vitals: Heart Rate, Resting Heart Rate, HRV, Respiratory Rate, Oxygen Saturation (SpO2), and Wrist Temperature.",
-        "You can easily see your current and past health information on your app dashboard.",
-        "After a 7-day baseline period, MySentry learns your personal normal ranges and alerts you when readings deviate significantly.",
+        "Connect a currently supported wearable and phone configuration.",
+        "Enable only the device and wellness permissions required for the features you choose.",
+        "Review the signals that the connected device makes available to MySentry.",
+        "Configure informational notifications where the supported device, plan, and service allow them.",
       ]}
       afterAlert={[
-        "You, your emergency contacts, and our 24/7 monitoring team all get a notification.",
-        "Our trained responders can see your live location and your health information.",
-        "We start a live video call to check on you and see what's happening.",
-        "If you need help, we contact local emergency services and give them key details.",
+        "A supported notification may prompt the user to review an available wellness signal.",
+        "Private wellness data is not continuously exposed to family members.",
+        "During an eligible safety alert, permitted context may be available to the monitoring workflow when supported.",
+        "Seek professional medical care for symptoms or health concerns and call emergency services for urgent medical needs.",
       ]}
-      bestFor={["Older adults living alone", "People with ongoing health conditions", "Family members who want to check on loved ones"]}
-      notIdealFor={["Diagnosing illnesses", "Replacing a doctor's advice"]}
+      bestFor={["People who already use a compatible wearable", "Families seeking privacy-aware safety planning", "Users who want supported wellness context alongside personal safety tools"]}
+      notIdealFor={["Diagnosing or predicting medical conditions", "Replacing a clinician, medical device, or emergency service", "Use without a supported device, permissions, or connection"]}
       keyTakeaways={[
-        "Get a clear view of your key health numbers like HRV, SpO2, and heart rate, 24/7.",
-        "Receive automatic alerts when your health metrics change unexpectedly.",
-        "Give your family and our responders the power to act fast in an emergency.",
+        "Supported signals vary by wearable and configuration.",
+        "Wellness information is informational and non-medical.",
+        "Sharing follows user permissions and active safety workflows.",
       ]}
       faqs={[
-        { question: "What devices work with MySentry for health monitoring?", answer: "Health monitoring requires a compatible smartwatch. MySentry works with Apple Watch (Series 7 and newer, watchOS 10+) and Samsung Galaxy Watch (Series 6 and newer). The phone app alone does not support health vitals tracking." },
-        { question: "Is my health data safe?", answer: "Yes, absolutely. We use strong encryption to protect your personal health information. Your privacy and security are our top concerns." },
-        { question: "Can this app replace my doctor?", answer: "No. MySentry is a tool to help you and your loved ones feel more secure. It does not give medical advice and should not take the place of talking with your healthcare provider." },
-        { question: "What is HRV and why is it important?", answer: "Heart Rate Variability (HRV) is how much the time between your heartbeats changes. It's a good sign of your body's stress and recovery, giving you clues about your overall health." },
-        { question: "Can my family see my real-time health data?", answer: "Your emergency contacts get alerts if your health numbers go outside the safe limits you set. They do not see your real-time data all the time. This keeps your information private while making sure help is there when you need it." },
+        { question: "Which wellness signals can MySentry show?", answer: "Depending on the supported device and permissions, available signals may include heart rate, HRV, blood oxygen, activity, and related wellness information. Confirm current device support before enrollment." },
+        { question: "Can MySentry diagnose a health condition?", answer: "No. MySentry is not a medical device and does not diagnose, predict, treat, cure, or prevent a condition." },
+        { question: "Can family members see my wellness data continuously?", answer: "No. MySentry does not describe continuous family access to private wellness data. Context sharing follows supported features, settings, permissions, and active workflows." },
+        { question: "What should I do about concerning symptoms or readings?", answer: "Contact a qualified healthcare professional. For urgent symptoms or an emergency, call 911 or local emergency services directly." },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for wearable features.",
-        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
-        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+        devices: "A currently supported wearable, phone, and software configuration. Confirm exact eligibility before enrollment.",
+        permissions: "Enable only the wellness, notification, background, and safety permissions required for the features you choose.",
+        connectivity: "Signal availability and alert-time context depend on the connected services, app state, and network connection.",
+        limitations: "MySentry is not a medical device, does not provide medical advice, and does not guarantee that every signal or concerning change will be identified.",
       }}
       proofBlocks={[
-        { claim: "MySentry tracks heart rate, HRV, SpO2, and skin temperature continuously via smartwatch.", detail: "Data is collected in real time and checked for unusual readings that might point to a health emergency." },
-        { claim: "Unusual health readings send automatic alerts to 24/7 monitoring agents and emergency contacts.", detail: "Users and caregivers are told about worrying trends before they become serious emergencies." }
+        { claim: "Supported wearable signals", detail: "MySentry can organize wellness information that an eligible connected device makes available." },
+        { claim: "Non-medical by design", detail: "Wellness features are informational and do not replace medical advice, diagnosis, treatment, or emergency care." },
       ]}
       relatedLinks={[
-        { text: "Panic Alarm for Immediate Help", href: "/features/panic-button-app" },
-        { text: "Automatic Fall Detection", href: "/features/fall-detection-app" },
-        { text: "Pricing Plans", href: "/pricing" },
-        { text: "How It Works", href: "/how-it-works" },
+        { text: "Apple Watch Integration", href: "/integrations/apple-watch" },
+        { text: "Samsung Galaxy Watch Integration", href: "/integrations/samsung-galaxy-watch" },
+        { text: "Professional Monitoring", href: "/features/24-7-professional-monitoring" },
+        { text: "Compare Plans", href: "/pricing" },
       ]}
     />
   );

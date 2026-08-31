@@ -12,37 +12,37 @@ const features = [
   },
   {
     icon: Video,
-    title: "Live Broadcast During Emergencies",
-    body: "When a Panic Alarm is active, your Ring camera broadcast is automatically shared with your emergency contacts and the 24/7 monitoring team.",
+    title: "Camera Context During Eligible Alerts",
+    body: "When supported and permitted, selected Ring camera context may be available to the monitoring workflow during an active Panic Alarm.",
   },
   {
     icon: Shield,
     title: "Layered Home Security",
-    body: "Combine Ring's home camera coverage with MySentry's personal safety features: Panic Alarm, Fall Detection, Health Monitoring, and professional response.",
+    body: "Combine Ring home-camera context with MySentry's user-activated Panic Alarm, supported-device detection, wellness signals, trusted contacts, and eligible monitoring.",
   },
   {
     icon: Users,
-    title: "Emergency Contacts See Your Home",
-    body: "During an active emergency, your trusted contacts can view your Ring camera feed in real time, giving them situational awareness to respond appropriately.",
+    title: "Permission-Based Context",
+    body: "Trusted contacts receive only the alert context supported by the integration and allowed by your account, camera, and sharing settings.",
   },
 ];
 
 const faqs = [
   {
     q: "How much does the Ring integration cost?",
-    a: "$4.99 per camera per month. This is billed exclusively through the Ring App Store. MySentry does not handle Ring payments directly.",
+    a: "Review the current Ring App Store listing during enrollment. Pricing, billing, eligible plans, supported devices, and promotional terms are controlled by the active offer and can change.",
   },
   {
     q: "Do I need a MySentry subscription to use the Ring integration?",
-    a: "Yes. You need an active MySentry subscription (Individual or Family plan) in addition to the Ring integration entitlement. The Ring integration is a separate add-on billed through Ring.",
+    a: "Eligibility depends on the current Ring listing and MySentry plan requirements shown during enrollment. Confirm both before purchasing or activating the integration.",
   },
   {
     q: "How do I get started with the Ring integration?",
-    a: "Purchase the MySentry integration through the Ring App Store. If you are a first-time MySentry user, your MySentry account will be automatically provisioned on your first Ring purchase. If you already have a MySentry account, the integration will be linked to your existing account.",
+    a: "Open the MySentry listing in the Ring App Store, review current eligibility and terms, and follow the account-linking instructions shown during enrollment.",
   },
   {
     q: "Why can't I see my Ring camera in MySentry?",
-    a: "Your Ring camera will only appear in MySentry if two conditions are met: (1) you have an active Ring integration entitlement, and (2) Ring has connected the device to your MySentry account. Check both the Ring App Store and your MySentry account settings if the camera is not appearing.",
+    a: "A supported camera may appear only after the required entitlement, account linking, permissions, and supported-device setup are active. Check the Ring listing and MySentry account settings or contact support if it does not appear.",
   },
   {
     q: "Which Ring cameras are supported?",
@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: "Can my emergency contacts always see my Ring camera?",
-    a: "No. Your Ring camera feed is only shared with emergency contacts and the monitoring team during an active Panic Alarm. Outside of emergencies, your camera feed remains private.",
+    a: "No. Camera access is not described as continuous contact access. Any alert-time context depends on current integration support and the account, camera, and sharing permissions you enable.",
   },
 ];
 
@@ -59,7 +59,7 @@ export default function RingIntegration() {
     <Layout>
       <SEO
         title="Ring Camera Integration | MySentry"
-        description="Connect your Ring camera to MySentry. During an active emergency, your Ring camera broadcast is automatically shared with your emergency contacts and 24/7 monitoring team. $4.99/camera/month through the Ring App Store."
+        description="Review current eligibility, setup, permission, camera-context, monitoring, and billing requirements for the MySentry listing in the Ring App Store."
         canonical="https://mysentry.ai/integrations/ring"
       />
 
@@ -79,14 +79,14 @@ export default function RingIntegration() {
               <span className="text-[#2E7D6F]">Your Home. Your Safety.</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-4 leading-relaxed">
-              Connect your Ring camera to MySentry. When a Panic Alarm is triggered, your Ring camera broadcast is automatically shared with your emergency contacts and the 24/7 monitoring team.
+              Connect eligible Ring camera context to a MySentry Panic Alarm workflow. When supported and permitted, selected camera context may help the monitoring team understand an active alert.
             </p>
             <p className="text-base text-gray-500 max-w-xl mx-auto mb-8">
-              $4.99 per camera per month, billed through the Ring App Store.
+              Current pricing, eligible plans, supported devices, and promotional terms are confirmed in the Ring App Store during enrollment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://ring.com/app-store"
+                href="https://ring.com/appstore/mysentry?q=mysen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-[#2E7D6F] text-white font-bold px-8 py-4 rounded-xl hover:bg-[#245f54] transition-colors"
@@ -111,7 +111,7 @@ export default function RingIntegration() {
           <div className="flex items-start gap-3">
             <Info className="w-5 h-5 text-amber-600 mt-0.5 shrink-0" />
             <p className="text-sm text-amber-800 font-medium">
-              <strong>Billing note:</strong> The Ring integration is purchased and billed exclusively through the Ring App Store at $4.99 per camera per month. MySentry does not process Ring payments. You will need a separate active MySentry subscription to use this integration.
+              <strong>Offer note:</strong> Review the active Ring App Store listing before enrollment. Pricing, billing, plan eligibility, device support, account linking, and promotional terms can change.
             </p>
           </div>
         </div>
@@ -128,9 +128,9 @@ export default function RingIntegration() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { step: "1", title: "Purchase via Ring App Store", desc: "Find MySentry in the Ring App Store and purchase the integration at $4.99/camera/month. Your MySentry account is automatically provisioned if you're new." },
-              { step: "2", title: "Camera Appears in MySentry", desc: "Once your entitlement is active and Ring has connected your device, your Ring camera appears inside the MySentry app." },
-              { step: "3", title: "Automatic Sharing in Emergencies", desc: "When a Panic Alarm is triggered, your Ring camera broadcast is automatically shared with your emergency contacts and the 24/7 monitoring team." },
+              { step: "1", title: "Review the Ring Listing", desc: "Open the MySentry listing in the Ring App Store and confirm current pricing, eligibility, supported devices, billing, and terms." },
+              { step: "2", title: "Link Eligible Accounts and Devices", desc: "Follow the current Ring and MySentry instructions to activate the entitlement, connect your account, and configure supported cameras." },
+              { step: "3", title: "Choose Alert-Time Permissions", desc: "Enable only the camera and context permissions you want available during a supported MySentry alert workflow." },
             ].map((item) => (
               <motion.div
                 key={item.step}
@@ -191,11 +191,11 @@ export default function RingIntegration() {
           </div>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              "An active MySentry Individual or Family plan subscription",
+              "A MySentry plan eligible under the current Ring listing",
               "A Ring camera compatible with the Ring App Store",
-              "Ring integration purchased through the Ring App Store ($4.99/camera/month)",
+              "An active Ring integration entitlement under the current offer terms",
               "Ring account connected to MySentry via the Ring App Store",
-              "MySentry app installed on your smartphone (iOS 15+ or Android 12+)",
+              "The MySentry app on a currently supported smartphone and software version",
             ].map((req) => (
               <div key={req} className="flex items-start gap-3 bg-[#f5faf7] rounded-xl p-4">
                 <CheckCircle className="w-5 h-5 text-[#2E7D6F] mt-0.5 shrink-0" />
@@ -226,7 +226,7 @@ export default function RingIntegration() {
         </div>
       </section>
 
-      <GetStartedSection ctaText="Start 7-Day Free Trial" />
+      <GetStartedSection ctaText="Review Plans and Eligibility" />
     </Layout>
   );
 }

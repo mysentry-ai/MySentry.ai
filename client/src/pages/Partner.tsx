@@ -296,7 +296,7 @@ export const Partner = () => {
                   {
                     step: "03",
                     title: "User Management",
-                    description: "Instantly manage application access to ensure security and compliance."
+                    description: "Promptly manage application access to ensure security and compliance."
                   }
                 ].map((item, index) => (
                   <motion.div 

@@ -24,18 +24,18 @@ export default function WhoWeProtectSeniors() {
         },
         {
           title: "Add Your Family",
-          description: "Add up to 3 emergency contacts. You receive instant alerts with live GPS location if your parent needs help.",
+          description: "Add up to 3 emergency contacts. You receive prompt alerts with live GPS location if your parent needs help.",
         },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry is a safety app for seniors that works on a smartphone or Apple Watch. It includes automatic fall detection, a one-tap panic alarm, 24/7 professional monitoring with live video response, and real-time health monitoring. When an alarm is triggered, family members receive an instant text with live GPS location. No pendant, no base unit, and no landline required."
+      directAnswer="MySentry is a safety app for seniors that works on a smartphone or Apple Watch. It includes automatic fall detection, a one-tap panic alarm, 24/7 professional monitoring with live video response, and real-time health monitoring. When an alarm is triggered, family members receive an prompt text with live GPS location. No pendant, no base unit, and no landline required."
       howItWorks={[
         "MySentry runs quietly in the background on your parent's iPhone or Android phone.",
         "If a hard fall is detected, the app sends a Safety Check Alert and they have up to 90 seconds to confirm they are okay.",
         "If they do not respond, or if they press the panic button on their phone or Apple Watch, an alert is sent immediately.",
         "A trained agent starts a live video call to see what is happening.",
-        "You and other family members receive an instant text with their live GPS location.",
+        "You and other family members receive an prompt text with their live GPS location.",
         "The agent dispatches local emergency services if needed, with their location and health details.",
       ]}
       afterAlert={[
@@ -57,7 +57,7 @@ export default function WhoWeProtectSeniors() {
       keyTakeaways={[
         "Automatic fall detection works without your parent pressing a button.",
         "A trained agent responds by live video, not just a phone call.",
-        "Family members receive instant alerts with live GPS location.",
+        "Family members receive prompt alerts with live GPS location.",
         "Works on iPhone, Android, Apple Watch, and Samsung Galaxy Watch.",
         "No pendant, no base unit, no landline required.",
       ]}
@@ -72,7 +72,7 @@ export default function WhoWeProtectSeniors() {
         },
         {
           question: "Can I monitor my parent's safety remotely?",
-          answer: "Yes. When an alarm is triggered, you receive an instant text with your parent's live GPS location. You can track their position in real time. You do not receive continuous passive location data, which protects your parent's privacy.",
+          answer: "Yes. When an alarm is triggered, you receive an prompt text with your parent's live GPS location. You can track their position in real time. You do not receive continuous passive location data, which protects your parent's privacy.",
         },
         {
           question: "Is MySentry easy for seniors to use?",

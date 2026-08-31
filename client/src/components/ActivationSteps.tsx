@@ -26,7 +26,7 @@ export default function ActivationSteps() {
           "Go to Pricing and choose Individual or Family",
           "Save 20% with annual billing",
           "Essential Safety or Longevity & Wellness",
-          "7-day free trial, cancel any time"
+          "Current offer terms are shown during enrollment"
         ]
       },
       {
@@ -64,7 +64,7 @@ export default function ActivationSteps() {
           "Go to Pricing and choose Individual or Family",
           "Save 20% with annual billing",
           "Essential Safety or Longevity & Wellness",
-          "7-day free trial, cancel any time"
+          "Current offer terms are shown during enrollment"
         ]
       },
       {
@@ -102,13 +102,13 @@ export default function ActivationSteps() {
           "Go to Pricing and choose Individual or Family",
           "Save 20% with annual billing",
           "Essential Safety or Longevity & Wellness",
-          "7-day free trial, cancel any time"
+          "Current offer terms are shown during enrollment"
         ]
       },
       {
         step: "02",
         title: "Download and Connect",
-        description: "On your iPhone or Android in under 5 minutes.",
+        description: "On your iPhone or Android in a few steps.",
         icon: Smartphone,
         details: [
           "Download MySentry from the App Store or Google Play",
@@ -134,11 +134,11 @@ export default function ActivationSteps() {
       {
         step: "01",
         title: "Get a Quote",
-        description: "Volume pricing for teams of any size. Instant estimate.",
+        description: "Volume pricing for teams of any size. Prompt estimate.",
         icon: Building2,
         details: [
           "Go to Pricing and switch to the Organizations tab",
-          "Enter your team size for instant volume pricing",
+          "Enter your team size for prompt volume pricing",
           "Choose monthly or annual billing",
           "Request a demo or start directly"
         ]
@@ -293,7 +293,7 @@ export default function ActivationSteps() {
             </p>
             <div className="flex flex-wrap gap-2 text-sm font-bold text-green-700">
               <span className="bg-white/50 px-3 py-1 rounded-full">10 Days Before Renewal</span>
-              <span className="bg-white/50 px-3 py-1 rounded-full">30 Days Before Renewal</span>
+              <span className="bg-white/50 px-3 py-1 rounded-full">Before Renewal</span>
             </div>
           </div>
         </div>

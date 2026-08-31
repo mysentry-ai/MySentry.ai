@@ -8,6 +8,8 @@ import { ArrowRight, Clock, Calendar, Loader2 } from 'lucide-react';
 import HeroSection from "@/components/HeroSection";
 import { trpc } from '@/lib/trpc';
 import { fallbackBlogCategories, fallbackBlogPosts } from '@/lib/blogFallback';
+import { isHeldBlogSlug } from '@shared/seo/content-governance';
+import { normalizeBlogImagePath } from '@shared/seo/blog-assets';
 
 const Blogs = () => {
   const [categoryId, setCategoryId] = useState<number | null>(null);
@@ -24,9 +26,10 @@ const Blogs = () => {
   const remotePosts = postsQuery.data?.posts || [];
   const useFallbackPosts = !postsQuery.isLoading && remotePosts.length === 0;
   const categories = useFallbackPosts ? fallbackBlogCategories : remoteCategories;
-  const posts = useFallbackPosts
+  const sourcePosts = useFallbackPosts
     ? fallbackBlogPosts.filter((post) => categoryId === null || post.categoryId === categoryId)
     : remotePosts;
+  const posts = sourcePosts.filter((post) => !isHeldBlogSlug(post.slug));
 
   // Featured blog (first published post)
   const featuredBlog = categoryId === null ? posts[0] : null;
@@ -100,7 +103,7 @@ const Blogs = () => {
             <div className="group cursor-pointer grid lg:grid-cols-2 gap-8 mb-24 items-center">
               <div className="relative overflow-hidden rounded-2xl aspect-[4/3] lg:aspect-[16/10]">
                 <img 
-                  src={featuredBlog.heroImageUrl || '/images/blog-placeholder.jpg'} 
+                  src={normalizeBlogImagePath(featuredBlog.heroImageUrl) || '/images/cdn/GqszcNTBcTbleCyx.jpg'}
                   alt={featuredBlog.heroImageAlt || featuredBlog.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
@@ -151,7 +154,7 @@ const Blogs = () => {
                     {/* Image */}
                     <div className="relative overflow-hidden rounded-xl aspect-[3/2] mb-6 bg-gray-100">
                       <img 
-                        src={blog.heroImageUrl || '/images/blog-placeholder.jpg'} 
+                        src={normalizeBlogImagePath(blog.heroImageUrl) || '/images/cdn/GqszcNTBcTbleCyx.jpg'}
                         alt={blog.heroImageAlt || blog.title} 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"

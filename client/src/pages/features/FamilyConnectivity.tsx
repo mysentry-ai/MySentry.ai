@@ -3,93 +3,63 @@ import SEOPageTemplate from "@/components/SEOPageTemplate";
 export default function FamilyConnectivity() {
   return (
     <SEOPageTemplate
-      seoTitle="Family Connectivity: Real-Time Location Sharing | MySentry"
-      seoDescription="MySentry Family Connectivity lets you share your location on a schedule or in real time, and request a trusted contact's location when you're worried. Included in the Family Plan."
+      seoTitle="Family Safety Alerts and Trusted Contacts | MySentry"
+      seoDescription="Learn how MySentry supports consent-based family safety alerts, up to 5 trusted contacts, and permission-controlled context sharing."
       canonical="https://mysentry.ai/features/family-connectivity"
-      label="FEATURE"
-      h1="Always Know Your Family Is Safe."
-      h1Sub="Share location on schedule or in real time. Check on loved ones anytime."
-      heroDescription="MySentry Family Connectivity lets you share your live location with trusted contacts and request their location when you're worried, without the awkwardness of a check-in text."
-      problem="You want to know your family is safe without calling every hour or tracking them without their knowledge."
-      empathy="Worrying about a loved one's commute, a teenager's night out, or an elderly parent's walk to the store is exhausting. You deserve a simple, respectful way to stay connected."
+      label="Feature"
+      h1="Family Safety Without Continuous Surveillance"
+      h1Sub="Prepare trusted contacts and share only the alert context you permit."
+      heroDescription="MySentry helps families prepare for eligible safety alerts with up to 5 trusted contacts. Family members do not receive continuous access to private wellness data, and any location or status context follows feature support and user permissions."
+      problem="Families want a practical way to coordinate during a safety concern without constant calls, hidden tracking, or unrestricted access to private information."
+      empathy="Staying connected should support independence and privacy, not replace them."
       steps={[
-        { title: "Add Emergency Contacts", description: "Add up to 5 trusted contacts in the MySentry app. Each contact can be a full MySentry user or a Responder who downloads the app via a link and enters a 6-digit code." },
-        { title: "Set Location Sharing Preferences", description: "Choose to share your location on a schedule (e.g., during your commute) or in real time. Each contact's sharing settings can be customized individually." },
-        { title: "Request a Contact's Location", description: "When you're worried about a family member, tap their name and request their location. They receive a notification and can share it with you instantly." },
+        { title: "Choose Trusted Contacts", description: "Invite up to 5 people and confirm their contact information." },
+        { title: "Set Alert Permissions", description: "Choose which supported alerts and context each contact may receive." },
+        { title: "Use the Configured Workflow", description: "When an eligible alert begins, MySentry may notify contacts with the permitted context available at that time." },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
-      secondaryCta={{ text: "See Family Plan Details", href: "/pricing" }}
-      directAnswer="MySentry Family Connectivity is a feature that lets you share your live GPS location with trusted contacts on a schedule or in real time. You can also request a trusted contact's location when you're concerned about them. Family Connectivity is part of the MySentry app and is included in both the Individual and Family plans. Emergency contacts do not need to be MySentry subscribers, they can join as Responders via a link."
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
+      secondaryCta={{ text: "Review Family Plans", href: "/pricing" }}
+      directAnswer="MySentry Family Connectivity is an alert-based family safety feature. It helps a user prepare up to 5 trusted contacts and control which supported alerts and context they may receive. It is not continuous family surveillance, and contacts do not receive unrestricted access to private wellness data."
       howItWorks={[
-        "Add up to 5 emergency contacts in the MySentry app.",
-        "Customize each contact's settings: Panic Alarm alerts, MeetSafe updates, and Family Connectivity.",
-        "Share your location on a schedule or in real time with selected contacts.",
-        "When worried about a family member, request their location directly from the app.",
-        "Contacts receive a notification and can share their location with you instantly.",
+        "Invite up to 5 trusted contacts and confirm their information.",
+        "Review notification and context-sharing settings for each contact.",
+        "When a supported alert begins, MySentry attempts to deliver the configured notification and available permitted context.",
+        "Contacts may call, check in, or coordinate next steps using the information they receive.",
       ]}
       afterAlert={[
-        "When a Panic Alarm is triggered, all emergency contacts receive your live GPS location automatically.",
-        "Contacts can track your location in real time until the alarm is resolved.",
-        "The 24/7 monitoring team also receives your location and can coordinate a response.",
+        "Configured contacts may receive the alert type and available permitted context.",
+        "Location or status availability depends on device, settings, permissions, app state, and connectivity.",
+        "Eligible professional monitoring may review the alert separately.",
+        "Delivery, response, escalation, and arrival are not guaranteed.",
       ]}
-      bestFor={[
-        "Parents who want to know when their teenager arrives home safely.",
-        "Families with elderly parents who live alone.",
-        "Couples who want to share location during commutes or travel.",
-        "Anyone who wants a trusted person to know their whereabouts without constant texting.",
-      ]}
-      notIdealFor={[
-        "Fleet management or employee tracking (use a dedicated GPS fleet solution).",
-        "Tracking someone without their knowledge or consent.",
-      ]}
+      bestFor={["Families supporting an independent loved one", "Parents preparing an alert plan for an eligible family member", "Couples or relatives who want consent-based safety coordination"]}
+      notIdealFor={["Tracking someone without their knowledge or consent", "Continuous access to another person's private wellness data", "Fleet, workforce, or covert location tracking"]}
       keyTakeaways={[
-        "Share your location on a schedule or in real time with up to 5 trusted contacts.",
-        "Request a contact's location when you're worried, without an awkward phone call.",
-        "Emergency contacts can be MySentry users or Responders who join via a link.",
-        "During a Panic Alarm, all contacts receive your live location automatically.",
+        "Configure up to 5 trusted contacts.",
+        "Sharing is alert-based and permission-controlled.",
+        "Contacts do not receive continuous access to private wellness data.",
       ]}
       faqs={[
-        {
-          question: "Do my emergency contacts need to have a MySentry subscription?",
-          answer: "No. Emergency contacts can be full MySentry users or Responders. Responders download the MySentry app via a link, sign up as a Responder, and enter a 6-digit code. They do not need a paid subscription to receive your alerts and location.",
-        },
-        {
-          question: "How many emergency contacts can I add?",
-          answer: "You can add up to 5 emergency contacts. Each contact's notification settings can be customized individually, including which alerts they receive for Panic Alarm, MeetSafe, and Family Connectivity.",
-        },
-        {
-          question: "Can I share my location with some contacts but not others?",
-          answer: "Yes. Each contact's settings are managed individually. You can choose which contacts receive location sharing, Panic Alarm alerts, and MeetSafe updates.",
-        },
-        {
-          question: "What is the Loud Emergency Check-In?",
-          answer: "The Loud Emergency Check-In plays a loud custom sound on your emergency contact's phone, even if it is on Silent or Do Not Disturb. This ensures they notice urgent alerts when it matters most.",
-        },
-        {
-          question: "Is Family Connectivity included in the Individual plan?",
-          answer: "Yes. Family Connectivity is included in both the Individual ($15/month) and Family ($30/month) plans. The Family plan adds up to 5 member licenses under one account.",
-        },
-        {
-          question: "What is the difference between Family Connectivity and the Family Plan?",
-          answer: "Family Connectivity is a feature that lets you share location and request a contact's location. The Family Plan is a subscription tier that includes up to 5 member licenses under one account, so each family member has their own full MySentry account.",
-        },
+        { question: "How many trusted contacts can I add?", answer: "You can configure up to 5 trusted contacts in MySentry." },
+        { question: "Can family members see my wellness data all the time?", answer: "No. MySentry does not describe continuous family access to private wellness data. Any sharing follows supported features, settings, permissions, and active workflows." },
+        { question: "Can MySentry be used for secret tracking?", answer: "No. Family safety features should be used with the knowledge and consent of the people involved." },
+        { question: "What happens if an alert cannot be delivered?", answer: "Delivery depends on the supported device, app state, connection, destination, and third-party services. Use direct calls or local emergency services when needed." },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+). Emergency contacts need the MySentry app installed as a Responder or full user.",
-        permissions: "Location services (always-on for GPS tracking), notifications.",
-        connectivity: "Cellular or Wi-Fi required for real-time location sharing.",
-        limitations: "Location sharing requires the contact to have the MySentry app installed. Real-time location sharing uses battery. Contacts must accept the invitation to become active."
+        devices: "A currently supported smartphone and MySentry app for the account using the feature.",
+        permissions: "Notification, contact, location, and other context permissions depend on the alerts you choose to enable.",
+        connectivity: "Alert delivery and available context require a supported network connection.",
+        limitations: "MySentry is not a covert tracking service and cannot guarantee notification delivery, contact response, monitoring escalation, or emergency-service arrival.",
       }}
       proofBlocks={[
-        { claim: "Emergency contacts receive live GPS location automatically during a Panic Alarm.", detail: "No manual sharing required. When a Panic Alarm is triggered, all emergency contacts receive your location instantly." },
-        { claim: "Contacts can join as Responders without a paid subscription.", detail: "Non-subscriber contacts download the app, sign up as Responders via a link, and enter a 6-digit code to connect." },
-        { claim: "Each contact's notification settings are fully customizable.", detail: "Choose which alerts each contact receives: Panic Alarm, MeetSafe updates, and Family Connectivity location sharing." }
+        { claim: "Up to 5 trusted contacts", detail: "A focused contact network can be prepared inside the app before an alert occurs." },
+        { claim: "Privacy-aware coordination", detail: "Supported alert context follows user settings and permissions instead of continuous access to private wellness information." },
       ]}
       relatedLinks={[
-        { text: "Family Safety App", href: "/use-cases/family-safety-app" },
-        { text: "MeetSafe Check-Ins", href: "/features/meetsafe-check-ins" },
         { text: "Emergency Contacts", href: "/features/emergency-contacts" },
-        { text: "Family Plan Pricing", href: "/pricing" },
+        { text: "Safety Check-In App", href: "/features/safety-check-in-app" },
+        { text: "Family Safety", href: "/families" },
+        { text: "Compare Plans", href: "/pricing" },
       ]}
     />
   );

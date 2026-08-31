@@ -62,6 +62,13 @@ const trpcClient = trpc.createClient({
   ],
 });
 
+// Initial HTML includes server-rendered JSON-LD for crawlers and non-JavaScript
+// clients. Remove those copies before Helmet mounts equivalent client schemas so
+// the hydrated document never contains duplicate structured data nodes.
+document
+  .querySelectorAll('script[id^="ssr-schema-"]')
+  .forEach(node => node.remove());
+
 createRoot(document.getElementById("root")!).render(
   <trpc.Provider client={trpcClient} queryClient={queryClient}>
     <QueryClientProvider client={queryClient}>

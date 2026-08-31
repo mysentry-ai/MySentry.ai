@@ -13,15 +13,15 @@ export default function RealEstateSolution() {
       steps={[
         { title: "Activate MySentry", description: "Equip agents with the MySentry app and optional smartwatch integration. Setup is simple and takes minutes." },
         { title: "Use Smart Safety Tools", description: "Utilize features like MeetSafe for scheduled check-ins before showings and the silent panic alarm for immediate, discreet alerts." },
-        { title: "Gain Instant Backup", description: "In an emergency, our 24/7 monitoring center receives the alert, sees the agent's live location and video, and dispatches help." },
+        { title: "Gain Prompt Backup", description: "In an emergency, our 24/7 monitoring center receives the alert, sees the agent's live location and video, and may contact emergency services when appropriate." },
       ]}
       primaryCta={{ text: "Book a Demo", href: "/contact" }}
-      secondaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing#pricing-plans" }}
+      secondaryCta={{ text: "Review Plans and Eligibility", href: "/pricing#pricing-plans" }}
       directAnswer="MySentry offers a comprehensive safety solution for real estate professionals, including a silent panic alarm, automated safety check-ins (MeetSafe), and a 24/7 live video response service to provide immediate assistance and peace of mind."
       howItWorks={[
-        "Silent Alarm: A discreet voice command, a tap on your smartphone, or a press on your smartwatch instantly triggers a silent alarm.",
+        "Silent Alarm: A discreet voice command, a tap on your smartphone, or a press on your smartwatch promptly triggers a silent alarm.",
         "MeetSafe Check-ins: Schedule automated safety check-ins before, during, and after showings. If you don't respond, an alert is automatically triggered.",
-        "Live Video & Location: Our monitoring center instantly receives your GPS location and live video from your phone's camera, providing critical context to first responders.",
+        "Live Video & Location: Our monitoring center promptly receives your GPS location and live video from your phone's camera, providing critical context to first responders.",
       ]}
       afterAlert={[
         "Immediate Assessment: Our 24/7 monitoring team immediately assesses the situation via live video and audio.",
@@ -43,7 +43,7 @@ export default function RealEstateSolution() {
         "MySentry addresses the top 3 safety risks for real estate agents.",
         "Features are designed for discretion and ease of use in real-world scenarios.",
         "Provides a scalable solution for both individual agents and large brokerages.",
-        "Offers two clear paths to getting started: a free trial for individuals and a demo for teams.",
+        "Offers two clear paths to next steps: current plan and eligibility review for individuals, or a team discussion for organizations.",
       ]}
       faqs={[
         { question: "Is the alarm really silent?", answer: "Yes. When you trigger an alarm, your phone remains completely silent and the screen does not change, so an aggressor will not know it has been activated. Our monitoring center receives the alert silently." },
@@ -64,7 +64,7 @@ export default function RealEstateSolution() {
       relatedLinks={[
         { text: "Safety Tips for Lone Workers", href: "/guides/lone-worker-safety" },
       ]}
-      heroImage="/images/solutions/real-estate-hero.jpg"
+      heroImage="/images/cdn/hero-real-estate-dAoBKmzF88UvcCt9qLwiSC.webp"
     />
   );
 }

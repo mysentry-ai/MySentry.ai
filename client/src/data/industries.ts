@@ -43,7 +43,7 @@ export const industries: IndustryContent[] = [
         "High-stress environments leading to unmonitored health incidents."
       ],
       empathy: "It's unacceptable that those who care for others often fear for their own physical safety at work.",
-      answer: "MySentry delivers instant duress alarms that alert security teams with precise indoor location data.",
+      answer: "MySentry delivers prompt duress alarms that alert security teams with precise indoor location data.",
       change: "Staff move from looking over their shoulders to focusing entirely on saving lives.",
       endResult: "A secure healing environment where safety incidents are de-escalated in seconds."
     },
@@ -157,12 +157,12 @@ export const industries: IndustryContent[] = [
     icon: GraduationCap,
     peace: {
       problems: [
-        "Active threat scenarios requiring instant lockdown.",
+        "Active threat scenarios requiring prompt lockdown.",
         "Medical emergencies in classrooms or sports fields.",
         "Staff facing aggression from students or parents."
       ],
       empathy: "Educators are there to teach, not to be first responders without support.",
-      answer: "MySentry connects every classroom directly to campus security and local police instantly.",
+      answer: "MySentry connects every classroom directly to campus security and local police promptly.",
       change: "Schools transform from soft targets into interconnected, responsive safety networks.",
       endResult: "A campus where safety is handled by the system, letting teachers focus on students."
     },

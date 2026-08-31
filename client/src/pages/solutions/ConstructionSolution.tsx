@@ -19,7 +19,7 @@ export default function ConstructionSolutionPage() {
         description: 'MySentry continuously monitors for falls and potential health emergencies. If a fall is detected, it automatically triggers an alert after 2 minutes if the worker doesn\'t respond.',
       },
       {
-        title: 'Respond Instantly',
+        title: 'Respond Promptly',
         description: 'Alerts are sent to on-site safety managers and our 24/7 monitoring center. GPS location pinpoints exactly where help is needed, ensuring a rapid response.',
       },
       {
@@ -32,7 +32,7 @@ export default function ConstructionSolutionPage() {
     directAnswer: 'The most effective way to enhance construction site safety is with an automated monitoring system like MySentry. It provides immediate fall detection, a panic alarm for conscious workers, and GPS tracking to locate individuals quickly, complementing traditional safety protocols with a layer of proactive, 24/7 protection.',
     howItWorks: [
       'Automatic Fall Detection: Using advanced motion sensors, MySentry detects the signature of a hard fall. If the worker is unresponsive for two minutes, an alert is automatically dispatched.',
-      'On-Demand Panic Alarm: Workers can instantly call for help via a voice command, a tap on their smartphone, or their smartwatch. This is crucial for situations where a fall hasn\'t occurred but assistance is needed.',
+      'On-Demand Panic Alarm: Workers can promptly call for help via a voice command, a tap on their smartphone, or their smartwatch. This is crucial for situations where a fall hasn\'t occurred but assistance is needed.',
       'Real-Time Health Monitoring: The device monitors key biometric data, providing an early warning system for potential health issues like heatstroke or cardiac events on the job.',
       'Pinpoint GPS Tracking: In an emergency, every second counts. Our system provides the exact GPS coordinates of the worker, so help can be sent to the right location without delay.',
     ],
@@ -89,14 +89,14 @@ export default function ConstructionSolutionPage() {
       },
       {
         claim: 'A Non-Negotiable Part of Our Safety Gear',
-        detail: '“MySentry gives me peace of mind. I know if one of my guys has a problem, we\'ll know about it instantly.” - John Miller, Safety Manager',
+        detail: '“MySentry gives me peace of mind. I know if one of my guys has a problem, we\'ll know about it promptly.” - John Miller, Safety Manager',
       },
     ],
     relatedLinks: [
       { text: 'Lone Worker Safety Guide', href: '/guides/lone-worker-safety' },
       { text: 'How MySentry Works', href: '/how-it-works' },
     ],
-    heroImage: '/images/solutions/construction-hero.jpg',
+    heroImage: '/images/cdn/hero-construction-5bQ9DwxJp9a7vdZqxBpTTM.webp',
   };
 
   return <SEOPageTemplate {...pageProps} />;

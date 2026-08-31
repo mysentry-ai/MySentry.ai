@@ -89,7 +89,7 @@ describe("blog compliance check", () => {
     const adminCaller = appRouter.createCaller(adminCtx);
 
     const result = await adminCaller.blog.ai.complianceCheck({
-      content: "<p>This is a test — with an em dash.</p>",
+      content: "<p>This is a test \u2014 with an em dash.</p>",
     });
 
     const emDashCheck = result.checks.find((c) => c.name === "No Em Dashes");

@@ -17,7 +17,7 @@ export default function AutomatedCall() {
         { title: "Wait for the Ring", description: "Your phone rings like a real incoming call at the scheduled time. It looks and sounds completely authentic." },
         { title: "Make Your Exit", description: "Answer the call and use it as your reason to leave. No explanation needed." },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
       secondaryCta={{ text: "See All Features", href: "/features" }}
       directAnswer="MySentry's Automated Call is a safety feature that schedules a realistic fake incoming call to your phone. You set the time, and when it rings, you have a natural, believable reason to exit any uncomfortable or unsafe situation without confrontation. It is designed to work alongside MySentry's Panic Alarm and MeetSafe features as part of a layered personal safety system."
       howItWorks={[
@@ -58,11 +58,11 @@ export default function AutomatedCall() {
         },
         {
           question: "What if I need help before the call arrives?",
-          answer: "If the situation escalates before your scheduled call, use the Panic Alarm immediately. You can trigger it by tapping the app, pressing the volume button (Android), or using a voice command. The Panic Alarm alerts your emergency contacts and the 24/7 monitoring team instantly.",
+          answer: "If the situation escalates before your scheduled call, use the Panic Alarm immediately. You can trigger it by tapping the app, pressing the volume button (Android), or using a voice command. The Panic Alarm alerts your emergency contacts and the 24/7 monitoring team promptly.",
         },
         {
           question: "Is the Automated Call included in all plans?",
-          answer: "Yes. The Automated Call feature is included in both the Individual ($15/month) and Family ($30/month) plans, as well as the 7-day free trial.",
+          answer: "Yes. The Automated Call feature is included in both the Individual ($15/month) and Family ($30/month) plans, as well as any introductory offer displayed during enrollment.",
         },
         {
           question: "Can I cancel the call after I schedule it?",
@@ -82,7 +82,7 @@ export default function AutomatedCall() {
       ]}
       relatedLinks={[
         { text: "Panic Button App", href: "/features/panic-button-app" },
-        { text: "MeetSafe Check-Ins", href: "/features/meetsafe-check-ins" },
+        { text: "MeetSafe Check-Ins", href: "/features/safety-check-in-app" },
         { text: "Safety App for Women", href: "/use-cases/safety-app-for-women" },
         { text: "Pricing Plans", href: "/pricing" },
       ]}

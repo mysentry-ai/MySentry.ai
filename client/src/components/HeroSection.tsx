@@ -28,7 +28,7 @@ export default function HeroSection({
   description,
   imageSrc,
   imageAlt,
-  ctaText = "START 7-DAY FREE TRIAL",
+  ctaText = "REVIEW PLANS AND ELIGIBILITY",
   ctaLink = "/pricing#pricing-plans",
   className,
   showCta = true,

@@ -15,14 +15,14 @@ interface GetStartedSectionProps {
 export default function GetStartedSection({ 
   title = "Get Started in Minutes", 
   subtitle = "Three simple steps to 24/7 peace of mind.",
-  ctaText = "Start Your Free Trial",
+  ctaText = "Review Plans and Eligibility",
   ctaLink = "/pricing#pricing-plans"
 }: GetStartedSectionProps) {
   const steps = [
     {
       icon: Check,
-      title: "Sign Up for Free Trial",
-      description: "Start your 7-day free trial with no commitment. Cancel anytime.",
+      title: "Review Plan Eligibility",
+      description: "Review current plans and eligibility with no commitment. Cancel anytime.",
       color: "bg-[#6AD990]"
     },
     {

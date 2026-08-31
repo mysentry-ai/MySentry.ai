@@ -1,142 +1,114 @@
-import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Handshake, ShieldCheck, Globe, Zap } from 'lucide-react';
+import { ArrowRight, Building2, Handshake, ShieldCheck } from "lucide-react";
+import { Link } from "wouter";
+import Layout from "@/components/Layout";
+import SEO from "@/components/SEO";
 import HeroSection from "@/components/HeroSection";
-import SEO from '../components/SEO';
 
-const Partners = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+const partnerPaths = [
+  {
+    icon: Building2,
+    title: "Employer and Program Partners",
+    description: "Explore how eligible MySentry safety tools could supplement an existing workforce or member safety program, subject to scope, policy, privacy, and technical review.",
+  },
+  {
+    icon: Handshake,
+    title: "Channel Partners",
+    description: "Discuss referral, reseller, or service opportunities only after commercial terms, support responsibilities, geography, and approved product status are confirmed.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Technology Partners",
+    description: "Evaluate integrations against supported devices, permissions, data boundaries, reliability requirements, security review, and a documented launch status.",
+  },
+];
 
+export default function Partners() {
   return (
-    <div className="min-h-screen bg-background pt-24">
+    <Layout>
       <SEO />
-
       <HeroSection
         label="Partnerships"
-        title="Partner With Purpose"
-        imageSrc="/images/partners-hero.jpg"
-        imageAlt="Partner With Purpose"
+        title={<>Build a Clearer Safety Program<br /><span className="text-gray-600">With Defined Roles and Limits</span></>}
+        subtitle="MySentry evaluates partnership opportunities through product fit, approved feature status, privacy boundaries, response responsibilities, and current commercial terms."
+        imageSrc="/images/partner-hero-800w.jpg"
+        imageAlt="Business partners reviewing a safety program together"
+        ctaText="Contact the Partnership Team"
+        ctaLink="/contact"
       />
 
-      {/* The Problem & Empathy (for potential partners) */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-primary mb-4">The Market Gap</h2>
-              <p className="text-lg text-gray-900">
-                Your customers are looking for modern safety solutions, but traditional options are outdated, stigmatizing, and limited. They want technology that fits their lifestyle, not bulky hardware that limits it.
+      <main>
+        <section className="border-b border-slate-200 bg-white py-16">
+          <div className="container max-w-4xl">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#007bc2]">Direct answer</p>
+            <h2 className="mt-4 text-4xl font-bold text-[#0b2f4f]">What is a MySentry partnership?</h2>
+            <p className="mt-5 text-lg leading-relaxed text-slate-700">
+              A MySentry partnership is a documented commercial or technical arrangement built around an approved use case. The evaluation should define the audience, supported features, device and plan requirements, data access, support ownership, emergency boundaries, commercial terms, and launch status before anything is promoted publicly.
+            </p>
+          </div>
+        </section>
+
+        <section className="bg-[#f5faf7] py-20">
+          <div className="container max-w-6xl">
+            <div className="text-center">
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#0b6848]">Partnership paths</p>
+              <h2 className="mt-4 text-4xl font-bold text-[#0b2f4f]">Start with the operating model</h2>
+              <p className="mx-auto mt-4 max-w-3xl leading-relaxed text-slate-700">
+                Availability is not assumed. Each opportunity is reviewed against current product status, evidence, privacy, service coverage, and implementation requirements.
               </p>
             </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="bg-background p-8 rounded-2xl shadow-sm border border-border"
-              >
-                <h3 className="text-xl font-bold text-red-600 mb-3">The Challenge</h3>
-                <p className="text-gray-900">
-                  Offering standalone, single-purpose devices often leads to low adoption rates and high churn. Customers simply stop wearing them.
-                </p>
-              </motion.div>
-              <motion.div 
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="bg-background p-8 rounded-2xl shadow-sm border border-border"
-              >
-                <h3 className="text-xl font-bold text-primary mb-3">The Opportunity</h3>
-                <p className="text-gray-900">
-                  MySentry integrates with the devices they already love, Apple and Samsung watches. This means higher engagement, better retention, and real value.
-                </p>
-              </motion.div>
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {partnerPaths.map(({ icon: Icon, title, description }) => (
+                <article key={title} className="rounded-3xl border border-slate-200 bg-white p-7 shadow-sm">
+                  <Icon className="h-9 w-9 text-[#0b6848]" aria-hidden="true" />
+                  <h3 className="mt-5 text-2xl font-bold text-[#0b2f4f]">{title}</h3>
+                  <p className="mt-3 leading-relaxed text-slate-600">{description}</p>
+                </article>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* The Solution: Partnership Benefits */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6">Why Partner with MySentry?</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Zap,
-                title: "Innovative Technology",
-                desc: "Offer the only solution that combines health monitoring, fall detection, and 24/7 professional response on consumer smartwatches."
-              },
-              {
-                icon: ShieldCheck,
-                title: "Trusted Reliability",
-                desc: "Backed by Rapid Response Monitoring, ensuring your customers get the gold standard in emergency care."
-              },
-              {
-                icon: Globe,
-                title: "Scalable Growth",
-                desc: "Flexible partnership models designed to grow with your business, from affiliate programs to white-label opportunities."
-              }
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-card p-8 rounded-2xl shadow-lg border border-border/50 hover:border-primary/50 transition-colors text-center"
-              >
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <item.icon className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-                <p className="text-gray-900">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Integration Partners */}
-      <section className="py-20 bg-secondary/30">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-primary mb-12">Our Strategic Partners</h2>
-          <div className="flex flex-wrap justify-center items-center gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-            {/* Logos would go here - using text placeholders for now */}
-            <div className="text-2xl font-bold text-gray-900/50">Rapid Response Monitoring</div>
-            <div className="text-2xl font-bold text-gray-900/50">Apple Health</div>
-            <div className="text-2xl font-bold text-gray-900/50">Samsung Health</div>
-            <div className="text-2xl font-bold text-gray-900/50">FirstNet</div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="bg-primary rounded-3xl p-12 text-center text-primary-foreground relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full opacity-10" />
-            <div className="relative z-10 max-w-2xl mx-auto">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Become a Partner</h2>
-              <p className="text-lg text-white/90 mb-8">
-                Ready to expand your portfolio with the future of personal safety? Let's talk.
-              </p>
-              <button className="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg flex items-center gap-2 mx-auto">
-                <Handshake className="w-5 h-5" />
-                Contact Partnership Team
-              </button>
+        <section className="bg-white py-20">
+          <div className="container max-w-5xl">
+            <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
+              <div>
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#007bc2]">Before launch</p>
+                <h2 className="mt-4 text-4xl font-bold text-[#0b2f4f]">Confirm the facts that customers will rely on</h2>
+                <p className="mt-5 leading-relaxed text-slate-700">
+                  Public copy should follow the approved agreement and current support documentation. Planned features, unverified proof, guaranteed outcomes, and unsupported compatibility statements should not be published.
+                </p>
+              </div>
+              <div className="space-y-4">
+                {[
+                  "Audience, geography, eligibility, and current plan",
+                  "Supported devices, features, settings, and permissions",
+                  "Privacy, data access, security, and retention boundaries",
+                  "Monitoring, escalation, emergency, and support responsibilities",
+                  "Pricing, billing, cancellation, equipment, and partner terms",
+                  "Approved launch status, training, claims, and review process",
+                ].map((item) => (
+                  <div key={item} className="flex gap-3 rounded-2xl bg-[#edf8f1] p-4 text-slate-700">
+                    <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#0b6848]" aria-hidden="true" />
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+
+        <section className="bg-[#e8f3fb] py-20">
+          <div className="container max-w-4xl text-center">
+            <h2 className="text-4xl font-bold text-[#0b2f4f]">Discuss a Partnership</h2>
+            <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-slate-700">
+              Tell us about the audience, use case, region, devices, program requirements, and intended timeline. The team can then assess fit and define the next review step.
+            </p>
+            <Link href="/contact" className="mt-8 inline-flex min-h-12 items-center justify-center rounded-full bg-[#0b6848] px-7 py-3 font-bold text-white hover:bg-[#084f38]">
+              Contact the Partnership Team <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+        </section>
+      </main>
+    </Layout>
   );
-};
-
-export default Partners;
+}

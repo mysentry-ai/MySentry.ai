@@ -46,9 +46,9 @@ export default function Seniors() {
     },
     {
       id: "health-monitoring",
-      title: "Live Health Monitoring",
-      subtitle: "Know before it's an emergency",
-      description: "High heart rate? Low oxygen? Irregular rhythm? Your watch sees it before you feel it. We alert you and your family instantly so you can take action.",
+      title: "Wellness Insights",
+      subtitle: "Understand supported watch signals",
+      description: "With permission, MySentry can surface supported smartwatch wellness metrics and configured alerts. These insights are not a medical diagnosis and vary by device and platform.",
       image: "/images/cdn/HXnFbPjpfnTSiaCR.jpg",
       icon: HeartPulse,
       tag: "Proactive Care",
@@ -58,35 +58,13 @@ export default function Seniors() {
     {
       id: "panic-alarm",
       title: "Voice Panic Alarm",
-      subtitle: "Help is just a word away",
-      description: "In an emergency, just say the word or tap your watch. You're instantly connected to our 24/7 monitoring center, no phone required.",
+      subtitle: "Start an alert from a supported device",
+      description: "Use an available phone or supported-watch trigger to begin the configured alert workflow. Trigger methods depend on device, operating system, permissions, and connectivity.",
       image: "/images/watch-sos-lifestyle.png",
       icon: AlertCircle,
-      tag: "Instant Help",
+      tag: "User-Activated Alert",
       link: "/how-it-works#voice-panic",
       ctaText: "See How It Works"
-    },
-    {
-      id: "medication-reminder",
-      title: "Medication Reminders",
-      subtitle: "Never miss a dose",
-      description: "Set custom reminders for your medications directly on your wrist. MySentry helps you stay on track with your health regimen.",
-      image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?q=80&w=2630&auto=format&fit=crop",
-      icon: Pill,
-      tag: "Health Routine",
-      link: "/how-it-works#medication-reminders",
-      ctaText: "Stay Healthy"
-    },
-    {
-      id: "wandering",
-      title: "Wandering Prevention",
-      subtitle: "Safe boundaries",
-      description: "For those with memory concerns, set up safe zones. If you wander outside these areas, family members are notified immediately.",
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2670&auto=format&fit=crop",
-      icon: MapPin,
-      tag: "Memory Care",
-      link: "/how-it-works#geo-fencing",
-      ctaText: "Stay Safe"
     },
     {
       id: "home-alone",
@@ -111,17 +89,6 @@ export default function Seniors() {
       ctaText: "Connect"
     },
     {
-      id: "scam-protection",
-      title: "Scam Protection",
-      subtitle: "Verify before you trust",
-      description: "Unsure about a caller or visitor? Use MySentry to quickly contact a trusted family member or our support team for verification.",
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2670&auto=format&fit=crop",
-      icon: Shield,
-      tag: "Security",
-      link: "/how-it-works#voice-panic",
-      ctaText: "Verify"
-    },
-    {
       id: "gardening",
       title: "Outdoor Activities",
       subtitle: "Enjoy your hobbies",
@@ -135,46 +102,13 @@ export default function Seniors() {
     {
       id: "caregiver-connection",
       title: "Caregiver Connection",
-      subtitle: "Seamless updates",
-      description: "Grant access to caregivers so they can monitor your vitals and location, ensuring everyone is on the same page about your health.",
+      subtitle: "Share selected safety context",
+      description: "Choose trusted contacts and control the safety notifications or time-bounded location context they may receive. Continuous health data is not shared by default.",
       image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=2568&auto=format&fit=crop",
       icon: UserPlus,
       tag: "Care Team",
       link: "/how-it-works#family-dashboard",
       ctaText: "Share Access"
-    },
-    {
-      id: "low-battery",
-      title: "Low Battery Alerts",
-      subtitle: "Always powered",
-      description: "We notify you and your emergency contacts when your watch battery is low, ensuring you're never without protection.",
-      image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2680&auto=format&fit=crop",
-      icon: Battery,
-      tag: "System Health",
-      link: "/how-it-works#health-monitoring",
-      ctaText: "Stay Charged"
-    },
-    {
-      id: "weather-alert",
-      title: "Severe Weather",
-      subtitle: "Stay informed",
-      description: "Receive critical weather alerts directly to your wrist, giving you time to prepare or seek shelter during storms or extreme heat.",
-      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=2670&auto=format&fit=crop",
-      icon: Bell,
-      tag: "Safety Alerts",
-      link: "/how-it-works#health-monitoring",
-      ctaText: "Be Ready"
-    },
-    {
-      id: "telehealth",
-      title: "Telehealth Ready",
-      subtitle: "Share data easily",
-      description: "Easily share your health trends and vitals history with your doctor during appointments for better informed care.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2670&auto=format&fit=crop",
-      icon: Phone,
-      tag: "Medical Data",
-      link: "/how-it-works#health-monitoring",
-      ctaText: "Share Data"
     }
   ];
 
@@ -246,7 +180,7 @@ export default function Seniors() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">3. Every second counts.</h3>
               <p className="text-gray-600 leading-relaxed">
-                In an emergency, fumbling for a phone or dialing 911 takes too long. You need a way to get help instantly, hands-free.
+                In an emergency, fumbling for a phone or dialing 911 takes too long. You need a way to get help promptly, hands-free.
               </p>
             </motion.div>
           </div>
@@ -274,8 +208,8 @@ export default function Seniors() {
       {/* CTA SECTION */}
       <GetStartedSection
         sub
-        ctaText="Start Your 7-Day Free Trial"
-        image="/images/senior-couple-walking.jpg"
+        ctaText="Review Plans and Eligibility"
+        image="/images/seniors-hero-800w.jpg"
       />
     </Layout>
   );

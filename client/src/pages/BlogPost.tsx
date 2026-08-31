@@ -8,11 +8,14 @@ import { ArrowLeft, Clock, Calendar, Share2, Facebook, Twitter, Linkedin, Loader
 import BlogCTA from '../components/BlogCTA';
 import { Link } from 'wouter';
 import { fallbackBlogCategories, getFallbackBlogPostBySlug, getFallbackRelatedPosts } from '@/lib/blogFallback';
+import { isHeldBlogSlug } from '@shared/seo/content-governance';
+import { canonicalizeBlogContentLinks, normalizeBlogImagePath } from '@shared/seo/blog-assets';
 
 const BlogPost = () => {
   const [match, params] = useRoute('/blog/:slug');
   const [, navigate] = useLocation();
   const slug = params?.slug || '';
+  const isEditorialHold = isHeldBlogSlug(slug);
 
   // Fetch from database
   const postQuery = trpc.blog.public.getBySlug.useQuery(
@@ -93,6 +96,45 @@ const BlogPost = () => {
     );
   }
 
+  if (isEditorialHold) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-white via-[#f3faf6] to-[#e8f3fb] font-sans text-gray-900">
+        <SEO
+          title={`${post.title} | Editorial Review`}
+          description="This MySentry article is temporarily unavailable while product, safety, medical, legal, or comparison claims are reviewed."
+          canonical={`https://mysentry.ai/blog/${slug}`}
+          noindex
+        />
+        <Navbar />
+        <main className="mx-auto max-w-4xl px-4 pb-24 pt-36 sm:px-6 lg:px-8">
+          <Link href="/blogs" className="inline-flex items-center text-sm font-bold uppercase tracking-widest text-[#0b6848] hover:underline">
+            <ArrowLeft className="mr-2 h-4 w-4" aria-hidden="true" />
+            Safety &amp; Health Hub
+          </Link>
+          <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:p-12">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#007bc2]">Editorial review in progress</p>
+            <h1 className="mt-4 text-4xl font-bold leading-tight text-[#0b2f4f] sm:text-5xl">{post.title}</h1>
+            <p className="mt-6 text-lg leading-relaxed text-slate-700">
+              This article is temporarily unavailable while the MySentry team reviews product, safety, medical, legal, response, or comparison statements against current evidence and approved product status.
+            </p>
+            <p className="mt-4 leading-relaxed text-slate-600">
+              The original article has been withheld rather than showing claims that are not ready for publication. This page is marked noindex until the review is complete.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/blogs" className="inline-flex items-center justify-center rounded-xl bg-[#0b6848] px-6 py-3 font-bold text-white hover:bg-[#084f38] focus:outline-none focus:ring-2 focus:ring-[#007bc2]">
+                Browse Reviewed Articles
+              </Link>
+              <Link href="/how-it-works" className="inline-flex items-center justify-center rounded-xl border border-[#0b6848] px-6 py-3 font-bold text-[#0b6848] hover:bg-[#edf8f1] focus:outline-none focus:ring-2 focus:ring-[#007bc2]">
+                Review How MySentry Works
+              </Link>
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   const categoryName = post.categoryId ? categoryMap[post.categoryId] : null;
   const postUpdatedAt = post.updatedAt;
   const postHeroImageCaption = post.heroImageCaption;
@@ -100,9 +142,13 @@ const BlogPost = () => {
   return (
     <div className="min-h-screen bg-[#fcfbf9] font-sans text-gray-900">
       <SEO 
-        title={post.metaTitle || `${post.title} | MySentry Safety & Health Hub`}
+        title={post.metaTitle || post.title}
         description={post.metaDescription || post.excerpt || ''}
-        image={post.ogImageUrl || post.heroImageUrl || undefined}
+        image={normalizeBlogImagePath(post.ogImageUrl || post.heroImageUrl)}
+        canonical={`https://mysentry.ai/blog/${slug}`}
+        type="article"
+        noindex={post.isIndexed === false}
+        nofollow={post.isFollowed === false}
       />
 
       {/* Article Schema (JSON-LD) for SEO */}
@@ -114,7 +160,7 @@ const BlogPost = () => {
             "@type": "Article",
             headline: post.title,
             description: post.metaDescription || post.excerpt || '',
-            image: post.heroImageUrl || undefined,
+            image: normalizeBlogImagePath(post.heroImageUrl),
             datePublished: post.publishedAt ? new Date(post.publishedAt).toISOString() : undefined,
             dateModified: postUpdatedAt ? new Date(postUpdatedAt).toISOString() : undefined,
             author: {
@@ -158,7 +204,7 @@ const BlogPost = () => {
           </div>
         )}
 
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-medium text-gray-900 mb-8 leading-tight font-barlow">
+        <h1 className="text-4xl md:text-5xl lg:text-[55px] font-medium text-gray-900 mb-8 leading-tight font-barlow">
           {post.title}
         </h1>
 
@@ -178,7 +224,7 @@ const BlogPost = () => {
         <div className="w-full max-w-[1400px] mx-auto px-0 md:px-8 mb-16">
           <div className="relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[2/1] overflow-hidden rounded-none sm:rounded-2xl">
             <img 
-              src={post.heroImageUrl} 
+              src={normalizeBlogImagePath(post.heroImageUrl)}
               alt={post.heroImageAlt || post.title} 
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
@@ -247,7 +293,7 @@ const BlogPost = () => {
           <div 
             id="blog-content"
             className="prose prose-lg max-w-none blog-content"
-            dangerouslySetInnerHTML={{ __html: post.contentHtml || '' }}
+            dangerouslySetInnerHTML={{ __html: canonicalizeBlogContentLinks(post.contentHtml || '') }}
           />
 
           {/* Tags */}
@@ -293,7 +339,7 @@ const BlogPost = () => {
                   <div className="group cursor-pointer">
                     <div className="relative overflow-hidden rounded-xl aspect-[3/2] mb-6 bg-gray-100">
                       <img 
-                        src={rp.heroImageUrl || '/images/blog-placeholder.jpg'} 
+                        src={normalizeBlogImagePath(rp.heroImageUrl) || '/images/cdn/GqszcNTBcTbleCyx.jpg'}
                         alt={rp.heroImageAlt || rp.title} 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         loading="lazy"

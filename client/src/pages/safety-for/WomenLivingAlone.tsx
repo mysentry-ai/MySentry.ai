@@ -4,7 +4,7 @@ export default function WomenLivingAlone() {
   return (
     <SEOPageTemplate
       seoTitle="Safety for Women Living Alone | MySentry"
-      seoDescription="Women living alone can feel secure with MySentry. Get peace of mind with fall detection, voice-activated panic alarms, and 24/7 monitoring. Start your free trial today."
+      seoDescription="Women living alone can feel secure with MySentry. Get peace of mind with fall detection, voice-activated panic alarms, and 24/7 monitoring. Review Plans and Eligibility today."
       canonical="https://mysentry.ai/safety-for/women-living-alone"
       label="For Women Living Alone"
       h1="Live Confidently, Independently, and Securely"
@@ -15,12 +15,12 @@ export default function WomenLivingAlone() {
         { title: "Set Up Contacts", description: "Easily add your trusted friends, family, and neighbors as emergency contacts." },
         { title: "Activate Features", description: "Turn on features like fall detection and voice-activated panic alarms to set up your safety system." },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing#pricing-plans" }}
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing#pricing-plans" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
       directAnswer="MySentry gives women living alone a complete safety solution for peace of mind, day and night. With features like automatic fall detection, voice-activated panic alarms, and a direct link to emergency services, it is a constant companion that helps you live with confidence and freedom."
       howItWorks={[
         "MySentry works quietly on your smartphone and compatible smartwatch, always ready to help.",
-        "If a fall is detected, it automatically alerts your emergency contacts after 2 minutes if you do not respond. You can also trigger a panic alarm instantly with your voice, a tap on your phone, or your watch.",
+        "If a fall is detected, it automatically alerts your emergency contacts after 2 minutes if you do not respond. You can also trigger a panic alarm promptly with your voice, a tap on your phone, or your watch.",
         "Our optional professional monitoring service can send emergency help to your location if needed.",
       ]}
       afterAlert={[
@@ -75,9 +75,9 @@ export default function WomenLivingAlone() {
       ]}
       relatedLinks={[
         { text: "Compare MySentry to Traditional Medical Alert Devices", href: "/compare/medical-alert-devices-vs-mysentry" },
-        { text: "How MySentry Helps Seniors Live on Their Own", href: "/safety-for/seniors-aging-in-place" },
+        { text: "How MySentry Helps Seniors Live on Their Own", href: "/use-cases/medical-alert-app-for-seniors" },
       ]}
-      heroImage="/images/hero-women-living-alone.png"
+      heroImage="/images/cdn/hero-women-safety-3jLHVRmcPw7sPeN2PuY5Ag.webp"
     />
   );
 }

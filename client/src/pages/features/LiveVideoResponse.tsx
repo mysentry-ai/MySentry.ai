@@ -4,25 +4,25 @@ export default function LiveVideoResponse() {
   return (
     <SEOPageTemplate
       seoTitle="Live Video Emergency Response for Safety | MySentry"
-      seoDescription="MySentry's live video emergency response connects you to 24/7 agents who verify your situation, offer guidance, and dispatch help. Get peace of mind, start your free trial."
+      seoDescription="MySentry's live video emergency response connects you to 24/7 agents who verify your situation, offer guidance, and contact emergency services when appropriate. Get peace of mind, review current plans and eligibility."
       canonical="https://mysentry.ai/features/live-video-response"
       label="FEATURE"
-      h1="Get Instant Help, Verified Safety."
-      h1Sub="Trained agents see and respond instantly."
+      h1="Get Prompt Help, Verified Safety."
+      h1Sub="Trained agents see and respond promptly."
       heroDescription="When an alert is triggered, a trained agent sees your situation in real time and coordinates the right help."
       problem="When you're in a scary situation, you're not sure if it's a real emergency and you don't want to be alone."
-      empathy="Feeling unsafe is frightening. MySentry's live video response means a trained professional can see what you see and help you instantly."
+      empathy="Feeling unsafe is frightening. MySentry's live video response means a trained professional can see what you see and help you promptly."
       steps={[
         { title: "Activate the Alarm", description: "Press the MySentry panic button, use a voice command, or tap your smartwatch." },
         { title: "Share Your Video", description: "A live video stream starts, allowing our 24/7 monitoring agents to see your situation." },
         { title: "Get Immediate Help", description: "The agent assesses the scene, talks to you, and coordinates with emergency services if needed." },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry's live video emergency response offers instant visual help during an alert. When you trigger an alarm, our 24/7 monitoring agents can see your phone's camera feed to understand the situation, give advice, and send emergency services. This ensures you get the right help quickly."
+      directAnswer="MySentry's live video emergency response offers prompt visual help during an alert. When you trigger an alarm, our 24/7 monitoring agents can see your phone's camera feed to understand the situation, give advice, and send emergency services. This ensures you get the right help quickly."
       howItWorks={[
         "When you feel unsafe, tap the panic button in the MySentry app, use a voice command, or tap your smartwatch.",
-        "The app instantly opens a live video stream with our 24/7 monitoring center.",
+        "The app promptly opens a live video stream with our 24/7 monitoring center.",
         "A trained agent sees your situation in real-time to confirm the emergency.",
         "The agent can talk to you, give guidance, and send first responders if you cannot.",
       ]}
@@ -35,7 +35,7 @@ export default function LiveVideoResponse() {
       bestFor={["Anyone who walks alone at night", "Real estate agents meeting new clients", "People who use online dating apps", "Students on college campuses", "Individuals needing quick, verified emergency help"]}
       notIdealFor={["Situations without an internet or cellular connection.", "Monitoring for events that don't involve personal safety.", "Users who prefer complete anonymity during emergencies."]}
       keyTakeaways={[
-        "Get instant visual confirmation of your emergency with live video.",
+        "Get prompt visual confirmation of your emergency with live video.",
         "Our 24/7 trained agents are always ready to respond and assist.",
         "Video verification helps first responders arrive faster and better prepared.",
         "Your privacy is protected, video only activates during an alarm.",

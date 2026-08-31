@@ -44,7 +44,7 @@ const tabs: TabContent[] = [
     description: "From teen drivers to aging parents, MySentry gives your whole family a safety net. Crash detection, panic alarms, and real-time location sharing keep everyone connected when it counts. You only get alerts when something actually needs your attention.",
     image: "/images/cdn/ILNBARpWjhgDooYL.jpg",
     features: [
-      "Crash detection with instant family notification",
+      "Crash detection with prompt family notification",
       "User-activated panic alarm for children and teens",
       "GPS location sharing during emergencies",
       "Smart alerts that notify you only when it matters"

@@ -1,5 +1,5 @@
 /**
- * Centralized route-meta config — single source of truth for all static routes.
+ * Centralized route-meta config  -  single source of truth for all static routes.
  *
  * Rules:
  *  - title: 50-60 chars; do NOT include "| MySentry" suffix (appended once in resolveMeta)
@@ -9,7 +9,7 @@
  *
  * This file is imported by BOTH the Express SSR middleware (server-side) and
  * client/src/components/SEO.tsx (client-side). Keep it free of any server-only
- * or client-only imports — pure data + types only.
+ * or client-only imports  -  pure data + types only.
  */
 
 export type RouteMeta = {
@@ -27,9 +27,9 @@ export const SITE_NAME = "MySentry";
 export const ROUTE_META: Record<string, RouteMeta> = {
   // ─── Core pages ───────────────────────────────────────────────────────────
   "/": {
-    title: "Personal Safety & Health Monitoring, 24/7",
+    title: "Personal Safety and Wellness Monitoring, 24/7",
     description:
-      "Turn your phone into a 24/7 safety companion. Panic alarm, fall detection, health monitoring, and live emergency response. Start your free trial.",
+      "MySentry combines a Panic Alarm, Safety Checks, eligible device detection, trusted contacts, professional monitoring, and supported wellness context, subject to plan and device requirements.",
   },
   "/about-us": {
     title: "About MySentry | Our Mission & Story",
@@ -39,17 +39,17 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/how-it-works": {
     title: "How MySentry Works | Panic Button & Monitoring",
     description:
-      "Panic button, fall detection, crash detection, and 24/7 professional response with live video. See how MySentry protects you in 3 simple steps.",
+      "See how MySentry alerts can begin, which context may be shared, how eligible monitoring works, and which device, permission, connectivity, and service limits apply.",
   },
   "/pricing": {
     title: "Pricing | Personal Safety Plans from $15/mo",
     description:
-      "MySentry plans from $15/mo. Panic alarm, fall detection, crash detection, and 24/7 monitoring on every tier. Start your 7-day free trial.",
+      "Review current MySentry plan information, eligible Ring offers, billing routes, supported features, device requirements, and service limitations before enrolling.",
   },
   "/pricing-legacy": {
     title: "Legacy Pricing | Plans from $15/mo",
     description:
-      "Individual ($15/mo) or Family ($30/mo). Fall detection, panic button, crash detection, and 24/7 monitoring. Try free for 7 days.",
+      "This legacy pricing route is not current. Review the active pricing page for current plan, eligibility, billing, and service limitation information.",
   },
   "/contact": {
     title: "Contact MySentry | Support & Sales",
@@ -67,14 +67,14 @@ export const ROUTE_META: Record<string, RouteMeta> = {
       "Join MySentry's dealer network. Offer personal safety, health monitoring, and emergency response to your clients. Competitive margins and full support.",
   },
   "/partners": {
-    title: "MySentry Partners | Technology & Channel",
+    title: "Partner Opportunities | MySentry",
     description:
-      "Explore MySentry's technology and channel partnerships with leading safety, healthcare, and enterprise organizations delivering personal protection.",
+      "Explore partner opportunities with MySentry for personal safety, supported wearable wellness context, and eligible workforce programs.",
   },
   "/privacy": {
     title: "Privacy Policy | MySentry",
     description:
-      "Read MySentry's privacy policy. How we collect, use, and protect your personal data, health information, and location data.",
+      "Read how MySentry describes collection, use, disclosure, retention, security, and choices for account, location, alert, and supported wellness information.",
   },
   "/terms": {
     title: "Terms & Conditions | MySentry",
@@ -86,12 +86,12 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/employers": {
     title: "Lone Worker Safety App for Employers",
     description:
-      "Protect your workforce. Fall detection, panic buttons, health monitoring, and live video response for lone workers. Reduce liability, comply with OSHA.",
+      "Explore app-based panic alerts, supported-device fall signals, safety check-ins, and professional monitoring options for lone and mobile workers.",
   },
   "/families": {
     title: "Family Safety App | GPS, Crash & Health Alerts",
     description:
-      "Keep your whole family safe with real-time GPS, crash detection, fall alerts, and health monitoring for kids, teens, parents, and grandparents. Try free.",
+      "Help family members stay connected with consent-based location sharing, panic alerts, supported-device safety signals, and emergency contact notifications.",
   },
   "/females": {
     title: "Safety App for Women | Panic Button & Monitoring",
@@ -99,16 +99,16 @@ export const ROUTE_META: Record<string, RouteMeta> = {
       "MySentry keeps women safe with a discreet panic button, live location, and 24/7 monitoring. Walk, run, commute, and travel with confidence.",
   },
   "/seniors": {
-    title: "Medical Alert App for Seniors | Fall Detection",
+    title: "Safety and Fall Alert App for Older Adults",
     description:
-      "MySentry helps seniors stay independent with fall detection, health monitoring, and emergency response. No pendant needed. Just your phone and smartwatch.",
+      "Review MySentry supported-device fall alerts, Panic Alarm, Safety Checks, trusted contacts, wellness context, monitoring, and limitations for older adults.",
   },
 
   // ─── Nurses pages ─────────────────────────────────────────────────────────
   "/nurses": {
-    title: "Nurse Safety App | Panic Button & Monitoring",
+    title: "Personal Safety App for Nurses",
     description:
-      "Panic button, fall detection, and 24/7 monitoring for nurses. Built for home health, travel, ER, and night-shift roles. Start free.",
+      "Review MySentry Panic Alarm, Safety Checks, eligible incident detection, trusted contacts, monitoring, requirements, and limitations for nurses.",
   },
   "/nurses/er-trauma": {
     title: "ER & Trauma Nurse Safety | Panic & Monitoring",
@@ -142,85 +142,85 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/features": {
     title: "Safety & Monitoring Features | MySentry",
     description:
-      "Panic alarm, fall detection, crash detection, health monitoring, and live video emergency response. See how MySentry protects you 24/7.",
+      "Review current MySentry personal safety and wellness features, including device, plan, permission, connectivity, privacy, and monitoring requirements.",
   },
   "/features/panic-button-app": {
     title: "Panic Button App | One-Press Emergency Alarm with Live Video",
     description:
-      "MySentry's panic button app sends a silent alarm with live video and GPS to 24/7 professional monitors. One press gets you help fast. Available on iOS and Android.",
+      "Learn how MySentry panic alerts can share permitted safety context with professional monitoring and selected emergency contacts on supported devices.",
   },
   "/features/fall-detection-app": {
     title: "Fall Detection App | Automatic Fall Alert with Emergency Response",
     description:
-      "MySentry automatically detects falls and alerts 24/7 professional monitors with live video and GPS. No button press needed. Protect yourself and your loved ones.",
+      "Learn how MySentry works with supported smartwatch fall signals, user prompts, professional monitoring, and selected emergency contacts.",
   },
   "/features/crash-detection": {
     title: "Crash Detection App | Automatic Car Accident Alert & Response",
     description:
-      "MySentry detects car crashes automatically and alerts emergency services with your location and live video. Get help fast after an accident, even if you can't call.",
+      "Learn how MySentry uses supported-device crash signals, a user response window, location context, and professional monitoring during a possible crash event.",
   },
   "/features/24-7-professional-monitoring": {
     title: "24/7 Professional Monitoring | Live Video Emergency Response",
     description:
-      "MySentry's 24/7 professional monitoring team verifies emergencies with live video and dispatches help fast. Real humans, real response, around the clock.",
+      "See how MySentry routes eligible safety alerts to professional monitoring for review, contact attempts, and possible escalation based on the situation.",
   },
   "/features/emergency-contacts": {
-    title: "Emergency Contacts App | Real-Time Safety Alerts for Loved Ones",
+    title: "Emergency Contact Alerts",
     description:
-      "MySentry notifies your emergency contacts instantly with your location and live video when an alert is triggered. Keep your family informed and connected.",
+      "Learn how selected contacts may receive supported alert notifications and permitted context, with setup requirements, privacy controls, and delivery limitations.",
   },
   "/features/live-video-response": {
-    title: "Live Video Response | Emergency Monitoring with Real-Time Video",
+    title: "Video Context During Eligible Alerts",
     description:
-      "MySentry streams live video to professional monitors during emergencies so they can assess the situation and dispatch the right help fast. See what sets us apart.",
+      "Learn when permitted video context may be available during an eligible alert, how monitoring may use it, and which privacy and connectivity limits apply.",
   },
   "/features/health-monitoring": {
-    title: "Health Monitoring App | Real-Time Vitals Tracking & Alerts",
+    title: "Wearable Wellness Signals and Alerts",
     description:
-      "MySentry monitors your heart rate, SpO2, HRV, and more in real time. Get health alerts before a crisis develops. Compatible with Apple Watch and Samsung Galaxy Watch.",
+      "Review supported wearable wellness signals, informational alert context, device compatibility, permissions, and non-medical limitations.",
   },
   "/features/meetsafe-check-ins": {
     title: "MeetSafe Check-Ins | Automated Safety Check-In App",
     description:
-      "MySentry's MeetSafe check-ins let you schedule automated safety check-ins. If you don't respond, your emergency contacts and monitors are alerted instantly.",
+      "Schedule a MeetSafe check-in and learn how MySentry can begin the configured alert workflow if you do not confirm that you are safe.",
   },
   "/features/safety-check-in-app": {
     title: "Safety Check-In App | Scheduled Check-Ins for Lone Workers",
     description:
-      "MySentry's safety check-in app keeps lone workers and solo travelers safe with scheduled check-ins and automatic alerts if they miss a response. Try it free.",
+      "Plan time-based safety check-ins for solo activities and learn how a missed response can begin the configured MySentry alert workflow.",
   },
-  // Semrush-flagged duplicate — needs unique entry
+  // Semrush-flagged duplicate  -  needs unique entry
   "/features/health-monitoring-app-with-alerts": {
     title: "Health Monitoring App with Alerts | Vitals Tracking & Safety",
     description:
-      "Track your heart rate, SpO2, and HRV with MySentry's health monitoring app. Get real-time safety alerts when vitals fall outside normal ranges. Works with Apple Watch.",
+      "Explore supported smartwatch wellness metrics and personalized safety alerts, with platform, permission, connectivity, and non-medical limitations explained.",
   },
 
   // ─── Use Cases ────────────────────────────────────────────────────────────
   "/use-cases": {
     title: "Who Uses MySentry | Safety App Use Cases",
     description:
-      "Discover how MySentry protects women, families, seniors, lone workers, and healthcare workers with 24/7 safety monitoring and emergency response.",
+      "Explore MySentry use cases for individuals, families, older adults, and work teams, with current feature, device, privacy, and service limitations.",
   },
   "/use-cases/safety-app-for-women": {
     title: "Safety App for Women: Feel Secure, Live Free",
     description:
-      "MySentry is a safety app for women, offering a panic alarm, fall detection, and 24/7 monitoring. Feel secure and live freely. Get your free trial today.",
+      "Review Panic Alarm, Safety Checks, trusted contacts, permission-based location context, monitoring options, and practical limitations for women.",
   },
   "/use-cases/family-safety-app": {
     title: "Family Safety App with Monitoring & Alerts",
     description:
-      "Keep your family safe with MySentry. Get real-time location, panic alerts, and 24/7 monitoring for peace of mind. Protect loved ones and get help fast. Try it free.",
+      "Review permission-based family safety tools, trusted contacts, alerts, Safety Checks, supported devices, privacy boundaries, and service limitations.",
   },
   "/use-cases/medical-alert-app-for-seniors": {
-    title: "Medical Alert App for Seniors: Stay Safe",
+    title: "Senior Safety App for Families and Caregivers",
     description:
-      "MySentry helps seniors stay safe and independent with a medical alert app. It offers fall detection, health alerts, and 24/7 monitoring. Start your free trial.",
+      "Review MySentry senior safety planning for families, including supported-device alerts, Safety Checks, trusted contacts, monitoring eligibility, privacy, and limitations.",
   },
   "/use-cases/lone-worker-safety-app": {
     title: "Lone Worker Safety App | Panic Alarm & 24/7 Monitoring",
     description:
-      "Protect your lone workers with MySentry's safety app. Features panic alarm, fall detection, and 24/7 monitoring to ensure their safety wherever they work. Book a demo.",
+      "Review Panic Alarm, Safety Checks, eligible device detection, monitoring, permissions, connectivity, and program limitations for lone workers.",
   },
   "/use-cases/home-healthcare-worker-safety": {
     title: "Home Healthcare Worker Safety App | Lone Worker Protection",
@@ -230,7 +230,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/use-cases/teen-driver-safety": {
     title: "Teen Driver Safety: Crash Detection for Parents",
     description:
-      "Worried about your teen on the road? MySentry offers automatic crash detection, real-time location, and 24/7 monitoring. Get alerts if your teen is in an accident.",
+      "Review eligible crash signals, user response windows, trusted contacts, permitted location context, monitoring, and limitations for teen-driver plans.",
   },
 
   // ─── Industries ───────────────────────────────────────────────────────────
@@ -242,7 +242,7 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/industries/home-healthcare": {
     title: "Home Healthcare Safety App | Lone Worker Protection",
     description:
-      "MySentry protects home healthcare workers with fall detection, a panic alarm, and 24/7 monitoring. Keep your staff safe on every home visit. Book a demo today.",
+      "Review supplemental Panic Alarm, Safety Checks, monitoring, permissions, connectivity, and response-planning considerations for home healthcare teams.",
   },
   "/industries/construction": {
     title: "Construction Safety App for Workers",
@@ -252,70 +252,105 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/industries/retail": {
     title: "Retail Worker Safety App | Silent Panic Alarm & Monitoring",
     description:
-      "MySentry protects retail workers with a silent panic alarm, fall detection, and 24/7 monitoring. Reduce workplace violence risk and keep your team safe.",
+      "Review supplemental Panic Alarm, Safety Checks, monitoring, privacy, training, and response-planning considerations for retail teams.",
   },
   "/industries/hospitality": {
     title: "Hospitality Worker Safety App | Panic Button & 24/7 Monitoring",
     description:
-      "Keep hotel and hospitality workers safe with MySentry's panic alarm, fall detection, and 24/7 professional monitoring. Protect your lone workers on every shift.",
+      "Review supplemental Panic Alarm, Safety Checks, monitoring, privacy, training, and response-planning considerations for hospitality teams.",
   },
   "/industries/real-estate": {
     title: "Real Estate Agent Safety App | Panic Button & GPS Tracking",
     description:
-      "MySentry protects real estate agents during solo showings with a discreet panic alarm, GPS tracking, and 24/7 monitoring. Keep your agents safe on every appointment.",
+      "Review supplemental Panic Alarm, Safety Checks, trusted contacts, monitoring, privacy, and response-planning considerations for real estate teams.",
   },
   "/industries/education": {
     title: "Education Safety App | Staff & Campus Worker Protection",
     description:
-      "MySentry helps schools and universities protect lone staff and campus workers with fall detection, a panic alarm, and 24/7 professional monitoring. Book a demo.",
+      "Review supplemental Panic Alarm, Safety Checks, monitoring, privacy, accessibility, and response-planning considerations for education teams.",
   },
   "/industries/security-guarding": {
     title: "Security Guard Safety App | Lone Worker Monitoring & Panic Alarm",
     description:
-      "MySentry protects security guards working alone with a panic alarm, fall detection, and 24/7 monitoring. Get real-time alerts and live video response. Book a demo.",
+      "Review supplemental Panic Alarm, Safety Checks, eligible device detection, monitoring, connectivity, and response-planning considerations for security teams.",
   },
 
   // ─── Compare ──────────────────────────────────────────────────────────────
   "/compare": {
-    title: "MySentry vs Competitors | Safety App Comparison",
+    title: "How to Compare Personal Safety Services",
     description:
-      "Compare MySentry with Noonlight, Life360, FallCall, Google Personal Safety, and SOSecure/ADT. See which safety app is right for you.",
+      "Use an evidence-first checklist to compare device support, alert workflows, monitoring, privacy, pricing, eligibility, and service limitations.",
   },
   "/compare/noonlight-vs-mysentry": {
-    title: "Noonlight vs MySentry | Which Safety App is Better?",
+    title: "Noonlight and MySentry Comparison Under Review",
     description:
-      "Compare Noonlight and MySentry side by side. See which app offers better fall detection, panic alarms, health monitoring, and 24/7 professional monitoring.",
+      "The Noonlight and MySentry comparison is temporarily held while current official product, pricing, compatibility, privacy, and policy sources are reviewed.",
   },
   "/compare/life360-vs-mysentry": {
-    title: "Life360 vs MySentry | Family Safety App Comparison",
+    title: "Life360 and MySentry Comparison Under Review",
     description:
-      "Compare Life360 and MySentry. MySentry adds fall detection, health monitoring, and 24/7 professional monitoring to family GPS tracking. See the full comparison.",
+      "The Life360 and MySentry comparison is temporarily held while current official product, pricing, compatibility, privacy, and policy sources are reviewed.",
   },
   "/compare/fallcall-vs-mysentry": {
-    title: "FallCall vs MySentry | Fall Detection App Comparison",
+    title: "FallCall and MySentry Comparison Under Review",
     description:
-      "Compare FallCall and MySentry's fall detection features. MySentry adds panic alarms, crash detection, and 24/7 live video monitoring. See which app protects you better.",
+      "The FallCall and MySentry comparison is temporarily held while current official product, pricing, compatibility, privacy, and policy sources are reviewed.",
   },
   "/compare/google-personal-safety-vs-mysentry": {
-    title: "Google Personal Safety vs MySentry | Safety App Comparison",
+    title: "Google Personal Safety and MySentry Comparison Under Review",
     description:
-      "Compare Google Personal Safety and MySentry. MySentry offers 24/7 professional monitoring, fall detection, and health tracking that Google's app doesn't provide.",
+      "The Google Personal Safety and MySentry comparison is temporarily held while current official product, compatibility, privacy, and policy sources are reviewed.",
   },
   "/compare/sosecure-adt-vs-mysentry": {
-    title: "SOSecure ADT vs MySentry | Personal Safety App Comparison",
+    title: "ADT SoSecure and MySentry Comparison Under Review",
     description:
-      "Compare SOSecure by ADT and MySentry. See how MySentry's fall detection, health monitoring, and live video response stack up against ADT's personal safety app.",
+      "The ADT SoSecure and MySentry comparison is temporarily held while current official product, pricing, compatibility, privacy, and policy sources are reviewed.",
   },
   "/compare/medical-alert-devices-vs-mysentry": {
-    title: "Medical Alert Devices vs MySentry | Modern Safety Comparison",
+    title: "Medical Alert Service Comparison Under Review",
     description:
-      "Compare traditional medical alert devices with MySentry. No pendant required. MySentry uses your smartphone and smartwatch for fall detection and 24/7 monitoring.",
+      "This category comparison is temporarily held while equipment, monitoring, pricing, eligibility, and service limitations are reviewed against current sources.",
   },
-  // Semrush-flagged duplicate — needs unique entry
+  // Semrush-flagged duplicate  -  needs unique entry
   "/compare/mysentry-vs-citizen": {
-    title: "MySentry vs Citizen App | Personal Safety App Comparison",
+    title: "Citizen and MySentry Comparison Under Review",
     description:
-      "Compare MySentry and the Citizen app. MySentry offers personal fall detection, health monitoring, and direct 24/7 professional emergency response that Citizen doesn't provide.",
+      "The Citizen and MySentry comparison is temporarily held while current official product, pricing, compatibility, privacy, and policy sources are reviewed.",
+  },
+  "/compare/apple-watch-fall-detection-vs-mysentry": {
+    title: "Apple Watch and MySentry Comparison Under Review",
+    description:
+      "This Apple Watch and MySentry comparison is temporarily held while current official compatibility, feature, privacy, and service information is reviewed.",
+  },
+  "/compare/lively-vs-mysentry": {
+    title: "Lively vs MySentry | Senior Safety Comparison",
+    description:
+      "Compare two approaches to senior safety, including device requirements, monitoring options, fall-event support, family notifications, and current pricing.",
+  },
+  "/compare/medical-guardian-vs-mysentry": {
+    title: "Medical Guardian vs MySentry | Safety Comparison",
+    description:
+      "Compare a dedicated medical alert service with MySentry's phone and smartwatch safety approach, including equipment, monitoring, and feature differences.",
+  },
+  "/compare/oura-ring-vs-mysentry": {
+    title: "Oura Ring vs MySentry | Wellness and Safety",
+    description:
+      "Compare Oura's wellness-focused wearable experience with MySentry's personal safety workflows. This comparison does not imply a live Oura integration.",
+  },
+  "/compare/whoop-vs-mysentry": {
+    title: "WHOOP vs MySentry | Fitness and Safety Comparison",
+    description:
+      "Compare WHOOP's fitness and recovery focus with MySentry's personal safety workflows, supported-device signals, and monitoring options.",
+  },
+  "/compare/traditional-medical-alerts-vs-mysentry": {
+    title: "Traditional Medical Alert Services Comparison Review",
+    description:
+      "Use a structured checklist to compare equipment, monitoring, eligibility, pricing, privacy, and limitations. Product-specific claims remain under evidence review.",
+  },
+  "/compare/fitness-wearables-vs-mysentry": {
+    title: "Fitness Wearables and MySentry Comparison Review",
+    description:
+      "Use a structured checklist to compare wellness wearables with personal safety services. Product-specific claims remain under evidence review.",
   },
 
   // ─── Solutions ────────────────────────────────────────────────────────────
@@ -330,9 +365,9 @@ export const ROUTE_META: Record<string, RouteMeta> = {
       "Protect your agents with MySentry's discreet panic alarm and safety check-in features. Designed for the unique risks of the real estate industry.",
   },
   "/solutions/delivery-drivers": {
-    title: "Safety Solutions for Delivery Drivers | Crash Detection & GPS",
+    title: "Delivery Driver Safety App for Teams",
     description:
-      "MySentry offers real-time safety monitoring for delivery drivers, including crash detection, panic alarms, and GPS tracking, to protect your fleet and lone workers.",
+      "Review MySentry Panic Alarm, eligible crash detection, Safety Checks, monitoring, permissions, and limits for delivery-driver teams.",
   },
   "/solutions/construction": {
     title: "Construction Safety Solution | Fall Detection for Job Sites",
@@ -349,74 +384,141 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/safety-for/women-living-alone": {
     title: "Safety for Women Living Alone | Panic Alarm & 24/7 Monitoring",
     description:
-      "Women living alone can feel secure with MySentry. Get peace of mind with fall detection, voice-activated panic alarms, and 24/7 monitoring. Start your free trial today.",
+      "Women living alone can feel secure with MySentry. Get peace of mind with fall detection, voice-activated panic alarms, and 24/7 monitoring. Review Plans and Eligibility today.",
   },
   "/safety-for/seniors-aging-in-place": {
     title: "Aging in Place Safety: Keep Seniors Safe at Home",
     description:
-      "Help seniors live independently with fall detection, health monitoring, and 24/7 response. Keep loved ones safe at home. Start free trial.",
+      "Help seniors live independently with fall detection, health monitoring, and 24/7 response. Keep loved ones safe at home. Review plan eligibility.",
   },
   "/safety-for/solo-travelers": {
-    title: "Solo Travel Safety App | Stay Safe Anywhere in the World",
+    title: "Solo Travel Safety App and Check-Ins",
     description:
-      "Solo travelers, explore confidently. MySentry is a safety app with 24/7 monitoring, panic alarms, and fall detection. Get help anywhere, anytime. Start your free trial.",
+      "Prepare MySentry Panic Alarm, Safety Checks, trusted contacts, monitoring, and an offline backup plan before traveling alone.",
   },
 
   // ─── Case Studies ─────────────────────────────────────────────────────────
   "/case-studies/home-healthcare": {
-    title: "Case Study: MySentry for Home Healthcare Workers",
+    title: "Home Healthcare Case Study Evidence Review",
     description:
-      "Discover how a home healthcare agency improved worker safety and satisfaction with MySentry's fall detection and panic alarm system. Read the full case study.",
+      "The MySentry home healthcare case study is temporarily held while customer outcomes and supporting evidence are reviewed.",
   },
   "/case-studies/real-estate": {
-    title: "MySentry Real Estate Case Study: Enhancing Agent Safety",
+    title: "Real Estate Case Study Evidence Review",
     description:
-      "Discover how a regional real estate brokerage improved agent safety, boosted confidence, and saved on liability costs with MySentry's comprehensive safety solution.",
+      "The MySentry real estate case study is temporarily held while customer outcomes and supporting evidence are reviewed.",
   },
   "/case-studies/field-services": {
-    title: "MySentry Case Study: Field Services Safety Transformation",
+    title: "Field Services Case Study Evidence Review",
     description:
-      "Discover how a national field services company enhanced worker safety, achieved 100% OSHA compliance, and saw a 78% reduction in claims with MySentry.",
+      "The MySentry field services case study is temporarily held while customer outcomes and supporting evidence are reviewed.",
   },
 
   // ─── Resources ────────────────────────────────────────────────────────────
   "/resources/employer-one-pager": {
-    title: "MySentry Employer One-Pager | Workforce Safety Overview",
+    title: "Employer Safety One-Pager",
     description:
-      "Download MySentry's employer one-pager. Get a concise overview of our lone worker safety features, pricing, and how MySentry protects your workforce.",
+      "A concise employer overview of MySentry Panic Alarm, Safety Checks, eligible incident detection, professional monitoring, privacy, and limitations.",
   },
 
   // ─── Integrations ─────────────────────────────────────────────────────────
   "/integrations/apple-watch": {
-    title: "Apple Watch Safety: MySentry for Personal Protection",
+    title: "Apple Watch and MySentry Compatibility Review",
     description:
-      "Turn your Apple Watch into a personal safety device. MySentry adds fall detection, a panic alarm, and crash alerts. Get help fast, directly from your wrist.",
+      "Review current Apple Watch eligibility, setup, supported controls, wearable wellness context, monitoring, and important limitations for MySentry.",
   },
   "/integrations/samsung-galaxy-watch": {
-    title: "Samsung Galaxy Watch Safety App | MySentry",
+    title: "Samsung Galaxy Watch and MySentry Compatibility Review",
     description:
-      "Turn your Samsung Galaxy Watch into a safety device. MySentry adds fall detection, panic alarm, and 24/7 monitoring to your Galaxy Watch. Start your free trial.",
+      "Review current Samsung Galaxy Watch eligibility, setup, supported controls, wearable wellness context, monitoring, and important limitations for MySentry.",
   },
   "/integrations/oura-ring": {
-    title: "Oura Ring Integration: Add 24/7 Safety Monitoring",
+    title: "Oura Ring and MySentry | Integration Status",
     description:
-      "Integrate your Oura Ring with MySentry for 24/7 emergency response. Get fall detection, panic alarms, and professional monitoring. Stay safe and get help fast.",
+      "Review the current status of a potential Oura Ring connection with MySentry. No production Oura integration is represented as available on this page.",
+  },
+
+  // ─── Additional public routes ─────────────────────────────────────────────
+  "/personal-safety-app": {
+    title: "Personal Safety App With Monitoring",
+    description:
+      "Review the MySentry Panic Alarm, Safety Checks, eligible device detection, trusted contacts, professional monitoring, requirements, and limitations.",
+  },
+  "/medical-alert-system-for-seniors": {
+    title: "Senior Safety and Fall Alert App",
+    description:
+      "Review MySentry supported-device fall alerts, Panic Alarm, Safety Checks, trusted contacts, professional monitoring, and limitations for older adults.",
+  },
+  "/who-we-protect/women": {
+    title: "Personal Safety Support for Women | MySentry",
+    description:
+      "Explore consent-based location sharing, discreet panic alerts, safety check-ins, emergency contacts, and professional monitoring options for women.",
+  },
+  "/who-we-protect/seniors": {
+    title: "Safety Support for Older Adults | MySentry",
+    description:
+      "Explore supported-watch fall signals, panic alerts, selected wellness insights, emergency contacts, and professional monitoring options for older adults.",
+  },
+  "/who-we-protect/students": {
+    title: "Student Safety App | Check-Ins and Panic Alerts",
+    description:
+      "Explore safety check-ins, panic alerts, consent-based location sharing, emergency contacts, and monitoring options for college and adult students.",
+  },
+  "/who-we-protect/children-and-teens": {
+    title: "Family Safety Support for Teens | MySentry",
+    description:
+      "Learn how families can use user-activated panic alerts, supported-device crash signals, and consent-based location sharing with age-appropriate boundaries.",
+  },
+  "/who-we-protect/drivers": {
+    title: "Driver Safety App | Crash Signals and Alerts",
+    description:
+      "Learn how supported-device crash signals, user response windows, location context, emergency contacts, and professional monitoring fit into MySentry's driver workflow.",
+  },
+  "/who-we-protect/employers": {
+    title: "Workforce Safety App for Employers | MySentry",
+    description:
+      "Explore panic alerts, check-ins, supported-device fall signals, and professional monitoring options for organizations with lone and mobile workers.",
+  },
+  "/features/automated-call": {
+    title: "Automated Call | Discreet Exit Support",
+    description:
+      "Learn how MySentry's scheduled Automated Call can provide a discreet reason to step away from an uncomfortable situation without implying emergency escalation.",
+  },
+  "/features/family-connectivity": {
+    title: "Family Connectivity | Consent-Based Location Sharing",
+    description:
+      "Learn how time-bounded, consent-based location sharing and safety notifications can help selected family members stay connected without continuous health surveillance.",
+  },
+  "/features/secure-route": {
+    title: "Secure Route | Feature Status",
+    description:
+      "Secure Route availability is being reviewed. This page does not represent the feature as generally available until platform and plan support are confirmed.",
+  },
+  "/ring": {
+    title: "MySentry for Ring Users | Personal and Home Safety",
+    description:
+      "Learn how eligible Ring camera context may complement MySentry's personal safety workflows, subject to account, camera, subscription, consent, and regional requirements.",
+  },
+  "/integrations/ring": {
+    title: "Ring and MySentry Integration | Eligibility and Setup",
+    description:
+      "Review MySentry and Ring eligibility, setup, billing, camera selection, consent, subscription dependencies, and current integration limitations.",
   },
 
   // ─── Guides ───────────────────────────────────────────────────────────────
   "/guides/lone-worker-safety": {
-    title: "Lone Worker Safety Guide, Compliance & Best Practices",
+    title: "Lone Worker Safety Planning Guide",
     description:
-      "Keep your lone workers safe and meet compliance. MySentry helps you understand OSHA rules, duty of care, and safety tech. Protect your team today.",
+      "Build a practical lone-worker safety plan covering hazards, check-ins, alerts, connectivity, privacy, training, and escalation responsibilities.",
   },
   "/guides/professional-monitoring": {
     title: "Professional Monitoring vs. App-Only Safety | Guide",
     description:
-      "Professional monitoring provides 24/7 help. MySentry agents verify emergencies with live video and dispatch help fast, unlike app-only alerts. Get peace of mind today.",
+      "Professional monitoring provides 24/7 help. MySentry agents verify emergencies with live video and contact emergency services when appropriate fast, unlike app-only alerts. Get peace of mind today.",
   },
   "/guides/senior-safety-planning": {
-    title: "Senior Safety Planning Guide for Aging Parents",
+    title: "Senior Safety Planning Guide for Families",
     description:
-      "Help your aging parents stay safe and independent at home. This guide shows you how to plan for their safety, prevent falls, and use MySentry for peace of mind.",
+      "Create a respectful senior safety plan covering home hazards, contacts, medical guidance, technology, privacy, and emergency steps.",
   },
 };

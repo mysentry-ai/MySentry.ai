@@ -11,7 +11,7 @@ const faqs = [
   },
   {
     q: "Does MySentry work without a parent nearby?",
-    a: "MySentry works anywhere with a cellular or Wi-Fi signal. Emergency contacts receive real-time GPS location, SMS alerts, and push notifications the moment an incident is detected. Parents do not need to be nearby. They are notified instantly no matter where they are.",
+    a: "MySentry works anywhere with a cellular or Wi-Fi signal. Emergency contacts receive real-time GPS location, SMS alerts, and push notifications the moment an incident is detected. Parents do not need to be nearby. They are notified promptly no matter where they are.",
   },
   {
     q: "Can students use MySentry on an iPhone or Android?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "How much does MySentry cost for a student?",
-    a: "The Individual plan starts at $15/month or $144/year (saving two months). There is a 7-day free trial with no charge if cancelled within the trial period. No additional hardware is required beyond a smartphone.",
+    a: "Review the current Individual plan, annual billing terms, supported-device requirements, and any introductory offer displayed during enrollment before subscribing.",
   },
   {
     q: "Can a student add their parents as emergency contacts?",
@@ -112,7 +112,7 @@ export default function Students() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/pricing">
                   <button className="bg-primary text-white font-bold px-8 py-4 rounded-full hover:bg-primary/90 transition-all flex items-center gap-2">
-                    Start Free Trial <ArrowRight className="w-4 h-4" />
+                    Review Plans and Eligibility <ArrowRight className="w-4 h-4" />
                   </button>
                 </Link>
                 <Link href="/how-it-works">
@@ -136,7 +136,7 @@ export default function Students() {
         </div>
       </section>
 
-      {/* Overview — moved from hero */}
+      {/* Overview  -  moved from hero */}
       <section className="py-16 bg-white">
         <div className="container max-w-4xl mx-auto px-4">
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -145,7 +145,7 @@ export default function Students() {
           <div className="bg-[#f0f9f4] border-l-4 border-primary rounded-xl p-5 shadow-sm">
             <p className="text-sm font-bold text-primary uppercase tracking-wider mb-1">Quick Answer</p>
             <p className="text-gray-700 leading-relaxed">
-              MySentry is a personal safety app for students that combines a panic button, fall detection, crash detection, real-time GPS location sharing, and 24/7 professional monitoring in one app. It works on any iPhone or Android and requires no extra hardware. Plans start at $15/month with a 7-day free trial.
+              MySentry is a personal safety app for students that combines a panic button, fall detection, crash detection, real-time GPS location sharing, and 24/7 professional monitoring in one app. It works on any iPhone or Android and requires no extra hardware. Plans start at $15/month with any introductory offer displayed during enrollment.
             </p>
           </div>
         </div>
@@ -228,14 +228,14 @@ export default function Students() {
         <div className="container max-w-4xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] mb-4 uppercase tracking-tighter">
-              Set Up in Under 5 Minutes
+              Set Up in Timing varies
             </h2>
           </div>
           <div className="space-y-6">
             {[
               { step: "1", title: "Download the app", desc: "Available on iOS and Android. Pairs with Apple Watch (Series 7+) and Samsung Galaxy Watch (Watch 4+) for wrist-based alerts." },
               { step: "2", title: "Add emergency contacts", desc: "Add up to 3 contacts: parents, siblings, a roommate, or a trusted friend. They receive SMS, push notification, and email alerts with live GPS location." },
-              { step: "3", title: "Choose a plan", desc: "Individual plan from $15/month. 7-day free trial included. No hardware to buy, no contract to sign." },
+              { step: "3", title: "Choose a plan", desc: "Individual plan from $15/month. Current offer terms and eligibility are shown during enrollment. No hardware to buy, no contract to sign." },
               { step: "4", title: "Go anywhere with confidence", desc: "Fall detection and health monitoring run in the background. Panic button is one tap away. MeetSafe timers keep contacts informed on late-night outings." },
             ].map((s, i) => (
               <div key={i} className="flex gap-6 items-start">
@@ -316,7 +316,7 @@ export default function Students() {
           <div className="grid md:grid-cols-3 gap-4">
             {[
               { title: "Panic Button App", href: "/features/panic-button-app", desc: "One-tap silent SOS with live video" },
-              { title: "MeetSafe Check-Ins", href: "/features/meetsafe-check-ins", desc: "Safety timers for solo outings" },
+              { title: "MeetSafe Check-Ins", href: "/features/safety-check-in-app", desc: "Safety timers for solo outings" },
               { title: "Crash Detection", href: "/features/crash-detection", desc: "Automatic vehicle crash alerts" },
               { title: "Safety App for Women", href: "/females", desc: "Personal safety for women on the go" },
               { title: "Personal Safety App", href: "/personal-safety-app", desc: "The all-in-one safety app overview" },

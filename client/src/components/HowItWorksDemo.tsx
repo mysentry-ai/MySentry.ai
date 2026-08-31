@@ -24,28 +24,28 @@ export default function HowItWorksDemo() {
         return [
           {
             title: "Step 1: Fall Detected",
-            description: "MySentry detects a fall and starts a 30-second timer.",
+            description: "A supported device may detect a fall-like event and start a check-in timer.",
             icon: AlertTriangle,
             color: "text-orange-500",
             bgColor: "bg-orange-100"
           },
           {
             title: "Step 2: User Response",
-            description: "You have 30 seconds to confirm you're okay. If you're not, help will be triggered.",
+            description: "You can confirm you are okay. If the timer expires, the configured alert workflow continues.",
             icon: Timer,
             color: "text-blue-500",
             bgColor: "bg-blue-100"
           },
           {
             title: "Step 3: Panic Alarm Triggered",
-            description: "If no response, the panic alarm is automatically activated.",
+            description: "If there is no response, an alert may start according to the device, app, and permission settings.",
             icon: Bell,
             color: "text-red-500",
             bgColor: "bg-red-100"
           },
           {
-            title: "Step 4: Help Dispatched",
-            description: "Your location, battery status, & live audio/video are shared with emergency contacts & the monitoring team.",
+            title: "Step 4: Context Shared for Review",
+            description: "Permitted context may be shared with the monitoring team and trusted contacts. Any escalation depends on the situation and service availability.",
             icon: ShieldCheck,
             color: "text-green-600",
             bgColor: "bg-green-100"
@@ -55,28 +55,28 @@ export default function HowItWorksDemo() {
         return [
           {
             title: "Step 1: Crash Detected",
-            description: "Sensors detect a high-impact collision instantly.",
+            description: "Supported device sensors may identify a high-impact event that could indicate a crash.",
             icon: Car,
             color: "text-red-500",
             bgColor: "bg-red-100"
           },
           {
             title: "Step 2: Check Driver Status",
-            description: "We attempt to contact you immediately via the device.",
+            description: "The app begins a check-in so you can confirm your status or continue the alert.",
             icon: Phone,
             color: "text-blue-500",
             bgColor: "bg-blue-100"
           },
           {
-            title: "Step 3: Emergency Alert",
-            description: "If no response, emergency services are notified with your exact location.",
+            title: "Step 3: Alert Context Routed",
+            description: "If there is no response, eligible alert context may be routed for review when connectivity and permissions allow.",
             icon: Bell,
             color: "text-orange-500",
             bgColor: "bg-orange-100"
           },
           {
-            title: "Step 4: Help Arrives",
-            description: "First responders are dispatched to the crash site.",
+            title: "Step 4: Escalation Coordinated",
+            description: "The monitoring team may attempt contact and notify trusted contacts or emergency services when appropriate. Response is not guaranteed.",
             icon: ShieldCheck,
             color: "text-green-600",
             bgColor: "bg-green-100"
@@ -92,22 +92,22 @@ export default function HowItWorksDemo() {
             bgColor: "bg-red-100"
           },
           {
-            title: "Step 2: Instant Connection",
-            description: "No waiting. You are immediately connected to an agent.",
+            title: "Step 2: Alert Routed",
+            description: "An eligible alert is routed to the monitoring workflow when plan, connectivity, and regional availability allow.",
             icon: Phone,
             color: "text-blue-500",
             bgColor: "bg-blue-100"
           },
           {
             title: "Step 3: Live Monitoring",
-            description: "Agent listens in and views live video/location.",
+            description: "A monitoring agent may review permitted audio, video, location, and account context when available.",
             icon: Activity,
             color: "text-purple-500",
             bgColor: "bg-purple-100"
           },
           {
-            title: "Step 4: Help Dispatched",
-            description: "Police or EMS are sent to your location immediately.",
+            title: "Step 4: Response Coordinated",
+            description: "The agent may contact you, notify trusted contacts, or coordinate with emergency services when appropriate.",
             icon: ShieldCheck,
             color: "text-green-600",
             bgColor: "bg-green-100"
@@ -116,15 +116,15 @@ export default function HowItWorksDemo() {
       case "health":
         return [
           {
-            title: "Step 1: Vitals Monitored",
-            description: "Continuous tracking of heart rate and oxygen levels.",
+            title: "Step 1: Wellness Signals Available",
+            description: "Supported wearable signals can be displayed when a compatible device is connected and permissions are enabled.",
             icon: HeartPulse,
             color: "text-pink-500",
             bgColor: "bg-pink-50"
           },
           {
-            title: "Step 2: Anomaly Detected",
-            description: "Irregular heart rate or low oxygen detected.",
+            title: "Step 2: Signal Flagged",
+            description: "The app may flag a supported signal that falls outside a configured or device-provided range.",
             icon: Activity,
             color: "text-orange-500",
             bgColor: "bg-orange-50"
@@ -137,8 +137,8 @@ export default function HowItWorksDemo() {
             bgColor: "bg-blue-50"
           },
           {
-            title: "Step 4: Professional Review",
-            description: "If critical, our medical team reviews data and contacts you.",
+            title: "Step 4: Review Your Next Step",
+            description: "Wellness information is not a diagnosis. Follow device guidance and contact a qualified medical professional when needed.",
             icon: ShieldCheck,
             color: "text-green-600",
             bgColor: "bg-green-50"
@@ -290,8 +290,8 @@ export default function HowItWorksDemo() {
                           {activeStep === 3 && (
                             <>
                               <ShieldCheck className="h-12 w-12 text-green-500 mb-2" />
-                              <h3 className="font-bold text-lg text-green-500">HELP ON WAY</h3>
-                              <p className="text-xs text-gray-400 mt-1">Live Video Active</p>
+                              <h3 className="font-bold text-lg text-green-500">CONTEXT SHARED</h3>
+                              <p className="text-xs text-gray-400 mt-1">Permissions Applied</p>
                             </>
                           )}
                         </>
@@ -316,15 +316,15 @@ export default function HowItWorksDemo() {
                           {activeStep === 2 && (
                             <>
                               <Bell className="h-12 w-12 text-orange-500 mb-2 animate-pulse" />
-                              <h3 className="font-bold text-lg text-orange-500">ALERTING EMS</h3>
-                              <p className="text-xs text-gray-400 mt-1">Sending Location...</p>
+                              <h3 className="font-bold text-lg text-orange-500">ROUTING ALERT</h3>
+                              <p className="text-xs text-gray-400 mt-1">Sharing Permitted Context</p>
                             </>
                           )}
                           {activeStep === 3 && (
                             <>
                               <ShieldCheck className="h-12 w-12 text-green-500 mb-2" />
-                              <h3 className="font-bold text-lg text-green-500">HELP SENT</h3>
-                              <p className="text-xs text-gray-400 mt-1">EMS Dispatched</p>
+                              <h3 className="font-bold text-lg text-green-500">UNDER REVIEW</h3>
+                              <p className="text-xs text-gray-400 mt-1">Response May Be Coordinated</p>
                             </>
                           )}
                         </>
@@ -348,15 +348,15 @@ export default function HowItWorksDemo() {
                           {activeStep === 2 && (
                             <>
                               <Activity className="h-12 w-12 text-purple-500 mb-2 animate-pulse" />
-                              <h3 className="font-bold text-lg text-purple-500">LIVE MONITORING</h3>
-                              <p className="text-xs text-gray-400 mt-1">Agent Listening</p>
+                              <h3 className="font-bold text-lg text-purple-500">ALERT REVIEW</h3>
+                              <p className="text-xs text-gray-400 mt-1">Permitted Context Available</p>
                             </>
                           )}
                           {activeStep === 3 && (
                             <>
                               <ShieldCheck className="h-12 w-12 text-green-500 mb-2" />
-                              <h3 className="font-bold text-lg text-green-500">POLICE SENT</h3>
-                              <p className="text-xs text-gray-400 mt-1">Location Shared</p>
+                              <h3 className="font-bold text-lg text-green-500">RESPONSE COORDINATED</h3>
+                              <p className="text-xs text-gray-400 mt-1">Outcome Depends on Conditions</p>
                             </>
                           )}
                         </>
@@ -390,7 +390,7 @@ export default function HowItWorksDemo() {
                             <>
                               <ShieldCheck className="h-12 w-12 text-green-500 mb-2" />
                               <h3 className="font-bold text-lg text-green-500">REVIEWING</h3>
-                              <p className="text-xs text-gray-400 mt-1">Medical Team Notified</p>
+                              <p className="text-xs text-gray-400 mt-1">Wellness Context Available</p>
                             </>
                           )}
                         </>

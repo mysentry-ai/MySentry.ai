@@ -16,7 +16,7 @@ export default function HomeHealthcare() {
       steps={[
         { title: "Equip Your Team", description: "Enroll your caregivers through the employer dashboard online. They then download the MySentry app on their existing smartphones." },
         { title: "Monitor Their Safety", description: "Use the employer dashboard to see check-ins and manage safety protocols." },
-        { title: "Respond Instantly", description: "Receive immediate alerts if a panic alarm is triggered or a potential fall is detected." },
+        { title: "Respond Promptly", description: "Receive immediate alerts if a panic alarm is triggered or a potential fall is detected." },
       ]}
       primaryCta={{ text: "Book a Demo", href: "/contact" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
@@ -28,7 +28,7 @@ export default function HomeHealthcare() {
         "Automatic fall and crash detection sends an alert even if the worker is unable to.",
       ]}
       afterAlert={[
-        "Our 24/7 monitoring center is instantly notified of the alert.",
+        "Our 24/7 monitoring center is promptly notified of the alert.",
         "A live agent attempts to contact the worker via video and voice.",
         "If the worker is unresponsive or confirms the emergency, we contact you.",
         "We can dispatch local emergency services to the worker's exact GPS location.",
@@ -75,7 +75,7 @@ export default function HomeHealthcare() {
       relatedLinks={[
         { text: "Lone Worker Safety", href: "/use-cases/lone-worker-safety-app" },
         { text: "Panic Button", href: "/features/panic-button-app" },
-        { text: "Home Healthcare Safety Solution", href: "/solutions/home-healthcare" },
+        { text: "Home Healthcare Safety Solution", href: "/industries/home-healthcare" },
         { text: "Pricing Plans", href: "/pricing" },
         { text: "How It Works", href: "/how-it-works" },
       ]}

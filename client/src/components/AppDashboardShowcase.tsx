@@ -5,36 +5,36 @@ import { Link } from "wouter";
 const vitals = [
   { label: "SpO2", value: "96%", icon: Activity, color: "text-blue-600", bg: "bg-blue-50" },
   { label: "Heart Rate", value: "72 bpm", icon: HeartPulse, color: "text-red-500", bg: "bg-red-50" },
-  { label: "Blood Pressure", value: "65 mmHg", icon: Activity, color: "text-purple-600", bg: "bg-purple-50" },
-  { label: "Temperature", value: "37°C", icon: Thermometer, color: "text-orange-500", bg: "bg-orange-50" },
+  { label: "HRV", value: "42 ms", icon: Activity, color: "text-purple-600", bg: "bg-purple-50" },
+  { label: "Activity", value: "7,240 steps", icon: Thermometer, color: "text-orange-600", bg: "bg-orange-50" },
 ];
 
 const features = [
   {
     icon: HeartPulse,
-    title: "Real-Time Health Vitals",
-    desc: "SpO2, heart rate, blood pressure, and body temperature tracked continuously on your wrist and phone.",
+    title: "Supported Wellness Signals",
+    desc: "Review supported wearable signals such as heart rate, HRV, blood oxygen, and activity. Availability depends on the connected device and permissions.",
     color: "text-red-500",
     bg: "bg-red-50",
   },
   {
     icon: Users,
     title: "Emergency Contact Group",
-    desc: "Add up to 3 trusted contacts who receive instant alerts with your location and live video if something goes wrong.",
+    desc: "Add up to 5 trusted contacts who can receive permitted alert context, such as location or live video, when an alert workflow starts.",
     color: "text-green-600",
     bg: "bg-green-50",
   },
   {
     icon: MapPin,
     title: "Family Connectivity",
-    desc: "Stay connected with your family. Share your real-time location, check in, and let loved ones know you are safe, all from the home screen.",
+    desc: "Keep trusted contacts informed during an alert without giving them continuous access to private wellness data. Sharing depends on your settings and permissions.",
     color: "text-blue-600",
     bg: "bg-blue-50",
   },
   {
     icon: ShieldAlert,
     title: "One-Tap PANIC Button",
-    desc: "Always visible on your phone and watch. One tap connects you to a live monitoring agent with your location and live video instantly.",
+    desc: "Start a user-activated alert from a supported phone or watch. Monitoring and shared context depend on plan, device, permissions, connectivity, and region.",
     color: "text-primary",
     bg: "bg-primary/10",
   },
@@ -52,7 +52,7 @@ export default function AppDashboardShowcase() {
             Personal Safety and Health Monitoring, Right on Your Screen
           </h2>
           <p className="text-xl text-gray-600">
-            The moment you open MySentry, you see what matters most: your emergency contacts, your Family Connectivity status, your Health Monitoring, and a PANIC button that is always one tap away.
+            Open MySentry to review your safety setup, trusted contacts, supported wellness signals, and Panic Alarm controls in one place.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function AppDashboardShowcase() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="absolute -right-8 top-16 bg-white rounded-2xl shadow-xl p-4 border border-gray-100 z-20"
               >
-                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Live Vitals</p>
+                <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Example Signals</p>
                 <div className="flex flex-col gap-2">
                   {vitals.slice(0, 2).map((v) => {
                     const Icon = v.icon;
@@ -113,7 +113,7 @@ export default function AppDashboardShowcase() {
                 className="absolute -left-8 bottom-24 bg-red-600 text-white rounded-2xl shadow-xl px-4 py-3 z-20"
               >
                 <p className="text-xs font-bold uppercase tracking-wider">PANIC</p>
-                <p className="text-xs opacity-80">1 tap to live agent</p>
+                <p className="text-xs opacity-90">Starts alert flow</p>
               </motion.div>
             </div>
           </motion.div>
@@ -180,6 +180,9 @@ export default function AppDashboardShowcase() {
             );
           })}
         </div>
+        <p className="mt-5 text-center text-sm text-gray-600">
+          Readings shown are illustrative. MySentry is not a medical device and does not diagnose, treat, cure, or prevent medical conditions.
+        </p>
       </div>
     </section>
   );

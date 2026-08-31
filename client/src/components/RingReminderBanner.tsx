@@ -44,18 +44,18 @@ export default function RingReminderBanner() {
               </h3>
 
               <p className="text-gray-600 leading-relaxed mb-4">
-                Your Ring cameras support home security. MySentry adds personal emergency response that goes with you. Ring users can access MySentry through the Ring Appstore for $4.99/month.
+                Your Ring cameras support home security. MySentry adds user-activated personal safety tools, trusted contacts, and eligible professional monitoring that can go with you. Ring users can review current eligibility, pricing, and availability through the Ring App Store.
               </p>
 
-              <p className="text-sm font-semibold text-primary mb-8">
-                Save 67% with the Ring Appstore offer.
+              <p className="text-sm font-semibold text-[#255044] mb-8">
+                Third-party offer terms can change and are confirmed during enrollment.
               </p>
 
               <Link
-                href="/ring"
+                href="/integrations/ring"
                 className="inline-flex items-center gap-2 bg-primary text-white font-bold rounded-full px-7 py-3.5 hover:bg-primary/90 transition-all hover:scale-105 shadow-md text-[14px] w-fit"
               >
-                Explore More
+                Explore Ring Integration
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

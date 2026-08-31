@@ -2,27 +2,7 @@ import express, { type Express, type Request, type Response, type NextFunction }
 import fs from "fs";
 import path from "path";
 import { resolveMeta } from "../seo/resolve-meta";
-
-// Hardcoded production origin — never derive from req.protocol which returns
-// 'http' when Express sits behind an AWS ALB that terminates SSL.
-const SITE_ORIGIN = "https://mysentry.ai";
-
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
-/**
- * Replace SSR placeholder pairs in the HTML template.
- * Pattern: <!--SSR_KEY-->default<!--/SSR_KEY-->
- */
-function injectPlaceholder(html: string, key: string, value: string): string {
-  // Escape the value so it's safe inside HTML attribute values and text nodes
-  const escaped = value
-    .replace(/&/g, "&amp;")
-    .replace(/"/g, "&quot;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-  const re = new RegExp(`<!--${key}-->[\\s\\S]*?<!--\\/${key}-->`, "g");
-  return html.replace(re, escaped);
-}
+import { renderSeoHtml } from "../seo/render-seo-html";
 
 // ─── Main export ─────────────────────────────────────────────────────────────
 
@@ -38,7 +18,7 @@ export function serveStatic(app: Express) {
     );
   }
 
-  // ── 1. Hashed assets — long-lived immutable cache ─────────────────────────
+  // 1. Hashed assets: long-lived immutable cache
   app.use(
     "/_app",
     express.static(path.join(distPath, "_app"), {
@@ -54,10 +34,13 @@ export function serveStatic(app: Express) {
   // Requests for static assets (JS, CSS, images) are passed through.
   app.use(async (req: Request, res: Response, next: NextFunction) => {
     const accept = req.headers.accept ?? "";
-    const isHtmlRequest = accept.includes("text/html");
+    const isPageMethod = req.method === "GET" || req.method === "HEAD";
+    const isHtmlRequest =
+      accept === "" || accept.includes("text/html") || accept.includes("*/*");
 
-    // Only intercept HTML requests; let asset requests fall through to static
-    if (!isHtmlRequest) {
+    // Only intercept page requests. API routes and explicit non-HTML requests
+    // keep their existing server behavior.
+    if (!isPageMethod || req.path.startsWith("/api/") || !isHtmlRequest) {
       return next();
     }
 
@@ -70,34 +53,23 @@ export function serveStatic(app: Express) {
     try {
       const cleanPath = req.originalUrl.split("?")[0]; // strip query string
 
-      // Resolve meta (async — may hit DB for blog posts, cached 60s)
-      const meta = await resolveMeta(cleanPath, SITE_ORIGIN);
+      // Resolve meta asynchronously; blog routes may use the database and a 60-second cache.
+      const meta = await resolveMeta(cleanPath, "https://mysentry.ai");
 
       // Read template on every request so hot-reloads in staging work;
       // in production the OS page cache makes this effectively free.
       const template = fs.readFileSync(indexHtmlPath, "utf-8");
 
-      // Always use SITE_ORIGIN so canonical/og:url are https:// even when
-      // Express is behind an ALB that forwards over plain HTTP.
-      const canonicalUrl = `${SITE_ORIGIN}${meta.canonicalPath}`;
-
-      let html = template;
-      html = injectPlaceholder(html, "SSR_TITLE", meta.title);
-      html = injectPlaceholder(html, "SSR_DESCRIPTION", meta.description);
-      html = injectPlaceholder(html, "SSR_OG_TYPE", meta.ogType);
-      html = injectPlaceholder(html, "SSR_OG_IMAGE", meta.ogImage);
-      html = injectPlaceholder(html, "SSR_CANONICAL", canonicalUrl);
-      html = injectPlaceholder(html, "SSR_ROBOTS", meta.robots);
+      const html = renderSeoHtml(template, meta);
 
       res
-        .status(200)
+        .status(meta.found ? 200 : 404)
         .set("Content-Type", "text/html")
         .set("Cache-Control", "no-cache")
         .send(html);
     } catch (err) {
-      // Fallback: serve the raw template without injection
       console.error("[SSR] Meta injection failed:", err);
-      res.sendFile(indexHtmlPath);
+      res.status(500).set("Cache-Control", "no-cache").sendFile(indexHtmlPath);
     }
   });
 
@@ -121,6 +93,6 @@ export function serveStatic(app: Express) {
 
   // ── 4. Final catch-all (should rarely be reached) ─────────────────────────
   app.use("*", (_req: Request, res: Response) => {
-    res.sendFile(indexHtmlPath);
+    res.status(404).type("text/plain").send("Not found");
   });
 }

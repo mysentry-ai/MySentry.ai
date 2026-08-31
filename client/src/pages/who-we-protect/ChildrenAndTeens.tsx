@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: "How much does MySentry cost for a family with teens?",
-    a: "The Family plan covers multiple family members at $30/month or $288/year. The Individual plan starts at $15/month. Both plans include a 7-day free trial. No hardware purchase is required.",
+    a: "The Family plan covers multiple family members at $30/month or $288/year. The Individual plan starts at $15/month. Both plans include any introductory offer displayed during enrollment. No hardware purchase is required.",
   },
 ];
 
@@ -112,7 +112,7 @@ export default function ChildrenAndTeens() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/pricing">
                   <button className="bg-primary text-white font-bold px-8 py-4 rounded-full hover:bg-primary/90 transition-all flex items-center gap-2">
-                    Start Free Trial <ArrowRight className="w-4 h-4" />
+                    Review Plans and Eligibility <ArrowRight className="w-4 h-4" />
                   </button>
                 </Link>
                 <Link href="/how-it-works">
@@ -136,7 +136,7 @@ export default function ChildrenAndTeens() {
         </div>
       </section>
 
-      {/* Overview — moved from hero */}
+      {/* Overview  -  moved from hero */}
       <section className="py-16 bg-white">
         <div className="container max-w-4xl mx-auto px-4">
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
@@ -145,7 +145,7 @@ export default function ChildrenAndTeens() {
           <div className="bg-[#f0f9f4] border-l-4 border-primary rounded-xl p-5 shadow-sm">
             <p className="text-sm font-bold text-primary uppercase tracking-wider mb-1">Quick Answer</p>
             <p className="text-gray-700 leading-relaxed">
-              MySentry is a safety app for teens that combines crash detection, a panic button, fall detection, real-time GPS location sharing, and 24/7 professional monitoring in one app. It works on any iPhone or Android and requires no extra hardware. Family plans start at $30/month with a 7-day free trial.
+              MySentry is a safety app for teens that combines crash detection, a panic button, fall detection, real-time GPS location sharing, and 24/7 professional monitoring in one app. It works on any iPhone or Android and requires no extra hardware. Family plans start at $30/month with any introductory offer displayed during enrollment.
             </p>
           </div>
         </div>
@@ -163,7 +163,7 @@ export default function ChildrenAndTeens() {
                 Knowing where your teen is does not help if they are in a crash and cannot call. It does not help if they are in a dangerous situation and cannot speak. It does not help if they fall and lose consciousness.
               </p>
               <p className="text-gray-600 leading-relaxed mb-4">
-                MySentry goes beyond location. It detects the emergency automatically, alerts parents and a professional monitoring team, and streams live video and GPS, so help is on the way before anyone has to make a call.
+                MySentry goes beyond location. It detects the emergency automatically, alerts parents and a professional monitoring team, and streams live video and GPS, so the configured alert workflow is active before anyone has to make a call.
               </p>
               <ul className="space-y-3 mt-6">
                 {[
@@ -235,7 +235,7 @@ export default function ChildrenAndTeens() {
             {[
               { step: "1", title: "Download the app on your teen's phone", desc: "Available on iOS (iPhone) and Android. Pairs with Apple Watch (Series 7+) and Samsung Galaxy Watch (Watch 4+) for wrist-based alerts." },
               { step: "2", title: "Add parents as emergency contacts", desc: "Up to 3 emergency contacts. Each receives SMS, push notification, and email alerts with live GPS location during an emergency." },
-              { step: "3", title: "Choose a plan", desc: "Family plan from $30/month covers multiple family members. Individual plan from $15/month. 7-day free trial included." },
+              { step: "3", title: "Choose a plan", desc: "Family plan from $30/month covers multiple family members. Individual plan from $15/month. Current offer terms and eligibility are shown during enrollment." },
               { step: "4", title: "Crash detection and fall detection run automatically", desc: "No action needed from your teen. If a crash or fall is detected, MySentry alerts parents and the monitoring team immediately." },
             ].map((s, i) => (
               <div key={i} className="flex gap-6 items-start">

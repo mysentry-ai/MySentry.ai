@@ -8,12 +8,12 @@ export default function HomeHealthcareSolutionPage() {
       canonical="https://mysentry.ai/solutions/home-healthcare"
       label="Home Healthcare Solution"
       h1="Keeping Your Home Healthcare Workers Safe and Connected"
-      problem="Home healthcare is a rewarding profession, but it comes with unique risks. Workers often find themselves in vulnerable situations, visiting patients alone without immediate backup. Agencies struggle with a lack of real-time visibility, making it difficult to ensure team safety and manage liability. The pressure to comply with OSHA standards while controlling rising costs is a constant challenge."
+      problem="Home healthcare is a rewarding profession, but it comes with unique risks. Workers often find themselves in vulnerable situations, visiting patients alone without immediate backup. Agencies struggle with a lack of real-time visibility, making it difficult to ensure team safety and manage liability. The pressure to support your workplace safety program standards while controlling rising costs is a constant challenge."
       empathy="We understand the dedication of home healthcare professionals and the agencies that support them. The safety of your team is your top priority, and it's ours too. That’s why we created MySentry, a safety net that empowers your workers and gives you peace of mind."
       steps={[
         {
           title: "Immediate Help When It Matters Most",
-          description: "With our automatic fall detection and a discreet panic alarm, your team is never truly alone. If a fall occurs, an alert is sent automatically if there is no response. In any emergency, a simple voice command, a tap on their smartphone, or a press on their smartwatch instantly summons help.",
+          description: "With our automatic fall detection and a discreet panic alarm, your team is never truly alone. If a fall occurs, an alert is sent automatically if there is no response. In any emergency, a simple voice command, a tap on their smartphone, or a press on their smartwatch promptly summons help.",
         },
         {
           title: "Real-Time Visibility for Your Agency",
@@ -25,12 +25,12 @@ export default function HomeHealthcareSolutionPage() {
         },
       ]}
       primaryCta={{ text: "Book a Demo", href: "/contact" }}
-      secondaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing#pricing-plans" }}
+      secondaryCta={{ text: "Review Plans and Eligibility", href: "/pricing#pricing-plans" }}
       directAnswer="MySentry offers a lone worker safety solution specifically designed for the home healthcare industry, addressing the core challenges of worker vulnerability, lack of real-time visibility, and compliance pressures."
       howItWorks={[
         "Home health aides, nurses, and therapists can easily activate MySentry on their smartphones at the start of each home visit.",
         "In case of a fall, the system automatically sends an alert. The panic alarm can be triggered manually via voice, smartphone, or smartwatch for any other threat.",
-        "Your agency's monitoring team receives instant alerts with live video and GPS location, enabling a fast and coordinated response.",
+        "Your agency's monitoring team receives prompt alerts with live video and GPS location, enabling a fast and coordinated response.",
       ]}
       afterAlert={[
         "As soon as an alert is triggered, your designated contacts and monitoring center are notified.",
@@ -80,7 +80,7 @@ export default function HomeHealthcareSolutionPage() {
         { text: "Lone Worker Safety Guide", href: "/guides/lone-worker-safety" },
         { text: "Pricing Plans", href: "/pricing" },
       ]}
-      heroImage="/images/solutions/home-healthcare-hero.jpg"
+      heroImage="/images/cdn/hero-home-healthcare-FyAFPcaaseQ5VKXwe2ieTZ.webp"
     />
   );
 }

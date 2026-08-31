@@ -1,85 +1,66 @@
-
 import SEOPageTemplate from "@/components/SEOPageTemplate";
 
 export default function CrashDetection() {
   return (
     <SEOPageTemplate
-      seoTitle="Crash Detection App for Cars | MySentry"
-      seoDescription="Worried about car crashes? MySentry's automatic crash detection app alerts contacts and 24/7 monitoring. Get help fast, even if you can't call. Start your free trial."
+      seoTitle="Crash Detection App and Safety Alerts | MySentry"
+      seoDescription="Learn how supported-device crash detection can begin a MySentry check-in and eligible alert workflow, including requirements and limitations."
       canonical="https://mysentry.ai/features/crash-detection"
-      label="FEATURE"
-      h1="Help Arrives After Every Crash."
-      h1Sub="Get help fast, even if you can't call."
-      heroDescription="Your phone detects the impact and automatically alerts our 24/7 team with your exact location and live video."
-      problem="Car accidents are scary, and often leave you unable to call for help. When you're hurt and alone, every second counts."
-      empathy="The worry of a crash, and not being able to get help, is real. You deserve peace of mind, knowing help is always on the way."
+      label="Feature"
+      h1="Crash Detection With a Clear Follow-Up Workflow"
+      h1Sub="A supported phone may identify a crash-like event and begin a safety check-in."
+      heroDescription="MySentry can use supported phone sensors to identify a possible vehicle crash and begin a configured alert workflow. Detection and any later escalation depend on the device, app state, settings, permissions, connectivity, plan, region, and event conditions."
+      problem="After a serious vehicle incident, you may be unable to unlock a phone, explain where you are, or contact a trusted person."
+      empathy="Preparing an alert workflow before a drive can reduce uncertainty, but no app can identify or resolve every crash."
       steps={[
-        { title: "Drive with MySentry Active", description: "Just keep the MySentry app running in the background on your phone while you drive." },
-        { title: "Automatic Crash Detection", description: "MySentry uses your phone's sensors to automatically detect a car crash." },
-        { title: "Instant Emergency Alert", description: "An alert goes to your emergency contacts and our 24/7 monitoring team, who can send help." },
+        { title: "Confirm Eligibility", description: "Verify that your phone, software, plan, region, permissions, and app settings support crash detection." },
+        { title: "Keep the Required Settings Active", description: "Carry the supported phone and maintain the app state, motion permissions, notifications, and connectivity required for the feature." },
+        { title: "Review the Safety Check", description: "If a crash-like event is identified, respond to the check-in when you can. An eligible alert may continue if your safety cannot be confirmed." },
       ]}
-      primaryCta={{ text: "Start 7-Day Free Trial", href: "/pricing" }}
-      secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="A crash detection app, like MySentry, uses your smartphone's sensors to automatically find a car accident. When a crash happens, it instantly sends an alert with your location to chosen emergency contacts and a 24/7 professional monitoring service. This makes sure you get help fast, even if you can't call."
+      primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
+      secondaryCta={{ text: "Review How MySentry Works", href: "/how-it-works" }}
+      directAnswer="MySentry crash detection is a supported-device safety feature, not a guarantee that every vehicle incident will be detected. A compatible phone may identify crash-like motion and begin a safety check. If the alert continues, permitted location or other available context may be shared with trusted contacts and an eligible monitoring workflow."
       howItWorks={[
-        "MySentry uses smart programs and your phone's sensors to spot the unique forces of a car crash.",
-        "When a crash is found, the app sets off an alarm on your phone right away.",
-        "If you don't cancel it, the app automatically sends your exact GPS location to your emergency contacts.",
-        "Our 24/7 monitoring team gets the alert and can work with emergency services to get you help.",
+        "A supported phone evaluates available motion data while the required app state and permissions are active.",
+        "A possible crash can begin a Safety Check Alert so you can confirm your status.",
+        "If the alert continues, permitted context may be routed according to your plan, settings, connectivity, and region.",
+        "A monitoring agent may attempt contact or coordinate with trusted contacts or emergency services when appropriate.",
       ]}
       afterAlert={[
-        "Your chosen emergency contacts get a text message with a link to your location.",
-        "Our 24/7 monitoring agents get the alert and your profile details.",
-        "An agent will try to reach you using the app's live video and audio feature.",
-        "If you don't respond or say you need help, we will send local emergency services to your location.",
+        "Review or cancel the alert if you are safe and able to respond.",
+        "Trusted contacts may receive the context you have configured and permitted.",
+        "Eligible monitoring may review available context and attempt contact.",
+        "Response, escalation, emergency-service availability, and arrival are not guaranteed.",
       ]}
-      bestFor={["People who drive every day or take long trips", "Parents of new or young drivers", "Anyone who often drives by themselves"]}
-      notIdealFor={["Motorcyclists or cyclists (this feature works best for cars)", "People without a steady cell or internet connection"]}
+      bestFor={["Eligible drivers who carry a supported phone", "Families preparing a safety workflow for a new driver", "People who regularly drive alone or take longer trips"]}
+      notIdealFor={["Use without a supported phone, permissions, or network connection", "Motorcycle or bicycle incidents unless explicitly supported", "Replacing a direct call to 911 or local emergency services"]}
       keyTakeaways={[
-        "Automatically finds car crashes using your phone's sensors.",
-        "Quickly alerts family, friends, and our 24/7 monitoring team.",
-        "Gives you and your loved ones peace of mind while driving.",
+        "Crash detection depends on supported hardware, software, settings, permissions, connectivity, and event conditions.",
+        "A possible event begins a check-in or alert workflow rather than guaranteeing emergency dispatch.",
+        "Call 911 or local emergency services directly whenever you can do so safely.",
       ]}
       faqs={[
-        {
-          question: "How does the car crash detection app work?",
-          answer: "MySentry uses your smartphone's sensors, like the accelerometer, to spot the sudden hit and forces of a car accident. Our program is set to tell the difference between a crash and just a hard brake or dropping your phone.",
-        },
-        {
-          question: "Will it go off by mistake if I drop my phone?",
-          answer: "Our system is made to avoid false alarms. It looks at many pieces of information, not just one bump. If a false alarm does happen, you have 30 seconds to stop the alert before anyone is told.",
-        },
-        {
-          question: "What if I'm in an area with no cell service?",
-          answer: "MySentry works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. If a crash happens in an area with no cell coverage, the alert queues and sends the moment signal returns.",
-        },
-        {
-          question: "Does this take the place of calling 911?",
-          answer: "Our 24/7 monitoring team can send emergency services, but we always suggest calling your local emergency number yourself if you can. MySentry is there to help when you can't make the call."
-        },
-        {
-          question: "Does the app need to be open for crash detection to work?",
-          answer: "No, the app doesn't need to be open on your screen. It just needs to be running in the background with the right permissions turned on to watch for a possible crash."
-        },
+        { question: "Does MySentry detect every car crash?", answer: "No. Detection depends on the supported phone, sensor data, app state, settings, permissions, connectivity, and the circumstances of the event." },
+        { question: "What happens after a possible crash is identified?", answer: "The app may begin a Safety Check Alert. If the alert continues, permitted context may be routed to configured contacts and an eligible monitoring workflow." },
+        { question: "Does crash detection replace calling 911?", answer: "No. If you can safely call 911 or local emergency services, do so directly. MySentry is a supplemental safety service." },
+        { question: "Will crash detection work without connectivity?", answer: "Some device actions may still be available, but sending an alert or sharing context requires an available supported connection. Delivery is not guaranteed." },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for watch features.",
-        permissions: "Location services (always on for GPS tracking), notifications, microphone (for voice panic alarm), camera (for live video response).",
-        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
-        limitations: "Crash detection accuracy depends on sensor quality. Battery life changes based on your device and how you use features. Health monitoring needs a compatible smartwatch."
+        devices: "A currently supported smartphone and software version. Confirm eligibility before relying on crash detection.",
+        permissions: "Required motion, notification, location, background, audio, or video permissions depend on the configured workflow.",
+        connectivity: "Alert delivery and shared context require an available supported network connection.",
+        limitations: "MySentry is not a replacement for emergency services and is not a medical device. Detection, contact, escalation, response, and arrival are not guaranteed.",
       }}
       proofBlocks={[
-        { claim: "Crash detection uses phone sensors to find sudden stops that look like car crashes.", detail: "The app checks accelerometer data patterns that match crash signs and sends automatic alerts." },
-        { claim: "If you don't respond to the Safety Check Alert, 24/7 agents get an alert with your GPS location and live video.", detail: "This countdown gives you time to cancel false alarms from things like speed bumps or dropping your phone." }
+        { claim: "Safety check before escalation", detail: "A possible crash can begin a user-facing check-in before an eligible alert workflow continues." },
+        { claim: "Permission-based context", detail: "Available location, audio, video, and contact context follows feature support and the permissions you enable." },
       ]}
       relatedLinks={[
-        { text: "Panic Alarm for Quick Help", href: "/features/panic-button-app" },
-        { text: "24/7 Monitoring", href: "/features/24-7-professional-monitoring" },
+        { text: "Panic Alarm App", href: "/features/panic-button-app" },
+        { text: "Professional Monitoring", href: "/features/24-7-professional-monitoring" },
         { text: "Teen Driver Safety", href: "/use-cases/teen-driver-safety" },
-        { text: "Pricing Plans", href: "/pricing" },
-        { text: "How It Works", href: "/how-it-works" },
+        { text: "Compare Plans", href: "/pricing" },
       ]}
     />
   );
 }
-

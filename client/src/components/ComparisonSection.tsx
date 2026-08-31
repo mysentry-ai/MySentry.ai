@@ -36,7 +36,7 @@ export default function ComparisonSection() {
           life360: true,
           medical: true,
           wearables: false,
-          tooltip: "Instant help button available on both your smartphone and smartwatch."
+          tooltip: "Prompt help button available on both your smartphone and smartwatch."
         },
         {
           name: "24/7 Professional Monitoring",
@@ -91,7 +91,7 @@ export default function ComparisonSection() {
           life360: "CIRCLES",
           medical: "LIMITED",
           wearables: "VARIES",
-          tooltip: "Notify up to 5 trusted contacts instantly with your location and status."
+          tooltip: "Notify up to 5 trusted contacts promptly with your location and status."
         },
         {
           name: "Smart Ring/Band Integration",
@@ -289,7 +289,7 @@ export default function ComparisonSection() {
 
         <div className="mt-16 text-center">
           <Link href="/pricing#pricing-plans" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary hover:bg-primary/90 rounded-full transition-all hover:scale-105 shadow-lg shadow-primary/25">
-            Start Your 7-Day Free Trial
+            Review Plans and Eligibility
           </Link>
           <p className="mt-4 text-gray-500 text-sm">
             Cancel anytime.

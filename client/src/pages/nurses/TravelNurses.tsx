@@ -27,14 +27,14 @@ const features = [
 
 const steps = [
   { step: "1", title: "Alert is triggered", body: "You press the panic button, a fall is detected, or a check-in timer expires." },
-  { step: "2", title: "Agents are notified instantly", body: "24/7 monitoring agents receive your GPS location, live video, and audio within seconds." },
+  { step: "2", title: "Agents are notified promptly", body: "24/7 monitoring agents receive your GPS location, live video, and audio within seconds." },
   { step: "3", title: "Situation is assessed", body: "Agents verify the alert and attempt to reach you. If there is no response, they escalate immediately." },
-  { step: "4", title: "Help is dispatched", body: "Emergency services are contacted with your exact location and situation details. Your emergency contacts are also notified." }
+  { step: "4", title: "The alert is reviewed for possible escalation", body: "Emergency services are contacted with your exact location and situation details. Your emergency contacts are also notified." }
 ];
 
 const faqs = [
   { q: "Does it work in new cities?", a: "Yes. MySentry works anywhere you have a cellular signal. No Wi-Fi is required. Your GPS location, panic alarm, and health monitoring all work the same whether you are in your home city or on your twentieth travel assignment." },
-  { q: "What if I don't know the area?", a: "MySentry shares your real-time GPS location with 24/7 monitoring agents and your emergency contacts. Even if you don't know the address, agents can pinpoint your location and dispatch help to you." },
+  { q: "What if I don't know the area?", a: "MySentry shares your real-time GPS location with 24/7 monitoring agents and your emergency contacts. Even if you don't know the address, agents can pinpoint your location and contact emergency services when appropriate to you." },
   { q: "Does it work on Apple Watch?", a: "Yes. MySentry works on Apple Watch and Samsung Galaxy Watch. You can trigger a panic alarm directly from your wrist without touching your phone." },
   { q: "Does it work without hotel Wi-Fi?", a: "Yes. MySentry runs on your phone's cellular data connection. Hotel Wi-Fi is not required. If you do connect to Wi-Fi, the app uses it as a bonus, but it is never a dependency." },
   { q: "Is it different from a medical alert system?", a: "Yes. Medical alert systems are designed for falls at home, typically for seniors. MySentry is a full safety platform built for active professionals, covering panic alarms, crash detection, health alerts, and 24/7 monitoring in any environment." },
@@ -47,14 +47,14 @@ export default function TravelNurses() {
       <SEO
         schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
       />
-      <HeroSection label="Travel Nurse Safety" title={<>Safety for Travel Nurses<br /><span className="text-gray-600">in Every New City</span></>} subtitle="Panic alarm, location sharing, and 24/7 monitoring that moves with you to every new assignment. Your safety setup works the same whether you are in your home city or across the country." imageSrc={HERO_IMAGE} imageAlt="Travel nurse with luggage outside hospital" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
+      <HeroSection label="Travel Nurse Safety" title={<>Safety for Travel Nurses<br /><span className="text-gray-600">in Every New City</span></>} subtitle="Panic alarm, location sharing, and 24/7 monitoring that moves with you to every new assignment. Your safety setup works the same whether you are in your home city or across the country." imageSrc={HERO_IMAGE} imageAlt="Travel nurse with luggage outside hospital" ctaText="Review Plans and Eligibility" ctaLink={LOGIN_URL} />
 
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container max-w-3xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">What is a travel nurse safety app?</h2>
           <p className="text-lg text-gray-700 leading-relaxed">A travel nurse safety app is a mobile app that gives travel nurses a fast way to call for help, share their location, and stay connected to emergency contacts and professional monitoring agents, no matter which city their current assignment is in. MySentry works on your phone and smartwatch, so your safety setup moves with you every time you relocate.</p>
           <div className="mt-6 flex flex-wrap gap-4">
-            {[{ label: "Works in any city", value: "Nationwide coverage" }, { label: "Response time", value: "Under 60 seconds" }, { label: "Monitoring", value: "24/7 professional agents" }].map((s, i) => (
+            {[{ label: "Works in any city", value: "Nationwide coverage" }, { label: "Response time", value: "Timing varies" }, { label: "Monitoring", value: "24/7 professional agents" }].map((s, i) => (
               <div key={i} className="bg-primary/5 rounded-xl px-5 py-3 text-center flex-1 min-w-[140px]">
                 <div className="text-xl font-bold text-primary">{s.value}</div>
                 <div className="text-xs text-gray-600 mt-1">{s.label}</div>
@@ -101,7 +101,7 @@ export default function TravelNurses() {
           </div>
           <div className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/nurses"><Button variant="outline" className="rounded-full px-8 h-12 font-semibold border-primary text-primary hover:bg-primary/5">All Nurse Safety Features</Button></Link>
-            <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8 h-12">Start Free Trial <ArrowRight className="ml-2 h-4 w-4" /></Button></a>
+            <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8 h-12">Review Plans and Eligibility <ArrowRight className="ml-2 h-4 w-4" /></Button></a>
           </div>
         </div>
       </section>
@@ -127,7 +127,7 @@ export default function TravelNurses() {
         <div className="container max-w-4xl">
           <h2 className="text-lg font-bold text-gray-900 mb-5 text-center">Explore related features</h2>
           <div className="flex flex-wrap gap-3 justify-center">
-            {[{ label: "Panic Button App", href: "/features/panic-button-app" }, { label: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" }, { label: "Emergency Contacts", href: "/features/emergency-contacts" }, { label: "MeetSafe Check-Ins", href: "/features/meetsafe-check-ins" }, { label: "Health Monitoring", href: "/features/health-monitoring" }, { label: "All Nurse Safety", href: "/nurses" }, { label: "Pricing", href: "/pricing" }].map((l, i) => (
+            {[{ label: "Panic Button App", href: "/features/panic-button-app" }, { label: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" }, { label: "Emergency Contacts", href: "/features/emergency-contacts" }, { label: "MeetSafe Check-Ins", href: "/features/safety-check-in-app" }, { label: "Health Monitoring", href: "/features/health-monitoring" }, { label: "All Nurse Safety", href: "/nurses" }, { label: "Pricing", href: "/pricing" }].map((l, i) => (
               <Link key={i} href={l.href}><span className="inline-flex items-center gap-1 px-4 py-2 rounded-full border border-primary/30 text-primary text-sm font-medium hover:bg-primary/5 transition-colors">{l.label} <ArrowRight className="h-3 w-3" /></span></Link>
             ))}
           </div>
@@ -156,8 +156,8 @@ export default function TravelNurses() {
             <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none"><div className="absolute top-[-50%] left-[-20%] w-[80%] h-[80%] rounded-full bg-primary blur-[150px]" /></div>
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-5xl md:text-6xl font-heading font-bold text-white mb-8 uppercase tracking-tight">You Move. Your Safety Moves With You.</h2>
-              <p className="text-xl text-gray-300 mb-12 leading-relaxed">Start your 7-day free trial. No credit card required.</p>
-              <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-16 text-lg transition-all hover:scale-105 shadow-xl">Start Free Trial</Button></a>
+              <p className="text-xl text-gray-300 mb-12 leading-relaxed">Review current plans, eligibility, billing terms, and enrollment requirements.</p>
+              <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-16 text-lg transition-all hover:scale-105 shadow-xl">Review Plans and Eligibility</Button></a>
               <p className="text-gray-400 text-sm mt-6">Secure checkout. Cancel anytime.</p>
             </div>
           </div>

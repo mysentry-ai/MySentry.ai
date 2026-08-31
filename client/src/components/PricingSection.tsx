@@ -47,7 +47,7 @@ export default function PricingSection() {
         "Real-time Health Alerts",
         "Live Video Evidence"
       ],
-      cta: "Start 7-Day Free Trial",
+      cta: "Review Plans and Eligibility",
       popular: false,
       highlightColor: "primary",
       familyNote: null,
@@ -67,7 +67,7 @@ export default function PricingSection() {
         "Location Sharing",
         "Check-in Alerts"
       ],
-      cta: "Start 7-Day Free Trial",
+      cta: "Review Plans and Eligibility",
       popular: true,
       highlightColor: "#66d48f",
       familyNote: "Invite up to 6 family members to join your plan (1 admin account holder and 5 family members).",

@@ -196,8 +196,8 @@ const faqs = [
     a: "MySentry starts from $4.99/month for one connected Ring camera. Pricing increases based on the number of cameras connected, with 4+ cameras moving into a Family Plan.",
   },
   {
-    q: "Is there a free trial?",
-    a: "Yes. Ring users can start with a free trial and continue with Ring-user pricing after the trial.",
+    q: "Where can I verify the current Ring offer?",
+    a: "Review the MySentry listing in the Ring Appstore for current eligibility, introductory offers, pricing, and subscription terms before enrolling.",
   },
   {
     q: "Who is this best for?",
@@ -227,7 +227,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 export default function RingLandingPage() {
   const steps = [
     { icon: Camera, title: "Connect Your Ring Camera", desc: "Link your Ring camera to MySentry through the Ring appstore experience." },
-    { icon: Shield, title: "Activate MySentry", desc: "Start your free trial and set up your Panic Alarm, emergency contacts, and safety preferences." },
+    { icon: Shield, title: "Activate MySentry", desc: "Review current plans and eligibility and set up your Panic Alarm, emergency contacts, and safety preferences." },
     { icon: Phone, title: "Trigger a Panic Alarm", desc: "Use tap, volume button, shake, voice, smartwatch, crash detection, or fall detection to trigger an alarm." },
     { icon: Radio, title: "Live Broadcast Starts", desc: "After the countdown, MySentry activates a live broadcast with key safety information." },
     { icon: Users, title: "Monitoring Team + Contacts Get Notified", desc: "The monitoring team and emergency contacts can access the live broadcast, including location, audio/video, battery status, and Ring camera feed when available." },
@@ -265,7 +265,7 @@ export default function RingLandingPage() {
     { cameras: "1 camera", price: "$4.99/mo", plan: "Individual 1 user" },
     { cameras: "2 cameras", price: "$9.98/mo", plan: "Individual 1 user" },
     { cameras: "3 cameras", price: "$14.97/mo", plan: "Individual 1 user" },
-    { cameras: "4+ cameras", price: "Tiered accordingly", plan: "Family — up to 6 users" },
+    { cameras: "4+ cameras", price: "Tiered accordingly", plan: "Family  -  up to 6 users" },
   ];
 
   return (
@@ -282,11 +282,11 @@ export default function RingLandingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Copy */}
             <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-              {/* Badge — visual editor: mt-[25px] */}
+              {/* Badge  -  visual editor: mt-[25px] */}
               <span className="inline-flex items-center gap-2 bg-white border border-primary/20 text-primary rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-5 shadow-sm mt-[25px]">
                 <Camera className="w-3.5 h-3.5" /> Available on the Ring App Store
               </span>
-              {/* Headline — visual editor: text-[45px] font-semibold */}
+              {/* Headline  -  visual editor: text-[45px] font-semibold */}
               <h1 className="text-[45px] font-heading font-semibold text-[#1a1a1a] leading-tight mb-5">
                 Ring protects your home.{" "}
                 <br className="hidden sm:block" />
@@ -316,7 +316,7 @@ export default function RingLandingPage() {
               <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-6 max-w-md ml-auto">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-3 h-3 rounded-full bg-red-400 animate-pulse" />
-                  <span className="text-sm font-bold text-[#1a1a1a]">MySentry — Panic Alarm Active</span>
+                  <span className="text-sm font-bold text-[#1a1a1a]">MySentry  -  Panic Alarm Active</span>
                 </div>
                 {/* Info rows */}
                 <div className="space-y-3">
@@ -333,7 +333,7 @@ export default function RingLandingPage() {
                     <Battery className="w-4 h-4 text-yellow-500" />
                     <div>
                       <p className="font-semibold text-[#1a1a1a] text-sm">Battery Status</p>
-                      <p className="text-xs text-gray-500">87% — Shared with team</p>
+                      <p className="text-xs text-gray-500">87%  -  Shared with team</p>
                     </div>
                   </div>
                   {/* Contacts */}
@@ -356,11 +356,11 @@ export default function RingLandingPage() {
         <div className="container">
           <div className="text-center mb-14">
             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">The Value</span>
-            {/* Headline — visual editor: ml-[268px] mr-[258px] (these are centering nudges; keep max-w-2xl mx-auto) */}
+            {/* Headline  -  visual editor: ml-[268px] mr-[258px] (these are centering nudges; keep max-w-2xl mx-auto) */}
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#1a1a1a] max-w-2xl mx-auto">
               A Complete Safety Solution for Home and Personal Protection
             </h2>
-            {/* Subtext — visual editor: mt-[19px] pr-[41px] max-w-xl mx-auto */}
+            {/* Subtext  -  visual editor: mt-[19px] pr-[41px] max-w-xl mx-auto */}
             <p className="text-gray-600 mt-[19px] max-w-xl mx-auto pr-[41px]">
               Ring supports home security. MySentry adds personal emergency response that goes with you.
             </p>
@@ -395,7 +395,7 @@ export default function RingLandingPage() {
               One Panic Alarm. More Context. Faster Support.
             </h2>
           </div>
-          {/* Desktop horizontal timeline — step labels only, no descriptions */}
+          {/* Desktop horizontal timeline  -  step labels only, no descriptions */}
           <div className="hidden md:flex items-start gap-4">
             {steps.map((step, i) => (
               <div key={step.title} className="flex-1 flex flex-col items-center text-center">
@@ -411,7 +411,7 @@ export default function RingLandingPage() {
               </div>
             ))}
           </div>
-          {/* Mobile vertical timeline — step labels only */}
+          {/* Mobile vertical timeline  -  step labels only */}
           <div className="md:hidden flex flex-col gap-6">
             {steps.map((step, i) => (
               <div key={step.title} className="flex gap-4">
@@ -578,7 +578,7 @@ export default function RingLandingPage() {
       </section>
 
       {/* ─── 8. FINAL CTA ─── */}
-      {/* Visual editor: final backgroundColor was set to #6ad990 — applied as bg-[#6ad990] */}
+      {/* Visual editor: final backgroundColor was set to #6ad990  -  applied as bg-[#6ad990] */}
       <section className="py-24 bg-[#6ad990] text-white">
         <div className="container text-center max-w-2xl">
           <motion.div
@@ -608,7 +608,7 @@ export default function RingLandingPage() {
                 onClick={trackLeadEvent}
                 className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-bold rounded-full px-8 py-4 hover:bg-white/20 transition-all"
               >
-                Start Free Trial
+                Review Plans and Eligibility
               </Link>
             </div>
           </motion.div>
@@ -632,7 +632,7 @@ export default function RingLandingPage() {
           {/* Final bottom CTA */}
           <div className="text-center mt-14">
             <h3 className="text-2xl font-bold text-[#1a1a1a] mb-3">Ready to Add MySentry to Your Ring Setup?</h3>
-            <p className="text-gray-600 mb-6">Start your free trial today and connect your Ring cameras to MySentry's live safety response system.</p>
+            <p className="text-gray-600 mb-6">Review Plans and Eligibility today and connect your Ring cameras to MySentry's live safety response system.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <PrimaryCTA />
               <SecondaryCTA href="#how-it-works" label="See How It Works" />

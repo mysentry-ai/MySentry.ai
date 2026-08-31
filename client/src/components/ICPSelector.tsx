@@ -16,26 +16,26 @@ const options: { id: ICPOption; label: string; icon: typeof User; description: s
     id: "myself",
     label: "Myself",
     icon: User,
-    description: "Personal safety and health monitoring with 24/7 emergency response for individuals, runners, commuters, and seniors"
+    description: "User-activated alerts, supported-device detection, wellness signals, trusted contacts, and eligible 24/7 monitoring for everyday situations"
   },
   {
     id: "family",
     label: "My Family",
     icon: Users,
-    description: "Keep your whole family safe with real-time health monitoring, fall detection, crash detection, and 24/7 emergency response"
+        description: "Build a connected safety plan with user-activated alerts, supported-device detection, trusted contacts, and eligible monitoring workflows"
   },
   {
     id: "team",
     label: "My Team",
     icon: Building2,
-    description: "Lone worker safety, health monitoring, and 24/7 emergency response for duty-of-care compliance"
+        description: "Add personal safety tools and documented alert workflows to support your existing workplace safety program"
   }
 ];
 
 export default function ICPSelector({ className }: ICPSelectorProps) {
   const [selected, setSelected] = useState<ICPOption>("myself");
 
-  const ctaText = selected === "team" ? "BOOK A DEMO" : "START 7-DAY FREE TRIAL";
+  const ctaText = selected === "team" ? "BOOK A DEMO" : "REVIEW PLANS AND ELIGIBILITY";
   const ctaLink = selected === "team" ? "/contact" : "/pricing#pricing-plans";
 
   return (
@@ -57,8 +57,8 @@ export default function ICPSelector({ className }: ICPSelectorProps) {
               className={cn(
                 "flex items-center gap-2.5 px-5 py-3 rounded-full border-2 transition-all duration-200 font-semibold text-sm",
                 isActive
-                  ? "border-primary bg-primary/10 text-primary shadow-md"
-                  : "border-gray-300 bg-white/80 text-gray-700 hover:border-primary/50 hover:bg-primary/5"
+                  ? "border-[#255044] bg-white text-[#255044] shadow-md ring-2 ring-[#6AD990]/35"
+                  : "border-[#78988e] bg-white/90 text-[#1f3e35] hover:border-[#004F7B] hover:text-[#004F7B]"
               )}
             >
               <Icon className="w-4.5 h-4.5" />
@@ -97,8 +97,8 @@ export default function ICPSelector({ className }: ICPSelectorProps) {
             className={cn(
               "inline-flex items-center justify-center font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl",
               selected === "team"
-                ? "bg-[#1a1a1a] text-white hover:bg-[#333]"
-                : "bg-primary text-white hover:bg-primary/90"
+                ? "bg-[#255044] text-white hover:bg-[#1d4036]"
+                : "bg-[#004F7B] text-white hover:bg-[#003A5B]"
             )}
           >
             {ctaText}

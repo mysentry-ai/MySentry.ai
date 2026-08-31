@@ -27,9 +27,9 @@ const features = [
 
 const steps = [
   { step: "1", title: "Alert is triggered", body: "You press the panic button, a fall is detected, or a check-in timer expires at the end of a visit." },
-  { step: "2", title: "Agents are notified instantly", body: "24/7 monitoring agents receive your GPS location, live video, and audio within seconds." },
+  { step: "2", title: "Agents are notified promptly", body: "24/7 monitoring agents receive your GPS location, live video, and audio within seconds." },
   { step: "3", title: "Situation is assessed", body: "Agents verify the alert and attempt to reach you. If there is no response, they escalate immediately." },
-  { step: "4", title: "Help is dispatched", body: "Emergency services are contacted with your exact location and situation details. Your emergency contacts are also notified." }
+  { step: "4", title: "The alert is reviewed for possible escalation", body: "Emergency services are contacted with your exact location and situation details. Your emergency contacts are also notified." }
 ];
 
 const faqs = [
@@ -37,7 +37,7 @@ const faqs = [
   { q: "What if I'm in a rural area?", a: "MySentry works wherever you have a cellular data connection. In areas with weak signal, alerts queue and send as soon as connectivity is restored. We recommend keeping the app open during visits in low-coverage areas." },
   { q: "Does it work without Wi-Fi?", a: "Yes. MySentry uses your phone's cellular data connection. Wi-Fi is not required." },
   { q: "Can my agency see my location?", a: "No. Your location is only shared with your chosen emergency contacts and with 24/7 monitoring agents when an alert is triggered. Your employer does not have access to your location data." },
-  { q: "What if a patient becomes aggressive?", a: "Press the panic button on your phone or watch. The alarm can be triggered silently so it doesn't escalate the situation. Monitoring agents receive your location and live audio immediately and can dispatch help." },
+  { q: "What if a patient becomes aggressive?", a: "Press the panic button on your phone or watch. The alarm can be triggered silently so it doesn't escalate the situation. Monitoring agents receive your location and live audio immediately and can contact emergency services when appropriate." },
   { q: "Is this the same as a lone worker device?", a: "MySentry provides lone worker protection through check-in timers, panic alarms, and 24/7 monitoring, similar to dedicated lone worker devices. It also adds health monitoring, crash detection, and emergency contact alerts, all in the phone and watch you already carry." }
 ];
 
@@ -47,14 +47,14 @@ export default function HomeHealthNurses() {
       <SEO
         schema={{ "@context": "https://schema.org", "@type": "FAQPage", "mainEntity": faqs.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } })) }}
       />
-      <HeroSection label="Home Health Nurse Safety" title={<>Safety for Home Health Nurses<br /><span className="text-gray-600">Working Alone</span></>} subtitle="Check-in timers, panic alarm, and real-time location sharing for nurses making solo home visits. If you don't check in on time, help is dispatched automatically." imageSrc={HERO_IMAGE} imageAlt="Home health nurse at patient's front door" ctaText="Start Free Trial" ctaLink={LOGIN_URL} />
+      <HeroSection label="Home Health Nurse Safety" title={<>Safety for Home Health Nurses<br /><span className="text-gray-600">Working Alone</span></>} subtitle="Check-in timers, panic alarm, and real-time location sharing for nurses making solo home visits. If you don't check in on time, the alert is reviewed for possible escalation automatically." imageSrc={HERO_IMAGE} imageAlt="Home health nurse at patient's front door" ctaText="Review Plans and Eligibility" ctaLink={LOGIN_URL} />
 
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="container max-w-3xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">What is a home health nurse safety device?</h2>
           <p className="text-lg text-gray-700 leading-relaxed">A home health nurse safety device is a tool that gives nurses who work alone in patient homes a way to call for help, share their location, and check in automatically at the end of each visit. MySentry turns your phone and smartwatch into a full lone worker safety system with 24/7 professional monitoring, so you are never truly working without a backup plan.</p>
           <div className="mt-6 flex flex-wrap gap-4">
-            {[{ label: "Check-in timers", value: "Automatic alerts" }, { label: "Response time", value: "Under 60 seconds" }, { label: "Monitoring", value: "24/7 professional agents" }].map((s, i) => (
+            {[{ label: "Check-in timers", value: "Automatic alerts" }, { label: "Response time", value: "Timing varies" }, { label: "Monitoring", value: "24/7 professional agents" }].map((s, i) => (
               <div key={i} className="bg-primary/5 rounded-xl px-5 py-3 text-center flex-1 min-w-[140px]">
                 <div className="text-xl font-bold text-primary">{s.value}</div>
                 <div className="text-xs text-gray-600 mt-1">{s.label}</div>
@@ -101,7 +101,7 @@ export default function HomeHealthNurses() {
           </div>
           <div className="text-center mt-12 flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/nurses"><Button variant="outline" className="rounded-full px-8 h-12 font-semibold border-primary text-primary hover:bg-primary/5">All Nurse Safety Features</Button></Link>
-            <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8 h-12">Start Free Trial <ArrowRight className="ml-2 h-4 w-4" /></Button></a>
+            <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold rounded-full px-8 h-12">Review Plans and Eligibility <ArrowRight className="ml-2 h-4 w-4" /></Button></a>
           </div>
         </div>
       </section>
@@ -124,7 +124,7 @@ export default function HomeHealthNurses() {
         <div className="container max-w-4xl">
           <h2 className="text-lg font-bold text-gray-900 mb-5 text-center">Explore related features</h2>
           <div className="flex flex-wrap gap-3 justify-center">
-            {[{ label: "Panic Button App", href: "/features/panic-button-app" }, { label: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" }, { label: "Emergency Contacts", href: "/features/emergency-contacts" }, { label: "MeetSafe Check-Ins", href: "/features/meetsafe-check-ins" }, { label: "Health Monitoring", href: "/features/health-monitoring" }, { label: "All Nurse Safety", href: "/nurses" }, { label: "Pricing", href: "/pricing" }].map((l, i) => (
+            {[{ label: "Panic Button App", href: "/features/panic-button-app" }, { label: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" }, { label: "Emergency Contacts", href: "/features/emergency-contacts" }, { label: "MeetSafe Check-Ins", href: "/features/safety-check-in-app" }, { label: "Health Monitoring", href: "/features/health-monitoring" }, { label: "All Nurse Safety", href: "/nurses" }, { label: "Pricing", href: "/pricing" }].map((l, i) => (
               <Link key={i} href={l.href}><span className="inline-flex items-center gap-1 px-4 py-2 rounded-full border border-primary/30 text-primary text-sm font-medium hover:bg-primary/5 transition-colors">{l.label} <ArrowRight className="h-3 w-3" /></span></Link>
             ))}
           </div>
@@ -153,8 +153,8 @@ export default function HomeHealthNurses() {
             <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none"><div className="absolute top-[-50%] left-[-20%] w-[80%] h-[80%] rounded-full bg-primary blur-[150px]" /></div>
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-5xl md:text-6xl font-heading font-bold text-white mb-8 uppercase tracking-tight">You Go In Alone. You Should Never Be Alone.</h2>
-              <p className="text-xl text-gray-300 mb-12 leading-relaxed">Start your 7-day free trial. No credit card required.</p>
-              <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-16 text-lg transition-all hover:scale-105 shadow-xl">Start Free Trial</Button></a>
+              <p className="text-xl text-gray-300 mb-12 leading-relaxed">Review current plans, eligibility, billing terms, and enrollment requirements.</p>
+              <a href={LOGIN_URL}><Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-12 h-16 text-lg transition-all hover:scale-105 shadow-xl">Review Plans and Eligibility</Button></a>
               <p className="text-gray-400 text-sm mt-6">Secure checkout. Cancel anytime.</p>
             </div>
           </div>

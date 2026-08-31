@@ -7,7 +7,7 @@ import { Link } from "wouter";
  */
 export default function RingTopBanner() {
   const message =
-    "Ring users can now get MySentry for $4.99/month on the Ring Appstore. Save 67% on personal emergency response.";
+    "Ring users can explore MySentry on the Ring App Store. Eligibility, pricing, and availability are confirmed during enrollment.";
 
   // Repeat the message to create a seamless loop
   const repeated = Array(6).fill(message);
@@ -47,11 +47,11 @@ export default function RingTopBanner() {
 
         {/* Sticky CTA on the right - always visible */}
         <Link
-          href="/ring"
+          href="/integrations/ring"
           className="absolute right-0 top-0 h-full flex items-center px-5 bg-primary text-white text-[12px] font-bold tracking-wide hover:bg-primary/90 transition-colors whitespace-nowrap z-10 shrink-0"
           style={{ boxShadow: "-8px 0 16px rgba(0,0,0,0.35)" }}
         >
-          Explore More →
+          Explore Ring Integration →
         </Link>
       </div>
     </div>

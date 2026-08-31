@@ -104,7 +104,7 @@ CRITICAL ANTI-AI-DETECTION RULES (follow every single one):
    - Use the StoryBrand framework implicitly (problem, guide, plan, success) but never label sections with framework terms
    - Add line gaps between all headings, sections, and paragraphs
    - Include 1 actionable checklist or numbered steps section
-   - Close with a natural CTA for MySentry's 7-day free trial
+   - Close with a natural CTA to review current MySentry plans and eligibility
 
 5. BRAND VOICE: calm, protective, practical, conversational. Not salesy or corporate.
 6. No medical claims. Use safety and wellness framing only.
@@ -572,7 +572,7 @@ Primary goal: ${input.goal}
 Topic: ${input.topic}
 Word count target: ${input.wordCount || 1800}
 ${input.outline ? `Outline to follow:\n${input.outline}` : ""}
-Must include CTA: "Start 7-Day Free Trial" (use natural wording, not spammy)`;
+Must include CTA: "Review Plans and Eligibility" (use natural wording, not spammy)`;
 
         const response = await invokeLLM({
           messages: [
@@ -792,7 +792,7 @@ Must include CTA: "Start 7-Day Free Trial" (use natural wording, not spammy)`;
         const checks: { name: string; passed: boolean; message: string }[] = [];
 
         // Check for em dashes
-        const hasEmDash = input.content.includes("—") || input.content.includes("–");
+        const hasEmDash = input.content.includes("\u2014") || input.content.includes("\u2013");
         checks.push({
           name: "No Em Dashes",
           passed: !hasEmDash,

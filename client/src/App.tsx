@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
+import { useEffect } from "react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ScrollToTop from "./components/ScrollToTop";
@@ -24,7 +25,7 @@ import Team from "./pages/Team";
 import Blogs from "./pages/Blogs";
 import BlogPost from "./pages/BlogPost";
 import Privacy from "./pages/Privacy";
-import Partner from "./pages/Partner";
+import Partners from "./pages/Partners";
 import Terms from "./pages/Terms";
 
 // SEO Pages - Features
@@ -74,6 +75,8 @@ import WhoopVsMysentry from "./pages/compare/WhoopVsMysentry";
 import MedicalGuardianVsMysentry from "./pages/compare/MedicalGuardianVsMysentry";
 import LivelyVsMysentry from "./pages/compare/LivelyVsMysentry";
 import AppleWatchFallDetectionVsMysentry from "./pages/compare/AppleWatchFallDetectionVsMysentry";
+import TraditionalMedicalAlertsComparison from "./pages/compare/TraditionalMedicalAlertsComparison";
+import FitnessWearablesComparison from "./pages/compare/FitnessWearablesComparison";
 
 // New SEO Pages - Audience & Pillar
 import PersonalSafetyApp from "./pages/PersonalSafetyApp";
@@ -121,6 +124,15 @@ import SeniorSafetyPlanningGuide from "./pages/guides/SeniorSafetyPlanningGuide"
 
 // Admin
 import AdminLayout from "./pages/admin/AdminLayout";
+
+function RedirectRoute({ to }: { to: string }) {
+  useEffect(() => {
+    window.location.replace(to);
+  }, [to]);
+
+  return null;
+}
+
 function Router() {
   // make sure to consider if you need authentication for certain routes
   return (
@@ -129,10 +141,10 @@ function Router() {
       <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/females" component={Females} />
       <Route path="/nurses" component={Nurses} />
-      <Route path="/nurses/travel-nurses" component={TravelNurses} />
-      <Route path="/nurses/home-health" component={HomeHealthNurses} />
-      <Route path="/nurses/er-trauma" component={ErTraumaNurses} />
-      <Route path="/nurses/night-shift" component={NightShiftNurses} />
+      <Route path="/nurses/travel-nurses">{() => <RedirectRoute to="/nurses#travel-nurses" />}</Route>
+      <Route path="/nurses/home-health">{() => <RedirectRoute to="/nurses#home-health" />}</Route>
+      <Route path="/nurses/er-trauma">{() => <RedirectRoute to="/nurses#er-trauma" />}</Route>
+      <Route path="/nurses/night-shift">{() => <RedirectRoute to="/nurses#night-shift" />}</Route>
       <Route path="/seniors" component={Seniors} />
       <Route path="/families" component={Families} />
       <Route path="/employers" component={Employers} />
@@ -147,7 +159,8 @@ function Router() {
       <Route path="/blogs" component={Blogs} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/privacy" component={Privacy} />
-      <Route path="/partner" component={Partner} />
+      <Route path="/partner">{() => <RedirectRoute to="/partners" />}</Route>
+      <Route path="/partners" component={Partners} />
       <Route path="/terms" component={Terms} />
 
       {/* SEO Pages - Features */}
@@ -159,7 +172,7 @@ function Router() {
       <Route path="/features/emergency-contacts" component={EmergencyContacts} />
       <Route path="/features/live-video-response" component={LiveVideoResponse} />
       <Route path="/features/health-monitoring" component={HealthMonitoring} />
-      <Route path="/features/meetsafe-check-ins" component={MeetSafeCheckIns} />
+      <Route path="/features/meetsafe-check-ins">{() => <RedirectRoute to="/features/safety-check-in-app" />}</Route>
       <Route path="/features/safety-check-in-app" component={SafetyCheckInApp} />
       <Route path="/features/family-connectivity" component={FamilyConnectivity} />
       <Route path="/features/automated-call" component={AutomatedCall} />
@@ -171,7 +184,7 @@ function Router() {
       <Route path="/use-cases/family-safety-app" component={FamilySafetyApp} />
       <Route path="/use-cases/medical-alert-app-for-seniors" component={MedicalAlertForSeniors} />
       <Route path="/use-cases/lone-worker-safety-app" component={LoneWorkerSafetyApp} />
-      <Route path="/use-cases/home-healthcare-worker-safety" component={HomeHealthcareWorkerSafety} />
+      <Route path="/use-cases/home-healthcare-worker-safety">{() => <RedirectRoute to="/use-cases/lone-worker-safety-app" />}</Route>
       <Route path="/use-cases/teen-driver-safety" component={TeenDriverSafety} />
 
       {/* SEO Pages - Industries */}
@@ -192,32 +205,34 @@ function Router() {
       <Route path="/compare/google-personal-safety-vs-mysentry" component={GooglePersonalSafetyVsMysentry} />
       <Route path="/compare/sosecure-adt-vs-mysentry" component={SOSecureAdtVsMysentry} />
       <Route path="/compare/medical-alert-devices-vs-mysentry" component={MedicalAlertDevicesVsMysentry} />
-      <Route path="/compare/oura-ring-vs-mysentry" component={OuraRingVsMysentry} />
-      <Route path="/compare/whoop-vs-mysentry" component={WhoopVsMysentry} />
-      <Route path="/compare/medical-guardian-vs-mysentry" component={MedicalGuardianVsMysentry} />
-      <Route path="/compare/lively-vs-mysentry" component={LivelyVsMysentry} />
+      <Route path="/compare/oura-ring-vs-mysentry">{() => <RedirectRoute to="/compare/fitness-wearables-vs-mysentry" />}</Route>
+      <Route path="/compare/whoop-vs-mysentry">{() => <RedirectRoute to="/compare/fitness-wearables-vs-mysentry" />}</Route>
+      <Route path="/compare/medical-guardian-vs-mysentry">{() => <RedirectRoute to="/compare/traditional-medical-alerts-vs-mysentry" />}</Route>
+      <Route path="/compare/lively-vs-mysentry">{() => <RedirectRoute to="/compare/traditional-medical-alerts-vs-mysentry" />}</Route>
       <Route path="/compare/apple-watch-fall-detection-vs-mysentry" component={AppleWatchFallDetectionVsMysentry} />
+      <Route path="/compare/traditional-medical-alerts-vs-mysentry" component={TraditionalMedicalAlertsComparison} />
+      <Route path="/compare/fitness-wearables-vs-mysentry" component={FitnessWearablesComparison} />
 
       {/* New SEO Pages - Audience & Pillar */}
       <Route path="/personal-safety-app" component={PersonalSafetyApp} />
       <Route path="/medical-alert-system-for-seniors" component={MedicalAlertSystemForSeniors} />
-      <Route path="/who-we-protect/seniors" component={WhoWeProtectSeniors} />
-      <Route path="/who-we-protect/women" component={WhoWeProtectWomen} />
-      <Route path="/who-we-protect/employers" component={WhoWeProtectEmployers} />
-      <Route path="/who-we-protect/drivers" component={WhoWeProtectDrivers} />
-      <Route path="/who-we-protect/students" component={WhoWeProtectStudents} />
-      <Route path="/who-we-protect/children-and-teens" component={WhoWeProtectChildrenAndTeens} />
+      <Route path="/who-we-protect/seniors">{() => <RedirectRoute to="/use-cases/medical-alert-app-for-seniors" />}</Route>
+      <Route path="/who-we-protect/women">{() => <RedirectRoute to="/use-cases/safety-app-for-women" />}</Route>
+      <Route path="/who-we-protect/employers">{() => <RedirectRoute to="/use-cases/lone-worker-safety-app" />}</Route>
+      <Route path="/who-we-protect/drivers">{() => <RedirectRoute to="/use-cases/teen-driver-safety" />}</Route>
+      <Route path="/who-we-protect/students">{() => <RedirectRoute to="/use-cases/family-safety-app" />}</Route>
+      <Route path="/who-we-protect/children-and-teens">{() => <RedirectRoute to="/use-cases/family-safety-app" />}</Route>
 
       {/* Phase 2 - Solutions (Vertical-Specific BOFU) */}
-      <Route path="/solutions/home-healthcare" component={HomeHealthcareSolution} />
-      <Route path="/solutions/real-estate" component={RealEstateSolution} />
+      <Route path="/solutions/home-healthcare">{() => <RedirectRoute to="/industries/home-healthcare" />}</Route>
+      <Route path="/solutions/real-estate">{() => <RedirectRoute to="/industries/real-estate" />}</Route>
       <Route path="/solutions/delivery-drivers" component={DeliveryDriversSolution} />
-      <Route path="/solutions/construction" component={ConstructionSolution} />
-      <Route path="/solutions/retail-workers" component={RetailWorkersSolution} />
+      <Route path="/solutions/construction">{() => <RedirectRoute to="/industries/construction" />}</Route>
+      <Route path="/solutions/retail-workers">{() => <RedirectRoute to="/industries/retail" />}</Route>
 
       {/* Phase 2 - Safety For (Audience-Specific BOFU) */}
-      <Route path="/safety-for/women-living-alone" component={WomenLivingAlone} />
-      <Route path="/safety-for/seniors-aging-in-place" component={SeniorsAgingInPlace} />
+      <Route path="/safety-for/women-living-alone">{() => <RedirectRoute to="/use-cases/safety-app-for-women" />}</Route>
+      <Route path="/safety-for/seniors-aging-in-place">{() => <RedirectRoute to="/use-cases/medical-alert-app-for-seniors" />}</Route>
       <Route path="/safety-for/solo-travelers" component={SoloTravelers} />
 
       {/* Phase 2 - Case Studies */}
@@ -229,7 +244,7 @@ function Router() {
       <Route path="/resources/employer-one-pager" component={EmployerOnePager} />
 
       {/* Ring Landing Page */}
-      <Route path="/ring" component={RingLandingPage} />
+      <Route path="/ring">{() => <RedirectRoute to="/integrations/ring" />}</Route>
 
       {/* Phase 2 - Integrations (Wearable Pages) */}
       <Route path="/integrations/apple-watch" component={AppleWatchIntegration} />
@@ -239,7 +254,7 @@ function Router() {
 
       {/* Phase 2 - Guides (Authority Content) */}
       <Route path="/guides/lone-worker-safety" component={LoneWorkerSafetyGuide} />
-      <Route path="/guides/professional-monitoring" component={ProfessionalMonitoringGuide} />
+      <Route path="/guides/professional-monitoring">{() => <RedirectRoute to="/features/24-7-professional-monitoring" />}</Route>
       <Route path="/guides/senior-safety-planning" component={SeniorSafetyPlanningGuide} />
 
       {/* Admin Blog CMS */}

@@ -37,7 +37,7 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 async function startServer() {
   const app = express();
   const server = createServer(app);
-  // HSTS — tell browsers to always use HTTPS
+  // HSTS: tell browsers to always use HTTPS
   app.use((_req, res, next) => {
     res.setHeader(
       'Strict-Transport-Security',

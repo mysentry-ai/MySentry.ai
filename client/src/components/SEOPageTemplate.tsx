@@ -145,7 +145,7 @@ export default function SEOPageTemplate({
         schema={allSchemas}
       />
 
-      {/* Hero Section — lean above-the-fold: label + H1 + subtitle + CTAs only */}
+      {/* Hero Section  -  lean above-the-fold: label + H1 + subtitle + CTAs only */}
       <section className="min-h-[calc(100vh-80px)] flex items-center bg-gradient-to-b from-[#e8f5e9] to-white">
         <div className="container max-w-6xl mx-auto px-4 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -166,17 +166,17 @@ export default function SEOPageTemplate({
               )}
               {!heroDescription && h1Sub && <div className="mb-4" />}
 
-              {/* CTAs — immediately after subtitle, fully visible above fold */}
-              <div className="flex flex-wrap gap-4">
-                <a href={primaryCta.href}>
-                  <Button size="lg" className="bg-[#6AD990] hover:bg-[#5bc97e] text-[#1a1a1a] font-bold text-lg px-8 py-6 rounded-full uppercase tracking-wider">
+              {/* CTAs  -  immediately after subtitle, fully visible above fold */}
+              <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+                <a href={primaryCta.href} className="w-full sm:w-auto">
+                  <Button size="lg" className="h-auto min-h-14 w-full whitespace-normal rounded-full bg-[#6AD990] px-5 py-4 text-center text-base font-bold uppercase tracking-wider text-[#1a1a1a] hover:bg-[#5bc97e] sm:w-auto sm:px-8 sm:text-lg">
                     {primaryCta.text}
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </a>
                 {secondaryCta && (
-                  <Link href={secondaryCta.href}>
-                    <Button variant="outline" size="lg" className="border-2 border-[#1a1a1a] text-[#1a1a1a] font-bold text-lg px-8 py-6 rounded-full uppercase tracking-wider hover:bg-[#1a1a1a] hover:text-white">
+                  <Link href={secondaryCta.href} className="w-full sm:w-auto">
+                    <Button variant="outline" size="lg" className="h-auto min-h-14 w-full whitespace-normal rounded-full border-2 border-[#1a1a1a] px-5 py-4 text-center text-base font-bold uppercase tracking-wider text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white sm:w-auto sm:px-8 sm:text-lg">
                       {secondaryCta.text}
                     </Button>
                   </Link>
@@ -200,7 +200,7 @@ export default function SEOPageTemplate({
         </div>
       </section>
 
-      {/* Problem + Empathy + Steps — first section below the fold */}
+      {/* Problem + Empathy + Steps  -  first section below the fold */}
       <section className="py-16 bg-white">
         <div className="container max-w-4xl mx-auto px-4">
           <p className="text-lg text-gray-700 mb-4 leading-relaxed">{problem}</p>

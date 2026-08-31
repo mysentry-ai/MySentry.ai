@@ -20,28 +20,28 @@ export default function WhoWeProtectEmployers() {
         },
         {
           title: "Set Up Your Account",
-          description: "Add workers via CSV upload or manual entry. Each worker downloads MySentry on their iPhone or Android. Setup takes under 10 minutes per worker.",
+          description: "Add workers via CSV upload or manual entry. Each worker downloads MySentry on their iPhone or Android. Setup takes after alert review per worker.",
         },
         {
           title: "Monitor Your Team",
-          description: "Your safety manager receives instant alerts when a worker triggers a panic alarm or does not respond to a fall detection prompt. Live GPS location is included.",
+          description: "Your safety manager receives prompt alerts when a worker triggers a panic alarm or does not respond to a fall detection prompt. Live GPS location is included.",
         },
       ]}
       primaryCta={{ text: "Get a Team Quote", href: "/contact" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="MySentry is a lone worker safety app that protects employees with 24/7 professional monitoring, automatic fall detection, a panic button with three triggers (voice, phone tap, smartwatch tap), and live video emergency response. It works on iPhone and Android without extra hardware. Safety managers receive instant alerts with live GPS location when a worker needs help."
+      directAnswer="MySentry is a lone worker safety app that protects employees with 24/7 professional monitoring, automatic fall detection, a panic button with three triggers (voice, phone tap, smartwatch tap), and live video emergency response. It works on iPhone and Android without extra hardware. Safety managers receive prompt alerts with live GPS location when a worker needs help."
       howItWorks={[
         "Each worker installs MySentry on their iPhone or Android phone.",
         "MySentry monitors their safety in the background while they work.",
         "If a fall is detected, the worker receives a Safety Check Alert and has 60 seconds to confirm they are okay.",
         "If they do not respond, or if they trigger the panic alarm, an alert is sent to our 24/7 monitoring team and your safety manager.",
         "A trained agent starts a live video call to the worker's phone.",
-        "The agent dispatches the right help and keeps your safety manager informed.",
+        "The agent reviews the alert and may coordinate escalation and keeps your safety manager informed.",
       ]}
       afterAlert={[
         "A 24/7 monitoring agent receives the alert and the worker's live GPS location.",
         "The agent starts a live video call to the worker's phone within seconds.",
-        "Your safety manager receives an instant alert with the worker's location.",
+        "Your safety manager receives an prompt alert with the worker's location.",
         "The agent coordinates the response and dispatches emergency services if needed.",
         "A full incident report is generated for your records.",
       ]}
@@ -59,14 +59,14 @@ export default function WhoWeProtectEmployers() {
       keyTakeaways={[
         "No extra hardware required. Works on the smartphone your workers already carry.",
         "Automatic fall detection and a panic button with three triggers.",
-        "Safety managers receive instant alerts with live GPS location.",
+        "Safety managers receive prompt alerts with live GPS location.",
         "24/7 professional monitoring with live video response.",
         "Scales from 5 to 500 workers with volume pricing.",
       ]}
       faqs={[
         {
           question: "What is the best lone worker safety app?",
-          answer: "MySentry is a strong choice for lone worker safety. It includes automatic fall detection, a panic button with three triggers, 24/7 professional monitoring with live video response, and instant alerts to safety managers. It works on the smartphone your workers already carry, with no extra hardware required.",
+          answer: "MySentry is a strong choice for lone worker safety. It includes automatic fall detection, a panic button with three triggers, 24/7 professional monitoring with live video response, and prompt alerts to safety managers. It works on the smartphone your workers already carry, with no extra hardware required.",
         },
         {
           question: "Does MySentry meet lone worker safety regulations?",

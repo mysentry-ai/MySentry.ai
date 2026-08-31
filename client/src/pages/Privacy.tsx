@@ -94,7 +94,7 @@ export const Privacy = () => {
         description=""
       />
 
-      <div className="flex gap-8 max-w-7xl mx-auto px-4 py-12">
+      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-12 lg:flex-row">
         {/* Sticky TOC - Desktop */}
         <aside className="hidden lg:block w-64 flex-shrink-0">
           <div className="sticky top-24 bg-[#f0f7f4] p-6 rounded-2xl border border-[#386758]/20 max-h-[calc(100vh-120px)] overflow-y-auto">
@@ -124,7 +124,7 @@ export const Privacy = () => {
         </aside>
 
         {/* Mobile TOC Toggle */}
-        <div className="lg:hidden mb-6">
+        <div className="mb-6 w-full lg:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="flex items-center gap-2 px-4 py-2 bg-[#f0f7f4] border border-[#386758]/20 rounded-lg text-[#386758] font-medium hover:bg-[#386758]/10 transition-all"
@@ -162,7 +162,7 @@ export const Privacy = () => {
         </div>
 
         {/* Main Content */}
-        <main className="flex-1 max-w-4xl">
+        <main className="w-full min-w-0 flex-1 max-w-4xl">
           <div id="privacy-content" className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
             <p className="text-3xl font-bold text-gray-900 mb-8">Privacy Policy</p>
             <p className="lead text-xl text-gray-900 font-medium mb-6">
