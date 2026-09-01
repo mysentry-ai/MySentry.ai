@@ -120,6 +120,15 @@ import RingLandingPage from "./pages/RingLandingPage";
 import LoneWorkerSafetyGuide from "./pages/guides/LoneWorkerSafetyGuide";
 import ProfessionalMonitoringGuide from "./pages/guides/ProfessionalMonitoringGuide";
 import SeniorSafetyPlanningGuide from "./pages/guides/SeniorSafetyPlanningGuide";
+import {
+  AgingInPlaceChecklistPage,
+  FamilySafetyWithoutTrackingPage,
+  NightShiftNurseChecklistPage,
+  PeopleLivingAlonePage,
+  RenterSafetyPage,
+  UtilityWorkersPage,
+  WearableFallLimitationsPage,
+} from "./pages/growth/OrganicGrowthPages";
 
 // Admin
 import AdminLayout from "./pages/admin/AdminLayout";
@@ -185,6 +194,7 @@ function Router() {
       <Route path="/use-cases/lone-worker-safety-app" component={LoneWorkerSafetyApp} />
       <Route path="/use-cases/home-healthcare-worker-safety">{() => <RedirectRoute to="/use-cases/lone-worker-safety-app" />}</Route>
       <Route path="/use-cases/teen-driver-safety" component={TeenDriverSafety} />
+      <Route path="/use-cases/personal-safety-app-for-renters" component={RenterSafetyPage} />
 
       {/* SEO Pages - Industries */}
       <Route path="/industries" component={IndustriesHub} />
@@ -226,6 +236,7 @@ function Router() {
       <Route path="/solutions/home-healthcare">{() => <RedirectRoute to="/industries/home-healthcare" />}</Route>
       <Route path="/solutions/real-estate">{() => <RedirectRoute to="/industries/real-estate" />}</Route>
       <Route path="/solutions/delivery-drivers" component={DeliveryDriversSolution} />
+      <Route path="/solutions/utility-workers" component={UtilityWorkersPage} />
       <Route path="/solutions/construction">{() => <RedirectRoute to="/industries/construction" />}</Route>
       <Route path="/solutions/retail-workers">{() => <RedirectRoute to="/industries/retail" />}</Route>
 
@@ -233,6 +244,7 @@ function Router() {
       <Route path="/safety-for/women-living-alone">{() => <RedirectRoute to="/use-cases/safety-app-for-women" />}</Route>
       <Route path="/safety-for/seniors-aging-in-place">{() => <RedirectRoute to="/use-cases/medical-alert-app-for-seniors" />}</Route>
       <Route path="/safety-for/solo-travelers" component={SoloTravelers} />
+      <Route path="/safety-for/people-living-alone" component={PeopleLivingAlonePage} />
 
       {/* Phase 2 - Case Studies */}
       <Route path="/case-studies/home-healthcare" component={HomeHealthcareCaseStudy} />
@@ -255,6 +267,10 @@ function Router() {
       <Route path="/guides/lone-worker-safety" component={LoneWorkerSafetyGuide} />
       <Route path="/guides/professional-monitoring">{() => <RedirectRoute to="/features/24-7-professional-monitoring" />}</Route>
       <Route path="/guides/senior-safety-planning" component={SeniorSafetyPlanningGuide} />
+      <Route path="/guides/aging-in-place-checklist" component={AgingInPlaceChecklistPage} />
+      <Route path="/guides/family-safety-without-constant-tracking" component={FamilySafetyWithoutTrackingPage} />
+      <Route path="/guides/night-shift-nurse-safety-checklist" component={NightShiftNurseChecklistPage} />
+      <Route path="/guides/wearable-fall-detection-limitations" component={WearableFallLimitationsPage} />
 
       {/* Admin Blog CMS */}
       <Route path="/admin">

@@ -112,6 +112,41 @@ describe("route-aware SEO rendering", () => {
     expect(html).toContain("Page not found");
     expect(html).not.toContain('type="application/ld+json"');
   });
+
+  it("serves unique indexable metadata and structured initial HTML for every growth route", async () => {
+    const routes = [
+      "/safety-for/people-living-alone",
+      "/guides/aging-in-place-checklist",
+      "/guides/family-safety-without-constant-tracking",
+      "/guides/night-shift-nurse-safety-checklist",
+      "/use-cases/personal-safety-app-for-renters",
+      "/guides/wearable-fall-detection-limitations",
+      "/solutions/utility-workers",
+    ];
+    const titles = new Set<string>();
+    const descriptions = new Set<string>();
+
+    for (const route of routes) {
+      const meta = await resolveMeta(route, "https://mysentry.ai");
+      const html = renderSeoHtml(template, meta);
+
+      expect(meta.found, route).toBe(true);
+      expect(meta.canonicalPath, route).toBe(route);
+      expect(meta.robots, route).toBe("index,follow");
+      expect(meta.title.length, route).toBeGreaterThan(30);
+      expect(meta.description.length, route).toBeGreaterThan(100);
+      expect(CANONICAL_REDIRECTS[route], route).toBeUndefined();
+      expect(html, route).toContain(`rel="canonical" href="https://mysentry.ai${route}"`);
+      expect(html, route).toContain("<h1>");
+      expect(html, route).toContain('type="application/ld+json"');
+      expect(html, route).not.toContain("SSR_TITLE");
+      titles.add(meta.title);
+      descriptions.add(meta.description);
+    }
+
+    expect(titles.size).toBe(routes.length);
+    expect(descriptions.size).toBe(routes.length);
+  });
 });
 
 describe("canonical redirect governance", () => {

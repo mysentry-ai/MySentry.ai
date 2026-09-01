@@ -146,8 +146,8 @@ export default function SEOPageTemplate({
       />
 
       {/* Hero Section  -  lean above-the-fold: label + H1 + subtitle + CTAs only */}
-      <section className="min-h-[calc(100vh-80px)] flex items-center bg-gradient-to-b from-[#e8f5e9] to-white">
-        <div className="container max-w-6xl mx-auto px-4 py-16">
+      <section className="flex min-h-[calc(100vh-80px)] items-start bg-gradient-to-b from-[#e8f5e9] to-white pt-20 lg:items-center lg:pt-0">
+        <div className="container mx-auto max-w-6xl px-4 py-12 sm:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">{label}</span>

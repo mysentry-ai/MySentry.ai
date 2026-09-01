@@ -54,6 +54,7 @@ export default function NightShiftNurses() {
         { question: "Can my employer include MySentry in a night-shift program?", answer: "Employers can review options, but policy alignment, employee consent, privacy, device eligibility, permissions, region, connectivity, and response roles must be established first." },
       ]}
       relatedLinks={[
+        { text: "Night Shift Safety Checklist", href: "/guides/night-shift-nurse-safety-checklist" },
         { text: "Nurse Safety Hub", href: "/nurses" },
         { text: "ER and Trauma Nurses", href: "/nurses/er-trauma" },
         { text: "Travel Nurses", href: "/nurses/travel-nurses" },

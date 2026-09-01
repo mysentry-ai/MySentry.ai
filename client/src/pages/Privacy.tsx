@@ -237,7 +237,7 @@ export const Privacy = () => {
             <div className="bg-[#e8f5e9] p-8 rounded-2xl border border-[#386758]/20 my-10 shadow-sm">
               <ul className="m-0 space-y-4 text-gray-900">
                 <li>
-                  <strong>Mysentry Vital Companion</strong> requires access to your contact list to allow you to designate emergency contacts who can be alerted in case of an emergency. When you grant permission, we will upload your contact list to our secure servers.
+                  <strong>MySentry</strong> requires access to your contact list to allow you to designate emergency contacts who can be alerted in case of an emergency. When you grant permission, we will upload your contact list to our secure servers.
                 </li>
                 <li>
                   This allows the app to quickly identify and notify your chosen emergency contacts. Your contact information is used solely for this purpose: identifying and contacting your designated emergency contacts in an emergency situation initiated by you.

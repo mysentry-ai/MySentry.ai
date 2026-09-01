@@ -105,6 +105,9 @@ export default function Seniors() {
                 <Link href="/pricing" className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-[#0b6848] bg-white px-7 py-3 font-bold text-[#0b6848] transition hover:bg-[#edf8f1] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#007bc2] focus-visible:ring-offset-2">
                   Compare Plans
                 </Link>
+                <Link href="/guides/aging-in-place-checklist" className="inline-flex min-h-12 items-center justify-center rounded-full border-2 border-[#004F7B] bg-white px-7 py-3 font-bold text-[#004F7B] transition hover:bg-[#eef7fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#007bc2] focus-visible:ring-offset-2">
+                  Aging in Place Checklist
+                </Link>
               </div>
             </div>
 

@@ -36,6 +36,7 @@ const STATIC_PAGES = [
   { url: "/use-cases/medical-alert-app-for-seniors", priority: "0.8", changefreq: "monthly" },
   { url: "/use-cases/lone-worker-safety-app", priority: "0.8", changefreq: "monthly" },
   { url: "/use-cases/teen-driver-safety", priority: "0.8", changefreq: "monthly" },
+  { url: "/use-cases/personal-safety-app-for-renters", priority: "0.8", changefreq: "monthly" },
   // Industries
   { url: "/industries", priority: "0.7", changefreq: "monthly" },
   { url: "/industries/home-healthcare", priority: "0.7", changefreq: "monthly" },
@@ -51,8 +52,10 @@ const STATIC_PAGES = [
   { url: "/personal-safety-app", priority: "0.9", changefreq: "monthly" },
   // Solutions (Vertical-Specific BOFU)
   { url: "/solutions/delivery-drivers", priority: "0.8", changefreq: "monthly" },
+  { url: "/solutions/utility-workers", priority: "0.8", changefreq: "monthly" },
   // Safety For (Audience-Specific BOFU)
   { url: "/safety-for/solo-travelers", priority: "0.8", changefreq: "monthly" },
+  { url: "/safety-for/people-living-alone", priority: "0.8", changefreq: "monthly" },
   // Resources
   { url: "/resources/employer-one-pager", priority: "0.7", changefreq: "monthly" },
   // Integrations (Wearable Pages)
@@ -62,6 +65,10 @@ const STATIC_PAGES = [
   // Guides (Authority Content)
   { url: "/guides/lone-worker-safety", priority: "0.7", changefreq: "monthly" },
   { url: "/guides/senior-safety-planning", priority: "0.7", changefreq: "monthly" },
+  { url: "/guides/aging-in-place-checklist", priority: "0.7", changefreq: "monthly" },
+  { url: "/guides/family-safety-without-constant-tracking", priority: "0.7", changefreq: "monthly" },
+  { url: "/guides/night-shift-nurse-safety-checklist", priority: "0.7", changefreq: "monthly" },
+  { url: "/guides/wearable-fall-detection-limitations", priority: "0.7", changefreq: "monthly" },
   // Info pages
   { url: "/blogs", priority: "0.8", changefreq: "daily" },
   { url: "/about-us", priority: "0.6", changefreq: "monthly" },

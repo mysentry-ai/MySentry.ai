@@ -232,6 +232,11 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       "Review eligible crash signals, user response windows, trusted contacts, permitted location context, monitoring, and limitations for teen-driver plans.",
   },
+  "/use-cases/personal-safety-app-for-renters": {
+    title: "Personal Safety App for Renters and Apartment Living",
+    description:
+      "Add a portable personal-safety routine for apartment living, shared spaces, transit, and time alone without replacing home security.",
+  },
 
   // ─── Industries ───────────────────────────────────────────────────────────
   "/industries": {
@@ -369,6 +374,11 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       "Review MySentry Panic Alarm, eligible crash detection, Safety Checks, monitoring, permissions, and limits for delivery-driver teams.",
   },
+  "/solutions/utility-workers": {
+    title: "Personal Safety App for Utility and Field Workers",
+    description:
+      "Explore a supplemental personal-safety layer for changing worksites and field travel within employer training, supervision, and emergency procedures.",
+  },
   "/solutions/construction": {
     title: "Construction Safety Solution | Fall Detection for Job Sites",
     description:
@@ -395,6 +405,11 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     title: "Solo Travel Safety App and Check-Ins",
     description:
       "Prepare MySentry Panic Alarm, Safety Checks, trusted contacts, monitoring, and an offline backup plan before traveling alone.",
+  },
+  "/safety-for/people-living-alone": {
+    title: "Personal Safety App for People Living Alone",
+    description:
+      "Plan check-ins, trusted contacts, and eligible safety features with a supplemental personal safety app for independent routines.",
   },
 
   // ─── Case Studies ─────────────────────────────────────────────────────────
@@ -516,5 +531,25 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     title: "Senior Safety Planning Guide for Families",
     description:
       "Create a respectful senior safety plan covering home hazards, contacts, medical guidance, technology, privacy, and emergency steps.",
+  },
+  "/guides/aging-in-place-checklist": {
+    title: "Aging in Place Safety Checklist for Older Adults and Families",
+    description:
+      "Use a respectful room-by-room checklist to plan home safety, communication, support, technology, privacy, and emergency contacts together.",
+  },
+  "/guides/family-safety-without-constant-tracking": {
+    title: "Family Safety Without Constant Tracking",
+    description:
+      "Build consent-based family safety routines with agreed check-ins, trusted contacts, situational sharing, and clear privacy boundaries.",
+  },
+  "/guides/night-shift-nurse-safety-checklist": {
+    title: "Night Shift Nurse Safety Checklist for Parking and Commutes",
+    description:
+      "Plan transitions before and after a nursing shift with workplace procedures, parking, communication, and fatigue-aware commute decisions.",
+  },
+  "/guides/wearable-fall-detection-limitations": {
+    title: "Wearable Fall Detection: Capabilities and Limitations",
+    description:
+      "Understand what eligible consumer devices may detect, why events can be missed, and which settings, permissions, wearing conditions, and connections matter.",
   },
 };

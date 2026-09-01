@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { ArrowRight, Shield, Users, Heart, Briefcase, Stethoscope } from "lucide-react";
+import { ArrowRight, Shield, Users, Heart, Briefcase, Stethoscope, Home } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import GetStartedSection from "@/components/GetStartedSection";
@@ -7,33 +7,45 @@ import GetStartedSection from "@/components/GetStartedSection";
 const useCases = [
   {
     title: "Safety App for Women",
-    description: "Feel safer on dates, runs, or walking alone. Share your location, trigger a silent alarm, and get immediate help when you need it most.",
+    description: "Prepare for dates, runs, commutes, and time alone with supported alerts, Safety Checks, and trusted contacts.",
     href: "/use-cases/safety-app-for-women",
     icon: Shield,
   },
   {
     title: "Family Safety App",
-    description: "Keep your loved ones safe with location sharing, automatic crash detection, and an easy way for family members to call for help.",
+    description: "Coordinate consent-based check-ins, trusted contacts, and supported alerts for the moments your family chooses.",
     href: "/use-cases/family-safety-app",
     icon: Users,
   },
   {
     title: "Medical Alert App for Seniors",
-    description: "Live independently and confidently. Automatic fall detection and 24/7 monitoring provide a safety net for seniors living alone.",
+    description: "Support independent routines with agreed contacts, Safety Checks, eligible fall checks, and current plan limitations.",
     href: "/use-cases/medical-alert-app-for-seniors",
     icon: Heart,
   },
   {
     title: "Lone Worker Safety App",
-    description: "Protect employees working alone. MySentry provides check-ins, a panic button, and 24/7 monitoring to ensure their safety in the field.",
+    description: "Add supported check-ins and alerts within employer hazard controls, training, supervision, and emergency procedures.",
     href: "/use-cases/lone-worker-safety-app",
     icon: Briefcase,
   },
   {
     title: "Home Healthcare Worker Safety",
-    description: "Keep home health aides, visiting nurses, and in-home caregivers safe with panic alerts, GPS tracking, and professional monitoring.",
+    description: "Plan for solo visits, changing homes, travel between appointments, employer procedures, and supported alerts.",
     href: "/use-cases/lone-worker-safety-app",
     icon: Stethoscope,
+  },
+  {
+    title: "Safety for People Living Alone",
+    description: "Build an independent-living routine with scheduled check-ins, trusted contacts, supported alerts, and a disconnected backup.",
+    href: "/safety-for/people-living-alone",
+    icon: Shield,
+  },
+  {
+    title: "Personal Safety for Renters",
+    description: "Add a portable personal-safety layer for apartments, shared spaces, transit, parking, and time away from home.",
+    href: "/use-cases/personal-safety-app-for-renters",
+    icon: Home,
   },
 ];
 
@@ -66,7 +78,7 @@ export default function UseCasesHub() {
         <div className="container max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {useCases.map((uc) => (
-              <Link key={uc.href} href={uc.href} onClick={() => window.scrollTo(0, 0)}>
+              <Link key={uc.title} href={uc.href} onClick={() => window.scrollTo(0, 0)}>
                 <div className="bg-white rounded-2xl p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all hover:-translate-y-1 cursor-pointer h-full">
                   <uc.icon className="w-10 h-10 text-primary mb-4" />
                   <h2 className="text-xl font-bold text-[#1a1a1a] mb-3">{uc.title}</h2>

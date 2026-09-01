@@ -56,6 +56,7 @@ export default function FallDetectionApp() {
         { claim: "Supported-device requirement", detail: "MySentry presents fall detection only for eligible watch and phone configurations." },
       ]}
       relatedLinks={[
+        { text: "Wearable Fall Detection Limitations", href: "/guides/wearable-fall-detection-limitations" },
         { text: "Apple Watch Integration", href: "/integrations/apple-watch" },
         { text: "Samsung Galaxy Watch Integration", href: "/integrations/samsung-galaxy-watch" },
         { text: "Professional Monitoring", href: "/features/24-7-professional-monitoring" },

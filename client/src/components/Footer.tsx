@@ -208,13 +208,28 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/guides/aging-in-place-checklist" className="text-gray-900 hover:text-primary transition-colors">
+                  Aging in Place Checklist
+                </Link>
+              </li>
+              <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/solo-travelers" className="text-gray-900 hover:text-primary transition-colors">
                   Solo Traveler Safety
                 </Link>
               </li>
               <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/people-living-alone" className="text-gray-900 hover:text-primary transition-colors">
+                  Safety for People Living Alone
+                </Link>
+              </li>
+              <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/use-cases/safety-app-for-women" className="text-gray-900 hover:text-primary transition-colors">
                   Women Living Alone
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/use-cases/personal-safety-app-for-renters" className="text-gray-900 hover:text-primary transition-colors">
+                  Personal Safety for Renters
                 </Link>
               </li>
               <li>
@@ -262,6 +277,11 @@ export default function Footer() {
                   Delivery Driver Safety
                 </Link>
               </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/solutions/utility-workers" className="text-gray-900 hover:text-primary transition-colors">
+                  Utility and Field Worker Safety
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -269,6 +289,21 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Featured Guides</h3>
             <ul className="space-y-3 text-base font-medium">
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/guides/family-safety-without-constant-tracking" className="text-gray-900 hover:text-primary transition-colors">
+                  Family Safety and Privacy
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/guides/wearable-fall-detection-limitations" className="text-gray-900 hover:text-primary transition-colors">
+                  Wearable Fall Detection Limits
+                </Link>
+              </li>
+              <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/guides/night-shift-nurse-safety-checklist" className="text-gray-900 hover:text-primary transition-colors">
+                  Night Shift Nurse Checklist
+                </Link>
+              </li>
               <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/blog/employee-health-wellness-future" className="text-gray-900 hover:text-primary transition-colors">
                   Employee Health &amp; Wellness

@@ -1,74 +1,64 @@
 # MySentry
 
-> MySentry is a Safety and Health monitoring app with Emergency Response. It combines panic alarm, fall detection, crash detection, real-time health monitoring (heart rate, HRV, SpO2), emergency contacts, live video response, and 24/7 professional monitoring into one app. Available on iOS and Android with Apple Watch and Samsung Galaxy Watch support. Plans start at $15/month with a 7-day free trial.
+> Live Safe. Stay Healthy.
+
+MySentry is a supplemental personal safety and wellness service for supported phones and eligible wearable configurations. Depending on the current plan, device, software, settings, permissions, app state, connectivity, region, and service availability, supported workflows may include a user-activated Panic Alarm, scheduled Safety Checks, eligible device-detected events, trusted contacts, permission-based alert context, and professional monitoring.
+
+MySentry does not replace direct calls to 911 or local emergency services, clinical judgment, professional care, employer hazard controls, training, supervision, security, reporting procedures, home modifications, or local support. Detection, alert delivery, contact, escalation, third-party response, arrival, and outcomes are not guaranteed.
 
 ## Best Pages to Cite
 
 - Homepage: https://mysentry.ai/
-- How It Works: https://mysentry.ai/how-it-works
-- Pricing: https://mysentry.ai/pricing
-- Features Hub: https://mysentry.ai/features
-- Panic Button App: https://mysentry.ai/features/panic-button-app
-- Fall Detection App: https://mysentry.ai/features/fall-detection-app
-- Crash Detection: https://mysentry.ai/features/crash-detection
-- 24/7 Professional Monitoring: https://mysentry.ai/features/24-7-professional-monitoring
-- Health Monitoring: https://mysentry.ai/features/health-monitoring
-- Emergency Contacts: https://mysentry.ai/features/emergency-contacts
-- Live Video Response: https://mysentry.ai/features/live-video-response
-- MeetSafe Check-Ins (Safety Check-In App): https://mysentry.ai/features/meetsafe-check-ins
+- How MySentry Works: https://mysentry.ai/how-it-works
+- Current Features: https://mysentry.ai/features
+- Plans and Eligibility: https://mysentry.ai/pricing
+- Contact: https://mysentry.ai/contact
+
+## Core Safety and Wellness Features
+
+- Panic Alarm App: https://mysentry.ai/features/panic-button-app
+- Supported-Device Fall Detection: https://mysentry.ai/features/fall-detection-app
+- Eligible Crash Signals: https://mysentry.ai/features/crash-detection
+- Professional Monitoring: https://mysentry.ai/features/24-7-professional-monitoring
+- Trusted Contacts: https://mysentry.ai/features/emergency-contacts
+- Video Context During Eligible Alerts: https://mysentry.ai/features/live-video-response
+- Wearable Wellness Signals: https://mysentry.ai/features/health-monitoring
 - Safety Check-In App: https://mysentry.ai/features/safety-check-in-app
 
-## Audience Pages
-
-- Safety App for Women: https://mysentry.ai/females
-- Senior Safety: https://mysentry.ai/seniors
-- Family Safety: https://mysentry.ai/families
-- Employer / Lone Worker Safety: https://mysentry.ai/employers
-
-## Use Cases
+## Audience and Decision Pages
 
 - Safety App for Women: https://mysentry.ai/use-cases/safety-app-for-women
+- People Living Alone: https://mysentry.ai/safety-for/people-living-alone
+- Solo Travelers: https://mysentry.ai/safety-for/solo-travelers
+- Personal Safety for Renters: https://mysentry.ai/use-cases/personal-safety-app-for-renters
 - Family Safety App: https://mysentry.ai/use-cases/family-safety-app
-- Medical Alert App for Seniors: https://mysentry.ai/use-cases/medical-alert-app-for-seniors
+- Medical Alert App for Seniors and Family Caregivers: https://mysentry.ai/use-cases/medical-alert-app-for-seniors
 - Lone Worker Safety App: https://mysentry.ai/use-cases/lone-worker-safety-app
-- Home Healthcare Worker Safety: https://mysentry.ai/use-cases/home-healthcare-worker-safety
 - Teen Driver Safety: https://mysentry.ai/use-cases/teen-driver-safety
 
-## Comparisons
+## Nurse Safety Pages
 
-- Compare Hub: https://mysentry.ai/compare
-- Noonlight vs MySentry: https://mysentry.ai/compare/noonlight-vs-mysentry
-- Life360 vs MySentry: https://mysentry.ai/compare/life360-vs-mysentry
-- FallCall vs MySentry: https://mysentry.ai/compare/fallcall-vs-mysentry
-- Google Personal Safety vs MySentry: https://mysentry.ai/compare/google-personal-safety-vs-mysentry
-- SOS Secure / ADT vs MySentry: https://mysentry.ai/compare/sosecure-adt-vs-mysentry
-- Medical Alert Devices vs MySentry: https://mysentry.ai/compare/medical-alert-devices-vs-mysentry
-- Oura Ring vs MySentry: https://mysentry.ai/compare/oura-ring-vs-mysentry
-- WHOOP vs MySentry: https://mysentry.ai/compare/whoop-vs-mysentry
-- Medical Guardian vs MySentry: https://mysentry.ai/compare/medical-guardian-vs-mysentry
-- Lively vs MySentry: https://mysentry.ai/compare/lively-vs-mysentry
-- Apple Watch Fall Detection vs MySentry: https://mysentry.ai/compare/apple-watch-fall-detection-vs-mysentry
-
-## Pillar Pages
-
-- Personal Safety App: https://mysentry.ai/personal-safety-app
-- Medical Alert App for Seniors and Family Caregivers: https://mysentry.ai/use-cases/medical-alert-app-for-seniors
-
-## Who We Protect
-
-- Seniors: https://mysentry.ai/seniors
-- Women: https://mysentry.ai/who-we-protect/women
-- Employers: https://mysentry.ai/who-we-protect/employers
-- Drivers: https://mysentry.ai/who-we-protect/drivers
+- Nurse Safety Hub: https://mysentry.ai/nurses
 - Home Health Nurses: https://mysentry.ai/nurses/home-health
 - Travel Nurses: https://mysentry.ai/nurses/travel-nurses
 - ER and Trauma Nurses: https://mysentry.ai/nurses/er-trauma
 - Night Shift Nurses: https://mysentry.ai/nurses/night-shift
-- Students: https://mysentry.ai/who-we-protect/students
-- Children & Teens: https://mysentry.ai/who-we-protect/children-and-teens
+- Night Shift Nurse Safety Checklist: https://mysentry.ai/guides/night-shift-nurse-safety-checklist
 
-## Industries
+## Senior and Family Guides
 
+- Senior Safety Hub: https://mysentry.ai/seniors
+- Senior Safety Planning Guide: https://mysentry.ai/guides/senior-safety-planning
+- Aging in Place Safety Checklist: https://mysentry.ai/guides/aging-in-place-checklist
+- Family Safety Without Constant Tracking: https://mysentry.ai/guides/family-safety-without-constant-tracking
+- Wearable Fall Detection Limitations: https://mysentry.ai/guides/wearable-fall-detection-limitations
+
+## Employer and Industry Pages
+
+- Employer Safety Hub: https://mysentry.ai/employers
+- Lone Worker Safety Guide: https://mysentry.ai/guides/lone-worker-safety
+- Utility and Field Workers: https://mysentry.ai/solutions/utility-workers
+- Delivery Drivers: https://mysentry.ai/solutions/delivery-drivers
 - Home Healthcare: https://mysentry.ai/industries/home-healthcare
 - Construction: https://mysentry.ai/industries/construction
 - Retail: https://mysentry.ai/industries/retail
@@ -77,27 +67,24 @@
 - Education: https://mysentry.ai/industries/education
 - Security Guarding: https://mysentry.ai/industries/security-guarding
 
-## Blog
+## Current Integrations
 
-- Safety and Health Hub: https://mysentry.ai/blogs
+- Apple Watch: https://mysentry.ai/integrations/apple-watch
+- Samsung Galaxy Watch: https://mysentry.ai/integrations/samsung-galaxy-watch
+- Ring: https://mysentry.ai/integrations/ring
 
-## Key Facts (Verifiable)
+The Oura Ring integration is not currently available. Its Coming Soon page remains excluded from indexing until support, permissions, models, regions, and launch terms are verified.
 
-- Pricing: Individual $15/month or $144/year; Family $30/month or $288/year
-- 7-day free trial available; credit card required, no charge if cancelled within 7 days
-- Works with iPhone (iOS 15+), Android (10+), Apple Watch (Series 4+), Samsung Galaxy Watch (Watch 4+)
-- Requires cellular or Wi-Fi connectivity; location and notification permissions required
-- 24/7 professional monitoring by certified agents who receive live video, GPS location, and health data
-- Fall detection uses phone and smartwatch accelerometer and gyroscope; 2-minute response window before auto-alert
-- Crash detection uses phone GPS speed data combined with accelerometer impact patterns
-- Health monitoring tracks heart rate, HRV, SpO2, and skin temperature via smartwatch
-- Panic alarm triggered by voice command, smartphone tap, or smartwatch tap
-- Emergency contacts receive SMS, push notification, and email with real-time GPS location
-- MeetSafe check-ins: timed safety timers for meetings, dates, and solo activities
-- Live video response: phone camera streams to monitoring agents during emergencies
+## Setup and Limitations
+
+- A currently supported smartphone is required. Optional wearable features require an eligible device and supported configuration.
+- Required permissions vary by feature and may include notifications, location, motion, background activity, microphone, camera, or contacts.
+- Alert delivery and shared context require an available supported device and network connection.
+- Feature behavior depends on the active plan, device, software, settings, permissions, app state, connectivity, region, third parties, and service availability.
+- Supported wellness information is non-medical and is not used to diagnose, predict, treat, or prevent a condition.
+- Review current pricing, eligibility, and plan terms at https://mysentry.ai/pricing before enrollment.
 
 ## Contact
 
 - Website: https://mysentry.ai
-- Contact Page: https://mysentry.ai/contact
-- Support: https://mysentry.ai/contact
+- Contact: https://mysentry.ai/contact

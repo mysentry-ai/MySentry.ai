@@ -270,6 +270,21 @@ export default function Families() {
         </div>
       </section>
 
+      <section className="bg-white py-16">
+        <div className="container max-w-4xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#007bc2]">Family safety and privacy</p>
+          <h2 className="mt-4 text-3xl font-bold text-[#0b2f4f] md:text-4xl">
+            Agree on check-ins without making constant tracking the default.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-slate-700">
+            Use a consent-based guide to choose the situations, contacts, information, and backup steps that fit your household.
+          </p>
+          <a href="/guides/family-safety-without-constant-tracking" className="mt-7 inline-flex min-h-12 items-center justify-center rounded-full bg-[#0b6848] px-7 py-3 font-bold text-white transition hover:bg-[#084f38] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#007bc2] focus-visible:ring-offset-2">
+            Open the Family Safety Guide
+          </a>
+        </div>
+      </section>
+
       {/* Get Started Section */}
       <GetStartedSection
         sub

@@ -44,8 +44,10 @@ const megaMenuSections = [
         icon: <Heart className="w-5 h-5 text-primary" />,
         items: [
           { name: "Women", desc: "Panic alerts, check-ins, and trusted contacts", href: "/use-cases/safety-app-for-women" },
+          { name: "People Living Alone", desc: "Independent routines with agreed safety check-ins", href: "/safety-for/people-living-alone" },
           { name: "Older Adults", desc: "Supported fall alerts and safety checks", href: "/use-cases/medical-alert-app-for-seniors" },
           { name: "Families", desc: "Permission-based family safety tools", href: "/use-cases/family-safety-app" },
+          { name: "Renters", desc: "Portable safety for apartments and shared spaces", href: "/use-cases/personal-safety-app-for-renters" },
           { name: "Teen Drivers", desc: "Eligible crash signals and alert context", href: "/use-cases/teen-driver-safety" },
         ],
       },
@@ -72,6 +74,7 @@ const megaMenuSections = [
         icon: <Building2 className="w-5 h-5 text-primary" />,
         items: [
           { name: "Construction", desc: "Supplemental job-site safety tools", href: "/industries/construction" },
+          { name: "Utility & Field Workers", desc: "Safety planning across changing worksites", href: "/solutions/utility-workers" },
           { name: "Real Estate", desc: "Agent safety on property visits", href: "/industries/real-estate" },
           { name: "Delivery & Drivers", desc: "Road and route worker safety", href: "/solutions/delivery-drivers" },
           { name: "Security Guarding", desc: "Guard tour and lone patrol safety", href: "/industries/security-guarding" },
@@ -127,6 +130,10 @@ const megaMenuSections = [
         icon: <BookOpen className="w-5 h-5 text-primary" />,
         items: [
           { name: "Lone Worker Safety Guide", desc: "Hazards, check-ins, roles, and limitations", href: "/guides/lone-worker-safety" },
+          { name: "Aging in Place Checklist", desc: "Home, support, privacy, and emergency planning", href: "/guides/aging-in-place-checklist" },
+          { name: "Family Safety and Privacy", desc: "Consent-based check-ins without constant tracking", href: "/guides/family-safety-without-constant-tracking" },
+          { name: "Night Shift Nurse Checklist", desc: "Parking, workplace, and commute planning", href: "/guides/night-shift-nurse-safety-checklist" },
+          { name: "Wearable Fall Detection Limits", desc: "Capabilities, setup, and missed-event limits", href: "/guides/wearable-fall-detection-limitations" },
           { name: "Blog", desc: "Safety tips and expert articles", href: "/blogs" },
           { name: "How It Works", desc: "See MySentry in action", href: "/how-it-works" },
         ],
@@ -191,7 +198,7 @@ export default function Navbar() {
     >
       <div className="container flex items-center justify-between">
         {/* Logo + Tagline */}
-        <Link href="/" className="flex flex-col items-start group flex-shrink-0">
+        <Link href="/" className="flex min-w-0 flex-col items-start group flex-shrink-0">
           <img
             src="/images/logo.png"
             alt="MySentry"
@@ -200,7 +207,7 @@ export default function Navbar() {
             height="160"
             loading="eager"
           />
-          <span className="hidden lg:block text-[8px] font-semibold uppercase tracking-widest text-[#255044] mt-0.5">
+          <span className="mt-0.5 block max-w-[126px] text-[7px] font-semibold uppercase leading-tight tracking-[0.12em] text-[#255044] sm:max-w-none sm:text-[8px] sm:tracking-widest">
             Live Safe. Stay Healthy.
           </span>
         </Link>
@@ -348,8 +355,11 @@ export default function Navbar() {
       {isOpen && (
         <div className="fixed inset-0 z-[9999] bg-white flex flex-col xl:hidden overflow-y-auto h-[100dvh] w-screen animate-in slide-in-from-right duration-300">
           <div className="container py-6 flex items-center justify-between border-b border-gray-100 bg-white sticky top-0 z-10">
-            <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-3">
+            <Link href="/" onClick={() => setIsOpen(false)} className="flex min-w-0 flex-col items-start">
               <img src="/images/logo.png" alt="MySentry" className="h-10 w-auto" width="360" height="160" loading="eager" />
+              <span className="mt-0.5 text-[8px] font-semibold uppercase leading-tight tracking-[0.14em] text-[#255044]">
+                Live Safe. Stay Healthy.
+              </span>
             </Link>
             <button onClick={() => setIsOpen(false)} className="p-2">
               <X className="h-8 w-8 text-black" />

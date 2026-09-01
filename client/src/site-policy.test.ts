@@ -146,4 +146,61 @@ describe("public source policy", () => {
   it("does not contain the accidental nested source tree", () => {
     expect(fs.existsSync(path.join(sourceRoot, "src"))).toBe(false);
   });
+
+  it("mounts and discovers every organic growth route directly", () => {
+    const app = fs.readFileSync(path.join(sourceRoot, "App.tsx"), "utf8");
+    const sitemap = fs.readFileSync(path.join(root, "server", "sitemaps.ts"), "utf8");
+    const llms = fs.readFileSync(path.join(publicRoot, "llms.txt"), "utf8");
+    const discoverySources = [
+      path.join(sourceRoot, "components", "Navbar.tsx"),
+      path.join(sourceRoot, "components", "Footer.tsx"),
+      path.join(sourceRoot, "pages", "UseCasesHub.tsx"),
+      path.join(sourceRoot, "pages", "Seniors.tsx"),
+      path.join(sourceRoot, "pages", "Families.tsx"),
+      path.join(sourceRoot, "pages", "nurses", "NightShiftNurses.tsx"),
+      path.join(sourceRoot, "pages", "features", "FallDetectionApp.tsx"),
+    ].map(file => fs.readFileSync(file, "utf8")).join("\n");
+    const routes = [
+      "/safety-for/people-living-alone",
+      "/guides/aging-in-place-checklist",
+      "/guides/family-safety-without-constant-tracking",
+      "/guides/night-shift-nurse-safety-checklist",
+      "/use-cases/personal-safety-app-for-renters",
+      "/guides/wearable-fall-detection-limitations",
+      "/solutions/utility-workers",
+    ];
+
+    for (const route of routes) {
+      expect(app, route).toContain(`<Route path="${route}"`);
+      expect(CANONICAL_REDIRECTS[route], route).toBeUndefined();
+      expect(sitemap, route).toContain(`url: "${route}"`);
+      expect(llms, route).toContain(`https://mysentry.ai${route}`);
+      expect(discoverySources, route).toContain(route);
+    }
+  });
+
+  it("keeps the growth pages local, high contrast, and claim safe", () => {
+    const growthPages = fs.readFileSync(
+      path.join(sourceRoot, "pages", "growth", "OrganicGrowthPages.tsx"),
+      "utf8"
+    );
+
+    expect(growthPages).toContain("MySentry is supplemental");
+    expect(growthPages).toContain("does not guarantee detection");
+    expect(growthPages).toContain("does not replace employer policy");
+    expect(growthPages).toContain("The Oura Ring page is explicitly Coming Soon");
+    expect(growthPages).not.toMatch(/will always (?:detect|dispatch|protect|respond)|works everywhere/i);
+    expect(growthPages).not.toMatch(/https?:\/\/(?:images\.unsplash\.com|.*cloudfront\.net|.*manuscdn\.com)/i);
+  });
+
+  it("publishes conservative AI discovery facts and the approved tagline", () => {
+    const llms = fs.readFileSync(path.join(publicRoot, "llms.txt"), "utf8");
+
+    expect(llms).toContain("Live Safe. Stay Healthy.");
+    expect(llms).toContain("MySentry is a supplemental");
+    expect(llms).toContain("The Oura Ring integration is not currently available");
+    expect(llms).toContain("outcomes are not guaranteed");
+    expect(llms).not.toMatch(/Your Vital Companion/i);
+    expect(llms).not.toMatch(/free trial|guaranteed (?:response|protection|results)|auto-dispatch|real-time GPS location/i);
+  });
 });
