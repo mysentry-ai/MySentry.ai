@@ -282,8 +282,11 @@ export const Privacy = () => {
 
             {/* Section 7 */}
             <h2 id="requesting-data-deletion" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">Requesting Data Deletion</h2>
+            <p className="mb-6">
+              Users can ask for deletion of their account and associated personal information by following the steps on our <a href="/account-deletion" className="font-bold text-[#005f91] underline decoration-2 underline-offset-4 hover:text-[#004f7b]">Account Deletion page</a> or by emailing <a href="mailto:support@mysentry.ai?subject=Account%20Deletion%20Request" className="font-bold text-[#005f91] underline decoration-2 underline-offset-4 hover:text-[#004f7b]">support@mysentry.ai</a> from the email address associated with the account when possible.
+            </p>
             <p className="mb-12">
-              Users can ask for the removal of their personal information from our records by reaching out to us. Note that certain data may be retained as required by law or for valid business reasons.
+              MySentry may take reasonable steps to verify the requester's identity or authority before processing a request. Certain information may be retained when required by law or for legitimate security, fraud-prevention, billing, dispute-resolution, or service-integrity purposes.
             </p>
 
             {/* Section 8 */}

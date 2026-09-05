@@ -76,6 +76,11 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       "Read how MySentry describes collection, use, disclosure, retention, security, and choices for account, location, alert, and supported wellness information.",
   },
+  "/account-deletion": {
+    title: "Delete Your MySentry Account",
+    description:
+      "Learn how to request deletion of a MySentry account, what information to include, how identity verification may work, and which records may be retained.",
+  },
   "/terms": {
     title: "Terms & Conditions | MySentry",
     description:

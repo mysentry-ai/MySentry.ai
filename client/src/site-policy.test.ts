@@ -203,4 +203,35 @@ describe("public source policy", () => {
     expect(llms).not.toMatch(/Your Vital Companion/i);
     expect(llms).not.toMatch(/free trial|guaranteed (?:response|protection|results)|auto-dispatch|real-time GPS location/i);
   });
+
+  it("mounts and discovers the account-deletion page with verified support instructions", () => {
+    const app = fs.readFileSync(path.join(sourceRoot, "App.tsx"), "utf8");
+    const page = fs.readFileSync(path.join(sourceRoot, "pages", "AccountDeletion.tsx"), "utf8");
+    const privacy = fs.readFileSync(path.join(sourceRoot, "pages", "Privacy.tsx"), "utf8");
+    const footer = fs.readFileSync(path.join(sourceRoot, "components", "Footer.tsx"), "utf8");
+    const sitemap = fs.readFileSync(path.join(root, "server", "sitemaps.ts"), "utf8");
+
+    expect(app).toContain('<Route path="/account-deletion" component={AccountDeletion} />');
+    expect(page.match(/<h1\b/g)).toHaveLength(1);
+    expect(page).toContain("support@mysentry.ai");
+    expect(page).toContain("Account Deletion Request");
+    expect(page).toContain("verify your identity");
+    expect(page).toContain("Some information may be retained");
+    expect(page).toContain("Account deletion and subscription cancellation may be handled through different systems");
+    const prohibitedDeletionPromises = new RegExp(
+      [
+        "deleted automatically",
+        ["inst", "ant deletion"].join(""),
+        "within \\d+ (?:hours|days)",
+        "guaranteed deletion",
+      ].join("|"),
+      "i"
+    );
+    expect(page).not.toMatch(prohibitedDeletionPromises);
+    expect(page).toMatch(/#005f91|#004f7b|#0b6848/);
+    expect(privacy).toContain('href="/account-deletion"');
+    expect(footer).toContain('href="/account-deletion"');
+    expect(sitemap).toContain('url: "/account-deletion"');
+    expect(CANONICAL_REDIRECTS["/account-deletion"]).toBeUndefined();
+  });
 });

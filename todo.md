@@ -1058,3 +1058,12 @@
 - [x] Validate the complete release in production mode across raw HTML, hydrated metadata, desktop, mobile, links, images, accessibility, overflow, robots, and sitemap governance
 - [x] Deliver a visual analytics and growth report with baseline, competitor benchmarks, opportunity priorities, KPI model, assumptions, and recommended measurement cadence
 - [x] Save the complete verified growth release as a checkpoint and synchronize it to `zigroninc/MySentry.ai` main
+
+## Account Deletion Page 404 Fix (September 2026)
+- [x] Audit `/account-deletion`, route registration, metadata, privacy links, support flows, and any existing account-deletion instructions
+- [x] Define accurate account-deletion steps and limitations without inventing an unsupported in-app, email, dashboard, or processing workflow
+- [x] Implement a canonical, accessible, mobile-friendly `/account-deletion` page using the existing MySentry design language
+- [x] Add contextual discovery from Privacy Policy and the shared footer without creating duplicate routes
+- [x] Add targeted tests for direct routing, metadata, one-H1 structure, instructions, links, contrast, punctuation, and local assets
+- [x] Validate TypeScript, tests, production build, raw and hydrated metadata, desktop, mobile, links, accessibility, and horizontal overflow
+- [x] Save a verified checkpoint and synchronize the account-deletion fix to `zigroninc/MySentry.ai` main

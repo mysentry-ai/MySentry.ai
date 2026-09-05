@@ -147,6 +147,23 @@ describe("route-aware SEO rendering", () => {
     expect(titles.size).toBe(routes.length);
     expect(descriptions.size).toBe(routes.length);
   });
+
+  it("serves canonical indexable metadata and structured initial HTML for account deletion", async () => {
+    const route = "/account-deletion";
+    const meta = await resolveMeta(route, "https://mysentry.ai");
+    const html = renderSeoHtml(template, meta);
+
+    expect(meta.found).toBe(true);
+    expect(meta.canonicalPath).toBe(route);
+    expect(meta.robots).toBe("index,follow");
+    expect(meta.title).toBe("Delete Your MySentry Account | MySentry");
+    expect(meta.description).toContain("request deletion of a MySentry account");
+    expect(CANONICAL_REDIRECTS[route]).toBeUndefined();
+    expect(html).toContain('rel="canonical" href="https://mysentry.ai/account-deletion"');
+    expect(html).toContain("<h1>");
+    expect(html).toContain('type="application/ld+json"');
+    expect(html).not.toContain("SSR_TITLE");
+  });
 });
 
 describe("canonical redirect governance", () => {

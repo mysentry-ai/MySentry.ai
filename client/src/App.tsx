@@ -25,6 +25,7 @@ import Team from "./pages/Team";
 import Blogs from "./pages/Blogs";
 import BlogPost from "./pages/BlogPost";
 import Privacy from "./pages/Privacy";
+import AccountDeletion from "./pages/AccountDeletion";
 import Partners from "./pages/Partners";
 import Terms from "./pages/Terms";
 
@@ -167,6 +168,7 @@ function Router() {
       <Route path="/blogs" component={Blogs} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/account-deletion" component={AccountDeletion} />
       <Route path="/partner">{() => <RedirectRoute to="/partners" />}</Route>
       <Route path="/partners" component={Partners} />
       <Route path="/terms" component={Terms} />

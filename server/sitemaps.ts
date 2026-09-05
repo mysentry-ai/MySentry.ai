@@ -76,6 +76,7 @@ const STATIC_PAGES = [
   { url: "/team", priority: "0.5", changefreq: "monthly" },
   { url: "/partners", priority: "0.6", changefreq: "monthly" },
   { url: "/privacy", priority: "0.3", changefreq: "yearly" },
+  { url: "/account-deletion", priority: "0.3", changefreq: "yearly" },
   { url: "/terms", priority: "0.3", changefreq: "yearly" },
 ];
 
