@@ -3,7 +3,10 @@ import { getDb } from "./db";
 import { blogPosts } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 import { isHeldBlogSlug } from "../shared/seo/content-governance";
-import { CANONICAL_REDIRECTS } from "../shared/seo/redirects";
+import {
+  CANONICAL_REDIRECTS,
+  resolveMalformedAbsolutePath,
+} from "../shared/seo/redirects";
 
 // All known static pages with their priorities and change frequencies
 const STATIC_PAGES = [
@@ -98,6 +101,13 @@ function formatDate(date: Date | string | null): string {
 }
 
 export function registerSitemapRoutes(app: Express) {
+  // Recover an exact malformed preview path without creating a general open redirect.
+  app.use((req, res, next) => {
+    const target = resolveMalformedAbsolutePath(req.path, req.originalUrl);
+    if (target) return res.redirect(301, target);
+    next();
+  });
+
   // ── Static 301 redirects ──
   Object.entries(CANONICAL_REDIRECTS).forEach(([source, target]) => {
     app.get(source, (_req, res) => {

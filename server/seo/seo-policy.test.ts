@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { CANONICAL_REDIRECTS } from "../../shared/seo/redirects";
+import {
+  CANONICAL_REDIRECTS,
+  resolveMalformedAbsolutePath,
+} from "../../shared/seo/redirects";
 import { HELD_BLOG_SLUGS } from "../../shared/seo/content-governance";
 import { ROUTE_META } from "../../shared/seo/route-meta";
 import { renderSeoHtml } from "./render-seo-html";
@@ -167,6 +170,34 @@ describe("route-aware SEO rendering", () => {
 });
 
 describe("canonical redirect governance", () => {
+  it("recovers only the exact malformed account-deletion URL and preserves its query", () => {
+    expect(
+      resolveMalformedAbsolutePath(
+        "/https://mysentry.ai/account-deletion",
+        "/https://mysentry.ai/account-deletion?from_webdev=1",
+      ),
+    ).toBe("/account-deletion?from_webdev=1");
+    expect(
+      resolveMalformedAbsolutePath(
+        "/https://mysentry.ai/account-deletion",
+        "/https://mysentry.ai/account-deletion",
+      ),
+    ).toBe("/account-deletion");
+    expect(
+      resolveMalformedAbsolutePath(
+        "/account-deletion",
+        "/account-deletion?from_webdev=1",
+      ),
+    ).toBeNull();
+    expect(
+      resolveMalformedAbsolutePath(
+        "/https://example.com/account-deletion",
+        "/https://example.com/account-deletion?from_webdev=1",
+      ),
+    ).toBeNull();
+    expect(CANONICAL_REDIRECTS["/account-deletion"]).toBeUndefined();
+  });
+
   it("contains no self redirects, chains, or missing canonical targets", () => {
     const sources = new Set(Object.keys(CANONICAL_REDIRECTS));
 

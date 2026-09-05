@@ -26,3 +26,16 @@ export const CANONICAL_REDIRECTS: Record<string, string> = {
   "/compare/oura-ring-vs-mysentry": "/compare/fitness-wearables-vs-mysentry",
   "/compare/whoop-vs-mysentry": "/compare/fitness-wearables-vs-mysentry",
 };
+
+const MALFORMED_ACCOUNT_DELETION_PATH = "/https://mysentry.ai/account-deletion";
+
+export function resolveMalformedAbsolutePath(
+  pathname: string,
+  originalUrl: string,
+): string | null {
+  if (pathname !== MALFORMED_ACCOUNT_DELETION_PATH) return null;
+
+  const queryIndex = originalUrl.indexOf("?");
+  const query = queryIndex >= 0 ? originalUrl.slice(queryIndex) : "";
+  return `/account-deletion${query}`;
+}

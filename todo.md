@@ -1074,3 +1074,10 @@
 - [x] Keep `.dockerignore` permanently absent and verify no database or unrelated configuration changes
 - [x] Validate TypeScript, the complete test suite, production build, Docker contract, production runtime startup, representative public routes, and protected-file integrity
 - [x] Save a verified checkpoint and synchronize the deployment correction to `zigroninc/MySentry.ai` main
+
+## Malformed Account Deletion URL Fix (September 2026)
+- [x] Diagnose why `/https://mysentry.ai/account-deletion?from_webdev=1` reaches the 404 route and search for any malformed link source
+- [x] Preserve `/account-deletion` as the only canonical page while adding safe handling for the exact malformed absolute-URL path
+- [x] Add regression tests for the canonical route, query-string route, malformed route redirect, metadata, and redirect-chain prevention
+- [x] Validate TypeScript, tests, production build, HTTP status, redirect destination, query preservation, canonical metadata, and live deployment readiness
+- [x] Save a verified checkpoint and synchronize the malformed-route fix to `zigroninc/MySentry.ai` main
