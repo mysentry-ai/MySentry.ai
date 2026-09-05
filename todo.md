@@ -1067,3 +1067,10 @@
 - [x] Add targeted tests for direct routing, metadata, one-H1 structure, instructions, links, contrast, punctuation, and local assets
 - [x] Validate TypeScript, tests, production build, raw and hydrated metadata, desktop, mobile, links, accessibility, and horizontal overflow
 - [x] Save a verified checkpoint and synchronize the account-deletion fix to `zigroninc/MySentry.ai` main
+
+## Approved Docker Deployment Fix (September 2026)
+- [x] Review the custom Docker build contract and confirm the deployment failure is limited to `COPY .env ./.env`
+- [x] Remove only the invalid build-time `.env` copy from the Dockerfile without creating or modifying any environment file
+- [x] Keep `.dockerignore` permanently absent and verify no database or unrelated configuration changes
+- [x] Validate TypeScript, the complete test suite, production build, Docker contract, production runtime startup, representative public routes, and protected-file integrity
+- [x] Save a verified checkpoint and synchronize the deployment correction to `zigroninc/MySentry.ai` main
