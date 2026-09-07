@@ -310,18 +310,18 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/employee-health-wellness-future" className="text-gray-900 hover:text-primary transition-colors">
-                  Employee Health &amp; Wellness
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/how-to-build-a-lone-worker-safety-program" className="text-gray-900 hover:text-primary transition-colors">
+                  Build a Lone-Worker Safety Program
                 </Link>
               </li>
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/safety-strategy-reducing-liability" className="text-gray-900 hover:text-primary transition-colors">
-                  Safety Strategy &amp; Liability
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/what-is-a-lone-worker-definition-risks-and-legal-duties" className="text-gray-900 hover:text-primary transition-colors">
+                  Lone-Worker Risks and Duties
                 </Link>
               </li>
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/what-happens-in-the-first-5-minutes-after-a-fall-why-speed-matters" className="text-gray-900 hover:text-primary transition-colors">
-                  After a Fall: Why Speed Matters
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/how-does-fall-detection-work-on-a-phone-or-watch" className="text-gray-900 hover:text-primary transition-colors">
+                  How Fall Detection Works
                 </Link>
               </li>
               <li>
@@ -330,23 +330,23 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/family-road-trip-safety-summer-guide" className="text-gray-900 hover:text-primary transition-colors">
-                  Family Road Trip Safety
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/how-to-set-up-emergency-contacts-on-your-phone" className="text-gray-900 hover:text-primary transition-colors">
+                  Set Up Emergency Contacts
                 </Link>
               </li>
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/best-safety-app-for-nurses-2026" className="text-gray-900 hover:text-primary transition-colors">
-                  Best Safety App for Nurses
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/women-working-alone-safety-guide" className="text-gray-900 hover:text-primary transition-colors">
+                  Working Alone Safety Guide
                 </Link>
               </li>
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/nurse-burnout-health-monitoring-mysentry" className="text-gray-900 hover:text-primary transition-colors">
-                  Nurse Burnout &amp; Health Monitoring
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/incident-reporting-safety-app-why-your-team-needs-one" className="text-gray-900 hover:text-primary transition-colors">
+                  Incident Reporting and Safety
                 </Link>
               </li>
               <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/summer-safety-for-seniors-living-alone" className="text-gray-900 hover:text-primary transition-colors">
-                  Summer Safety for Seniors
+                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/senior-outdoor-safety-summer-walking-plan" className="text-gray-900 hover:text-primary transition-colors">
+                  Senior Outdoor Safety Plan
                 </Link>
               </li>
               <li>

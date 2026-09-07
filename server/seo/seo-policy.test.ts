@@ -210,7 +210,7 @@ describe("canonical redirect governance", () => {
   });
 
   it("keeps the approved editorial hold explicit and stable", () => {
-    expect(HELD_BLOG_SLUGS.size).toBe(28);
+    expect(HELD_BLOG_SLUGS.size).toBe(47);
     for (const slug of HELD_BLOG_SLUGS) {
       expect(slug).toBe(slug.toLowerCase());
       expect(slug).toMatch(/^[a-z0-9-]+$/);

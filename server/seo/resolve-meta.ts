@@ -17,7 +17,7 @@ import {
   SITE_NAME,
   type RouteMeta,
 } from "../../shared/seo/route-meta";
-import { isHeldBlogSlug } from "../../shared/seo/content-governance";
+import { getHeldBlogTitle, isHeldBlogSlug } from "../../shared/seo/content-governance";
 import { absoluteBlogImageUrl } from "../../shared/seo/blog-assets";
 import { isNoindexPath } from "../../shared/seo/indexability";
 
@@ -159,6 +159,16 @@ export async function resolveMeta(
     const slug = path.replace(/^\/blogs?\//, "");
     editorialHold = isHeldBlogSlug(slug);
     raw = await resolveBlogMeta(slug);
+    if (!raw && editorialHold) {
+      raw = {
+        title: `${getHeldBlogTitle(slug)} | Editorial Review`,
+        description:
+          "This MySentry article is temporarily unavailable while product, safety, medical, legal, or comparison claims are reviewed.",
+        ogType: "website",
+        isIndexed: false,
+        isFollowed: true,
+      };
+    }
     if (raw) {
       routeType = "article";
       canonicalPath = `/blog/${slug}`;

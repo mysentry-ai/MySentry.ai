@@ -251,7 +251,7 @@ export const Privacy = () => {
             {/* Section 5 */}
             <h2 id="data-security-compliance" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">Data Security & Compliance</h2>
             <p className="mb-6">
-              MySentry is committed to the highest standards of data security and regulatory compliance. We employ enterprise-grade encryption and strict access controls to protect your sensitive health and location data.
+              MySentry describes its data-handling practices, security measures, access controls, and user choices in this policy. Review the applicable sections before using features that may process health, location, or alert information.
             </p>
             <ul className="space-y-4 mb-12 list-disc pl-6 text-gray-900">
               <li><strong>HIPAA Compliance:</strong> We adhere to HIPAA standards to ensure the confidentiality, integrity, and availability of protected health information (PHI).</li>

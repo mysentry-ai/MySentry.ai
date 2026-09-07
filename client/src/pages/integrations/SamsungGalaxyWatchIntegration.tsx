@@ -31,7 +31,7 @@ export default function SamsungGalaxyWatchIntegration() {
       bestFor={[
         "Active seniors who use a Samsung Galaxy Watch.",
         "Anyone looking for an added layer of safety without a separate device.",
-        "Galaxy Watch users who want peace of mind for themselves and their families.",
+        "Galaxy Watch users who want to prepare an agreed safety plan with trusted contacts or family members.",
       ]}
       notIdealFor={[
         "Users whose watch, phone, operating system, plan, region, or permissions are not currently supported.",

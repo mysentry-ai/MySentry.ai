@@ -865,6 +865,11 @@ Must include CTA: "Review Plans and Eligibility" (use natural wording, not spamm
           "it cannot be overstated",
           "a testament to",
           "the importance of",
+          "here's the thing",
+          "what nobody tells you",
+          "that's the whole thing",
+          "the future isn't coming",
+          "the best part:",
         ];
         const foundAiPhrases = aiPhrases.filter(p => contentLower.includes(p));
         checks.push({
@@ -873,6 +878,54 @@ Must include CTA: "Review Plans and Eligibility" (use natural wording, not spamm
           message: foundAiPhrases.length > 0
             ? `Found ${foundAiPhrases.length} AI-typical phrases: ${foundAiPhrases.map(p => `"${p}"`).join(", ")}`
             : "No common AI phrase patterns detected.",
+        });
+
+        const hasReaderLanguage = /\b(you|your|family|team|worker|reader)\b/i.test(contentLower);
+        checks.push({
+          name: "Reader as Hero",
+          passed: hasReaderLanguage,
+          message: hasReaderLanguage
+            ? "The content is framed around the reader or protected person."
+            : "Name the reader, protected person, family, or team as the central decision-maker.",
+        });
+
+        const hasPracticalPlan = /<h[23][^>]*>[^<]*(plan|steps|checklist|what to do|how to)[^<]*<\/h[23]>/i.test(input.content)
+          || /<(ol|ul)(\s[^>]*)?>/i.test(input.content);
+        checks.push({
+          name: "Practical Plan",
+          passed: hasPracticalPlan,
+          message: hasPracticalPlan
+            ? "The content gives the reader a practical plan or checklist."
+            : "Add a specific plan, checklist, or ordered next step for the reader.",
+        });
+
+        const unsafeClaimPatterns = [
+          /\bautomatically (calls|contacts|dispatches|notifies) (911|police|emergency services)\b/i,
+          /\bdispatch(es|ed)? police\b.{0,50}\b(immediately|instantly|automatically)\b/i,
+          /\b(prevent|prevents|prevented) (falls|crashes|violence|crime|health crises|emergencies)\b/i,
+          /\b(guarantee|guarantees|guaranteed)\b/i,
+          /\b(universal protection|works anywhere|never misses|never fails)\b/i,
+          /\b(predict|predicts|predicted)\b.{0,60}\b(stroke|heart attack|medical emergency|health crisis)\b/i,
+          /\bdiagnos(es|e|ed|ing)\b/i,
+          /\bsee exactly where\b.{0,40}\breal[- ]time\b/i,
+        ];
+        const foundUnsafeClaims = unsafeClaimPatterns.filter(pattern => pattern.test(contentLower));
+        checks.push({
+          name: "MySentry Claim Safety",
+          passed: foundUnsafeClaims.length === 0,
+          message: foundUnsafeClaims.length === 0
+            ? "No configured response, prevention, prediction, diagnosis, or outcome promises detected."
+            : `Found ${foundUnsafeClaims.length} unsupported claim pattern${foundUnsafeClaims.length === 1 ? "" : "s"}. Replace the promise with verified behavior and explicit conditions.`,
+        });
+
+        const mentionsMySentry = /\bmysentry\b/i.test(contentLower);
+        const statesBoundaries = /\b(supplemental|subject to|eligible|configured|configuration|permissions?|connectivity|availability)\b/i.test(contentLower);
+        checks.push({
+          name: "MySentry Capability Boundaries",
+          passed: !mentionsMySentry || statesBoundaries,
+          message: !mentionsMySentry || statesBoundaries
+            ? "MySentry references include conditions or supplemental-service boundaries."
+            : "State relevant eligibility, device, configuration, permission, connectivity, availability, or supplemental-service limits.",
         });
 
         // AI Detection: check for title case headings (AI pattern)

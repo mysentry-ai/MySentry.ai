@@ -45,7 +45,7 @@ const safetyGaps = [
     icon: EyeOff,
     title: "Connection should not mean constant visibility",
     description:
-      "A thoughtful family-safety experience should protect personal wellness details and share only the context a user permits for a configured safety event.",
+      "A family-safety experience should define which wellness details remain private and which permitted context may be shared for a configured safety event.",
   },
 ];
 
@@ -292,7 +292,7 @@ export default function OuraRingIntegration() {
                 You have insight. What happens when you need support?
               </h2>
               <p className="mt-5 text-lg leading-relaxed text-[#475569]">
-                A wellness device and a personal-safety service solve different problems. A responsible future connection should bring them closer without confusing wellness information with medical judgment or giving anyone unlimited access to private data.
+                A wellness device and a personal-safety service solve different problems. Any future connection should preserve clear boundaries between wellness information, medical judgment, and permission-based access to private data.
               </p>
             </div>
 

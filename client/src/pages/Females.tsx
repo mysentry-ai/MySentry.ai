@@ -16,7 +16,7 @@ export default function Females() {
       id: "jogging-safety",
       title: "Jogging Alone",
       subtitle: "Run with confidence",
-      description: "Feel safe on your evening runs. Our GPS tracking and prompt panic button mean you're never truly alone, even on secluded paths.",
+      description: "Prepare a route, trusted contacts, and supported personal-alert controls before an evening run. Feature availability depends on your device, settings, and connection.",
       image: "/images/cdn/QdzYaPQAsxOLXDfq.jpg",
       icon: Activity,
       tag: "Active Safety",
@@ -71,7 +71,7 @@ export default function Females() {
       id: "solo-travel",
       title: "Solo Travel",
       subtitle: "Explore the world freely",
-      description: "Traveling alone is empowering but comes with risks. MySentry works globally, providing you with 24/7 protection wherever your adventures take you.",
+      description: "Before solo travel, confirm current plan availability, device support, permissions, connectivity, and local emergency options for each destination.",
       image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=2574&auto=format&fit=crop",
       icon: MapPin,
       tag: "Travel Freedom",
@@ -292,17 +292,17 @@ export default function Females() {
             {[
               {
                 icon: Shield,
-                title: "Total Protection",
-                desc: "Panic button, crash detection, and MeetSafe mode for every situation."
+                title: "A Practical Safety Plan",
+                desc: "Supported personal alerts, eligible device detection, and Safety Checks for the situations you choose to prepare for."
               },
               {
                 icon: Video,
-                title: "Live Evidence",
-                desc: "Video and audio are recorded and streamed to agents, providing crucial evidence."
+                title: "Permission-Based Alert Context",
+                desc: "Available location, audio, video, and account context depend on supported features, settings, permissions, and an active alert workflow."
               },
               {
                 icon: Heart,
-                title: "Peace of Mind",
+                title: "Shared Planning",
                 desc: "Trusted contacts may receive permitted alert context while your private wellness information remains restricted."
               }
             ].map((item, i) => (

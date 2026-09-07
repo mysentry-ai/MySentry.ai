@@ -109,7 +109,7 @@ export const Contact = () => {
             <div>
               <h2 className="text-4xl md:text-5xl font-black mb-8 font-barlow uppercase text-[#386758]">Get in Touch</h2>
               <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-                Our dedicated support team is available to assist you with any inquiries. We pride ourselves on quick, helpful responses.
+                Contact MySentry for questions about plans, account access, supported features, or eligibility. Response timing can vary by request and service availability.
               </p>
               
               <div className="space-y-10">

@@ -8,7 +8,7 @@ import { ArrowLeft, Clock, Calendar, Share2, Facebook, Twitter, Linkedin, Loader
 import BlogCTA from '../components/BlogCTA';
 import { Link } from 'wouter';
 import { fallbackBlogCategories, getFallbackBlogPostBySlug, getFallbackRelatedPosts } from '@/lib/blogFallback';
-import { isHeldBlogSlug } from '@shared/seo/content-governance';
+import { getHeldBlogTitle, isHeldBlogSlug } from '@shared/seo/content-governance';
 import { canonicalizeBlogContentLinks, normalizeBlogImagePath } from '@shared/seo/blog-assets';
 
 const BlogPost = () => {
@@ -83,24 +83,12 @@ const BlogPost = () => {
     );
   }
 
-  if (!post) {
-    return (
-      <div className="min-h-screen bg-[#fcfbf9] flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-medium text-gray-900 mb-4">Article Not Found</h1>
-          <Link href="/blogs" className="text-[#386758] hover:underline">
-            Return to Safety & Health Hub
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
   if (isEditorialHold) {
+    const editorialTitle = post?.title || getHeldBlogTitle(slug);
     return (
       <div className="min-h-screen bg-gradient-to-br from-white via-[#f3faf6] to-[#e8f3fb] font-sans text-gray-900">
         <SEO
-          title={`${post.title} | Editorial Review`}
+          title={`${editorialTitle} | Editorial Review`}
           description="This MySentry article is temporarily unavailable while product, safety, medical, legal, or comparison claims are reviewed."
           canonical={`https://mysentry.ai/blog/${slug}`}
           noindex
@@ -113,7 +101,7 @@ const BlogPost = () => {
           </Link>
           <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:p-12">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#007bc2]">Editorial review in progress</p>
-            <h1 className="mt-4 text-4xl font-bold leading-tight text-[#0b2f4f] sm:text-5xl">{post.title}</h1>
+            <h1 className="mt-4 text-4xl font-bold leading-tight text-[#0b2f4f] sm:text-5xl">{editorialTitle}</h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-700">
               This article is temporarily unavailable while the MySentry team reviews product, safety, medical, legal, response, or comparison statements against current evidence and approved product status.
             </p>
@@ -131,6 +119,19 @@ const BlogPost = () => {
           </div>
         </main>
         <Footer />
+      </div>
+    );
+  }
+
+  if (!post) {
+    return (
+      <div className="min-h-screen bg-[#fcfbf9] flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-medium text-gray-900 mb-4">Article Not Found</h1>
+          <Link href="/blogs" className="text-[#386758] hover:underline">
+            Return to Safety &amp; Health Hub
+          </Link>
+        </div>
       </div>
     );
   }
@@ -317,7 +318,7 @@ const BlogPost = () => {
             <div>
               <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Written By</div>
               <div className="text-lg font-bold text-gray-900">{post.authorName || 'MySentry Editorial Team'}</div>
-              <p className="text-gray-900 text-sm mt-1">Dedicated to bringing you the latest insights on safety, health, and independence.</p>
+              <p className="text-gray-900 text-sm mt-1">Articles are reviewed for practical information about safety planning, wellness signals, and independence.</p>
             </div>
           </div>
 

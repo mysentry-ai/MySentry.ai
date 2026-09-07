@@ -3,89 +3,60 @@ import SEOPageTemplate from "@/components/SEOPageTemplate";
 export default function AutomatedCall() {
   return (
     <SEOPageTemplate
-      seoTitle="Automated Call: Fake Incoming Call to Exit Unsafe Situations | MySentry"
-      seoDescription="MySentry's Automated Call feature schedules a realistic fake incoming call to help you exit uncomfortable or unsafe situations discreetly. No one needs to know."
+      seoTitle="Automated Call for a Discreet Exit Plan | MySentry"
+      seoDescription="Learn how an available MySentry Automated Call can support a planned, discreet exit from an uncomfortable situation, with current device, plan, notification, and feature requirements reviewed before use."
       canonical="https://mysentry.ai/features/automated-call"
       label="FEATURE"
-      h1="Need an Excuse to Leave? We Have You Covered."
-      h1Sub="Schedule a realistic fake call to exit any situation, discreetly."
-      heroDescription="MySentry's Automated Call sends a realistic incoming call to your phone at a time you choose, giving you a natural, believable reason to leave any uncomfortable or unsafe situation."
-      problem="You're in a situation that feels wrong, a bad date, an uncomfortable meeting, an unsafe environment, and you need a way out without confrontation."
-      empathy="Sometimes the safest exit is a quiet one. You shouldn't have to explain yourself or create a scene to leave a situation that doesn't feel right."
+      h1="Plan a Discreet Exit Before an Uncomfortable Situation Escalates"
+      h1Sub="Use an available scheduled-call feature as one part of your own safety plan."
+      heroDescription="An Automated Call may help you create a reason to leave. It is not an emergency service, does not contact others automatically, and should not replace calling local emergency services when needed."
+      problem="A date, meeting, ride, or social situation can become uncomfortable before you are ready to explain why you want to leave. Planning a simple exit can make it easier to act on your own judgment."
+      empathy="You do not need to justify leaving a situation that feels wrong. A clear personal plan can support your next step while keeping emergency contacts and local resources available separately."
       steps={[
-        { title: "Schedule Your Call", description: "Open the MySentry app and set the Automated Call to arrive in 1, 5, 10, or 15 minutes, or at a specific time." },
-        { title: "Wait for the Ring", description: "Your phone rings like a real incoming call at the scheduled time. It looks and sounds completely authentic." },
-        { title: "Make Your Exit", description: "Answer the call and use it as your reason to leave. No explanation needed." },
+        { title: "Confirm Availability", description: "Review the current app, device, notification, plan, and feature requirements before relying on a scheduled call." },
+        { title: "Set Your Exit Plan", description: "Choose a time, decide where you will go, and let a trusted person know the plan when that is appropriate." },
+        { title: "Choose the Safer Next Step", description: "Leave when you can do so safely. If you face immediate danger, call 911 or local emergency services directly when it is safe and appropriate." },
       ]}
       primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
-      secondaryCta={{ text: "See All Features", href: "/features" }}
-      directAnswer="MySentry's Automated Call is a safety feature that schedules a realistic fake incoming call to your phone. You set the time, and when it rings, you have a natural, believable reason to exit any uncomfortable or unsafe situation without confrontation. It is designed to work alongside MySentry's Panic Alarm and MeetSafe features as part of a layered personal safety system."
+      secondaryCta={{ text: "Explore Safety Check-Ins", href: "/features/safety-check-in-app" }}
+      directAnswer="An available Automated Call feature can support a planned, discreet exit from an uncomfortable situation by scheduling a call on a supported device. It does not guarantee a particular appearance, delivery time, result, or safe outcome, and it does not replace emergency services or a personal safety plan."
       howItWorks={[
-        "Open the MySentry app and navigate to the Automated Call feature.",
-        "Choose when you want the call to arrive: in 1, 5, 10, or 15 minutes, or at a specific time.",
-        "Your phone rings at the scheduled time with a realistic incoming call.",
-        "Answer the call and use it as your reason to leave the situation.",
-        "If you need immediate help instead, the Panic Alarm is always one tap away.",
+        "Confirm that the current feature is available for your supported device, plan, app version, and notification settings.",
+        "Schedule the call according to the available feature controls and keep your own transport, contact, and exit plan in mind.",
+        "If the situation changes, leave when it is safe or use local emergency services directly when appropriate.",
       ]}
       afterAlert={[
-        "If the situation escalates before the call arrives, trigger the Panic Alarm immediately.",
-        "The Panic Alarm alerts your emergency contacts and the 24/7 monitoring team with your live location.",
-        "MeetSafe can be used alongside Automated Call for added protection during meetings or dates.",
+        "A scheduled call is separate from emergency response and may not include contact, monitoring, or escalation.",
+        "If you use another MySentry safety feature, available behavior depends on the selected feature, settings, permissions, connectivity, plan, region, and service availability.",
+        "An emergency requires your judgment and a direct call to 911 or local emergency services when it is safe and appropriate.",
       ]}
-      bestFor={[
-        "Women on first dates or meeting strangers for the first time.",
-        "Real estate agents or service professionals in uncomfortable client situations.",
-        "Anyone who needs a discreet, confrontation-free exit from an unsafe environment.",
-        "Students or young adults in social situations that feel wrong.",
-      ]}
-      notIdealFor={[
-        "Active emergencies where immediate help is needed (use the Panic Alarm instead).",
-        "Situations where you need to document or report an incident.",
-      ]}
-      keyTakeaways={[
-        "Schedule a realistic fake incoming call to exit any uncomfortable or unsafe situation.",
-        "Works alongside Panic Alarm and MeetSafe for layered personal safety.",
-        "No confrontation needed. The call gives you a natural, believable reason to leave.",
-      ]}
+      bestFor={["People who want a planned exit from an uncomfortable meeting or date", "Users who prefer to prepare a simple departure plan before a social situation", "People who will keep their own transport, contacts, and emergency options available"]}
+      notIdealFor={["An active emergency", "A replacement for calling emergency services or seeking local help", "A guarantee that a call will be delivered, look a certain way, or resolve a situation"]}
+      keyTakeaways={["Plan an exit before a situation becomes difficult.", "Confirm whether the available feature supports your device, app version, plan, and settings.", "Use a scheduled call as one small tool, not as an emergency-response service.", "Keep trusted contacts, transport choices, and local emergency options in your plan."]}
       faqs={[
-        {
-          question: "Does the Automated Call look real?",
-          answer: "Yes. The Automated Call is designed to look and sound like a genuine incoming call on your phone. It uses your phone's native call interface so it appears authentic to anyone nearby.",
-        },
-        {
-          question: "Can I set the caller name?",
-          answer: "Yes, you can customize the caller name that appears on the screen so it looks like a call from a specific person, such as a family member or friend.",
-        },
-        {
-          question: "What if I need help before the call arrives?",
-          answer: "If the situation escalates before your scheduled call, use the Panic Alarm immediately. You can trigger it by tapping the app, pressing the volume button (Android), or using a voice command. The Panic Alarm alerts your emergency contacts and the 24/7 monitoring team promptly.",
-        },
-        {
-          question: "Is the Automated Call included in all plans?",
-          answer: "Yes. The Automated Call feature is included in both the Individual ($15/month) and Family ($30/month) plans, as well as any introductory offer displayed during enrollment.",
-        },
-        {
-          question: "Can I cancel the call after I schedule it?",
-          answer: "Yes. You can cancel the scheduled call at any time before it arrives directly from the MySentry app.",
-        },
+        { question: "Is Automated Call an emergency service?", answer: "No. A scheduled call is not an emergency service and does not guarantee alert delivery, contact, monitoring, escalation, response, or outcome." },
+        { question: "Can I rely on it in an emergency?", answer: "No. Call 911 or local emergency services directly whenever it is safe and appropriate. Keep a separate plan for an urgent or disconnected situation." },
+        { question: "Will the call always arrive at the exact time I choose?", answer: "Do not rely on a guaranteed time. Availability and behavior can depend on device support, app state, notification settings, operating system behavior, plan, and other conditions." },
+        { question: "How should I decide whether it fits my plan?", answer: "Review current eligibility and feature behavior, then decide whether a planned call, a Safety Check, trusted contacts, or a direct emergency call is appropriate for the situation." },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+).",
-        permissions: "Notifications enabled for the call to ring at the scheduled time.",
-        connectivity: "Works on cellular or Wi-Fi. No internet connection is required for the call itself once scheduled.",
-        limitations: "The Automated Call is a simulated call and cannot be used to make real phone calls. It is a safety tool designed to help you exit uncomfortable situations."
+        devices: "A currently supported smartphone and an eligible app configuration. Confirm exact support before use.",
+        permissions: "Notification permissions and other settings can affect available feature behavior. Review the current app guidance before scheduling a call.",
+        connectivity: "Availability can vary with device state, notifications, and supported connectivity. Maintain a separate backup plan.",
+        limitations: "Automated Call is a supplemental planning feature. It is not an emergency service and does not guarantee delivery, contact, response, or outcome.",
       }}
       proofBlocks={[
-        { claim: "The Automated Call uses your phone's native call interface for a realistic appearance.", detail: "It looks and sounds like a genuine incoming call, making it a believable exit strategy." },
-        { claim: "Works alongside Panic Alarm and MeetSafe for layered safety coverage.", detail: "Use Automated Call for discreet exits, MeetSafe for scheduled check-ins, and Panic Alarm for active emergencies." },
-        { claim: "Customizable caller name and timing for maximum flexibility.", detail: "Set the call to arrive in 1-15 minutes or at a specific time, with a caller name of your choice." }
+        { claim: "A planned exit tool", detail: "A scheduled call can be one practical cue to leave an uncomfortable situation without treating it as an emergency response system." },
+        { claim: "User-directed safety planning", detail: "Users can decide in advance which contacts, transport, local resources, and available MySentry tools belong in their plan." },
+        { claim: "Clear limits", detail: "The feature does not replace emergency services and should not be described as a guarantee of call delivery, monitoring, escalation, or safety." },
       ]}
       relatedLinks={[
-        { text: "Panic Button App", href: "/features/panic-button-app" },
-        { text: "MeetSafe Check-Ins", href: "/features/safety-check-in-app" },
+        { text: "Safety Check-In App", href: "/features/safety-check-in-app" },
+        { text: "Panic Alarm App", href: "/features/panic-button-app" },
         { text: "Safety App for Women", href: "/use-cases/safety-app-for-women" },
-        { text: "Pricing Plans", href: "/pricing" },
+        { text: "Review Plans and Eligibility", href: "/pricing" },
       ]}
+      heroImage="/images/challenge-female-bad-date-800w.jpg"
     />
   );
 }

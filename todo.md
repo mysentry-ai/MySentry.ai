@@ -1101,3 +1101,22 @@
 - [x] Validate raw and hydrated metadata, robots, redirects, sitemaps, production content, desktop, mobile, image, contrast, accessibility, and overflow behavior
 - [x] Deliver a quality and indexability report that distinguishes intentional exclusions, remediated issues, unresolved external deployment issues, and recommended Search Console follow-up
 - [x] Save a verified checkpoint and synchronize the approved content-quality and indexability release to `zigroninc/MySentry.ai` main
+
+## Full Public Content No-AI-Slop and StoryBrand Refinement (September 2026)
+- [x] Add the no-ai-slop and Donald Miller StoryBrand requirements to the reusable editorial-quality process for all future website and blog content
+- [x] Inventory every public React page and published managed-database blog article before modifying content
+- [x] Run the compliant no-ai-slop detect-mode audit and StoryBrand review matrix across every public page and published blog without inferring authorship or attempting search-system evasion
+- [x] Verify access to the user-approved managed blog database and create a reversible content-change inventory before any database update
+- [x] Reconcile the differing blog counts and confirm the user-approved project `DATABASE_URL` contains 99 published posts for this refinement
+- [x] Re-run the no-ai-slop and StoryBrand review over the full 99-post user-approved managed blog estate with a fresh fingerprinted baseline
+- [x] Reject any bulk blog draft that changes product capabilities, removes existing links, introduces facts, or fails the source-preserving validation
+- [x] Apply a surgical blog revision method that preserves article links, supported facts, and scope while removing only verified generic phrasing or unsafe claims
+- [x] Apply the approved Option A decision by refining 39 eligible articles and unpublishing 13 empty plus 47 evidence-hold articles
+- [x] Guard every managed-database update with the fresh original fingerprint and preserve a complete rollback baseline and artifact
+- [x] Unpublish empty published blog records pending sourced, editorially reviewed content rather than generating unsupported replacement articles
+- [x] Refine only audited page copy and published managed-database blog content that needs improvement, preserving factual accuracy, product limitations, legal meaning, canonical routes, and intentional noindex decisions
+- [x] Apply Donald Miller StoryBrand structure to every new or materially rewritten page and blog section while retaining the reader as hero and MySentry as a qualified guide
+- [x] Add regression tests for editorial quality, StoryBrand structures, claims, metadata, canonicalization, and blog content integrity
+- [x] Validate the complete public content estate across source, managed blog data, production rendering, metadata, sitemaps, desktop, mobile, accessibility, contrast, images, and overflow
+- [x] Prepare a separate reversible AWS database migration artifact for approved blog-content changes without executing it against production
+- [x] Save a verified checkpoint and synchronize the complete content-refinement release to `zigroninc/MySentry.ai` main

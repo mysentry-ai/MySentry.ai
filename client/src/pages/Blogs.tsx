@@ -57,7 +57,7 @@ const Blogs = () => {
 
       <HeroSection
         label="Safety & Health Hub"
-        title={<>Stories, science, and strategies<br/><span className="text-gray-600">for living a safer, freer life.</span></>}
+        title={<>Clear safety guidance<br/><span className="text-gray-600">for the situations you want to prepare for.</span></>}
         imageSrc="/images/cdn/GqszcNTBcTbleCyx.jpg"
         imageAlt="Safety & Health Hub"
       />

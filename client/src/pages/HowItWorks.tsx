@@ -287,7 +287,7 @@ export default function Features() {
               Help With<br/>One Tap.
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              Panic button on your phone or watch. Voice activation works even when your screen is locked. An agent answers in seconds. No waiting. No confusion. Just help.
+              Use an available personal-alert control on a supported phone or watch. Eligible alerts may be reviewed under the current monitoring workflow. Timing, contact, escalation, and outcomes vary with the plan, device, settings, permissions, connectivity, region, and third parties.
             </p>
             <ul className="space-y-4">
               {[
@@ -341,7 +341,7 @@ export default function Features() {
               <span className="text-gray-500">Automatically.</span>
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-10">
-              Hard fall? Your smartwatch detects it and sends a Safety Check Alert. If you don't respond, help is automatically dispatched to your location. Need help sooner? Trigger the panic alarm promptly with your voice or a tap.
+              A compatible smartwatch may identify a fall-like event and begin a Safety Check. If you do not respond, the active workflow may share permitted context with monitoring or trusted contacts. It does not guarantee dispatch, response, or arrival. You can use an available personal-alert control when appropriate.
             </p>
             <div className="grid grid-cols-2 gap-6">
               {[

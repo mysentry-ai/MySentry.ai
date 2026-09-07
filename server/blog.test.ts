@@ -122,17 +122,21 @@ describe("Blog CMS - Public Posts", () => {
     }
   });
 
-  it("fetches a post by slug", async () => {
+  it("fetches a currently published post by slug", async () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);
+    const listResult = await caller.blog.public.list({ limit: 1 });
+    const listedPost = listResult.posts[0];
+    expect(listedPost).toBeDefined();
 
     const result = await caller.blog.public.getBySlug({
-      slug: "aging-with-confidence-independence",
+      slug: listedPost.slug,
     });
 
     expect(result.redirect).toBe(false);
     expect(result.post).toBeDefined();
-    expect(result.post?.title).toContain("Aging with Confidence");
+    expect(result.post?.slug).toBe(listedPost.slug);
+    expect(result.post?.title).toBe(listedPost.title);
     expect(result.post?.status).toBe("published");
     expect(result.post?.contentHtml).toBeTruthy();
   });

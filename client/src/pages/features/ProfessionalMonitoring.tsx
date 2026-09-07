@@ -3,66 +3,62 @@ import SEOPageTemplate from "@/components/SEOPageTemplate";
 export default function ProfessionalMonitoring() {
   return (
     <SEOPageTemplate
-      seoTitle="Professional Monitoring App for Safety | MySentry"
-      seoDescription="Worried about emergencies? MySentry's professional monitoring connects you to live agents 24/7. They respond to alerts and get you help fast. Get peace of mind, review current plans and eligibility."
+      seoTitle="Professional Monitoring for Personal Safety | MySentry"
+      seoDescription="Learn how MySentry professional monitoring may review an eligible alert, attempt contact, and coordinate with designated contacts or emergency services when appropriate, subject to plan and service conditions."
       canonical="https://mysentry.ai/features/24-7-professional-monitoring"
       label="FEATURE"
-      h1="Real Help. Real Fast. Every Time."
-      h1Sub="Our agents are always here for you."
-      heroDescription="Real people watching over you around the clock, ready to respond the moment something goes wrong."
-      problem="You worry about what might happen if you have an emergency and can't call for help. Who will know you're in trouble?"
-      empathy="It's stressful to think about facing a crisis alone. You deserve to know that someone is always ready to respond, no matter what."
+      h1="Understand the Professional Monitoring Workflow Before You Need It"
+      h1Sub="Review the eligible alert, contact, and escalation steps for your supported configuration."
+      heroDescription="MySentry may route eligible alerts to professional monitoring. The available workflow depends on your plan, device, permissions, app state, connectivity, region, and service availability."
+      problem="When a safety concern develops, you may need a clear plan for who can receive an alert, what information may be available, and when to contact emergency services directly."
+      empathy="You remain the decision-maker. MySentry can be one supplemental layer in a plan that also includes trusted contacts, local emergency resources, and practical backup steps."
       steps={[
-        { title: "Get the MySentry App", description: "Download the app and review current plans, eligibility, billing terms, and enrollment requirements." },
-        { title: "Live Your Life", description: "MySentry works in the background. If a fall, crash, or panic alarm is triggered, we're promptly alerted." },
-        { title: "Get Immediate Help", description: "Our 24/7 certified monitoring agents assess the situation and contact emergency services when appropriate if you need it." },
+        { title: "Review Eligibility", description: "Confirm the current plan, supported devices, permissions, region, and monitoring availability before relying on the service." },
+        { title: "Set Your Alert Plan", description: "Choose eligible personal-alert controls, Safety Checks, trusted contacts, and any available information-sharing settings." },
+        { title: "Practice the Next Step", description: "Learn when to use the available workflow and when to call 911 or local emergency services directly if it is safe and appropriate." },
       ]}
       primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing" }}
       secondaryCta={{ text: "See How It Works", href: "/how-it-works" }}
-      directAnswer="Eligible MySentry alerts may be routed to a professional monitoring team 24/7. An agent can review available context, attempt contact, notify trusted contacts, or coordinate with emergency services when appropriate. Timing and outcomes are not guaranteed."
+      directAnswer="MySentry professional monitoring may receive an eligible alert, review permitted context, attempt contact, notify trusted contacts, or coordinate with emergency services when appropriate. It is a supplemental service and does not guarantee detection, delivery, contact, escalation, response, or arrival."
       howItWorks={[
-        "MySentry's smart sensors detect falls, car crashes, or a panic alarm triggered by voice, tap, or smartwatch.",
-        "When an alert is triggered, it's sent promptly to our 24/7 professional monitoring center.",
-        "A certified agent immediately attempts to contact you via live video and voice.",
-        "If you're unresponsive or confirm you need help, we coordinate with local emergency services, providing them with your location and critical information.",
+        "An eligible user completes the current device, permission, contact, and plan setup.",
+        "A user may start an available personal alert or Safety Check. A supported device event may also begin a check-in.",
+        "When an eligible alert reaches the monitoring workflow, an agent may review permitted available context and attempt contact.",
+        "The agent may coordinate with designated contacts or emergency services when appropriate under the available workflow.",
       ]}
       afterAlert={[
-        "An alert is promptly sent to our U.S.-based, TMA Five Diamond Certified monitoring center.",
-        "A trained agent joins a live video call to see and speak with you.",
-        "They assess the situation and determine the appropriate level of response.",
-        "When appropriate, an agent may notify trusted contacts or coordinate with police, EMS, or fire services using the available alert context.",
+        "If safe and able, the user may respond to, cancel, or close the alert.",
+        "Available monitoring may review permitted context and attempt contact.",
+        "Trusted contacts may receive information according to the configured feature and permissions.",
+        "Timing, delivery, contact, escalation, emergency-service response, and arrival are not guaranteed.",
       ]}
-      bestFor={["Individuals who live alone", "Seniors who want to maintain independence", "People with medical conditions", "Anyone who wants an extra layer of safety"]}
-      notIdealFor={["Areas without a reliable internet or cellular connection.", "Users who are unwilling to grant necessary device permissions."]}
-      keyTakeaways={[
-        "MySentry provides an always-on connection to a professional monitoring center.",
-        "Trained agents may coordinate with police, fire, or EMS when appropriate and when sufficient location and alert context are available.",
-        "Live video and voice allows agents to see the situation and provide immediate assistance.",
-      ]}
+      bestFor={["People who want a supplemental alert-review option", "Older adults and families making a shared safety plan", "Workers whose employer has a documented safety program", "Users who will confirm the current availability and limitations"]}
+      notIdealFor={["Replacing emergency services, clinical judgment, or a local safety plan", "Use without a supported device, current permissions, and available connectivity", "A guarantee that someone will always receive or resolve an alert"]}
+      keyTakeaways={["Start with your supported setup, contacts, and plan terms.", "Use professional monitoring as one layer alongside emergency services and trusted local support.", "Review permissions and information-sharing choices before an alert occurs.", "Keep a separate backup plan for low battery, lost devices, or unavailable connectivity."]}
       faqs={[
-        { question: "How does 24/7 professional monitoring work?", answer: "An eligible MySentry alert may be routed to the monitoring center. An agent can review available context, attempt contact, and coordinate with trusted contacts or emergency services when appropriate. Timing and outcomes vary." },
-        { question: "Is the monitoring center always open?", answer: "MySentry describes professional monitoring as available 24/7 for eligible plans. Actual alert receipt, review, and escalation depend on plan status, connectivity, permissions, system availability, and incident conditions." },
-        { question: "Who are the monitoring agents?", answer: "Our agents are U.S.-based, TMA Five Diamond Certified professionals. They undergo rigorous training in emergency response protocols to provide you with the highest level of service." },
-        { question: "What happens if I trigger an alarm by accident?", answer: "Accidents happen. If you trigger a false alarm, you can simply cancel it in the app or inform the monitoring agent when they contact you. There is no penalty for false alarms." },
-        { question: "Do I need a separate landline for this service?", answer: "No, MySentry's monitoring service works through your smartphone's cellular connection. No landline and no Wi-Fi are required." },
+        { question: "How does professional monitoring work?", answer: "An eligible MySentry alert may be routed to the monitoring workflow. An agent may review permitted available context, attempt contact, and coordinate with designated contacts or emergency services when appropriate. Timing and outcomes vary." },
+        { question: "Is monitoring available for every user and situation?", answer: "No. Availability depends on current plan terms, supported devices, settings, permissions, connectivity, region, system availability, and incident conditions. Review eligibility before enrollment." },
+        { question: "Does MySentry replace calling emergency services?", answer: "No. Call 911 or local emergency services directly whenever it is safe and appropriate. MySentry does not guarantee alert delivery, contact, escalation, response, or arrival." },
+        { question: "What information can be shared after an alert?", answer: "Available location, audio, video, and account context depend on supported features, selected settings, permissions, and the active workflow." },
       ]}
       setupRequirements={{
-        devices: "iPhone (iOS 15+) and Android (12+) smartphones. Apple Watch (Series 7+) and Samsung Galaxy Watch for wearable features.",
-        permissions: "Location services (always-on for GPS tracking), notifications, microphone (for voice-activated panic), camera (for live video response).",
-        connectivity: "Works on cellular signal. No Wi-Fi is required. Even with a weak signal, the app sends a text alert with your GPS coordinates. In areas with no cell coverage at all, alerts queue and send the moment signal returns.",
-        limitations: "Fall detection accuracy depends on sensor quality and wearing position. Battery life varies by device and feature usage. Health monitoring requires a compatible smartwatch."
+        devices: "A currently supported phone and, for optional wearable features, an eligible watch configuration. Confirm exact compatibility before enrollment.",
+        permissions: "Required notification, location, microphone, camera, motion, background, and contact permissions depend on the selected supported workflow.",
+        connectivity: "Alert delivery and context sharing require an available supported network connection. Keep a separate plan for disconnected settings.",
+        limitations: "MySentry is not a medical device and does not guarantee detection, alert delivery, contact, escalation, emergency-service response, or arrival.",
       }}
       proofBlocks={[
-        { claim: "Professional monitoring is described as available 24/7 for eligible plans.", detail: "When an eligible alert is received, trained agents may review available, permissioned incident context and follow the configured workflow. Receipt, review, and escalation are not guaranteed." },
-        { claim: "Agents review available alert context before next steps.", detail: "When supported and permitted, location, audio, video, and account context may help an agent attempt contact or coordinate with trusted contacts and local services." },
-        { claim: "Agent contact timing varies by alert conditions and service availability.", detail: "Eligible alerts are routed for professional review. Timing and escalation can depend on plan, connectivity, available context, region, and third-party response." }
+        { claim: "User-directed safety setup", detail: "Eligible users choose available contacts, permissions, and alert settings for the situations they want to prepare for." },
+        { claim: "Permission-based alert context", detail: "Available information depends on feature support, settings, permissions, connectivity, and the active alert workflow." },
+        { claim: "Supplemental professional review", detail: "Professional monitoring may review an eligible alert and coordinate next steps when appropriate, but it does not replace emergency services or guarantee an outcome." },
       ]}
       relatedLinks={[
-        { text: "Panic Button", href: "/features/panic-button-app" },
-        { text: "Fall Detection", href: "/features/fall-detection-app" },
-        { text: "Pricing Plans", href: "/pricing" },
-        { text: "How It Works", href: "/how-it-works" },
+        { text: "Panic Alarm App", href: "/features/panic-button-app" },
+        { text: "Safety Check-In App", href: "/features/safety-check-in-app" },
+        { text: "How MySentry Works", href: "/how-it-works" },
+        { text: "Review Plans and Eligibility", href: "/pricing" },
       ]}
+      heroImage="/images/home-monitoring-center.jpg"
     />
   );
 }

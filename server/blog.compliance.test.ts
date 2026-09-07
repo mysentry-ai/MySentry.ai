@@ -183,16 +183,53 @@ describe("blog compliance check", () => {
     const adminCaller = appRouter.createCaller(adminCtx);
 
     const result = await adminCaller.blog.ai.complianceCheck({
-      content: `<h2>Why your mom keeps calling when you go hiking</h2>
-<p>Last weekend, Sarah drove to Runyon Canyon for a solo hike. She told her mom she'd be back by 3pm. By 2:45, her phone had already buzzed six times.</p>
-<p>Sound familiar? Most of us have been there. You want to enjoy the outdoors, but someone back home is worried sick.</p>
-<p>Here's the thing. Their worry isn't irrational. Every year, roughly 130 people die in national parks alone. And that number doesn't count the thousands of injuries on local trails.</p>
-<h2>What actually helps</h2>
-<p>You can't stop people from worrying. But you can give them something better than a text that says "I'm fine."</p>
-<p>Real-time location sharing works. So does automatic check-ins. MySentry sends your GPS coordinates to your emergency contacts every 15 minutes during outdoor activities.</p>`,
+      content: `<h2>Plan your check-in before you leave</h2>
+<p>You can choose a return time, confirm who should receive an update, and check your phone settings before the activity begins.</p>
+<h2>A practical plan</h2>
+<ol><li>Tell a trusted contact where you are going.</li><li>Confirm your phone has power and connectivity.</li><li>Choose a time for a manual check-in.</li></ol>
+<h2>Where MySentry may fit</h2>
+<p>MySentry can serve as a supplemental safety layer on eligible, configured devices. Features remain subject to permissions, connectivity, plan, region, and service availability.</p>`,
     });
 
     expect(result.allPassed).toBe(true);
+  });
+
+  it("rejects unsupported emergency-response and outcome promises", async () => {
+    const ctx = createPublicContext();
+    const caller = appRouter.createCaller(ctx);
+    const { token } = await caller.blog.adminLogin({
+      username: "admin",
+      password: "MySentry2026",
+    });
+    const adminCaller = appRouter.createCaller(createAdminContext(token));
+
+    const result = await adminCaller.blog.ai.complianceCheck({
+      content: `<h2>A practical plan</h2><p>You can use MySentry to automatically dispatch police immediately and prevent emergencies.</p>`,
+    });
+
+    const claimCheck = result.checks.find((check) => check.name === "MySentry Claim Safety");
+    expect(claimCheck).toBeDefined();
+    expect(claimCheck!.passed).toBe(false);
+    expect(result.allPassed).toBe(false);
+  });
+
+  it("requires a practical reader plan for StoryBrand blog content", async () => {
+    const ctx = createPublicContext();
+    const caller = appRouter.createCaller(ctx);
+    const { token } = await caller.blog.adminLogin({
+      username: "admin",
+      password: "MySentry2026",
+    });
+    const adminCaller = appRouter.createCaller(createAdminContext(token));
+
+    const result = await adminCaller.blog.ai.complianceCheck({
+      content: `<h2>Your safety choices</h2><p>You can review the available options before deciding what fits your situation.</p>`,
+    });
+
+    const planCheck = result.checks.find((check) => check.name === "Practical Plan");
+    expect(planCheck).toBeDefined();
+    expect(planCheck!.passed).toBe(false);
+    expect(result.allPassed).toBe(false);
   });
 
   it("rejects unauthorized compliance check", async () => {

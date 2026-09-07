@@ -31,7 +31,7 @@ export default function AppleWatchIntegrationPage() {
       bestFor={[
         "Apple Watch users who want more personal safety.",
         "Seniors living on their own who already use an Apple Watch.",
-        "Anyone looking for a simple, yet powerful, personal safety solution.",
+        "People who want to review compatible Apple Watch and iPhone safety features before choosing a plan.",
         "Drivers who want an added supported-device safety layer while carrying an eligible iPhone.",
       ]}
       notIdealFor={[
@@ -40,7 +40,7 @@ export default function AppleWatchIntegrationPage() {
         "Those who need a medical alert device with a special button worn around the neck or wrist.",
       ]}
       keyTakeaways={[
-        "Adds an important safety layer to your Apple Watch.",
+        "May add supported personal-alert and Safety Check options to an eligible Apple Watch and iPhone configuration.",
         "Includes fall detection, a panic alarm, and crash detection.",
         "Easy to set up and works smoothly with your watch.",
         "Current watch, watchOS, iPhone, plan, and regional requirements must be confirmed before enrollment.",
