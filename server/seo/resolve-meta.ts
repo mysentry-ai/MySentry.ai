@@ -19,6 +19,7 @@ import {
 } from "../../shared/seo/route-meta";
 import { isHeldBlogSlug } from "../../shared/seo/content-governance";
 import { absoluteBlogImageUrl } from "../../shared/seo/blog-assets";
+import { isNoindexPath } from "../../shared/seo/indexability";
 
 // ─── Blog meta cache ──────────────────────────────────────────────────────────
 
@@ -106,12 +107,6 @@ const DEFAULT_META: RouteMeta = {
 
 // ─── Public API ───────────────────────────────────────────────────────────────
 
-// Routes that should be excluded from search engine indexing
-const NOINDEX_ROUTES = new Set([
-  "/pricing-legacy",
-  "/features/secure-route",
-  "/integrations/oura-ring",
-]);
 const PRIVATE_ROUTE_PREFIXES = ["/admin"];
 
 export type ResolvedMeta = {
@@ -198,7 +193,7 @@ export async function resolveMeta(
       ? "noindex,nofollow"
     : routeType === "article"
       ? `${raw.isIndexed === false || editorialHold ? "noindex" : "index"},${raw.isFollowed === false ? "nofollow" : "follow"}`
-      : NOINDEX_ROUTES.has(path) || path.startsWith("/compare/") || path.startsWith("/case-studies/")
+      : isNoindexPath(path)
         ? "noindex,follow"
         : "index,follow";
 

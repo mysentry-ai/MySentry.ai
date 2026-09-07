@@ -166,7 +166,7 @@ export const Privacy = () => {
           <div id="privacy-content" className="bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-gray-100">
             <p className="text-3xl font-bold text-gray-900 mb-8">Privacy Policy</p>
             <p className="lead text-xl text-gray-900 font-medium mb-6">
-              At MySentry.ai, our dedication to user privacy and security is paramount.
+              MySentry explains how the App may collect, use, share, and protect personal information, as well as the choices available to users.
             </p>
             <p className="lead text-xl text-gray-900 font-medium mb-12">
               In this Privacy Policy, we explain the types of personal information that may be collected through the MySentry app (referred to as "the App"), how this information might be used and shared, and the choices available to users with respect to their personal information.

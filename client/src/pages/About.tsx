@@ -49,7 +49,7 @@ export const About = () => {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-black mb-8 font-barlow uppercase text-[#386758]">Our Mission</h2>
             <p className="text-2xl leading-relaxed text-gray-700 mb-16 font-light">
-              To empower individuals, families, and workforces with intelligent, 24/7 safety and health monitoring that bridges the gap between detection and response.
+              To help individuals, families, and workforces prepare for safety concerns with supported alerts, Safety Checks, optional wellness signals, and professional monitoring availability.
             </p>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="p-10 bg-[#e8f5e9] rounded-3xl hover:shadow-lg transition-shadow duration-300">
@@ -58,11 +58,11 @@ export const About = () => {
               </div>
               <div className="p-10 bg-[#e8f5e9] rounded-3xl hover:shadow-lg transition-shadow duration-300">
                 <h3 className="text-2xl font-bold mb-4 text-[#386758] font-barlow uppercase">Connect</h3>
-                <p className="text-gray-600 text-lg">Seamless communication with loved ones and emergency services.</p>
+                <p className="text-gray-600 text-lg">Configurable check-ins and alerts for the contacts a user chooses, subject to enabled permissions and service availability.</p>
               </div>
               <div className="p-10 bg-[#e8f5e9] rounded-3xl hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-2xl font-bold mb-4 text-[#386758] font-barlow uppercase">Empower</h3>
-                <p className="text-gray-600 text-lg">Data-driven insights to live longer, healthier, and more independent lives.</p>
+                <h3 className="text-2xl font-bold mb-4 text-[#386758] font-barlow uppercase">Plan</h3>
+                <p className="text-gray-600 text-lg">Practical information that helps people choose a safety routine that fits their circumstances.</p>
               </div>
             </div>
           </div>
@@ -77,16 +77,16 @@ export const About = () => {
               <h2 className="text-4xl md:text-5xl font-black mb-12 font-barlow uppercase">Our Promise</h2>
               <div className="space-y-10">
                 <div>
-                  <h3 className="text-2xl font-bold mb-3 text-[#4ADE80] font-barlow uppercase">We are always there.</h3>
-                  <p className="text-lg opacity-90 leading-relaxed">24/7 professional monitoring means you never have to worry about "what if."</p>
+                  <h3 className="text-2xl font-bold mb-3 text-[#9ed6f7] font-barlow uppercase">Support depends on your setup.</h3>
+                  <p className="text-lg opacity-90 leading-relaxed">Professional monitoring is available for eligible plans and alerts, subject to device, settings, permissions, connectivity, region, and service availability.</p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-3 text-[#4ADE80] font-barlow uppercase">We respect your privacy.</h3>
-                  <p className="text-lg opacity-90 leading-relaxed">Your health and location data is yours. We only share it when it matters most, during an emergency.</p>
+                  <h3 className="text-2xl font-bold mb-3 text-[#9ed6f7] font-barlow uppercase">Privacy is part of setup.</h3>
+                  <p className="text-lg opacity-90 leading-relaxed">Users control eligible permissions and configured contacts. Review the Privacy Policy for how the App may collect, use, and share information.</p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-3 text-[#4ADE80] font-barlow uppercase">We innovate for you.</h3>
-                  <p className="text-lg opacity-90 leading-relaxed">Continuously evolving our AI to detect more, predict better, and respond faster.</p>
+                  <h3 className="text-2xl font-bold mb-3 text-[#9ed6f7] font-barlow uppercase">We document what is available.</h3>
+                  <p className="text-lg opacity-90 leading-relaxed">Features and guidance are updated as support details are confirmed. MySentry does not guarantee detection, contact, escalation, response, or outcome.</p>
                 </div>
               </div>
             </div>

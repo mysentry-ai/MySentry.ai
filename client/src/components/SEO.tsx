@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { ROUTE_META, SITE_NAME, DEFAULT_OG_IMAGE } from "@shared/seo/route-meta";
+import { isNoindexPath } from "@shared/seo/indexability";
 
 /**
  * SEO component  -  injects per-page meta tags via react-helmet-async.
@@ -64,11 +65,7 @@ export default function SEO({
       resolvedDescription = routeMeta.description;
       resolvedImage = routeMeta.ogImage ?? DEFAULT_OG_IMAGE;
       resolvedCanonical = `https://mysentry.ai${window.location.pathname}`;
-      resolvedNoindex = [
-        "/pricing-legacy",
-        "/features/secure-route",
-        "/integrations/oura-ring",
-      ].includes(window.location.pathname);
+      resolvedNoindex = isNoindexPath(window.location.pathname);
       resolvedNofollow = false;
     }
   }

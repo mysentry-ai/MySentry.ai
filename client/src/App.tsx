@@ -89,10 +89,7 @@ import WhoWeProtectStudents from "./pages/who-we-protect/Students";
 import WhoWeProtectChildrenAndTeens from "./pages/who-we-protect/ChildrenAndTeens";
 
 // Phase 2 - Solutions (Vertical-Specific BOFU)
-import HomeHealthcareSolution from "./pages/solutions/HomeHealthcareSolution";
-import RealEstateSolution from "./pages/solutions/RealEstateSolution";
 import DeliveryDriversSolution from "./pages/solutions/DeliveryDriversSolution";
-import ConstructionSolution from "./pages/solutions/ConstructionSolution";
 import RetailWorkersSolution from "./pages/solutions/RetailWorkersSolution";
 
 // Phase 2 - Safety For (Audience-Specific BOFU)

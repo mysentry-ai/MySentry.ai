@@ -1087,3 +1087,17 @@
 - [x] Inspect public DNS, TLS, HTTP headers, deployment identity, and domain configuration without changing infrastructure
 - [x] Determine whether the public domain is routed to the current managed deployment, a separate AWS deployment, or an older revision
 - [x] Document the verified root cause and safe operator action required to make the latest account-deletion route live on `mysentry.ai`
+
+## Content Quality and Search Console Indexability Review (September 2026)
+- [x] Define a compliant editorial-quality standard that improves specificity, evidence, clarity, and reader value without attempting to bypass search systems or detection
+- [x] Inspect the referenced no-ai-slop GitHub skill before installation, document its dependencies and behavior, and reject any evasion or deceptive use
+- [x] If safe and suitable, integrate the referenced skill only as a non-deceptive editorial-quality linter alongside the reader-first review standard
+- [x] Audit every sitemap route, canonical redirect, noindex route, alternate URL, and live response against the three Search Console exclusion reasons
+- [x] Separate intentional canonical redirects and noindex pages from unintended indexing problems, with a route-level remediation decision
+- [x] Audit priority public pages for generic wording, unsupported claims, missing source context, weak experience signals, and unclear conversion intent
+- [x] Improve only pages supported by the audit with substantive, claim-safe, reader-first editorial changes and accurate supporting context
+- [x] Update metadata, canonicals, robots, schema, internal links, sitemaps, and AI discovery only where the audit identifies a verified issue
+- [x] Add tests for any changed route governance, content standards, metadata, canonicals, noindex decisions, and claim safety
+- [x] Validate raw and hydrated metadata, robots, redirects, sitemaps, production content, desktop, mobile, image, contrast, accessibility, and overflow behavior
+- [x] Deliver a quality and indexability report that distinguishes intentional exclusions, remediated issues, unresolved external deployment issues, and recommended Search Console follow-up
+- [x] Save a verified checkpoint and synchronize the approved content-quality and indexability release to `zigroninc/MySentry.ai` main
