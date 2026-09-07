@@ -1081,3 +1081,9 @@
 - [x] Add regression tests for the canonical route, query-string route, malformed route redirect, metadata, and redirect-chain prevention
 - [x] Validate TypeScript, tests, production build, HTTP status, redirect destination, query preservation, canonical metadata, and live deployment readiness
 - [x] Save a verified checkpoint and synchronize the malformed-route fix to `zigroninc/MySentry.ai` main
+
+## Public Domain Account Deletion Availability Investigation (September 2026)
+- [x] Compare the public `mysentry.ai` response with the managed deployment for canonical, query-string, and malformed account-deletion URLs
+- [x] Inspect public DNS, TLS, HTTP headers, deployment identity, and domain configuration without changing infrastructure
+- [x] Determine whether the public domain is routed to the current managed deployment, a separate AWS deployment, or an older revision
+- [x] Document the verified root cause and safe operator action required to make the latest account-deletion route live on `mysentry.ai`
