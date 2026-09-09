@@ -14,6 +14,7 @@ const _require = createRequire(import.meta.url);
 const compression = _require("compression") as () => any;
 import { serveStatic, setupVite } from "./vite";
 import { registerSitemapRoutes } from "../sitemaps";
+import { registerStorageProxy } from "./storageProxy";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -50,6 +51,8 @@ async function startServer() {
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
+  // Resolve durable uploaded assets before authentication or application routes.
+  registerStorageProxy(app);
   // OAuth callback under /api/oauth/callback
   registerOAuthRoutes(app);
   // Dynamic sitemaps + SEO routes

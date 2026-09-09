@@ -94,12 +94,13 @@ Recommended cadence: **3-4 posts per week** to build topical authority quickly.
 
 ## Content Guidelines Reminder
 
-1. **Length**: 500-700 words
-2. **Reading level**: 8th grade
-3. **Tone**: Conversational, human, no em dashes
-4. **Structure**: Direct answer in first 120 words, H2 every 250-350 words
-5. **Internal links**: 2-4 links to money pages per post
-6. **FAQ section**: 3-5 questions at the end
-7. **End CTA**: "Start your 7-day free trial today!" linking to /pricing
-8. **Images**: Unique, relevant hero image for each post
-9. **AI detection**: Write to pass AI detection tools
+1. **Length**: Use the length needed to answer the topic clearly, normally 700-1,100 words for a substantive guide
+2. **Reading level**: Prefer plain language that a general reader can understand
+3. **Tone**: Calm, direct, specific, and practical, with no em dashes or promotional puffery
+4. **StoryBrand structure**: Keep the reader as the hero, name a supported problem, position MySentry as a supplemental guide, give a practical plan, and use a matching next action
+5. **Internal links**: Use only relevant canonical pages; do not link to redirects, evidence-held content, or unpublished pages
+6. **FAQ section**: Add questions only when they answer genuine reader objections or setup concerns
+7. **End CTA**: Match the article intent and confirm current plan, trial, pricing, eligibility, and availability terms before stating them
+8. **Images**: Use relevant licensed or approved images with accurate alternative text and no unsupported text baked into the visual
+9. **Editorial quality**: Run the no-ai-slop pattern review for clarity and usefulness; do not attempt to evade search systems or misrepresent authorship
+10. **Claim safety**: Do not invent statistics, testimonials, certifications, endorsements, product capabilities, response times, medical conclusions, or guaranteed outcomes

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { appRouter } from "./routers";
 import type { TrpcContext } from "./_core/context";
+import { readFileSync } from "node:fs";
 
 function createAdminContext(token: string): TrpcContext {
   return {
@@ -71,6 +72,29 @@ describe("blog admin auth", () => {
 
     const result = await caller.blog.adminVerify({ token: "fake-token-123" });
     expect(result.valid).toBe(false);
+  });
+});
+
+describe("blog writer editorial policy", () => {
+  it("uses reader-first quality rules rather than detection-evasion instructions", () => {
+    const source = readFileSync(
+      new URL("./routers/blogRouter.ts", import.meta.url),
+      "utf8",
+    );
+    const prompt = source.match(
+      /const AI_BLOG_WRITER_SYSTEM = `([\s\S]*?)`;\n\nconst AI_IMAGE_SYSTEM/,
+    )?.[1];
+
+    expect(prompt).toBeDefined();
+    expect(prompt).toContain("Do not attempt to evade search systems");
+    expect(prompt).toContain("Keep the reader as the hero");
+    expect(prompt).toContain("qualified supplemental guide");
+    expect(prompt).toContain("Never invent a statistic");
+    expect(prompt).not.toContain("pass AI detection tools");
+    expect(prompt).not.toContain("ANTI-AI-DETECTION");
+    expect(prompt).not.toContain("GPTZero");
+    expect(prompt).not.toContain("Originality.ai");
+    expect(prompt).not.toContain("Copyleaks");
   });
 });
 

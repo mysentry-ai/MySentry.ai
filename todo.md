@@ -1120,3 +1120,15 @@
 - [x] Validate the complete public content estate across source, managed blog data, production rendering, metadata, sitemaps, desktop, mobile, accessibility, contrast, images, and overflow
 - [x] Prepare a separate reversible AWS database migration artifact for approved blog-content changes without executing it against production
 - [x] Save a verified checkpoint and synchronize the complete content-refinement release to `zigroninc/MySentry.ai` main
+
+## MySentry and Ring Blog Announcement Draft (September 2026)
+- [x] Extract and inventory every factual statement, quote, name, title, product detail, partnership claim, availability statement, date, location, link, and limitation from the supplied PR
+- [x] Convert the press release into a professional MySentry product and partnership announcement with a strong web headline, short sections, clear customer value, and a fact-matched CTA
+- [x] Apply the no-ai-slop editorial review and Donald Miller StoryBrand structure without adding unsupported capabilities, outcomes, endorsements, certifications, or availability claims
+- [x] Prepare basic SEO fields including slug, excerpt, meta title, meta description, target phrase, hero alt text, and internal link recommendations
+- [x] Use the supplied MySentry and Ring visual as the proposed hero image without modifying the image
+- [x] Add and test the standard `/manus-storage` proxy required to render the unchanged uploaded hero image from its durable project path
+- [x] Create the announcement as an unpublished managed-blog draft for owner review rather than publishing automatically
+- [x] Validate the draft’s facts, quotes, links, product limitations, HTML structure, metadata lengths, prohibited punctuation, no-ai-slop patterns, image reference, and responsive preview
+- [x] Deliver the polished draft, review notes, and publication checklist without changing AWS production data
+- [x] Replace the internal blog-writer prompt’s AI-detection-evasion instructions with evidence-led no-ai-slop, StoryBrand, claim-safety, source, and editorial-review requirements
