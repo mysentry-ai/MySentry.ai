@@ -345,7 +345,7 @@ export default function Pricing() {
         <h1 className="text-3xl md:text-[55px] font-extrabold text-[#0F172A] uppercase tracking-tight mb-3 leading-tight">
           Simple, Transparent Pricing.
         </h1>
-        <p className="text-lg md:text-xl text-[#64748B] font-medium max-w-[600px] mx-auto mb-8">
+        <p className="text-lg md:text-xl text-[#475569] font-medium max-w-[600px] mx-auto mb-8">
           Protection that fits your life and budget.
         </p>
 

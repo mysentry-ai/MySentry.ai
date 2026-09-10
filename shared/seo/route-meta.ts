@@ -291,6 +291,16 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       "Use an evidence-first checklist to compare device support, alert workflows, monitoring, privacy, pricing, eligibility, and service limitations.",
   },
+  "/compare/apple-watch-fall-detection-vs-mysentry": {
+    title: "Apple Watch Fall Detection vs MySentry",
+    description:
+      "Compare Apple Watch Fall Detection and Emergency SOS with MySentry. Review alert steps, trusted contacts, setup requirements, and limits before choosing.",
+  },
+  "/compare/samsung-galaxy-watch-vs-mysentry": {
+    title: "Samsung Galaxy Watch vs MySentry",
+    description:
+      "Compare Samsung Galaxy Watch hard fall detection and Emergency SOS with MySentry. Review alert steps, trusted contacts, setup requirements, and limits.",
+  },
   "/compare/noonlight-vs-mysentry": {
     title: "Noonlight and MySentry Comparison Under Review",
     description:
@@ -326,11 +336,6 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     title: "Citizen and MySentry Comparison Under Review",
     description:
       "The Citizen and MySentry comparison is temporarily held while current official product, pricing, compatibility, privacy, and policy sources are reviewed.",
-  },
-  "/compare/apple-watch-fall-detection-vs-mysentry": {
-    title: "Apple Watch and MySentry Comparison Under Review",
-    description:
-      "This Apple Watch and MySentry comparison is temporarily held while current official compatibility, feature, privacy, and service information is reviewed.",
   },
   "/compare/lively-vs-mysentry": {
     title: "Lively vs MySentry | Senior Safety Comparison",

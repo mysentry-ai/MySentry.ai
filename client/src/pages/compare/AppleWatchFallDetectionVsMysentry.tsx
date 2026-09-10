@@ -1,2 +1,5 @@
-import ComparisonReviewPage from "@/components/ComparisonReviewPage";
-export default function AppleWatchFallDetectionVsMysentry() { return <ComparisonReviewPage competitor="Apple Watch Fall Detection" />; }
+import WearableSafetyComparison from "./WearableSafetyComparison";
+
+export default function AppleWatchFallDetectionVsMysentry() {
+  return <WearableSafetyComparison kind="apple" />;
+}

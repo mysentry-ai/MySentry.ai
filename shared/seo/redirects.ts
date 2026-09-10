@@ -1,5 +1,6 @@
 export const CANONICAL_REDIRECTS: Record<string, string> = {
   "/blog/protecting-teen-drivers": "/blogs",
+  "/blog/fall-detection-apple-watch-vs-dedicated-safety-app": "/compare/apple-watch-fall-detection-vs-mysentry",
   "/features/voice-activated-panic-alarm": "/features",
   "/features/health-monitoring-app-with-alerts": "/features/health-monitoring",
   "/compare/adt-vs-mysentry": "/compare/sosecure-adt-vs-mysentry",

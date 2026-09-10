@@ -152,7 +152,7 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
                 "absolute inset-0 transition-opacity duration-500",
                 expandedId === item.id 
                   ? "bg-black/60" 
-                  : "bg-gradient-to-b from-black/10 via-transparent to-black/80"
+                  : "bg-gradient-to-b from-black/25 via-black/15 to-black/90"
               )} />
             </div>
 
@@ -222,7 +222,7 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
                     <motion.p
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      className="text-gray-300 font-medium line-clamp-2"
+                      className="text-[#f8fafc] font-medium line-clamp-2 drop-shadow-sm"
                     >
                       {item.subtitle}
                     </motion.p>

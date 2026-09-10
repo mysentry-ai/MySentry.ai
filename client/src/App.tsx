@@ -76,6 +76,7 @@ import WhoopVsMysentry from "./pages/compare/WhoopVsMysentry";
 import MedicalGuardianVsMysentry from "./pages/compare/MedicalGuardianVsMysentry";
 import LivelyVsMysentry from "./pages/compare/LivelyVsMysentry";
 import AppleWatchFallDetectionVsMysentry from "./pages/compare/AppleWatchFallDetectionVsMysentry";
+import SamsungGalaxyWatchVsMysentry from "./pages/compare/SamsungGalaxyWatchVsMysentry";
 import TraditionalMedicalAlertsComparison from "./pages/compare/TraditionalMedicalAlertsComparison";
 import FitnessWearablesComparison from "./pages/compare/FitnessWearablesComparison";
 
@@ -162,6 +163,7 @@ function Router() {
       <Route path="/about-us" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/team" component={Team} />
+      <Route path="/blog/fall-detection-apple-watch-vs-dedicated-safety-app">{() => <RedirectRoute to="/compare/apple-watch-fall-detection-vs-mysentry" />}</Route>
       <Route path="/blogs" component={Blogs} />
       <Route path="/blog/:slug" component={BlogPost} />
       <Route path="/privacy" component={Privacy} />
@@ -218,6 +220,7 @@ function Router() {
       <Route path="/compare/medical-guardian-vs-mysentry">{() => <RedirectRoute to="/compare/traditional-medical-alerts-vs-mysentry" />}</Route>
       <Route path="/compare/lively-vs-mysentry">{() => <RedirectRoute to="/compare/traditional-medical-alerts-vs-mysentry" />}</Route>
       <Route path="/compare/apple-watch-fall-detection-vs-mysentry" component={AppleWatchFallDetectionVsMysentry} />
+      <Route path="/compare/samsung-galaxy-watch-vs-mysentry" component={SamsungGalaxyWatchVsMysentry} />
       <Route path="/compare/traditional-medical-alerts-vs-mysentry" component={TraditionalMedicalAlertsComparison} />
       <Route path="/compare/fitness-wearables-vs-mysentry" component={FitnessWearablesComparison} />
 
@@ -289,7 +292,7 @@ function Router() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <ScrollToTop />
           <Toaster />

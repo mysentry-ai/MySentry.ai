@@ -77,15 +77,15 @@ export const About = () => {
               <h2 className="text-4xl md:text-5xl font-black mb-12 font-barlow uppercase">Our Promise</h2>
               <div className="space-y-10">
                 <div>
-                  <h3 className="text-2xl font-bold mb-3 text-[#9ed6f7] font-barlow uppercase">Support depends on your setup.</h3>
+                  <h3 className="text-2xl font-bold mb-3 text-[#d6f4ff] font-barlow uppercase">Support depends on your setup.</h3>
                   <p className="text-lg opacity-90 leading-relaxed">Professional monitoring is available for eligible plans and alerts, subject to device, settings, permissions, connectivity, region, and service availability.</p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-3 text-[#9ed6f7] font-barlow uppercase">Privacy is part of setup.</h3>
+                  <h3 className="text-2xl font-bold mb-3 text-[#d6f4ff] font-barlow uppercase">Privacy is part of setup.</h3>
                   <p className="text-lg opacity-90 leading-relaxed">Users control eligible permissions and configured contacts. Review the Privacy Policy for how the App may collect, use, and share information.</p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-3 text-[#9ed6f7] font-barlow uppercase">We document what is available.</h3>
+                  <h3 className="text-2xl font-bold mb-3 text-[#d6f4ff] font-barlow uppercase">We document what is available.</h3>
                   <p className="text-lg opacity-90 leading-relaxed">Features and guidance are updated as support details are confirmed. MySentry does not guarantee detection, contact, escalation, response, or outcome.</p>
                 </div>
               </div>

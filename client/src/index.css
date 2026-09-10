@@ -156,14 +156,17 @@
     line-height: 1.6;
   }
   
-  /* Typography defaults - relying on Tailwind utility classes in components */
+  /* Typography defaults inherit the surrounding component surface color.
+     Components may still set a specific high-contrast text utility. */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold tracking-tight text-foreground;
+    @apply font-heading font-bold tracking-tight;
+    color: inherit;
     font-weight: 700 !important;
   }
   
   p {
-    @apply text-foreground leading-relaxed;
+    @apply leading-relaxed;
+    color: inherit;
   }
 
   /* Button Standardization */
@@ -194,6 +197,45 @@
   input[type="checkbox"]:not(:disabled),
   input[type="radio"]:not(:disabled) {
     @apply cursor-pointer;
+  }
+}
+
+@layer utilities {
+  /* Public light-theme muted text must remain readable on white and pale cards. */
+  html:not(.dark) .text-gray-400,
+  html:not(.dark) .text-gray-500 {
+    color: #475569 !important;
+  }
+
+  /* Preserve logo-blue emphasis while giving small public labels the required contrast. */
+  html:not(.dark) .text-\[\#007bc2\],
+  html:not(.dark) .text-\[\#007BC2\],
+  html:not(.dark) .\!text-\[\#007BC2\] {
+    color: #005f91 !important;
+  }
+
+  html:not(.dark) .text-blue-600 {
+    color: #005f91 !important;
+  }
+
+  html:not(.dark) .text-green-600 {
+    color: #0b6848 !important;
+  }
+
+  html:not(.dark) .text-orange-600 {
+    color: #9a3412 !important;
+  }
+
+  html:not(.dark) .text-pink-600 {
+    color: #9d174d !important;
+  }
+
+  html:not(.dark) .text-teal-600 {
+    color: #0f766e !important;
+  }
+
+  html:not(.dark) .bg-\[\#66d48f\].text-white {
+    color: #0b2f4f !important;
   }
 }
 

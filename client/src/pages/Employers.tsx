@@ -202,7 +202,7 @@ export default function Employers() {
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-20">
-            <span className="text-red-500 font-bold tracking-wider uppercase text-sm mb-4 block">The Business Reality</span>
+            <span className="text-[#a61b1b] font-bold tracking-wider uppercase text-sm mb-4 block">The Business Reality</span>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-[#1a1a1a] mb-8 leading-tight">
               Your employees are your <br/>
               <span className="text-gray-400">greatest asset.</span>
@@ -345,7 +345,7 @@ export default function Employers() {
                           <p className="text-gray-700">{activeIndustry.peace.answer}</p>
                         </div>
                         <div>
-                          <h4 className="text-green-600 font-bold uppercase tracking-wider text-sm mb-2">The Result</h4>
+                          <h4 className="text-[#0b6848] font-bold uppercase tracking-wider text-sm mb-2">The Result</h4>
                           <p className="text-gray-700">{activeIndustry.peace.endResult}</p>
                         </div>
                       </div>

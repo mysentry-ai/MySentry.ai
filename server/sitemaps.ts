@@ -50,8 +50,10 @@ const STATIC_PAGES = [
   { url: "/industries/real-estate", priority: "0.7", changefreq: "monthly" },
   { url: "/industries/education", priority: "0.7", changefreq: "monthly" },
   { url: "/industries/security-guarding", priority: "0.7", changefreq: "monthly" },
-  // Comparison hub. Detail pages remain noindex until official-source review is complete.
+  // Comparison hub and source-reviewed wearable comparison pages.
   { url: "/compare", priority: "0.7", changefreq: "monthly" },
+  { url: "/compare/apple-watch-fall-detection-vs-mysentry", priority: "0.8", changefreq: "monthly" },
+  { url: "/compare/samsung-galaxy-watch-vs-mysentry", priority: "0.8", changefreq: "monthly" },
   // New Pillar & Audience Pages
   { url: "/personal-safety-app", priority: "0.9", changefreq: "monthly" },
   // Solutions (Vertical-Specific BOFU)

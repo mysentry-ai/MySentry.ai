@@ -50,7 +50,7 @@ export default function ComparisonReviewPage({ competitor, canonical }: Comparis
                 {questions.map((question) => (
                   <div key={question} className="flex items-start gap-3 rounded-2xl bg-white p-4 text-[#334155]">
                     <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#255044]" aria-hidden="true" />
-                    <p className="leading-relaxed">{question}</p>
+                    <p className="leading-relaxed text-[#334155]">{question}</p>
                   </div>
                 ))}
               </div>

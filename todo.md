@@ -1157,3 +1157,21 @@
 - [x] Validate the rebuilt release with `DATABASE_URL` and Forge storage variables unavailable, matching the observed AWS runtime conditions
 - [x] Verify the public canonical article, blog listing, exact PR wording, index/follow metadata, Article schema, sitemap entry, supplied links, and hero image
 - [x] Save a checkpoint and synchronize any required code correction to `zigroninc/MySentry.ai` main
+
+## Sitewide Text Visibility and Contrast Audit (September 2026)
+- [x] Reproduce and diagnose the invisible verification-card text on `/compare/apple-watch-fall-detection-vs-mysentry`
+- [x] Inventory every indexable and noindex public route, including headers, cards, tables, alerts, forms, and mobile navigation states, for source-level contrast risks
+- [x] Run an automated rendered contrast audit across every public route at desktop and mobile breakpoints and record every verified insufficient-contrast or hidden-text issue
+- [x] Apply only targeted high-contrast text and component fixes using the approved dark green `#0b6848`, logo blue `#007bc2`, black, or white pairings as appropriate
+- [x] Add or update regression tests preventing the verified invisible-text patterns from returning
+- [x] Validate affected and representative public routes on production desktop and mobile views for readability, contrast, wrapping, focus states, and overflow
+- [x] Save a verified checkpoint and synchronize the completed visibility fixes to `zigroninc/MySentry.ai` main
+
+## Apple Watch and Samsung Watch Comparison Coverage (September 2026)
+- [x] Review the withheld `/blog/fall-detection-apple-watch-vs-dedicated-safety-app` route for visibility, current publication status, and factual-review boundaries
+- [x] Inventory all existing Apple Watch and Samsung Watch comparison and integration routes, redirects, metadata, canonical rules, and sitemap governance
+- [x] Research Apple and Samsung official safety-feature documentation, including fall detection, emergency SOS, notifications, supported-device requirements, and stated limitations
+- [x] Create or refine clear, detailed Apple Watch versus MySentry and Samsung Galaxy Watch versus MySentry comparison pages only where source-supported facts permit, using StoryBrand and the non-deceptive editorial-quality review process
+- [x] Add or update metadata, schema, canonical, sitemap, internal links, and noindex governance for the final comparison pages without publishing unsupported claims
+- [x] Add regression tests for factual boundaries, page structure, prohibited punctuation, visibility, metadata, and responsive rendering
+- [x] Validate desktop and mobile rendering, contrast, SEO, factual source mapping, and public routes, then checkpoint and synchronize the complete release to `zigroninc/MySentry.ai` main

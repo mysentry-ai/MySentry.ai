@@ -284,14 +284,14 @@ export default function HowItWorksDemo() {
                             <>
                               <Bell className="h-12 w-12 text-red-500 mb-2 animate-pulse" />
                               <h3 className="font-bold text-lg text-red-500">ALARM SENT</h3>
-                              <p className="text-xs text-gray-400 mt-1">Contacting...</p>
+                              <p className="text-xs text-[#d6f4ff] mt-1">Contacting...</p>
                             </>
                           )}
                           {activeStep === 3 && (
                             <>
                               <ShieldCheck className="h-12 w-12 text-green-500 mb-2" />
                               <h3 className="font-bold text-lg text-green-500">CONTEXT SHARED</h3>
-                              <p className="text-xs text-gray-400 mt-1">Permissions Applied</p>
+                              <p className="text-xs text-[#d6f4ff] mt-1">Permissions Applied</p>
                             </>
                           )}
                         </>
@@ -310,21 +310,21 @@ export default function HowItWorksDemo() {
                             <>
                               <Phone className="h-12 w-12 text-blue-500 mb-2 animate-bounce" />
                               <h3 className="font-bold text-lg">CHECKING IN</h3>
-                              <p className="text-xs text-gray-400 mt-1">Are you okay?</p>
+                              <p className="text-xs text-[#d6f4ff] mt-1">Are you okay?</p>
                             </>
                           )}
                           {activeStep === 2 && (
                             <>
                               <Bell className="h-12 w-12 text-orange-500 mb-2 animate-pulse" />
                               <h3 className="font-bold text-lg text-orange-500">ROUTING ALERT</h3>
-                              <p className="text-xs text-gray-400 mt-1">Sharing Permitted Context</p>
+                              <p className="text-xs text-[#d6f4ff] mt-1">Sharing Permitted Context</p>
                             </>
                           )}
                           {activeStep === 3 && (
                             <>
                               <ShieldCheck className="h-12 w-12 text-green-500 mb-2" />
                               <h3 className="font-bold text-lg text-green-500">UNDER REVIEW</h3>
-                              <p className="text-xs text-gray-400 mt-1">Response May Be Coordinated</p>
+                              <p className="text-xs text-[#d6f4ff] mt-1">Response May Be Coordinated</p>
                             </>
                           )}
                         </>
@@ -349,7 +349,7 @@ export default function HowItWorksDemo() {
                             <>
                               <Activity className="h-12 w-12 text-purple-500 mb-2 animate-pulse" />
                               <h3 className="font-bold text-lg text-purple-500">ALERT REVIEW</h3>
-                              <p className="text-xs text-gray-400 mt-1">Permitted Context Available</p>
+                              <p className="text-xs text-[#d6f4ff] mt-1">Permitted Context Available</p>
                             </>
                           )}
                           {activeStep === 3 && (
@@ -369,7 +369,7 @@ export default function HowItWorksDemo() {
                             <>
                               <HeartPulse className="h-12 w-12 text-pink-500 mb-2 animate-pulse" />
                               <h3 className="font-bold text-lg">MONITORING</h3>
-                              <p className="text-xs text-gray-400 mt-1">HR: 72 BPM</p>
+                              <p className="text-xs text-[#d6f4ff] mt-1">HR: 72 BPM</p>
                             </>
                           )}
                           {activeStep === 1 && (
@@ -383,14 +383,14 @@ export default function HowItWorksDemo() {
                             <>
                               <Bell className="h-12 w-12 text-blue-500 mb-2 animate-bounce" />
                               <h3 className="font-bold text-lg text-blue-500">CHECK STATUS</h3>
-                              <p className="text-xs text-gray-400 mt-1">Notification Sent</p>
+                              <p className="text-xs text-[#d6f4ff] mt-1">Notification Sent</p>
                             </>
                           )}
                           {activeStep === 3 && (
                             <>
                               <ShieldCheck className="h-12 w-12 text-green-500 mb-2" />
                               <h3 className="font-bold text-lg text-green-500">REVIEWING</h3>
-                              <p className="text-xs text-gray-400 mt-1">Wellness Context Available</p>
+                              <p className="text-xs text-[#d6f4ff] mt-1">Wellness Context Available</p>
                             </>
                           )}
                         </>

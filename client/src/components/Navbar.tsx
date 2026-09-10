@@ -259,7 +259,7 @@ export default function Navbar() {
             href="/integrations/ring"
             className={cn(
               "px-3 py-2 text-[12px] font-semibold tracking-wider transition-all hover:text-primary relative group font-heading uppercase whitespace-nowrap",
-              isActive("/integrations/ring") ? "!text-[#004F7B]" : "!text-[#007BC2]"
+              isActive("/integrations/ring") ? "!text-[#004F7B]" : "!text-[#005f91]"
             )}
           >
             Ring

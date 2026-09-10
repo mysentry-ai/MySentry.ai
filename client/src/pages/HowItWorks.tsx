@@ -202,10 +202,10 @@ export default function Features() {
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
               <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <span className="px-3 py-1 bg-primary/20 text-primary border border-primary/30 rounded-full text-xs font-bold uppercase tracking-wider">Compatibility Review</span>
+                  <span className="px-3 py-1 bg-[#007bc2]/25 text-[#d6f4ff] border border-[#9ed6f7]/40 rounded-full text-xs font-bold uppercase tracking-wider">Compatibility Review</span>
                 </div>
                 <h3 className="text-3xl font-bold mb-2">Expanding Our Ecosystem</h3>
-                <p className="text-gray-400 max-w-xl">
+                <p className="text-[#d6f4ff] max-w-xl">
                   Smart-ring and fitness-band support is not presented as available. Confirm the current supported-device list before choosing a plan.
                 </p>
               </div>
@@ -612,7 +612,7 @@ export default function Features() {
           <h2 className="text-5xl md:text-7xl font-heading font-bold uppercase tracking-tighter mb-8">
             Ready to Review MySentry?
           </h2>
-          <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+                <p className="text-xl text-[#d6f4ff] mb-12 max-w-2xl mx-auto">
             Review current plans, supported devices, eligibility, privacy controls, monitoring availability, and service limitations.
           </p>
           <Link href="/pricing#pricing-plans">

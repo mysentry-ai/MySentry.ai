@@ -195,7 +195,7 @@ export default function Females() {
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-20">
-            <LabelText className="text-red-500">The Reality</LabelText>
+            <LabelText className="text-[#a61b1b]">The Reality</LabelText>
             <SectionHeading>
               Safety shouldn't be a <br/>
               <span className="text-muted-foreground">constant worry.</span>

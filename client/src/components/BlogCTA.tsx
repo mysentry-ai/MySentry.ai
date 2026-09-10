@@ -13,7 +13,7 @@ const BlogCTA = () => {
         </p>
         <Link 
           href="/pricing#pricing-plans" 
-          className="inline-block bg-[#6AD990] text-white px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#5BC880] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          className="inline-block bg-[#6AD990] text-[#0b2f4f] px-10 py-5 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-[#5BC880] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
         >
           Review Plans and Eligibility
         </Link>
