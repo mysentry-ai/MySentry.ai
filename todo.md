@@ -1132,3 +1132,11 @@
 - [x] Validate the draft’s facts, quotes, links, product limitations, HTML structure, metadata lengths, prohibited punctuation, no-ai-slop patterns, image reference, and responsive preview
 - [x] Deliver the polished draft, review notes, and publication checklist without changing AWS production data
 - [x] Replace the internal blog-writer prompt’s AI-detection-evasion instructions with evidence-led no-ai-slop, StoryBrand, claim-safety, source, and editorial-review requirements
+
+## MySentry and Ring Blog Announcement Publication (September 2026)
+- [x] Verify managed draft 2790002, its slug, metadata, hero image, links, category, and unpublished state immediately before publication
+- [x] Publish and index the approved MySentry and Ring Appstore announcement using the supplied hero image
+- [x] Register the durable `/manus-storage` proxy in the production server entry point so the published hero image does not return 404 after deployment
+- [x] Verify the announcement appears on the public blog listing and canonical article route with correct metadata, schema, hero image, links, and sitemap discovery
+- [x] Verify desktop and mobile rendering, one-H1 structure, contrast, navigation clearance, and absence of horizontal overflow
+- [x] Save a verified publication checkpoint and synchronize the completed release to `zigroninc/MySentry.ai` main

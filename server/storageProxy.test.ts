@@ -1,5 +1,7 @@
 import express from "express";
+import { readFileSync } from "node:fs";
 import { createServer } from "node:http";
+import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { registerStorageProxy } from "./_core/storageProxy";
 
@@ -34,6 +36,17 @@ async function withServer(
 }
 
 describe("durable storage proxy", () => {
+  it("is registered in development and production server entry points", () => {
+    const coreDir = path.resolve(process.cwd(), "server/_core");
+    for (const entry of ["index.ts", "index.prod.ts"]) {
+      const source = readFileSync(path.join(coreDir, entry), "utf8");
+      expect(source).toContain(
+        'import { registerStorageProxy } from "./storageProxy"',
+      );
+      expect(source).toContain("registerStorageProxy(app);");
+    }
+  });
+
   it("requests a signed URL and returns one temporary redirect", async () => {
     const forgeFetch = vi.fn().mockResolvedValue(
       new Response(JSON.stringify({ url: "https://signed.example/hero.jpg" }), {
