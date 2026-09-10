@@ -1155,5 +1155,5 @@
 - [x] Preserve a guarded backup and rollback artifact before changing any AWS production blog data
 - [x] Apply the smallest safe correction required to publish the exact supplied PR on the AWS-backed public website
 - [x] Validate the rebuilt release with `DATABASE_URL` and Forge storage variables unavailable, matching the observed AWS runtime conditions
-- [ ] Verify the public canonical article, blog listing, exact PR wording, index/follow metadata, Article schema, sitemap entry, supplied links, and hero image
+- [x] Verify the public canonical article, blog listing, exact PR wording, index/follow metadata, Article schema, sitemap entry, supplied links, and hero image
 - [x] Save a checkpoint and synchronize any required code correction to `zigroninc/MySentry.ai` main
