@@ -1,4 +1,5 @@
 import { blogs } from "./blogs";
+import { EXACT_RING_PR_SLUG } from "@shared/seo/exact-ring-press-release";
 
 export type PublicFallbackBlogPost = {
   id: number;
@@ -52,7 +53,10 @@ export const fallbackBlogPosts: PublicFallbackBlogPost[] = blogs
     readTimeMinutes: getReadTimeMinutes(blog.readTime),
     tags: [blog.category, "Personal safety"],
     authorName: "MySentry Editorial Team",
-    metaTitle: `${blog.title} | MySentry Safety & Health Hub`,
+    metaTitle:
+      blog.slug === EXACT_RING_PR_SLUG
+        ? blog.title
+        : `${blog.title} | MySentry Safety & Health Hub`,
     metaDescription: blog.excerpt,
     ogImageUrl: blog.image,
     isIndexed: true,

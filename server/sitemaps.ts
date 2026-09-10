@@ -3,6 +3,7 @@ import { getDb } from "./db";
 import { blogPosts } from "../drizzle/schema";
 import { eq } from "drizzle-orm";
 import { isHeldBlogSlug } from "../shared/seo/content-governance";
+import { EXACT_RING_PR_SLUG } from "../shared/seo/exact-ring-press-release";
 import {
   CANONICAL_REDIRECTS,
   resolveMalformedAbsolutePath,
@@ -172,27 +173,31 @@ ${urls}
 
   // ── Blog Sitemap (dynamic from database) ──
   app.get("/sitemap_blog.xml", async (_req, res) => {
-    try {
-      const db = await getDb();
-      if (!db) { res.status(500).send("Database unavailable"); return; }
-      const posts = await db
-        .select({
-          slug: blogPosts.slug,
-          publishedAt: blogPosts.publishedAt,
-          updatedAt: blogPosts.updatedAt,
-        })
-        .from(blogPosts)
-        .where(eq(blogPosts.status, "published"));
+    const exactRingPrEntry = {
+      slug: EXACT_RING_PR_SLUG,
+      publishedAt: new Date("2026-09-10T10:19:10.000Z"),
+      updatedAt: new Date("2026-09-10T10:40:53.000Z"),
+    };
 
-      const urls = posts
-        .filter((post: { slug: string }) => !isHeldBlogSlug(post.slug))
+    const sendBlogSitemap = (
+      posts: Array<{
+        slug: string;
+        publishedAt: Date | null;
+        updatedAt: Date | null;
+      }>,
+    ) => {
+      const uniquePosts = posts.some(post => post.slug === EXACT_RING_PR_SLUG)
+        ? posts
+        : [exactRingPrEntry, ...posts];
+      const urls = uniquePosts
+        .filter(post => !isHeldBlogSlug(post.slug))
         .map(
-          (post: { slug: string; publishedAt: Date | null; updatedAt: Date | null }) => `  <url>
+          post => `  <url>
     <loc>${BASE_URL}/blog/${escapeXml(post.slug)}</loc>
     <lastmod>${formatDate(post.updatedAt || post.publishedAt)}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>`
+  </url>`,
         )
         .join("\n");
 
@@ -203,9 +208,27 @@ ${urls}
       res.set("Content-Type", "application/xml");
       res.set("Cache-Control", "public, max-age=3600");
       res.send(xml);
+    };
+
+    try {
+      const db = await getDb();
+      if (!db) {
+        sendBlogSitemap([exactRingPrEntry]);
+        return;
+      }
+      const posts = await db
+        .select({
+          slug: blogPosts.slug,
+          publishedAt: blogPosts.publishedAt,
+          updatedAt: blogPosts.updatedAt,
+        })
+        .from(blogPosts)
+        .where(eq(blogPosts.status, "published"));
+
+      sendBlogSitemap(posts);
     } catch (error) {
       console.error("Error generating blog sitemap:", error);
-      res.status(500).send("Error generating sitemap");
+      sendBlogSitemap([exactRingPrEntry]);
     }
   });
 }

@@ -1,3 +1,11 @@
+import {
+  EXACT_RING_PR_CONTENT,
+  EXACT_RING_PR_HERO_URL,
+  EXACT_RING_PR_SLUG,
+  EXACT_RING_PR_SUBTITLE,
+  EXACT_RING_PR_TITLE,
+} from "@shared/seo/exact-ring-press-release";
+
 export interface BlogPost {
   id: string;
   slug: string;
@@ -11,6 +19,17 @@ export interface BlogPost {
 }
 
 export const blogs: BlogPost[] = [
+  {
+    id: "fallback-ring-appstore-pr",
+    slug: EXACT_RING_PR_SLUG,
+    title: EXACT_RING_PR_TITLE,
+    category: "Business",
+    image: EXACT_RING_PR_HERO_URL,
+    excerpt: EXACT_RING_PR_SUBTITLE,
+    date: "Sep 10, 2026",
+    readTime: "4 min read",
+    content: EXACT_RING_PR_CONTENT,
+  },
   {
     id: "fallback-senior-plan",
     slug: "senior-safety-plan-family-conversation",

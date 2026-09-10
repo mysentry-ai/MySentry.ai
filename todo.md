@@ -1148,3 +1148,12 @@
 - [x] Verify exact textual fidelity between the supplied document and the managed article after stripping format-only HTML markup
 - [x] Verify the corrected published article route, listing, metadata, hero image, sitemap entry, links, desktop rendering, and mobile rendering
 - [x] Save a verified correction checkpoint and synchronize the completed release to `zigroninc/MySentry.ai` main
+
+## AWS Production Ring PR Publication Incident (September 2026)
+- [x] Capture the current public `mysentry.ai` article, blog listing, blog API, sitemap, metadata, hero-image, and deployment identity evidence
+- [x] Compare the AWS production blog record and runtime with managed post 2790002 and GitHub commit `62b981a024dafd65c8a3cb239660df94fadc60ef`
+- [x] Preserve a guarded backup and rollback artifact before changing any AWS production blog data
+- [x] Apply the smallest safe correction required to publish the exact supplied PR on the AWS-backed public website
+- [x] Validate the rebuilt release with `DATABASE_URL` and Forge storage variables unavailable, matching the observed AWS runtime conditions
+- [ ] Verify the public canonical article, blog listing, exact PR wording, index/follow metadata, Article schema, sitemap entry, supplied links, and hero image
+- [x] Save a checkpoint and synchronize any required code correction to `zigroninc/MySentry.ai` main

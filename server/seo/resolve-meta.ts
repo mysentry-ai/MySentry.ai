@@ -20,6 +20,12 @@ import {
 import { getHeldBlogTitle, isHeldBlogSlug } from "../../shared/seo/content-governance";
 import { absoluteBlogImageUrl } from "../../shared/seo/blog-assets";
 import { isNoindexPath } from "../../shared/seo/indexability";
+import {
+  EXACT_RING_PR_HERO_URL,
+  EXACT_RING_PR_SLUG,
+  EXACT_RING_PR_SUBTITLE,
+  EXACT_RING_PR_TITLE,
+} from "../../shared/seo/exact-ring-press-release";
 
 // ─── Blog meta cache ──────────────────────────────────────────────────────────
 
@@ -34,6 +40,23 @@ type BlogMeta = RouteMeta & {
 type CacheEntry = { meta: BlogMeta; expiresAt: number };
 const blogCache = new Map<string, CacheEntry>();
 const BLOG_CACHE_TTL_MS = 60_000; // 60 seconds
+
+function getExactRingPrFallbackMeta(slug: string): BlogMeta | null {
+  if (slug !== EXACT_RING_PR_SLUG) return null;
+
+  return {
+    title: EXACT_RING_PR_TITLE,
+    description: EXACT_RING_PR_SUBTITLE,
+    ogType: "article",
+    ogImage: EXACT_RING_PR_HERO_URL,
+    authorName: "MySentry Editorial Team",
+    publishedAt: new Date("2026-09-10T10:19:10.000Z"),
+    updatedAt: new Date("2026-09-10T10:40:53.000Z"),
+    isIndexed: true,
+    isFollowed: true,
+  };
+}
+
 async function resolveBlogMeta(slug: string): Promise<BlogMeta | null> {
   const cacheKey = `/blog/${slug}`;
   const cached = blogCache.get(cacheKey);
@@ -43,7 +66,7 @@ async function resolveBlogMeta(slug: string): Promise<BlogMeta | null> {
 
   try {
     const db = await getDb();
-    if (!db) return null;
+    if (!db) return getExactRingPrFallbackMeta(slug);
 
     const rows = await db
       .select({
@@ -63,7 +86,7 @@ async function resolveBlogMeta(slug: string): Promise<BlogMeta | null> {
       .where(and(eq(blogPosts.slug, slug), eq(blogPosts.status, "published")))
       .limit(1);
 
-    if (!rows.length) return null;
+    if (!rows.length) return getExactRingPrFallbackMeta(slug);
 
     const post = rows[0];
 
@@ -92,8 +115,7 @@ async function resolveBlogMeta(slug: string): Promise<BlogMeta | null> {
     blogCache.set(cacheKey, { meta, expiresAt: Date.now() + BLOG_CACHE_TTL_MS });
     return meta;
   } catch {
-    // If the database is unavailable, return null so the caller uses the default.
-    return null;
+    return getExactRingPrFallbackMeta(slug);
   }
 }
 
