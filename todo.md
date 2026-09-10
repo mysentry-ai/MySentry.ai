@@ -1140,3 +1140,11 @@
 - [x] Verify the announcement appears on the public blog listing and canonical article route with correct metadata, schema, hero image, links, and sitemap discovery
 - [x] Verify desktop and mobile rendering, one-H1 structure, contrast, navigation clearance, and absence of horizontal overflow
 - [x] Save a verified publication checkpoint and synchronize the completed release to `zigroninc/MySentry.ai` main
+
+## Exact Supplied PR Publication Correction (September 2026)
+- [x] Extract the complete text from `MysentryxAmazonRing.docx` and create a normalized source-of-truth record without rewriting, paraphrasing, or adding copy
+- [x] Compare the supplied PR with managed blog post 2790002 and preserve a guarded rollback record of the currently published version
+- [x] Replace the article headline and body with the exact supplied PR wording while preserving only the technical HTML structure required to render that wording
+- [x] Verify exact textual fidelity between the supplied document and the managed article after stripping format-only HTML markup
+- [x] Verify the corrected published article route, listing, metadata, hero image, sitemap entry, links, desktop rendering, and mobile rendering
+- [x] Save a verified correction checkpoint and synchronize the completed release to `zigroninc/MySentry.ai` main

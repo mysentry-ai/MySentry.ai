@@ -15,6 +15,7 @@ const BlogPost = () => {
   const [match, params] = useRoute('/blog/:slug');
   const [, navigate] = useLocation();
   const slug = params?.slug || '';
+  const isExactRingPressRelease = slug === 'mysentry-now-available-ring-appstore';
   const isEditorialHold = isHeldBlogSlug(slug);
 
   // Fetch from database
@@ -205,19 +206,51 @@ const BlogPost = () => {
           </div>
         )}
 
+        {isExactRingPressRelease && (
+          <div className="mb-6 flex items-center justify-center gap-6 text-gray-900 text-sm font-medium uppercase tracking-wider border-t border-b border-gray-200 py-6">
+            <span className="flex items-center gap-2">
+              <Calendar className="w-4 h-4" /> {formatDate(post.publishedAt)}
+            </span>
+            <span className="w-1 h-1 bg-gray-300 rounded-full" />
+            <span className="flex items-center gap-2">
+              <Clock className="w-4 h-4" /> {post.readTimeMinutes || 5} min read
+            </span>
+          </div>
+        )}
+
+        {isExactRingPressRelease && (
+          <p
+            data-exact-pr-part="release-label"
+            className="mb-5 text-sm font-bold uppercase tracking-[0.18em] text-[#0b6848]"
+          >
+            FOR IMMEDIATE RELEASE
+          </p>
+        )}
+
         <h1 className="text-4xl md:text-5xl lg:text-[55px] font-medium text-gray-900 mb-8 leading-tight font-barlow">
           {post.title}
         </h1>
 
-        <div className="flex items-center justify-center gap-6 text-gray-900 text-sm font-medium uppercase tracking-wider border-t border-b border-gray-200 py-6">
-          <span className="flex items-center gap-2">
-            <Calendar className="w-4 h-4" /> {formatDate(post.publishedAt)}
-          </span>
-          <span className="w-1 h-1 bg-gray-300 rounded-full" />
-          <span className="flex items-center gap-2">
-            <Clock className="w-4 h-4" /> {post.readTimeMinutes || 5} min read
-          </span>
-        </div>
+        {isExactRingPressRelease && post.excerpt && (
+          <p
+            data-exact-pr-part="subtitle"
+            className="mx-auto mb-8 max-w-3xl text-xl italic leading-relaxed text-gray-800 md:text-2xl"
+          >
+            {post.excerpt}
+          </p>
+        )}
+
+        {!isExactRingPressRelease && (
+          <div className="flex items-center justify-center gap-6 text-gray-900 text-sm font-medium uppercase tracking-wider border-t border-b border-gray-200 py-6">
+            <span className="flex items-center gap-2">
+              <Calendar className="w-4 h-4" /> {formatDate(post.publishedAt)}
+            </span>
+            <span className="w-1 h-1 bg-gray-300 rounded-full" />
+            <span className="flex items-center gap-2">
+              <Clock className="w-4 h-4" /> {post.readTimeMinutes || 5} min read
+            </span>
+          </div>
+        )}
       </header>
 
       {/* Hero Image - Wide & Cinematic */}
@@ -285,7 +318,7 @@ const BlogPost = () => {
 
         {/* Article Content */}
         <article className="flex-1 max-w-3xl mx-auto lg:mx-0">
-          {post.excerpt && (
+          {!isExactRingPressRelease && post.excerpt && (
             <p className="text-xl md:text-2xl text-gray-900 leading-relaxed mb-12 font-light border-l-4 border-[#386758] pl-6 italic">
               {post.excerpt}
             </p>
@@ -294,11 +327,15 @@ const BlogPost = () => {
           <div 
             id="blog-content"
             className="prose prose-lg max-w-none blog-content"
-            dangerouslySetInnerHTML={{ __html: canonicalizeBlogContentLinks(post.contentHtml || '') }}
+            dangerouslySetInnerHTML={{
+              __html: isExactRingPressRelease
+                ? post.contentHtml || ''
+                : canonicalizeBlogContentLinks(post.contentHtml || ''),
+            }}
           />
 
           {/* Tags */}
-          {Array.isArray(post.tags) && post.tags.length > 0 && (
+          {!isExactRingPressRelease && Array.isArray(post.tags) && post.tags.length > 0 && (
             <div className="mt-12 pt-8 border-t border-gray-200">
               <div className="flex flex-wrap gap-2">
                 {(post.tags as string[]).map((tag: string, i: number) => (
@@ -311,24 +348,26 @@ const BlogPost = () => {
           )}
 
           {/* Author Bio Box */}
-          <div className="mt-16 p-8 bg-white rounded-2xl border border-gray-100 flex items-center gap-6 shadow-sm">
-            <div className="w-16 h-16 bg-[#e8f5e9] rounded-full flex items-center justify-center text-[#386758] font-bold text-xl">
-              {(post.authorName || 'MS').split(' ').map(w => w[0]).join('').slice(0, 2)}
+          {!isExactRingPressRelease && (
+            <div className="mt-16 p-8 bg-white rounded-2xl border border-gray-100 flex items-center gap-6 shadow-sm">
+              <div className="w-16 h-16 bg-[#e8f5e9] rounded-full flex items-center justify-center text-[#386758] font-bold text-xl">
+                {(post.authorName || 'MS').split(' ').map(w => w[0]).join('').slice(0, 2)}
+              </div>
+              <div>
+                <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Written By</div>
+                <div className="text-lg font-bold text-gray-900">{post.authorName || 'MySentry Editorial Team'}</div>
+                <p className="text-gray-900 text-sm mt-1">Articles are reviewed for practical information about safety planning, wellness signals, and independence.</p>
+              </div>
             </div>
-            <div>
-              <div className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">Written By</div>
-              <div className="text-lg font-bold text-gray-900">{post.authorName || 'MySentry Editorial Team'}</div>
-              <p className="text-gray-900 text-sm mt-1">Articles are reviewed for practical information about safety planning, wellness signals, and independence.</p>
-            </div>
-          </div>
+          )}
 
           {/* CTA Section - Integrated */}
-          <BlogCTA />
+          {!isExactRingPressRelease && <BlogCTA />}
         </article>
       </div>
 
       {/* Related Articles Section */}
-      {relatedPosts.length > 0 && (
+      {!isExactRingPressRelease && relatedPosts.length > 0 && (
         <section className="bg-white py-24 mt-24 border-t border-gray-100">
           <div className="container mx-auto px-4 max-w-[1400px]">
             <h3 className="text-3xl font-medium text-gray-900 mb-12 text-center font-barlow">
