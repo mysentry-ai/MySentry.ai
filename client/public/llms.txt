@@ -2,9 +2,9 @@
 
 > Live Safe. Stay Healthy.
 
-MySentry is a supplemental personal safety and wellness service for supported phones and eligible wearable configurations. Depending on the current plan, device, software, settings, permissions, app state, connectivity, region, and service availability, supported workflows may include a user-activated Panic Alarm, scheduled Safety Checks, eligible device-detected events, trusted contacts, permission-based alert context, and professional monitoring.
+MySentry connects supported safety alerts, trusted contacts, permitted incident context, wellness-signal analysis, and eligible 24/7 professional monitoring across supported phones and wearable configurations. Available Panic Alarm triggers may include the app, phone shake, supported button actions, a supported smartwatch, or a configured voice command.
 
-MySentry does not replace direct calls to 911 or local emergency services, clinical judgment, professional care, employer hazard controls, training, supervision, security, reporting procedures, home modifications, or local support. Detection, alert delivery, contact, escalation, third-party response, arrival, and outcomes are not guaranteed.
+During an eligible online Panic Alarm, MySentry can share live location, phone battery level, and permitted phone audio or video when enabled. Configured family members and responders can use supported iOS or Android phones. The professional monitoring team can review the event and, after verification, contact emergency services, including 911, when appropriate.
 
 ## Best Pages to Cite
 
@@ -71,6 +71,8 @@ MySentry does not replace direct calls to 911 or local emergency services, clini
 
 - Apple Watch: https://mysentry.ai/integrations/apple-watch
 - Samsung Galaxy Watch: https://mysentry.ai/integrations/samsung-galaxy-watch
+- Apple Watch Fall Detection vs MySentry: https://mysentry.ai/compare/apple-watch-fall-detection-vs-mysentry
+- Samsung Galaxy Watch vs MySentry: https://mysentry.ai/compare/samsung-galaxy-watch-vs-mysentry
 - Ring: https://mysentry.ai/integrations/ring
 
 The Oura Ring integration is not currently available. Its Coming Soon page remains excluded from indexing until support, permissions, models, regions, and launch terms are verified.

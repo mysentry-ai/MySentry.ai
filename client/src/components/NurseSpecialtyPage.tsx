@@ -144,7 +144,7 @@ export default function NurseSpecialtyPage({
                 </Link>
               </div>
               <p className="mt-7 max-w-2xl border-l-4 border-[#007bc2] pl-5 text-sm leading-relaxed text-slate-600">
-                MySentry is supplemental. It does not replace employer policy, workplace controls, security, training, clinical judgment, emergency services, or local support procedures.
+                MySentry works alongside employer policy, workplace controls, security, training, clinical judgment, emergency services, and local support procedures.
               </p>
             </div>
 
@@ -198,7 +198,7 @@ export default function NurseSpecialtyPage({
           <div className="container max-w-6xl">
             <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
               <div>
-                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#b7edff]">A supplemental layer</p>
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#b7edff]">A connected personal workflow</p>
                 <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">{fitHeading}</h2>
               </div>
               <p className="text-lg leading-relaxed text-[#d8e9e3] lg:justify-self-end">{fitIntro}</p>

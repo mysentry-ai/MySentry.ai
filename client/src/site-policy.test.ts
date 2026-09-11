@@ -123,8 +123,9 @@ describe("public source policy", () => {
     expect(guide).toContain('id="family-path"');
     expect(guide).toContain("The older adult should remain part of every decision");
     expect(guide).toContain("does not describe unrestricted continuous family tracking");
-    expect(guide).toContain("not a medical device");
-    expect(guide).toContain("detection, alert delivery, contact, escalation, emergency-service response, arrival, or outcomes");
+    expect(guide).toContain("Wellness information does not diagnose a medical condition");
+    expect(guide).toContain("Supported-device detection may miss an event");
+    expect(guide).toContain("Alert delivery and shared context require an available supported connection");
   });
 
   it("uses high-contrast brand treatments on the affected conversion pages", () => {
@@ -185,8 +186,8 @@ describe("public source policy", () => {
       "utf8"
     );
 
-    expect(growthPages).toContain("MySentry is supplemental");
-    expect(growthPages).toContain("does not guarantee detection");
+    expect(growthPages).toContain("MySentry connects supported alerts, wellness context, trusted contacts, and eligible professional monitoring");
+    expect(growthPages).toContain("Feature operation depends on supported devices, app state, permissions, connectivity, plan, region, and service availability");
     expect(growthPages).toContain("does not replace employer policy");
     expect(growthPages).toContain("The Oura Ring page is explicitly Coming Soon");
     expect(growthPages).not.toMatch(/will always (?:detect|dispatch|protect|respond)|works everywhere/i);
@@ -197,9 +198,11 @@ describe("public source policy", () => {
     const llms = fs.readFileSync(path.join(publicRoot, "llms.txt"), "utf8");
 
     expect(llms).toContain("Live Safe. Stay Healthy.");
-    expect(llms).toContain("MySentry is a supplemental");
+    expect(llms).toContain("MySentry connects supported safety alerts");
+    expect(llms).toContain("a configured voice command");
+    expect(llms).toContain("eligible 24/7 professional monitoring");
+    expect(llms).toContain("after verification, contact emergency services, including 911, when appropriate");
     expect(llms).toContain("The Oura Ring integration is not currently available");
-    expect(llms).toContain("outcomes are not guaranteed");
     expect(llms).not.toMatch(/Your Vital Companion/i);
     expect(llms).not.toMatch(/free trial|guaranteed (?:response|protection|results)|auto-dispatch|real-time GPS location/i);
   });

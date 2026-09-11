@@ -7,7 +7,7 @@ const sharedSetup = {
   devices: "A currently supported smartphone. Optional wearable controls or device-detected events require an eligible device and supported configuration.",
   permissions: "Notifications, location, motion, background activity, microphone, camera, and contacts depend on the supported features the user enables.",
   connectivity: "Alert delivery and shared context require an available supported network connection. Keep an alternative plan for disconnected locations.",
-  limitations: "MySentry is supplemental. It does not guarantee detection, alert delivery, contact, escalation, emergency-service response, arrival, or outcome.",
+  limitations: "Feature operation depends on supported devices, app state, permissions, connectivity, plan, region, and service availability. Maintain a separate plan for disconnected locations.",
 };
 
 const sharedAfterAlert = [
@@ -50,7 +50,7 @@ const peopleLivingAlone: PageConfig = {
     { question: "Does MySentry track someone who lives alone all the time?", answer: "MySentry does not describe unrestricted continuous contact access to private location or wellness data. Sharing depends on supported features, settings, permissions, and active alert workflows." },
     { question: "What is a scheduled Safety Check?", answer: "A user may schedule a supported check-in before a planned activity. A missed response may continue the configured eligible workflow, subject to device, app, permission, connection, plan, and service requirements." },
     { question: "Will MySentry detect every fall or crash?", answer: "No. Eligible detection depends on the device, how it is carried or worn, settings, permissions, app state, connectivity, and event conditions." },
-    { question: "Does MySentry replace calling 911?", answer: "No. Call 911 or local emergency services directly whenever you can do so safely. MySentry is supplemental." },
+    { question: "When should I call 911 directly?", answer: "Call 911 or local emergency services whenever you can do so safely during an immediate emergency. MySentry adds configured alerts, context, contacts, and monitoring for supported situations." },
   ],
   setupRequirements: sharedSetup,
   proofBlocks: [
@@ -94,7 +94,7 @@ const agingInPlace: PageConfig = {
   afterAlert: sharedAfterAlert,
   bestFor: ["Older adults participating in their own planning", "Families coordinating practical, consent-based support", "Caregivers documenting contacts, routines, and backups"],
   notIdealFor: ["Replacing clinical or home-safety assessment", "Making decisions without the older adult when they can participate", "Treating technology as a substitute for repairs, care, supervision, or local help"],
-  keyTakeaways: ["Independence, dignity, privacy, and consent belong in the checklist.", "Combine environment, people, professional guidance, routines, and technology.", "MySentry is supplemental and is not a medical device."],
+  keyTakeaways: ["Independence, dignity, privacy, and consent belong in the checklist.", "Combine environment, people, professional guidance, routines, and technology.", "MySentry connects supported alerts, wellness context, trusted contacts, and eligible professional monitoring."],
   faqs: [
     { question: "Who should complete the checklist?", answer: "The older adult should participate whenever possible. Family, caregivers, clinicians, pharmacists, therapists, home-safety professionals, and local support organizations may contribute within their roles." },
     { question: "What rooms should we review?", answer: "Review entrances, hallways, bedrooms, bathrooms, kitchen, stairs, outdoor paths, and any area used regularly. Consider lighting, floors, reach, access, communication, and routine." },
@@ -184,7 +184,7 @@ const nightShiftNurse: PageConfig = {
   notIdealFor: ["Replacing training, staffing, security, escorts, or reporting", "Diagnosing fatigue or fitness to drive", "Guaranteeing prevention, contact, escalation, response, or outcome"],
   keyTakeaways: ["The checklist begins with employer procedures and judgment.", "Parking and the commute are separate planning moments from bedside work.", "Do not drive if you are not able to do so safely. Use an appropriate alternative."],
   faqs: [
-    { question: "Does MySentry replace a hospital duress system?", answer: "No. Follow facility duress, security, emergency, and reporting procedures. MySentry is supplemental." },
+    { question: "How does MySentry fit with a hospital duress system?", answer: "Follow facility duress, security, emergency, and reporting procedures. MySentry can add personal alerts, Safety Checks, permitted context, contacts, and eligible monitoring for approved situations." },
     { question: "What should I check before walking to parking?", answer: "Review the approved route, lighting, access, security or escort options, transportation, phone battery, connection, and employer procedures." },
     { question: "Can an app tell me whether I am too tired to drive?", answer: "No. MySentry does not diagnose fatigue or determine fitness to drive. If you are not able to travel safely, use an appropriate alternative." },
     { question: "Will an alert guarantee that security or police arrive?", answer: "No. Alert delivery, contact, escalation, third-party response, arrival, and outcome are not guaranteed." },
@@ -193,7 +193,7 @@ const nightShiftNurse: PageConfig = {
   proofBlocks: [
     { claim: "Employer procedures remain primary", detail: "Facility security, duress, training, reporting, staffing, and emergency procedures are not replaced by an app." },
     { claim: "Transitions deserve a plan", detail: "Arrival, parking, transit, and the commute have different conditions from the clinical unit." },
-    { claim: "MySentry is supplemental", detail: "Supported alerts and contacts may add a layer, subject to device, permission, connection, plan, and service limits." },
+    { claim: "A connected personal workflow", detail: "Supported alerts can connect the nurse, configured contacts, permitted context, and eligible monitoring, subject to device, permission, connection, plan, and service conditions." },
   ],
   relatedLinks: [
     { text: "Night Shift Nurses", href: "/nurses/night-shift" },
@@ -226,7 +226,7 @@ const renters: PageConfig = {
   afterAlert: sharedAfterAlert,
   bestFor: ["Renters who want a portable personal-safety routine", "People moving through shared entrances, parking, transit, and neighborhoods", "Ring users comparing home and personal safety layers"],
   notIdealFor: ["Replacing locks, alarms, cameras, building security, or property procedures", "Secret monitoring of roommates or household members", "Use without an available supported phone and connection"],
-  keyTakeaways: ["Home security protects a place; a personal safety routine follows the person.", "Use appropriate property measures alongside personal tools.", "MySentry is supplemental and cannot guarantee detection or response."],
+  keyTakeaways: ["Home security protects a place; a personal safety routine follows the person.", "Use appropriate property measures alongside personal tools.", "MySentry connects supported personal alerts, trusted contacts, permitted context, and eligible monitoring."],
   faqs: [
     { question: "Does MySentry replace apartment security?", answer: "No. MySentry does not replace locks, lighting, cameras, alarms, access control, building security, landlord responsibilities, or emergency services." },
     { question: "Can I use MySentry outside my apartment?", answer: "Supported features may be used in eligible locations, subject to device, permissions, app state, network, plan, region, and service availability." },
@@ -314,7 +314,7 @@ const utilityWorkers: PageConfig = {
   afterAlert: ["Workers follow employer and site procedures, including direct calls when appropriate.", ...sharedAfterAlert.slice(1)],
   bestFor: ["Utility and field teams evaluating a supplemental layer", "Programs with defined contacts, escalation, and disconnected backups", "Employers prepared to verify eligibility and responsibilities"],
   notIdealFor: ["Replacing hazard controls, radios, dispatch, supervision, training, or security", "Guaranteeing OSHA or legal compliance", "Assuming offline operation, universal coverage, dashboards, or audit trails"],
-  keyTakeaways: ["Start with work, hazards, locations, and employer responsibilities.", "Define the human response and disconnected backup before choosing an app.", "MySentry is supplemental and must be evaluated against current capabilities."],
+  keyTakeaways: ["Start with work, hazards, locations, and employer responsibilities.", "Define the human response and disconnected backup before choosing an app.", "Connect MySentry alerts to documented contacts, escalation roles, training, and backup procedures."],
   faqs: [
     { question: "Does MySentry make a program legally compliant?", answer: "No. Requirements vary by jurisdiction, industry, role, hazard, and employer obligations. Obtain qualified legal and safety guidance." },
     { question: "Does MySentry work in every remote location?", answer: "No. Alert delivery and shared context require an available supported connection. Employers need a separate process for disconnected work." },

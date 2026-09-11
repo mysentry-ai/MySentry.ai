@@ -1,4 +1,4 @@
-import { ArrowRight, CircleAlert, Settings2, ShieldCheck } from "lucide-react";
+import { ArrowRight, Settings2, ShieldCheck, Users } from "lucide-react";
 import { Link } from "wouter";
 
 const answers = [
@@ -13,9 +13,9 @@ const answers = [
     text: "You configure supported devices, contacts, permissions, and alert preferences. When an eligible alert starts, permitted context may be shared for review and appropriate next steps.",
   },
   {
-    icon: CircleAlert,
-    title: "What should I know?",
-    text: "MySentry is not a replacement for calling 911 or local emergency services, and its wellness features are not a medical device. Availability and outcomes depend on plan, device, permissions, connectivity, region, and third parties.",
+    icon: Users,
+    title: "Who can stay connected?",
+    text: "Configured family members and responders can use supported iOS or Android phones. Eligible alerts can also reach 24/7 professional monitoring, which can verify the event and contact emergency services when appropriate.",
   },
 ];
 

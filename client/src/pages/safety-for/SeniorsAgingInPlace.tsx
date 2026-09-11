@@ -10,27 +10,27 @@ import { useState } from "react";
 const faqs = [
   {
     question: "Does my parent need to be tech-savvy to use MySentry?",
-    answer: "Not at all. MySentry works quietly in the background once it is set up. Fall detection and health monitoring happen automatically. Your parent does not need to open the app or press any buttons for the core safety features to work."
+    answer: "MySentry is designed around a practiced setup. A family can configure supported automatic events, Safety Checks, trusted contacts, and several Panic Alarm triggers, including an eligible voice command when the phone or watch is out of reach."
   },
   {
     question: "What happens if my parent falls and cannot reach their phone?",
-    answer: "MySentry uses your phone and smartwatch sensors to detect falls automatically. If a fall is detected, our 24/7 monitoring center is alerted within seconds. A trained agent will attempt to contact your parent, and if there is no response, emergency services are dispatched to their GPS location."
+    answer: "A supported Apple or Samsung watch event can start the configured MySentry Panic Alarm workflow. Family and eligible 24/7 professional monitoring can receive the event with permitted context. After verification, monitoring can contact emergency services, including 911, when appropriate. No watch detects every fall."
   },
   {
     question: "How is MySentry different from a medical alert pendant?",
-    answer: "Traditional medical alert devices require your parent to press a button during an emergency, which is not always possible. MySentry detects falls and health anomalies automatically. It also includes live video response, GPS tracking, and health monitoring, all from a smartphone and smartwatch they already own."
+    answer: "MySentry combines supported watch events with configured voice and device panic triggers, AI-supported wellness analysis, trusted contacts, live location, permitted phone audio or video, and eligible 24/7 professional monitoring. Confirm device, plan, permission, connectivity, and regional eligibility before setup."
   },
   {
     question: "Can I monitor my parent's safety from my own phone?",
-    answer: "Yes. As an emergency contact, you receive real-time notifications about any alerts, health anomalies, or check-in updates. You can also see their location and know that professional agents are always monitoring."
+    answer: "A configured family member can receive supported alert notifications and authorized context on iOS or Android. MySentry does not provide unrestricted continuous access to another adult's location or private wellness information."
   },
   {
     question: "What health metrics does MySentry track?",
-    answer: "MySentry monitors heart rate, heart rate variability (HRV), blood oxygen levels (SpO2), and activity patterns. If any metric falls outside normal ranges, you and our monitoring team are alerted immediately."
+    answer: "On eligible wearable configurations, MySentry can use supported heart rate, heart rate variability, blood oxygen, activity, and motion readings for wellness analysis. Availability varies by device and configuration, and the results are not a medical diagnosis."
   },
   {
     question: "Does MySentry work if my parent lives in a rural area?",
-    answer: "Yes. MySentry works anywhere with a cellular signal. No Wi-Fi is required. GPS tracking works outdoors in all areas. Indoors, the app uses available signals to provide location data to emergency responders."
+    answer: "Alert delivery and shared context require an available supported connection. Rural coverage, indoor location, app state, battery, device support, and permissions can affect operation, so keep a separate plan for disconnected locations."
   }
 ];
 

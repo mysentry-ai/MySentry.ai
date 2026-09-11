@@ -34,8 +34,8 @@ const faqs = [
     answer: "No. Supported-device detection can miss an event or activate when no emergency exists. It depends on eligible hardware, how it is carried or worn, app state, settings, permissions, connectivity, and event conditions.",
   },
   {
-    question: "Does MySentry replace 911, medical care, or in-home support?",
-    answer: "No. MySentry is supplemental. It does not replace emergency services, clinical care, prescribed devices, home modifications, transportation, supervision, or professional and community support.",
+    question: "How does MySentry fit with medical care and in-home support?",
+    answer: "MySentry adds configured alerts, supported wellness context, trusted contacts, and eligible professional monitoring to the older adult's wider plan. Clinical care, prescribed devices, home modifications, transportation, supervision, and community support keep their own important roles.",
   },
   {
     question: "Should we choose an individual or family plan?",
@@ -131,7 +131,7 @@ export default function Seniors() {
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#007bc2]">Direct answer</p>
             <h2 className="mt-4 text-3xl font-bold text-[#0b2f4f]">What MySentry can add to an aging-in-place plan</h2>
             <p className="mt-5 text-lg leading-relaxed text-slate-700">
-              MySentry is a supplemental smartphone-based personal-safety and wellness service. It can help an eligible older adult start an alert, schedule a check-in, choose trusted contacts, and use supported-device features. It does not replace emergency services, a prescribed medical device, home modifications, clinical care, transportation, supervision, or local aging and caregiver resources.
+              MySentry helps an eligible older adult start an alert, schedule a check-in, choose trusted contacts, share permitted incident context, and connect supported-device events to professional monitoring. It fits alongside clinical care, prescribed devices, home modifications, transportation, supervision, and local aging and caregiver resources.
             </p>
           </div>
         </section>

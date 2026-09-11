@@ -294,12 +294,12 @@ export const ROUTE_META: Record<string, RouteMeta> = {
   "/compare/apple-watch-fall-detection-vs-mysentry": {
     title: "Apple Watch Fall Detection vs MySentry",
     description:
-      "Compare Apple Watch Fall Detection and Emergency SOS with MySentry. Review alert steps, trusted contacts, setup requirements, and limits before choosing.",
+      "See why Apple Watch owners connect MySentry for voice panic, wellness analysis, family alerts, live context, 24/7 monitoring, and emergency escalation.",
   },
   "/compare/samsung-galaxy-watch-vs-mysentry": {
     title: "Samsung Galaxy Watch vs MySentry",
     description:
-      "Compare Samsung Galaxy Watch hard fall detection and Emergency SOS with MySentry. Review alert steps, trusted contacts, setup requirements, and limits.",
+      "See why Galaxy Watch owners connect MySentry for voice panic, wellness analysis, family alerts, live context, 24/7 monitoring, and emergency escalation.",
   },
   "/compare/noonlight-vs-mysentry": {
     title: "Noonlight and MySentry Comparison Under Review",

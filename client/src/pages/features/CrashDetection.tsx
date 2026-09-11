@@ -42,7 +42,7 @@ export default function CrashDetection() {
       faqs={[
         { question: "Does MySentry detect every car crash?", answer: "No. Detection depends on the supported phone, sensor data, app state, settings, permissions, connectivity, and the circumstances of the event." },
         { question: "What happens after a possible crash is identified?", answer: "The app may begin a Safety Check Alert. If the alert continues, permitted context may be routed to configured contacts and an eligible monitoring workflow." },
-        { question: "Does crash detection replace calling 911?", answer: "No. If you can safely call 911 or local emergency services, do so directly. MySentry is a supplemental safety service." },
+        { question: "When should I call 911 directly after a crash?", answer: "If you can safely call 911 or local emergency services during an immediate emergency, do so. MySentry can add an eligible crash alert, permitted context, configured contacts, and professional monitoring to the supported workflow." },
         { question: "Will crash detection work without connectivity?", answer: "Some device actions may still be available, but sending an alert or sharing context requires an available supported connection. Delivery is not guaranteed." },
       ]}
       setupRequirements={{

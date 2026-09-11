@@ -399,7 +399,7 @@ export default function Footer() {
 
         <div className="border-t border-primary/10 pt-8 text-center text-sm">
           <p className="mx-auto mb-4 max-w-5xl text-xs leading-relaxed text-gray-700">
-            MySentry is a supplemental personal safety and wellness service, not a substitute for calling 911 or local emergency services. It does not diagnose, treat, cure, or prevent medical conditions. Feature availability and alert delivery can depend on plan, supported device, operating system, permissions, connectivity, account eligibility, and region. Monitoring teams review available alert context and may contact emergency services when appropriate; response and arrival times are not guaranteed.
+            MySentry connects supported safety alerts, trusted contacts, permitted incident context, and eligible 24/7 professional monitoring. Feature operation depends on plan, supported device, operating system, permissions, connectivity, account eligibility, and region. Wellness information is not a medical diagnosis.
           </p>
           <p className="text-black font-medium">&copy; 2026 MySentry.ai. All rights reserved.</p>
         </div>

@@ -25,7 +25,7 @@ import {
 const heroImage = "/images/cdn/hero-medical-alert-seniors-brbwAEw3QrMxYqBqfMTxKC.webp";
 
 const faqs = [
-  { question: "Is MySentry a medical device?", answer: "No. MySentry is a supplemental personal-safety and wellness service. It does not diagnose, treat, predict, or prevent a medical condition and does not replace professional medical care or emergency services." },
+  { question: "How does MySentry support an older adult's wider care plan?", answer: "MySentry adds configured alerts, supported wellness context, family contacts, and eligible professional monitoring. Wellness information does not diagnose a medical condition, and clinical care keeps its own role." },
   { question: "Does MySentry detect every fall?", answer: "No. Supported-device detection may miss an event or activate when no emergency exists. It depends on eligible hardware, how it is carried or worn, app state, settings, permissions, connectivity, and event conditions." },
   { question: "Does the family see an older adult's location all the time?", answer: "MySentry does not describe unrestricted continuous family tracking. Supported location or alert context follows the selected feature, permissions, settings, and active workflow." },
   { question: "Can family members see continuous wellness data?", answer: "MySentry does not describe continuous family access to private wellness information. Supported signals remain informational and sharing follows the user's permissions and configured alert workflow." },
@@ -81,7 +81,7 @@ export default function MedicalAlertForSeniors() {
                 </Link>
               </div>
               <p className="mt-7 max-w-2xl border-l-4 border-[#007bc2] pl-5 text-sm leading-relaxed text-slate-600">
-                MySentry is not a medical device and does not guarantee detection, alert delivery, contact, escalation, emergency-service response, arrival, or outcomes.
+                MySentry connects supported alerts, trusted contacts, permitted incident context, and eligible professional monitoring around the older adult's choices.
               </p>
             </div>
 
@@ -103,9 +103,9 @@ export default function MedicalAlertForSeniors() {
         <section className="border-b border-slate-200 bg-white py-16">
           <div className="container max-w-4xl">
             <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#007bc2]">Direct answer</p>
-            <h2 className="mt-4 text-3xl font-bold text-[#0b2f4f]">What MySentry is, and what it is not</h2>
+            <h2 className="mt-4 text-3xl font-bold text-[#0b2f4f]">How MySentry connects the safety plan</h2>
             <p className="mt-5 text-lg leading-relaxed text-slate-700">
-              MySentry is a supplemental smartphone-based personal-safety and wellness service. Eligible users may use a Panic Alarm, Safety Checks, supported-device events, trusted contacts, permitted alert context, and professional monitoring options. It is not a replacement for 911, clinical care, a prescribed medical device, home modifications, in-home support, transportation, or local community resources.
+              Eligible users can use MySentry for a Panic Alarm, Safety Checks, supported-device events, trusted contacts, permitted alert context, and professional monitoring. The service fits alongside clinical care, prescribed devices, home modifications, in-home support, transportation, emergency procedures, and local community resources.
             </p>
           </div>
         </section>

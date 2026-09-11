@@ -9,39 +9,39 @@ export default function FAQs() {
   const faqs = [
     {
       question: "How is MySentry different from the health tracking my Apple Watch or Samsung Watch already does?",
-      answer: "Your watch collects vitals. MySentry explains what they mean and alerts you when something's wrong. While standard tracking shows you data, MySentry uses AI to learn your personal baseline and detects anomalies in real-time. Plus, we connect that data to 24/7 professional monitoring, so if a critical event like a fall or heart anomaly occurs, we can send help even if you can't call for it."
+      answer: "Apple Watch and Samsung Galaxy Watch provide native safety and wellness features. MySentry adds configured voice panic, AI-supported wellness analysis against a personal baseline, mixed-device family alerts, permitted phone context, and eligible 24/7 professional monitoring around supported events."
     },
     {
       question: "Do I need to buy a new device to use MySentry?",
-      answer: "No! MySentry works with the devices you likely already own. It is compatible with Apple Watch (Series 6 and newer) and Samsung Galaxy Watch (Watch 6 and newer). We believe safety shouldn't require buying expensive, stigmatizing hardware when you already have powerful technology on your wrist."
+      answer: "A supported smartphone is required. Optional wearable features require a currently eligible Apple Watch or Samsung Galaxy Watch configuration. Review current device, software, plan, permissions, connectivity, and regional eligibility before enrollment."
     },
     {
-      question: "What happens if MySentry detects a heart rate anomaly?",
-      answer: "It depends on the severity. If your heart rate enters the 'Risky Zone' (unusual but not immediately dangerous), you get a gentle alert to check your status. If it hits the 'Critical Zone' (indicating a potential medical emergency), MySentry triggers a loud alarm. If you don't dismiss it, we notify your emergency contacts and our 24/7 monitoring center immediately."
+      question: "What happens when MySentry identifies a critical wellness pattern?",
+      answer: "MySentry algorithms compare supported wellness readings with the user's personal baseline. The workflow checks the reading, rest state, and repeated measurements before a verified critical pattern can start a Panic Alarm. Wellness analysis is not a medical diagnosis."
     },
     {
       question: "Can I use MySentry if I don't have a smartwatch?",
-      answer: "Yes, you can use the MySentry app on your smartphone for features like the Panic Button, MeetSafe Timer, and Crash Detection. However, for automatic Fall Detection and continuous Health Anomaly Monitoring, a compatible smartwatch is required as these rely on wrist-based sensors."
+      answer: "Yes. Supported phone features can include the Panic Alarm, configured voice and button triggers, Safety Checks, and eligible crash workflows. Wearable-dependent fall and wellness features require a currently supported watch configuration."
     },
     {
       question: "How does the Fall Detection work?",
-      answer: "MySentry uses the motion sensors in your smartwatch to detect hard falls. If a fall is detected, you'll receive an alert on your watch. If you don't respond within the designated time window (2 minutes) OR if you mark yourself unsafe, emergency contacts and 24/7 monitoring are notified immediately with your location."
+      answer: "On a supported configuration, MySentry receives an eligible Apple fall outcome or uses supported Samsung motion signals and post-impact checks. A qualifying event can start the configured Panic Alarm workflow and alert family and eligible 24/7 professional monitoring with permitted context. No watch detects every fall."
     },
     {
       question: "Is my health data private and secure?",
-      answer: "Yes. MySentry is committed to protecting your privacy. All your health information is stored on encrypted servers, never shared with third parties without your permission, and accessed only when you explicitly allow it. We do not misuse your health information for any purpose beyond providing you with personalized health monitoring and insights."
+      answer: "MySentry uses permission-based access and security controls described in its Privacy Policy. Review current data handling, service-provider access, retention, and user choices before enrollment."
     },
     {
-      question: "How accurate is MySentry's health monitoring?",
-      answer: "MySentry uses vitals data collected by your Apple Watch or Samsung Watch, which employ medical-grade sensors. Our AI analyzes this data against your personal baseline to detect patterns. However, MySentry is a wellness tool designed to keep you informed, not a medical device or diagnostic tool."
+      question: "How does MySentry use supported wellness readings?",
+      answer: "MySentry analyzes supported readings against a personal baseline and uses repeated measurements and rest-state checks before a critical panic workflow. Device readings and MySentry wellness analysis do not diagnose a medical condition."
     },
     {
       question: "What are the device requirements?",
-      answer: "MySentry supports Apple Watch Series 6 and above (watchOS 11+) paired with iPhone (iOS 16+), and Samsung Galaxy Watch 6 and above paired with Android phones (Android 11+)."
+      answer: "Device eligibility can change. Confirm the current supported phone, watch, operating system, app version, permissions, plan, connectivity, and regional requirements before enrollment."
     },
     {
       question: "Who is MySentry designed for?",
-      answer: "MySentry serves anyone who wants to move beyond basic fitness tracking to understand their health data. Our primary audiences include seniors aging in place, individuals managing chronic health conditions, caregivers seeking peace of mind, and health-conscious consumers who want proactive wellness guidance."
+      answer: "MySentry is designed for people, families, and teams who want supported alerts, trusted contacts, wellness context, and eligible professional monitoring connected in one safety workflow."
     },
     {
       question: "What do the upcoming features cost?",

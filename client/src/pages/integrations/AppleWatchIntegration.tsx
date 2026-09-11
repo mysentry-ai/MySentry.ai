@@ -3,91 +3,90 @@ import SEOPageTemplate from "@/components/SEOPageTemplate";
 export default function AppleWatchIntegrationPage() {
   return (
     <SEOPageTemplate
-      seoTitle="Apple Watch Safety: MySentry for Personal Protection | MySentry"
-      seoDescription="Review current MySentry eligibility, setup requirements, permissions, and limitations for supported Apple Watch and iPhone configurations."
+      seoTitle="Connect Apple Watch to MySentry Safety Monitoring | MySentry"
+      seoDescription="Connect a supported Apple Watch to MySentry for voice panic, wellness analysis, family alerts, live context, 24/7 monitoring, and verified escalation."
       canonical="https://mysentry.ai/integrations/apple-watch"
       label="Apple Watch Integration"
-      h1="Make Your Apple Watch a Personal Safety Device"
-      problem="You want to understand whether your Apple Watch and iPhone can support MySentry safety controls and eligible monitoring workflows."
-      empathy="Compatibility can vary by watch, operating system, phone, permissions, plan, connectivity, and region. Confirm the current requirements before enrolling."
+      h1="Connect Your Apple Watch to a Wider Safety Response"
+      h1Sub="Keep Apple Fall Detection and Emergency SOS. Add MySentry's family, context, wellness, and professional monitoring workflow."
+      problem="Your Apple Watch can detect some hard falls and call for help. You may still want a second way to trigger an alert, a shared plan for family members on iOS or Android, and professionals who can review an eligible event when you cannot explain what happened."
+      empathy="A watch is most useful when the people around it know what to do next. MySentry connects supported Apple events and user triggers to one configured response workflow."
       steps={[
-        { title: "Create Your Account", description: "Visit mysentry.ai, choose your plan, and create your account online. Then download the MySentry app on your iPhone." },
-        { title: "Confirm Compatibility", description: "Verify your Apple Watch, watchOS, iPhone, plan, and regional eligibility with MySentry support." },
-        { title: "Configure Permissions", description: "Pair supported devices and enable only the permissions needed for the features you choose." },
+        { title: "Keep Apple Safety Features On", description: "Follow Apple's current instructions for Fall Detection, Emergency SOS, Medical ID, emergency contacts, and connectivity." },
+        { title: "Connect MySentry", description: "Install MySentry on the supported iPhone and Apple Watch, then enable the safety and wellness features you want to use." },
+        { title: "Add Family and Test", description: "Choose responders on supported iOS or Android phones, enable required permissions, and test the watch, phone, and voice panic options." },
       ]}
       primaryCta={{ text: "Review Plans and Eligibility", href: "/pricing#pricing-plans" }}
-      directAnswer="MySentry may support user-activated alerts, supported-device fall or crash detection, available wellness signals, permitted location or video context, and eligible professional monitoring on compatible Apple Watch and iPhone configurations. Confirm current device, operating-system, plan, permission, connectivity, and regional requirements before use."
+      secondaryCta={{ text: "Compare Apple Watch and MySentry", href: "/compare/apple-watch-fall-detection-vs-mysentry" }}
+      directAnswer="Apple Watch supplies valuable native Fall Detection and Emergency SOS. MySentry adds hands-free voice panic, supported wellness analysis, live location and permitted phone audio or video, mixed iOS and Android family alerts, and eligible 24/7 professional monitoring. After verification, monitoring can contact emergency services, including 911, when appropriate."
       howItWorks={[
-        "Install MySentry on an eligible iPhone and confirm current watch compatibility before pairing.",
-        "Enable only the watch, phone, location, notification, audio, video, or wellness permissions required for the features you choose.",
-        "Supported workflows can run only when the required app state, settings, permissions, device connection, and network connection are available.",
+        "Apple produces an eligible fall outcome, supported wellness readings qualify, or the wearer starts MySentry from the watch, phone, phone shake, supported button action, or configured voice command.",
+        "MySentry opens the configured Panic Alarm or Safety Check workflow and gives the wearer a chance to confirm safety or ask for help when the event supports it.",
+        "Configured family members, responders, and eligible 24/7 professional monitoring receive the event through MySentry.",
+        "Live location, phone battery level, and permitted phone audio or video can be shared during an eligible online Panic Alarm when enabled.",
+        "After verification, monitoring can contact emergency services, including 911, when appropriate.",
       ]}
       afterAlert={[
-        "A user-activated alert or supported-device event may begin a check-in or eligible monitoring workflow.",
-        "A monitoring agent may attempt contact through available account and device channels.",
-        "Permitted context may be reviewed, and trusted contacts or emergency services may be notified when appropriate.",
-        "Detection, monitoring, contact, escalation, response, and arrival are not guaranteed.",
+        "The wearer can confirm safety or request help when able.",
+        "Configured family members or responders can receive the supported alert and authorized context on iOS or Android.",
+        "The 24/7 professional monitoring team can review the eligible event and available context.",
+        "After verification, monitoring can contact emergency services when appropriate for the situation.",
       ]}
       bestFor={[
-        "Apple Watch users who want more personal safety.",
-        "Seniors living on their own who already use an Apple Watch.",
-        "People who want to review compatible Apple Watch and iPhone safety features before choosing a plan.",
-        "Drivers who want an added supported-device safety layer while carrying an eligible iPhone.",
+        "Apple Watch owners who want native watch safety features connected to a wider response workflow.",
+        "People who want a voice-enabled panic option when the phone or watch is out of reach.",
+        "Families using a mix of iPhone and Android phones.",
+        "Older adults and independent people who want family and professional monitoring in the same plan.",
       ]}
       notIdealFor={[
-        "People whose watch, iPhone, operating system, plan, region, or permissions are not currently supported.",
-        "Users who do not want to share health and location data.",
-        "Those who need a medical alert device with a special button worn around the neck or wrist.",
+        "Unsupported Apple Watch, iPhone, watchOS, plan, or regional configurations.",
+        "Use without the required permissions, app state, device connection, or network availability.",
+        "Medical diagnosis or a guarantee that every event will be detected or every alert will be delivered.",
       ]}
       keyTakeaways={[
-        "May add supported personal-alert and Safety Check options to an eligible Apple Watch and iPhone configuration.",
-        "Includes fall detection, a panic alarm, and crash detection.",
-        "Easy to set up and works smoothly with your watch.",
-        "Current watch, watchOS, iPhone, plan, and regional requirements must be confirmed before enrollment.",
-        "Eligible alerts may be reviewed by a 24/7 professional monitoring service.",
+        "Keep Apple's Fall Detection and Emergency SOS enabled because MySentry works alongside them.",
+        "MySentry adds more ways to trigger help, including configured voice control when the wearer cannot reach a device.",
+        "Supported wellness readings can be analyzed against a personal baseline before a verified critical reading starts the Panic Alarm workflow.",
+        "Family members on iOS or Android and eligible 24/7 professional monitoring can participate in one configured response plan.",
       ]}
       faqs={[
         {
-          question: "Is MySentry a replacement for a traditional medical alert device?",
-          answer: "No. MySentry is a supplemental personal safety and wellness service, not a medical alert device or a replacement for calling 911 or local emergency services.",
+          question: "Why do I need MySentry if Apple Watch already has Fall Detection and Emergency SOS?",
+          answer: "Apple Watch supplies the native fall signal and direct Apple emergency actions. MySentry adds voice panic, supported wellness analysis, mixed-device family alerts, live location and permitted phone context, plus eligible 24/7 professional monitoring and verified escalation.",
         },
         {
-          question: "How does the fall detection work?",
-          answer: "On a supported configuration, device sensors may identify a fall-like event and begin a check-in or configured alert workflow. No detection system identifies every event, and timing can vary by configuration and conditions.",
+          question: "Can I trigger MySentry when I cannot reach my phone or watch?",
+          answer: "A configured voice command can trigger the MySentry Panic Alarm on a supported setup. Voice behavior depends on the supported assistant, device state, app setup, permissions, and connectivity.",
         },
         {
-          question: "Will this drain my Apple Watch battery?",
-          answer: "Battery impact depends on the watch, iPhone, software, permissions, connectivity, and enabled features. Review battery use on your devices and adjust settings as needed.",
+          question: "Can my Android family members receive MySentry alerts?",
+          answer: "Yes. The wearer can use a supported Apple Watch and iPhone while configured family members or responders use MySentry on supported iOS or Android phones.",
         },
         {
-          question: "What do I need to use MySentry with my Apple Watch?",
-          answer: "You need a currently supported Apple Watch, watchOS version, iPhone, MySentry plan, permissions, and region. Confirm the exact requirements with MySentry support before enrolling.",
+          question: "How does MySentry use Apple Watch fall information?",
+          answer: "Apple provides the native Fall Detection engine. On a supported configuration, MySentry receives an eligible Apple fall outcome and connects it to the configured MySentry Panic Alarm, family, and monitoring workflow.",
         },
         {
-          question: "How is the panic alarm triggered?",
-          answer: "The panic alarm can be triggered by a voice command, tapping your smartphone, or tapping your smartwatch.",
+          question: "Does professional monitoring contact 911?",
+          answer: "An eligible Panic Alarm alerts MySentry's 24/7 professional monitoring team. After verification, monitoring can contact emergency services, including 911, when appropriate. Actual contact and response depend on the event, available context, account setup, connectivity, region, and service availability.",
         },
       ]}
       setupRequirements={{
         devices: "A currently supported Apple Watch, watchOS version, and eligible iPhone. Confirm exact requirements before enrollment.",
-        permissions: "Enable only the permissions required for the features you choose. Location, audio, video, notification, and wellness permissions affect available context.",
-        connectivity: "Supported workflows require an available device and network connection. Bluetooth, cellular service, Wi-Fi, app state, and background permissions can affect operation.",
-        limitations: "MySentry is not a replacement for emergency services and is not a medical device. Detection, monitoring, contact, escalation, response, and arrival are not guaranteed.",
+        permissions: "Enable the watch, phone, location, notification, audio, video, wellness, and contact permissions required for the features you choose.",
+        connectivity: "Fall-event handling, alert delivery, monitoring, and live context require the supported app state and available device and network connections.",
+        limitations: "Feature operation depends on supported devices, app state, permissions, connectivity, plan, region, and service availability. Wellness analysis does not diagnose a medical condition.",
       }}
       proofBlocks={[
-        {
-          claim: "Compatibility Comes First",
-          detail: "Use Apple Watch features only after confirming current device, software, plan, permission, connectivity, and regional requirements.",
-        },
-        {
-          claim: "User-Controlled Permissions",
-          detail: "Location, audio, video, wellness, and contact context is governed by feature availability and the permissions you enable.",
-        },
+        { claim: "Voice-enabled Panic Alarm", detail: "Use a configured voice command on a supported setup when the wearer cannot reach the phone or watch." },
+        { claim: "AI-supported wellness analysis", detail: "MySentry algorithms compare supported readings with a personal baseline and use rest-state and multi-reading checks before a critical workflow." },
+        { claim: "One connected response", detail: "Configured family, permitted phone context, and eligible 24/7 professional monitoring can participate in the same MySentry event." },
       ]}
       relatedLinks={[
-        { text: "Compare MySentry to Other Medical Alert Devices", href: "/compare/medical-alert-devices-vs-mysentry" },
-        { text: "How Our 24/7 Monitoring Works", href: "/features" },
-        { text: "MySentry for Seniors Living Alone", href: "/use-cases/medical-alert-app-for-seniors" },
+        { text: "Apple Watch vs MySentry", href: "/compare/apple-watch-fall-detection-vs-mysentry" },
+        { text: "24/7 Professional Monitoring", href: "/features/24-7-professional-monitoring" },
+        { text: "Panic Alarm App", href: "/features/panic-button-app" },
+        { text: "Compare Plans", href: "/pricing#pricing-plans" },
       ]}
       heroImage="/images/happy-senior-watch-800w.jpg"
     />

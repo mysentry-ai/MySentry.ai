@@ -12,7 +12,7 @@ export default function ErTraumaNurses() {
       heroDescription="ER and trauma nurses work in high-pressure environments where patient or visitor aggression, fast-moving teams, and internal escalation procedures can intersect. MySentry can add a personal safety layer without replacing facility duress systems, security, training, or clinical judgment."
       heroImage="/images/cdn/CdUihnsjRgcMzrEo.jpg"
       heroAlt="Emergency department nurse reviewing a staff safety and duress procedure"
-      directAnswer="MySentry is a supplemental personal-safety option for eligible ER and trauma nurses. It may provide user-activated alert access, supported Safety Checks, trusted contacts, permitted incident context, and eligible monitoring. It must be configured around facility policy and should never bypass the approved staff duress system, internal security, supervisor chain, workplace reporting, emergency services, or clinical judgment."
+      directAnswer="MySentry gives eligible ER and trauma nurses user-activated alert access, supported Safety Checks, trusted contacts, permitted incident context, and eligible professional monitoring. Configure it around facility policy and use it alongside the approved staff duress system, internal security, supervisor chain, workplace reporting, emergency services, and clinical judgment."
       problemsHeading="Fast clinical environments need clear escalation roles."
       problemsIntro="A personal tool is useful only when it fits the facility's existing prevention and response program. Start with these three planning problems."
       problems={[
@@ -44,7 +44,7 @@ export default function ErTraumaNurses() {
       ]}
       evidenceText="NIOSH and OSHA recommend comprehensive workplace-violence prevention programs that include leadership, worker participation, hazard assessment, controls, training, reporting, and program review. Personal alert technology can support a program, but it cannot stand in for those organizational responsibilities."
       faqs={[
-        { question: "Does MySentry replace the hospital duress alarm?", answer: "No. Use the facility's approved duress, security, emergency, and reporting procedures. MySentry is a separate supplemental personal-safety service." },
+        { question: "How does MySentry fit with the hospital duress alarm?", answer: "Use the facility's approved duress, security, emergency, and reporting procedures. MySentry can add approved personal alerts, Safety Checks, permitted context, contacts, and eligible monitoring to the wider plan." },
         { question: "Can MySentry guarantee that security or emergency services will respond?", answer: "No. Delivery, contact, escalation, security response, emergency-service response, and arrival depend on people, systems, connectivity, policies, and local conditions." },
         { question: "Will location context be accurate inside every hospital?", answer: "No. Indoor location can be limited by device hardware, permissions, app state, building materials, network conditions, and feature support." },
         { question: "Can I trigger an alert without opening the app?", answer: "Available phone, watch, or configured voice controls depend on current device eligibility, software, permissions, settings, app state, and connectivity. Confirm the supported setup before relying on it." },

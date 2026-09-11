@@ -12,7 +12,7 @@ export default function HomeHealthNurses() {
       heroDescription="Home health nurses move through private homes, changing conditions, and travel between appointments. MySentry can add eligible personal alerts, Safety Checks, trusted contacts, and permitted incident context to an agency-approved safety plan."
       heroImage="/images/cdn/brsrMeZqzKnRPjcC.jpg"
       heroAlt="Home health nurse reviewing a visit plan before entering a residence"
-      directAnswer="MySentry is a supplemental personal-safety service for home health nurses using eligible phones and supported wearable configurations. It can support user-activated alerts, planned Safety Checks, trusted-contact workflows, permitted incident context, and eligible professional monitoring. It does not replace an agency risk assessment, visit policy, supervisor, security resource, emergency service, or required incident reporting."
+      directAnswer="MySentry connects home health nurses using eligible phones and supported wearables to user-activated alerts, planned Safety Checks, trusted contacts, permitted incident context, and eligible professional monitoring. Configure it alongside the agency risk assessment, visit policy, supervisor, security resources, emergency procedures, and required incident reporting."
       problemsHeading="Home visits change from one doorway to the next."
       problemsIntro="A useful plan must account for the work environment before introducing a new tool. These three moments deserve specific preparation."
       problems={[
@@ -44,7 +44,7 @@ export default function HomeHealthNurses() {
       ]}
       evidenceText="NIOSH and OSHA describe healthcare workplace-violence prevention as a comprehensive employer responsibility involving assessment, controls, training, reporting, and response planning. A personal app can be one supplemental layer, but it should never be presented as the workplace program itself."
       faqs={[
-        { question: "Does MySentry replace my agency's home-visit safety policy?", answer: "No. Follow the agency's visit screening, supervisor, check-in, withdrawal, incident-reporting, and emergency procedures. MySentry is supplemental." },
+        { question: "How does MySentry fit with my agency's home-visit safety policy?", answer: "Follow the agency's visit screening, supervisor, check-in, withdrawal, incident-reporting, and emergency procedures. MySentry can connect approved personal alerts, Safety Checks, contacts, context, and monitoring to that plan." },
         { question: "Can I schedule a check-in for a home visit?", answer: "A Safety Check may be available on an eligible plan and configuration. Confirm the duration, contacts, permissions, connectivity, and configured follow-up before relying on it." },
         { question: "Will MySentry work inside every home?", answer: "No service works in every setting. Building materials, device condition, app state, permissions, battery, and network availability can affect operation." },
         { question: "Does MySentry automatically send emergency services to the home?", answer: "No automatic dispatch or arrival is guaranteed. An eligible monitoring workflow may review permitted context, attempt contact, and coordinate next steps when appropriate. Call 911 directly whenever it is safe and possible." },

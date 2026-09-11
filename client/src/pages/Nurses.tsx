@@ -76,7 +76,7 @@ export default function Nurses() {
       <HeroSection
         label="Personal Safety Tools for Nurses"
         title={<>A Practical Safety Layer<br /><span className="text-gray-600">for Nurses on the Move</span></>}
-        subtitle="MySentry can supplement workplace safety procedures with a Panic Alarm, Safety Checks, eligible incident detection, trusted contacts, and professional monitoring options."
+        subtitle="MySentry connects a Panic Alarm, Safety Checks, eligible incident detection, trusted contacts, permitted context, and 24/7 professional monitoring with workplace safety procedures."
         imageSrc="/images/cdn/hero-home-healthcare-FyAFPcaaseQ5VKXwe2ieTZ.webp"
         imageAlt="Nurse reviewing a personal safety plan on a smartphone"
         ctaText="Review Plans"
@@ -88,7 +88,7 @@ export default function Nurses() {
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#007bc2]">Direct answer</p>
           <h2 className="mt-4 text-3xl font-bold text-[#0b2f4f]">What MySentry can add to a nurse safety plan</h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-700">
-            MySentry is a supplemental personal safety and wellness service for eligible phones and supported watch configurations. It can help a nurse start an alert, run a timed Safety Check, involve selected contacts, and connect an eligible alert to professional monitoring. It does not replace workplace controls, clinical care, or local emergency services.
+            MySentry helps a nurse start an alert, run a timed Safety Check, involve selected contacts, share permitted incident context, and connect an eligible event to 24/7 professional monitoring on supported phones and watch configurations. It works alongside workplace controls, clinical care, and local emergency procedures.
           </p>
         </div>
       </section>

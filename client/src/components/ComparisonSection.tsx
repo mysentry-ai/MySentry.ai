@@ -1,299 +1,153 @@
-import { Check, X, Info, Smartphone } from "lucide-react";
-import { Link } from "wouter";
 import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
+  Activity,
+  ArrowRight,
+  BellRing,
+  HeartPulse,
+  MapPin,
+  Mic2,
+  Radio,
+  Smartphone,
+  Users,
+  Video,
+  Watch,
+} from "lucide-react";
+import { Link } from "wouter";
+
+const problems = [
+  {
+    icon: Watch,
+    title: "A watch may not recognize every emergency",
+    description: "Apple and Samsung both document conditions and limits for fall detection and SOS. A safety plan needs more than one way to ask for help.",
+  },
+  {
+    icon: Mic2,
+    title: "You may not be able to reach a device",
+    description: "A configured MySentry voice command gives you another way to start a Panic Alarm when your phone or watch is out of reach.",
+  },
+  {
+    icon: Users,
+    title: "An alert still needs a response plan",
+    description: "Family, responders, useful incident context, and professional monitoring need to know what happened and what to do next.",
+  },
+];
+
+const capabilities = [
+  {
+    icon: BellRing,
+    title: "More ways to start a Panic Alarm",
+    description: "Use supported watch and phone controls, phone shake, supported button actions, or a configured voice command.",
+  },
+  {
+    icon: HeartPulse,
+    title: "AI-supported wellness analysis",
+    description: "MySentry algorithms compare supported readings with a personal baseline and can start a Panic Alarm after a critical pattern is verified. Wellness analysis is not a medical diagnosis.",
+  },
+  {
+    icon: MapPin,
+    title: "Live location and phone context",
+    description: "An eligible online Panic Alarm can share live location, phone battery level, and permitted phone audio or video when enabled.",
+  },
+  {
+    icon: Smartphone,
+    title: "One family across iOS and Android",
+    description: "A supported Apple Watch or Samsung Galaxy Watch wearer can stay connected with configured family members and responders using supported iOS or Android phones.",
+  },
+  {
+    icon: Radio,
+    title: "24/7 professional monitoring",
+    description: "The monitoring team can review an eligible event and, after verification, contact emergency services, including 911, when appropriate.",
+  },
+  {
+    icon: Video,
+    title: "Context beyond a device alert",
+    description: "Permitted location, audio, video, battery, alert, and account context can help responders understand the situation during a supported workflow.",
+  },
+];
+
+const watchPaths = [
+  {
+    name: "Apple Watch",
+    native: "Keep Apple Fall Detection, Emergency SOS, and Medical ID emergency contacts enabled under Apple's documented setup conditions.",
+    connected: "MySentry can connect an eligible Apple fall outcome or user-triggered alert to family, permitted phone context, and eligible 24/7 professional monitoring.",
+    href: "/compare/apple-watch-fall-detection-vs-mysentry",
+  },
+  {
+    name: "Samsung Galaxy Watch",
+    native: "Keep Samsung hard-fall detection, Emergency SOS, assigned emergency contacts, and location settings enabled on a supported configuration.",
+    connected: "MySentry can connect supported Samsung motion and wellness signals or a user-triggered alert to one wider family and monitoring workflow.",
+    href: "/compare/samsung-galaxy-watch-vs-mysentry",
+  },
+];
 
 export default function ComparisonSection() {
-  const features = [
-    {
-      category: "SAFETY, HEALTH & MONITORING",
-      color: "bg-blue-50",
-      headerColor: "text-blue-900",
-      items: [
-        {
-          name: "Real-Time Health Monitoring",
-          mysentry: true,
-          life360: false,
-          medical: false,
-          wearables: true,
-          tooltip: "Continuously tracks vital signs like heart rate and alerts you to irregularities."
-        },
-        {
-          name: "Voice-Activated Panic Alarm",
-          mysentry: true,
-          life360: false,
-          medical: "BUTTON ONLY",
-          wearables: false,
-          tooltip: "Trigger a silent alarm just by speaking a safe phrase, even if you can't reach your phone."
-        },
-        {
-          name: "One-Tap Panic Button (Phone & Watch)",
-          mysentry: true,
-          life360: true,
-          medical: true,
-          wearables: false,
-          tooltip: "Prompt help button available on both your smartphone and smartwatch."
-        },
-        {
-          name: "24/7 Professional Monitoring",
-          mysentry: true,
-          life360: "PREMIUM ONLY",
-          medical: true,
-          wearables: false,
-          tooltip: "Live agents monitor alerts 24/7 and can dispatch emergency services immediately."
-        },
-        {
-          name: "Live Video Evidence",
-          mysentry: true,
-          life360: false,
-          medical: false,
-          wearables: false,
-          tooltip: "Automatically streams live video to monitoring agents when an alarm is triggered."
-        },
-        {
-          name: "Crash & Fall Detection",
-          mysentry: true,
-          life360: "CRASH ONLY",
-          medical: "FALL ONLY",
-          wearables: "LIMITED",
-          tooltip: "Detects severe car crashes and hard falls, automatically calling for help if you're unresponsive."
-        }
-      ]
-    },
-    {
-      category: "CONNECTIVITY",
-      color: "bg-purple-50",
-      headerColor: "text-purple-900",
-      items: [
-        {
-          name: "Bring Your Own Device (Apple/Samsung)",
-          mysentry: true,
-          life360: true,
-          medical: false,
-          wearables: "LIMITED",
-          tooltip: "Works with the smartwatch and phone you already own. No need to buy bulky specialized hardware."
-        },
-        {
-          name: "Automated Location Sharing",
-          mysentry: true,
-          life360: true,
-          medical: false,
-          wearables: false,
-          tooltip: "Automatically shares your real-time location with emergency contacts during an alert."
-        },
-        {
-          name: "Emergency Contacts",
-          mysentry: "UP TO 5",
-          life360: "CIRCLES",
-          medical: "LIMITED",
-          wearables: "VARIES",
-          tooltip: "Notify up to 5 trusted contacts promptly with your location and status."
-        },
-        {
-          name: "Smart Ring/Band Integration",
-          mysentry: "COMING SOON",
-          life360: false,
-          medical: false,
-          wearables: true,
-          tooltip: "Future support for Oura Ring, Whoop, and other smart wearables."
-        }
-      ]
-    },
-    {
-      category: "LONGEVITY & WELLNESS",
-      color: "bg-green-50",
-      headerColor: "text-green-900",
-      items: [
-        {
-          name: "Labs Integration",
-          mysentry: "COMING SOON",
-          life360: false,
-          medical: false,
-          wearables: false,
-          tooltip: "Connect your lab results for a comprehensive view of your health trends."
-        },
-        {
-          name: "Nutrition Guide",
-          mysentry: "COMING SOON",
-          life360: false,
-          medical: false,
-          wearables: "LIMITED",
-          tooltip: "Personalized nutrition advice based on your health data and goals."
-        },
-        {
-          name: "Physical Activity Guide",
-          mysentry: "COMING SOON",
-          life360: false,
-          medical: false,
-          wearables: true,
-          tooltip: "Tailored workout plans and activity tracking to keep you moving safely."
-        },
-        {
-          name: "Mental Wellness Guide",
-          mysentry: "COMING SOON",
-          life360: false,
-          medical: false,
-          wearables: "LIMITED",
-          tooltip: "Resources and tracking for stress management and mental well-being."
-        }
-      ]
-    }
-  ];
-
-  const renderCell = (value: boolean | string) => {
-    if (value === true) {
-      return (
-        <div className="flex justify-center">
-          <div className="bg-primary rounded-full p-1">
-            <Check className="w-6 h-6 text-white stroke-[3]" />
-          </div>
-        </div>
-      );
-    }
-    if (value === false) {
-      return <X className="w-6 h-6 text-gray-300 mx-auto" />;
-    }
-    return (
-      <span className={`text-sm font-bold uppercase tracking-wider ${
-        value === "COMING SOON" ? "text-primary bg-primary/10 px-2 py-1 rounded text-xs" : "text-gray-500"
-      }`}>
-        {value}
-      </span>
-    );
-  };
-
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-6 tracking-tight">
-            COMPARE THE VALUE
+    <section className="bg-white py-24">
+      <div className="container max-w-6xl">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#006a9c]">Your watch plus MySentry</p>
+          <h2 className="mt-4 text-4xl font-black tracking-tight text-[#0b2f4f] md:text-5xl">
+            Keep the watch. Add the response network.
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            See why MySentry is the only complete safety and health solution for you and your family.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-700">
+            Apple Watch and Samsung Galaxy Watch provide valuable wrist-based safety features. MySentry connects supported watch events with voice panic, wellness analysis, mixed-device family alerts, live phone context, and eligible 24/7 professional monitoring.
           </p>
         </div>
 
-        <div className="overflow-x-auto pb-8">
-          <div className="min-w-[900px]">
-            {/* Header Row */}
-            <div className="grid grid-cols-5 gap-4 mb-8 items-end">
-              <div className="col-span-1 text-left pb-4">
-                <h3 className="text-2xl font-black text-gray-900 uppercase tracking-tighter leading-none">
-                  COMPARE<br />FEATURES
-                </h3>
-              </div>
-              
-              {/* MySentry Column Header */}
-              <div className="col-span-1 relative">
-                <div className="absolute -top-6 left-0 right-0 flex justify-center">
-                  <div className="bg-white p-2 rounded-xl shadow-sm border border-gray-100">
-                     <img 
-                      src="/images/logo.png" 
-                      alt="MySentry" 
-                      className="h-12 w-auto object-contain"
-                      loading="lazy"
-                      width="360" height="160" style={{width: '100px', height: '50px'}}
-                    />
-                  </div>
-                </div>
-                <div className="bg-[#e8f5e9] rounded-t-2xl pt-12 pb-6 text-center border-x border-t border-primary/20">
-                  <h4 className="text-xl font-black text-gray-900">MySentry</h4>
-                  <p className="text-sm font-bold text-primary mt-1">ALL-IN-ONE</p>
-                </div>
-              </div>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {problems.map(({ icon: Icon, title, description }) => (
+            <article key={title} className="rounded-3xl border border-slate-200 bg-[#f8fbfa] p-7">
+              <Icon className="h-7 w-7 text-[#0b6848]" aria-hidden="true" />
+              <h3 className="mt-5 text-xl font-bold text-[#0b2f4f]">{title}</h3>
+              <p className="mt-3 leading-relaxed text-slate-700">{description}</p>
+            </article>
+          ))}
+        </div>
 
-              <div className="col-span-1 text-center pb-6">
-                <div className="mx-auto w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3">
-                  <Smartphone className="w-6 h-6 opacity-40" />
-                </div>
-                <h4 className="text-lg font-bold text-gray-400">Location Apps</h4>
-                <p className="text-xs text-gray-400 mt-1">e.g. Life360</p>
-              </div>
-
-              <div className="col-span-1 text-center pb-6">
-                <div className="mx-auto w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3">
-                  <img src="/images/icons/4440884-200.png" className="w-6 h-6 opacity-40" alt="Alert" loading="lazy" width="24" height="24" />
-                </div>
-                <h4 className="text-lg font-bold text-gray-400">Senior Alerts</h4>
-                <p className="text-xs text-gray-400 mt-1">e.g. Medical Guardian</p>
-              </div>
-
-              <div className="col-span-1 text-center pb-6">
-                <div className="mx-auto w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3">
-                  <img src="/images/icons/3090399-200.png" className="w-6 h-6 opacity-40" alt="Watch" loading="lazy" width="24" height="24" />
-                </div>
-                <h4 className="text-lg font-bold text-gray-400">Wearables</h4>
-                <p className="text-xs text-gray-400 mt-1">e.g. Oura, Whoop</p>
-              </div>
-            </div>
-
-            {/* Feature Rows */}
-            <div className="space-y-12">
-              {features.map((section, sIdx) => (
-                <div key={sIdx} className={`rounded-3xl p-6 ${section.color}`}>
-                  <div className="flex items-center gap-4 mb-8">
-                    <div className="h-1 bg-gray-900/10 flex-1 rounded-full"></div>
-                    <h5 className={`text-2xl font-black uppercase tracking-widest ${section.headerColor}`}>
-                      {section.category}
-                    </h5>
-                    <div className="h-1 bg-gray-900/10 flex-1 rounded-full"></div>
-                  </div>
-
-                  <div className="space-y-3">
-                    {section.items.map((item, idx) => (
-                      <div 
-                        key={idx} 
-                        className="grid grid-cols-5 gap-4 items-center py-6 px-6 rounded-2xl bg-white shadow-sm hover:shadow-md transition-all border border-gray-100"
-                      >
-                        <div className="col-span-1 flex items-center gap-2">
-                          <span className="font-bold text-gray-800 text-lg">{item.name}</span>
-                          <TooltipProvider>
-                            <Tooltip>
-                              <TooltipTrigger>
-                                <Info className="w-4 h-4 text-gray-400 hover:text-primary transition-colors cursor-help" />
-                              </TooltipTrigger>
-                              <TooltipContent>
-                                <p className="max-w-xs text-sm">{item.tooltip}</p>
-                              </TooltipContent>
-                            </Tooltip>
-                          </TooltipProvider>
-                        </div>
-
-                        {/* MySentry Cell */}
-                        <div className="col-span-1 text-center py-2 rounded-lg bg-[#e8f5e9]/50 border border-primary/10">
-                          {renderCell(item.mysentry)}
-                        </div>
-
-                        <div className="col-span-1 text-center">
-                          {renderCell(item.life360)}
-                        </div>
-                        <div className="col-span-1 text-center">
-                          {renderCell(item.medical)}
-                        </div>
-                        <div className="col-span-1 text-center">
-                          {renderCell(item.wearables)}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className="mt-14 rounded-[2rem] bg-[#0b2f4f] p-7 text-white md:p-10">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#b7edff]">What MySentry adds</p>
+            <h3 className="mt-4 text-3xl font-bold text-white md:text-4xl">One connected safety workflow around the devices you already use</h3>
+          </div>
+          <div className="mt-9 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {capabilities.map(({ icon: Icon, title, description }) => (
+              <article key={title} className="rounded-2xl border border-white/15 bg-white/10 p-6">
+                <Icon className="h-6 w-6 text-[#b7edff]" aria-hidden="true" />
+                <h4 className="mt-4 text-lg font-bold text-white">{title}</h4>
+                <p className="mt-3 text-sm leading-relaxed text-[#e5edf5]">{description}</p>
+              </article>
+            ))}
           </div>
         </div>
 
-        <div className="mt-16 text-center">
-          <Link href="/pricing#pricing-plans" className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white bg-primary hover:bg-primary/90 rounded-full transition-all hover:scale-105 shadow-lg shadow-primary/25">
-            Review Plans and Eligibility
-          </Link>
-          <p className="mt-4 text-gray-500 text-sm">
-            Cancel anytime.
+        <div className="mt-14 grid gap-6 lg:grid-cols-2">
+          {watchPaths.map(path => (
+            <article key={path.name} className="rounded-3xl border border-slate-200 bg-[#f8fbfa] p-7 shadow-sm md:p-8">
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-[#007bc2]">{path.name} plus MySentry</p>
+              <h3 className="mt-3 text-2xl font-bold text-[#0b2f4f]">Use both parts of the safety plan</h3>
+              <div className="mt-6 space-y-5">
+                <div>
+                  <p className="font-bold text-[#0b2f4f]">Keep the native watch features</p>
+                  <p className="mt-2 leading-relaxed text-slate-700">{path.native}</p>
+                </div>
+                <div>
+                  <p className="font-bold text-[#0b2f4f]">Connect the wider response</p>
+                  <p className="mt-2 leading-relaxed text-slate-700">{path.connected}</p>
+                </div>
+              </div>
+              <Link href={path.href} className="mt-7 inline-flex items-center gap-2 font-bold text-[#005f91] underline decoration-2 underline-offset-4 hover:text-[#0b6848]">
+                Read the detailed comparison <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-12 rounded-3xl border border-[#0b6848]/20 bg-[#edf8f1] p-7 text-center md:p-9">
+          <p className="mx-auto max-w-4xl text-sm leading-relaxed text-slate-700">
+            Features depend on supported devices, app state, permissions, connectivity, plan, region, and service availability. If you can call 911 directly during an immediate emergency, do so.
           </p>
+          <Link href="/pricing#pricing-plans" className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#0b6848] px-8 py-4 text-lg font-bold text-white shadow-lg shadow-[#0b6848]/20 transition hover:bg-[#084f38]">
+            Review plans and eligibility <ArrowRight className="h-5 w-5" aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>

@@ -11,7 +11,7 @@ export default function LiveVideoResponse() {
       h1Sub="Know the device, permission, connection, and workflow requirements before you rely on it."
       heroDescription="Live video may make permitted context available within an eligible safety workflow. It is not continuous monitoring and cannot guarantee agent contact or emergency response."
       problem="During an urgent concern, a location alone may not explain what is happening. You may want to decide in advance which supported context could be available and who should be contacted."
-      empathy="You can build a clearer plan without giving up privacy or assuming a feature will work in every setting. MySentry is a supplemental layer, not a replacement for calling emergency services directly."
+      empathy="You can build a clearer plan that respects privacy while giving configured contacts and professional monitoring more useful context during an eligible alert."
       steps={[
         { title: "Confirm Support", description: "Review whether your phone, plan, operating system, permissions, connectivity, and region support the current live-video workflow." },
         { title: "Choose Your Settings", description: "Decide which notifications, contacts, permissions, and available alert controls fit the situations you want to prepare for." },
@@ -45,7 +45,7 @@ export default function LiveVideoResponse() {
         devices: "A currently supported phone with an eligible app and operating-system configuration. Confirm compatibility before enrollment.",
         permissions: "Camera, microphone, notification, location, background, and contact permissions depend on the supported workflow and user choices.",
         connectivity: "Live video and shared context require an available supported network connection. Behavior can vary with bandwidth, app state, and service availability.",
-        limitations: "MySentry is a supplemental safety service. It does not provide continuous monitoring and does not guarantee detection, alert delivery, contact, escalation, response, or outcome.",
+        limitations: "Live context depends on an active eligible alert, enabled permissions, supported devices, app state, bandwidth, connectivity, plan, region, and service availability.",
       }}
       proofBlocks={[
         { claim: "Permission-based visual context", detail: "Available video can be part of an eligible alert only when the current device, feature, permissions, and workflow support it." },

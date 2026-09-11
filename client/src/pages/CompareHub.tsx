@@ -100,9 +100,9 @@ export default function CompareHub() {
           <div className="container max-w-4xl">
             <div className="rounded-3xl border border-[#0b6848]/20 bg-[#edf8f1] p-8 sm:p-10">
               <ShieldCheck className="h-9 w-9 text-[#0b6848]" aria-hidden="true" />
-              <h2 className="mt-5 text-3xl font-bold text-[#0b2f4f]">MySentry comparison boundary</h2>
+              <h2 className="mt-5 text-3xl font-bold text-[#0b2f4f]">What MySentry adds to the comparison</h2>
               <p className="mt-4 leading-relaxed text-slate-700">
-                MySentry is a supplemental personal safety and wellness service. It is not a medical device and does not replace workplace controls, clinical care, calling 911 or local emergency services, or another provider's official terms. Feature availability and outcomes depend on plan, device, settings, permissions, app state, connectivity, region, and third parties.
+                MySentry connects supported device events and user-triggered Panic Alarms to configured contacts, permitted incident context, and eligible 24/7 professional monitoring. Each comparison explains the device, setup, permission, connectivity, plan, region, and service conditions that apply.
               </p>
             </div>
           </div>

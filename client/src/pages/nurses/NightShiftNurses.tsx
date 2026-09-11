@@ -12,7 +12,7 @@ export default function NightShiftNurses() {
       heroDescription="Night-shift safety includes more than the clinical unit. Quieter corridors, lower-traffic entrances, parking areas, transit, and the drive home can require different check-ins and resources. MySentry can add eligible personal tools to that broader plan."
       heroImage="/images/cdn/eAqkYaznpJbyFziv.jpg"
       heroAlt="Night shift nurse preparing a safety check-in before leaving work"
-      directAnswer="MySentry can provide eligible night-shift nurses with user-activated alerts, planned Safety Checks, trusted contacts, permitted incident context, and professional monitoring options. It is a supplemental layer for selected moments, not a fatigue detector, workplace security service, guaranteed crash or fall detector, transportation solution, or replacement for employer procedures and emergency services."
+      directAnswer="MySentry connects eligible night-shift nurses to user-activated alerts, planned Safety Checks, trusted contacts, permitted incident context, and professional monitoring for selected moments. Configure it alongside employer procedures, security resources, transportation planning, and emergency services."
       problemsHeading="After-hours safety changes across the shift."
       problemsIntro="The plan should cover the unit, the route out, and the trip home without turning fatigue or risk into a medical claim."
       problems={[
@@ -50,7 +50,7 @@ export default function NightShiftNurses() {
         { question: "Will MySentry work in a parking garage?", answer: "Operation is not guaranteed. Structures and underground areas may limit network and location availability, so keep an alternative call or escort plan." },
         { question: "Can my family watch my full commute?", answer: "MySentry does not describe unrestricted continuous family tracking. Supported location or alert context follows the selected feature, permissions, settings, and active workflow." },
         { question: "Do I need a smartwatch on night shift?", answer: "No wearable is required for every feature. Supported controls, detection, and wellness context require an eligible watch and current compatibility." },
-        { question: "Does MySentry replace the hospital's after-hours security process?", answer: "No. Follow employer entrance, escort, security, reporting, and emergency procedures. MySentry is supplemental." },
+        { question: "How does MySentry fit with the hospital's after-hours security process?", answer: "Follow employer entrance, escort, security, reporting, and emergency procedures. MySentry can add approved personal alerts, Safety Checks, contacts, context, and eligible monitoring to the wider plan." },
         { question: "Can my employer include MySentry in a night-shift program?", answer: "Employers can review options, but policy alignment, employee consent, privacy, device eligibility, permissions, region, connectivity, and response roles must be established first." },
       ]}
       relatedLinks={[

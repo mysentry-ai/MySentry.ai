@@ -43,7 +43,7 @@ export default function PanicButtonApp() {
         { question: "How can I activate the Panic Alarm?", answer: "Available controls may include the MySentry app, a supported watch, or a configured voice command. Exact options depend on device, software, plan, settings, permissions, and region." },
         { question: "Does the Panic Alarm guarantee emergency dispatch?", answer: "No. An eligible monitoring agent may coordinate with trusted contacts or emergency services when appropriate, but contact, escalation, response, and arrival are not guaranteed." },
         { question: "What information may be shared?", answer: "Depending on the supported workflow and your permissions, available alert type, location, audio, video, contact, or account context may be shared." },
-        { question: "Does MySentry replace calling 911?", answer: "No. If you can safely call 911 or local emergency services, do so directly. MySentry is a supplemental personal safety service." },
+        { question: "When should I call 911 directly?", answer: "If you can safely call 911 or local emergency services during an immediate emergency, do so. MySentry adds supported panic triggers, permitted context, configured contacts, and eligible 24/7 professional monitoring." },
       ]}
       setupRequirements={{
         devices: "A currently supported smartphone. Watch and voice controls require additional supported devices, software, and setup.",

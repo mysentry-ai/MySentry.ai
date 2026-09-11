@@ -47,7 +47,7 @@ export default function Features() {
                 "name": "How is MySentry different from the health tracking my Apple Watch or Samsung Watch already does?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "A supported watch may provide eligible wellness signals and motion events to MySentry. The app can organize available information for alerts and monitoring workflows, but it is not a medical device and does not diagnose a health condition."
+                  "text": "Apple Watch and Samsung Galaxy Watch provide native safety and wellness features. MySentry adds configured voice panic, AI-supported wellness analysis, mixed-device family alerts, permitted phone context, and eligible 24/7 professional monitoring around supported events."
                 }
               },
               {

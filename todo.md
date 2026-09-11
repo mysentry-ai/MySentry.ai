@@ -1175,3 +1175,14 @@
 - [x] Add or update metadata, schema, canonical, sitemap, internal links, and noindex governance for the final comparison pages without publishing unsupported claims
 - [x] Add regression tests for factual boundaries, page structure, prohibited punctuation, visibility, metadata, and responsive rendering
 - [x] Validate desktop and mobile rendering, contrast, SEO, factual source mapping, and public routes, then checkpoint and synchronize the complete release to `zigroninc/MySentry.ai` main
+
+## Cross-Platform MySentry Positioning and Disclaimer Removal (September 2026)
+- [x] Verify the user-confirmed 24/7 monitoring, verified emergency escalation, AI-supported wellness review, panic workflow, voice-enabled panic triggering, live location, phone streaming, and mixed-device family capabilities against the current MySentry knowledgebase and approved app screens
+- [x] Inventory every public marketing and comparison occurrence of the repeated blanket supplemental-service disclaimer and distinguish it from legal, privacy, terms, evidence-hold, or status-page notices
+- [x] Remove the repeated blanket disclaimer block from public marketing and comparison pages without weakening legally necessary disclosures or factual setup and availability conditions
+- [x] Rewrite the Apple Watch comparison to clearly explain why MySentry adds value beyond watch-only fall detection, Emergency SOS, and contact notification, including voice-enabled panic triggering when the user cannot reach a phone or watch
+- [x] Rewrite the Samsung Galaxy Watch comparison to explain the same cross-platform MySentry monitoring and family-connectivity value using Samsung-specific official facts
+- [x] Explain how iOS and Android family members and supported Apple and Samsung wearables can participate in one MySentry safety workflow, subject to verified compatibility, permissions, connectivity, plan, region, and service availability
+- [x] Apply StoryBrand and the non-deceptive editorial-quality review, preserving simple human language, factual sourcing, no medical-diagnosis claims, and no em dashes
+- [x] Add regression tests for removed disclaimer blocks, verified capabilities, cross-platform family messaging, source links, claim boundaries, metadata, schema, and visibility
+- [x] Validate TypeScript, all tests, production build, public routes, SEO, sitemap, desktop/mobile rendering, and text contrast, then checkpoint and synchronize the release to `zigroninc/MySentry.ai` main

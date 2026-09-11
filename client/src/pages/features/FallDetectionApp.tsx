@@ -43,7 +43,7 @@ export default function FallDetectionApp() {
         { question: "Does fall detection require a smartwatch?", answer: "Yes. MySentry fall detection requires a currently supported watch and phone configuration. Confirm exact models and software before enrollment." },
         { question: "Does MySentry detect every fall?", answer: "No. Detection depends on the device, how it is worn, sensor data, app state, settings, permissions, connectivity, and the circumstances of the event." },
         { question: "What happens after a possible fall?", answer: "The app may begin a safety check. If the alert continues, permitted context may be routed to configured contacts and an eligible monitoring workflow." },
-        { question: "Is MySentry a medical alert device?", answer: "No. MySentry is a supplemental personal safety and wellness service, not a medical device or a replacement for emergency services." },
+        { question: "What does MySentry add after a supported fall event?", answer: "MySentry can connect an eligible fall event to a Safety Check or Panic Alarm workflow, configured contacts, permitted incident context, and eligible 24/7 professional monitoring." },
       ]}
       setupRequirements={{
         devices: "A currently supported watch, phone, and software version. Confirm exact eligibility before relying on the feature.",

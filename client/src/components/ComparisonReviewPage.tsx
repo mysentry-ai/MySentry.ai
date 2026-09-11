@@ -56,8 +56,8 @@ export default function ComparisonReviewPage({ competitor, canonical }: Comparis
               </div>
             </div>
 
-            <p className="mt-8 max-w-3xl text-sm leading-relaxed text-[#64748B]">
-              MySentry is a supplemental personal safety and wellness service. It is not a medical device or a replacement for calling 911 or local emergency services. Feature availability and outcomes depend on plan, device, permissions, app state, connectivity, region, and third parties.
+            <p className="mt-8 max-w-3xl text-sm leading-relaxed text-[#475569]">
+              Published comparisons will explain the verified alert workflow, available context, monitoring role, setup requirements, and current service conditions for each product.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
