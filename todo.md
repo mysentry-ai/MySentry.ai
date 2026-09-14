@@ -1,5 +1,11 @@
 # MySentry Website TODO
 
+## Feature Page Visual Refresh (September 2026)
+- [x] Remove the empty generic `Feature` hero label from detailed feature pages and reserve responsive clearance below the fixed navigation.
+- [x] Add a relevant, high-resolution app screen or editorial visual to every currently detailed, active feature route.
+- [x] Replace the legacy How It Works hero montage and outdated lower-page mockups with supplied current MySentry Panic, Fall Detection, Family Connectivity, Vitals, Live Video, MeetSafe, and app-home screens.
+- [x] Verify desktop and mobile visibility, high-contrast copy, responsive header clearance, image delivery, TypeScript, full regression tests, production build, and public-content punctuation policy.
+
 ## SEO, AEO, and GEO Master Prompt Implementation (August 2026)
 - [x] Extract and classify every requirement in MySentry_Manus_1.6_Max_Website_SEO_AEO_GEO_Master_Prompt.docx
 - [x] Audit every registered public route against the document's content, SEO, AEO, GEO, accessibility, conversion, and internal-linking requirements

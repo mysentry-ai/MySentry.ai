@@ -61,6 +61,8 @@ export default function CrashDetection() {
         { text: "Teen Driver Safety", href: "/use-cases/teen-driver-safety" },
         { text: "Compare Plans", href: "/pricing" },
       ]}
+      heroImage="/images/challenge-senior-crash-800w.jpg"
+      heroImageAlt="Older adult driving, illustrating travel-safety planning"
     />
   );
 }

@@ -61,6 +61,9 @@ export default function SafetyCheckInApp() {
         { text: "Professional Monitoring", href: "/features/24-7-professional-monitoring" },
         { text: "Compare Plans", href: "/pricing" },
       ]}
+      heroImage="/manus-storage/meetsafe-iphone_64344647.png"
+      heroImageAlt="MySentry MeetSafe screen for preparing an upcoming meeting"
+      heroImagePresentation="app-screen"
     />
   );
 }

@@ -58,7 +58,9 @@ export default function LiveVideoResponse() {
         { text: "Safety Check-In App", href: "/features/safety-check-in-app" },
         { text: "Review Plans and Eligibility", href: "/pricing" },
       ]}
-      heroImage="/images/feature-video.jpg"
+      heroImage="/manus-storage/panic-contact-iphone_209727c2.png"
+      heroImageAlt="MySentry app active alert screen labeled Live video"
+      heroImagePresentation="app-screen"
     />
   );
 }

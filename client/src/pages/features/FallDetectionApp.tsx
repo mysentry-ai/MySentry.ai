@@ -62,6 +62,9 @@ export default function FallDetectionApp() {
         { text: "Professional Monitoring", href: "/features/24-7-professional-monitoring" },
         { text: "Senior Safety", href: "/seniors" },
       ]}
+      heroImage="/manus-storage/watch-fall-detection_d7e1fea3.png"
+      heroImageAlt="MySentry smartwatch screen for a supported fall-detection workflow"
+      heroImagePresentation="app-screen"
     />
   );
 }

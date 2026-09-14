@@ -61,6 +61,9 @@ export default function FamilyConnectivity() {
         { text: "Family Safety", href: "/families" },
         { text: "Compare Plans", href: "/pricing" },
       ]}
+      heroImage="/manus-storage/family-connectivity_e54f4d24.png"
+      heroImageAlt="MySentry Family Connectivity screen for trusted-contact coordination"
+      heroImagePresentation="app-screen"
     />
   );
 }

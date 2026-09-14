@@ -71,8 +71,10 @@ interface SEOPageTemplateProps {
   };
   // Internal links
   relatedLinks: { text: string; href: string }[];
-  // Optional image
+  // Optional hero visual
   heroImage?: string;
+  heroImageAlt?: string;
+  heroImagePresentation?: "editorial" | "app-screen";
 }
 
 export default function SEOPageTemplate({
@@ -101,8 +103,11 @@ export default function SEOPageTemplate({
   comparisonTable,
   relatedLinks,
   heroImage,
+  heroImageAlt,
+  heroImagePresentation = "editorial",
 }: SEOPageTemplateProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const showHeroLabel = label.trim().toLowerCase() !== "feature";
 
   // Build FAQPage schema
   const faqSchema: Record<string, unknown> = {
@@ -145,12 +150,14 @@ export default function SEOPageTemplate({
         schema={allSchemas}
       />
 
-      {/* Hero Section  -  lean above-the-fold: label + H1 + subtitle + CTAs only */}
-      <section className="flex min-h-[calc(100vh-80px)] items-start bg-gradient-to-b from-[#e8f5e9] to-white pt-20 lg:items-center lg:pt-0">
-        <div className="container mx-auto max-w-6xl px-4 py-12 sm:py-16">
+      {/* Hero Section */}
+      <section className="flex min-h-[calc(100vh-80px)] items-start bg-gradient-to-b from-[#e8f5e9] to-white pt-32 sm:pt-36 lg:min-h-[calc(100vh-96px)] lg:items-center lg:pt-36 xl:pt-40">
+        <div className="container mx-auto max-w-6xl px-4 py-12 sm:py-16 lg:py-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">{label}</span>
+              {showHeroLabel && (
+                <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">{label}</span>
+              )}
               <h1 className="text-4xl md:text-[55px] leading-tight font-heading font-bold text-[#1a1a1a] mb-3 uppercase tracking-tighter">
                 {h1}
               </h1>
@@ -185,15 +192,28 @@ export default function SEOPageTemplate({
             </div>
 
             {heroImage && (
-              <div className="hidden lg:block">
-                <img
-                  src={heroImage}
-                  alt={h1}
-                  className="rounded-3xl shadow-2xl w-full object-cover"
-                  loading="eager"
-                  width={600}
-                  height={400}
-                />
+              <div className="flex w-full justify-center">
+                {heroImagePresentation === "app-screen" ? (
+                  <div className="flex min-h-[320px] w-full max-w-[360px] items-center justify-center sm:min-h-[380px] lg:min-h-[460px] lg:max-w-[410px]">
+                    <img
+                      src={heroImage}
+                      alt={heroImageAlt ?? h1}
+                      className="max-h-[440px] w-auto max-w-full object-contain drop-shadow-2xl sm:max-h-[500px] lg:max-h-[560px]"
+                      loading="eager"
+                      width={600}
+                      height={900}
+                    />
+                  </div>
+                ) : (
+                  <img
+                    src={heroImage}
+                    alt={heroImageAlt ?? h1}
+                    className="w-full max-w-[560px] rounded-3xl object-cover shadow-2xl"
+                    loading="eager"
+                    width={600}
+                    height={400}
+                  />
+                )}
               </div>
             )}
           </div>

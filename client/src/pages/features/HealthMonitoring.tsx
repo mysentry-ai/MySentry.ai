@@ -61,6 +61,9 @@ export default function HealthMonitoring() {
         { text: "Professional Monitoring", href: "/features/24-7-professional-monitoring" },
         { text: "Compare Plans", href: "/pricing" },
       ]}
+      heroImage="/manus-storage/health-vitals-phone-cropped_3c4f6e97.png"
+      heroImageAlt="MySentry Vitals screen showing a personal baseline and supported wellness signals"
+      heroImagePresentation="app-screen"
     />
   );
 }

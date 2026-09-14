@@ -61,6 +61,9 @@ export default function PanicButtonApp() {
         { text: "Safety Check-In App", href: "/features/safety-check-in-app" },
         { text: "Compare Plans", href: "/pricing" },
       ]}
+      heroImage="/manus-storage/panic-user-iphone_e6412ed5.png"
+      heroImageAlt="MySentry app screen with a Panic Alarm control and trusted contact options"
+      heroImagePresentation="app-screen"
     />
   );
 }

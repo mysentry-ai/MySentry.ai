@@ -58,7 +58,9 @@ export default function ProfessionalMonitoring() {
         { text: "How MySentry Works", href: "/how-it-works" },
         { text: "Review Plans and Eligibility", href: "/pricing" },
       ]}
-      heroImage="/images/home-monitoring-center.jpg"
+      heroImage="/manus-storage/panic-contact-iphone_209727c2.png"
+      heroImageAlt="MySentry app active alert screen with permitted live-video context"
+      heroImagePresentation="app-screen"
     />
   );
 }

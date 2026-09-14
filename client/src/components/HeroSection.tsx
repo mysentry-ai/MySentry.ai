@@ -19,6 +19,10 @@ interface HeroSectionProps {
   /** Optional phone mockup image shown on the right side of the hero */
   phoneMockupSrc?: string;
   phoneMockupAlt?: string;
+  /** Removes a legacy background visual when an app screen is the primary hero visual. */
+  showBackgroundImage?: boolean;
+  /** Keeps a supplied app screen visible beneath the copy on small screens. */
+  showPhoneMockupOnMobile?: boolean;
 }
 
 export default function HeroSection({
@@ -35,24 +39,28 @@ export default function HeroSection({
   children,
   phoneMockupSrc,
   phoneMockupAlt = "MySentry app dashboard",
+  showBackgroundImage = true,
+  showPhoneMockupOnMobile = false,
 }: HeroSectionProps) {
   return (
     <section className={cn("relative min-h-screen flex items-center bg-[#e8f5e9] pt-32 md:pt-40 lg:pt-24 pb-20 overflow-hidden", className)}>
-      <div className="absolute inset-0 z-0">
-         <img
-           src={imageSrc}
-           alt={imageAlt}
-           className="absolute inset-0 w-full h-full object-cover opacity-60"
-           loading="eager"
-           fetchPriority="high"
-           width="1920"
-           height="1080"
-         />
-         <div className="absolute inset-0 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent z-10" />
-      </div>
+      {showBackgroundImage && (
+        <div className="absolute inset-0 z-0">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
+            loading="eager"
+            fetchPriority="high"
+            width="1920"
+            height="1080"
+          />
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-[#e8f5e9] via-[#e8f5e9]/90 to-transparent" />
+        </div>
+      )}
 
       <div className="container relative z-20 mt-8 md:mt-12 lg:mt-0">
-        <div className={cn("flex items-center gap-12", phoneMockupSrc ? "lg:grid lg:grid-cols-2" : "")}>
+        <div className={cn("flex items-center gap-12", phoneMockupSrc ? "flex-col lg:grid lg:grid-cols-2" : "")}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -91,7 +99,10 @@ export default function HeroSection({
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.9, delay: 0.2 }}
-              className="hidden lg:flex justify-center items-end"
+              className={cn(
+                "justify-center items-end",
+                showPhoneMockupOnMobile ? "flex mt-4 lg:mt-0" : "hidden lg:flex"
+              )}
             >
               <motion.div
                 animate={{ y: [0, -15, 0] }}
@@ -103,7 +114,12 @@ export default function HeroSection({
                 <img
                   src={phoneMockupSrc}
                   alt={phoneMockupAlt}
-                  className="relative z-10 w-[350px] md:w-[400px] lg:w-[420px] xl:w-[480px] drop-shadow-2xl rounded-[2.5rem] -mb-[145px]"
+                  className={cn(
+                    "relative z-10 drop-shadow-2xl rounded-[2.5rem]",
+                    showPhoneMockupOnMobile
+                      ? "w-[240px] sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[480px] -mb-8 lg:-mb-[145px]"
+                      : "w-[350px] md:w-[400px] lg:w-[420px] xl:w-[480px] -mb-[145px]"
+                  )}
                   loading="eager"
                   width="480" height="1040"
                 />

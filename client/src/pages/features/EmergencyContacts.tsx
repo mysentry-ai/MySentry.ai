@@ -61,6 +61,9 @@ export default function EmergencyContacts() {
         { text: "Professional Monitoring", href: "/features/24-7-professional-monitoring" },
         { text: "Compare Plans", href: "/pricing" },
       ]}
+      heroImage="/manus-storage/contact-1-iphone_86f27364.png"
+      heroImageAlt="MySentry app screen for emergency contacts and contact setup"
+      heroImagePresentation="app-screen"
     />
   );
 }

@@ -56,7 +56,9 @@ export default function AutomatedCall() {
         { text: "Safety App for Women", href: "/use-cases/safety-app-for-women" },
         { text: "Review Plans and Eligibility", href: "/pricing" },
       ]}
-      heroImage="/images/challenge-female-bad-date-800w.jpg"
+      heroImage="/manus-storage/home-iphone_106132ba.png"
+      heroImageAlt="MySentry app home screen with an Automated Call tool in the navigation"
+      heroImagePresentation="app-screen"
     />
   );
 }

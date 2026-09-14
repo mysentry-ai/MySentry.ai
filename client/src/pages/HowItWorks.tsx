@@ -3,7 +3,7 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import ResponsiveImage from "@/components/ResponsiveImage";
-import { ShieldAlert, Activity, Car, HeartPulse, Video, Smartphone, Watch, Check, ArrowRight, AlertTriangle, MapPin, Zap, CheckCircle2, Lock, Users, TrendingDown, Play, Phone, Heart } from "lucide-react";
+import { ShieldAlert, Activity, Car, HeartPulse, Video, Smartphone, Watch, Check, ArrowRight, AlertTriangle, MapPin, Zap, CheckCircle2, Lock, Users, Play, Phone, Heart } from "lucide-react";
 import HeroSection from "@/components/HeroSection";
 import AlertDemo from "@/components/AlertDemo";
 import { motion } from "framer-motion";
@@ -91,8 +91,12 @@ export default function Features() {
       <HeroSection
         label="Advanced Protection System"
         title={<>Your Smartwatch Collects Data.<br/><span className="text-gray-600">MySentry Gives You Answers.</span></>}
-        imageSrc="/images/how-it-works-hero.png"
-        imageAlt="Happy senior checking smartwatch"
+        imageSrc="/manus-storage/home-iphone_106132ba.png"
+        imageAlt="Current MySentry app home screen"
+        phoneMockupSrc="/manus-storage/home-iphone_106132ba.png"
+        phoneMockupAlt="Current MySentry app home screen with Panic, Family Connectivity, Health Monitoring, MeetSafe, and Automated Call controls"
+        showBackgroundImage={false}
+        showPhoneMockupOnMobile
       />
 
       {/* ACTIVATION STEPS - 3-Step Process */}
@@ -262,7 +266,7 @@ export default function Features() {
               <span className="text-gray-300">For Peace of Mind.</span>
             </h2>
             <p className="text-xl md:text-2xl text-white mb-10 leading-relaxed max-w-2xl font-medium">
-              Explore the powerful technology that keeps you safe, connected, and independent every single day.
+              Explore the supported safety tools, permission choices, and response steps you can prepare before an alert.
             </p>
           </motion.div>
         </div>
@@ -291,10 +295,10 @@ export default function Features() {
             </p>
             <ul className="space-y-4">
               {[
-                "One-tap panic button on phone and watch",
-                "Voice activation ('Hey Siri Need Help')",
-                "Prompt live video connection",
-                "Automatic location & health data sharing"
+                "Available Panic Alarm controls on supported phones and watches",
+                "Configured voice control on supported setups",
+                "Permitted phone audio or video during an eligible alert",
+                "Available context shared according to your settings"
               ].map((feature, i) => (
                 <li key={i} className="flex items-center gap-4 border-b border-gray-100 pb-4 last:border-0">
                   <CheckCircle2 className="h-6 w-6 text-red-600 flex-shrink-0" />
@@ -311,7 +315,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="relative w-full">
-              <img src="/images/frame-1.png" alt="MySentry PANIC button screen on iPhone showing one-tap emergency activation" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
+              <img src="/manus-storage/panic-user-iphone_e6412ed5.png" alt="MySentry app screen with a Panic Alarm control and trusted contact options" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="558" height="1086" />
             </div>
           </motion.div>
         </div>
@@ -328,7 +332,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/frame-6.png" alt="MySentry fall detection alert screen showing automatic detection and safety check timeout" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
+              <img src="/manus-storage/watch-fall-detection_d7e1fea3.png" alt="MySentry smartwatch screen for a supported fall-detection workflow" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="758" height="1279" />
             </div>
           </motion.div>
           <div>
@@ -337,18 +341,18 @@ export default function Features() {
               <span className="text-primary font-bold uppercase tracking-widest text-sm">Feature 02</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase leading-none tracking-tight mb-8 text-[#1a1a1a]">
-              Detects Falls.<br/>
-              <span className="text-gray-500">Automatically.</span>
+              A Fall Check-In.<br/>
+              <span className="text-gray-500">When You May Need It.</span>
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-10">
               A compatible smartwatch may identify a fall-like event and begin a Safety Check. If you do not respond, the active workflow may share permitted context with monitoring or trusted contacts. It does not guarantee dispatch, response, or arrival. You can use an available personal-alert control when appropriate.
             </p>
             <div className="grid grid-cols-2 gap-6">
               {[
-                { title: "Prompt", desc: "Panic Alarm" },
-                { title: "Hands-Free", desc: "Auto-Activation" },
-                { title: "Any Angle", desc: "360° Monitoring" },
-                { title: "Live Video", desc: "Prompt Context" }
+                { title: "Supported Setup", desc: "Watch And Phone" },
+                { title: "Safety Check", desc: "Prompt To Respond" },
+                { title: "Permitted Context", desc: "Based On Settings" },
+                { title: "Eligible Monitoring", desc: "When Available" }
               ].map((item, i) => (
                 <div key={i} className="border border-green-200 bg-white/50 p-6 rounded-xl hover:bg-white transition-colors shadow-sm">
                   <h4 className="text-3xl font-bold text-[#1a1a1a] mb-1">{item.title}</h4>
@@ -360,7 +364,7 @@ export default function Features() {
         </div>
       </section>
 
-      {/* FEATURE 3: NEAR-FALL DETECTION */}
+      {/* FEATURE 3: SAFETY CHECK ALERT */}
       <section id="near-fall-detection" className="py-24 bg-white scroll-mt-20">
         <div className="container grid lg:grid-cols-2 gap-20 items-center">
           <div className="order-2 lg:order-1">
@@ -369,17 +373,17 @@ export default function Features() {
               <span className="text-orange-600 font-bold uppercase tracking-widest text-sm">Feature 03</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase leading-none tracking-tight mb-8 text-[#1a1a1a]">
-              Near-Fall<br/>Detection.
+              A Safety Check<br/>After A Possible Event.
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              We don't just detect falls. We predict them. Identify instability before an accident happens by monitoring walking patterns and balance.
+              MySentry does not claim to predict falls, assess balance, or prevent injuries. On an eligible setup, a user can respond to a Safety Check after a supported device identifies a possible event.
             </p>
             <div className="bg-orange-50 p-8 rounded-2xl border border-orange-100">
               <div className="flex items-start gap-4">
-                <TrendingDown className="h-8 w-8 text-orange-600 mt-1" />
+                <ShieldAlert className="h-8 w-8 text-orange-600 mt-1" />
                 <div>
-                  <h4 className="text-xl font-bold text-[#1a1a1a] mb-2">Proactive Prevention</h4>
-                  <p className="text-gray-600">Get alerts when your gait shows signs of shuffling or asymmetry, allowing you to take action before a fall occurs.</p>
+                  <h4 className="text-xl font-bold text-[#1a1a1a] mb-2">Prepared Next Steps</h4>
+                  <p className="text-gray-600">Choose contacts, permissions, and a response plan before you need to confirm that you are safe.</p>
                 </div>
               </div>
             </div>
@@ -392,7 +396,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/near-fall-detection-feature.svg" alt="Near-Fall Detection - Phone and Watch showing stumble alert" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="259" height="302" />
+              <img src="/manus-storage/watch-fall-detection_d7e1fea3.png" alt="MySentry smartwatch screen for a supported fall-related safety check" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="758" height="1279" />
             </div>
           </motion.div>
         </div>
@@ -409,7 +413,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/crash-detection-feature.svg" alt="Crash Detection - Phone and Watch showing crash detected alert" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="258" height="301" />
+              <img src="/images/challenge-senior-crash-800w.jpg" alt="Older adult driving, illustrating travel-safety planning" className="w-full h-auto object-contain max-h-[600px] rounded-3xl shadow-xl" loading="lazy" width="800" height="533" />
             </div>
           </motion.div>
           <div>
@@ -419,19 +423,19 @@ export default function Features() {
             </div>
             <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase leading-none tracking-tight mb-8 text-[#1a1a1a]">
               Crash Detection.<br/>
-              Prompt Response.
+              Safety Check First.
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed mb-10">
-              Driving alone? If you crash, MySentry detects the impact and calls for help promptly. We send your exact GPS location to first responders when every second counts.
+              A supported phone may identify a crash-like event and begin a Safety Check. If the alert continues, available permitted location or other context may follow the configured workflow for review.
             </p>
             <div className="flex gap-4">
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-md px-6 py-3 rounded-full border border-green-200 shadow-sm">
                 <Car className="h-5 w-5 text-blue-600" />
-                <span className="font-bold uppercase tracking-wide text-sm text-[#1a1a1a]">Auto-Activate</span>
+                <span className="font-bold uppercase tracking-wide text-sm text-[#1a1a1a]">Supported Device</span>
               </div>
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-md px-6 py-3 rounded-full border border-green-200 shadow-sm">
                 <MapPin className="h-5 w-5 text-blue-600" />
-                <span className="font-bold uppercase tracking-wide text-sm text-[#1a1a1a]">GPS Pinpoint</span>
+                <span className="font-bold uppercase tracking-wide text-sm text-[#1a1a1a]">Available Location</span>
               </div>
             </div>
           </div>
@@ -473,7 +477,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/iphone-175.png" alt="MySentry Family Connectivity screen showing live location sharing and emergency contacts" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
+              <img src="/manus-storage/family-connectivity_e54f4d24.png" alt="MySentry Family Connectivity screen for trusted-contact coordination" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="558" height="1086" />
             </div>
           </motion.div>
         </div>
@@ -490,7 +494,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/frame-8.png" alt="MySentry wellness screen showing available signals and trend context on a supported device" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
+              <img src="/manus-storage/health-vitals-phone-cropped_3c4f6e97.png" alt="MySentry Vitals screen showing a personal baseline and supported wellness signals" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="494" height="960" />
             </div>
           </motion.div>
           <div>
@@ -527,7 +531,7 @@ export default function Features() {
               <span className="text-indigo-600 font-bold uppercase tracking-widest text-sm">Feature 07</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-heading font-bold uppercase leading-none tracking-tight mb-8 text-[#1a1a1a]">
-              Live Video<br/>Streaming.
+              Live Video<br/>Context.
             </h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
               During an eligible alert, permissioned live video may provide additional incident context to the monitoring workflow. Availability depends on permissions, connectivity, plan eligibility, and system conditions.
@@ -548,7 +552,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/iphone-168.png" alt="MySentry live video streaming screen showing emergency video call to monitoring agent" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="390" height="844" />
+              <img src="/manus-storage/panic-contact-iphone_209727c2.png" alt="MySentry active alert screen labeled Live video" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="548" height="1114" />
             </div>
           </motion.div>
         </div>
@@ -565,7 +569,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/WebMysentry(11).svg" alt="MeetSafe - Meetings and Meet Safe with Voice" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="255" height="313" />
+              <img src="/manus-storage/meetsafe-iphone_64344647.png" alt="MySentry MeetSafe screen for preparing an upcoming meeting" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="548" height="1081" />
             </div>
           </motion.div>
           <div>
@@ -584,7 +588,7 @@ export default function Features() {
                 <div className="h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center">
                   <Lock className="h-5 w-5 text-teal-600" />
                 </div>
-                <span className="text-lg font-medium text-gray-800">Set timer for dates or sales</span>
+                <span className="text-lg font-medium text-gray-800">Set a check-in for an activity or meeting</span>
               </div>
               <div className="flex items-center gap-4">
                 <div className="h-10 w-10 rounded-full bg-teal-100 flex items-center justify-center">
