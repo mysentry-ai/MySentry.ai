@@ -84,6 +84,7 @@ const STATIC_PAGES = [
   { url: "/privacy", priority: "0.3", changefreq: "yearly" },
   { url: "/account-deletion", priority: "0.3", changefreq: "yearly" },
   { url: "/terms", priority: "0.3", changefreq: "yearly" },
+  { url: "/sms-consent", priority: "0.3", changefreq: "yearly" },
 ];
 
 const BASE_URL = "https://mysentry.ai";

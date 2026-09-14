@@ -86,6 +86,11 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       "Read the Terms and Conditions for using MySentry services, including the mobile app, website, and 24/7 monitoring platform.",
   },
+  "/sms-consent": {
+    title: "SMS Communication Consent",
+    description:
+      "Review MySentry's optional consent for requested one-to-one customer care SMS, including message types, STOP instructions, HELP, and legal links.",
+  },
 
   // ─── Audience pages ───────────────────────────────────────────────────────
   "/employers": {

@@ -28,6 +28,7 @@ import Privacy from "./pages/Privacy";
 import AccountDeletion from "./pages/AccountDeletion";
 import Partners from "./pages/Partners";
 import Terms from "./pages/Terms";
+import SmsConsent from "./pages/SmsConsent";
 
 // SEO Pages - Features
 import FeaturesHub from "./pages/features/FeaturesHub";
@@ -171,6 +172,7 @@ function Router() {
       <Route path="/partner">{() => <RedirectRoute to="/partners" />}</Route>
       <Route path="/partners" component={Partners} />
       <Route path="/terms" component={Terms} />
+      <Route path="/sms-consent" component={SmsConsent} />
 
       {/* SEO Pages - Features */}
       <Route path="/features" component={FeaturesHub} />

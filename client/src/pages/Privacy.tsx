@@ -5,6 +5,9 @@ import SEO from '../components/SEO';
 import HeroSection from "@/components/HeroSection";
 import { Menu, X } from 'lucide-react';
 
+const SMS_PRIVACY_DISCLOSURE = `We will not share your opt-in to an SMS campaign with any third party for purposes unrelated to providing you with the services of that campaign. We may share your Personal Data, including your SMS opt-in or consent status, with third parties that help us provide our messaging services, including but not limited to platform providers, phone companies, and any other vendors who assist us in the delivery of text messages.
+All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.`;
+
 export const Privacy = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -22,6 +25,7 @@ export const Privacy = () => {
     { title: "Artificial Intelligence (AI) and Automated Data Processing", id: "artificial-intelligence-ai-and-automated-data-processing" },
     { title: "Data Retention", id: "data-retention" },
     { title: "Sharing of Information with Third Parties", id: "third-party-sharing" },
+    { title: "SMS Communications", id: "sms-communications" },
     { title: "Privacy Rights and Data Requests", id: "privacy-rights-requests" },
     { title: "User Choices and Opt-Out Options", id: "opt-out-options" },
     { title: "Effect of Opting Out of Certain Data Uses", id: "effect-of-opting-out" },
@@ -338,6 +342,11 @@ export const Privacy = () => {
             </p>
             <p className="text-gray-900 mb-6">
               Where applicable, MySentry requires service providers and sub-processors to handle data subject to contractual, confidentiality, and data protection obligations.
+            </p>
+
+            <h3 id="sms-communications" className="text-xl border-b border-gray-100 pb-3 text-gray-900 font-bold mt-12 mb-6 scroll-mt-24">SMS Communications</h3>
+            <p className="whitespace-pre-line text-gray-900 mb-6">
+              {SMS_PRIVACY_DISCLOSURE}
             </p>
 
             {/* Section 13 */}

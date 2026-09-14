@@ -191,6 +191,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link onClick={() => window.scrollTo(0, 0)} href="/sms-consent" className="text-gray-900 hover:text-primary transition-colors">
+                  SMS Communication Consent
+                </Link>
+              </li>
+              <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/account-deletion" className="text-gray-900 hover:text-primary transition-colors">
                   Account Deletion
                 </Link>
