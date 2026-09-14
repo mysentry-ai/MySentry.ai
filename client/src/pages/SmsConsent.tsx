@@ -1,16 +1,7 @@
-import { useState } from "react";
-import { Link } from "wouter";
-import {
-  CheckCircle2,
-  CircleHelp,
-  MessageSquareText,
-  ShieldCheck,
-} from "lucide-react";
+import { CheckCircle2, CircleHelp, ShieldCheck } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
-
-const SMS_CONSENT_TEXT =
-  "By clicking here you consent to receive customer care-related or one-on-one communication messages from MySentry. Message frequency may vary. Standard Message and Data Rates may apply. Reply STOP to opt out. Reply Help for help.";
+import SmsConsentForm from "@/components/SmsConsentForm";
 
 const messageTypes = [
   "Requested MySentry product information",
@@ -23,8 +14,6 @@ const messageTypes = [
 ];
 
 export default function SmsConsent() {
-  const [hasSmsConsent, setHasSmsConsent] = useState(false);
-
   return (
     <Layout>
       <SEO />
@@ -47,74 +36,17 @@ export default function SmsConsent() {
               <p className="mt-4 text-lg leading-8 text-gray-800">
                 MySentry uses SMS for one-to-one customer follow-up after a
                 person requests information during a call, inquiry, or product
-                conversation. Before sending SMS messages, MySentry confirms
-                that the recipient agrees to receive the requested information
-                by text.
+                conversation. The form below records the recipient details,
+                Privacy Policy acknowledgment, and SMS consent before a
+                MySentry team member follows up.
               </p>
             </div>
           </div>
         </section>
 
-        <section
-          className="container py-12 sm:py-16"
-          aria-labelledby="sms-consent-heading"
-        >
-          <div className="mx-auto max-w-3xl rounded-3xl border border-[#0b6848]/20 bg-white p-6 shadow-sm sm:p-8">
-            <div className="flex items-start gap-4">
-              <MessageSquareText
-                className="mt-1 h-7 w-7 shrink-0 text-[#005f91]"
-                aria-hidden="true"
-              />
-              <div>
-                <h2
-                  id="sms-consent-heading"
-                  className="text-2xl font-black tracking-tight text-gray-950 sm:text-3xl"
-                >
-                  SMS communication consent
-                </h2>
-                <p className="mt-3 leading-7 text-gray-700">
-                  This optional selection confirms permission to receive the
-                  requested customer care-related information by text message.
-                </p>
-              </div>
-            </div>
-
-            <div className="mt-7 rounded-2xl border border-[#005f91]/25 bg-[#eaf5fb] p-5 sm:p-6">
-              <div className="flex items-start gap-4">
-                <input
-                  id="sms-consent-checkbox"
-                  name="sms-consent"
-                  type="checkbox"
-                  checked={hasSmsConsent}
-                  onChange={event => setHasSmsConsent(event.target.checked)}
-                  aria-labelledby="sms-consent-statement"
-                  className="mt-1 h-5 w-5 shrink-0 rounded border-[#0b6848] accent-[#005f91] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#005f91]/30"
-                />
-                <div
-                  id="sms-consent-statement"
-                  className="text-base leading-7 text-gray-950"
-                >
-                  <label
-                    htmlFor="sms-consent-checkbox"
-                    className="cursor-pointer font-medium"
-                  >
-                    {SMS_CONSENT_TEXT}
-                  </label>{" "}
-                  <Link
-                    href="/privacy"
-                    className="font-bold text-[#005f91] underline decoration-2 underline-offset-4 hover:text-[#004f7b] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#005f91]/25"
-                  >
-                    Privacy Policy
-                  </Link>{" "}
-                  <Link
-                    href="/terms"
-                    className="font-bold text-[#005f91] underline decoration-2 underline-offset-4 hover:text-[#004f7b] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#005f91]/25"
-                  >
-                    Terms
-                  </Link>
-                </div>
-              </div>
-            </div>
+        <section className="container py-12 sm:py-16" aria-label="SMS consent confirmation form">
+          <div className="mx-auto max-w-3xl">
+            <SmsConsentForm source="sms-consent-page" />
           </div>
         </section>
 
@@ -180,7 +112,7 @@ export default function SmsConsent() {
                 Reply HELP for help.
               </p>
               <p className="mt-3 leading-7 text-gray-700">
-                MySentry support:{" "}
+                MySentry support: {" "}
                 <a
                   href="mailto:support@mysentry.ai"
                   className="font-bold text-[#005f91] underline decoration-2 underline-offset-4 hover:text-[#004f7b]"

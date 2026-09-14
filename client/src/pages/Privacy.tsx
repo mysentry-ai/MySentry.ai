@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import HeroSection from "@/components/HeroSection";
+import SmsConsentForm from "@/components/SmsConsentForm";
 import { Menu, X } from 'lucide-react';
 
 const SMS_PRIVACY_DISCLOSURE = `We will not share your opt-in to an SMS campaign with any third party for purposes unrelated to providing you with the services of that campaign. We may share your Personal Data, including your SMS opt-in or consent status, with third parties that help us provide our messaging services, including but not limited to platform providers, phone companies, and any other vendors who assist us in the delivery of text messages.
@@ -348,6 +349,13 @@ export const Privacy = () => {
             <p className="whitespace-pre-line text-gray-900 mb-6">
               {SMS_PRIVACY_DISCLOSURE}
             </p>
+            <div className="my-10">
+              <SmsConsentForm
+                source="privacy-policy"
+                title="Confirm your SMS communication consent"
+                description="If you want MySentry to send requested customer care-related information by text, enter the recipient details and confirm the Privacy Policy acknowledgment and SMS consent below."
+              />
+            </div>
 
             {/* Section 13 */}
             <h2 id="privacy-rights-requests" className="text-2xl border-b border-gray-100 pb-4 text-gray-900 font-bold mt-16 mb-8 scroll-mt-24">Privacy Rights and Data Requests</h2>

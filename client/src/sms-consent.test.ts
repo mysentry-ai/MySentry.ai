@@ -24,15 +24,16 @@ function visitorSourceFiles(): string[] {
       else if (
         /\.(ts|tsx|css)$/.test(entry.name) &&
         !entry.name.endsWith(".test.ts")
-      )
+      ) {
         files.push(full);
+      }
     }
   };
   walk(sourceRoot);
   return files;
 }
 
-describe("TCR SMS consent page", () => {
+describe("TCR SMS consent flow", () => {
   it("creates one direct consent route with active legal links and route-aware metadata", async () => {
     const app = read("client", "src", "App.tsx");
     const page = read("client", "src", "pages", "SmsConsent.tsx");
@@ -44,6 +45,7 @@ describe("TCR SMS consent page", () => {
     );
     expect(page.match(/<h1\b/g)).toHaveLength(1);
     expect(page).toContain("Receive MySentry Information by SMS");
+    expect(page).toContain('<SmsConsentForm source="sms-consent-page" />');
     expect(ROUTE_META[consentRoute]?.title).toBe("SMS Communication Consent");
     expect(meta.found).toBe(true);
     expect(meta.canonicalPath).toBe(consentRoute);
@@ -52,32 +54,33 @@ describe("TCR SMS consent page", () => {
     expect(meta.description).toContain("one-to-one customer care SMS");
   });
 
-  it("keeps the required consent disclosure exact and the checkbox optional and unchecked by default", () => {
-    const page = read("client", "src", "pages", "SmsConsent.tsx");
+  it("requires recipient details, Privacy Policy acknowledgment, SMS consent, and a deliberate submission", () => {
+    const form = read("client", "src", "components", "SmsConsentForm.tsx");
 
-    expect(page).toContain(requiredConsentText);
-    expect(page).toContain(
-      "const [hasSmsConsent, setHasSmsConsent] = useState(false);"
-    );
-    expect(page).toContain('type="checkbox"');
-    expect(page).toContain("checked={hasSmsConsent}");
-    expect(page).not.toContain("defaultChecked");
-    expect(page).toContain('href="/privacy"');
-    expect(page).toContain(
-      ">\n                    Privacy Policy\n                  </Link>"
-    );
-    expect(page).toContain('href="/terms"');
-    expect(page).toContain(
-      ">\n                    Terms\n                  </Link>"
-    );
+    expect(form).toContain(requiredConsentText);
+    expect(form).toContain("const [hasSmsConsent, setHasSmsConsent] = useState(false);");
+    expect(form).toContain("const [hasPrivacyAcknowledgment, setHasPrivacyAcknowledgment] =");
+    expect(form).toContain("useState(false)");
+    expect(form).toContain('name="name"');
+    expect(form).toContain('name="email"');
+    expect(form).toContain('name="phone"');
+    expect(form).toContain('type="checkbox"');
+    expect(form).toContain("privacyAcknowledged: true");
+    expect(form).toContain("smsConsent: true");
+    expect(form).toContain("smsConsentMutation.mutate");
+    expect(form).toContain("Confirm SMS Consent");
+    expect(form).toContain("Selecting the boxes alone does not send a request.");
+    expect(form).toContain("SMS consent confirmed");
+    expect(form).toContain('href="/privacy"');
+    expect(form).toContain('href="/terms"');
+    expect(form).not.toContain("defaultChecked");
   });
 
-  it("limits the page to requested one-to-one information and provides STOP and HELP instructions", () => {
+  it("limits the flow to requested one-to-one information and provides STOP and HELP instructions", () => {
     const page = read("client", "src", "pages", "SmsConsent.tsx");
+    const form = read("client", "src", "components", "SmsConsentForm.tsx");
 
-    expect(page).toContain(
-      "MySentry uses SMS for one-to-one customer follow-up"
-    );
+    expect(page).toContain("MySentry uses SMS for one-to-one customer follow-up");
     expect(page).toContain("What You May Receive");
     for (const messageType of [
       "Requested MySentry product information",
@@ -94,24 +97,32 @@ describe("TCR SMS consent page", () => {
       "Reply STOP at any time to opt out of MySentry SMS messages."
     );
     expect(page).toContain("Reply HELP for help.");
-    expect(page).toContain("support@mysentry.ai");
+    expect(form).toContain("Reply STOP at any time to opt out");
+    expect(form).toContain("or HELP for help.");
+    expect(form).toContain("support@mysentry.ai");
     expect(page).not.toMatch(/generic promotional|third-party marketing SMS/i);
   });
 
-  it("keeps the consent page accessible through the footer and out of the main navigation and homepage content", () => {
+  it("embeds the same actionable confirmation form in Privacy Policy while keeping the entry point footer-only", () => {
     const footer = read("client", "src", "components", "Footer.tsx");
     const navbar = read("client", "src", "components", "Navbar.tsx");
     const home = read("client", "src", "pages", "Home.tsx");
+    const privacy = read("client", "src", "pages", "Privacy.tsx");
     const otherSources = visitorSourceFiles()
       .filter(file => !file.endsWith(`${path.sep}App.tsx`))
       .filter(file => !file.endsWith(`${path.sep}Footer.tsx`))
-      .filter(file => !file.endsWith(`${path.sep}SmsConsent.tsx`));
+      .filter(file => !file.endsWith(`${path.sep}SmsConsent.tsx`))
+      .filter(file => !file.endsWith(`${path.sep}Privacy.tsx`))
+      .filter(file => !file.endsWith(`${path.sep}SmsConsentForm.tsx`));
 
     expect(footer).toContain('href="/sms-consent"');
     expect(footer).toContain("SMS Communication Consent");
     expect(navbar).not.toContain(consentRoute);
     expect(home).not.toContain("Receive MySentry Information by SMS");
     expect(home).not.toContain(requiredConsentText);
+    expect(privacy).toContain("SMS_PRIVACY_DISCLOSURE");
+    expect(privacy).toContain('source="privacy-policy"');
+    expect(privacy).toContain("Confirm your SMS communication consent");
     for (const file of otherSources) {
       const text = fs.readFileSync(file, "utf8");
       expect(text, path.relative(root, file)).not.toContain(
@@ -120,13 +131,20 @@ describe("TCR SMS consent page", () => {
     }
   });
 
-  it("adds the TCR privacy statement verbatim and preserves direct Terms availability", () => {
+  it("adds the TCR privacy statement verbatim, persists confirmations, and preserves direct Terms availability", () => {
     const privacy = read("client", "src", "pages", "Privacy.tsx");
     const terms = read("client", "src", "pages", "Terms.tsx");
+    const routers = read("server", "routers.ts");
     const sitemap = read("server", "sitemaps.ts");
 
     expect(privacy).toContain(requiredPrivacyStatement);
     expect(privacy).toContain('id="sms-communications"');
+    expect(routers).toContain("smsConsent: router");
+    expect(routers).toContain("SMS Consent Confirmation");
+    expect(routers).toContain("SMS Communication Consent: confirmed");
+    expect(routers).toContain("Privacy Policy acknowledgment: confirmed");
+    expect(routers).toContain("smsConsent: z.literal(true)");
+    expect(routers).toContain("privacyAcknowledged: z.literal(true)");
     expect(terms).toContain("Terms & Conditions");
     expect(sitemap).toContain('url: "/sms-consent"');
   });

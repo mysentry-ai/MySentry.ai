@@ -1,6 +1,8 @@
 import { describe, expect, it, vi, beforeEach } from "vitest";
 import { appRouter } from "./routers";
 import type { TrpcContext } from "./_core/context";
+import { createContactSubmission } from "./db";
+import { notifyOwner } from "./_core/notification";
 
 // Mock the database functions
 vi.mock("./db", () => ({
@@ -73,6 +75,67 @@ describe("contact.submit", () => {
         name: "John Doe",
         email: "invalid-email",
         message: "Test message",
+      })
+    ).rejects.toThrow();
+  });
+});
+
+describe("smsConsent.submit", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it("records a deliberate SMS consent and Privacy Policy acknowledgment", async () => {
+    const ctx = createPublicContext();
+    const caller = appRouter.createCaller(ctx);
+
+    const result = await caller.smsConsent.submit({
+      name: "SMS Consent User",
+      email: "consent@example.com",
+      phone: "+1 614 555 0123",
+      smsConsent: true,
+      privacyAcknowledged: true,
+      source: "privacy-policy",
+    });
+
+    expect(result).toEqual({ success: true, id: 1 });
+    expect(createContactSubmission).toHaveBeenCalledWith(expect.objectContaining({
+      name: "SMS Consent User",
+      email: "consent@example.com",
+      phone: "+1 614 555 0123",
+      subject: "SMS Consent Confirmation",
+      source: "privacy-policy",
+      message: expect.stringContaining("SMS Communication Consent: confirmed"),
+    }));
+    expect(notifyOwner).toHaveBeenCalledWith(expect.objectContaining({
+      title: "New SMS Consent Confirmation",
+      content: expect.stringContaining("Privacy Policy acknowledgment: confirmed"),
+    }));
+  });
+
+  it("rejects an unconfirmed SMS consent or Privacy Policy acknowledgment", async () => {
+    const ctx = createPublicContext();
+    const caller = appRouter.createCaller(ctx);
+
+    await expect(
+      caller.smsConsent.submit({
+        name: "SMS Consent User",
+        email: "consent@example.com",
+        phone: "+1 614 555 0123",
+        smsConsent: false,
+        privacyAcknowledged: true,
+        source: "sms-consent-page",
+      })
+    ).rejects.toThrow();
+
+    await expect(
+      caller.smsConsent.submit({
+        name: "SMS Consent User",
+        email: "consent@example.com",
+        phone: "+1 614 555 0123",
+        smsConsent: true,
+        privacyAcknowledged: false,
+        source: "sms-consent-page",
       })
     ).rejects.toThrow();
   });
