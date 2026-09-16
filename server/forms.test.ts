@@ -85,7 +85,7 @@ describe("smsConsent.submit", () => {
     vi.clearAllMocks();
   });
 
-  it("records deliberate SMS consent with an optional Privacy Policy acknowledgment", async () => {
+  it("records selected SMS consent with an optional Privacy Policy acknowledgment", async () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);
 
@@ -98,50 +98,43 @@ describe("smsConsent.submit", () => {
       source: "privacy-policy",
     });
 
-    expect(result).toEqual({ success: true, id: 1 });
+    expect(result).toEqual({ success: true, id: 1, smsConsent: true });
     expect(createContactSubmission).toHaveBeenCalledWith(expect.objectContaining({
       name: "SMS Consent User",
       email: "consent@example.com",
       phone: "+1 614 555 0123",
-      subject: "SMS Consent Confirmation",
+      subject: "SMS Communication Preferences",
       source: "privacy-policy",
       message: expect.stringContaining("SMS Communication Consent: confirmed"),
     }));
     expect(notifyOwner).toHaveBeenCalledWith(expect.objectContaining({
-      title: "New SMS Consent Confirmation",
+      title: "New SMS Communication Preference",
       content: expect.stringContaining("Privacy Policy acknowledgment: confirmed"),
     }));
   });
 
-  it("rejects unconfirmed SMS consent but accepts an unselected Privacy Policy acknowledgment", async () => {
+  it("accepts unselected SMS consent and records that no SMS permission was granted", async () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);
-
-    await expect(
-      caller.smsConsent.submit({
-        name: "SMS Consent User",
-        email: "consent@example.com",
-        phone: "+1 614 555 0123",
-        smsConsent: false,
-        privacyAcknowledged: true,
-        source: "sms-consent-page",
-      })
-    ).rejects.toThrow();
 
     await expect(caller.smsConsent.submit({
       name: "SMS Consent User",
       email: "consent@example.com",
       phone: "+1 614 555 0123",
-      smsConsent: true,
+      smsConsent: false,
       privacyAcknowledged: false,
       source: "sms-consent-page",
-    })).resolves.toEqual({ success: true, id: 1 });
+    })).resolves.toEqual({ success: true, id: 1, smsConsent: false });
 
     expect(createContactSubmission).toHaveBeenLastCalledWith(expect.objectContaining({
-      message: expect.stringContaining("Privacy Policy acknowledgment: not selected"),
+      message: expect.stringMatching(
+        /SMS Communication Consent: not selected[\s\S]*Privacy Policy acknowledgment: not selected/
+      ),
     }));
     expect(notifyOwner).toHaveBeenLastCalledWith(expect.objectContaining({
-      content: expect.stringContaining("Privacy Policy acknowledgment: not selected"),
+      content: expect.stringMatching(
+        /Privacy Policy acknowledgment: not selected[\s\S]*SMS consent: not selected/
+      ),
     }));
   });
 });

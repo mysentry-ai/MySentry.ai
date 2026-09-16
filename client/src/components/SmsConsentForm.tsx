@@ -19,8 +19,8 @@ const phonePattern = /^[0-9+().\-\s]{7,50}$/;
 
 export default function SmsConsentForm({
   source,
-  title = "Confirm SMS consent",
-  description = "Enter the details for the number that may receive requested MySentry information. Confirm the SMS consent selection before sending your request. Privacy Policy acknowledgment is optional.",
+  title = "Set SMS communication preferences",
+  description = "Enter the details for this request. Both selections are optional. MySentry uses SMS for this request only when you select the SMS consent box and submit the form.",
 }: SmsConsentFormProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -29,7 +29,9 @@ export default function SmsConsentForm({
   const [hasPrivacyAcknowledgment, setHasPrivacyAcknowledgment] =
     useState(false);
   const [formError, setFormError] = useState<string | null>(null);
-  const [isConfirmed, setIsConfirmed] = useState(false);
+  const [recordedSmsConsent, setRecordedSmsConsent] = useState<boolean | null>(
+    null
+  );
   const fieldId = useId().replace(/:/g, "");
 
   const smsCheckboxId = `sms-consent-${fieldId}`;
@@ -37,14 +39,14 @@ export default function SmsConsentForm({
   const errorId = `sms-consent-error-${fieldId}`;
 
   const smsConsentMutation = trpc.smsConsent.submit.useMutation({
-    onSuccess: () => {
-      setIsConfirmed(true);
+    onSuccess: result => {
+      setRecordedSmsConsent(result.smsConsent);
       setFormError(null);
     },
     onError: error => {
       setFormError(
         error.message ||
-          "We could not record your consent. Please try again or contact support@mysentry.ai."
+          "We could not record your communication preferences. Please try again or contact support@mysentry.ai."
       );
     },
   });
@@ -65,22 +67,19 @@ export default function SmsConsentForm({
       setFormError("Enter a valid mobile phone number to confirm this request.");
       return;
     }
-    if (!hasSmsConsent) {
-      setFormError("Select the SMS consent checkbox before continuing.");
-      return;
-    }
-
     smsConsentMutation.mutate({
       name: name.trim(),
       email: email.trim(),
       phone: phone.trim(),
-      smsConsent: true,
+      smsConsent: hasSmsConsent,
       privacyAcknowledged: hasPrivacyAcknowledgment,
       source,
     });
   };
 
-  if (isConfirmed) {
+  if (recordedSmsConsent !== null) {
+    const smsConsentConfirmed = recordedSmsConsent;
+
     return (
       <section
         className="rounded-3xl border border-[#0b6848]/25 bg-[#f0f7f4] p-6 shadow-sm sm:p-8"
@@ -97,13 +96,14 @@ export default function SmsConsentForm({
               id={`sms-consent-confirmed-${fieldId}`}
               className="text-2xl font-black tracking-tight text-gray-950"
             >
-              SMS consent confirmed
+              {smsConsentConfirmed
+                ? "SMS consent confirmed"
+                : "Communication preferences recorded"}
             </h2>
             <p className="mt-3 leading-7 text-gray-800">
-              Your acknowledgment has been recorded for the mobile number you
-              provided. A MySentry team member may send the requested
-              one-to-one information by SMS. Reply STOP at any time to opt out
-              or HELP for help.
+              {smsConsentConfirmed
+                ? "Your SMS consent has been recorded for the mobile number you provided. A MySentry team member may send the requested one-to-one information by SMS. Reply STOP at any time to opt out or HELP for help."
+                : "SMS consent was not selected. MySentry will not use SMS for this request."}
             </p>
             <p className="mt-3 leading-7 text-gray-800">
               Need to change your request? Contact{" "}
@@ -248,7 +248,7 @@ export default function SmsConsentForm({
               className="text-base leading-7 text-gray-950"
             >
               <Label htmlFor={smsCheckboxId} className="cursor-pointer text-base leading-7">
-                {SMS_CONSENT_TEXT}
+                Optional SMS consent: {SMS_CONSENT_TEXT}
               </Label>{" "}
               <Link
                 href="/terms"
@@ -256,6 +256,10 @@ export default function SmsConsentForm({
               >
                 Terms
               </Link>
+              <p className="mt-2 text-sm leading-6 text-gray-700">
+                If you leave this box unchecked, MySentry records no SMS
+                consent and will not use SMS for this request.
+              </p>
             </div>
           </div>
         </div>
@@ -276,9 +280,9 @@ export default function SmsConsentForm({
               className="mt-0.5 h-5 w-5 shrink-0 text-[#0b6848]"
               aria-hidden="true"
             />
-            Selecting the SMS consent box alone does not send a request. Submit
-            this form to record your SMS consent. Privacy Policy acknowledgment
-            is optional.
+            Selecting either box alone does not send a request. Submit this form
+            to record your communication preferences. Both selections are
+            optional.
           </p>
           <button
             type="submit"
@@ -292,7 +296,7 @@ export default function SmsConsentForm({
                 Recording consent
               </>
             ) : (
-              "Confirm SMS Consent"
+              "Save Communication Preferences"
             )}
           </button>
         </div>

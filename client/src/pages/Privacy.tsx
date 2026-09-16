@@ -352,8 +352,8 @@ export const Privacy = () => {
             <div className="my-10">
               <SmsConsentForm
                 source="privacy-policy"
-                title="Confirm your SMS communication consent"
-                description="If you want MySentry to send requested customer care-related information by text, enter the recipient details and confirm SMS consent below. Privacy Policy acknowledgment is optional."
+                title="Set your SMS communication preferences"
+                description="If you want MySentry to send requested customer care-related information by text, enter the recipient details and select SMS consent below. Both checkboxes are optional. SMS is not used for this request unless you select SMS consent and submit the form."
               />
             </div>
 

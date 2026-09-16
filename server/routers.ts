@@ -55,14 +55,14 @@ export const appRouter = router({
       }),
   }),
 
-  // SMS consent confirmations are retained with the existing public contact-request records.
+  // SMS communication preferences are retained with the existing public contact-request records.
   smsConsent: router({
     submit: publicProcedure
       .input(z.object({
         name: z.string().trim().min(2, "Name is required").max(255),
         email: z.string().trim().email("Invalid email address").max(320),
         phone: z.string().trim().min(7, "Mobile phone number is required").max(50),
-        smsConsent: z.literal(true),
+        smsConsent: z.boolean(),
         privacyAcknowledged: z.boolean(),
         source: z.enum(["sms-consent-page", "privacy-policy"]),
       }))
@@ -71,10 +71,10 @@ export const appRouter = router({
           name: input.name,
           email: input.email,
           phone: input.phone,
-          subject: "SMS Consent Confirmation",
+          subject: "SMS Communication Preferences",
           source: input.source,
           message: [
-            "SMS Communication Consent: confirmed",
+            `SMS Communication Consent: ${input.smsConsent ? "confirmed" : "not selected"}`,
             `Privacy Policy acknowledgment: ${input.privacyAcknowledged ? "confirmed" : "not selected"}`,
             "Consent disclosure:",
             "By clicking here you consent to receive customer care-related or one-on-one communication messages from MySentry. Message frequency may vary. Standard Message and Data Rates may apply. Reply STOP to opt out. Reply Help for help.",
@@ -82,11 +82,11 @@ export const appRouter = router({
         });
 
         await notifyOwner({
-          title: "New SMS Consent Confirmation",
-          content: `Name: ${input.name}\nEmail: ${input.email}\nPhone: ${input.phone}\nSource: ${input.source}\nPrivacy Policy acknowledgment: ${input.privacyAcknowledged ? "confirmed" : "not selected"}\nSMS consent: confirmed`,
+          title: "New SMS Communication Preference",
+          content: `Name: ${input.name}\nEmail: ${input.email}\nPhone: ${input.phone}\nSource: ${input.source}\nPrivacy Policy acknowledgment: ${input.privacyAcknowledged ? "confirmed" : "not selected"}\nSMS consent: ${input.smsConsent ? "confirmed" : "not selected"}`,
         });
 
-        return { success: true, id: result.id };
+        return { success: true, id: result.id, smsConsent: input.smsConsent };
       }),
   }),
 
