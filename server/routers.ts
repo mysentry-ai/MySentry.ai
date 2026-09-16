@@ -63,7 +63,7 @@ export const appRouter = router({
         email: z.string().trim().email("Invalid email address").max(320),
         phone: z.string().trim().min(7, "Mobile phone number is required").max(50),
         smsConsent: z.literal(true),
-        privacyAcknowledged: z.literal(true),
+        privacyAcknowledged: z.boolean(),
         source: z.enum(["sms-consent-page", "privacy-policy"]),
       }))
       .mutation(async ({ input }) => {
@@ -75,7 +75,7 @@ export const appRouter = router({
           source: input.source,
           message: [
             "SMS Communication Consent: confirmed",
-            "Privacy Policy acknowledgment: confirmed",
+            `Privacy Policy acknowledgment: ${input.privacyAcknowledged ? "confirmed" : "not selected"}`,
             "Consent disclosure:",
             "By clicking here you consent to receive customer care-related or one-on-one communication messages from MySentry. Message frequency may vary. Standard Message and Data Rates may apply. Reply STOP to opt out. Reply Help for help.",
           ].join("\n"),
@@ -83,7 +83,7 @@ export const appRouter = router({
 
         await notifyOwner({
           title: "New SMS Consent Confirmation",
-          content: `Name: ${input.name}\nEmail: ${input.email}\nPhone: ${input.phone}\nSource: ${input.source}\nPrivacy Policy acknowledgment: confirmed\nSMS consent: confirmed`,
+          content: `Name: ${input.name}\nEmail: ${input.email}\nPhone: ${input.phone}\nSource: ${input.source}\nPrivacy Policy acknowledgment: ${input.privacyAcknowledged ? "confirmed" : "not selected"}\nSMS consent: confirmed`,
         });
 
         return { success: true, id: result.id };

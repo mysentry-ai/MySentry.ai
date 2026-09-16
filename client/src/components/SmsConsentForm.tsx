@@ -20,7 +20,7 @@ const phonePattern = /^[0-9+().\-\s]{7,50}$/;
 export default function SmsConsentForm({
   source,
   title = "Confirm SMS consent",
-  description = "Enter the details for the number that may receive requested MySentry information. Then review and confirm both selections before sending your request.",
+  description = "Enter the details for the number that may receive requested MySentry information. Confirm the SMS consent selection before sending your request. Privacy Policy acknowledgment is optional.",
 }: SmsConsentFormProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -65,10 +65,6 @@ export default function SmsConsentForm({
       setFormError("Enter a valid mobile phone number to confirm this request.");
       return;
     }
-    if (!hasPrivacyAcknowledgment) {
-      setFormError("Review and acknowledge the Privacy Policy before continuing.");
-      return;
-    }
     if (!hasSmsConsent) {
       setFormError("Select the SMS consent checkbox before continuing.");
       return;
@@ -79,7 +75,7 @@ export default function SmsConsentForm({
       email: email.trim(),
       phone: phone.trim(),
       smsConsent: true,
-      privacyAcknowledged: true,
+      privacyAcknowledged: hasPrivacyAcknowledgment,
       source,
     });
   };
@@ -226,7 +222,7 @@ export default function SmsConsentForm({
               id={`privacy-acknowledgment-text-${fieldId}`}
               className="cursor-pointer text-base leading-7 text-gray-950"
             >
-              I have reviewed the{" "}
+              Optional: I have reviewed the{" "}
               <Link
                 href="/privacy"
                 className="font-bold text-[#005f91] underline decoration-2 underline-offset-4 hover:text-[#004f7b] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#005f91]/25"
@@ -280,8 +276,9 @@ export default function SmsConsentForm({
               className="mt-0.5 h-5 w-5 shrink-0 text-[#0b6848]"
               aria-hidden="true"
             />
-            Selecting the boxes alone does not send a request. Submit this form
-            to record your acknowledgment and SMS consent.
+            Selecting the SMS consent box alone does not send a request. Submit
+            this form to record your SMS consent. Privacy Policy acknowledgment
+            is optional.
           </p>
           <button
             type="submit"

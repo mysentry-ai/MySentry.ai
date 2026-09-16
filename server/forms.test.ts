@@ -85,7 +85,7 @@ describe("smsConsent.submit", () => {
     vi.clearAllMocks();
   });
 
-  it("records a deliberate SMS consent and Privacy Policy acknowledgment", async () => {
+  it("records deliberate SMS consent with an optional Privacy Policy acknowledgment", async () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);
 
@@ -113,7 +113,7 @@ describe("smsConsent.submit", () => {
     }));
   });
 
-  it("rejects an unconfirmed SMS consent or Privacy Policy acknowledgment", async () => {
+  it("rejects unconfirmed SMS consent but accepts an unselected Privacy Policy acknowledgment", async () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);
 
@@ -128,16 +128,21 @@ describe("smsConsent.submit", () => {
       })
     ).rejects.toThrow();
 
-    await expect(
-      caller.smsConsent.submit({
-        name: "SMS Consent User",
-        email: "consent@example.com",
-        phone: "+1 614 555 0123",
-        smsConsent: true,
-        privacyAcknowledged: false,
-        source: "sms-consent-page",
-      })
-    ).rejects.toThrow();
+    await expect(caller.smsConsent.submit({
+      name: "SMS Consent User",
+      email: "consent@example.com",
+      phone: "+1 614 555 0123",
+      smsConsent: true,
+      privacyAcknowledged: false,
+      source: "sms-consent-page",
+    })).resolves.toEqual({ success: true, id: 1 });
+
+    expect(createContactSubmission).toHaveBeenLastCalledWith(expect.objectContaining({
+      message: expect.stringContaining("Privacy Policy acknowledgment: not selected"),
+    }));
+    expect(notifyOwner).toHaveBeenLastCalledWith(expect.objectContaining({
+      content: expect.stringContaining("Privacy Policy acknowledgment: not selected"),
+    }));
   });
 });
 

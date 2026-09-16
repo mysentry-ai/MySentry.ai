@@ -36,9 +36,9 @@ export default function SmsConsent() {
               <p className="mt-4 text-lg leading-8 text-gray-800">
                 MySentry uses SMS for one-to-one customer follow-up after a
                 person requests information during a call, inquiry, or product
-                conversation. The form below records the recipient details,
-                Privacy Policy acknowledgment, and SMS consent before a
-                MySentry team member follows up.
+                conversation. The form below records the recipient details and
+                explicit SMS consent before a MySentry team member follows up.
+                Privacy Policy acknowledgment is optional.
               </p>
             </div>
           </div>

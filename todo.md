@@ -1,5 +1,11 @@
 # MySentry Website TODO
 
+## SMS Communication Consent Refinement (September 2026)
+- [x] Make the Privacy Policy acknowledgment optional on the SMS communication page and its Privacy Policy embed.
+- [x] Keep explicit SMS consent and form submission required before an SMS-consent record can be created.
+- [x] Record whether the optional Privacy Policy acknowledgment was selected without representing an unselected acknowledgment as confirmation.
+- [x] Verify desktop and mobile presentation, TypeScript, the full test suite, production build, and the local editorial pattern scan.
+
 ## Feature Page Visual Refresh (September 2026)
 - [x] Remove the empty generic `Feature` hero label from detailed feature pages and reserve responsive clearance below the fixed navigation.
 - [x] Add a relevant, high-resolution app screen or editorial visual to every currently detailed, active feature route.

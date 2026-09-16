@@ -353,7 +353,7 @@ export const Privacy = () => {
               <SmsConsentForm
                 source="privacy-policy"
                 title="Confirm your SMS communication consent"
-                description="If you want MySentry to send requested customer care-related information by text, enter the recipient details and confirm the Privacy Policy acknowledgment and SMS consent below."
+                description="If you want MySentry to send requested customer care-related information by text, enter the recipient details and confirm SMS consent below. Privacy Policy acknowledgment is optional."
               />
             </div>
 
