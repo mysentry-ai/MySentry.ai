@@ -6,10 +6,12 @@ import BlogList from "./BlogList";
 import BlogEditor from "./BlogEditor";
 import AIWizard from "./AIWizard";
 import CategoryManager from "./CategoryManager";
+import SubmissionList from "./SubmissionList";
 import { Button } from "@/components/ui/button";
 import {
   FileText,
   FolderOpen,
+  Inbox,
   Sparkles,
   LogOut,
   Menu,
@@ -37,6 +39,7 @@ export default function AdminLayout() {
   const isNewPost = location === "/new";
   const isWizard = location === "/wizard";
   const isCategories = location === "/categories";
+  const isSubmissions = location === "/submissions";
   const isList = location === "/" || location === "";
 
   if (isLoading) {
@@ -66,6 +69,7 @@ export default function AdminLayout() {
 
   const navItems = [
     { href: "~/admin/blog", label: "Blog Posts", icon: FileText, active: isList },
+    { href: "~/admin/blog/submissions", label: "Website Submissions", icon: Inbox, active: isSubmissions },
     { href: "~/admin/blog/categories", label: "Categories", icon: FolderOpen, active: isCategories },
     { href: "~/admin/blog/wizard", label: "AI Wizard", icon: Sparkles, active: isWizard },
   ];
@@ -154,6 +158,7 @@ export default function AdminLayout() {
         {/* Page content */}
         <div className="flex-1 p-6 overflow-auto">
           {isList && <BlogList token={token} />}
+          {isSubmissions && <SubmissionList />}
           {isCategories && <CategoryManager token={token} />}
         </div>
       </div>

@@ -26,6 +26,7 @@ import {
   getPublishedPostBySlug,
   getRelatedPosts,
 } from "../blogDb";
+import { getContactSubmissions } from "../db";
 
 // ==================== Admin Auth ====================
 
@@ -184,6 +185,24 @@ export const blogRouter = router({
     .query(async ({ input }) => {
       return { valid: adminSessionTokens.has(input.token) };
     }),
+
+  // ---- Website submissions ----
+  // Reuses the established admin session so contact and SMS preference data
+  // remains private to the existing MySentry admin panel.
+  submissions: router({
+    list: publicProcedure
+      .input(
+        z
+          .object({
+            limit: z.number().int().min(1).max(500).optional(),
+          })
+          .optional()
+      )
+      .query(async ({ ctx, input }) => {
+        requireAdmin(ctx);
+        return getContactSubmissions(input?.limit ?? 250);
+      }),
+  }),
 
   // ---- Categories ----
   categories: router({

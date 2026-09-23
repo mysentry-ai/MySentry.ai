@@ -1,5 +1,12 @@
 # MySentry Website TODO
 
+## SMS Database and Admin Repair (September 2026)
+- [x] Confirm that the managed MySentry application database and `contact_submissions` table are available through the application runtime.
+- [x] Add an authenticated Website Submissions section to the existing admin panel for contact and SMS communication preference records.
+- [x] Preserve the actual SMS and Privacy Policy selection state, including unselected SMS consent.
+- [x] Verify authorization, TypeScript, the full test suite, production build, admin rendering, and no Docker or environment-file changes.
+- [ ] Configure the separate AWS production runtime with a working `DATABASE_URL`, then deploy and perform the approved persistence verification. Blocked because the previously supplied AWS SSH password was rejected.
+
 ## SMS Communication Consent Refinement (September 2026)
 - [x] Make the Privacy Policy acknowledgment optional on the SMS communication page and its Privacy Policy embed.
 - [x] Keep explicit SMS consent and form submission required before an SMS-consent record can be created.

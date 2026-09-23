@@ -1,12 +1,13 @@
 import { describe, expect, it, vi, beforeEach } from "vitest";
 import { appRouter } from "./routers";
 import type { TrpcContext } from "./_core/context";
-import { createContactSubmission } from "./db";
+import { createContactSubmission, getContactSubmissions } from "./db";
 import { notifyOwner } from "./_core/notification";
 
 // Mock the database functions
 vi.mock("./db", () => ({
   createContactSubmission: vi.fn().mockResolvedValue({ id: 1 }),
+  getContactSubmissions: vi.fn().mockResolvedValue([]),
   createPartnerApplication: vi.fn().mockResolvedValue({ id: 1 }),
   createDemoRequest: vi.fn().mockResolvedValue({ id: 1 }),
   createNewsletterSubscription: vi.fn().mockResolvedValue({ id: 1, alreadySubscribed: false, reactivated: false }),
@@ -25,6 +26,19 @@ function createPublicContext(): TrpcContext {
     req: {
       protocol: "https",
       headers: {},
+    } as TrpcContext["req"],
+    res: {
+      clearCookie: vi.fn(),
+    } as unknown as TrpcContext["res"],
+  };
+}
+
+function createBlogAdminContext(token: string): TrpcContext {
+  return {
+    user: null,
+    req: {
+      protocol: "https",
+      headers: { "x-blog-admin-token": token },
     } as TrpcContext["req"],
     res: {
       clearCookie: vi.fn(),
@@ -136,6 +150,46 @@ describe("smsConsent.submit", () => {
         /Privacy Policy acknowledgment: not selected[\s\S]*SMS consent: not selected/
       ),
     }));
+  });
+});
+
+describe("blog.submissions.list", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it("limits website and SMS records to an authenticated admin session", async () => {
+    const publicCaller = appRouter.createCaller(createPublicContext());
+    await expect(publicCaller.blog.submissions.list()).rejects.toThrow(
+      "Admin authentication required"
+    );
+
+    const { token } = await publicCaller.blog.adminLogin({
+      username: "admin",
+      password: "MySentry2026",
+    });
+    const adminCaller = appRouter.createCaller(createBlogAdminContext(token));
+    const expectedSubmissions = [
+      {
+        id: 12,
+        name: "SMS Preference User",
+        email: "preference@example.com",
+        phone: "+1 614 555 0123",
+        subject: "SMS Communication Preferences",
+        message:
+          "SMS Communication Consent: confirmed\nPrivacy Policy acknowledgment: not selected",
+        source: "sms-consent-page",
+        status: "new",
+        createdAt: new Date("2026-09-23T12:00:00.000Z"),
+        updatedAt: new Date("2026-09-23T12:00:00.000Z"),
+      },
+    ];
+    vi.mocked(getContactSubmissions).mockResolvedValueOnce(expectedSubmissions);
+
+    await expect(adminCaller.blog.submissions.list({ limit: 25 })).resolves.toEqual(
+      expectedSubmissions
+    );
+    expect(getContactSubmissions).toHaveBeenCalledWith(25);
   });
 });
 
