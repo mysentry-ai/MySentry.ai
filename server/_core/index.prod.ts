@@ -14,6 +14,7 @@ import { createContext } from "./context";
 import { serveStatic } from "./serve-static";
 import { registerSitemapRoutes } from "../sitemaps";
 import { registerStorageProxy } from "./storageProxy";
+import { registerSmsFallbackCors } from "./smsFallbackCors";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -43,8 +44,8 @@ async function startServer() {
   // HSTS: tell browsers to always use HTTPS
   app.use((_req, res, next) => {
     res.setHeader(
-      'Strict-Transport-Security',
-      'max-age=31536000; includeSubDomains'
+      "Strict-Transport-Security",
+      "max-age=31536000; includeSubDomains"
     );
     next();
   });
@@ -59,6 +60,9 @@ async function startServer() {
   registerOAuthRoutes(app);
   // Dynamic sitemaps + SEO routes
   registerSitemapRoutes(app);
+  // Permit a completed public SMS preference to use the managed database
+  // fallback when the custom-domain runtime has no database connection.
+  registerSmsFallbackCors(app);
   // tRPC API
   app.use(
     "/api/trpc",
@@ -82,7 +86,9 @@ async function startServer() {
 
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
-    console.log(`[Build] Static assets served from: ${process.cwd()}/dist/public`);
+    console.log(
+      `[Build] Static assets served from: ${process.cwd()}/dist/public`
+    );
     console.log(`[Build] Deployed at: ${new Date().toISOString()}`);
   });
 }

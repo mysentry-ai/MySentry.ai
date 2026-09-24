@@ -58,8 +58,12 @@ describe("TCR SMS consent flow", () => {
     const form = read("client", "src", "components", "SmsConsentForm.tsx");
 
     expect(form).toContain(requiredConsentText);
-    expect(form).toContain("const [hasSmsConsent, setHasSmsConsent] = useState(false);");
-    expect(form).toContain("const [hasPrivacyAcknowledgment, setHasPrivacyAcknowledgment] =");
+    expect(form).toContain(
+      "const [hasSmsConsent, setHasSmsConsent] = useState(false);"
+    );
+    expect(form).toContain(
+      "const [hasPrivacyAcknowledgment, setHasPrivacyAcknowledgment] ="
+    );
     expect(form).toContain("useState(false)");
     expect(form).toContain('name="name"');
     expect(form).toContain('name="email"');
@@ -67,7 +71,10 @@ describe("TCR SMS consent flow", () => {
     expect(form).toContain('type="checkbox"');
     expect(form).toContain("privacyAcknowledged: hasPrivacyAcknowledgment");
     expect(form).toContain("smsConsent: hasSmsConsent");
-    expect(form).toContain("smsConsentMutation.mutate");
+    expect(form).toContain("smsConsentMutation.mutateAsync(request)");
+    expect(form).toContain("submitSmsConsentToManagedBackend(request)");
+    expect(form).toContain("/database not available/i.test(message)");
+    expect(form).toContain("isFallbackPending");
     expect(form).toContain("Save Communication Preferences");
     expect(form).toContain("Both selections are optional.");
     expect(form).toContain("Optional: I have reviewed the");
@@ -83,13 +90,25 @@ describe("TCR SMS consent flow", () => {
       'setFormError("Select the SMS consent checkbox before continuing.")'
     );
     expect(form).not.toContain("defaultChecked");
+
+    const fallback = read(
+      "client",
+      "src",
+      "lib",
+      "managedSmsConsentFallback.ts"
+    );
+    expect(fallback).toContain("https://mysentry-5pk35fzr.manus.space");
+    expect(fallback).toContain('credentials: "omit"');
+    expect(fallback).toContain("managedSmsClient.smsConsent.submit.mutate");
   });
 
   it("limits the flow to requested one-to-one information and provides STOP and HELP instructions", () => {
     const page = read("client", "src", "pages", "SmsConsent.tsx");
     const form = read("client", "src", "components", "SmsConsentForm.tsx");
 
-    expect(page).toContain("MySentry uses SMS for one-to-one customer follow-up");
+    expect(page).toContain(
+      "MySentry uses SMS for one-to-one customer follow-up"
+    );
     expect(page).toContain("What You May Receive");
     for (const messageType of [
       "Requested MySentry product information",
@@ -150,8 +169,12 @@ describe("TCR SMS consent flow", () => {
     expect(privacy).toContain('id="sms-communications"');
     expect(routers).toContain("smsConsent: router");
     expect(routers).toContain("SMS Communication Preferences");
-    expect(routers).toContain('`SMS Communication Consent: ${input.smsConsent ? "confirmed" : "not selected"}`');
-    expect(routers).toContain('`Privacy Policy acknowledgment: ${input.privacyAcknowledged ? "confirmed" : "not selected"}`');
+    expect(routers).toContain(
+      '`SMS Communication Consent: ${input.smsConsent ? "confirmed" : "not selected"}`'
+    );
+    expect(routers).toContain(
+      '`Privacy Policy acknowledgment: ${input.privacyAcknowledged ? "confirmed" : "not selected"}`'
+    );
     expect(routers).toContain("smsConsent: z.boolean()");
     expect(routers).toContain("privacyAcknowledged: z.boolean()");
     expect(terms).toContain("Terms & Conditions");

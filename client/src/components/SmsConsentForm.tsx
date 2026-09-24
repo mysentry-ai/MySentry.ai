@@ -1,9 +1,15 @@
 import { FormEvent, useId, useState } from "react";
-import { CheckCircle2, LoaderCircle, MessageSquareText, ShieldCheck } from "lucide-react";
+import {
+  CheckCircle2,
+  LoaderCircle,
+  MessageSquareText,
+  ShieldCheck,
+} from "lucide-react";
 import { Link } from "wouter";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { trpc } from "@/lib/trpc";
+import { submitSmsConsentToManagedBackend } from "@/lib/managedSmsConsentFallback";
 
 export const SMS_CONSENT_TEXT =
   "By clicking here you consent to receive customer care-related or one-on-one communication messages from MySentry. Message frequency may vary. Standard Message and Data Rates may apply. Reply STOP to opt out. Reply Help for help.";
@@ -32,26 +38,16 @@ export default function SmsConsentForm({
   const [recordedSmsConsent, setRecordedSmsConsent] = useState<boolean | null>(
     null
   );
+  const [isFallbackPending, setIsFallbackPending] = useState(false);
   const fieldId = useId().replace(/:/g, "");
 
   const smsCheckboxId = `sms-consent-${fieldId}`;
   const privacyCheckboxId = `privacy-acknowledgment-${fieldId}`;
   const errorId = `sms-consent-error-${fieldId}`;
 
-  const smsConsentMutation = trpc.smsConsent.submit.useMutation({
-    onSuccess: result => {
-      setRecordedSmsConsent(result.smsConsent);
-      setFormError(null);
-    },
-    onError: error => {
-      setFormError(
-        error.message ||
-          "We could not record your communication preferences. Please try again or contact support@mysentry.ai."
-      );
-    },
-  });
+  const smsConsentMutation = trpc.smsConsent.submit.useMutation();
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormError(null);
 
@@ -64,17 +60,50 @@ export default function SmsConsentForm({
       return;
     }
     if (!phonePattern.test(phone.trim())) {
-      setFormError("Enter a valid mobile phone number to confirm this request.");
+      setFormError(
+        "Enter a valid mobile phone number to confirm this request."
+      );
       return;
     }
-    smsConsentMutation.mutate({
+    const request = {
       name: name.trim(),
       email: email.trim(),
       phone: phone.trim(),
       smsConsent: hasSmsConsent,
       privacyAcknowledged: hasPrivacyAcknowledgment,
       source,
-    });
+    };
+
+    try {
+      const result = await smsConsentMutation.mutateAsync(request);
+      setRecordedSmsConsent(result.smsConsent);
+      return;
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "";
+
+      // The custom domain can temporarily run on separate infrastructure.
+      // If only its database is unavailable, retain the preference through the
+      // managed MySentry backend rather than losing the completed request.
+      if (!/database not available/i.test(message)) {
+        setFormError(
+          message ||
+            "We could not record your communication preferences. Please try again or contact support@mysentry.ai."
+        );
+        return;
+      }
+    }
+
+    setIsFallbackPending(true);
+    try {
+      const result = await submitSmsConsentToManagedBackend(request);
+      setRecordedSmsConsent(result.smsConsent);
+    } catch {
+      setFormError(
+        "We could not record your communication preferences. Please try again or contact support@mysentry.ai."
+      );
+    } finally {
+      setIsFallbackPending(false);
+    }
   };
 
   if (recordedSmsConsent !== null) {
@@ -247,7 +276,10 @@ export default function SmsConsentForm({
               id={`sms-consent-statement-${fieldId}`}
               className="text-base leading-7 text-gray-950"
             >
-              <Label htmlFor={smsCheckboxId} className="cursor-pointer text-base leading-7">
+              <Label
+                htmlFor={smsCheckboxId}
+                className="cursor-pointer text-base leading-7"
+              >
                 Optional SMS consent: {SMS_CONSENT_TEXT}
               </Label>{" "}
               <Link
@@ -257,8 +289,8 @@ export default function SmsConsentForm({
                 Terms
               </Link>
               <p className="mt-2 text-sm leading-6 text-gray-700">
-                If you leave this box unchecked, MySentry records no SMS
-                consent and will not use SMS for this request.
+                If you leave this box unchecked, MySentry records no SMS consent
+                and will not use SMS for this request.
               </p>
             </div>
           </div>
@@ -286,14 +318,17 @@ export default function SmsConsentForm({
           </p>
           <button
             type="submit"
-            disabled={smsConsentMutation.isPending}
+            disabled={smsConsentMutation.isPending || isFallbackPending}
             aria-describedby={formError ? errorId : undefined}
             className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-[#004F7B] px-6 py-3 font-bold uppercase tracking-wide text-white shadow-md transition-all duration-150 hover:bg-[#003A5B] hover:shadow-lg active:scale-[0.97] disabled:cursor-not-allowed disabled:bg-gray-400 disabled:shadow-none"
           >
-            {smsConsentMutation.isPending ? (
+            {smsConsentMutation.isPending || isFallbackPending ? (
               <>
-                <LoaderCircle className="h-5 w-5 animate-spin" aria-hidden="true" />
-                Recording consent
+                <LoaderCircle
+                  className="h-5 w-5 animate-spin"
+                  aria-hidden="true"
+                />
+                Recording preferences
               </>
             ) : (
               "Save Communication Preferences"

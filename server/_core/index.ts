@@ -15,6 +15,7 @@ const compression = _require("compression") as () => any;
 import { serveStatic, setupVite } from "./vite";
 import { registerSitemapRoutes } from "../sitemaps";
 import { registerStorageProxy } from "./storageProxy";
+import { registerSmsFallbackCors } from "./smsFallbackCors";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -41,8 +42,8 @@ async function startServer() {
   // HSTS: tell browsers to always use HTTPS
   app.use((_req, res, next) => {
     res.setHeader(
-      'Strict-Transport-Security',
-      'max-age=31536000; includeSubDomains'
+      "Strict-Transport-Security",
+      "max-age=31536000; includeSubDomains"
     );
     next();
   });
@@ -57,6 +58,8 @@ async function startServer() {
   registerOAuthRoutes(app);
   // Dynamic sitemaps + SEO routes
   registerSitemapRoutes(app);
+  // Mirror production fallback behavior for public SMS preference requests.
+  registerSmsFallbackCors(app);
   // tRPC API
   app.use(
     "/api/trpc",
@@ -69,12 +72,16 @@ async function startServer() {
   // otherwise fall back to Vite dev server. This is more robust than relying
   // solely on NODE_ENV which may not be set correctly in all deployment environments.
   const distPublicPath = path.resolve(process.cwd(), "dist", "public");
-  const hasBuiltAssets = fs.existsSync(distPublicPath) && fs.existsSync(path.join(distPublicPath, "index.html"));
+  const hasBuiltAssets =
+    fs.existsSync(distPublicPath) &&
+    fs.existsSync(path.join(distPublicPath, "index.html"));
   if (process.env.NODE_ENV !== "development" && hasBuiltAssets) {
     serveStatic(app);
   } else {
     if (!hasBuiltAssets && process.env.NODE_ENV !== "development") {
-      console.warn(`[Build] WARNING: dist/public not found at ${distPublicPath}. Falling back to Vite dev server.`);
+      console.warn(
+        `[Build] WARNING: dist/public not found at ${distPublicPath}. Falling back to Vite dev server.`
+      );
     }
     await setupVite(app, server);
   }
@@ -88,7 +95,9 @@ async function startServer() {
 
   server.listen(port, () => {
     console.log(`Server running on http://localhost:${port}/`);
-    console.log(`[Build] Static assets served from: ${process.cwd()}/dist/public`);
+    console.log(
+      `[Build] Static assets served from: ${process.cwd()}/dist/public`
+    );
     console.log(`[Build] Deployed at: ${new Date().toISOString()}`);
   });
 }

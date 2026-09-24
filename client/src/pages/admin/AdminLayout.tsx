@@ -31,7 +31,15 @@ export default function AdminLayout() {
       root.removeAttribute("data-admin-light");
     };
   }, []);
-  const { token, isAuthenticated, isLoading, login, logout, loginError, isLoginLoading } = useBlogAdmin();
+  const {
+    token,
+    isAuthenticated,
+    isLoading,
+    login,
+    logout,
+    loginError,
+    isLoginLoading,
+  } = useBlogAdmin();
   const [location, navigate] = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
@@ -54,7 +62,13 @@ export default function AdminLayout() {
   }
 
   if (!isAuthenticated || !token) {
-    return <AdminLogin onLogin={login} error={loginError} isLoading={isLoginLoading} />;
+    return (
+      <AdminLogin
+        onLogin={login}
+        error={loginError}
+        isLoading={isLoginLoading}
+      />
+    );
   }
 
   // Full-screen pages (editor, wizard)
@@ -67,15 +81,43 @@ export default function AdminLayout() {
     return <AIWizard token={token} />;
   }
 
+  const useManagedSubmissions =
+    typeof window !== "undefined" &&
+    ["mysentry.ai", "www.mysentry.ai"].includes(window.location.hostname);
+  const submissionsHref = useManagedSubmissions
+    ? "https://mysentry-5pk35fzr.manus.space/admin/blog/submissions"
+    : "~/admin/blog/submissions";
+
   const navItems = [
-    { href: "~/admin/blog", label: "Blog Posts", icon: FileText, active: isList },
-    { href: "~/admin/blog/submissions", label: "Website Submissions", icon: Inbox, active: isSubmissions },
-    { href: "~/admin/blog/categories", label: "Categories", icon: FolderOpen, active: isCategories },
-    { href: "~/admin/blog/wizard", label: "AI Wizard", icon: Sparkles, active: isWizard },
+    {
+      href: "~/admin/blog",
+      label: "Blog Posts",
+      icon: FileText,
+      active: isList,
+    },
+    {
+      href: submissionsHref,
+      label: "Website Submissions",
+      icon: Inbox,
+      active: isSubmissions,
+      external: useManagedSubmissions,
+    },
+    {
+      href: "~/admin/blog/categories",
+      label: "Categories",
+      icon: FolderOpen,
+      active: isCategories,
+    },
+    {
+      href: "~/admin/blog/wizard",
+      label: "AI Wizard",
+      icon: Sparkles,
+      active: isWizard,
+    },
   ];
 
   // Get current page title
-  const currentPage = navItems.find((item) => item.active);
+  const currentPage = navItems.find(item => item.active);
 
   return (
     <div className="min-h-screen bg-[#F8FAF9] flex">
@@ -93,15 +135,17 @@ export default function AdminLayout() {
             </div>
             <div>
               <span className="font-bold text-white text-sm">MySentry</span>
-              <span className="text-white/60 text-xs block -mt-0.5">Blog CMS</span>
+              <span className="text-white/60 text-xs block -mt-0.5">
+                Blog CMS
+              </span>
             </div>
           </div>
         </div>
 
         {/* Navigation */}
         <nav className="flex-1 px-3 py-4 space-y-1">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>
+          {navItems.map(item => {
+            const content = (
               <div
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all cursor-pointer ${
                   item.active
@@ -109,11 +153,23 @@ export default function AdminLayout() {
                     : "text-white/80 hover:bg-white/10 hover:text-white"
                 }`}
               >
-                <item.icon className={`w-[18px] h-[18px] ${item.active ? "text-[#232020]" : "text-white/60"}`} />
+                <item.icon
+                  className={`w-[18px] h-[18px] ${item.active ? "text-[#232020]" : "text-white/60"}`}
+                />
                 {item.label}
               </div>
-            </Link>
-          ))}
+            );
+
+            return item.external ? (
+              <a key={item.href} href={item.href}>
+                {content}
+              </a>
+            ) : (
+              <Link key={item.href} href={item.href}>
+                {content}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Sign out */}
@@ -141,12 +197,18 @@ export default function AdminLayout() {
               onClick={() => setSidebarOpen(!sidebarOpen)}
               className="text-[#5C5C5C] hover:text-[#232020] hover:bg-[#F5F7F7] -ml-2"
             >
-              {sidebarOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+              {sidebarOpen ? (
+                <X className="w-4 h-4" />
+              ) : (
+                <Menu className="w-4 h-4" />
+              )}
             </Button>
             <div className="flex items-center gap-1.5 text-sm">
               <span className="text-[#9CA3AF]">Admin</span>
               <ChevronRight className="w-3.5 h-3.5 text-[#9CA3AF]" />
-              <span className="text-[#232020] font-medium">{currentPage?.label || "Blog CMS"}</span>
+              <span className="text-[#232020] font-medium">
+                {currentPage?.label || "Blog CMS"}
+              </span>
             </div>
           </div>
           <div className="flex items-center gap-2">
