@@ -14,7 +14,6 @@ import { createContext } from "./context";
 import { serveStatic } from "./serve-static";
 import { registerSitemapRoutes } from "../sitemaps";
 import { registerStorageProxy } from "./storageProxy";
-import { registerSmsFallbackCors } from "./smsFallbackCors";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -60,9 +59,6 @@ async function startServer() {
   registerOAuthRoutes(app);
   // Dynamic sitemaps + SEO routes
   registerSitemapRoutes(app);
-  // Permit a completed public SMS preference to use the managed database
-  // fallback when the custom-domain runtime has no database connection.
-  registerSmsFallbackCors(app);
   // tRPC API
   app.use(
     "/api/trpc",

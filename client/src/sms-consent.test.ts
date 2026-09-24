@@ -72,9 +72,6 @@ describe("TCR SMS consent flow", () => {
     expect(form).toContain("privacyAcknowledged: hasPrivacyAcknowledgment");
     expect(form).toContain("smsConsent: hasSmsConsent");
     expect(form).toContain("smsConsentMutation.mutateAsync(request)");
-    expect(form).toContain("submitSmsConsentToManagedBackend(request)");
-    expect(form).toContain("/database not available/i.test(message)");
-    expect(form).toContain("isFallbackPending");
     expect(form).toContain("Save Communication Preferences");
     expect(form).toContain("Both selections are optional.");
     expect(form).toContain("Optional: I have reviewed the");
@@ -91,15 +88,11 @@ describe("TCR SMS consent flow", () => {
     );
     expect(form).not.toContain("defaultChecked");
 
-    const fallback = read(
-      "client",
-      "src",
-      "lib",
-      "managedSmsConsentFallback.ts"
-    );
-    expect(fallback).toContain("https://mysentry-5pk35fzr.manus.space");
-    expect(fallback).toContain('credentials: "omit"');
-    expect(fallback).toContain("managedSmsClient.smsConsent.submit.mutate");
+    const routers = read("server", "routers.ts");
+    const fallback = read("server", "smsConsentFallback.ts");
+    expect(routers).toContain("submitSmsConsentToManagedBackend(input)");
+    expect(fallback).toContain("/api/trpc/smsConsent.submit?batch=1");
+    expect(fallback).toContain("viaManagedFallback: true");
   });
 
   it("limits the flow to requested one-to-one information and provides STOP and HELP instructions", () => {

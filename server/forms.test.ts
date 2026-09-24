@@ -3,6 +3,7 @@ import { appRouter } from "./routers";
 import type { TrpcContext } from "./_core/context";
 import { createContactSubmission, getContactSubmissions } from "./db";
 import { notifyOwner } from "./_core/notification";
+import { submitSmsConsentToManagedBackend } from "./smsConsentFallback";
 
 // Mock the database functions
 vi.mock("./db", () => ({
@@ -10,7 +11,9 @@ vi.mock("./db", () => ({
   getContactSubmissions: vi.fn().mockResolvedValue([]),
   createPartnerApplication: vi.fn().mockResolvedValue({ id: 1 }),
   createDemoRequest: vi.fn().mockResolvedValue({ id: 1 }),
-  createNewsletterSubscription: vi.fn().mockResolvedValue({ id: 1, alreadySubscribed: false, reactivated: false }),
+  createNewsletterSubscription: vi
+    .fn()
+    .mockResolvedValue({ id: 1, alreadySubscribed: false, reactivated: false }),
   createTrialSignup: vi.fn().mockResolvedValue({ id: 1 }),
   unsubscribeNewsletter: vi.fn().mockResolvedValue({ success: true }),
 }));
@@ -18,6 +21,17 @@ vi.mock("./db", () => ({
 // Mock the notification function
 vi.mock("./_core/notification", () => ({
   notifyOwner: vi.fn().mockResolvedValue(true),
+}));
+
+vi.mock("./smsConsentFallback", () => ({
+  isDatabaseUnavailableError: vi.fn(error =>
+    String(error).toLowerCase().includes("database not available")
+  ),
+  submitSmsConsentToManagedBackend: vi.fn().mockResolvedValue({
+    success: true,
+    id: 91,
+    smsConsent: false,
+  }),
 }));
 
 function createPublicContext(): TrpcContext {
@@ -113,43 +127,87 @@ describe("smsConsent.submit", () => {
     });
 
     expect(result).toEqual({ success: true, id: 1, smsConsent: true });
-    expect(createContactSubmission).toHaveBeenCalledWith(expect.objectContaining({
-      name: "SMS Consent User",
-      email: "consent@example.com",
-      phone: "+1 614 555 0123",
-      subject: "SMS Communication Preferences",
-      source: "privacy-policy",
-      message: expect.stringContaining("SMS Communication Consent: confirmed"),
-    }));
-    expect(notifyOwner).toHaveBeenCalledWith(expect.objectContaining({
-      title: "New SMS Communication Preference",
-      content: expect.stringContaining("Privacy Policy acknowledgment: confirmed"),
-    }));
+    expect(createContactSubmission).toHaveBeenCalledWith(
+      expect.objectContaining({
+        name: "SMS Consent User",
+        email: "consent@example.com",
+        phone: "+1 614 555 0123",
+        subject: "SMS Communication Preferences",
+        source: "privacy-policy",
+        message: expect.stringContaining(
+          "SMS Communication Consent: confirmed"
+        ),
+      })
+    );
+    expect(notifyOwner).toHaveBeenCalledWith(
+      expect.objectContaining({
+        title: "New SMS Communication Preference",
+        content: expect.stringContaining(
+          "Privacy Policy acknowledgment: confirmed"
+        ),
+      })
+    );
   });
 
   it("accepts unselected SMS consent and records that no SMS permission was granted", async () => {
     const ctx = createPublicContext();
     const caller = appRouter.createCaller(ctx);
 
-    await expect(caller.smsConsent.submit({
-      name: "SMS Consent User",
-      email: "consent@example.com",
-      phone: "+1 614 555 0123",
-      smsConsent: false,
-      privacyAcknowledged: false,
-      source: "sms-consent-page",
-    })).resolves.toEqual({ success: true, id: 1, smsConsent: false });
+    await expect(
+      caller.smsConsent.submit({
+        name: "SMS Consent User",
+        email: "consent@example.com",
+        phone: "+1 614 555 0123",
+        smsConsent: false,
+        privacyAcknowledged: false,
+        source: "sms-consent-page",
+      })
+    ).resolves.toEqual({ success: true, id: 1, smsConsent: false });
 
-    expect(createContactSubmission).toHaveBeenLastCalledWith(expect.objectContaining({
-      message: expect.stringMatching(
-        /SMS Communication Consent: not selected[\s\S]*Privacy Policy acknowledgment: not selected/
-      ),
-    }));
-    expect(notifyOwner).toHaveBeenLastCalledWith(expect.objectContaining({
-      content: expect.stringMatching(
-        /Privacy Policy acknowledgment: not selected[\s\S]*SMS consent: not selected/
-      ),
-    }));
+    expect(createContactSubmission).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        message: expect.stringMatching(
+          /SMS Communication Consent: not selected[\s\S]*Privacy Policy acknowledgment: not selected/
+        ),
+      })
+    );
+    expect(notifyOwner).toHaveBeenLastCalledWith(
+      expect.objectContaining({
+        content: expect.stringMatching(
+          /Privacy Policy acknowledgment: not selected[\s\S]*SMS consent: not selected/
+        ),
+      })
+    );
+  });
+
+  it("retries a database-unavailable SMS request through the managed persistence backend", async () => {
+    vi.mocked(createContactSubmission).mockRejectedValueOnce(
+      new Error("Database not available")
+    );
+    const caller = appRouter.createCaller(createPublicContext());
+
+    await expect(
+      caller.smsConsent.submit({
+        name: "Fallback Preference User",
+        email: "fallback@example.com",
+        phone: "+1 614 555 0188",
+        smsConsent: false,
+        privacyAcknowledged: false,
+        source: "sms-consent-page",
+      })
+    ).resolves.toEqual({
+      success: true,
+      id: 91,
+      smsConsent: false,
+    });
+
+    expect(submitSmsConsentToManagedBackend).toHaveBeenCalledWith(
+      expect.objectContaining({
+        name: "Fallback Preference User",
+        email: "fallback@example.com",
+        smsConsent: false,
+      })
+    );
   });
 });
 
@@ -186,9 +244,9 @@ describe("blog.submissions.list", () => {
     ];
     vi.mocked(getContactSubmissions).mockResolvedValueOnce(expectedSubmissions);
 
-    await expect(adminCaller.blog.submissions.list({ limit: 25 })).resolves.toEqual(
-      expectedSubmissions
-    );
+    await expect(
+      adminCaller.blog.submissions.list({ limit: 25 })
+    ).resolves.toEqual(expectedSubmissions);
     expect(getContactSubmissions).toHaveBeenCalledWith(25);
   });
 });

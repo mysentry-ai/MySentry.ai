@@ -9,7 +9,6 @@ import { Link } from "wouter";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { trpc } from "@/lib/trpc";
-import { submitSmsConsentToManagedBackend } from "@/lib/managedSmsConsentFallback";
 
 export const SMS_CONSENT_TEXT =
   "By clicking here you consent to receive customer care-related or one-on-one communication messages from MySentry. Message frequency may vary. Standard Message and Data Rates may apply. Reply STOP to opt out. Reply Help for help.";
@@ -38,7 +37,6 @@ export default function SmsConsentForm({
   const [recordedSmsConsent, setRecordedSmsConsent] = useState<boolean | null>(
     null
   );
-  const [isFallbackPending, setIsFallbackPending] = useState(false);
   const fieldId = useId().replace(/:/g, "");
 
   const smsCheckboxId = `sms-consent-${fieldId}`;
@@ -77,32 +75,12 @@ export default function SmsConsentForm({
     try {
       const result = await smsConsentMutation.mutateAsync(request);
       setRecordedSmsConsent(result.smsConsent);
-      return;
     } catch (error) {
       const message = error instanceof Error ? error.message : "";
-
-      // The custom domain can temporarily run on separate infrastructure.
-      // If only its database is unavailable, retain the preference through the
-      // managed MySentry backend rather than losing the completed request.
-      if (!/database not available/i.test(message)) {
-        setFormError(
-          message ||
-            "We could not record your communication preferences. Please try again or contact support@mysentry.ai."
-        );
-        return;
-      }
-    }
-
-    setIsFallbackPending(true);
-    try {
-      const result = await submitSmsConsentToManagedBackend(request);
-      setRecordedSmsConsent(result.smsConsent);
-    } catch {
       setFormError(
-        "We could not record your communication preferences. Please try again or contact support@mysentry.ai."
+        message ||
+          "We could not record your communication preferences. Please try again or contact support@mysentry.ai."
       );
-    } finally {
-      setIsFallbackPending(false);
     }
   };
 
@@ -318,11 +296,11 @@ export default function SmsConsentForm({
           </p>
           <button
             type="submit"
-            disabled={smsConsentMutation.isPending || isFallbackPending}
+            disabled={smsConsentMutation.isPending}
             aria-describedby={formError ? errorId : undefined}
             className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-[#004F7B] px-6 py-3 font-bold uppercase tracking-wide text-white shadow-md transition-all duration-150 hover:bg-[#003A5B] hover:shadow-lg active:scale-[0.97] disabled:cursor-not-allowed disabled:bg-gray-400 disabled:shadow-none"
           >
-            {smsConsentMutation.isPending || isFallbackPending ? (
+            {smsConsentMutation.isPending ? (
               <>
                 <LoaderCircle
                   className="h-5 w-5 animate-spin"

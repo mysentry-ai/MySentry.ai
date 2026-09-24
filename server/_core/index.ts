@@ -15,7 +15,6 @@ const compression = _require("compression") as () => any;
 import { serveStatic, setupVite } from "./vite";
 import { registerSitemapRoutes } from "../sitemaps";
 import { registerStorageProxy } from "./storageProxy";
-import { registerSmsFallbackCors } from "./smsFallbackCors";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -58,8 +57,6 @@ async function startServer() {
   registerOAuthRoutes(app);
   // Dynamic sitemaps + SEO routes
   registerSitemapRoutes(app);
-  // Mirror production fallback behavior for public SMS preference requests.
-  registerSmsFallbackCors(app);
   // tRPC API
   app.use(
     "/api/trpc",
