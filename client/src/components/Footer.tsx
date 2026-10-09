@@ -4,6 +4,10 @@ import { Facebook, Instagram, Linkedin, Youtube, Loader2 } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { trackLeadEvent } from "@/lib/metaPixel";
+import {
+  PUBLIC_FOOTER_BLOG_GUIDES,
+  getPublicBlogPath,
+} from "@shared/seo/public-blog-catalog";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -314,61 +318,17 @@ export default function Footer() {
                   Night Shift Nurse Checklist
                 </Link>
               </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/how-to-build-a-lone-worker-safety-program" className="text-gray-900 hover:text-primary transition-colors">
-                  Build a Lone-Worker Safety Program
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/what-is-a-lone-worker-definition-risks-and-legal-duties" className="text-gray-900 hover:text-primary transition-colors">
-                  Lone-Worker Risks and Duties
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/how-does-fall-detection-work-on-a-phone-or-watch" className="text-gray-900 hover:text-primary transition-colors">
-                  How Fall Detection Works
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/family-park-safety-guide" className="text-gray-900 hover:text-primary transition-colors">
-                  Family Park Safety Guide
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/how-to-set-up-emergency-contacts-on-your-phone" className="text-gray-900 hover:text-primary transition-colors">
-                  Set Up Emergency Contacts
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/women-working-alone-safety-guide" className="text-gray-900 hover:text-primary transition-colors">
-                  Working Alone Safety Guide
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/incident-reporting-safety-app-why-your-team-needs-one" className="text-gray-900 hover:text-primary transition-colors">
-                  Incident Reporting and Safety
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/senior-outdoor-safety-summer-walking-plan" className="text-gray-900 hover:text-primary transition-colors">
-                  Senior Outdoor Safety Plan
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/lone-worker-heat-safety" className="text-gray-900 hover:text-primary transition-colors">
-                  Lone Worker Heat Safety
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/vacation-rental-safety-families" className="text-gray-900 hover:text-primary transition-colors">
-                  Vacation Rental Safety
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blog/power-outage-safety-for-seniors" className="text-gray-900 hover:text-primary transition-colors">
-                  Power Outage Safety for Seniors
-                </Link>
-              </li>
+              {PUBLIC_FOOTER_BLOG_GUIDES.map((guide) => (
+                <li key={guide.slug}>
+                  <Link
+                    onClick={() => window.scrollTo(0, 0)}
+                    href={getPublicBlogPath(guide.slug)}
+                    className="text-gray-900 hover:text-primary transition-colors"
+                  >
+                    {guide.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

@@ -4,13 +4,10 @@
  * Resolves the final RouteMeta for any URL path, including dynamic blog routes.
  * Used by the Express SSR middleware to inject meta tags into index.html.
  *
- * Blog posts are fetched from the DB and cached for 60 seconds to avoid
- * a DB hit on every page request.
+ * Public blog posts are resolved from the local database, managed public
+ * runtime, or catalog fallback and cached for 60 seconds.
  */
 
-import { getDb } from "../db";
-import { blogPosts } from "../../drizzle/schema";
-import { and, eq } from "drizzle-orm";
 import {
   ROUTE_META,
   DEFAULT_OG_IMAGE,
@@ -20,12 +17,7 @@ import {
 import { getHeldBlogTitle, isHeldBlogSlug } from "../../shared/seo/content-governance";
 import { absoluteBlogImageUrl } from "../../shared/seo/blog-assets";
 import { isNoindexPath } from "../../shared/seo/indexability";
-import {
-  EXACT_RING_PR_HERO_URL,
-  EXACT_RING_PR_SLUG,
-  EXACT_RING_PR_SUBTITLE,
-  EXACT_RING_PR_TITLE,
-} from "../../shared/seo/exact-ring-press-release";
+import { resolvePublicBlogBySlug } from "../publicBlogResolver";
 
 // ─── Blog meta cache ──────────────────────────────────────────────────────────
 
@@ -35,27 +27,12 @@ type BlogMeta = RouteMeta & {
   updatedAt?: Date | null;
   isIndexed?: boolean;
   isFollowed?: boolean;
+  articleHtml?: string | null;
 };
 
 type CacheEntry = { meta: BlogMeta; expiresAt: number };
 const blogCache = new Map<string, CacheEntry>();
 const BLOG_CACHE_TTL_MS = 60_000; // 60 seconds
-
-function getExactRingPrFallbackMeta(slug: string): BlogMeta | null {
-  if (slug !== EXACT_RING_PR_SLUG) return null;
-
-  return {
-    title: EXACT_RING_PR_TITLE,
-    description: EXACT_RING_PR_SUBTITLE,
-    ogType: "article",
-    ogImage: EXACT_RING_PR_HERO_URL,
-    authorName: "MySentry Editorial Team",
-    publishedAt: new Date("2026-09-10T10:19:10.000Z"),
-    updatedAt: new Date("2026-09-10T10:40:53.000Z"),
-    isIndexed: true,
-    isFollowed: true,
-  };
-}
 
 async function resolveBlogMeta(slug: string): Promise<BlogMeta | null> {
   const cacheKey = `/blog/${slug}`;
@@ -65,30 +42,9 @@ async function resolveBlogMeta(slug: string): Promise<BlogMeta | null> {
   }
 
   try {
-    const db = await getDb();
-    if (!db) return getExactRingPrFallbackMeta(slug);
-
-    const rows = await db
-      .select({
-        title: blogPosts.title,
-        excerpt: blogPosts.excerpt,
-        metaTitle: blogPosts.metaTitle,
-        metaDescription: blogPosts.metaDescription,
-        ogImageUrl: blogPosts.ogImageUrl,
-        heroImageUrl: blogPosts.heroImageUrl,
-        authorName: blogPosts.authorName,
-        publishedAt: blogPosts.publishedAt,
-        updatedAt: blogPosts.updatedAt,
-        isIndexed: blogPosts.isIndexed,
-        isFollowed: blogPosts.isFollowed,
-      })
-      .from(blogPosts)
-      .where(and(eq(blogPosts.slug, slug), eq(blogPosts.status, "published")))
-      .limit(1);
-
-    if (!rows.length) return getExactRingPrFallbackMeta(slug);
-
-    const post = rows[0];
+    const resolution = await resolvePublicBlogBySlug(slug);
+    const post = resolution.post;
+    if (!post) return null;
 
     // Prefer explicit SEO fields over generic title/excerpt
     const resolvedTitle = post.metaTitle?.trim() || post.title;
@@ -110,12 +66,13 @@ async function resolveBlogMeta(slug: string): Promise<BlogMeta | null> {
       updatedAt: post.updatedAt,
       isIndexed: post.isIndexed,
       isFollowed: post.isFollowed,
+      articleHtml: post.contentHtml,
     };
 
     blogCache.set(cacheKey, { meta, expiresAt: Date.now() + BLOG_CACHE_TTL_MS });
     return meta;
   } catch {
-    return getExactRingPrFallbackMeta(slug);
+    return null;
   }
 }
 
@@ -145,6 +102,7 @@ export type ResolvedMeta = {
   authorName?: string;
   publishedAt?: string;
   updatedAt?: string;
+  articleHtml?: string;
 };
 
 /**
@@ -245,5 +203,6 @@ export async function resolveMeta(
     authorName: raw.authorName ?? undefined,
     publishedAt: raw.publishedAt?.toISOString(),
     updatedAt: raw.updatedAt?.toISOString(),
+    articleHtml: routeType === "article" ? raw.articleHtml ?? undefined : undefined,
   };
 }

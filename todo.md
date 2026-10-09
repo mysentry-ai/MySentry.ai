@@ -1,5 +1,13 @@
 # MySentry Website TODO
 
+## Public Blog Availability Repair (October 2026)
+- [x] Create one public-blog lifecycle authority for database-published records, static public fallbacks, editorial holds, reviewed redirects, and retired content.
+- [x] Route public blog detail, listing, category, related-content, initial metadata, and sitemap behavior through the shared resolver.
+- [x] Replace the Footer's raw blog links with catalog-owned guides and repair canonical internal links in static fallback articles.
+- [x] Add an internal server-side managed public-blog read fallback for the separate runtime when its local database is unavailable, including one transient-failure retry.
+- [x] Verify all 16 reported URLs without a local database: HTTP 200, canonical, index/follow, Article schema, initial article content, public API content, and one sitemap entry each.
+- [ ] Deploy the validated GitHub commit to the custom-domain runtime, then repeat the 16-URL public-domain check.
+
 ## SMS Database and Admin Repair (September 2026)
 - [x] Confirm that the managed MySentry application database and `contact_submissions` table are available through the application runtime.
 - [x] Add an authenticated Website Submissions section to the existing admin panel for contact and SMS communication preference records.

@@ -1,4 +1,5 @@
 import { DEFAULT_OG_IMAGE, SITE_NAME } from "../../shared/seo/route-meta";
+import { canonicalizeBlogContentLinks } from "../../shared/seo/blog-assets";
 import type { ResolvedMeta } from "./resolve-meta";
 
 const SITE_ORIGIN = "https://mysentry.ai";
@@ -164,6 +165,10 @@ function buildFallback(meta: ResolvedMeta): string {
   const heading = escapeHtml(meta.heading);
   const summary = escapeHtml(meta.summary);
   const label = meta.routeType === "article" ? "MySentry article" : "MySentry";
+  const articleBody =
+    meta.routeType === "article" && meta.articleHtml
+      ? `<div class="blog-content">${canonicalizeBlogContentLinks(meta.articleHtml)}</div>`
+      : "";
 
   return `<main id="ssr-content" data-ssr-fallback="true" aria-label="${label}">
     <header>
@@ -178,6 +183,7 @@ function buildFallback(meta: ResolvedMeta): string {
     <article>
       <h1>${heading}</h1>
       <p>${summary}</p>
+      ${articleBody}
       ${meta.found ? '<a href="/pricing">Review Plans</a>' : '<a href="/">Return to MySentry</a>'}
     </article>
   </main>`;

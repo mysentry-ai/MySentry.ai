@@ -21,12 +21,14 @@ import {
   bulkDeletePosts,
   isSlugUnique,
   createRedirect,
-  getRedirectByOldSlug,
-  getPublishedPosts,
-  getPublishedPostBySlug,
-  getRelatedPosts,
 } from "../blogDb";
 import { getContactSubmissions } from "../db";
+import {
+  listPublicBlogCategories,
+  listPublicBlogs,
+  listPublicRelatedBlogs,
+  resolvePublicBlogBySlug,
+} from "../publicBlogResolver";
 
 // ==================== Admin Auth ====================
 
@@ -956,22 +958,13 @@ Must include CTA: "Review Plans and Eligibility" (use natural wording, not spamm
         offset: z.number().optional(),
       }).optional())
       .query(async ({ input }) => {
-        return getPublishedPosts(input || {});
+        return listPublicBlogs(input || {});
       }),
 
     getBySlug: publicProcedure
       .input(z.object({ slug: z.string() }))
       .query(async ({ input }) => {
-        // First check for redirect
-        const redirect = await getRedirectByOldSlug(input.slug);
-        if (redirect) {
-          return { redirect: true, newSlug: redirect.newSlug, post: null };
-        }
-        const post = await getPublishedPostBySlug(input.slug);
-        if (!post) {
-          return { redirect: false, newSlug: null, post: null };
-        }
-        return { redirect: false, newSlug: null, post };
+        return resolvePublicBlogBySlug(input.slug);
       }),
 
     related: publicProcedure
@@ -982,11 +975,11 @@ Must include CTA: "Review Plans and Eligibility" (use natural wording, not spamm
         limit: z.number().optional(),
       }))
       .query(async ({ input }) => {
-        return getRelatedPosts(input.categoryId, input.excludeId, input.tags ?? null, input.limit);
+        return listPublicRelatedBlogs(input);
       }),
 
     categories: publicProcedure.query(async () => {
-      return getAllCategories();
+      return listPublicBlogCategories();
     }),
   }),
 });

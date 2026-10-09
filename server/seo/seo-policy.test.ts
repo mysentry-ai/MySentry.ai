@@ -4,6 +4,7 @@ import {
   resolveMalformedAbsolutePath,
 } from "../../shared/seo/redirects";
 import { HELD_BLOG_SLUGS } from "../../shared/seo/content-governance";
+import { STATIC_FALLBACK_PUBLIC_BLOGS } from "../../shared/seo/public-blog-catalog";
 import { ROUTE_META } from "../../shared/seo/route-meta";
 import { renderSeoHtml } from "./render-seo-html";
 import { resolveMeta } from "./resolve-meta";
@@ -114,6 +115,23 @@ describe("route-aware SEO rendering", () => {
     expect(meta.robots).toBe("noindex,nofollow");
     expect(html).toContain("Page not found");
     expect(html).not.toContain('type="application/ld+json"');
+  });
+
+  it("serves every public static fallback as a complete indexable article before JavaScript", async () => {
+    for (const post of STATIC_FALLBACK_PUBLIC_BLOGS) {
+      const route = `/blog/${post.slug}`;
+      const meta = await resolveMeta(route, "https://mysentry.ai");
+      const html = renderSeoHtml(template, meta);
+
+      expect(meta.found, route).toBe(true);
+      expect(meta.routeType, route).toBe("article");
+      expect(meta.canonicalPath, route).toBe(route);
+      expect(meta.robots, route).toBe("index,follow");
+      expect(meta.articleHtml, route).toContain("<p");
+      expect(html, route).toContain(`rel="canonical" href="https://mysentry.ai${route}"`);
+      expect(html, route).toContain('"@type":"Article"');
+      expect(html, route).toContain(post.contentHtml.trim().slice(0, 48));
+    }
   });
 
   it("serves unique indexable metadata and structured initial HTML for every growth route", async () => {

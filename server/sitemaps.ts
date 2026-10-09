@@ -1,9 +1,6 @@
 import { Express } from "express";
-import { getDb } from "./db";
-import { blogPosts } from "../drizzle/schema";
-import { eq } from "drizzle-orm";
 import { isHeldBlogSlug } from "../shared/seo/content-governance";
-import { EXACT_RING_PR_SLUG } from "../shared/seo/exact-ring-press-release";
+import { listPublicBlogs } from "./publicBlogResolver";
 import {
   CANONICAL_REDIRECTS,
   resolveMalformedAbsolutePath,
@@ -174,26 +171,19 @@ ${urls}
     res.send(xml);
   });
 
-  // ── Blog Sitemap (dynamic from database) ──
+  // ── Blog Sitemap (published database records and catalog fallbacks) ──
   app.get("/sitemap_blog.xml", async (_req, res) => {
-    const exactRingPrEntry = {
-      slug: EXACT_RING_PR_SLUG,
-      publishedAt: new Date("2026-09-10T10:19:10.000Z"),
-      updatedAt: new Date("2026-09-10T10:40:53.000Z"),
-    };
-
     const sendBlogSitemap = (
       posts: Array<{
         slug: string;
         publishedAt: Date | null;
         updatedAt: Date | null;
+        isIndexed?: boolean;
       }>,
     ) => {
-      const uniquePosts = posts.some(post => post.slug === EXACT_RING_PR_SLUG)
-        ? posts
-        : [exactRingPrEntry, ...posts];
-      const urls = uniquePosts
-        .filter(post => !isHeldBlogSlug(post.slug))
+      const uniquePosts = new Map(posts.map(post => [post.slug, post]));
+      const urls = Array.from(uniquePosts.values())
+        .filter(post => !isHeldBlogSlug(post.slug) && post.isIndexed !== false)
         .map(
           post => `  <url>
     <loc>${BASE_URL}/blog/${escapeXml(post.slug)}</loc>
@@ -214,24 +204,11 @@ ${urls}
     };
 
     try {
-      const db = await getDb();
-      if (!db) {
-        sendBlogSitemap([exactRingPrEntry]);
-        return;
-      }
-      const posts = await db
-        .select({
-          slug: blogPosts.slug,
-          publishedAt: blogPosts.publishedAt,
-          updatedAt: blogPosts.updatedAt,
-        })
-        .from(blogPosts)
-        .where(eq(blogPosts.status, "published"));
-
-      sendBlogSitemap(posts);
+      const result = await listPublicBlogs({ limit: 1_000 });
+      sendBlogSitemap(result.posts);
     } catch (error) {
       console.error("Error generating blog sitemap:", error);
-      sendBlogSitemap([exactRingPrEntry]);
+      sendBlogSitemap([]);
     }
   });
 }

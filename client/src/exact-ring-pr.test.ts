@@ -19,6 +19,10 @@ const serverMetaSource = readFileSync(
   path.resolve(process.cwd(), "server/seo/resolve-meta.ts"),
   "utf8",
 );
+const publicCatalogSource = readFileSync(
+  path.resolve(process.cwd(), "shared/seo/public-blog-catalog.ts"),
+  "utf8",
+);
 
 describe("exact supplied Ring press release rendering", () => {
   it("identifies only the approved Ring announcement slug as an exact press release", () => {
@@ -30,19 +34,15 @@ describe("exact supplied Ring press release rendering", () => {
     expect(source).toContain('data-exact-pr-part="subtitle"');
   });
 
-  it("keeps the exact release server-recognized when the database is unavailable", () => {
+  it("keeps the exact release in the shared server-recognized public catalog", () => {
     expect(serverMetaSource).toContain(
-      "function getExactRingPrFallbackMeta(slug: string): BlogMeta | null",
+      'import { resolvePublicBlogBySlug } from "../publicBlogResolver";',
     );
     expect(serverMetaSource).toContain(
-      "if (slug !== EXACT_RING_PR_SLUG) return null;",
+      "const resolution = await resolvePublicBlogBySlug(slug);",
     );
-    expect(serverMetaSource).toContain(
-      "if (!db) return getExactRingPrFallbackMeta(slug);",
-    );
-    expect(serverMetaSource).toContain(
-      "if (!rows.length) return getExactRingPrFallbackMeta(slug);",
-    );
+    expect(publicCatalogSource).toContain("STATIC_FALLBACK_PUBLIC_BLOGS");
+    expect(publicCatalogSource).toContain("EXACT_RING_PR_SLUG");
   });
 
   it("does not append generic editorial blocks to the exact press release", () => {
