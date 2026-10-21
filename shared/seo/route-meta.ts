@@ -27,9 +27,10 @@ export const SITE_NAME = "MySentry";
 export const ROUTE_META: Record<string, RouteMeta> = {
   // ─── Core pages ───────────────────────────────────────────────────────────
   "/": {
-    title: "Personal Safety and Wellness Monitoring, 24/7",
+    title: "Personal Safety App for Families & Seniors",
     description:
-      "MySentry combines a Panic Alarm, Safety Checks, eligible device detection, trusted contacts, professional monitoring, and supported wellness context, subject to plan and device requirements.",
+      "Never face an emergency alone. MySentry connects safety alerts to trusted family members and eligible 24/7 professional monitoring. Explore plans and get the app.",
+    ogImage: "https://mysentry.ai/images/cdn/hero-family-multigenerational-E2GoJdiP8d3vSnxHi3L9fP.webp",
   },
   "/about-us": {
     title: "About MySentry | Our Mission & Story",

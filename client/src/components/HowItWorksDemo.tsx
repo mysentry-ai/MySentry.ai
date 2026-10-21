@@ -2,10 +2,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { AlertTriangle, Bell, HeartPulse, Car, ShieldCheck, Phone, Activity, Timer } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import HomepageWalkthrough from "./homepage/HomepageWalkthrough";
 
 type ScenarioType = "fall" | "crash" | "panic" | "health";
 
-export default function HowItWorksDemo() {
+export default function HowItWorksDemo({ homepageMode = false }: { homepageMode?: boolean } = {}) {
+  return homepageMode ? <HomepageWalkthrough /> : <LegacyHowItWorksDemo />;
+}
+
+function LegacyHowItWorksDemo() {
   const [activeScenario, setActiveScenario] = useState<ScenarioType>("fall");
   const [activeStep, setActiveStep] = useState(0);
   const [timer, setTimer] = useState(30);
