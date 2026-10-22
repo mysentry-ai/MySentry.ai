@@ -8,4 +8,4 @@
 - [x] Keep existing Pricing, Ring, and legal routes intact; validate all staged internal destinations and preserve Oura as Coming Soon
 - [x] Complete and record root homepage metadata, canonical, social, indexability, no-em-dash, StoryBrand, claim-safety, no-ai-slop, keyboard, contrast, image-alt, responsive, and overflow checks
 - [x] Validate TypeScript, 150/150 serial tests, production build, root metadata, asset delivery, desktop/mobile rendering, walkthrough tabs, FAQ disclosure, and mobile navigation
-- [ ] Save a staging-only review checkpoint; production deployment and GitHub push are intentionally awaiting owner approval
+- [x] Save a staging-only review checkpoint; production deployment and GitHub push are intentionally awaiting owner approval
