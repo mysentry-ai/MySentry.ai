@@ -19,17 +19,16 @@ export type RouteMeta = {
   ogImage?: string;
 };
 
-export const DEFAULT_OG_IMAGE =
-  "https://mysentry.ai/images/og-default.jpg";
+export const DEFAULT_OG_IMAGE = "https://mysentry.ai/images/og-default.jpg";
 
 export const SITE_NAME = "MySentry";
 
 export const ROUTE_META: Record<string, RouteMeta> = {
   // ─── Core pages ───────────────────────────────────────────────────────────
   "/": {
-    title: "Personal Safety and Wellness Monitoring, 24/7",
+    title: "Personal Safety App for Families & Seniors",
     description:
-      "MySentry combines a Panic Alarm, Safety Checks, eligible device detection, trusted contacts, professional monitoring, and supported wellness context, subject to plan and device requirements.",
+      "Never face an emergency alone. MySentry connects safety alerts to trusted family members and eligible 24/7 professional monitoring. Explore plans and get the app.",
   },
   "/about-us": {
     title: "About MySentry | Our Mission & Story",
@@ -466,7 +465,8 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     title: "Oura Ring and MySentry Coming Soon",
     description:
       "Explore MySentry's future vision for permission-based Oura Ring wellness context and personal safety. The integration is not currently available.",
-    ogImage: "/images/cdn/hero-oura-ring-integration-gVAVE7WXQAwHMQbbzBA9nB.webp",
+    ogImage:
+      "/images/cdn/hero-oura-ring-integration-gVAVE7WXQAwHMQbbzBA9nB.webp",
   },
 
   // ─── Additional public routes ─────────────────────────────────────────────
