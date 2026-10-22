@@ -1,15 +1,20 @@
 export const HOMEPAGE_ASSETS = {
   appStoreBadge: "/manus-storage/mysentry-home-app-store-badge_cac1b154.png",
-  googlePlayBadge: "/manus-storage/mysentry-home-google-play-badge_e2d35fb4.png",
+  googlePlayBadge:
+    "/manus-storage/mysentry-home-google-play-badge_e2d35fb4.png",
   ringBadge: "/manus-storage/mysentry-home-ring-badge_1733c8e3.png",
   heroSenior: "/manus-storage/mysentry-home-senior-showcase_591d5c90.png",
-  emergencyContacts: "/manus-storage/mysentry-home-emergency-contacts_ab3b570d.jpg",
+  emergencyContacts:
+    "/manus-storage/mysentry-home-emergency-contacts_ab3b570d.jpg",
   fallDetection: "/manus-storage/mysentry-home-fall-detection_e15f9a76.png",
-  healthMonitoring: "/manus-storage/mysentry-home-health-monitoring_215b609c.png",
+  healthMonitoring:
+    "/manus-storage/mysentry-home-health-monitoring_215b609c.png",
   panicFlow: "/manus-storage/mysentry-home-panic-alarm-flow_56ac80ef.png",
   ringScreen: "/manus-storage/mysentry-home-ring-screen_8e8d54ab.png",
   watchPanic: "/manus-storage/mysentry-home-watch-panic_0409e3bc.png",
   allInOne: "/manus-storage/mysentry-home-all-in-one_f2b34eac.png",
+  meetSafe: "/manus-storage/mysentry-meetsafe_2d034151.png",
+  safetyCheck: "/manus-storage/mysentry-safety-check_e50524fe.png",
   family: "/images/family-hero-base.jpg",
   senior: "/images/senior-gardening-800w.jpg",
   women: "/images/cdn/hero-safety-women-AnNQmUkZgkndJZ95kCXbP6.webp",
@@ -65,12 +70,14 @@ export const audiences = [
  * The object also gives tests a single authority for no-repeat checks.
  */
 export const HOMEPAGE_MOCKUP_PLACEMENTS = {
-  hero: HOMEPAGE_ASSETS.heroSenior,
+  hero: HOMEPAGE_ASSETS.allInOne,
   atAGlance: HOMEPAGE_ASSETS.emergencyContacts,
   walkthroughFall: HOMEPAGE_ASSETS.fallDetection,
   walkthroughPanic: HOMEPAGE_ASSETS.panicFlow,
   walkthroughHealth: HOMEPAGE_ASSETS.healthMonitoring,
+  meetSafe: HOMEPAGE_ASSETS.meetSafe,
+  safetyCheck: HOMEPAGE_ASSETS.safetyCheck,
   ring: HOMEPAGE_ASSETS.ringScreen,
   watch: HOMEPAGE_ASSETS.watchPanic,
-  final: HOMEPAGE_ASSETS.allInOne,
+  final: HOMEPAGE_ASSETS.heroSenior,
 } as const;

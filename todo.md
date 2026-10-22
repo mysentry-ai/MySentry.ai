@@ -20,3 +20,14 @@
 - [x] Validate the shared live navigation, responsive desktop/tablet/mobile layouts, all selected mockup storage paths, tabs, FAQ disclosure, single H1, metadata, no-em-dash policy and claim boundaries
 - [x] Pass TypeScript, 151/151 serial tests, production build, diff checks and local no-ai-slop pattern scan
 - [x] Save the final staging-only checkpoint after the revised checklist is recorded; do not push to GitHub or deploy until owner approval
+
+## Flighty Reference Correction: Product-Led Homepage
+- [x] Replace the split hero with a centered headline, official download badges and a dominant genuine app composition.
+- [x] Show all three supplied safety-workflow mockups together, retaining selectable explanations and keyboard-operable tabs.
+- [x] Add distinct MeetSafe and safety-check mockups once each with no added visual backplates, cropping or device frames.
+- [x] Enlarge Ring, wearable and closing visuals and load key editorial images without deferred blank sections.
+- [x] Preserve the live shared navigation, homepage metadata, approved claims, original mockup pixels and named Live version restoration baseline.
+- [x] Add the YouTube thumbnail and Play control that loads the responsive player without autoplay.
+- [x] Correct mobile typography precedence in homepage-scoped CSS without modifying global site CSS or unrelated pages.
+- [x] Validate TypeScript, 152/152 serial tests, production build, four-width rendering, loaded/unique mockups, no horizontal overflow, keyboard tabs, FAQ and video interactions.
+- [x] Save the corrected staging state for review without pushing to GitHub or publishing production.

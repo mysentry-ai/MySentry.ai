@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   Activity,
   BellRing,
@@ -112,6 +112,7 @@ const scenarios: Record<
 export default function HomepageWalkthrough() {
   const [selected, setSelected] = useState<Scenario>("fall");
   const scenario = scenarios[selected];
+  const reduceMotion = useReducedMotion();
 
   return (
     <div className="hp-walkthrough">
@@ -132,7 +133,23 @@ export default function HomepageWalkthrough() {
               type="button"
               role="tab"
               aria-selected={active}
-              aria-controls={`hp-panel-${key}`}
+              aria-controls={`hp-panel-${selected}`}
+              tabIndex={active ? 0 : -1}
+              onKeyDown={event => {
+                const keys = Object.keys(scenarios) as Scenario[];
+                const current = keys.indexOf(key);
+                let next = current;
+                if (event.key === "ArrowRight")
+                  next = (current + 1) % keys.length;
+                else if (event.key === "ArrowLeft")
+                  next = (current + keys.length - 1) % keys.length;
+                else if (event.key === "Home") next = 0;
+                else if (event.key === "End") next = keys.length - 1;
+                else return;
+                event.preventDefault();
+                setSelected(keys[next]);
+                document.getElementById(`hp-tab-${keys[next]}`)?.focus();
+              }}
               onClick={() => setSelected(key)}
             >
               <Icon aria-hidden="true" size={18} />
@@ -142,24 +159,35 @@ export default function HomepageWalkthrough() {
         })}
       </div>
       <div
+        className="hp-product-gallery"
+        aria-label="Actual MySentry app and watch mockups"
+      >
+        {(Object.keys(scenarios) as Scenario[]).map((key, index) => (
+          <motion.div
+            key={key}
+            className={`hp-product-feature hp-product-feature--${key}`}
+            initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.28, delay: index * 0.06 }}
+          >
+            <img
+              src={scenarios[key].image}
+              alt={scenarios[key].alt}
+              loading="eager"
+              decoding="async"
+            />
+            <h3>{scenarios[key].label}</h3>
+            <p>{scenarios[key].steps[0].text}</p>
+          </motion.div>
+        ))}
+      </div>
+      <div
         className="hp-walkthrough-panel"
         id={`hp-panel-${selected}`}
         role="tabpanel"
         aria-labelledby={`hp-tab-${selected}`}
       >
-        <div className="hp-walkthrough-phone" aria-live="polite">
-          <AnimatePresence mode="wait">
-            <motion.img
-              key={selected}
-              src={scenario.image}
-              alt={scenario.alt}
-              initial={{ opacity: 0, x: -12 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: 12 }}
-              transition={{ duration: 0.28, ease: "easeOut" }}
-            />
-          </AnimatePresence>
-        </div>
         <div className="hp-step-grid">
           {scenario.steps.map((step, index) => {
             const Icon = step.icon;

@@ -28,13 +28,7 @@ const assets = read(
   "homepageContent.ts"
 );
 const homeRoute = read("client", "src", "pages", "Home.tsx");
-const styles = read(
-  "client",
-  "src",
-  "components",
-  "homepage",
-  "homepage.css"
-);
+const styles = read("client", "src", "components", "homepage", "homepage.css");
 const routeMeta = read("shared", "seo", "route-meta.ts");
 
 describe("staged homepage implementation", () => {
@@ -55,6 +49,17 @@ describe("staged homepage implementation", () => {
     expect(homeRoute).toContain('import Navbar from "@/components/Navbar"');
     expect(homeRoute).toContain("<Navbar />");
     expect(homepage).not.toContain("hp-nav");
+  });
+
+  it("keeps real product artwork prominent and all workflow mockups visible", () => {
+    expect(homepage).toContain("src={HOMEPAGE_ASSETS.allInOne}");
+    expect(homepage).toContain('fetchPriority="high"');
+    expect(homepage).not.toContain('loading="lazy"');
+    expect(walkthrough).toContain('className="hp-product-gallery"');
+    expect(walkthrough).toContain("src={scenarios[key].image}");
+    expect(walkthrough).toContain('event.key === "ArrowRight"');
+    expect(homepage).toContain("hp-video-poster");
+    expect(homepage).toContain('reducedMotion="user"');
   });
 
   it("uses the official badge destinations and distinct owner-supplied mockups", () => {
@@ -88,7 +93,8 @@ describe("staged homepage implementation", () => {
       "watch:",
       "final:",
     ];
-    for (const placement of uniquePlacementKeys) expect(assets).toContain(placement);
+    for (const placement of uniquePlacementKeys)
+      expect(assets).toContain(placement);
   });
 
   it("keeps claim boundaries, reduced motion support and the owner-approved color balance", () => {
