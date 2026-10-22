@@ -135,9 +135,6 @@ describe("staged homepage implementation", () => {
   it("keeps claim boundaries, reduced motion support and the owner-approved color balance", () => {
     const normalizedHomepage = homepage.replace(/\s+/g, " ");
     expect(normalizedHomepage).toContain(
-      "Monitoring and features depend on plan, settings, compatible devices, connectivity and availability."
-    );
-    expect(normalizedHomepage).toContain(
       "Requires compatible Ring devices, access permissions and active applicable services."
     );
     expect(walkthrough.replace(/\s+/g, " ")).toContain("not a medical device");
@@ -148,6 +145,23 @@ describe("staged homepage implementation", () => {
     expect(styles).toContain("--hp-navy: #004f7b");
     expect(styles).toContain("--hp-mint: #6ad990");
     expect(styles).toContain("--hp-warm: #c58438");
+  });
+
+  it("applies the requested visual edits without duplicate inline styles", () => {
+    const hero = homepage.slice(
+      homepage.indexOf('<section className="hp-hero"'),
+      homepage.indexOf('id="how-it-works"')
+    );
+    expect(hero).not.toContain('className="hp-eligibility"');
+    expect(hero).not.toContain('className="hp-connector');
+    expect(hero).not.toContain("style=");
+    expect(styles).toContain("font-size: 58px !important");
+    expect(styles).toContain(
+      'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important'
+    );
+    expect(styles).toContain("margin-top: -15px");
+    expect(styles).toContain("width: 135px");
+    expect(homepage).toContain('className="hp-google-play-badge"');
   });
 
   it("preserves root metadata and the public no-em-dash policy", () => {

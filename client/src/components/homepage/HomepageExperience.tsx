@@ -72,6 +72,7 @@ function StoreBadges({
           loading="eager"
           src={HOMEPAGE_ASSETS.googlePlayBadge}
           alt="Get it on Google Play"
+          className="hp-google-play-badge"
         />
       </a>
       {includeRing && (
@@ -157,10 +158,6 @@ export default function HomepageExperience() {
                 <p className="hp-trial-note">
                   No Credit Card Required for Your 7-Day Free Trial.
                 </p>
-                <p className="hp-eligibility">
-                  Monitoring and features depend on plan, settings, compatible
-                  devices, connectivity and availability.
-                </p>
               </motion.div>
 
               <motion.div
@@ -169,9 +166,6 @@ export default function HomepageExperience() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
               >
-                <span className="hp-connector hp-connector--contacts">
-                  <UsersRound size={15} aria-hidden="true" /> Trusted contacts
-                </span>
                 <img
                   className="hp-hero-device hp-device--hero"
                   src={HOMEPAGE_ASSETS.allInOne}
@@ -180,9 +174,6 @@ export default function HomepageExperience() {
                   height={622}
                   fetchPriority="high"
                 />
-                <span className="hp-connector hp-connector--monitoring">
-                  <Headset size={15} aria-hidden="true" /> Eligible monitoring
-                </span>
               </motion.div>
             </div>
           </section>
