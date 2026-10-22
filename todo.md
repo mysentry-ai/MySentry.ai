@@ -9,3 +9,14 @@
 - [x] Complete and record root homepage metadata, canonical, social, indexability, no-em-dash, StoryBrand, claim-safety, no-ai-slop, keyboard, contrast, image-alt, responsive, and overflow checks
 - [x] Validate TypeScript, 150/150 serial tests, production build, root metadata, asset delivery, desktop/mobile rendering, walkthrough tabs, FAQ disclosure, and mobile navigation
 - [x] Save a staging-only review checkpoint; production deployment and GitHub push are intentionally awaiting owner approval
+
+## Flighty-Inspired Homepage Staging Revision (October 2026)
+- [x] Review Flighty as a layout, motion and hierarchy reference without copying its brand, product language or assets
+- [x] Preserve the exact shared live MySentry Navbar component and navigation structure, including its desktop and mobile functionality
+- [x] Apply the requested light 60/30/10 system: white foundation, `#004F7B` structure, limited `#6AD990` accent, and restrained `#C58438` detail
+- [x] Apply PEACE and the provided hook framework through an evidence-led reader-first story, without fear-based content, fabricated quotes or guarantees
+- [x] Use genuine owner-supplied mockups as unaltered foreground visuals, once each, with no created background, placeholder, cropping or duplicate section use
+- [x] Place the supplied YouTube explainer after MySentry at a Glance with a responsive actual player, no autoplay, controls/captions preserved and low-motion entrance treatment
+- [x] Validate the shared live navigation, responsive desktop/tablet/mobile layouts, all selected mockup storage paths, tabs, FAQ disclosure, single H1, metadata, no-em-dash policy and claim boundaries
+- [x] Pass TypeScript, 151/151 serial tests, production build, diff checks and local no-ai-slop pattern scan
+- [x] Save the final staging-only checkpoint after the revised checklist is recorded; do not push to GitHub or deploy until owner approval

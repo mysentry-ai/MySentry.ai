@@ -1,12 +1,15 @@
 export const HOMEPAGE_ASSETS = {
-  logo: "/manus-storage/mysentry-logo-color_9c46d27f.svg",
-  appStoreBadge: "/manus-storage/Download_on_the_App_Store_3520a0d7.png",
-  googlePlayBadge: "/manus-storage/Get_it_on_Google_Play.png_3896d918.png",
-  ringBadge: "/manus-storage/mysentry-ring-appstore-badge_aeac9cb2.png",
-  heroApp: "/manus-storage/mysentry-hero-home-screen_08e5b781.jpg",
-  contactsScreen: "/manus-storage/mysentry-emergency-contacts_6cff739a.jpg",
-  ringApp: "/manus-storage/mysentry-ring-home-screen_f2dc97ca.jpg",
-  panicWatch: "/manus-storage/mysentry-watch-panic-alarm_0ca29439.png",
+  appStoreBadge: "/manus-storage/mysentry-home-app-store-badge_cac1b154.png",
+  googlePlayBadge: "/manus-storage/mysentry-home-google-play-badge_e2d35fb4.png",
+  ringBadge: "/manus-storage/mysentry-home-ring-badge_1733c8e3.png",
+  heroSenior: "/manus-storage/mysentry-home-senior-showcase_591d5c90.png",
+  emergencyContacts: "/manus-storage/mysentry-home-emergency-contacts_ab3b570d.jpg",
+  fallDetection: "/manus-storage/mysentry-home-fall-detection_e15f9a76.png",
+  healthMonitoring: "/manus-storage/mysentry-home-health-monitoring_215b609c.png",
+  panicFlow: "/manus-storage/mysentry-home-panic-alarm-flow_56ac80ef.png",
+  ringScreen: "/manus-storage/mysentry-home-ring-screen_8e8d54ab.png",
+  watchPanic: "/manus-storage/mysentry-home-watch-panic_0409e3bc.png",
+  allInOne: "/manus-storage/mysentry-home-all-in-one_f2b34eac.png",
   family: "/images/family-hero-base.jpg",
   senior: "/images/senior-gardening-800w.jpg",
   women: "/images/cdn/hero-safety-women-AnNQmUkZgkndJZ95kCXbP6.webp",
@@ -48,11 +51,26 @@ export const audiences = [
   },
   {
     title: "Women",
-    headline: "Confidence for wherever you're headed.",
+    headline: "Confidence for wherever you are headed.",
     description:
-      "Personal safety alerts and check-ins when you're out and about.",
+      "Personal safety alerts and check-ins when you are out and about.",
     href: "/use-cases/safety-app-for-women",
     image: HOMEPAGE_ASSETS.women,
     alt: "Woman jogging outdoors near the waterfront",
   },
 ] as const;
+
+/**
+ * Every owner-supplied product mockup appears in one homepage placement only.
+ * The object also gives tests a single authority for no-repeat checks.
+ */
+export const HOMEPAGE_MOCKUP_PLACEMENTS = {
+  hero: HOMEPAGE_ASSETS.heroSenior,
+  atAGlance: HOMEPAGE_ASSETS.emergencyContacts,
+  walkthroughFall: HOMEPAGE_ASSETS.fallDetection,
+  walkthroughPanic: HOMEPAGE_ASSETS.panicFlow,
+  walkthroughHealth: HOMEPAGE_ASSETS.healthMonitoring,
+  ring: HOMEPAGE_ASSETS.ringScreen,
+  watch: HOMEPAGE_ASSETS.watchPanic,
+  final: HOMEPAGE_ASSETS.allInOne,
+} as const;

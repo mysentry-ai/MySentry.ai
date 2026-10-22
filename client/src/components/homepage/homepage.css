@@ -1,10 +1,22 @@
+.hp-live-shell > nav {
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-bottom: 1px solid #d2d9d9 !important;
+  box-shadow: 0 1px 0 rgba(0, 79, 123, 0.04);
+  padding-bottom: 12px !important;
+  padding-top: 12px !important;
+}
+.hp-live-shell > nav .container {
+  min-height: 64px;
+}
 .hp-page {
   --hp-navy: #004f7b;
   --hp-ink: #232020;
-  --hp-pale-blue: #eef4f7;
+  --hp-muted: #536069;
   --hp-surface: #f8fafa;
+  --hp-pale-blue: #eef4f7;
   --hp-mint: #6ad990;
   --hp-pale-mint: #e8f8ee;
+  --hp-warm: #c58438;
   --hp-line: #d2d9d9;
   background: #fff;
   color: var(--hp-ink);
@@ -22,15 +34,15 @@
 }
 .hp-page a:focus-visible,
 .hp-page button:focus-visible {
-  outline: 3px solid #005f91;
-  outline-offset: 3px;
+  outline: 3px solid #004f7b;
+  outline-offset: 4px;
 }
 .hp-page section[id] {
-  scroll-margin-top: 86px;
+  scroll-margin-top: 104px;
 }
 .hp-shell {
-  width: min(1200px, calc(100% - 40px));
   margin: 0 auto;
+  width: min(1200px, calc(100% - 64px));
 }
 .hp-section {
   padding: 104px 0;
@@ -50,8 +62,8 @@
   color: var(--hp-navy);
   font-size: clamp(30px, 3.15vw, 42px);
   font-weight: 650;
-  letter-spacing: -0.036em;
-  line-height: 1.13;
+  letter-spacing: -0.038em;
+  line-height: 1.14;
   margin: 0;
 }
 .hp-section-intro {
@@ -59,7 +71,7 @@
   font-size: 20px;
   line-height: 1.48;
   margin: 17px 0 0;
-  max-width: 680px;
+  max-width: 650px;
 }
 .hp-section-head {
   max-width: 760px;
@@ -82,14 +94,10 @@
   min-height: 52px;
   padding: 0 24px;
   text-decoration: none;
-  transition:
-    transform 160ms cubic-bezier(0.23, 1, 0.32, 1),
-    box-shadow 160ms cubic-bezier(0.23, 1, 0.32, 1),
-    background-color 160ms;
+  transition: background-color 160ms cubic-bezier(0.23, 1, 0.32, 1), transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .hp-button:hover {
   background: #003a5b;
-  box-shadow: 0 14px 32px rgba(0, 79, 123, 0.16);
   transform: translateY(-2px);
 }
 .hp-button:active {
@@ -99,7 +107,7 @@
   align-items: center;
   color: var(--hp-navy);
   display: inline-flex;
-  font-weight: 600;
+  font-weight: 650;
   gap: 8px;
   min-height: 44px;
   text-decoration: none;
@@ -108,122 +116,27 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-.hp-header {
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid rgba(210, 217, 217, 0.9);
-  left: 0;
-  position: sticky;
-  right: 0;
-  top: 0;
-  z-index: 50;
-}
-.hp-header-inner {
-  align-items: center;
-  display: flex;
-  height: 76px;
-  justify-content: space-between;
-}
-.hp-logo {
-  display: flex;
-  flex: 0 0 auto;
-}
-.hp-logo img {
-  display: block;
-  height: 34px;
-  width: auto;
-}
-.hp-nav {
-  align-items: center;
-  display: flex;
-  gap: 24px;
-  margin-left: auto;
-}
-.hp-nav a {
-  color: var(--hp-ink);
-  font-size: 15px !important;
-  font-weight: 600;
-  min-height: 44px;
-  padding: 12px 0;
-  text-decoration: none;
-}
-.hp-nav a:hover {
-  color: var(--hp-navy);
-}
-.hp-header-cta {
-  margin-left: 22px;
-  min-height: 44px;
-  padding: 0 18px;
-}
-.hp-menu-trigger {
-  background: transparent;
-  border: 0;
-  color: var(--hp-navy);
-  display: none;
-  min-height: 44px;
-  min-width: 44px;
-  padding: 10px;
-}
-.hp-mobile-menu {
-  background: #fff;
-  border-bottom: 1px solid var(--hp-line);
-  display: none;
-  padding: 10px 20px 22px;
-}
-.hp-mobile-menu.is-open {
-  display: grid;
-}
-.hp-mobile-menu a {
-  border-bottom: 1px solid #e9eeee;
-  color: var(--hp-ink);
-  font-size: 17px !important;
-  font-weight: 600;
-  min-height: 48px;
-  padding: 13px 0;
-  text-decoration: none;
-}
-.hp-mobile-menu .hp-button {
-  margin-top: 16px;
-  width: 100%;
-}
 .hp-hero {
-  background: linear-gradient(135deg, #fff 0%, #f8fafa 50%, #eef4f7 100%);
-  min-height: 640px;
-  overflow: hidden;
-  padding: 64px 0 56px;
-  position: relative;
-}
-.hp-hero::before {
-  background: radial-gradient(
-    circle,
-    rgba(106, 217, 144, 0.17) 0%,
-    rgba(106, 217, 144, 0) 67%
-  );
-  content: "";
-  height: 540px;
-  position: absolute;
-  right: -170px;
-  top: -220px;
-  width: 540px;
+  background: #fff;
+  min-height: 650px;
+  padding: 148px 0 76px;
 }
 .hp-hero-grid {
   align-items: center;
   display: grid;
-  gap: 44px;
+  gap: 48px;
   grid-template-columns: minmax(0, 1.1fr) minmax(380px, 0.9fr);
-  min-height: 520px;
-  position: relative;
+  min-height: 510px;
 }
 .hp-hero-copy {
   max-width: 650px;
-  position: relative;
-  z-index: 2;
 }
 .hp-hero h1 {
   color: var(--hp-navy);
   font-size: clamp(44px, 5vw, 64px);
   font-weight: 650;
-  letter-spacing: -0.055em;
-  line-height: 1.08;
+  letter-spacing: -0.06em;
+  line-height: 1.07;
   margin: 0;
   max-width: 650px;
 }
@@ -250,10 +163,11 @@
 .hp-badge-label {
   color: #526068;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 650;
   margin: 28px 0 10px;
 }
-.hp-badges {
+.hp-badges,
+.hp-footer-badges {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -286,51 +200,44 @@
   min-height: 500px;
   position: relative;
 }
-.hp-hero-glow {
-  background: rgba(106, 217, 144, 0.26);
-  border-radius: 999px;
-  filter: blur(22px);
-  height: 330px;
-  position: absolute;
-  transform: rotate(-12deg);
-  width: 330px;
-}
 .hp-hero-device {
-  border: 1px solid rgba(0, 79, 123, 0.13);
-  border-radius: 30px;
-  box-shadow: 0 22px 55px rgba(0, 79, 123, 0.17);
   display: block;
-  max-height: 500px;
+  height: auto;
+  max-height: 560px;
+  max-width: 100%;
   object-fit: contain;
   position: relative;
-  width: min(100%, 460px);
+  width: min(100%, 520px);
   z-index: 1;
+}
+.hp-device--hero {
+  width: min(100%, 510px);
 }
 .hp-connector {
   align-items: center;
   background: #fff;
   border: 1px solid var(--hp-line);
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(0, 79, 123, 0.12);
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(0, 79, 123, 0.08);
   color: var(--hp-navy);
   display: flex;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 650;
   gap: 7px;
-  padding: 10px 12px;
+  padding: 10px 13px;
   position: absolute;
   z-index: 2;
 }
 .hp-connector--contacts {
-  left: 0;
-  top: 22%;
+  left: -4%;
+  top: 20%;
 }
 .hp-connector--monitoring {
-  bottom: 17%;
-  right: -4px;
+  bottom: 16%;
+  right: -3%;
 }
 .hp-story-hook {
-  border-left: 3px solid var(--hp-mint);
+  border-left: 3px solid var(--hp-warm);
   color: #3b464d;
   font-size: 17px;
   line-height: 1.55;
@@ -360,7 +267,7 @@
   background: #fff;
   border: 1px solid var(--hp-line);
   border-radius: 20px;
-  min-height: 255px;
+  min-height: 236px;
   padding: 28px;
   position: relative;
   text-align: center;
@@ -388,23 +295,22 @@
   line-height: 1.22;
   margin: 0;
 }
-.hp-stage p {
+.hp-stage p,
+.hp-step-card p {
   color: #4b565d;
   font-size: 16px;
   line-height: 1.58;
   margin: 12px 0 0;
 }
 .hp-stage-visual {
-  border: 1px solid var(--hp-line);
-  border-radius: 20px;
-  margin-top: 28px;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 .hp-stage-visual img {
   display: block;
-  height: 280px;
-  object-fit: cover;
-  object-position: 50% 40%;
+  height: auto;
+  max-width: min(100%, 720px);
   width: 100%;
 }
 .hp-video-section {
@@ -420,7 +326,7 @@
   background: #101820;
   border: 1px solid rgba(0, 79, 123, 0.18);
   border-radius: 22px;
-  box-shadow: 0 18px 44px rgba(0, 79, 123, 0.13);
+  box-shadow: 0 16px 44px rgba(0, 79, 123, 0.08);
   overflow: hidden;
   position: relative;
 }
@@ -449,16 +355,14 @@
   color: inherit;
   overflow: hidden;
   text-decoration: none;
-  transition:
-    box-shadow 180ms cubic-bezier(0.23, 1, 0.32, 1),
-    transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: box-shadow 180ms cubic-bezier(0.23, 1, 0.32, 1), transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 .hp-audience-card:hover {
   box-shadow: 0 16px 44px rgba(0, 79, 123, 0.1);
   transform: translateY(-4px);
 }
 .hp-audience-card img {
-  aspect-ratio: 4/3;
+  aspect-ratio: 4 / 3;
   display: block;
   object-fit: cover;
   width: 100%;
@@ -502,11 +406,12 @@
   color: #455159;
   display: inline-flex;
   font-size: 15px !important;
-  font-weight: 600;
+  font-weight: 650;
   gap: 8px;
   justify-content: center;
   min-height: 46px;
   padding: 0 16px;
+  transition: background-color 160ms, border-color 160ms, color 160ms;
 }
 .hp-tab:hover,
 .hp-tab.is-active {
@@ -516,13 +421,10 @@
 }
 .hp-walkthrough-panel {
   align-items: center;
-  background: var(--hp-pale-blue);
-  border: 1px solid #d7e4ea;
-  border-radius: 24px;
   display: grid;
-  gap: 36px;
+  gap: 42px;
   grid-template-columns: minmax(225px, 0.7fr) minmax(0, 1.3fr);
-  padding: 32px;
+  padding: 12px 0;
 }
 .hp-walkthrough-phone {
   align-items: center;
@@ -531,8 +433,8 @@
   min-height: 350px;
 }
 .hp-walkthrough-phone img {
-  border-radius: 20px;
-  box-shadow: 0 17px 34px rgba(0, 79, 123, 0.15);
+  display: block;
+  height: auto;
   max-height: 390px;
   max-width: 100%;
   object-fit: contain;
@@ -548,7 +450,6 @@
   border-radius: 16px;
   min-height: 188px;
   padding: 22px;
-  position: relative;
 }
 .hp-step-index {
   color: #7c8c94;
@@ -569,10 +470,9 @@
   margin: 0;
 }
 .hp-step-card p {
-  color: #4b565d;
   font-size: 14px;
   line-height: 1.5;
-  margin: 9px 0 0;
+  margin-top: 9px;
 }
 .hp-legal-note {
   color: #55636a;
@@ -626,71 +526,53 @@
   font-size: 16px;
   line-height: 1.25;
 }
-.hp-monitor-node span {
-  color: #536069;
-  font-size: 13px;
-  line-height: 1.4;
-}
+.hp-monitor-node span,
 .hp-provider-line {
   color: #536069;
   font-size: 16px;
   line-height: 1.58;
+}
+.hp-provider-line {
   margin: 20px 0 0;
 }
 .hp-provider-line strong {
   color: var(--hp-ink);
 }
-.hp-ring-art {
+.hp-ring-art,
+.hp-watch-visual,
+.hp-final-phone {
   align-items: center;
   display: flex;
   justify-content: center;
-  min-height: 370px;
-  position: relative;
 }
-.hp-ring-camera {
-  align-items: center;
-  background: #fff;
-  border: 1px solid var(--hp-line);
-  border-radius: 30px;
-  box-shadow: 0 16px 40px rgba(0, 79, 123, 0.1);
-  color: var(--hp-navy);
-  display: flex;
-  height: 145px;
-  justify-content: center;
-  left: 6%;
-  position: absolute;
-  top: 12%;
-  transform: rotate(-7deg);
-  width: 145px;
+.hp-ring-art {
+  min-height: 370px;
 }
 .hp-ring-device {
-  border-radius: 26px;
-  box-shadow: 0 22px 48px rgba(0, 79, 123, 0.16);
-  max-height: 405px;
-  max-width: min(100%, 450px);
+  display: block;
+  height: auto;
+  max-height: 450px;
+  max-width: min(100%, 620px);
   object-fit: contain;
-  position: relative;
-  transform: rotate(3deg);
-  z-index: 1;
-}
-.hp-ring-path {
-  border-bottom: 2px solid var(--hp-mint);
-  border-radius: 50%;
-  height: 110px;
-  left: 27%;
-  position: absolute;
-  top: 18%;
-  transform: rotate(17deg);
-  width: 46%;
+  width: 100%;
 }
 .hp-ring-badge {
   margin-top: 22px;
+}
+.hp-wearables-layout {
+  margin-bottom: 52px;
+}
+.hp-watch-visual img {
+  display: block;
+  height: auto;
+  max-height: 340px;
+  max-width: 202px;
+  width: 100%;
 }
 .hp-wearables {
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(4, 1fr);
-  margin-top: 38px;
 }
 .hp-watch-tile {
   background: #fff;
@@ -790,25 +672,16 @@
 }
 .hp-final-card {
   align-items: center;
-  background: #fff;
-  border: 1px solid var(--hp-line);
-  border-radius: 24px;
   display: grid;
-  gap: 36px;
-  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.55fr);
-  overflow: hidden;
-  padding: 46px;
-}
-.hp-final-phone {
-  display: flex;
-  justify-content: center;
+  gap: 46px;
+  grid-template-columns: minmax(0, 1fr) minmax(230px, 0.7fr);
+  padding: 18px 0 32px;
 }
 .hp-final-phone img {
-  border-radius: 20px;
-  box-shadow: 0 16px 40px rgba(0, 79, 123, 0.13);
-  max-height: 300px;
-  max-width: 100%;
-  object-fit: contain;
+  display: block;
+  height: auto;
+  max-width: min(100%, 540px);
+  width: 100%;
 }
 .hp-faq {
   border-top: 1px solid var(--hp-line);
@@ -838,8 +711,14 @@
   margin: -4px 0 18px;
   max-width: 790px;
 }
+.hp-faq-chevron {
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.hp-faq-chevron.is-open {
+  transform: rotate(180deg);
+}
 .hp-footer {
-  background: #f8fafa;
+  background: #fff;
   border-top: 1px solid var(--hp-line);
   padding: 54px 0 30px;
 }
@@ -849,7 +728,7 @@
   grid-template-columns: 1.35fr repeat(4, 1fr);
 }
 .hp-footer-brand img {
-  height: 34px;
+  height: 42px;
   width: auto;
 }
 .hp-footer-brand p {
@@ -881,8 +760,6 @@
   text-underline-offset: 3px;
 }
 .hp-footer-badges {
-  display: flex;
-  flex-wrap: wrap;
   gap: 8px;
   margin-top: 18px;
 }
@@ -910,24 +787,16 @@
   max-width: 700px;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .hp-hero-device {
+  .hp-device--hero {
     animation: hp-float 8s ease-in-out infinite;
   }
   .hp-reveal {
     animation: hp-reveal 0.52s cubic-bezier(0.23, 1, 0.32, 1) both;
   }
-  .hp-ring-device {
-    animation: hp-depth 4s ease-in-out infinite;
-  }
 }
 @keyframes hp-float {
   50% {
     transform: translateY(-8px);
-  }
-}
-@keyframes hp-depth {
-  50% {
-    transform: rotate(3deg) translateY(-7px);
   }
 }
 @keyframes hp-reveal {
@@ -940,48 +809,28 @@
     transform: translateY(0);
   }
 }
-@media (max-width: 1023px) {
-  .hp-header-inner {
-    height: 68px;
-  }
-  .hp-logo img {
-    height: 30px;
-  }
-  .hp-nav,
-  .hp-header-cta {
-    display: none;
-  }
-  .hp-menu-trigger {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
+@media (max-width: 1199px) {
+  .hp-live-shell > nav {
+    padding-bottom: 9px !important;
+    padding-top: 9px !important;
   }
   .hp-hero {
     min-height: auto;
-    padding: 56px 0 50px;
+    padding-top: 128px;
   }
   .hp-hero-grid {
-    gap: 28px;
     grid-template-columns: 1fr;
   }
   .hp-hero-copy {
     max-width: 720px;
   }
   .hp-hero-visual {
-    min-height: 380px;
+    min-height: 410px;
     order: 2;
-  }
-  .hp-hero-device {
-    max-height: 440px;
-    width: min(100%, 430px);
-  }
-  .hp-stage-grid,
-  .hp-audience-grid {
-    gap: 18px;
   }
   .hp-video-layout,
   .hp-two-col {
-    gap: 34px;
+    gap: 38px;
     grid-template-columns: 1fr;
   }
   .hp-video-layout .hp-section-head {
@@ -996,12 +845,6 @@
   .hp-monitoring-graph {
     max-width: 720px;
   }
-  .hp-final-card {
-    grid-template-columns: 1fr;
-  }
-  .hp-final-phone {
-    display: none;
-  }
   .hp-footer-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1010,11 +853,20 @@
   }
 }
 @media (max-width: 767px) {
+  .hp-live-shell > nav .container {
+    min-height: 54px;
+  }
+  .hp-live-shell > nav img {
+    max-height: 38px;
+  }
   .hp-shell {
     width: min(100% - 40px, 560px);
   }
   .hp-section {
     padding: 64px 0;
+  }
+  .hp-hero {
+    padding: 112px 0 60px;
   }
   .hp-section-intro,
   .hp-hero-lead {
@@ -1025,11 +877,11 @@
     line-height: 1.1 !important;
   }
   .hp-hero-visual {
-    min-height: 315px;
+    min-height: 320px;
   }
-  .hp-hero-device {
-    max-height: 360px;
-    width: min(85vw, 300px);
+  .hp-device--hero {
+    max-height: none;
+    width: min(85vw, 360px);
   }
   .hp-connector {
     font-size: 11px;
@@ -1037,10 +889,10 @@
   }
   .hp-connector--contacts {
     left: 0;
-    top: 10%;
+    top: 8%;
   }
   .hp-connector--monitoring {
-    bottom: 8%;
+    bottom: 7%;
     right: -2px;
   }
   .hp-badges {
@@ -1072,13 +924,13 @@
     margin-bottom: 16px;
   }
   .hp-stage-visual img {
-    height: 220px;
+    max-width: 100%;
   }
   .hp-walkthrough-panel {
-    padding: 20px;
+    gap: 28px;
   }
   .hp-walkthrough-phone img {
-    max-height: 270px;
+    max-height: 320px;
   }
   .hp-step-card {
     min-height: 0;
@@ -1099,17 +951,13 @@
     min-height: 140px;
   }
   .hp-ring-art {
-    min-height: 310px;
-  }
-  .hp-ring-camera {
-    height: 108px;
-    left: 5%;
-    top: 7%;
-    width: 108px;
+    min-height: 0;
   }
   .hp-ring-device {
-    max-height: 310px;
-    max-width: 280px;
+    max-height: none;
+  }
+  .hp-wearables-layout {
+    margin-bottom: 38px;
   }
   .hp-wearables {
     grid-template-columns: repeat(2, 1fr);
@@ -1118,7 +966,9 @@
     min-height: 150px;
   }
   .hp-final-card {
-    padding: 30px 24px;
+    gap: 32px;
+    grid-template-columns: 1fr;
+    padding-bottom: 18px;
   }
   .hp-footer-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

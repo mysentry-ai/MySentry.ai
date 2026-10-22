@@ -2,7 +2,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   Activity,
   BellRing,
-  CarFront,
   HeartPulse,
   MessageCircleQuestion,
   ShieldCheck,
@@ -11,7 +10,7 @@ import {
 import { useState } from "react";
 import { HOMEPAGE_ASSETS } from "./homepageContent";
 
-type Scenario = "fall" | "crash" | "panic" | "health";
+type Scenario = "fall" | "panic" | "wellness";
 type Step = { title: string; text: string; icon: typeof Activity };
 
 const scenarios: Record<
@@ -27,55 +26,27 @@ const scenarios: Record<
   fall: {
     label: "Fall Detection",
     icon: ShieldCheck,
-    image: HOMEPAGE_ASSETS.contactsScreen,
-    alt: "MySentry emergency contacts screen on a phone",
+    image: HOMEPAGE_ASSETS.fallDetection,
+    alt: "MySentry fall detected alert shown on a compatible smartwatch",
     steps: [
       {
-        title: "A fall may be detected.",
-        text: "A compatible watch identifies a possible fall.",
+        title: "A possible fall is noticed.",
+        text: "A compatible watch can identify a possible fall.",
         icon: Activity,
       },
       {
         title: "A safety check follows.",
-        text: "The supported device or app asks if you're okay.",
+        text: "The supported device or app can ask whether you are okay.",
         icon: MessageCircleQuestion,
       },
       {
-        title: "An alert may start.",
-        text: "If you request help or cannot respond, MySentry can trigger a Panic Alarm.",
+        title: "An alert can begin.",
+        text: "If you request help or cannot respond, a configured workflow can start.",
         icon: BellRing,
       },
       {
-        title: "Your people can be notified.",
-        text: "Chosen contacts and eligible monitoring receive permitted information.",
-        icon: UsersRound,
-      },
-    ],
-  },
-  crash: {
-    label: "Crash Detection",
-    icon: CarFront,
-    image: HOMEPAGE_ASSETS.contactsScreen,
-    alt: "MySentry emergency contacts screen on a phone",
-    steps: [
-      {
-        title: "A serious impact is detected.",
-        text: "Supported sensors identify a possible crash.",
-        icon: CarFront,
-      },
-      {
-        title: "MySentry checks on you.",
-        text: "Confirm you're safe or ask for help.",
-        icon: MessageCircleQuestion,
-      },
-      {
-        title: "No response may trigger an alert.",
-        text: "The enabled safety workflow can escalate.",
-        icon: BellRing,
-      },
-      {
-        title: "Contacts get context.",
-        text: "Permitted location and details help them understand what's happening.",
+        title: "Your people get context.",
+        text: "Chosen contacts and eligible monitoring can receive permitted information.",
         icon: UsersRound,
       },
     ],
@@ -83,55 +54,55 @@ const scenarios: Record<
   panic: {
     label: "Panic Alarm",
     icon: BellRing,
-    image: HOMEPAGE_ASSETS.panicWatch,
-    alt: "MySentry Panic Alarm control on a compatible smartwatch",
+    image: HOMEPAGE_ASSETS.panicFlow,
+    alt: "MySentry Panic Alarm flow showing a countdown, location and permitted video context",
     steps: [
       {
         title: "You request help.",
-        text: "Use your phone or supported watch.",
+        text: "Use the phone or a supported watch to begin a Panic Alarm.",
         icon: BellRing,
       },
       {
-        title: "The alert flow begins.",
+        title: "You can cancel in time.",
         text: "An in-app tap includes a short cancellation countdown.",
         icon: MessageCircleQuestion,
       },
       {
-        title: "The alarm becomes active.",
-        text: "If not canceled, MySentry starts the configured alert.",
+        title: "The configured alert starts.",
+        text: "If it is not canceled, MySentry begins the selected alert workflow.",
         icon: Activity,
       },
       {
-        title: "Connected people can respond.",
-        text: "Trusted contacts and eligible monitoring may receive the alarm.",
+        title: "People can respond.",
+        text: "Trusted contacts and eligible monitoring may receive permitted context.",
         icon: UsersRound,
       },
     ],
   },
-  health: {
-    label: "Health Monitoring",
+  wellness: {
+    label: "Wellness Signals",
     icon: HeartPulse,
-    image: HOMEPAGE_ASSETS.contactsScreen,
-    alt: "MySentry emergency contacts screen on a phone",
+    image: HOMEPAGE_ASSETS.healthMonitoring,
+    alt: "MySentry wellness monitoring and emergency contacts interfaces",
     steps: [
       {
-        title: "Your watch shares supported readings.",
-        text: "Available signals depend on your device and permissions.",
+        title: "Your device shares supported readings.",
+        text: "Available wellness signals depend on your device and permissions.",
         icon: Activity,
       },
       {
-        title: "MySentry evaluates a concern.",
-        text: "Supported heart-rate workflows use confirmation rules.",
+        title: "A configured workflow reviews a concern.",
+        text: "MySentry can use supported signal patterns and selected settings.",
         icon: MessageCircleQuestion,
       },
       {
-        title: "A critical alert may start.",
-        text: "When conditions are met, MySentry can escalate.",
+        title: "An alert may be configured.",
+        text: "When your selected conditions are met, an alert workflow can begin.",
         icon: BellRing,
       },
       {
-        title: "Your safety network can be alerted.",
-        text: "Configured contacts and eligible monitoring receive permitted context.",
+        title: "Your safety network is connected.",
+        text: "Configured contacts and eligible monitoring can receive permitted context.",
         icon: UsersRound,
       },
     ],
@@ -141,6 +112,7 @@ const scenarios: Record<
 export default function HomepageWalkthrough() {
   const [selected, setSelected] = useState<Scenario>("fall");
   const scenario = scenarios[selected];
+
   return (
     <div className="hp-walkthrough">
       <div
@@ -204,7 +176,8 @@ export default function HomepageWalkthrough() {
       </div>
       <p className="hp-legal-note">
         Features vary by compatible device, enabled settings, permissions and
-        connectivity. MySentry is not a medical device.
+        connectivity. MySentry supports wellness awareness and is not a medical
+        device.
       </p>
     </div>
   );
