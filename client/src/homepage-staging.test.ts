@@ -33,7 +33,9 @@ const routeMeta = read("shared", "seo", "route-meta.ts");
 
 describe("staged homepage implementation", () => {
   it("keeps the approved hero, at-a-glance explainer, video and four-step sequence", () => {
-    expect(homepage).toContain("Never face an emergency alone.");
+    expect(homepage).toContain(
+      '<h1 id="homepage-title">Never Face an Emergency Alone.</h1>'
+    );
     expect(homepage).toContain("From a safety alert to people who can help.");
     expect(homepage).toContain("See MySentry in Action");
     expect(homepage).toContain("Protection in 4 Simple Steps");
@@ -43,6 +45,39 @@ describe("staged homepage implementation", () => {
     expect(homepage).toContain("youtube-nocookie.com/embed/7eT5sQQgsm8");
     expect(homepage).toContain("cc_load_policy=1");
     expect(homepage).not.toContain("autoplay=1");
+  });
+
+  it("limits the requested revision to the homepage banner and hero hierarchy", () => {
+    const normalized = homepage.replace(/\s+/g, " ");
+    expect(normalized).toContain(
+      "Being independent matters. But so does knowing someone can be alerted when you need help."
+    );
+    expect(normalized).toContain(
+      "MySentry connects your safety alerts to people you trust and 24/7 professional monitoring that can help coordinate an emergency response."
+    );
+    expect(normalized).toContain("Start Your 7-Day Free Trial");
+    expect(normalized).toContain(
+      "No Credit Card Required for Your 7-Day Free Trial."
+    );
+    expect(homepage).toContain('href="/pricing#pricing-plans"');
+    expect(homeRoute.indexOf("<HomepageRingBanner />")).toBeGreaterThan(
+      homeRoute.indexOf("<Navbar />")
+    );
+    expect(homeRoute.indexOf("<HomepageRingBanner />")).toBeLessThan(
+      homeRoute.indexOf("<HomepageExperience />")
+    );
+    const banner = read(
+      "client",
+      "src",
+      "components",
+      "homepage",
+      "HomepageRingBanner.tsx"
+    );
+    expect(banner).toContain("Explore the Integration");
+    expect(banner).toContain('href="/integrations/ring"');
+    expect(styles).toContain("hp-ring-marquee 40s linear infinite");
+    expect(styles).toContain("animation-play-state: paused");
+    expect(styles).toContain("--hp-nav-height");
   });
 
   it("uses the preserved live navigation rather than a homepage-specific replacement", () => {

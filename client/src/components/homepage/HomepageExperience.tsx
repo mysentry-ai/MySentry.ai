@@ -132,25 +132,31 @@ export default function HomepageExperience() {
                 <p className="hp-eyebrow">
                   PERSONAL SAFETY APP FOR FAMILIES &amp; SENIORS
                 </p>
-                <h1 id="homepage-title">Never face an emergency alone.</h1>
+                <h1 id="homepage-title">Never Face an Emergency Alone.</h1>
                 <p className="hp-hero-lead">
-                  MySentry connects your safety alerts to the people you trust
-                  and, when eligible, a 24/7 professional monitoring team.
+                  Being independent matters. But so does knowing someone can be
+                  alerted when you need help.
                 </p>
                 <p className="hp-hero-micro">
-                  Stay independent. Stay connected.
+                  MySentry connects your safety alerts to people you trust and
+                  24/7 professional monitoring that can help coordinate an
+                  emergency response.
                 </p>
                 <div className="hp-hero-actions">
                   <a
                     className="hp-button"
-                    href="#how-it-works"
+                    href="/pricing#pricing-plans"
                     onClick={trackLeadEvent}
                   >
-                    See How It Works <ArrowRight size={18} aria-hidden="true" />
+                    Start Your 7-Day Free Trial{" "}
+                    <ArrowRight size={18} aria-hidden="true" />
                   </a>
                 </div>
                 <p className="hp-badge-label">Download Now</p>
                 <StoreBadges />
+                <p className="hp-trial-note">
+                  No Credit Card Required for Your 7-Day Free Trial.
+                </p>
                 <p className="hp-eligibility">
                   Monitoring and features depend on plan, settings, compatible
                   devices, connectivity and availability.
