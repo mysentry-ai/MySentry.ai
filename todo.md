@@ -47,3 +47,15 @@
 - [x] Preserve the supplied HTML's original relative `/assets/...` URLs through fixed server-side 307 aliases to the verified storage objects.
 - [x] Remove only the seven matching duplicate repository SVGs after byte verification, allowing the exact homepage checkpoint to complete without changing the supplied document.
 - [x] Verify all seven redirects and their final bytes in development and production, plus browser image loading, full regressions, and production build.
+
+## Homepage v17 Twelve-Point Feedback Revision (October 2026)
+- [x] Place the moving Ring announcement directly below the fixed navigation with a matching integration CTA and responsive fixed-header clearance
+- [x] Increase hero download badges while retaining their original destinations and responsive behavior
+- [x] Use the supplied navigation logo/tagline SVG and make navigation labels blue and semibold
+- [x] Improve typography, line spacing, clearance, and sticky-stage room across all Who We Protect and app-story scenes
+- [x] Use supplied Emergency Contacts and Ring visuals, lower the Scheduled Call chip, and remove only the marked fall-notification visual and Ring section badge
+- [x] Remove the marked reassurance qualifier, place all three official badges under the CTA, revise Family pricing copy, and remove pricing fine print
+- [x] Replace footer social letter placeholders with accessible branded SVG icons
+- [x] Complete two independent cross-checks: targeted desktop/mobile rendered validation and production build/server validation
+- [x] Confirm TypeScript, 160/160 serial tests, production build, root and `/features` routing, File Storage delivery, responsive no-overflow checks, zero broken images, public no-em-dash content, and protected-file boundaries
+- [x] Save a staging checkpoint after the final verified feedback revision; GitHub push and production deployment remain outside this request
