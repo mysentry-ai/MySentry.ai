@@ -759,12 +759,13 @@
   .hp-footer {
     background: #f4f7f9;
     border-top: 1px solid var(--hp-line);
-    padding: 56px 0 26px;
+    padding: 64px 0 28px;
   }
   .hp-footer-grid {
     display: grid;
-    grid-template-columns: 1.4fr repeat(4, 1fr);
-    gap: 30px;
+    grid-template-columns: minmax(210px, 0.85fr) repeat(4, minmax(0, 1fr));
+    align-items: start;
+    gap: 64px;
   }
   .hp-footer-brand > img {
     width: auto;
@@ -772,24 +773,30 @@
   }
   .hp-footer-brand p {
     color: #526976;
-    font-size: 14px !important;
+    font-size: 13px !important;
+    font-weight: 400;
     max-width: 230px;
     margin: 16px 0;
   }
-  .hp-footer-title {
+  .hp-page .hp-footer-title {
     color: var(--hp-navy);
-    font-size: 16px !important;
-    margin: 0 0 18px;
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.1em;
+    margin: 0 0 16px;
+    text-transform: uppercase;
   }
   .hp-footer-links {
     display: grid;
-    gap: 12px;
+    gap: 10px;
   }
   .hp-footer-links a {
     color: #4e6674;
     text-decoration: none;
-    font-size: 14px !important;
-    min-height: 26px;
+    font-size: 13px !important;
+    font-weight: 400;
+    line-height: 1.45;
+    min-height: 24px;
   }
   .hp-footer-links a:hover {
     color: var(--hp-navy);
@@ -808,14 +815,16 @@
   }
   .hp-footer-bottom {
     display: flex;
+    align-items: flex-end;
     justify-content: space-between;
     gap: 32px;
     border-top: 1px solid var(--hp-line);
-    margin-top: 40px;
+    margin-top: 46px;
     padding-top: 24px;
   }
   .hp-footer-bottom p {
     font-size: 12px !important;
+    font-weight: 400;
     color: #526976;
     max-width: 710px;
     margin: 0;
@@ -850,10 +859,11 @@
       height: 310px;
     }
     .hp-footer-grid {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: minmax(185px, 0.85fr) repeat(4, minmax(0, 1fr));
+      gap: 36px;
     }
     .hp-footer-brand {
-      grid-column: span 4;
+      grid-column: auto;
     }
   }
   @media (max-width: 767px) {
@@ -1091,13 +1101,14 @@
     }
     .hp-footer-grid {
       grid-template-columns: 1fr 1fr;
-      gap: 28px;
+      gap: 32px 24px;
     }
     .hp-footer-brand {
       grid-column: span 2;
     }
     .hp-footer-bottom {
       flex-direction: column;
+      align-items: flex-start;
       gap: 16px;
     }
   }

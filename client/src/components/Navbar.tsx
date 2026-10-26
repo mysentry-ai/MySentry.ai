@@ -198,7 +198,7 @@ export default function Navbar() {
     >
       <div className="container flex items-center justify-between">
         {/* Logo + Tagline */}
-        <Link href="/" className="flex min-w-0 flex-col items-start group flex-shrink-0">
+        <Link href="/" className="flex min-w-0 flex-col items-start group flex-shrink-0 xl:-ml-2">
           <img
             src="/images/logo.png"
             alt="MySentry"
@@ -207,7 +207,7 @@ export default function Navbar() {
             height="160"
             loading="eager"
           />
-          <span className="mt-0.5 block max-w-[126px] text-[7px] font-semibold uppercase leading-tight tracking-[0.12em] text-[#255044] sm:max-w-none sm:text-[8px] sm:tracking-widest">
+          <span className="mt-1.5 block max-w-[126px] text-[7px] font-normal uppercase leading-tight tracking-[0.12em] text-[#255044] sm:max-w-none sm:text-[8px] sm:tracking-widest">
             Live Safe. Stay Healthy.
           </span>
         </Link>
@@ -357,7 +357,7 @@ export default function Navbar() {
           <div className="container py-6 flex items-center justify-between border-b border-gray-100 bg-white sticky top-0 z-10">
             <Link href="/" onClick={() => setIsOpen(false)} className="flex min-w-0 flex-col items-start">
               <img src="/images/logo.png" alt="MySentry" className="h-10 w-auto" width="360" height="160" loading="eager" />
-              <span className="mt-0.5 text-[8px] font-semibold uppercase leading-tight tracking-[0.14em] text-[#255044]">
+              <span className="mt-1.5 text-[8px] font-normal uppercase leading-tight tracking-[0.14em] text-[#255044]">
                 Live Safe. Stay Healthy.
               </span>
             </Link>

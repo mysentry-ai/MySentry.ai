@@ -163,6 +163,11 @@
     color: inherit;
     font-weight: 700 !important;
   }
+
+  .site-footer h3 {
+    font-size: 12px !important;
+    font-weight: 400 !important;
+  }
   
   p {
     @apply leading-relaxed;
@@ -311,6 +316,7 @@
   .hover-lift:hover {
     @apply -translate-y-2 shadow-xl;
   }
+
 }
 
 /* ===== ADMIN LIGHT THEME OVERRIDE =====

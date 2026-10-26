@@ -46,16 +46,16 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#e8f5e9] border-t border-primary/10 pt-16 pb-8">
+    <footer className="site-footer bg-[#e8f5e9] border-t border-primary/10 pt-14 pb-7 sm:pt-16 sm:pb-8">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
+        <div className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-[minmax(0,1.25fr)_repeat(4,minmax(0,1fr))] xl:gap-x-12">
           {/* Brand Column */}
-          <div className="space-y-4">
+          <div className="max-w-[17rem] space-y-4 lg:pr-4">
             <Link onClick={() => window.scrollTo(0, 0)} href="/" className="flex items-center gap-2">
               <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" width="360" height="160" loading="lazy" />
             </Link>
-            <p className="text-sm font-bold text-[#255044] uppercase tracking-wider mb-1">Live Safe. Stay Healthy.</p>
-            <p className="text-base text-gray-900 leading-relaxed font-medium">
+            <p className="mb-1 text-xs font-normal uppercase tracking-[0.14em] text-[#255044]">Live Safe. Stay Healthy.</p>
+            <p className="text-sm leading-relaxed text-gray-800 font-normal">
               Personal Safety and Health Monitoring with 24/7 Emergency Response.
             </p>
             <div className="flex gap-4 pt-2">
@@ -100,8 +100,8 @@ export default function Footer() {
 
           {/* Solutions */}
           <div>
-            <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Solutions</h3>
-            <ul className="space-y-3 text-base font-medium">
+            <h3 className="!font-normal text-xs text-gray-800 mb-4 uppercase tracking-[0.12em]">Solutions</h3>
+            <ul className="space-y-2.5 text-sm font-normal">
               <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/features" className="text-gray-900 hover:text-primary transition-colors">
                   All Features
@@ -157,8 +157,8 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Company</h3>
-            <ul className="space-y-3 text-base font-medium">
+            <h3 className="!font-normal text-xs text-gray-800 mb-4 uppercase tracking-[0.12em]">Company</h3>
+            <ul className="space-y-2.5 text-sm font-normal">
               <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/about-us" className="text-gray-900 hover:text-primary transition-colors">
                   About Us
@@ -214,8 +214,8 @@ export default function Footer() {
 
           {/* Safety Resources */}
           <div>
-            <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Safety Resources</h3>
-            <ul className="space-y-3 text-base font-medium">
+            <h3 className="!font-normal text-xs text-gray-800 mb-4 uppercase tracking-[0.12em]">Safety Resources</h3>
+            <ul className="space-y-2.5 text-sm font-normal">
               <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/use-cases/medical-alert-app-for-seniors" className="text-gray-900 hover:text-primary transition-colors">
                   Seniors Aging in Place
@@ -301,8 +301,8 @@ export default function Footer() {
 
           {/* Featured Guides */}
           <div>
-            <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Featured Guides</h3>
-            <ul className="space-y-3 text-base font-medium">
+            <h3 className="!font-normal text-xs text-gray-800 mb-4 uppercase tracking-[0.12em]">Featured Guides</h3>
+            <ul className="space-y-2.5 text-sm font-normal">
               <li>
                 <Link onClick={() => window.scrollTo(0, 0)} href="/guides/family-safety-without-constant-tracking" className="text-gray-900 hover:text-primary transition-colors">
                   Family Safety and Privacy
@@ -333,12 +333,14 @@ export default function Footer() {
           </div>
 
           {/* Stay Updated */}
-          <div>
-            <h3 className="font-bold text-lg text-gray-900 mb-4 uppercase tracking-wide">Stay Updated</h3>
-            <p className="text-base text-gray-900 mb-4 font-medium">
-              Subscribe to our newsletter for the latest safety tips and product updates.
-            </p>
-            <form className="flex gap-2" onSubmit={handleNewsletterSubmit}>
+          <div className="md:col-span-2 lg:col-span-5 lg:mt-2 lg:flex lg:items-end lg:justify-between lg:gap-12 lg:border-t lg:border-primary/10 lg:pt-8">
+            <div className="max-w-xl">
+              <h3 className="!font-normal text-xs text-gray-800 mb-3 uppercase tracking-[0.12em]">Stay Updated</h3>
+              <p className="text-sm text-gray-800 mb-4 font-normal">
+                Subscribe to our newsletter for the latest safety tips and product updates.
+              </p>
+            </div>
+            <form className="flex max-w-md gap-2 lg:min-w-[22rem]" onSubmit={handleNewsletterSubmit}>
               <input 
                 type="email" 
                 placeholder="Enter your email" 
@@ -350,7 +352,7 @@ export default function Footer() {
               <button 
                 type="submit"
                 disabled={isSubmitting}
-                className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-bold hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center gap-2"
+                className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center gap-2"
               >
                 {isSubmitting ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
@@ -362,11 +364,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-primary/10 pt-8 text-center text-sm">
+        <div className="mt-10 border-t border-primary/10 pt-6 text-center text-sm lg:flex lg:items-end lg:justify-between lg:gap-12 lg:text-left">
           <p className="mx-auto mb-4 max-w-5xl text-xs leading-relaxed text-gray-700">
             MySentry connects supported safety alerts, trusted contacts, permitted incident context, and eligible 24/7 professional monitoring. Feature operation depends on plan, supported device, operating system, permissions, connectivity, account eligibility, and region. Wellness information is not a medical diagnosis.
           </p>
-          <p className="text-black font-medium">&copy; 2026 MySentry.ai. All rights reserved.</p>
+          <p className="whitespace-nowrap text-black font-normal">&copy; 2026 MySentry.ai. All rights reserved.</p>
         </div>
       </div>
     </footer>
