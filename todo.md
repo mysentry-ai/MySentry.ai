@@ -31,3 +31,19 @@
 - [x] Correct mobile typography precedence in homepage-scoped CSS without modifying global site CSS or unrelated pages.
 - [x] Validate TypeScript, 152/152 serial tests, production build, four-width rendering, loaded/unique mockups, no horizontal overflow, keyboard tabs, FAQ and video interactions.
 - [x] Save the corrected staging state for review without pushing to GitHub or publishing production.
+
+## Exact Homepage v17 Integration (October 2026)
+- [x] Deliver the supplied v17 standalone homepage document at `/` without JSX conversion or layout reconstruction
+- [x] Copy all 23 supplied SVG and WebP assets byte-for-byte to their original relative `/assets/` paths
+- [x] Preserve all supplied markup, styles, scripts, animations, and responsive behavior, with one owner-authorized visible punctuation change only: replace the monitoring sentence’s em dash with a comma
+- [x] Serve the exact root document in both preview and production, while retaining canonical and index/follow governance in HTTP headers
+- [x] Keep all non-root SPA routes unchanged and verify `/features` continues through the existing application shell
+- [x] Verify template delta, asset hashes, full 160-test serial suite, TypeScript, production build, root delivery, mobile navigation, FAQ, YouTube deferred player, sticky audience/app-story scenes, and device animation
+- [x] Confirm Docker, `.dockerignore`, environment, database, migration and infrastructure files remain unchanged; `.dockerignore` remains absent
+- [x] Save a staging checkpoint; production deployment and GitHub synchronization require separate owner authorization
+
+## Exact Homepage v17 File Storage Delivery (October 2026)
+- [x] Verify the seven managed File Storage copies of the oversized owner-supplied SVGs against their original SHA-256 hashes.
+- [x] Preserve the supplied HTML's original relative `/assets/...` URLs through fixed server-side 307 aliases to the verified storage objects.
+- [x] Remove only the seven matching duplicate repository SVGs after byte verification, allowing the exact homepage checkpoint to complete without changing the supplied document.
+- [x] Verify all seven redirects and their final bytes in development and production, plus browser image loading, full regressions, and production build.

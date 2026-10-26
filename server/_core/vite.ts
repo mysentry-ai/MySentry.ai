@@ -5,8 +5,33 @@ import { nanoid } from "nanoid";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import viteConfig from "../../vite.config";
+import { registerExactHomepageAssetAliases } from "./exactHomepageAssetAliases";
 
 export async function setupVite(app: Express, server: Server) {
+  // Keep development preview parity with the owner-supplied v17 homepage
+  // document used at production root. Vite continues to serve every asset and
+  // all non-root SPA routes normally.
+  app.get("/", (req, res, next) => {
+    const accept = req.headers.accept ?? "";
+    const acceptsHtml =
+      accept === "" || accept.includes("text/html") || accept.includes("*/*");
+    const exactHomepagePath = path.resolve(
+      process.cwd(),
+      "client",
+      "public",
+      "mysentry-homepage-v17.html"
+    );
+
+    if (!acceptsHtml || !fs.existsSync(exactHomepagePath)) return next();
+
+    res
+      .status(200)
+      .set({ "Cache-Control": "no-cache", "Content-Type": "text/html" })
+      .sendFile(exactHomepagePath);
+  });
+
+  registerExactHomepageAssetAliases(app);
+
   const serverOptions = {
     middlewareMode: true,
     hmr: { server },

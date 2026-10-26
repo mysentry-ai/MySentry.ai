@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import { resolveMeta } from "../seo/resolve-meta";
 import { renderSeoHtml } from "../seo/render-seo-html";
+import { registerExactHomepageAssetAliases } from "./exactHomepageAssetAliases";
 
 // ─── Main export ─────────────────────────────────────────────────────────────
 
@@ -11,6 +12,10 @@ export function serveStatic(app: Express) {
   // regardless of where the compiled bundle lives in the deployment container.
   const distPath = path.resolve(process.cwd(), "dist", "public");
   const indexHtmlPath = path.resolve(distPath, "index.html");
+  const exactHomepagePath = path.resolve(
+    distPath,
+    "mysentry-homepage-v17.html"
+  );
 
   if (!fs.existsSync(distPath)) {
     console.error(
@@ -26,6 +31,8 @@ export function serveStatic(app: Express) {
       maxAge: "1y",
     })
   );
+
+  registerExactHomepageAssetAliases(app);
 
   // ── 2. SSR meta injection for HTML requests ───────────────────────────────
   // This middleware runs BEFORE express.static so that requests for "/" and
@@ -52,6 +59,29 @@ export function serveStatic(app: Express) {
 
     try {
       const cleanPath = req.originalUrl.split("?")[0]; // strip query string
+
+      // The owner-supplied v17 homepage is a complete document with its own
+      // markup, CSS, and animation scripts. Its literal delivery is an explicit
+      // requirement, so do not run it through HTML metadata replacement.
+      // Canonical and crawl directives are retained as HTTP headers instead.
+      if (cleanPath === "/") {
+        if (!fs.existsSync(exactHomepagePath)) {
+          console.error("[Homepage] Missing required v17 static template");
+          return res
+            .status(500)
+            .type("text/plain")
+            .send("Homepage template is unavailable");
+        }
+
+        return res
+          .status(200)
+          .set({
+            "Cache-Control": "no-cache",
+            Link: '<https://mysentry.ai/>; rel="canonical"',
+            "X-Robots-Tag": "index, follow",
+          })
+          .sendFile(exactHomepagePath);
+      }
 
       // Resolve meta asynchronously; blog routes may use the database and a 60-second cache.
       const meta = await resolveMeta(cleanPath, "https://mysentry.ai");
