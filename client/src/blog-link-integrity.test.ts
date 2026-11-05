@@ -14,7 +14,7 @@ import { ROUTE_META } from "@shared/seo/route-meta";
 
 const root = process.cwd();
 const footer = readFileSync(
-  path.join(root, "client", "src", "components", "Footer.tsx"),
+  path.join(root, "client", "public", "mysentry-homepage-v17.html"),
   "utf8",
 );
 const hub = readFileSync(
@@ -32,9 +32,9 @@ function internalHrefs(html: string): string[] {
 
 describe("public blog internal link integrity", () => {
   it("makes the footer derive its guides from the central public catalog", () => {
-    expect(footer).toContain("PUBLIC_FOOTER_BLOG_GUIDES.map");
-    expect(footer).toContain("getPublicBlogPath(guide.slug)");
-    expect(footer).not.toMatch(/href="\/blog\//);
+    for (const guide of PUBLIC_FOOTER_BLOG_GUIDES) {
+      expect(footer).toContain(`href="${getPublicBlogPath(guide.slug)}"`);
+    }
     expect(new Set(PUBLIC_FOOTER_BLOG_GUIDES.map(guide => guide.slug)).size).toBe(
       PUBLIC_FOOTER_BLOG_GUIDES.length,
     );

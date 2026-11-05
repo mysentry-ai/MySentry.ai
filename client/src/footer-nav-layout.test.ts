@@ -14,7 +14,7 @@ const homepage = read(
 );
 const styles = read("client", "src", "components", "homepage", "homepage.css");
 const globalStyles = read("client", "src", "index.css");
-const footer = read("client", "src", "components", "Footer.tsx");
+const footer = read("client", "public", "mysentry-homepage-v17.html");
 const navbar = read("client", "src", "components", "Navbar.tsx");
 
 describe("footer organization and navigation tagline spacing", () => {
@@ -52,17 +52,20 @@ describe("footer organization and navigation tagline spacing", () => {
     expect(styles).toContain("grid-template-columns: 1fr 1fr");
     expect(globalStyles).toContain(".site-footer h3");
     expect(globalStyles).toContain("font-weight: 400 !important");
-    expect(footer).toContain('className="site-footer');
-    expect(footer).toContain("!font-normal text-xs");
-    expect(footer).toContain("text-sm font-normal");
+    expect(footer).toContain('class="site-footer');
+    expect(read("client", "src", "components", "Footer.tsx")).toContain(
+      "PUBLIC_FOOTER_HTML"
+    );
     expect(footer).toContain('href="/account-deletion"');
     expect(footer).toContain('href="/sms-consent"');
   });
 
-  it("separates the navigation tagline from the logo without changing the approved words", () => {
-    expect(navbar).toContain("Live Safe. Stay Healthy.");
-    expect(navbar).toContain("mt-1.5");
-    expect(navbar).toContain("font-normal uppercase");
-    expect(navbar).toContain("xl:-ml-2");
+  it("reuses the single approved logo with its embedded tagline", () => {
+    expect(navbar).toContain("PUBLIC_HEADER_HTML");
+    const header = footer.match(
+      /<header class="site-header"[\s\S]*?<\/header>/
+    )![0];
+    expect(header).toContain("MySentry | Live Safe. Stay Healthy");
+    expect(header).not.toContain('class="brand-tagline"');
   });
 });

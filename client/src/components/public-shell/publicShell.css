@@ -1,0 +1,1258 @@
+/*
+ * Exact shared shell extraction from mysentry-homepage-v17.html, 2026-11-05.
+ * Markup contract: unchanged #siteHeader header + .ring-marquee-banner under
+ * .public-shell.public-shell-header; unchanged footer under another .public-shell.
+ * No page body/html rules, assets, markup, link text or newsletter are changed.
+ * Source-order revisions are retained: later source selectors still win.
+ * Local revert isolates browser defaults from Tailwind preflight/legacy styles.
+ * Geometry follows the requested 93px desktop / 78px tablet / 74px mobile.
+ * Parent owns route-content spacing and scroll lock. Do not apply transforms,
+ * filter, perspective or contain:paint to ancestors of the fixed header.
+ */
+
+.public-shell {
+  all: revert;
+  display: block;
+  box-sizing: border-box;
+  --blue: #004F7B;
+  --mint: #6AD990;
+  --white: #FFFFFF;
+  --gold: #C58438;
+  --light: color-mix(in srgb, var(--mint) 9%, var(--white));
+  --lighter: color-mix(in srgb, var(--mint) 4%, var(--white));
+  --line: color-mix(in srgb, var(--blue) 15%, var(--white));
+  --muted: color-mix(in srgb, var(--blue) 70%, var(--white));
+  --ease-soft: cubic-bezier(.22, 1, .36, 1);
+  --public-shell-header-height: 93px;
+  color: var(--blue);
+  font-family: 'Proxima Nova', 'Avenir Next', 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: normal;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Header is fixed; the in-flow banner margin reserves its height. flow-root
+ * keeps that margin inside this wrapper instead of collapsing into the page. */
+.public-shell.public-shell-header { display: flow-root; }
+
+.public-shell *:where(:not(svg *)),
+.public-shell *::before,
+.public-shell *::after {
+  all: revert;
+}
+
+.public-shell * { box-sizing: border-box; }
+.public-shell svg * { border-color: currentColor; outline-color: currentColor; }
+.public-shell img { display: block; max-width: 100%; }
+/* all:revert suppresses HTML/SVG presentation attributes. SVG descendants
+ * remain untouched above, and the exact header image height=543 is restored. */
+.public-shell .brand img { height: 543px; }
+.public-shell a { text-decoration: none; color: inherit; }
+.public-shell button,
+.public-shell input { font: inherit; }
+.public-shell input::placeholder { all: revert; }
+.public-shell button { cursor: pointer; }
+.public-shell p { margin: 0; line-height: 1.62; }
+.public-shell em { font-style: normal; color: var(--mint); }
+.public-shell ::selection { background: var(--mint); color: var(--blue); }
+.public-shell :focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+
+/* Global heading defaults are restricted to footer headings. Navigation has
+ * its own .nav-category-title rules below, not page-wide h2 styling. */
+.public-shell .site-footer h1,
+.public-shell .site-footer h2,
+.public-shell .site-footer h3 {
+  margin: 0;
+  line-height: 1.08;
+  letter-spacing: -.037em;
+  text-wrap: balance;
+}
+.public-shell .site-footer h2 { font-size: clamp(35px, 4.9vw, 66px); }
+.public-shell .site-footer h3 { font-size: 26px; }
+.public-shell #siteHeader .nav-category-title {
+  font-family: inherit;
+  letter-spacing: -.037em;
+  text-wrap: balance;
+}
+
+/* The source container has no template max-width/padding/breakpoint gutters. */
+.public-shell .container {
+  width: min(1330px, calc(100% - 88px));
+  max-width: none;
+  padding: 0;
+  margin-inline: auto;
+}
+.public-shell .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+
+/* Source style 1: homepage base and revisions */
+.public-shell .container {
+  width: min(1330px,calc(100% - 88px));
+  margin-inline: auto;
+}
+
+.public-shell .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+.public-shell .button {
+  border: 0;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 14px 25px;
+  min-height: 54px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: transform .25s,box-shadow .25s;
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: 0 13px 35px rgba(0,79,123,.16);
+}
+
+.public-shell .button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(0,79,123,.25);
+}
+
+.public-shell .button span {
+  font-size: 23px;
+  line-height: 1;
+}
+
+.public-shell .button-gold {
+  background: var(--gold);
+  color: var(--white);
+}
+
+.public-shell .button-outline {
+  background: var(--white);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  box-shadow: none;
+}
+
+.public-shell .button-white {
+  background: var(--white);
+  color: var(--blue);
+}
+
+.public-shell .text-link {
+  font-weight: 700;
+  border-bottom: 1px solid var(--blue);
+}
+
+.public-shell .site-header {
+  position: fixed;
+  z-index: 150;
+  inset: 0 0 auto 0;
+  height: 93px;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 10px 28px rgba(0,79,123,.05);
+}
+
+.public-shell .header-inner {
+  max-width: 1800px;
+  width: calc(100% - 60px);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  margin: auto;
+}
+
+.public-shell .brand {
+  flex: none;
+  display: block;
+  width: 176px;
+}
+
+.public-shell .brand img {
+  width: 100%;
+  max-height: 82px;
+  object-fit: contain;
+}
+
+.public-shell .main-nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px,1.5vw,30px);
+  margin-left: auto;
+}
+
+.public-shell .nav-item {
+  border: 0;
+  background: none;
+  white-space: nowrap;
+  font-size: clamp(10px,.9vw,13px);
+  font-weight: 850;
+  letter-spacing: .04em;
+  padding: 15px 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.public-shell .nav-item:hover,
+.public-shell .dropdown-panel a:hover {
+  color: var(--gold);
+}
+
+.public-shell .nav-dd {
+  position: relative;
+}
+
+.public-shell .chevron {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.public-shell .dropdown-panel {
+  position: absolute;
+  top: 100%;
+  left: -16px;
+  display: none;
+  min-width: 230px;
+  border-radius: 14px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 12px;
+  box-shadow: 0 20px 55px rgba(0,79,123,.17);
+}
+
+.public-shell .nav-dd:hover .dropdown-panel,
+.public-shell .nav-dd:focus-within .dropdown-panel,
+.public-shell .nav-dd.open .dropdown-panel {
+  display: grid;
+}
+
+.public-shell .dropdown-panel a {
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 650;
+  border-radius: 8px;
+}
+
+.public-shell .dropdown-panel a:hover {
+  background: var(--light);
+}
+
+.public-shell .header-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 22px;
+  min-height: 48px;
+  background: var(--blue);
+  color: var(--white);
+  border-radius: 35px;
+  white-space: nowrap;
+  font-weight: 900;
+  font-size: 12px;
+  box-shadow: 0 8px 17px rgba(0,79,123,.13);
+}
+
+.public-shell .login-link {
+  border: 2px solid var(--blue);
+  border-radius: 35px;
+  padding: 11px 21px;
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: .06em;
+}
+
+.public-shell .mobile-menu {
+  display: none;
+  border: 1px solid var(--blue);
+  border-radius: 13px;
+  background: var(--white);
+  color: var(--blue);
+  width: 44px;
+  height: 44px;
+  font-size: 23px;
+}
+
+.public-shell .site-footer {
+  background: var(--light);
+  padding-top: 65px;
+}
+
+.public-shell .footer-grid {
+  display: grid;
+  grid-template-columns: 1.08fr .85fr .9fr 1.12fr 1.12fr 1.06fr;
+  gap: 23px;
+  align-items: start;
+}
+
+.public-shell .footer-brand img {
+  width: 145px;
+  max-height: 75px;
+  object-fit: contain;
+  object-position: left;
+}
+
+.public-shell .footer-brand strong {
+  display: block;
+  font-size: 12px;
+  letter-spacing: .06em;
+  margin: 18px 0 8px;
+}
+
+.public-shell .footer-brand p,
+.public-shell .newsletter p {
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.public-shell .socials {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.public-shell .socials a {
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.public-shell .footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.public-shell .footer-column h3 {
+  font-size: 13px;
+  letter-spacing: .03em;
+  margin: 1px 0 14px;
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+.public-shell .footer-column>a {
+  font-size: 13px;
+  line-height: 1.38;
+}
+
+.public-shell .footer-column>a:hover {
+  text-decoration: underline;
+}
+
+.public-shell .newsletter form {
+  display: flex;
+  gap: 5px;
+  margin-top: 17px;
+}
+
+.public-shell .newsletter input {
+  min-width: 0;
+  flex: 1;
+  width: 0;
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  background: var(--white);
+  padding: 12px 14px;
+  font-size: 12px;
+  color: var(--blue);
+}
+
+.public-shell .newsletter button {
+  border: 0;
+  border-radius: 30px;
+  background: var(--blue);
+  color: var(--white);
+  padding: 10px 13px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.public-shell .newsletter-status {
+  min-height: 15px;
+  font-size: 12px;
+}
+
+.public-shell .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  border-top: 1px solid var(--line);
+  margin-top: 45px;
+  padding: 20px 0 26px;
+  font-size: 12px;
+}
+
+@media (max-width:1650px) {
+  .public-shell .header-inner {
+    gap: 16px;
+  }
+
+  .public-shell .brand {
+    width: 145px;
+  }
+
+  .public-shell .main-nav {
+    gap: clamp(9px,1.05vw,21px);
+  }
+
+  .public-shell .header-cta {
+    padding: 0 16px;
+    min-height: 42px;
+    font-size: 10px;
+  }
+
+  .public-shell .login-link {
+    padding: 9px 15px;
+    font-size: 11px;
+  }
+
+  .public-shell .footer-grid {
+    gap: 17px;
+  }
+
+  .public-shell .footer-column>a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width:1150px) {
+  .public-shell .site-header {
+    height: 78px;
+  }
+
+  .public-shell .header-inner {
+    width: calc(100% - 38px);
+  }
+
+  .public-shell .brand {
+    width: 150px;
+  }
+
+  .public-shell .mobile-menu {
+    display: grid;
+    place-items: center;
+    margin-left: auto;
+  }
+
+  .public-shell .main-nav {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    max-height: calc(100svh - 78px);
+    overflow: auto;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 0;
+    padding: 18px 24px 24px;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 19px 38px rgba(0,79,123,.1);
+    gap: 4px;
+  }
+
+  .public-shell .main-nav.open {
+    display: flex;
+  }
+
+  .public-shell .nav-item {
+    font-size: 14px;
+  }
+
+  .public-shell .nav-dd {
+    width: 100%;
+  }
+
+  .public-shell .nav-dd .nav-item {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .public-shell .dropdown-panel {
+    position: static;
+    min-width: 0;
+    box-shadow: none;
+    border: 0;
+    background: var(--light);
+    margin: 0 0 10px;
+    padding: 8px;
+  }
+
+  .public-shell .header-cta,
+.public-shell .login-link {
+    align-self: flex-start;
+    margin-top: 10px;
+  }
+
+  .public-shell .footer-grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .public-shell .footer-brand {
+    grid-column: span 1;
+  }
+
+  .public-shell .newsletter {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width:740px) {
+  .public-shell .container {
+    width: calc(100% - 36px);
+  }
+
+  .public-shell .site-header {
+    height: 70px;
+  }
+
+  .public-shell .main-nav {
+    top: 70px;
+    max-height: calc(100svh - 70px);
+  }
+
+  .public-shell .footer-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 28px 15px;
+  }
+
+  .public-shell .footer-brand {
+    grid-column: 1/-1;
+  }
+
+  .public-shell .footer-brand p {
+    max-width: 330px;
+  }
+
+  .public-shell .newsletter {
+    grid-column: 1/-1;
+  }
+
+  .public-shell .footer-column h3 {
+    font-size: 12px;
+  }
+
+  .public-shell .footer-column>a {
+    font-size: 12px;
+  }
+
+  .public-shell .footer-bottom {
+    font-size: 10px;
+    flex-wrap: wrap;
+  }
+
+  .public-shell .site-footer {
+    padding-top: 45px;
+  }
+}
+
+.public-shell .button-primary,
+.public-shell .button-gold {
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: 0 12px 28px color-mix(in srgb,var(--blue) 17%,transparent);
+}
+
+.public-shell .button-primary:hover,
+.public-shell .button-gold:hover {
+  background: var(--blue);
+  color: var(--white);
+  filter: brightness(1.06);
+}
+
+.public-shell .button-outline {
+  background: var(--white);
+  color: var(--blue);
+  border-color: var(--blue);
+}
+
+.public-shell .button-outline:hover {
+  background: var(--mint);
+  color: var(--blue);
+}
+
+/* Source style 8: homepage-feedback-12-point-styles */
+.public-shell .ring-marquee-banner {
+  position: relative;
+  z-index: 18;
+  display: flex;
+  align-items: center;
+  min-height: 43px;
+  margin-top: 93px;
+  overflow: hidden;
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: 0 12px 26px rgba(0,79,123,.12);
+}
+
+.public-shell .ring-marquee-viewport {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.public-shell .ring-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: public-shell-ring-marquee 42s linear infinite;
+}
+
+.public-shell .ring-marquee-banner:hover .ring-marquee-track,
+.public-shell .ring-marquee-banner:focus-within .ring-marquee-track {
+  animation-play-state: paused;
+}
+
+.public-shell .ring-marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 34px;
+  white-space: nowrap;
+  font-size: 12px;
+  letter-spacing: .025em;
+}
+
+.public-shell .ring-marquee-item b {
+  font-size: 10px;
+  letter-spacing: .11em;
+  color: var(--mint);
+}
+
+.public-shell .ring-marquee-cta {
+  align-self: stretch;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 24px;
+  white-space: nowrap;
+  background: var(--gold);
+  color: var(--blue);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .025em;
+  box-shadow: -15px 0 24px rgba(0,79,123,.2);
+}
+
+.public-shell .ring-marquee-cta:hover {
+  background: #d39846;
+}
+
+@keyframes public-shell-ring-marquee {
+  to { transform: translateX(-50%); }
+}
+
+.public-shell .site-header {
+  background: var(--white);
+}
+
+.public-shell .header-inner {
+  gap: 30px;
+}
+
+.public-shell .brand {
+  width: 214px;
+}
+
+.public-shell .brand img {
+  max-height: 80px;
+  object-position: left center;
+}
+
+.public-shell .main-nav .nav-item,
+.public-shell .main-nav .dropdown-toggle,
+.public-shell .main-nav .login-link {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.public-shell .main-nav .nav-item {
+  letter-spacing: .035em;
+}
+
+.public-shell .main-nav .header-cta {
+  font-weight: 600;
+}
+
+.public-shell .socials {
+  gap: 12px;
+}
+
+.public-shell .socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid color-mix(in srgb,var(--blue) 23%,transparent);
+  border-radius: 50%;
+  color: var(--blue);
+  transition: transform .2s ease,background .2s ease;
+}
+
+.public-shell .socials a:hover {
+  transform: translateY(-2px);
+  background: var(--mint);
+}
+
+.public-shell .social-icon {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  stroke: currentColor;
+  stroke-width: 1.75;
+}
+
+@media (max-width:1100px) {
+  .public-shell .header-inner {
+    gap: 18px;
+  }
+
+  .public-shell .brand {
+    width: 185px;
+  }
+
+  .public-shell .main-nav {
+    gap: clamp(8px,.8vw,14px);
+  }
+}
+
+@media (max-width:740px) {
+  .public-shell .site-header {
+    height: 74px;
+  }
+
+  .public-shell .header-inner {
+    width: calc(100% - 32px);
+    gap: 13px;
+  }
+
+  .public-shell .brand {
+    width: 166px;
+  }
+
+  .public-shell .brand img {
+    max-height: 61px;
+  }
+
+  .public-shell .main-nav {
+    top: 74px;
+    max-height: calc(100svh - 74px);
+  }
+
+  .public-shell .ring-marquee-banner {
+    min-height: 46px;
+    margin-top: 74px;
+  }
+
+  .public-shell .ring-marquee-item {
+    padding: 11px 22px;
+    font-size: 10px;
+  }
+
+  .public-shell .ring-marquee-item b {
+    font-size: 9px;
+  }
+
+  .public-shell .ring-marquee-cta {
+    padding: 0 13px;
+    font-size: 9px;
+  }
+
+  .public-shell .socials a {
+    width: 29px;
+    height: 29px;
+  }
+}
+
+@media (max-width:380px) {
+  .public-shell .brand {
+    width: 150px;
+  }
+
+  .public-shell .ring-marquee-cta {
+    padding: 0 10px;
+    font-size: 8px;
+  }
+
+  .public-shell .ring-marquee-item {
+    font-size: 9px;
+  }
+}
+
+/* Source style 11: homepage-live-navigation */
+.public-shell #siteHeader.site-header {
+  --nav-header-height: 93px;
+  height: var(--nav-header-height);
+}
+
+.public-shell #siteHeader.site-header .header-inner {
+  min-width: 0;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav {
+  min-width: 0;
+}
+
+.public-shell #siteHeader.site-header .nav-item,
+.public-shell #siteHeader.site-header .header-cta,
+.public-shell #siteHeader.site-header .login-link {
+  text-transform: uppercase;
+}
+
+.public-shell #siteHeader.site-header .header-login,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-home,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-ring-mobile {
+  display: none;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-ring-desktop {
+  display: inline;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .dropdown-toggle {
+  color: var(--blue);
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .dropdown-toggle .chevron {
+  display: inline-block;
+  transition: transform .18s ease;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .dropdown-toggle[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-dd > .dropdown-panel,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-dd > .dropdown-toggle[aria-expanded="false"] + .dropdown-panel,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-dd:hover > .dropdown-toggle[aria-expanded="false"] + .dropdown-panel,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-dd:focus-within > .dropdown-toggle[aria-expanded="false"] + .dropdown-panel {
+  display: none;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-dd > .dropdown-toggle[aria-expanded="true"] + .dropdown-panel[aria-hidden="false"]:not([hidden]) {
+  display: block;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .dropdown-panel[hidden],
+.public-shell #siteHeader.site-header #mainNav.main-nav[hidden] {
+  display: none !important;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-dd > .dropdown-panel {
+  position: fixed;
+  top: var(--nav-header-height);
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translateX(-50%);
+  width: min(860px, calc(100vw - 32px));
+  min-width: 0;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - var(--nav-header-height) - 16px);
+  max-height: calc(100dvh - var(--nav-header-height) - 16px);
+  margin: 0;
+  padding: 22px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 20px 55px rgba(0,79,123,.17);
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-panel-heading {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  line-height: 1.4;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-column {
+  min-width: 0;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-category-title {
+  margin: 0 0 8px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .045em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-submenu-link {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-label {
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-description {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-panel-footer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin: 18px 0 0;
+  padding: 14px 12px 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-submenu-link:hover,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-submenu-link:focus-visible,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-panel-footer:hover {
+  color: var(--gold);
+  background: var(--light);
+}
+
+.public-shell #siteHeader.site-header .nav-menu-icon {
+  line-height: 1;
+}
+
+@media (min-width: 1280px) {
+  .public-shell #siteHeader.site-header #mainNav.main-nav {
+    display: flex;
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-menu-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1279px) {
+  .public-shell #siteHeader.site-header {
+    --nav-header-height: 78px;
+  }
+
+  .public-shell #siteHeader.site-header .header-inner {
+    gap: 12px;
+  }
+
+  .public-shell #siteHeader.site-header .brand {
+    max-width: calc(100% - 140px);
+  }
+
+  .public-shell #siteHeader.site-header .header-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    align-self: auto;
+    min-height: 44px;
+    margin: 0 0 0 auto;
+    padding: 8px 14px;
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  .public-shell #siteHeader.site-header #mobileMenu.mobile-menu {
+    display: grid;
+    place-items: center;
+    flex: none;
+    margin: 0;
+    width: 44px;
+    height: 44px;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav {
+    display: none;
+    position: absolute;
+    top: var(--nav-header-height);
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    padding: 12px 24px 24px;
+    max-height: calc(100vh - var(--nav-header-height));
+    max-height: calc(100dvh - var(--nav-header-height));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-gutter: stable;
+    -webkit-overflow-scrolling: touch;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    background: var(--white);
+  }
+
+  .public-shell #siteHeader.site-header[data-menu-open="false"] #mainNav.main-nav {
+    display: none;
+  }
+
+  .public-shell #siteHeader.site-header[data-menu-open="true"] #mainNav.main-nav:not([hidden]) {
+    display: flex;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-home {
+    display: inline-flex;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-ring-desktop {
+    display: none;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-ring-mobile {
+    display: inline;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-item {
+    min-height: 44px;
+    font-size: 14px;
+    padding: 12px 0;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-dd > .dropdown-panel {
+    position: static;
+    inset: auto;
+    transform: none;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    max-height: none;
+    margin: 0 0 10px;
+    padding: 12px 8px;
+    overflow: visible;
+    border: 0;
+    border-radius: 8px;
+    background: var(--light);
+    box-shadow: none;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-description,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-panel-heading {
+    display: none;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .header-cta,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-menu-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    min-height: 44px;
+    margin-top: 10px;
+    padding: 12px 16px;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 740px) {
+  .public-shell #siteHeader.site-header {
+    --nav-header-height: 74px;
+  }
+
+  .public-shell #siteHeader.site-header .header-inner {
+    gap: 10px;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav {
+    padding-inline: 16px;
+  }
+}
+
+/* Source style 12: homepage-header-fit */
+@media (min-width:1280px) and (max-width:1450px) {
+  .public-shell #siteHeader.site-header .header-inner {
+    width: calc(100% - 40px);
+    gap: 18px;
+  }
+
+  .public-shell #siteHeader.site-header .brand {
+    width: 180px;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav {
+    gap: 10px;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-item {
+    font-size: 11px;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .header-cta {
+    padding-inline: 14px;
+    font-size: 10px;
+  }
+
+  .public-shell #siteHeader.site-header #mainNav.main-nav .login-link {
+    padding: 9px 14px;
+    font-size: 11px;
+  }
+}
+
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-submenu-link:hover,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-submenu-link:focus-visible,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-panel-footer:hover,
+.public-shell #siteHeader.site-header #mainNav.main-nav .nav-item:hover {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Source style 13: homepage-menu-banner-alignment */
+@media (min-width:1151px) and (max-width:1279px) {
+  .public-shell #siteHeader.site-header {
+    height: 78px;
+    --nav-header-height: 78px;
+  }
+
+  .public-shell .ring-announcement {
+    margin-top: 78px;
+  }
+
+  .public-shell #siteHeader.site-header .header-inner {
+    width: calc(100% - 38px);
+  }
+
+  .public-shell #siteHeader.site-header .brand {
+    width: 170px;
+  }
+}
+
+
+/* Integrator geometry contract: local variable is useful for measured offsets;
+ * no body padding/margin or unrelated route-content selectors are introduced. */
+.public-shell #siteHeader.site-header {
+  --nav-header-height: var(--public-shell-header-height);
+  height: var(--nav-header-height);
+}
+.public-shell .ring-marquee-banner {
+  margin-top: var(--public-shell-header-height);
+}
+@media (max-width: 1279px) {
+  .public-shell { --public-shell-header-height: 78px; }
+}
+@media (max-width: 740px) {
+  .public-shell { --public-shell-header-height: 74px; }
+}
+
+/* IMPORTANT LAYER NOTE: important layer precedence is reversed. index.css has
+ * base-layer h3 size/weight !important as well as components-layer mobile h2/p.
+ * A utilities-layer !important CANNOT beat these earlier layers. Same-base
+ * scoped guards are therefore necessary, in addition to utilities guards.
+ * Only known global important-conflict properties are elevated. */
+@layer base {
+  .public-shell .site-footer .footer-column h3 {
+    font-size: 13px !important;
+    font-weight: 900 !important;
+  }
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-category-title {
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    line-height: 1.5 !important;
+  }
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-panel-heading {
+    font-size: 11px !important;
+    line-height: 1.4 !important;
+  }
+  .public-shell .site-footer .footer-brand p,
+  .public-shell .site-footer .newsletter p {
+    font-size: 14px !important;
+    line-height: 1.65 !important;
+  }
+  @media (max-width: 740px) {
+    .public-shell .site-footer .footer-column h3 { font-size: 12px !important; }
+  }
+}
+
+/* Same-utilities-layer specificity defeats utility/global green link rules,
+ * including on light-theme html. These rules affect the shell only. */
+@layer utilities {
+  .public-shell #siteHeader.site-header a,
+  .public-shell #siteHeader.site-header .nav-item,
+  .public-shell .site-footer.site-footer a,
+  .public-shell .ring-marquee-banner .ring-marquee-cta {
+    color: var(--blue) !important;
+  }
+  .public-shell #siteHeader.site-header #mainNav.main-nav .header-cta {
+    color: var(--white) !important;
+  }
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-panel-footer:hover,
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-submenu-link:hover,
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-submenu-link:focus-visible,
+  .public-shell #siteHeader.site-header #mainNav.main-nav .nav-item:hover {
+    color: var(--blue) !important;
+  }
+  .public-shell .site-footer .footer-column h3 {
+    font-size: 13px !important;
+    font-weight: 900 !important;
+  }
+  @media (max-width: 740px) {
+    .public-shell .site-footer .footer-column h3 { font-size: 12px !important; }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .public-shell *,
+  .public-shell *::before,
+  .public-shell *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+  }
+}

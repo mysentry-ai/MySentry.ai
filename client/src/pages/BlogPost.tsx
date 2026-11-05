@@ -126,13 +126,17 @@ const BlogPost = () => {
 
   if (!post) {
     return (
-      <div className="min-h-screen bg-[#fcfbf9] flex items-center justify-center">
+      <div className="min-h-screen bg-[#fcfbf9]">
+        <Navbar />
+        <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-medium text-gray-900 mb-4">Article Not Found</h1>
           <Link href="/blogs" className="text-[#386758] hover:underline">
             Return to Safety &amp; Health Hub
           </Link>
         </div>
+        </div>
+        <Footer />
       </div>
     );
   }

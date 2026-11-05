@@ -125,7 +125,7 @@ describe("TCR SMS consent flow", () => {
   });
 
   it("embeds the same actionable confirmation form in Privacy Policy while keeping the entry point footer-only", () => {
-    const footer = read("client", "src", "components", "Footer.tsx");
+    const footer = read("client", "public", "mysentry-homepage-v17.html");
     const navbar = read("client", "src", "components", "Navbar.tsx");
     const home = read("client", "src", "pages", "Home.tsx");
     const privacy = read("client", "src", "pages", "Privacy.tsx");

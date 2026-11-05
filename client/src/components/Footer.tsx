@@ -1,376 +1,78 @@
-import { useState } from "react";
-import { Link } from "wouter";
-import { Facebook, Instagram, Linkedin, Youtube, Loader2 } from "lucide-react";
+import { useLayoutEffect, useRef } from "react";
 import { trpc } from "@/lib/trpc";
-import { toast } from "sonner";
 import { trackLeadEvent } from "@/lib/metaPixel";
-import {
-  PUBLIC_FOOTER_BLOG_GUIDES,
-  getPublicBlogPath,
-} from "@shared/seo/public-blog-catalog";
+import { PUBLIC_FOOTER_HTML } from "./public-shell/publicShellMarkup";
+import "./public-shell/publicShell.css";
+
+// A stable prop preserves entered email, status text and native event listeners.
+const footerMarkup = { __html: PUBLIC_FOOTER_HTML };
 
 export default function Footer() {
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  // tRPC mutation for newsletter subscription
-  const newsletterMutation = trpc.newsletter.subscribe.useMutation({
-    onSuccess: (data) => {
-      setIsSubmitting(false);
-      if (data.alreadySubscribed) {
-        toast.info("You're already subscribed to our newsletter!");
-      } else if (data.reactivated) {
-        toast.success("Welcome back! Your subscription has been reactivated.");
-      } else {
-        toast.success("Thank you for subscribing to our newsletter!");
+  const root = useRef<HTMLDivElement>(null);
+  const subscribe = trpc.newsletter.subscribe.useMutation();
+  const submit = useRef(subscribe.mutateAsync);
+  submit.current = subscribe.mutateAsync;
+  useLayoutEffect(() => {
+    const shell = root.current;
+    if (!shell) return;
+    const year = shell.querySelector<HTMLElement>("#year");
+    if (year) year.textContent = String(new Date().getFullYear());
+    const form = shell.querySelector<HTMLFormElement>("#newsletterForm")!;
+    const email = shell.querySelector<HTMLInputElement>("#newsEmail")!;
+    const button = form.querySelector<HTMLButtonElement>("button")!;
+    const status = shell.querySelector<HTMLElement>("#newsletterStatus")!;
+    let active = true;
+    let pending = false;
+    const handler = async (event: SubmitEvent) => {
+      event.preventDefault();
+      if (pending || !form.reportValidity()) return;
+      pending = true;
+      button.disabled = true;
+      button.textContent = "Subscribing...";
+      status.textContent = "";
+      try {
+        const result = await submit.current({
+          email: email.value.trim(),
+          source: "footer",
+        });
+        if (!active) return;
+        status.textContent = result.alreadySubscribed
+          ? "You're already subscribed to our newsletter!"
+          : result.reactivated
+            ? "Welcome back! Your subscription has been reactivated."
+            : "Thank you for subscribing to our newsletter!";
+        email.value = "";
+      } catch (error) {
+        if (active)
+          status.textContent =
+            error instanceof Error
+              ? error.message
+              : "Failed to subscribe. Please try again.";
+      } finally {
+        if (active) {
+          pending = false;
+          button.disabled = false;
+          button.textContent = "Subscribe";
+        }
       }
-      setEmail("");
-    },
-    onError: (error) => {
-      setIsSubmitting(false);
-      toast.error(error.message || "Failed to subscribe. Please try again.");
-    }
-  });
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email || !email.includes("@")) {
-      toast.error("Please enter a valid email address.");
-      return;
-    }
-    setIsSubmitting(true);
-    newsletterMutation.mutate({
-      email,
-      source: "footer"
-    });
-  };
-
+    };
+    const trackContact = (event: MouseEvent) => {
+      if ((event.target as Element).closest('a[href="/contact"]'))
+        trackLeadEvent();
+    };
+    form.addEventListener("submit", handler);
+    shell.addEventListener("click", trackContact);
+    return () => {
+      active = false;
+      form.removeEventListener("submit", handler);
+      shell.removeEventListener("click", trackContact);
+    };
+  }, []);
   return (
-    <footer className="site-footer bg-[#e8f5e9] border-t border-primary/10 pt-14 pb-7 sm:pt-16 sm:pb-8">
-      <div className="container">
-        <div className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-[minmax(0,1.25fr)_repeat(4,minmax(0,1fr))] xl:gap-x-12">
-          {/* Brand Column */}
-          <div className="max-w-[17rem] space-y-4 lg:pr-4">
-            <Link onClick={() => window.scrollTo(0, 0)} href="/" className="flex items-center gap-2">
-              <img src="/images/logo.png" alt="MySentry" className="h-12 w-auto" width="360" height="160" loading="lazy" />
-            </Link>
-            <p className="mb-1 text-xs font-normal uppercase tracking-[0.14em] text-[#255044]">Live Safe. Stay Healthy.</p>
-            <p className="text-sm leading-relaxed text-gray-800 font-normal">
-              Personal Safety and Health Monitoring with 24/7 Emergency Response.
-            </p>
-            <div className="flex gap-4 pt-2">
-              <a 
-                href="https://www.facebook.com/MySentryAi" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="MySentry on Facebook"
-                className="text-gray-900 hover:text-primary transition-colors"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://www.instagram.com/mysentry.ai/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="MySentry on Instagram"
-                className="text-gray-900 hover:text-primary transition-colors"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://www.linkedin.com/company/mysentryai/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="MySentry on LinkedIn"
-                className="text-gray-900 hover:text-primary transition-colors"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://www.youtube.com/@MySentry" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="MySentry on YouTube"
-                className="text-gray-900 hover:text-primary transition-colors"
-              >
-                <Youtube className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-
-          {/* Solutions */}
-          <div>
-            <h3 className="!font-normal text-xs text-gray-800 mb-4 uppercase tracking-[0.12em]">Solutions</h3>
-            <ul className="space-y-2.5 text-sm font-normal">
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/features" className="text-gray-900 hover:text-primary transition-colors">
-                  All Features
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/seniors" className="text-gray-900 hover:text-primary transition-colors">
-                  For Seniors
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/families" className="text-gray-900 hover:text-primary transition-colors">
-                  For Families
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/employers" className="text-gray-900 hover:text-primary transition-colors">
-                  For Employers
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/females" className="text-gray-900 hover:text-primary transition-colors">
-                  For Women
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/use-cases" className="text-gray-900 hover:text-primary transition-colors">
-                  Use Cases
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/industries" className="text-gray-900 hover:text-primary transition-colors">
-                  Industries
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/how-it-works" className="text-gray-900 hover:text-primary transition-colors">
-                  How It Works
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/pricing" className="text-gray-900 hover:text-primary transition-colors">
-                  Pricing
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/compare" className="text-gray-900 hover:text-primary transition-colors">
-                  Compare
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="!font-normal text-xs text-gray-800 mb-4 uppercase tracking-[0.12em]">Company</h3>
-            <ul className="space-y-2.5 text-sm font-normal">
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/about-us" className="text-gray-900 hover:text-primary transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/team" className="text-gray-900 hover:text-primary transition-colors">
-                  Our Team
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/partners" className="text-gray-900 hover:text-primary transition-colors">
-                  Partners
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/nurses" className="text-gray-900 hover:text-primary transition-colors">
-                  Nurse Safety
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/blogs" className="text-gray-900 hover:text-primary transition-colors">
-                  Blogs
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => { trackLeadEvent(); window.scrollTo(0, 0); }} href="/contact" className="text-gray-900 hover:text-primary transition-colors">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/privacy" className="text-gray-900 hover:text-primary transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/sms-consent" className="text-gray-900 hover:text-primary transition-colors">
-                  SMS Communication Consent
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/account-deletion" className="text-gray-900 hover:text-primary transition-colors">
-                  Account Deletion
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/terms" className="text-gray-900 hover:text-primary transition-colors">
-                  Terms & Conditions
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Safety Resources */}
-          <div>
-            <h3 className="!font-normal text-xs text-gray-800 mb-4 uppercase tracking-[0.12em]">Safety Resources</h3>
-            <ul className="space-y-2.5 text-sm font-normal">
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/use-cases/medical-alert-app-for-seniors" className="text-gray-900 hover:text-primary transition-colors">
-                  Seniors Aging in Place
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/guides/aging-in-place-checklist" className="text-gray-900 hover:text-primary transition-colors">
-                  Aging in Place Checklist
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/solo-travelers" className="text-gray-900 hover:text-primary transition-colors">
-                  Solo Traveler Safety
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/safety-for/people-living-alone" className="text-gray-900 hover:text-primary transition-colors">
-                  Safety for People Living Alone
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/use-cases/safety-app-for-women" className="text-gray-900 hover:text-primary transition-colors">
-                  Women Living Alone
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/use-cases/personal-safety-app-for-renters" className="text-gray-900 hover:text-primary transition-colors">
-                  Personal Safety for Renters
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/case-studies/home-healthcare" className="text-gray-900 hover:text-primary transition-colors">
-                  Home Healthcare Case Study
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/case-studies/real-estate" className="text-gray-900 hover:text-primary transition-colors">
-                  Real Estate Case Study
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/case-studies/field-services" className="text-gray-900 hover:text-primary transition-colors">
-                  Field Services Case Study
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/integrations/apple-watch" className="text-gray-900 hover:text-primary transition-colors">
-                  Apple Watch Integration
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/integrations/samsung-galaxy-watch" className="text-gray-900 hover:text-primary transition-colors">
-                  Samsung Galaxy Watch Integration
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/integrations/oura-ring" className="text-gray-900 hover:text-primary transition-colors">
-                  Oura Ring Status
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/resources/employer-one-pager" className="text-gray-900 hover:text-primary transition-colors">
-                  Employer Safety Overview
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/features/24-7-professional-monitoring" className="text-gray-900 hover:text-primary transition-colors">
-                  Professional Monitoring Guide
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/solutions/delivery-drivers" className="text-gray-900 hover:text-primary transition-colors">
-                  Delivery Driver Safety
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/solutions/utility-workers" className="text-gray-900 hover:text-primary transition-colors">
-                  Utility and Field Worker Safety
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Featured Guides */}
-          <div>
-            <h3 className="!font-normal text-xs text-gray-800 mb-4 uppercase tracking-[0.12em]">Featured Guides</h3>
-            <ul className="space-y-2.5 text-sm font-normal">
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/guides/family-safety-without-constant-tracking" className="text-gray-900 hover:text-primary transition-colors">
-                  Family Safety and Privacy
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/guides/wearable-fall-detection-limitations" className="text-gray-900 hover:text-primary transition-colors">
-                  Wearable Fall Detection Limits
-                </Link>
-              </li>
-              <li>
-                <Link onClick={() => window.scrollTo(0, 0)} href="/guides/night-shift-nurse-safety-checklist" className="text-gray-900 hover:text-primary transition-colors">
-                  Night Shift Nurse Checklist
-                </Link>
-              </li>
-              {PUBLIC_FOOTER_BLOG_GUIDES.map((guide) => (
-                <li key={guide.slug}>
-                  <Link
-                    onClick={() => window.scrollTo(0, 0)}
-                    href={getPublicBlogPath(guide.slug)}
-                    className="text-gray-900 hover:text-primary transition-colors"
-                  >
-                    {guide.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Stay Updated */}
-          <div className="md:col-span-2 lg:col-span-5 lg:mt-2 lg:flex lg:items-end lg:justify-between lg:gap-12 lg:border-t lg:border-primary/10 lg:pt-8">
-            <div className="max-w-xl">
-              <h3 className="!font-normal text-xs text-gray-800 mb-3 uppercase tracking-[0.12em]">Stay Updated</h3>
-              <p className="text-sm text-gray-800 mb-4 font-normal">
-                Subscribe to our newsletter for the latest safety tips and product updates.
-              </p>
-            </div>
-            <form className="flex max-w-md gap-2 lg:min-w-[22rem]" onSubmit={handleNewsletterSubmit}>
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 px-3 py-2 rounded-lg bg-white border border-primary/20 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-sm"
-                disabled={isSubmitting}
-              />
-              <button 
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-primary text-primary-foreground px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary/90 transition-colors disabled:opacity-50 flex items-center gap-2"
-              >
-                {isSubmitting ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
-                ) : (
-                  "Subscribe"
-                )}
-              </button>
-            </form>
-          </div>
-        </div>
-
-        <div className="mt-10 border-t border-primary/10 pt-6 text-center text-sm lg:flex lg:items-end lg:justify-between lg:gap-12 lg:text-left">
-          <p className="mx-auto mb-4 max-w-5xl text-xs leading-relaxed text-gray-700">
-            MySentry connects supported safety alerts, trusted contacts, permitted incident context, and eligible 24/7 professional monitoring. Feature operation depends on plan, supported device, operating system, permissions, connectivity, account eligibility, and region. Wellness information is not a medical diagnosis.
-          </p>
-          <p className="whitespace-nowrap text-black font-normal">&copy; 2026 MySentry.ai. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
+    <div
+      className="public-shell public-shell-footer"
+      ref={root}
+      dangerouslySetInnerHTML={footerMarkup}
+    />
   );
 }

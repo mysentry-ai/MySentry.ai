@@ -73,7 +73,7 @@ describe("public source policy", () => {
     const selector = fs.readFileSync(path.join(sourceRoot, "components", "ICPSelector.tsx"), "utf8");
 
     expect(css).toContain("--primary: #004F7B;");
-    expect(navbar).toContain("bg-[#004F7B]");
+    expect(navbar).toContain("PUBLIC_HEADER_HTML");
     expect(selector).toContain("border-[#255044]");
     expect(selector).toContain("bg-[#004F7B]");
   });
@@ -154,7 +154,7 @@ describe("public source policy", () => {
     const llms = fs.readFileSync(path.join(publicRoot, "llms.txt"), "utf8");
     const discoverySources = [
       path.join(sourceRoot, "components", "Navbar.tsx"),
-      path.join(sourceRoot, "components", "Footer.tsx"),
+      path.join(publicRoot, "mysentry-homepage-v17.html"),
       path.join(sourceRoot, "pages", "UseCasesHub.tsx"),
       path.join(sourceRoot, "pages", "Seniors.tsx"),
       path.join(sourceRoot, "pages", "Families.tsx"),
@@ -211,7 +211,7 @@ describe("public source policy", () => {
     const app = fs.readFileSync(path.join(sourceRoot, "App.tsx"), "utf8");
     const page = fs.readFileSync(path.join(sourceRoot, "pages", "AccountDeletion.tsx"), "utf8");
     const privacy = fs.readFileSync(path.join(sourceRoot, "pages", "Privacy.tsx"), "utf8");
-    const footer = fs.readFileSync(path.join(sourceRoot, "components", "Footer.tsx"), "utf8");
+    const footer = fs.readFileSync(path.join(publicRoot, "mysentry-homepage-v17.html"), "utf8");
     const sitemap = fs.readFileSync(path.join(root, "server", "sitemaps.ts"), "utf8");
 
     expect(app).toContain('<Route path="/account-deletion" component={AccountDeletion} />');

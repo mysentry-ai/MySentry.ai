@@ -19,24 +19,28 @@ describe("approved project tagline", () => {
     expect(document).not.toMatch(/Your Vital Companion/i);
   });
 
-  it("keeps the approved tagline visible in both mobile navigation surfaces", () => {
-    const navbar = readSource("client/src/components/Navbar.tsx");
-    const occurrences = navbar.match(/Live Safe\. Stay Healthy\./g) ?? [];
-
-    expect(occurrences).toHaveLength(2);
-    expect(navbar).not.toMatch(
-      /hidden\s+lg:block[^>]*>\s*Live Safe\. Stay Healthy\./s
+  it("keeps the tagline inside the shared logo rather than duplicating it", () => {
+    const html = readSource("client/public/mysentry-homepage-v17.html");
+    const header = html.match(
+      /<header class="site-header"[\s\S]*?<\/header>/
+    )![0];
+    expect(header).toContain("MySentry | Live Safe. Stay Healthy");
+    expect(header).not.toContain('class="brand-tagline"');
+    expect(readSource("client/src/components/Navbar.tsx")).toContain(
+      "PUBLIC_HEADER_HTML"
     );
   });
-
   it("removes retired branding from customer-facing website source", () => {
     const publicSources = [
       "client/index.html",
       "client/src/components/Navbar.tsx",
       "client/src/components/Footer.tsx",
+      "client/public/mysentry-homepage-v17.html",
       "client/src/pages/Privacy.tsx",
       "shared/seo/route-meta.ts",
-    ].map(readSource).join("\n");
+    ]
+      .map(readSource)
+      .join("\n");
 
     expect(publicSources).not.toMatch(/Your Vital Companion/i);
     expect(publicSources).not.toMatch(/Mysentry Vital Companion/i);

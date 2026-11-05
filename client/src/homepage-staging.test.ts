@@ -60,12 +60,7 @@ describe("staged homepage implementation", () => {
       "No Credit Card Required for Your 7-Day Free Trial."
     );
     expect(homepage).toContain('href="/pricing#pricing-plans"');
-    expect(homeRoute.indexOf("<HomepageRingBanner />")).toBeGreaterThan(
-      homeRoute.indexOf("<Navbar />")
-    );
-    expect(homeRoute.indexOf("<HomepageRingBanner />")).toBeLessThan(
-      homeRoute.indexOf("<HomepageExperience />")
-    );
+    expect(homeRoute).toContain("window.location.replace");
     const banner = read(
       "client",
       "src",
@@ -81,8 +76,8 @@ describe("staged homepage implementation", () => {
   });
 
   it("uses the preserved live navigation rather than a homepage-specific replacement", () => {
-    expect(homeRoute).toContain('import Navbar from "@/components/Navbar"');
-    expect(homeRoute).toContain("<Navbar />");
+    expect(homeRoute).toContain("window.location.replace");
+    expect(homeRoute).not.toContain("<HomepageExperience");
     expect(homepage).not.toContain("hp-nav");
   });
 

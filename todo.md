@@ -71,3 +71,15 @@
 - [x] Verify all 50 captured live menu destinations and 49 production-build internal routes return HTTP 200; document the existing live Pricing anchor discrepancy without editing production.
 - [x] Pass TypeScript, 166/166 tests, production build, exact root delivery, representative metadata and preservation checks.
 - [x] Keep the release staging-only with no GitHub push, AWS deployment, database, Docker or environment-file changes.
+
+## Homepage v17 Shared Public Shell - November 5, 2026
+
+- [x] Use the approved standalone homepage as the single markup source for the shared header/navigation, Ring marquee, and footer.
+- [x] Apply scoped source-identical shell styling without changing global page styles, existing copy, artwork, or animations.
+- [x] Normalize footer and Ring links to existing canonical same-origin destinations without changing visible labels.
+- [x] Include public 404 and missing-article states; show the public shell on the employer one-pager screen while preserving its document-only print output.
+- [x] Preserve stable injected DOM across page scroll-state and newsletter mutation updates; preserve mobile body-scroll locking and event cleanup.
+- [x] Validate 174 public/diagnostic URLs at desktop and mobile widths, 348 route/viewport checks, all 72 internal shell destinations, and 27 canonical redirects.
+- [x] Validate navigation at eight viewport widths, newsletter success/error with intercepted requests, print behavior, root navigation, and 14 production-mode shell-parity checks.
+- [x] Pass TypeScript, 172/172 serial tests, production build, exact root-document delivery, no-overflow/content-clearance checks, and protected-file preservation.
+- [x] Keep this validated release staging-only. Do not push to GitHub, deploy, or change database, Docker, environment, or infrastructure without owner authorization.
