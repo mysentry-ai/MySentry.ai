@@ -7,6 +7,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
+import Download from "./pages/Download";
 import Seniors from "./pages/Seniors";
 import Families from "./pages/Families";
 import Employers from "./pages/Employers";
@@ -146,6 +147,8 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/download" component={Download} />
+      <Route path="/download/" component={Download} />
       <Route path="/how-it-works" component={HowItWorks} />
       <Route path="/females" component={Females} />
       <Route path="/nurses" component={Nurses} />

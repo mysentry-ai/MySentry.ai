@@ -1,4 +1,5 @@
 const EXPLICIT_NOINDEX_PATHS = new Set([
+  "/download",
   "/pricing-legacy",
   "/features/secure-route",
   "/integrations/oura-ring",

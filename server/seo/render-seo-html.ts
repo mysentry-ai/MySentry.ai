@@ -1,6 +1,7 @@
 import { DEFAULT_OG_IMAGE, SITE_NAME } from "../../shared/seo/route-meta";
 import { canonicalizeBlogContentLinks } from "../../shared/seo/blog-assets";
 import type { ResolvedMeta } from "./resolve-meta";
+import { buildEarlyDownloadScript, DOWNLOAD_OPTIONS, DOWNLOAD_PAGE_CSS, SMART_DOWNLOAD_STORES } from "../../shared/smart-app-download";
 
 const SITE_ORIGIN = "https://mysentry.ai";
 
@@ -162,6 +163,10 @@ function buildSchemas(meta: ResolvedMeta, canonicalUrl: string): Record<string, 
 }
 
 function buildFallback(meta: ResolvedMeta): string {
+  if (meta.canonicalPath === "/download") {
+    const stores = DOWNLOAD_OPTIONS.map(option => `<div class="download-card"><h2>${escapeHtml(option.heading)}</h2><a class="download-store" href="${escapeHtml(SMART_DOWNLOAD_STORES[option.key])}"><img src="${option.image}" alt="" width="154" height="46"><span class="download-link">${escapeHtml(option.label)}<span aria-hidden="true">↗</span></span></a></div>`).join("");
+    return `<main id="ssr-content" data-ssr-fallback="true" class="smart-download"><div class="smart-download-inner"><p class="download-eyebrow">Live Safe. Stay Healthy.</p><h1>Download MySentry.</h1><p class="download-intro">Choose the store for your device. For Ring, open the MySentry listing in the Ring Appstore.</p><div class="download-grid">${stores}</div><p class="download-note">You can share this same download link with someone using a different device.</p></div></main>`;
+  }
   const heading = escapeHtml(meta.heading);
   const summary = escapeHtml(meta.summary);
   const label = meta.routeType === "article" ? "MySentry article" : "MySentry";
@@ -211,5 +216,9 @@ export function renderSeoHtml(template: string, meta: ResolvedMeta): string {
     html = html.replace("</head>", `    ${schemaMarkup}\n  </head>`);
   }
   html = html.replace(/<div id="root"><\/div>/i, `<div id="root">${buildFallback(meta)}</div>`);
+  if (meta.canonicalPath === "/download") {
+    // Run before the application bundle and before rendering the fallback body.
+    html = html.replace(/<head(?:\s[^>]*)?>/i, match => `${match}\n<script id="mysentry-smart-download">${buildEarlyDownloadScript()}</script><style>${DOWNLOAD_PAGE_CSS}</style>`);
+  }
   return html;
 }

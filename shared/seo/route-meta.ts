@@ -30,6 +30,11 @@ export const ROUTE_META: Record<string, RouteMeta> = {
     description:
       "Never face an emergency alone. MySentry connects safety alerts to trusted family members and eligible 24/7 professional monitoring. Explore plans and get the app.",
   },
+  "/download": {
+    title: "Download MySentry for iPhone, iPad, Android and Ring",
+    description:
+      "Download MySentry from the Apple App Store or Google Play, or explore MySentry on Ring Appstore. Choose your store or use automatic device-based redirection.",
+  },
   "/about-us": {
     title: "About MySentry | Our Mission & Story",
     description:
