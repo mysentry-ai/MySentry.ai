@@ -131,6 +131,26 @@ describe("owner-supplied v17 homepage", () => {
     expect(body).not.toContain('target="_blank">▶</a>');
   });
 
+  it("removes only the separate navbar tagline and enlarges the three audience slides", () => {
+    const template = fs.readFileSync(templatePath, "utf8");
+    const body = visibleBody(template);
+    const audienceStyle = template.split('<style id="mysentry-audience-v14-fix">')[1].split("</style>")[0];
+
+    expect(template).not.toContain('.brand:after{content:"LIVE SAFE. STAY HEALTHY."');
+    expect(body).toContain('/manus-storage/mysentry-logo-tagline_b866a0e6.svg');
+    expect(body).toContain('<strong>LIVE SAFE. STAY HEALTHY.</strong>');
+    expect(audienceStyle).toContain('font-size:clamp(40px,4.2vw,60px);line-height:1.14');
+    expect(audienceStyle).toContain('font-size:clamp(17px,1.35vw,20px);line-height:1.65');
+    expect(audienceStyle).toContain('height:clamp(350px,58svh,510px)');
+    expect(audienceStyle).toContain('font-size:15px;line-height:1.55');
+    expect(audienceStyle).toContain('font-size:14px;line-height:1.45');
+    expect(audienceStyle).toContain('transition:opacity .34s ease,transform .55s cubic-bezier(.22,1,.36,1)');
+    expect(audienceStyle).toContain('#people.audience-sticky{height:480vh}');
+    for (const slide of [0, 1, 2]) {
+      expect(body).toContain(`data-aud="${slide}"`);
+    }
+  });
+
   it("keeps supplied public assets local or maps their unchanged paths to verified File Storage", () => {
     for (const [filename, expectedHash] of Object.entries(suppliedAssets)) {
       const assetPath = path.join(assetsPath, filename);
