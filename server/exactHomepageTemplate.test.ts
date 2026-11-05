@@ -151,17 +151,22 @@ describe("owner-supplied v17 homepage", () => {
     }
   });
 
-  it("uses the supplied Automated Call SVG with notifications scoped to that scene only", () => {
+  it("matches all five mockups to the second-slide reference and keeps Automated Call notifications clear", () => {
     const template = fs.readFileSync(templatePath, "utf8");
-    const style = template.split('<style id="automated-call-supplied-mockup-layout">')[1].split("</style>")[0];
+    const style = template.split('<style id="story-mockup-reference-sizing">')[1].split("</style>")[0];
     expect(template).toContain('<img alt="MySentry Automated Call settings and incoming call mockup" class="scene-art" data-scene="3" src="/manus-storage/automated_call_08c12f8e.svg"/>');
     expect((template.match(/src="\/manus-storage\/automated_call_08c12f8e.svg"/g) ?? []).length).toBe(1);
     for (const notification of ["left", "right", "bottom"]) {
       expect(style).toContain(`#how #storyPin .auto-chip-${notification}[data-scene="3"]`);
     }
-    expect(style).toContain('#storyPin[data-scene="3"] .scene-stage');
+    for (const scene of [0, 1, 2, 3, 4]) {
+      expect(style).toContain(`#how #storyPin .scene-stage .scene-art[data-scene="${scene}"]`);
+    }
+    expect(style).toContain('--story-reference-width:min(82cqw,470px)');
+    expect(style).toContain('left:50%;top:50%');
     expect(style).toContain('object-fit:contain');
-    expect(style).not.toMatch(/transition:|animation:|@keyframes|background:|data-scene="[0124]"/);
+    expect(style).not.toMatch(/transition:|animation:|@keyframes|background:|transform:|clip-path:/);
+    expect(template).not.toContain('<style id="automated-call-supplied-mockup-layout">');
   });
 
   it("keeps supplied public assets local or maps their unchanged paths to verified File Storage", () => {
