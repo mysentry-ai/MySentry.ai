@@ -1,0 +1,381 @@
+[
+  {
+    "label": "FEATURES",
+    "href": null,
+    "header": "PRODUCT FEATURES",
+    "columns": [
+      {
+        "title": "Safety & Emergency",
+        "items": [
+          {
+            "label": "Panic Button App",
+            "description": "One-tap silent SOS with live video",
+            "href": "/features/panic-button-app",
+            "absolute_href": "https://mysentry.ai/features/panic-button-app"
+          },
+          {
+            "label": "Fall Detection",
+            "description": "Automatic fall alerts with GPS",
+            "href": "/features/fall-detection-app",
+            "absolute_href": "https://mysentry.ai/features/fall-detection-app"
+          },
+          {
+            "label": "Crash Detection",
+            "description": "Eligible device crash signals",
+            "href": "/features/crash-detection",
+            "absolute_href": "https://mysentry.ai/features/crash-detection"
+          },
+          {
+            "label": "Alert Video Context",
+            "description": "Permitted video during supported alerts",
+            "href": "/features/live-video-response",
+            "absolute_href": "https://mysentry.ai/features/live-video-response"
+          }
+        ]
+      },
+      {
+        "title": "Monitoring & Wellness",
+        "items": [
+          {
+            "label": "24/7 Professional Monitoring",
+            "description": "Trained agents for eligible alerts",
+            "href": "/features/24-7-professional-monitoring",
+            "absolute_href": "https://mysentry.ai/features/24-7-professional-monitoring"
+          },
+          {
+            "label": "Wellness Signals",
+            "description": "Supported wearable context",
+            "href": "/features/health-monitoring",
+            "absolute_href": "https://mysentry.ai/features/health-monitoring"
+          },
+          {
+            "label": "Safety Checks",
+            "description": "Timed check-ins and follow-up alerts",
+            "href": "/features/safety-check-in-app",
+            "absolute_href": "https://mysentry.ai/features/safety-check-in-app"
+          }
+        ]
+      }
+    ],
+    "footer": {
+      "label": "View all features",
+      "description": null,
+      "href": "/features",
+      "absolute_href": "https://mysentry.ai/features"
+    }
+  },
+  {
+    "label": "WHO WE PROTECT",
+    "href": null,
+    "header": "WHO WE PROTECT",
+    "columns": [
+      {
+        "title": "Individuals & Families",
+        "items": [
+          {
+            "label": "Women",
+            "description": "Panic alerts, check-ins, and trusted contacts",
+            "href": "/use-cases/safety-app-for-women",
+            "absolute_href": "https://mysentry.ai/use-cases/safety-app-for-women"
+          },
+          {
+            "label": "People Living Alone",
+            "description": "Independent routines with agreed safety check-ins",
+            "href": "/safety-for/people-living-alone",
+            "absolute_href": "https://mysentry.ai/safety-for/people-living-alone"
+          },
+          {
+            "label": "Older Adults",
+            "description": "Supported fall alerts and safety checks",
+            "href": "/use-cases/medical-alert-app-for-seniors",
+            "absolute_href": "https://mysentry.ai/use-cases/medical-alert-app-for-seniors"
+          },
+          {
+            "label": "Families",
+            "description": "Permission-based family safety tools",
+            "href": "/use-cases/family-safety-app",
+            "absolute_href": "https://mysentry.ai/use-cases/family-safety-app"
+          },
+          {
+            "label": "Renters",
+            "description": "Portable safety for apartments and shared spaces",
+            "href": "/use-cases/personal-safety-app-for-renters",
+            "absolute_href": "https://mysentry.ai/use-cases/personal-safety-app-for-renters"
+          },
+          {
+            "label": "Teen Drivers",
+            "description": "Eligible crash signals and alert context",
+            "href": "/use-cases/teen-driver-safety",
+            "absolute_href": "https://mysentry.ai/use-cases/teen-driver-safety"
+          }
+        ]
+      },
+      {
+        "title": "Workers & Employers",
+        "items": [
+          {
+            "label": "Employers",
+            "description": "Supplemental workforce safety tools",
+            "href": "/employers",
+            "absolute_href": "https://mysentry.ai/employers"
+          },
+          {
+            "label": "Nurses & Healthcare",
+            "description": "Safety for nurses and healthcare workers",
+            "href": "/nurses",
+            "absolute_href": "https://mysentry.ai/nurses"
+          },
+          {
+            "label": "Lone Workers",
+            "description": "Check-ins, alerts, and response planning",
+            "href": "/use-cases/lone-worker-safety-app",
+            "absolute_href": "https://mysentry.ai/use-cases/lone-worker-safety-app"
+          },
+          {
+            "label": "Travel Nurses",
+            "description": "Safety planning for every new assignment",
+            "href": "/nurses/travel-nurses",
+            "absolute_href": "https://mysentry.ai/nurses/travel-nurses"
+          }
+        ]
+      }
+    ],
+    "footer": {
+      "label": "See all use cases",
+      "description": null,
+      "href": "/use-cases",
+      "absolute_href": "https://mysentry.ai/use-cases"
+    }
+  },
+  {
+    "label": "INDUSTRIES",
+    "href": null,
+    "header": "INDUSTRIES",
+    "columns": [
+      {
+        "title": "Field & Outdoor",
+        "items": [
+          {
+            "label": "Construction",
+            "description": "Supplemental job-site safety tools",
+            "href": "/industries/construction",
+            "absolute_href": "https://mysentry.ai/industries/construction"
+          },
+          {
+            "label": "Utility & Field Workers",
+            "description": "Safety planning across changing worksites",
+            "href": "/solutions/utility-workers",
+            "absolute_href": "https://mysentry.ai/solutions/utility-workers"
+          },
+          {
+            "label": "Real Estate",
+            "description": "Agent safety on property visits",
+            "href": "/industries/real-estate",
+            "absolute_href": "https://mysentry.ai/industries/real-estate"
+          },
+          {
+            "label": "Delivery & Drivers",
+            "description": "Road and route worker safety",
+            "href": "/solutions/delivery-drivers",
+            "absolute_href": "https://mysentry.ai/solutions/delivery-drivers"
+          },
+          {
+            "label": "Security Guarding",
+            "description": "Guard tour and lone patrol safety",
+            "href": "/industries/security-guarding",
+            "absolute_href": "https://mysentry.ai/industries/security-guarding"
+          }
+        ]
+      },
+      {
+        "title": "Care & Service",
+        "items": [
+          {
+            "label": "Home Healthcare",
+            "description": "In-home caregiver protection",
+            "href": "/industries/home-healthcare",
+            "absolute_href": "https://mysentry.ai/industries/home-healthcare"
+          },
+          {
+            "label": "Hospitality",
+            "description": "Hotel and restaurant staff safety",
+            "href": "/industries/hospitality",
+            "absolute_href": "https://mysentry.ai/industries/hospitality"
+          },
+          {
+            "label": "Retail",
+            "description": "Store worker panic and safety alerts",
+            "href": "/industries/retail",
+            "absolute_href": "https://mysentry.ai/industries/retail"
+          },
+          {
+            "label": "Education",
+            "description": "Campus and school safety",
+            "href": "/industries/education",
+            "absolute_href": "https://mysentry.ai/industries/education"
+          }
+        ]
+      }
+    ],
+    "footer": {
+      "label": "View all industries",
+      "description": null,
+      "href": "/industries",
+      "absolute_href": "https://mysentry.ai/industries"
+    }
+  },
+  {
+    "label": "COMPARE",
+    "href": null,
+    "header": "HOW WE COMPARE",
+    "columns": [
+      {
+        "title": "Comparison Resources",
+        "items": [
+          {
+            "label": "Comparison Guide",
+            "description": "Questions to verify before choosing",
+            "href": "/compare",
+            "absolute_href": "https://mysentry.ai/compare"
+          },
+          {
+            "label": "Current MySentry Features",
+            "description": "Review supported capabilities and limits",
+            "href": "/features",
+            "absolute_href": "https://mysentry.ai/features"
+          },
+          {
+            "label": "Plans and Eligibility",
+            "description": "Review current plan information",
+            "href": "/pricing",
+            "absolute_href": "https://mysentry.ai/pricing"
+          }
+        ]
+      },
+      {
+        "title": "Category Reviews",
+        "items": [
+          {
+            "label": "Fitness Wearables Review",
+            "description": "Compare wellness and safety categories",
+            "href": "/compare/fitness-wearables-vs-mysentry",
+            "absolute_href": "https://mysentry.ai/compare/fitness-wearables-vs-mysentry"
+          },
+          {
+            "label": "Traditional Alert Review",
+            "description": "Compare equipment and service models",
+            "href": "/compare/traditional-medical-alerts-vs-mysentry",
+            "absolute_href": "https://mysentry.ai/compare/traditional-medical-alerts-vs-mysentry"
+          },
+          {
+            "label": "Apple Watch Compatibility",
+            "description": "Review eligible MySentry support",
+            "href": "/integrations/apple-watch",
+            "absolute_href": "https://mysentry.ai/integrations/apple-watch"
+          },
+          {
+            "label": "Samsung Watch Compatibility",
+            "description": "Review eligible MySentry support",
+            "href": "/integrations/samsung-galaxy-watch",
+            "absolute_href": "https://mysentry.ai/integrations/samsung-galaxy-watch"
+          }
+        ]
+      }
+    ],
+    "footer": {
+      "label": "See all comparisons",
+      "description": null,
+      "href": "/compare",
+      "absolute_href": "https://mysentry.ai/compare"
+    }
+  },
+  {
+    "label": "LEARN",
+    "href": null,
+    "header": "RESOURCES & GUIDES",
+    "columns": [
+      {
+        "title": "Guides & Research",
+        "items": [
+          {
+            "label": "Lone Worker Safety Guide",
+            "description": "Hazards, check-ins, roles, and limitations",
+            "href": "/guides/lone-worker-safety",
+            "absolute_href": "https://mysentry.ai/guides/lone-worker-safety"
+          },
+          {
+            "label": "Aging in Place Checklist",
+            "description": "Home, support, privacy, and emergency planning",
+            "href": "/guides/aging-in-place-checklist",
+            "absolute_href": "https://mysentry.ai/guides/aging-in-place-checklist"
+          },
+          {
+            "label": "Family Safety and Privacy",
+            "description": "Consent-based check-ins without constant tracking",
+            "href": "/guides/family-safety-without-constant-tracking",
+            "absolute_href": "https://mysentry.ai/guides/family-safety-without-constant-tracking"
+          },
+          {
+            "label": "Night Shift Nurse Checklist",
+            "description": "Parking, workplace, and commute planning",
+            "href": "/guides/night-shift-nurse-safety-checklist",
+            "absolute_href": "https://mysentry.ai/guides/night-shift-nurse-safety-checklist"
+          },
+          {
+            "label": "Wearable Fall Detection Limits",
+            "description": "Capabilities, setup, and missed-event limits",
+            "href": "/guides/wearable-fall-detection-limitations",
+            "absolute_href": "https://mysentry.ai/guides/wearable-fall-detection-limitations"
+          },
+          {
+            "label": "Blog",
+            "description": "Safety tips and expert articles",
+            "href": "/blogs",
+            "absolute_href": "https://mysentry.ai/blogs"
+          },
+          {
+            "label": "How It Works",
+            "description": "See MySentry in action",
+            "href": "/how-it-works",
+            "absolute_href": "https://mysentry.ai/how-it-works"
+          }
+        ]
+      },
+      {
+        "title": "Company",
+        "items": [
+          {
+            "label": "About Us",
+            "description": "Our mission and story",
+            "href": "/about-us",
+            "absolute_href": "https://mysentry.ai/about-us"
+          },
+          {
+            "label": "Our Team",
+            "description": "Meet the people behind MySentry",
+            "href": "/team",
+            "absolute_href": "https://mysentry.ai/team"
+          },
+          {
+            "label": "Partners",
+            "description": "Become a reseller or partner",
+            "href": "/partners",
+            "absolute_href": "https://mysentry.ai/partners"
+          },
+          {
+            "label": "Contact Us",
+            "description": "Get in touch with our team",
+            "href": "/contact",
+            "absolute_href": "https://mysentry.ai/contact"
+          }
+        ]
+      }
+    ],
+    "footer": {
+      "label": "Visit the blog",
+      "description": null,
+      "href": "/blogs",
+      "absolute_href": "https://mysentry.ai/blogs"
+    }
+  }
+]

@@ -68,7 +68,7 @@ describe("owner-supplied v17 homepage", () => {
     const template = fs.readFileSync(templatePath, "utf8");
     const body = visibleBody(template);
 
-    expect(template).toContain('<header class="site-header" id="siteHeader">');
+    expect(template).toContain('<header class="site-header" id="siteHeader" data-menu-open="false">');
     expect(template).toContain('<section class="hero" id="home">');
     expect(template).toContain('id="mysentry-health-v13-scroll-script"');
     expect(template).toContain('https://www.youtube-nocookie.com/embed/7eT5sQQgsm8?rel=0&autoplay=1');
@@ -154,8 +154,9 @@ describe("owner-supplied v17 homepage", () => {
   it("matches all five mockups to the second-slide reference and keeps Automated Call notifications clear", () => {
     const template = fs.readFileSync(templatePath, "utf8");
     const style = template.split('<style id="story-mockup-reference-sizing">')[1].split("</style>")[0];
-    expect(template).toContain('<img alt="MySentry Automated Call settings and incoming call mockup" class="scene-art" data-scene="3" src="/manus-storage/automated_call_08c12f8e.svg"/>');
-    expect((template.match(/src="\/manus-storage\/automated_call_08c12f8e.svg"/g) ?? []).length).toBe(1);
+    const scriptedTemplate = template.replace(/<noscript>[\s\S]*?<\/noscript>/g, "");
+    expect(scriptedTemplate).toMatch(/<img[^>]*class="scene-art"[^>]*data-scene="3"[^>]*data-deferred-src="\/manus-storage\/automated_call_08c12f8e.svg"/);
+    expect((scriptedTemplate.match(/data-deferred-src="\/manus-storage\/automated_call_08c12f8e.svg"/g) ?? []).length).toBe(1);
     for (const notification of ["left", "right", "bottom"]) {
       expect(style).toContain(`#how #storyPin .auto-chip-${notification}[data-scene="3"]`);
     }

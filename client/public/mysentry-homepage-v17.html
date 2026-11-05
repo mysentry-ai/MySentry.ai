@@ -635,7 +635,556 @@ h1,h2,h3{letter-spacing:-.037em;text-wrap:balance}
 #how #storyPin .auto-chip-bottom[data-scene="3"]{left:auto;right:0;top:auto;bottom:0}
 }
 </style>
-</head><body><header class="site-header" id="siteHeader"><div class="header-inner"><a aria-label="MySentry home" class="brand" href="https://mysentry.ai/"><img alt="MySentry | Live Safe. Stay Healthy" src="/manus-storage/mysentry-logo-tagline_b866a0e6.svg"/></a><button aria-expanded="false" aria-label="Open menu" class="mobile-menu" id="mobileMenu" type="button">☰</button><nav aria-label="Main navigation" class="main-nav" id="mainNav"><a class="nav-item" href="https://mysentry.ai/how-it-works">HOW IT WORKS</a><a class="nav-item" href="https://mysentry.ai/pricing">PRICING</a><div class="nav-dd"><button aria-expanded="false" class="nav-item dropdown-toggle" type="button">FEATURES<span class="chevron">⌄</span></button><div class="dropdown-panel"><a href="https://mysentry.ai/features">All features</a><a href="https://mysentry.ai/features">Panic Alarm</a><a href="https://mysentry.ai/features">Fall detection</a><a href="https://mysentry.ai/features">MeetSafe</a><a href="https://mysentry.ai/features">Health monitoring</a></div></div><div class="nav-dd"><button aria-expanded="false" class="nav-item dropdown-toggle" type="button">WHO WE PROTECT<span class="chevron">⌄</span></button><div class="dropdown-panel"><a href="https://mysentry.ai/seniors">Seniors</a><a href="https://mysentry.ai/families">Families</a><a href="https://mysentry.ai/women">Women</a><a href="https://mysentry.ai/business">Employers</a></div></div><div class="nav-dd"><button aria-expanded="false" class="nav-item dropdown-toggle" type="button">INDUSTRIES<span class="chevron">⌄</span></button><div class="dropdown-panel"><a href="https://mysentry.ai/industries">Industry solutions</a><a href="https://mysentry.ai/industries">Nurse safety</a><a href="https://mysentry.ai/industries">Field workers</a></div></div><div class="nav-dd"><button aria-expanded="false" class="nav-item dropdown-toggle" type="button">COMPARE<span class="chevron">⌄</span></button><div class="dropdown-panel"><a href="https://mysentry.ai/compare">Compare MySentry</a><a href="https://mysentry.ai/compare/apple-watch-fall-detection-vs-mysentry">Apple Watch vs MySentry</a></div></div><div class="nav-dd"><button aria-expanded="false" class="nav-item dropdown-toggle" type="button">LEARN<span class="chevron">⌄</span></button><div class="dropdown-panel"><a href="https://mysentry.ai/blog">Blog</a><a href="https://mysentry.ai/how-it-works">How it works</a><a href="https://mysentry.ai/contact">Contact</a></div></div><a class="nav-item" href="https://mysentry.ai/integrations/ring">RING</a><a class="header-cta" href="https://mysentry.ai/pricing">REVIEW PLANS AND ELIGIBILITY</a><a class="login-link" href="https://mysentry.ai/login">LOGIN</a></nav></div></header><main><section aria-label="MySentry and Ring announcement" class="ring-marquee-banner">
+
+<style id="homepage-responsive-loading-fixes">
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* Reserve the original hero artwork's geometry before its bytes arrive. */
+.hero-device .device-float{aspect-ratio:1270/714}
+.hero-device img{aspect-ratio:1270/714}
+@media(max-width:740px){
+ #intro .intro-grid{grid-template-columns:minmax(0,1fr);gap:30px}
+ #intro .intro-copy,#intro .intro-video{min-width:0;max-width:100%;width:100%}
+ #intro .intro-copy h2,#intro .intro-copy>p{max-width:100%!important;width:auto;overflow-wrap:break-word}
+ #intro .intro-actions{max-width:100%;min-width:0}
+ #intro .intro-actions .button{width:100%;min-width:0;max-width:100%;justify-content:space-between;white-space:normal}
+ #home .hero-actions .button{max-width:100%;min-width:0;gap:14px;padding-inline:18px;font-size:15px}
+ #how #storyPin{height:calc(100svh - 74px);min-height:0}
+}
+@media(max-width:740px) and (max-height:690px){
+ #how #storyPin .story-inner{gap:0}
+ #how #storyPin .scene-stage{height:calc((100svh - 74px)*.47);min-height:0;flex:0 0 calc((100svh - 74px)*.47);--story-reference-width:min(67cqw,calc((100svh - 74px)*.275))}
+ #how #storyPin .story-text{min-height:0;flex:1}
+ #how #storyPin .story-bar{margin:4px 0}
+ #how #storyPin .scene-copy{top:47px}
+ #how #storyPin .scene-copy h2{font-size:clamp(27px,7.8vw,32px);margin:6px 0;line-height:1.08}
+ #how #storyPin .scene-copy p{font-size:13px;line-height:1.4;margin-bottom:9px}
+ #how #storyPin .scene-copy .btn{font-size:11px;min-height:38px;padding:8px 12px}
+ #how #storyPin .auto-chip[data-scene="3"]{font-size:10px;padding:6px 8px;gap:5px}
+ #how #storyPin .auto-chip .chip-icon{width:20px;height:20px;font-size:12px}
+ #how #storyPin .auto-chip-left[data-scene="3"],#how #storyPin .auto-chip-right[data-scene="3"]{top:4px}
+ #how #storyPin .auto-chip-bottom[data-scene="3"]{bottom:4px;top:auto}
+}
+@media(min-width:741px) and (max-height:540px){
+ #people .audience-pin{top:78px;height:calc(100svh - 78px);min-height:0}
+ #people .audience-pin-wrap{padding-block:6px}
+ #people .audience-top{font-size:9px;padding-bottom:5px}
+ #people .audience-display{margin-block:7px;gap:3%;min-height:0}
+ #people .audience-image{height:calc(100svh - 145px);min-height:0}
+ #people .audience-content{height:calc(100svh - 129px);min-height:0}
+ #people .people-copy .audience-type{font-size:9px}
+ #people .people-copy h2{font-size:clamp(23px,3vw,29px);line-height:1.12;margin:6px 0 8px}
+ #people .people-copy>p{font-size:12px;line-height:1.4;margin-bottom:7px}
+ #people .people-copy ul{gap:4px;margin-bottom:8px}
+ #people .people-copy li{font-size:11px;line-height:1.35;padding-left:22px}
+ #people .people-copy li:before{width:16px;height:16px;line-height:16px}
+ #people .people-copy .button{min-height:30px;font-size:11px;padding:6px 11px}
+ #people .audience-controls{font-size:8px}
+ #how #storyPin{top:78px;height:calc(100svh - 78px);min-height:0}
+ #how #storyPin .story-text{min-height:calc(100svh - 115px)}
+ #how #storyPin .story-progress-label{font-size:9px}
+ #how #storyPin .story-progress-label b{font-size:20px}
+ #how #storyPin .story-bar{margin:5px 0}
+ #how #storyPin .scene-copy{top:43px}
+ #how #storyPin .scene-copy .mini{font-size:10px}
+ #how #storyPin .scene-copy h2{font-size:clamp(24px,3.7vw,32px);line-height:1.08;margin:8px 0}
+ #how #storyPin .scene-copy p{font-size:12px;line-height:1.4;margin-bottom:10px}
+ #how #storyPin .scene-copy .btn{font-size:11px;padding:8px 12px}
+ #how #storyPin .scene-stage{height:100%;min-height:0;--story-reference-width:min(70cqw,calc((100svh - 160px)*.70))}
+ #how #storyPin .auto-chip[data-scene="3"]{font-size:9px;padding:5px 6px;gap:4px}
+ #how #storyPin .auto-chip .chip-icon{width:17px;height:17px;font-size:10px}
+ #how #storyPin .auto-chip-left[data-scene="3"],#how #storyPin .auto-chip-right[data-scene="3"]{top:calc(50% - var(--story-reference-width)*.64 - 26px);left:auto;right:auto}
+ #how #storyPin .auto-chip-left[data-scene="3"]{left:1%}
+ #how #storyPin .auto-chip-right[data-scene="3"]{right:1%}
+ #how #storyPin .auto-chip-bottom[data-scene="3"]{bottom:auto;top:calc(50% + var(--story-reference-width)*.64 + 4px)}
+}
+</style>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+<style id="homepage-live-navigation">
+/* Add AFTER every existing stylesheet. No body/content/analytics rules are changed. */
+#siteHeader.site-header {
+  --nav-header-height: 93px;
+  height: var(--nav-header-height);
+}
+
+#siteHeader.site-header .header-inner {
+  min-width: 0;
+}
+
+#siteHeader.site-header #mainNav.main-nav {
+  min-width: 0;
+}
+
+#siteHeader.site-header .nav-item,
+#siteHeader.site-header .header-cta,
+#siteHeader.site-header .login-link {
+  text-transform: uppercase;
+}
+
+#siteHeader.site-header .header-login,
+#siteHeader.site-header #mainNav.main-nav .nav-home,
+#siteHeader.site-header #mainNav.main-nav .nav-ring-mobile {
+  display: none;
+}
+
+#siteHeader.site-header #mainNav.main-nav .nav-ring-desktop {
+  display: inline;
+}
+
+#siteHeader.site-header #mainNav.main-nav .dropdown-toggle {
+  color: var(--blue);
+}
+
+#siteHeader.site-header #mainNav.main-nav .dropdown-toggle .chevron {
+  display: inline-block;
+  transition: transform .18s ease;
+}
+
+#siteHeader.site-header #mainNav.main-nav .dropdown-toggle[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+/* Explicit state wins at ALL widths, including when a closed trigger still has
+   :hover/:focus-within or a stale .open class. Never use hover to disclose. */
+#siteHeader.site-header #mainNav.main-nav .nav-dd > .dropdown-panel,
+#siteHeader.site-header #mainNav.main-nav .nav-dd > .dropdown-toggle[aria-expanded="false"] + .dropdown-panel,
+#siteHeader.site-header #mainNav.main-nav .nav-dd:hover > .dropdown-toggle[aria-expanded="false"] + .dropdown-panel,
+#siteHeader.site-header #mainNav.main-nav .nav-dd:focus-within > .dropdown-toggle[aria-expanded="false"] + .dropdown-panel {
+  display: none;
+}
+
+#siteHeader.site-header #mainNav.main-nav .nav-dd > .dropdown-toggle[aria-expanded="true"] + .dropdown-panel[aria-hidden="false"]:not([hidden]) {
+  display: block;
+}
+
+#siteHeader.site-header #mainNav.main-nav .dropdown-panel[hidden],
+#siteHeader.site-header #mainNav.main-nav[hidden] {
+  display: none !important;
+}
+
+/* Preserve the original white/blue/gold navigation treatment and rounded panel,
+   but use a viewport-centred mega-panel instead of a narrow off-edge dropdown. */
+#siteHeader.site-header #mainNav.main-nav .nav-dd > .dropdown-panel {
+  position: fixed;
+  top: var(--nav-header-height);
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translateX(-50%);
+  width: min(860px, calc(100vw - 32px));
+  min-width: 0;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - var(--nav-header-height) - 16px);
+  max-height: calc(100dvh - var(--nav-header-height) - 16px);
+  margin: 0;
+  padding: 22px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-gutter: stable;
+  -webkit-overflow-scrolling: touch;
+  z-index: 1;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  box-shadow: 0 20px 55px rgba(0,79,123,.17);
+}
+
+#siteHeader.site-header #mainNav.main-nav .nav-panel-heading {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  line-height: 1.4;
+}
+
+#siteHeader.site-header #mainNav.main-nav .nav-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+#siteHeader.site-header #mainNav.main-nav .nav-column {
+  min-width: 0;
+}
+
+#siteHeader.site-header #mainNav.main-nav .nav-category-title {
+  margin: 0 0 8px;
+  padding: 0 12px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .045em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+#siteHeader.site-header #mainNav.main-nav .nav-submenu-link {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+#siteHeader.site-header #mainNav.main-nav .nav-label {
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+#siteHeader.site-header #mainNav.main-nav .nav-description {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+#siteHeader.site-header #mainNav.main-nav .nav-panel-footer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  margin: 18px 0 0;
+  padding: 14px 12px 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+#siteHeader.site-header #mainNav.main-nav .nav-submenu-link:hover,
+#siteHeader.site-header #mainNav.main-nav .nav-submenu-link:focus-visible,
+#siteHeader.site-header #mainNav.main-nav .nav-panel-footer:hover {
+  color: var(--gold);
+  background: var(--light);
+}
+
+#siteHeader.site-header .nav-menu-icon {
+  line-height: 1;
+}
+
+@media (min-width: 1280px) {
+  #siteHeader.site-header #mainNav.main-nav {
+    display: flex;
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  #siteHeader.site-header #mainNav.main-nav .nav-menu-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1279px) {
+  #siteHeader.site-header {
+    --nav-header-height: 78px;
+  }
+
+  #siteHeader.site-header .header-inner {
+    gap: 12px;
+  }
+
+  #siteHeader.site-header .brand {
+    max-width: calc(100% - 140px);
+  }
+
+  #siteHeader.site-header .header-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+    align-self: auto;
+    min-height: 44px;
+    margin: 0 0 0 auto;
+    padding: 8px 14px;
+    color: var(--blue);
+    font-weight: 600;
+  }
+
+  #siteHeader.site-header #mobileMenu.mobile-menu {
+    display: grid;
+    place-items: center;
+    flex: none;
+    margin: 0;
+    width: 44px;
+    height: 44px;
+  }
+
+  #siteHeader.site-header #mainNav.main-nav {
+    display: none;
+    position: absolute;
+    top: var(--nav-header-height);
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    padding: 12px 24px 24px;
+    max-height: calc(100vh - var(--nav-header-height));
+    max-height: calc(100dvh - var(--nav-header-height));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-gutter: stable;
+    -webkit-overflow-scrolling: touch;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    background: var(--white);
+  }
+
+  #siteHeader.site-header[data-menu-open="false"] #mainNav.main-nav {
+    display: none;
+  }
+
+  #siteHeader.site-header[data-menu-open="true"] #mainNav.main-nav:not([hidden]) {
+    display: flex;
+  }
+
+  #siteHeader.site-header #mainNav.main-nav .nav-home {
+    display: inline-flex;
+  }
+
+  #siteHeader.site-header #mainNav.main-nav .nav-ring-desktop {
+    display: none;
+  }
+
+  #siteHeader.site-header #mainNav.main-nav .nav-ring-mobile {
+    display: inline;
+  }
+
+  #siteHeader.site-header #mainNav.main-nav .nav-item {
+    min-height: 44px;
+    font-size: 14px;
+    padding: 12px 0;
+  }
+
+  #siteHeader.site-header #mainNav.main-nav .nav-dd > .dropdown-panel {
+    position: static;
+    inset: auto;
+    transform: none;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    max-height: none;
+    margin: 0 0 10px;
+    padding: 12px 8px;
+    overflow: visible;
+    border: 0;
+    border-radius: 8px;
+    background: var(--light);
+    box-shadow: none;
+  }
+
+  #siteHeader.site-header #mainNav.main-nav .nav-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  #siteHeader.site-header #mainNav.main-nav .nav-description,
+  #siteHeader.site-header #mainNav.main-nav .nav-panel-heading {
+    display: none;
+  }
+
+  #siteHeader.site-header #mainNav.main-nav .header-cta,
+  #siteHeader.site-header #mainNav.main-nav .nav-menu-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: stretch;
+    min-height: 44px;
+    margin-top: 10px;
+    padding: 12px 16px;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+@media (max-width: 740px) {
+  #siteHeader.site-header {
+    --nav-header-height: 74px;
+  }
+
+  #siteHeader.site-header .header-inner {
+    gap: 10px;
+  }
+
+  #siteHeader.site-header #mainNav.main-nav {
+    padding-inline: 16px;
+  }
+}
+
+</style>
+<style id="homepage-header-fit">
+@media(min-width:1280px) and (max-width:1450px){
+ #siteHeader.site-header .header-inner{width:calc(100% - 40px);gap:18px}
+ #siteHeader.site-header .brand{width:180px}
+ #siteHeader.site-header #mainNav.main-nav{gap:10px}
+ #siteHeader.site-header #mainNav.main-nav .nav-item{font-size:11px}
+ #siteHeader.site-header #mainNav.main-nav .header-cta{padding-inline:14px;font-size:10px}
+ #siteHeader.site-header #mainNav.main-nav .login-link{padding:9px 14px;font-size:11px}
+}
+#siteHeader.site-header #mainNav.main-nav .nav-submenu-link:hover,
+#siteHeader.site-header #mainNav.main-nav .nav-submenu-link:focus-visible,
+#siteHeader.site-header #mainNav.main-nav .nav-panel-footer:hover,
+#siteHeader.site-header #mainNav.main-nav .nav-item:hover{color:var(--blue);text-decoration:underline;text-underline-offset:3px}
+</style>
+<style id="homepage-menu-banner-alignment">@media(min-width:1151px) and (max-width:1279px){#siteHeader.site-header{height:78px;--nav-header-height:78px}.ring-announcement{margin-top:78px}#siteHeader.site-header .header-inner{width:calc(100% - 38px)}#siteHeader.site-header .brand{width:170px}}</style>
+</head><body><header class="site-header" id="siteHeader" data-menu-open="false">
+  <div class="header-inner">
+    <a aria-label="MySentry home" class="brand" href="/">
+      <img alt="MySentry | Live Safe. Stay Healthy" width="1205" height="543" src="/manus-storage/mysentry-logo-tagline_b866a0e6.svg" />
+    </a>
+
+    <nav aria-label="Main navigation" class="main-nav" id="mainNav">
+      <a class="nav-item nav-home" href="/">HOME</a>
+      <a class="nav-item" href="/how-it-works">HOW IT WORKS</a>
+      <a class="nav-item" href="/pricing">PRICING</a>
+      <!-- One Ring link: nav.js moves this node after the groups on desktop. -->
+      <a class="nav-item nav-ring" href="/integrations/ring">
+        <span class="nav-ring-desktop">Ring</span><span class="nav-ring-mobile">Ring Appstore</span>
+      </a>
+
+      <div class="nav-dd">
+        <button aria-expanded="false" aria-controls="navFeaturesPanel" class="nav-item dropdown-toggle" id="navFeaturesTrigger" type="button">FEATURES<span aria-hidden="true" class="chevron">⌄</span></button>
+        <div aria-hidden="true" aria-labelledby="navFeaturesTrigger" class="dropdown-panel" hidden id="navFeaturesPanel" role="region">
+          <p class="nav-panel-heading">PRODUCT FEATURES</p>
+          <div class="nav-columns">
+            <section class="nav-column" aria-labelledby="navFeaturesSafetyTitle">
+              <h2 class="nav-category-title" id="navFeaturesSafetyTitle">Safety &amp; Emergency</h2>
+              <a class="nav-submenu-link" href="/features/panic-button-app"><span class="nav-label">Panic Button App</span><span class="nav-description">One-tap silent SOS with live video</span></a>
+              <a class="nav-submenu-link" href="/features/fall-detection-app"><span class="nav-label">Fall Detection</span><span class="nav-description">Automatic fall alerts with GPS</span></a>
+              <a class="nav-submenu-link" href="/features/crash-detection"><span class="nav-label">Crash Detection</span><span class="nav-description">Eligible device crash signals</span></a>
+              <a class="nav-submenu-link" href="/features/live-video-response"><span class="nav-label">Alert Video Context</span><span class="nav-description">Permitted video during supported alerts</span></a>
+            </section>
+            <section class="nav-column" aria-labelledby="navFeaturesMonitoringTitle">
+              <h2 class="nav-category-title" id="navFeaturesMonitoringTitle">Monitoring &amp; Wellness</h2>
+              <a class="nav-submenu-link" href="/features/24-7-professional-monitoring"><span class="nav-label">24/7 Professional Monitoring</span><span class="nav-description">Trained agents for eligible alerts</span></a>
+              <a class="nav-submenu-link" href="/features/health-monitoring"><span class="nav-label">Wellness Signals</span><span class="nav-description">Supported wearable context</span></a>
+              <a class="nav-submenu-link" href="/features/safety-check-in-app"><span class="nav-label">Safety Checks</span><span class="nav-description">Timed check-ins and follow-up alerts</span></a>
+            </section>
+          </div>
+          <a class="nav-panel-footer" href="/features">View all features<span aria-hidden="true"> →</span></a>
+        </div>
+      </div>
+
+      <div class="nav-dd">
+        <button aria-expanded="false" aria-controls="navProtectPanel" class="nav-item dropdown-toggle" id="navProtectTrigger" type="button">WHO WE PROTECT<span aria-hidden="true" class="chevron">⌄</span></button>
+        <div aria-hidden="true" aria-labelledby="navProtectTrigger" class="dropdown-panel" hidden id="navProtectPanel" role="region">
+          <p class="nav-panel-heading">WHO WE PROTECT</p>
+          <div class="nav-columns">
+            <section class="nav-column" aria-labelledby="navProtectIndividualsTitle">
+              <h2 class="nav-category-title" id="navProtectIndividualsTitle">Individuals &amp; Families</h2>
+              <a class="nav-submenu-link" href="/use-cases/safety-app-for-women"><span class="nav-label">Women</span><span class="nav-description">Panic alerts, check-ins, and trusted contacts</span></a>
+              <a class="nav-submenu-link" href="/safety-for/people-living-alone"><span class="nav-label">People Living Alone</span><span class="nav-description">Independent routines with agreed safety check-ins</span></a>
+              <a class="nav-submenu-link" href="/use-cases/medical-alert-app-for-seniors"><span class="nav-label">Older Adults</span><span class="nav-description">Supported fall alerts and safety checks</span></a>
+              <a class="nav-submenu-link" href="/use-cases/family-safety-app"><span class="nav-label">Families</span><span class="nav-description">Permission-based family safety tools</span></a>
+              <a class="nav-submenu-link" href="/use-cases/personal-safety-app-for-renters"><span class="nav-label">Renters</span><span class="nav-description">Portable safety for apartments and shared spaces</span></a>
+              <a class="nav-submenu-link" href="/use-cases/teen-driver-safety"><span class="nav-label">Teen Drivers</span><span class="nav-description">Eligible crash signals and alert context</span></a>
+            </section>
+            <section class="nav-column" aria-labelledby="navProtectWorkersTitle">
+              <h2 class="nav-category-title" id="navProtectWorkersTitle">Workers &amp; Employers</h2>
+              <a class="nav-submenu-link" href="/employers"><span class="nav-label">Employers</span><span class="nav-description">Supplemental workforce safety tools</span></a>
+              <a class="nav-submenu-link" href="/nurses"><span class="nav-label">Nurses &amp; Healthcare</span><span class="nav-description">Safety for nurses and healthcare workers</span></a>
+              <a class="nav-submenu-link" href="/use-cases/lone-worker-safety-app"><span class="nav-label">Lone Workers</span><span class="nav-description">Check-ins, alerts, and response planning</span></a>
+              <a class="nav-submenu-link" href="/nurses/travel-nurses"><span class="nav-label">Travel Nurses</span><span class="nav-description">Safety planning for every new assignment</span></a>
+            </section>
+          </div>
+          <a class="nav-panel-footer" href="/use-cases">See all use cases<span aria-hidden="true"> →</span></a>
+        </div>
+      </div>
+
+      <div class="nav-dd">
+        <button aria-expanded="false" aria-controls="navIndustriesPanel" class="nav-item dropdown-toggle" id="navIndustriesTrigger" type="button">INDUSTRIES<span aria-hidden="true" class="chevron">⌄</span></button>
+        <div aria-hidden="true" aria-labelledby="navIndustriesTrigger" class="dropdown-panel" hidden id="navIndustriesPanel" role="region">
+          <p class="nav-panel-heading">INDUSTRIES</p>
+          <div class="nav-columns">
+            <section class="nav-column" aria-labelledby="navIndustriesFieldTitle">
+              <h2 class="nav-category-title" id="navIndustriesFieldTitle">Field &amp; Outdoor</h2>
+              <a class="nav-submenu-link" href="/industries/construction"><span class="nav-label">Construction</span><span class="nav-description">Supplemental job-site safety tools</span></a>
+              <a class="nav-submenu-link" href="/solutions/utility-workers"><span class="nav-label">Utility &amp; Field Workers</span><span class="nav-description">Safety planning across changing worksites</span></a>
+              <a class="nav-submenu-link" href="/industries/real-estate"><span class="nav-label">Real Estate</span><span class="nav-description">Agent safety on property visits</span></a>
+              <a class="nav-submenu-link" href="/solutions/delivery-drivers"><span class="nav-label">Delivery &amp; Drivers</span><span class="nav-description">Road and route worker safety</span></a>
+              <a class="nav-submenu-link" href="/industries/security-guarding"><span class="nav-label">Security Guarding</span><span class="nav-description">Guard tour and lone patrol safety</span></a>
+            </section>
+            <section class="nav-column" aria-labelledby="navIndustriesCareTitle">
+              <h2 class="nav-category-title" id="navIndustriesCareTitle">Care &amp; Service</h2>
+              <a class="nav-submenu-link" href="/industries/home-healthcare"><span class="nav-label">Home Healthcare</span><span class="nav-description">In-home caregiver protection</span></a>
+              <a class="nav-submenu-link" href="/industries/hospitality"><span class="nav-label">Hospitality</span><span class="nav-description">Hotel and restaurant staff safety</span></a>
+              <a class="nav-submenu-link" href="/industries/retail"><span class="nav-label">Retail</span><span class="nav-description">Store worker panic and safety alerts</span></a>
+              <a class="nav-submenu-link" href="/industries/education"><span class="nav-label">Education</span><span class="nav-description">Campus and school safety</span></a>
+            </section>
+          </div>
+          <a class="nav-panel-footer" href="/industries">View all industries<span aria-hidden="true"> →</span></a>
+        </div>
+      </div>
+
+      <div class="nav-dd">
+        <button aria-expanded="false" aria-controls="navComparePanel" class="nav-item dropdown-toggle" id="navCompareTrigger" type="button">COMPARE<span aria-hidden="true" class="chevron">⌄</span></button>
+        <div aria-hidden="true" aria-labelledby="navCompareTrigger" class="dropdown-panel" hidden id="navComparePanel" role="region">
+          <p class="nav-panel-heading">HOW WE COMPARE</p>
+          <div class="nav-columns">
+            <section class="nav-column" aria-labelledby="navCompareResourcesTitle">
+              <h2 class="nav-category-title" id="navCompareResourcesTitle">Comparison Resources</h2>
+              <a class="nav-submenu-link" href="/compare"><span class="nav-label">Comparison Guide</span><span class="nav-description">Questions to verify before choosing</span></a>
+              <a class="nav-submenu-link" href="/features"><span class="nav-label">Current MySentry Features</span><span class="nav-description">Review supported capabilities and limits</span></a>
+              <a class="nav-submenu-link" href="/pricing"><span class="nav-label">Plans and Eligibility</span><span class="nav-description">Review current plan information</span></a>
+            </section>
+            <section class="nav-column" aria-labelledby="navCompareReviewsTitle">
+              <h2 class="nav-category-title" id="navCompareReviewsTitle">Category Reviews</h2>
+              <a class="nav-submenu-link" href="/compare/fitness-wearables-vs-mysentry"><span class="nav-label">Fitness Wearables Review</span><span class="nav-description">Compare wellness and safety categories</span></a>
+              <a class="nav-submenu-link" href="/compare/traditional-medical-alerts-vs-mysentry"><span class="nav-label">Traditional Alert Review</span><span class="nav-description">Compare equipment and service models</span></a>
+              <a class="nav-submenu-link" href="/integrations/apple-watch"><span class="nav-label">Apple Watch Compatibility</span><span class="nav-description">Review eligible MySentry support</span></a>
+              <a class="nav-submenu-link" href="/integrations/samsung-galaxy-watch"><span class="nav-label">Samsung Watch Compatibility</span><span class="nav-description">Review eligible MySentry support</span></a>
+            </section>
+          </div>
+          <a class="nav-panel-footer" href="/compare">See all comparisons<span aria-hidden="true"> →</span></a>
+        </div>
+      </div>
+
+      <div class="nav-dd">
+        <button aria-expanded="false" aria-controls="navLearnPanel" class="nav-item dropdown-toggle" id="navLearnTrigger" type="button">LEARN<span aria-hidden="true" class="chevron">⌄</span></button>
+        <div aria-hidden="true" aria-labelledby="navLearnTrigger" class="dropdown-panel" hidden id="navLearnPanel" role="region">
+          <p class="nav-panel-heading">RESOURCES &amp; GUIDES</p>
+          <div class="nav-columns">
+            <section class="nav-column" aria-labelledby="navLearnGuidesTitle">
+              <h2 class="nav-category-title" id="navLearnGuidesTitle">Guides &amp; Research</h2>
+              <a class="nav-submenu-link" href="/guides/lone-worker-safety"><span class="nav-label">Lone Worker Safety Guide</span><span class="nav-description">Hazards, check-ins, roles, and limitations</span></a>
+              <a class="nav-submenu-link" href="/guides/aging-in-place-checklist"><span class="nav-label">Aging in Place Checklist</span><span class="nav-description">Home, support, privacy, and emergency planning</span></a>
+              <a class="nav-submenu-link" href="/guides/family-safety-without-constant-tracking"><span class="nav-label">Family Safety and Privacy</span><span class="nav-description">Consent-based check-ins without constant tracking</span></a>
+              <a class="nav-submenu-link" href="/guides/night-shift-nurse-safety-checklist"><span class="nav-label">Night Shift Nurse Checklist</span><span class="nav-description">Parking, workplace, and commute planning</span></a>
+              <a class="nav-submenu-link" href="/guides/wearable-fall-detection-limitations"><span class="nav-label">Wearable Fall Detection Limits</span><span class="nav-description">Capabilities, setup, and missed-event limits</span></a>
+              <a class="nav-submenu-link" href="/blogs"><span class="nav-label">Blog</span><span class="nav-description">Safety tips and expert articles</span></a>
+              <a class="nav-submenu-link" href="/how-it-works"><span class="nav-label">How It Works</span><span class="nav-description">See MySentry in action</span></a>
+            </section>
+            <section class="nav-column" aria-labelledby="navLearnCompanyTitle">
+              <h2 class="nav-category-title" id="navLearnCompanyTitle">Company</h2>
+              <a class="nav-submenu-link" href="/about-us"><span class="nav-label">About Us</span><span class="nav-description">Our mission and story</span></a>
+              <a class="nav-submenu-link" href="/team"><span class="nav-label">Our Team</span><span class="nav-description">Meet the people behind MySentry</span></a>
+              <a class="nav-submenu-link" href="/partners"><span class="nav-label">Partners</span><span class="nav-description">Become a reseller or partner</span></a>
+              <a class="nav-submenu-link" href="/contact"><span class="nav-label">Contact Us</span><span class="nav-description">Get in touch with our team</span></a>
+            </section>
+          </div>
+          <a class="nav-panel-footer" href="/blogs">Visit the blog<span aria-hidden="true"> →</span></a>
+        </div>
+      </div>
+
+      <a class="header-cta" href="/pricing#pricing-plans">Review Plans and Eligibility</a>
+      <a class="login-link nav-menu-login" href="https://dashboard.mysentry.ai/website-auth?redirect_url=login">Login</a>
+    </nav>
+
+    <!-- Outside mainNav so this Login stays visible when the mobile menu is closed. -->
+    <a class="login-link header-login" href="https://dashboard.mysentry.ai/website-auth?redirect_url=login">Login</a>
+    <button aria-controls="mainNav" aria-expanded="false" aria-label="Open menu" class="mobile-menu" id="mobileMenu" type="button"><span aria-hidden="true" class="nav-menu-icon">☰</span></button>
+  </div>
+</header><main><section aria-label="MySentry and Ring announcement" class="ring-marquee-banner">
 <div class="ring-marquee-viewport">
 <div class="ring-marquee-track">
 <span class="ring-marquee-item"><b>RING + MYSENTRY</b> Ring users can explore MySentry on the Ring App Store. Eligibility, pricing, and availability are confirmed during enrollment.</span>
@@ -645,7 +1194,7 @@ h1,h2,h3{letter-spacing:-.037em;text-wrap:balance}
 </div>
 </div>
 <a class="ring-marquee-cta" href="https://mysentry.ai/integrations/ring">Explore Ring Integration <span aria-hidden="true">↗</span></a>
-</section><section class="hero" id="home"><div class="hero-glow"></div><div class="hero-copy container"><div class="eyebrow">PERSONAL SAFETY · HELP WHEN IT MATTERS · FAMILY CONNECTED</div><h1><span>Never Face an</span><br/><em>Emergency Alone.</em></h1><p>MySentry alerts the people you trust and can connect you to 24/7 help to arrange emergency assistance when you need it.</p><div class="hero-actions"><a class="button button-primary" href="https://mysentry.ai/pricing">Try MySentry Free for 7 Days<span>↗</span></a></div><div class="hero-note">No credit card needed.</div><div class="store-badges"><a aria-label="MySentry on the App Store" href="https://apps.apple.com/us/app/mysentry-safety-health/id6740518837"><img alt="Download on the App Store" src="assets/app-store-badge.webp"/></a><a aria-label="MySentry on Google Play" href="https://play.google.com/store/search?q=MySentry&amp;c=apps"><img alt="Get it on Google Play" src="assets/google-play-badge.webp"/></a><a aria-label="MySentry on the Ring App Store" href="https://mysentry.ai/integrations/ring"><img alt="Available on Ring App Store" src="assets/ring-app-store-badge.webp"/></a></div></div><div class="hero-motion" id="heroMotion"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span aria-hidden="true" class="hero-deco-dot deco-three"></span><span aria-hidden="true" class="hero-deco-dot deco-two"></span><span aria-hidden="true" class="hero-deco-dot deco-one"></span><div class="hero-symbol symbol-monitor"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="12" rx="3" width="18" x="3" y="5"></rect><path d="M8 21h8"></path><path d="M10 17v4"></path><path d="M14 17v4"></path><path d="M8 11h2l1.4-2.2 2.2 4.4 1.2-2H17"></path></svg></div><div class="hero-symbol symbol-alert"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4v1.2c0 1.1.3 2.2.9 3.2l1 1.6H6.1l1-1.6c.6-1 .9-2.1.9-3.2V8a4 4 0 0 1 4-4z"></path><path d="M10 18a2 2 0 0 0 4 0"></path></svg></div><div aria-hidden="true" class="hero-symbol symbol-location"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.8"></circle></svg></div><div class="hero-symbol symbol-protect"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path><path d="M9.4 12.2l1.8 1.8 3.4-4"></path></svg></div><div class="hero-person person-family"><div class="person-photo"><img alt="Mother, father and adult son smiling together" loading="eager" src="assets/hero-family.webp"/></div></div><div class="hero-person person-driver"><div class="person-photo"><img alt="Young adult driving a car" loading="eager" src="assets/hero-young-driver.webp"/></div></div><div class="hero-person person-senior"><div class="person-photo"><img alt="Independent older woman at home" loading="eager" src="assets/hero-senior.webp"/></div></div><div class="hero-person person-woman"><div class="person-photo"><img alt="Young woman holding a phone outside" loading="eager" src="assets/hero-woman.webp"/></div></div><div class="hero-device" id="heroDevice"><div class="device-float"><img alt="Original MySentry app, watch and supported safety feature screens" fetchpriority="high" src="assets/hero-mysentry-app-composite.svg"/></div></div></div><a class="scroll-cue" href="#intro"><span>↓</span> SCROLL TO EXPLORE</a></section><section class="intro" id="intro">
+</section><section class="hero" id="home"><div class="hero-glow"></div><div class="hero-copy container"><div class="eyebrow">PERSONAL SAFETY · HELP WHEN IT MATTERS · FAMILY CONNECTED</div><h1><span>Never Face an</span><br/><em>Emergency Alone.</em></h1><p>MySentry alerts the people you trust and can connect you to 24/7 help to arrange emergency assistance when you need it.</p><div class="hero-actions"><a class="button button-primary" href="https://mysentry.ai/pricing">Try MySentry Free for 7 Days<span>↗</span></a></div><div class="hero-note">No credit card needed.</div><div class="store-badges"><a aria-label="MySentry on the App Store" href="https://apps.apple.com/us/app/mysentry-safety-health/id6740518837"><img alt="Download on the App Store" src="assets/app-store-badge.webp"/></a><a aria-label="MySentry on Google Play" href="https://play.google.com/store/search?q=MySentry&amp;c=apps"><img alt="Get it on Google Play" src="assets/google-play-badge.webp"/></a><a aria-label="MySentry on the Ring App Store" href="https://mysentry.ai/integrations/ring"><img alt="Available on Ring App Store" src="assets/ring-app-store-badge.webp"/></a></div></div><div class="hero-motion" id="heroMotion"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span aria-hidden="true" class="hero-deco-dot deco-three"></span><span aria-hidden="true" class="hero-deco-dot deco-two"></span><span aria-hidden="true" class="hero-deco-dot deco-one"></span><div class="hero-symbol symbol-monitor"><svg aria-hidden="true" viewbox="0 0 24 24"><rect height="12" rx="3" width="18" x="3" y="5"></rect><path d="M8 21h8"></path><path d="M10 17v4"></path><path d="M14 17v4"></path><path d="M8 11h2l1.4-2.2 2.2 4.4 1.2-2H17"></path></svg></div><div class="hero-symbol symbol-alert"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4v1.2c0 1.1.3 2.2.9 3.2l1 1.6H6.1l1-1.6c.6-1 .9-2.1.9-3.2V8a4 4 0 0 1 4-4z"></path><path d="M10 18a2 2 0 0 0 4 0"></path></svg></div><div aria-hidden="true" class="hero-symbol symbol-location"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.8"></circle></svg></div><div class="hero-symbol symbol-protect"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path><path d="M9.4 12.2l1.8 1.8 3.4-4"></path></svg></div><div class="hero-person person-family"><div class="person-photo"><img alt="Mother, father and adult son smiling together" loading="eager" src="assets/hero-family.webp"/></div></div><div class="hero-person person-driver"><div class="person-photo"><img alt="Young adult driving a car" loading="eager" src="assets/hero-young-driver.webp"/></div></div><div class="hero-person person-senior"><div class="person-photo"><img alt="Independent older woman at home" loading="eager" src="assets/hero-senior.webp"/></div></div><div class="hero-person person-woman"><div class="person-photo"><img alt="Young woman holding a phone outside" loading="eager" src="assets/hero-woman.webp"/></div></div><div class="hero-device" id="heroDevice"><div class="device-float"><img alt="Original MySentry app, watch and supported safety feature screens" fetchpriority="high" width="1270" height="714" src="assets/hero-mysentry-app-composite.svg"/></div></div></div><a class="scroll-cue" href="#intro"><span>↓</span> SCROLL TO EXPLORE</a></section><section class="intro" id="intro">
 <div class="container intro-grid">
 <div class="intro-copy reveal">
 <span class="section-kicker">WHAT HAPPENS NEXT</span><h2>When you need help,<br/><em>what happens next?</em></h2><p>Sending an alert is only the beginning. Getting help is what matters.</p><p>MySentry lets your trusted people know and can connect you with 24/7 support to help arrange emergency assistance and keep your family informed.</p><div aria-label="How MySentry helps after an alert" class="help-steps"><div class="help-step" style="--step:0"><span aria-hidden="true" class="help-step-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 6-3 6-3 8h18c0-2-3-2-3-8Z"></path><path d="M10 20h4"></path></svg></span><span class="help-step-label">Send an alert</span></div><div class="help-step" style="--step:1"><span aria-hidden="true" class="help-step-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M4 12 9 7l3 3 3-3 5 5-8 8-8-8Z"></path><path d="M9 13l3 3 4-4"></path></svg></span><span class="help-step-label">Get help moving</span></div><div class="help-step" style="--step:2"><span aria-hidden="true" class="help-step-icon"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="8" cy="8" r="3"></circle><path d="M2 20v-2a6 6 0 0 1 12 0v2"></path><path d="M17 5a3 3 0 0 1 0 6M18 15a5 5 0 0 1 4 5"></path></svg></span><span class="help-step-label">Keep family informed</span></div></div><div class="intro-actions"><a class="button button-outline" href="#people">Discover Who We Help<span>↘</span></a></div></div>
@@ -660,9 +1209,9 @@ h1,h2,h3{letter-spacing:-.037em;text-wrap:balance}
 <span class="video-caption"><span class="video-play">▶</span> See How MySentry Works</span>
 </div>
 </div></section><section aria-label="Who MySentry helps" class="audience-sticky" id="people"><div class="audience-pin"><div class="audience-pin-wrap container"><div class="audience-top"><span>WHO WE PROTECT</span><span id="audienceCount">01 / 03</span></div><div class="audience-display"><div class="audience-image">
-<div class="people-visual current" data-aud="0"><img alt="Grandmother and grandfather smiling over a smartphone" src="assets/audience-seniors.webp"/></div>
-<div class="people-visual" data-aud="1"><img alt="Mother, father, and grown son smiling together" src="assets/audience-family.svg"/></div>
-<div class="people-visual women-portrait" data-aud="2"><img alt="Three women: college student, professional, and home caregiver" src="assets/audience-three-women.svg"/></div>
+<div class="people-visual current" data-aud="0"><img decoding="async" loading="lazy" alt="Grandmother and grandfather smiling over a smartphone" data-deferred-src="assets/audience-seniors.webp"/><noscript><img alt="Grandmother and grandfather smiling over a smartphone" src="assets/audience-seniors.webp"/></noscript></div>
+<div class="people-visual" data-aud="1"><img decoding="async" loading="lazy" alt="Mother, father, and grown son smiling together" data-deferred-src="assets/audience-family.svg"/><noscript><img alt="Mother, father, and grown son smiling together" src="assets/audience-family.svg"/></noscript></div>
+<div class="people-visual women-portrait" data-aud="2"><img decoding="async" loading="lazy" alt="Three women: college student, professional, and home caregiver" data-deferred-src="assets/audience-three-women.svg"/><noscript><img alt="Three women: college student, professional, and home caregiver" src="assets/audience-three-women.svg"/></noscript></div>
 </div><div class="audience-content">
 <div class="people-copy current" data-aud="0"><span class="audience-type">01 / SENIORS</span><h2>Live on your own.<br/><em>Help is close.</em></h2><p>Worried about a fall when no one is home? MySentry can help start the next step.</p><ul><li>A compatible watch can notice a fall.</li><li>No reply? MySentry can check on you.</li><li>Your family can stay informed.</li></ul><a class="button button-outline" href="https://mysentry.ai/seniors">Explore senior safety<span>↗</span></a></div>
 <div class="people-copy" data-aud="1"><span class="audience-type">02 / FAMILIES</span><h2>Can't be there?<br/><em>They still have backup.</em></h2><p>When someone you love needs help, they shouldn't have to figure it out alone.</p><ul><li>Their alert can reach trusted people.</li><li>A shared location can show where they are.</li><li>With monitoring, help can be arranged.</li></ul><a class="button button-outline" href="https://mysentry.ai/families">Explore family safety<span>↗</span></a></div>
@@ -679,17 +1228,17 @@ h1,h2,h3{letter-spacing:-.037em;text-wrap:balance}
 <p>Choose the people you trust most. MySentry can keep them in the loop with the details you choose to share.</p>
 <a class="btn" href="https://mysentry.ai/features">Explore Emergency Contacts <span class="arr">↗</span></a>
 </div></div>
-<div class="scene-stage"><div class="stage-halo"></div><img alt="MySentry Panic Alarm screens" class="scene-art active" data-scene="0" src="assets/panic-and-emergency-contacts-mockup.svg"/>
-<img alt="MySentry Crash Detection screens" class="scene-art" data-scene="1" src="assets/crash-detection-mockup.svg"/>
-<img alt="MySentry MeetSafe check-in screens" class="scene-art" data-scene="2" src="assets/meetsafe-mockup.svg"/>
-<img alt="MySentry Automated Call settings and incoming call mockup" class="scene-art" data-scene="3" src="/manus-storage/automated_call_08c12f8e.svg"/><img alt="MySentry Emergency Contacts and alert screens" class="scene-art" data-scene="4" loading="lazy" src="/manus-storage/emergency-contacts_14f5ace9.svg"/><div class="auto-chip auto-chip-left" data-scene="3"><span class="chip-icon">⌚</span><span class="chip-label">Scheduled call</span></div><div class="auto-chip auto-chip-right" data-scene="3"><span class="chip-icon">🔒</span><span class="chip-label">Discreet exit</span></div><div class="auto-chip auto-chip-bottom" data-scene="3"><span class="chip-icon">📍</span><span class="chip-label">Stay in control</span></div></div></div><div aria-hidden="true" class="scene-dots"><span class="active"></span><span></span><span></span><span></span><span></span></div></div></section>
-<section class="feature deep" id="features"><div class="shell feature-inner"><div class="reveal"><div class="mini">Fall Detection</div><h2>A fall happens fast.<br/><em>Help should too.</em></h2><p>If a supported device senses a fall, MySentry can check in and begin your safety plan when you can't respond.</p><p class="device-line">Apple Watch • Samsung Watch • Garmin  |  Ikaria coming soon</p><a class="btn white" href="https://mysentry.ai/features">See Fall Detection <span class="arr">↗</span></a></div><div class="feature-media reveal" data-delay="1"><img alt="MySentry fall detection watch and live response view" class="main-art fall-svg" loading="lazy" src="assets/fall-detection-and-ring-live-video-mockup.svg"/></div></div></section>
+<div class="scene-stage"><div class="stage-halo"></div><img decoding="async" loading="lazy" alt="MySentry Panic Alarm screens" class="scene-art active" data-scene="0" data-deferred-src="assets/panic-and-emergency-contacts-mockup.svg"/><noscript><img alt="MySentry Panic Alarm screens" class="scene-art active" data-scene="0" src="assets/panic-and-emergency-contacts-mockup.svg"/></noscript>
+<img decoding="async" loading="lazy" alt="MySentry Crash Detection screens" class="scene-art" data-scene="1" data-deferred-src="assets/crash-detection-mockup.svg"/><noscript><img alt="MySentry Crash Detection screens" class="scene-art" data-scene="1" src="assets/crash-detection-mockup.svg"/></noscript>
+<img decoding="async" loading="lazy" alt="MySentry MeetSafe check-in screens" class="scene-art" data-scene="2" data-deferred-src="assets/meetsafe-mockup.svg"/><noscript><img alt="MySentry MeetSafe check-in screens" class="scene-art" data-scene="2" src="assets/meetsafe-mockup.svg"/></noscript>
+<img decoding="async" loading="lazy" alt="MySentry Automated Call settings and incoming call mockup" class="scene-art" data-scene="3" data-deferred-src="/manus-storage/automated_call_08c12f8e.svg"/><noscript><img alt="MySentry Automated Call settings and incoming call mockup" class="scene-art" data-scene="3" src="/manus-storage/automated_call_08c12f8e.svg"/></noscript><img decoding="async" alt="MySentry Emergency Contacts and alert screens" class="scene-art" data-scene="4" loading="lazy" data-deferred-src="/manus-storage/emergency-contacts_14f5ace9.svg"/><noscript><img alt="MySentry Emergency Contacts and alert screens" class="scene-art" data-scene="4" loading="lazy" src="/manus-storage/emergency-contacts_14f5ace9.svg"/></noscript><div class="auto-chip auto-chip-left" data-scene="3"><span class="chip-icon">⌚</span><span class="chip-label">Scheduled call</span></div><div class="auto-chip auto-chip-right" data-scene="3"><span class="chip-icon">🔒</span><span class="chip-label">Discreet exit</span></div><div class="auto-chip auto-chip-bottom" data-scene="3"><span class="chip-icon">📍</span><span class="chip-label">Stay in control</span></div></div></div><div aria-hidden="true" class="scene-dots"><span class="active"></span><span></span><span></span><span></span><span></span></div></div></section>
+<section class="feature deep" id="features"><div class="shell feature-inner"><div class="reveal"><div class="mini">Fall Detection</div><h2>A fall happens fast.<br/><em>Help should too.</em></h2><p>If a supported device senses a fall, MySentry can check in and begin your safety plan when you can't respond.</p><p class="device-line">Apple Watch • Samsung Watch • Garmin  |  Ikaria coming soon</p><a class="btn white" href="https://mysentry.ai/features">See Fall Detection <span class="arr">↗</span></a></div><div class="feature-media reveal" data-delay="1"><img decoding="async" alt="MySentry fall detection watch and live response view" class="main-art fall-svg" loading="lazy" src="assets/fall-detection-and-ring-live-video-mockup.svg"/></div></div></section>
 <section class="feature twilight"><div class="shell feature-inner"><div class="feature-media reveal health-motion-stage" data-health-scroll=""><img alt="MySentry Health Monitoring screens with a smartwatch" class="main-art health-svg" decoding="async" loading="lazy" src="assets/health-monitoring-mockup.svg"/></div><div class="reveal" data-delay="1"><div class="mini">Health Monitoring</div><h2>Your health,<br/><span>at a glance.</span></h2><p>See heart rate, daily activity, and wellness updates from your connected watch or phone in one clear place.</p><div class="feature-points"><span>Heart rate</span><span>Daily activity</span></div><a class="btn soft" href="https://mysentry.ai/features">Explore Health Monitoring <span class="arr">↗</span></a></div></div></section>
-<section class="ring-section" id="ring"><div class="shell ring-grid"><div class="reveal"><div class="mini">MYSENTRY + AMAZON RING</div><h2>Your alarm starts.<br/><span>The bigger picture comes together.</span></h2><p>When Panic is triggered, Ring live video and camera context can appear inside MySentry, alongside your alert details when permitted.</p><div class="ring-points"><div><b>✓</b> One app for your alarm and compatible Ring cameras.</div><div><b>✓</b> Live location, video and key context together.</div><div><b>✓</b> More information for contacts and monitoring when allowed.</div></div><a class="btn" href="https://mysentry.ai/integrations/ring">Explore Ring + MySentry <span class="arr">↗</span></a></div><div class="ring-picture reveal" data-delay="1"><img alt="MySentry and Ring integration showing live video and emergency response" loading="lazy" src="/manus-storage/ring-section_7e68a6f7.svg"/><div class="ring-callout">Ring live video inside MySentry</div><div class="ring-bubble ring-bubble-top">Panic trigger</div><div class="ring-bubble ring-bubble-mid">Live video</div><div class="ring-bubble ring-bubble-bottom">Emergency contacts</div></div></div></section>
-<section aria-label="MySentry response and family connection" class="reassurance" id="support"><div class="container reassurance-inner"><div aria-hidden="true" class="reassurance-photos"><div class="rphoto rp-fam"><img alt="" src="assets/banner-audience-photo-1.webp"/></div><div class="rphoto rp-woman"><img alt="" src="assets/banner-audience-photo-2.webp"/></div><div class="rphoto rp-drive"><img alt="" src="assets/banner-audience-photo-3.webp"/></div><div class="rphoto rp-senior"><img alt="" src="assets/banner-audience-photo-4.webp"/></div><span class="bubble-bg bb1"></span><span class="bubble-bg bb2"></span><span class="bubble-bg bb3"></span><span class="bubble-bg bb4"></span><svg aria-hidden="true" class="thread thread-left" viewbox="0 0 130 280"><path d="M20 0 C90 45 0 130 110 270"></path></svg><svg aria-hidden="true" class="thread thread-right" viewbox="0 0 130 280"><path d="M110 0 C15 75 125 140 16 270"></path></svg></div><div class="reassurance-copy reveal"><h2><span>YOU WON’T ALWAYS HAVE</span><span>SOMEONE BESIDE YOU,</span><span class="highlight">BUT WHEN YOU NEED HELP,</span><span>MYSENTRY CAN RESPOND,</span><span>COORDINATE EMERGENCY HELP,</span><span>AND <em>KEEP YOUR FAMILY INFORMED.</em></span></h2><a class="button button-gold" href="https://mysentry.ai/pricing">Start Your 7-Day Free Trial <span>↗</span></a><div aria-label="Download MySentry" class="support-store-badges">
-<a aria-label="MySentry on the App Store" href="https://apps.apple.com/us/app/mysentry-safety-health/id6740518837"><img alt="Download on the App Store" src="assets/app-store-badge.webp"/></a>
-<a aria-label="MySentry on Google Play" href="https://play.google.com/store/search?q=MySentry&amp;c=apps"><img alt="Get it on Google Play" src="assets/google-play-badge.webp"/></a>
-<a aria-label="MySentry on the Ring App Store" href="https://mysentry.ai/integrations/ring"><img alt="Available on Ring App Store" src="assets/ring-app-store-badge.webp"/></a>
+<section class="ring-section" id="ring"><div class="shell ring-grid"><div class="reveal"><div class="mini">MYSENTRY + AMAZON RING</div><h2>Your alarm starts.<br/><span>The bigger picture comes together.</span></h2><p>When Panic is triggered, Ring live video and camera context can appear inside MySentry, alongside your alert details when permitted.</p><div class="ring-points"><div><b>✓</b> One app for your alarm and compatible Ring cameras.</div><div><b>✓</b> Live location, video and key context together.</div><div><b>✓</b> More information for contacts and monitoring when allowed.</div></div><a class="btn" href="https://mysentry.ai/integrations/ring">Explore Ring + MySentry <span class="arr">↗</span></a></div><div class="ring-picture reveal" data-delay="1"><img decoding="async" alt="MySentry and Ring integration showing live video and emergency response" loading="lazy" src="/manus-storage/ring-section_7e68a6f7.svg"/><div class="ring-callout">Ring live video inside MySentry</div><div class="ring-bubble ring-bubble-top">Panic trigger</div><div class="ring-bubble ring-bubble-mid">Live video</div><div class="ring-bubble ring-bubble-bottom">Emergency contacts</div></div></div></section>
+<section aria-label="MySentry response and family connection" class="reassurance" id="support"><div class="container reassurance-inner"><div aria-hidden="true" class="reassurance-photos"><div class="rphoto rp-fam"><img decoding="async" loading="lazy" alt="" src="assets/banner-audience-photo-1.webp"/></div><div class="rphoto rp-woman"><img decoding="async" loading="lazy" alt="" src="assets/banner-audience-photo-2.webp"/></div><div class="rphoto rp-drive"><img decoding="async" loading="lazy" alt="" src="assets/banner-audience-photo-3.webp"/></div><div class="rphoto rp-senior"><img decoding="async" loading="lazy" alt="" src="assets/banner-audience-photo-4.webp"/></div><span class="bubble-bg bb1"></span><span class="bubble-bg bb2"></span><span class="bubble-bg bb3"></span><span class="bubble-bg bb4"></span><svg aria-hidden="true" class="thread thread-left" viewbox="0 0 130 280"><path d="M20 0 C90 45 0 130 110 270"></path></svg><svg aria-hidden="true" class="thread thread-right" viewbox="0 0 130 280"><path d="M110 0 C15 75 125 140 16 270"></path></svg></div><div class="reassurance-copy reveal"><h2><span>YOU WON’T ALWAYS HAVE</span><span>SOMEONE BESIDE YOU,</span><span class="highlight">BUT WHEN YOU NEED HELP,</span><span>MYSENTRY CAN RESPOND,</span><span>COORDINATE EMERGENCY HELP,</span><span>AND <em>KEEP YOUR FAMILY INFORMED.</em></span></h2><a class="button button-gold" href="https://mysentry.ai/pricing">Start Your 7-Day Free Trial <span>↗</span></a><div aria-label="Download MySentry" class="support-store-badges">
+<a aria-label="MySentry on the App Store" href="https://apps.apple.com/us/app/mysentry-safety-health/id6740518837"><img decoding="async" loading="lazy" alt="Download on the App Store" src="assets/app-store-badge.webp"/></a>
+<a aria-label="MySentry on Google Play" href="https://play.google.com/store/search?q=MySentry&amp;c=apps"><img decoding="async" loading="lazy" alt="Get it on Google Play" src="assets/google-play-badge.webp"/></a>
+<a aria-label="MySentry on the Ring App Store" href="https://mysentry.ai/integrations/ring"><img decoding="async" loading="lazy" alt="Available on Ring App Store" src="assets/ring-app-store-badge.webp"/></a>
 </div></div></div></section><section class="monitoring-section" id="monitoring">
 <div class="container monitoring-inner">
 <div class="monitoring-copy reveal">
@@ -736,7 +1285,7 @@ h1,h2,h3{letter-spacing:-.037em;text-wrap:balance}
 
 </div>
 </section>
-<section class="faq" id="faq"><div class="container faq-wrap"><div class="section-kicker">QUICK ANSWERS</div><h2>Good to know.</h2><details><summary>Do I need a smartwatch?</summary><p>No. The Panic button works on a supported phone. Fall detection and wearable health readings require a compatible device.</p></details><details><summary>Can MySentry get emergency help?</summary><p>On plans with professional monitoring, the team can review an alert and contact emergency services when appropriate. Actual dispatch and arrival depend on the situation and service conditions.</p></details><details><summary>What does Automated Call do?</summary><p>It makes a scheduled pretend incoming call, so you have a natural reason to leave an uncomfortable moment. It is not an emergency call.</p></details><details><summary>Can I use MySentry with Ring?</summary><p>MySentry is available through the Ring App Store. See the Ring integration page for current options and compatibility.</p></details></div></section><section class="closing"><div class="container"><span class="section-kicker">READY WHEN IT MATTERS</span><h2>Bring your people<br/><em>a little closer.</em></h2><p>Choose the people you trust. See the safety tools available to you. Start with MySentry.</p><a class="button button-white" href="https://mysentry.ai/pricing">Start Your 7-Day Free Trial <span>↗</span></a></div></section></main><footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a href="https://mysentry.ai/"><img alt="MySentry" src="assets/mysentry-logo.svg"/></a><strong>LIVE SAFE. STAY HEALTHY.</strong><p>Personal Safety and Health Monitoring with 24/7 Emergency Response.</p><div class="socials">
+<section class="faq" id="faq"><div class="container faq-wrap"><div class="section-kicker">QUICK ANSWERS</div><h2>Good to know.</h2><details><summary>Do I need a smartwatch?</summary><p>No. The Panic button works on a supported phone. Fall detection and wearable health readings require a compatible device.</p></details><details><summary>Can MySentry get emergency help?</summary><p>On plans with professional monitoring, the team can review an alert and contact emergency services when appropriate. Actual dispatch and arrival depend on the situation and service conditions.</p></details><details><summary>What does Automated Call do?</summary><p>It makes a scheduled pretend incoming call, so you have a natural reason to leave an uncomfortable moment. It is not an emergency call.</p></details><details><summary>Can I use MySentry with Ring?</summary><p>MySentry is available through the Ring App Store. See the Ring integration page for current options and compatibility.</p></details></div></section><section class="closing"><div class="container"><span class="section-kicker">READY WHEN IT MATTERS</span><h2>Bring your people<br/><em>a little closer.</em></h2><p>Choose the people you trust. See the safety tools available to you. Start with MySentry.</p><a class="button button-white" href="https://mysentry.ai/pricing">Start Your 7-Day Free Trial <span>↗</span></a></div></section></main><footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a href="https://mysentry.ai/"><img decoding="async" loading="lazy" alt="MySentry" src="assets/mysentry-logo.svg"/></a><strong>LIVE SAFE. STAY HEALTHY.</strong><p>Personal Safety and Health Monitoring with 24/7 Emergency Response.</p><div class="socials">
 <a aria-label="Facebook" href="https://www.facebook.com/" rel="noopener" target="_blank"><svg aria-hidden="true" class="social-icon" viewBox="0 0 24 24"><path d="M13.5 22v-8h2.75l.41-3.2H13.5V8.76c0-.93.26-1.56 1.59-1.56H16.8V4.34c-.29-.04-1.28-.12-2.43-.12-2.4 0-4.05 1.47-4.05 4.17v2.41H7.6V14h2.72v8h3.18Z"/></svg></a>
 <a aria-label="Instagram" href="https://www.instagram.com/" rel="noopener" target="_blank"><svg aria-hidden="true" class="social-icon" viewBox="0 0 24 24"><rect fill="none" height="17" rx="5" width="17" x="3.5" y="3.5"></rect><circle cx="12" cy="12" fill="none" r="3.4"></circle><circle cx="17.25" cy="6.75" r="1"></circle></svg></a>
 <a aria-label="LinkedIn" href="https://www.linkedin.com/company/mysentryai" rel="noopener" target="_blank"><svg aria-hidden="true" class="social-icon" viewBox="0 0 24 24"><path d="M6.5 8.5V21H3V8.5h3.5ZM4.75 3A2.05 2.05 0 1 1 4.74 7.1 2.05 2.05 0 0 1 4.75 3ZM21 13.84V21h-3.5v-6.76c0-1.7-.03-3.89-2.37-3.89-2.37 0-2.73 1.85-2.73 3.77V21H8.9V8.5h3.36v1.7h.05c.47-.89 1.61-1.83 3.31-1.83C19.16 8.37 21 10.7 21 13.84Z"/></svg></a>
@@ -744,10 +1293,156 @@ h1,h2,h3{letter-spacing:-.037em;text-wrap:balance}
 </div></div><div class="footer-column"><h3>SOLUTIONS</h3><a href="https://mysentry.ai/features">All Features</a><a href="https://mysentry.ai/seniors">For Seniors</a><a href="https://mysentry.ai/families">For Families</a><a href="https://mysentry.ai/business">For Employers</a><a href="https://mysentry.ai/women">For Women</a><a href="https://mysentry.ai/use-cases">Use Cases</a><a href="https://mysentry.ai/industries">Industries</a><a href="https://mysentry.ai/how-it-works">How It Works</a><a href="https://mysentry.ai/pricing">Pricing</a><a href="https://mysentry.ai/compare">Compare</a></div><div class="footer-column"><h3>COMPANY</h3><a href="https://mysentry.ai/about">About Us</a><a href="https://mysentry.ai/team">Our Team</a><a href="https://mysentry.ai/partners">Partners</a><a href="https://mysentry.ai/nurse-safety">Nurse Safety</a><a href="https://mysentry.ai/blog">Blogs</a><a href="https://mysentry.ai/contact">Contact Us</a><a href="https://mysentry.ai/privacy-policy">Privacy Policy</a><a href="https://mysentry.ai/sms-communication-consent">SMS Communication Consent</a><a href="https://mysentry.ai/account-deletion">Account Deletion</a><a href="https://mysentry.ai/terms-and-conditions">Terms &amp; Conditions</a></div><div class="footer-column"><h3>SAFETY RESOURCES</h3><a href="https://mysentry.ai/seniors">Seniors Aging in Place</a><a href="https://mysentry.ai/blog">Aging in Place Checklist</a><a href="https://mysentry.ai/blog">Solo Traveler Safety</a><a href="https://mysentry.ai/blog">Safety for People Living Alone</a><a href="https://mysentry.ai/women">Women Living Alone</a><a href="https://mysentry.ai/blog">Personal Safety for Renters</a><a href="https://mysentry.ai/blog">Home Healthcare Case Study</a><a href="https://mysentry.ai/blog">Real Estate Case Study</a><a href="https://mysentry.ai/blog">Field Services Case Study</a><a href="https://mysentry.ai/compare/apple-watch-fall-detection-vs-mysentry">Apple Watch Integration</a><a href="https://mysentry.ai/features">Samsung Galaxy Watch Integration</a><a href="https://mysentry.ai/features">Oura Ring Status</a><a href="https://mysentry.ai/business">Employer Safety Overview</a><a href="https://mysentry.ai/features">Professional Monitoring Guide</a><a href="https://mysentry.ai/industries">Delivery Driver Safety</a><a href="https://mysentry.ai/industries">Utility and Field Worker Safety</a></div><div class="footer-column"><h3>FEATURED GUIDES</h3><a href="https://mysentry.ai/blog">Family Safety and Privacy</a><a href="https://mysentry.ai/blog">Wearable Fall Detection Limits</a><a href="https://mysentry.ai/blog">Night Shift Nurse Checklist</a><a href="https://mysentry.ai/blog">Build a Lone-Worker Safety Program</a><a href="https://mysentry.ai/blog">Lone-Worker Risks and Duties</a><a href="https://mysentry.ai/features">How Fall Detection Works</a><a href="https://mysentry.ai/blog">Family Park Safety Guide</a><a href="https://mysentry.ai/features">Set Up Emergency Contacts</a><a href="https://mysentry.ai/blog">Working Alone Safety Guide</a><a href="https://mysentry.ai/blog">Incident Reporting and Safety</a><a href="https://mysentry.ai/blog">Senior Outdoor Safety Plan</a><a href="https://mysentry.ai/blog">Lone Worker Heat Safety</a><a href="https://mysentry.ai/blog">Vacation Rental Safety</a><a href="https://mysentry.ai/blog">Power Outage Safety for Seniors</a></div><div class="footer-column newsletter"><h3>STAY UPDATED</h3><p>Subscribe to our newsletter for the latest safety tips and product updates.</p><form id="newsletterForm"><label class="sr-only" for="newsEmail">Your email address</label><input id="newsEmail" placeholder="Enter your email" required="" type="email"/><button type="submit">Subscribe</button></form><p class="newsletter-status" id="newsletterStatus" role="status"></p></div></div><div class="container footer-bottom"><span>© <span id="year"></span> MySentry. All rights reserved.</span><span>Live safe. Stay healthy.</span></div></footer><script>
 (()=>{'use strict';
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const mainNav=document.querySelector('#mainNav'), menu=document.querySelector('#mobileMenu');
-menu.addEventListener('click',()=>{const expanded=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!expanded));menu.textContent=expanded?'☰':'×';mainNav.classList.toggle('open',!expanded);document.body.classList.toggle('menu-open',!expanded)});
-mainNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mainNav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';document.body.classList.remove('menu-open')}));
-mainNav.querySelectorAll('.dropdown-toggle').forEach(b=>b.addEventListener('click',()=>{const isOpen=b.parentElement.classList.toggle('open');b.setAttribute('aria-expanded',String(isOpen))}));
+/* REPLACE the old mainNav/menu declaration and its three listener statements
+   with this block INSIDE the existing (() => { ... })() IIFE.
+   Do not add a script tag or a second copy of the old listeners. */
+{
+  const navHeader = document.getElementById('siteHeader');
+  const mainNav = document.getElementById('mainNav');
+  const menu = document.getElementById('mobileMenu');
+  const navMobile = window.matchMedia('(max-width: 1279px)');
+  const navTriggers = Array.from(mainNav.querySelectorAll('.dropdown-toggle'));
+  const navRing = mainNav.querySelector('.nav-ring');
+  const navCta = mainNav.querySelector('.header-cta');
+  const navMenuIcon = menu.querySelector('.nav-menu-icon');
+  let navMenuOpen = false;
+
+  function navPanelFor(trigger) {
+    return document.getElementById(trigger.getAttribute('aria-controls'));
+  }
+
+  function navSetGroup(trigger, expanded) {
+    const panel = navPanelFor(trigger);
+    trigger.setAttribute('aria-expanded', String(expanded));
+    panel.setAttribute('aria-hidden', String(!expanded));
+    panel.hidden = !expanded;
+    // State selectors, not this legacy class, control panel visibility.
+    trigger.parentElement.classList.toggle('open', expanded);
+  }
+
+  function navCloseGroups(returnFocus) {
+    const expanded = navTriggers.find(trigger => trigger.getAttribute('aria-expanded') === 'true');
+    navTriggers.forEach(trigger => navSetGroup(trigger, false));
+    if (returnFocus && expanded) expanded.focus({ preventScroll: true });
+  }
+
+  function navSetMobileMenu(open, returnFocus) {
+    navMenuOpen = Boolean(open && navMobile.matches);
+    if (!navMenuOpen) navCloseGroups(false);
+    navHeader.dataset.menuOpen = String(navMenuOpen);
+    menu.setAttribute('aria-expanded', String(navMenuOpen));
+    menu.setAttribute('aria-label', navMenuOpen ? 'Close menu' : 'Open menu');
+    navMenuIcon.textContent = navMenuOpen ? '×' : '☰';
+    mainNav.classList.toggle('open', navMenuOpen);
+    mainNav.hidden = navMobile.matches && !navMenuOpen;
+    mainNav.setAttribute('aria-hidden', String(mainNav.hidden));
+    // Uses the existing body.menu-open rule; no global CSS override required.
+    document.body.classList.toggle('menu-open', navMenuOpen);
+    if (!navMenuOpen) mainNav.scrollTop = 0;
+    if (returnFocus && navMobile.matches) menu.focus({ preventScroll: true });
+  }
+
+  function navCloseEverything(returnFocus) {
+    if (navMenuOpen) navSetMobileMenu(false, returnFocus);
+    else navCloseGroups(returnFocus);
+  }
+
+  function navSyncLayout() {
+    const active = document.activeElement;
+    const wasMobileOpen = navMenuOpen;
+    const activePanel = active && active.closest ? active.closest('.dropdown-panel') : null;
+    const activeTrigger = activePanel ? navTriggers.find(trigger => navPanelFor(trigger) === activePanel) : null;
+    // Move the SAME Ring anchor, so visual, DOM and keyboard order agree.
+    // Mobile: HOME, HOW IT WORKS, PRICING, Ring Appstore, five groups, CTA, Login.
+    // Desktop: HOW IT WORKS, PRICING, five groups, Ring, CTA, Login.
+    if (navMobile.matches) mainNav.insertBefore(navRing, navTriggers[0].parentElement);
+    else mainNav.insertBefore(navRing, navCta);
+    navSetMobileMenu(false, false);
+    if (navMobile.matches && mainNav.contains(active)) {
+      menu.focus({ preventScroll: true });
+    } else if (!navMobile.matches && (active === menu || (wasMobileOpen && active && active.classList.contains('nav-home')))) {
+      navHeader.querySelector('.brand').focus({ preventScroll: true });
+    } else if (activeTrigger) {
+      activeTrigger.focus({ preventScroll: true });
+    }
+  }
+
+  menu.addEventListener('click', () => {
+    if (navMobile.matches) navSetMobileMenu(!navMenuOpen, navMenuOpen);
+  });
+
+  navTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      if (navMobile.matches && !navMenuOpen) return;
+      const shouldOpen = trigger.getAttribute('aria-expanded') !== 'true';
+      navCloseGroups(false);
+      navSetGroup(trigger, shouldOpen);
+    });
+
+    // Native buttons already support Enter/Space. Arrow keys also allow entry
+    // into the disclosure without introducing ARIA menu/application semantics.
+    trigger.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+      if (navMobile.matches && !navMenuOpen) return;
+      event.preventDefault();
+      navCloseGroups(false);
+      navSetGroup(trigger, true);
+      const links = navPanelFor(trigger).querySelectorAll('a[href]');
+      const destination = event.key === 'ArrowUp' ? links[links.length - 1] : links[0];
+      if (destination) destination.focus({ preventScroll: false });
+    });
+  });
+
+  mainNav.addEventListener('click', event => {
+    if (event.target.closest('a[href]')) {
+      // Close without preventing the anchor's native navigation or changing
+      // destinations, fragments, same-origin routing, or analytics.
+      navCloseEverything(navMenuOpen);
+    }
+  });
+
+  navHeader.addEventListener('click', event => {
+    const link = event.target.closest('a[href]');
+    if (link && !mainNav.contains(link)) navCloseEverything(false);
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Escape') return;
+    const hasOpenGroup = navTriggers.some(trigger => trigger.getAttribute('aria-expanded') === 'true');
+    if (!navMenuOpen && !hasOpenGroup) return;
+    event.preventDefault();
+    navCloseEverything(true);
+  });
+
+  // Click (rather than only pointerdown) returns focus after the pointer's
+  // default focusing action. No preventDefault: outside links still work.
+  document.addEventListener('click', event => {
+    if (!navHeader.contains(event.target)) navCloseEverything(true);
+  });
+
+  // This is a non-modal disclosure. Tab may leave the header; then close it
+  // and release scroll lock without pulling keyboard focus back inside.
+  // Restrict this to keyboard Tab: an outside pointer's focus must not close
+  // early, before the click listener can return focus to the opener.
+  document.addEventListener('keydown', event => {
+    if (event.key !== 'Tab') return;
+    window.setTimeout(() => {
+      if (!navHeader.contains(document.activeElement)) navCloseEverything(false);
+    }, 0);
+  });
+
+  if (navMobile.addEventListener) navMobile.addEventListener('change', navSyncLayout);
+  else navMobile.addListener(navSyncLayout);
+
+  // Every desktop resize also clears any stale mobile/accordion state and
+  // scroll lock. A mobile resize that stays mobile leaves its menu usable.
+  window.addEventListener('resize', () => {
+    if (!navMobile.matches) navSyncLayout();
+  }, { passive: true });
+
+  navSyncLayout();
+}
+
 const imageField=document.querySelector('#heroMotion');if(!reduce && matchMedia('(pointer:fine)').matches){let x=0,y=0,tx=0,ty=0;addEventListener('pointermove',e=>{tx=(e.clientX/innerWidth-.5)*23;ty=(e.clientY/innerHeight-.5)*17},{passive:true});function tick(){x+=(tx-x)*.05;y+=(ty-y)*.05;imageField.style.setProperty('--mx',x.toFixed(1)+'px');imageField.style.setProperty('--my',y.toFixed(1)+'px');requestAnimationFrame(tick)}tick()}
 const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('on');io.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
 const peopleArea=document.querySelector('#people'), peopleNo=document.querySelector('#audienceCount'), peopleItems=[...document.querySelectorAll('[data-aud]')],peopleDots=[...document.querySelectorAll('[data-go-aud]')];let audIndex=-1;
@@ -799,7 +1494,7 @@ if(video){video.addEventListener('click',()=>{
  document.fonts?.ready?.then(queue);
  device.querySelector('img')?.addEventListener('load',queue,{once:true});
  if(window.ResizeObserver){const ro=new ResizeObserver(queue);ro.observe(copy);}
- requestAnimationFrame(()=>requestAnimationFrame(positionHero));
+ positionHero();
 })();</script><script id="mysentry-health-v13-scroll-script">
 /* Scroll-linked mockup movement: limited to one element; no background animation. */
 (()=>{
@@ -834,6 +1529,21 @@ if(video){video.addEventListener('click',()=>{
   addEventListener('resize',update,{passive:true});
   motion.addEventListener('change',update);
   update();
+})();
+</script>
+
+<script id="homepage-deferred-images">
+(()=>{
+ const load=(img)=>{if(!img?.dataset.deferredSrc)return;img.loading='eager';img.src=img.dataset.deferredSrc;delete img.dataset.deferredSrc;};
+ const hydrate=(area)=>{area.querySelectorAll('img[data-deferred-src]').forEach(load);};
+ const areas=[document.getElementById('people'),document.getElementById('how')].filter(Boolean);
+ if('IntersectionObserver' in window){
+  const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){hydrate(e.target);observer.unobserve(e.target);}});},{rootMargin:'300px 0px'});
+  areas.forEach(area=>observer.observe(area));
+ }else{areas.forEach(hydrate);}
+ // A deep-link or instant scroll can select a scene before its observer callback.
+ const recover=new MutationObserver(()=>{document.querySelectorAll('.people-visual.current img[data-deferred-src],.scene-art.active[data-deferred-src]').forEach(img=>{const area=img.closest('section');if(area&&area.getBoundingClientRect().top<innerHeight+300&&area.getBoundingClientRect().bottom>-300)load(img);});});
+ areas.forEach(area=>recover.observe(area,{attributes:true,subtree:true,attributeFilter:['class']}));
 })();
 </script>
 </body></html>

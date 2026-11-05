@@ -59,3 +59,15 @@
 - [x] Complete two independent cross-checks: targeted desktop/mobile rendered validation and production build/server validation
 - [x] Confirm TypeScript, 160/160 serial tests, production build, root and `/features` routing, File Storage delivery, responsive no-overflow checks, zero broken images, public no-em-dash content, and protected-file boundaries
 - [x] Save a staging checkpoint after the final verified feedback revision; GitHub push and production deployment remain outside this request
+
+## Homepage Mobile, Loading Speed and Live Navigation - November 5, 2026
+
+- [x] Restore all 44 live submenu entries, categories, descriptions, menu footer links, Ring placement, plan CTA and dashboard Login destination.
+- [x] Verify mobile menu scrolling, tap toggling, keyboard access, Escape dismissal and live-aligned laptop breakpoint behavior across eight navigation widths.
+- [x] Correct narrow-phone introduction overflow and short-screen audience/app-slide clipping without changing original copy, asset pixels, animation keyframes or ordinary second-slide reference sizing.
+- [x] Pass nine responsive production viewport checks with no horizontal text overflow or JavaScript page errors.
+- [x] Defer below-fold/hidden-slide artwork, reserve hero image proportions, stabilize mobile text sizing and use the existing real favicon.
+- [x] Measure before and after: initial transfer 11.89 MB to 2.35 MB; constrained mobile LCP 48.12s to 12.55s. Disclose that constrained LCP/CLS still need further optimization.
+- [x] Verify all 50 captured live menu destinations and 49 production-build internal routes return HTTP 200; document the existing live Pricing anchor discrepancy without editing production.
+- [x] Pass TypeScript, 166/166 tests, production build, exact root delivery, representative metadata and preservation checks.
+- [x] Keep the release staging-only with no GitHub push, AWS deployment, database, Docker or environment-file changes.
