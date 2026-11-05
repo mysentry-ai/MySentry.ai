@@ -2,6 +2,7 @@ import { useLayoutEffect, useState } from "react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { ROUTE_META } from "@shared/seo/route-meta";
+import { trackDownloadStoreClick } from "@/lib/downloadTracking";
 import {
   attemptDownloadRedirect,
   detectDownloadPlatform,
@@ -51,7 +52,16 @@ export default function Download() {
             {DOWNLOAD_OPTIONS.map(option => (
               <div className="download-card" key={option.key}>
                 <h2>{option.heading}</h2>
-                <a className="download-store" href={SMART_DOWNLOAD_STORES[option.key]}>
+                <a
+                  className="download-store"
+                  href={SMART_DOWNLOAD_STORES[option.key]}
+                  onClick={() => {
+                    if (platform === "other") trackDownloadStoreClick(option.key);
+                  }}
+                  onAuxClick={event => {
+                    if (platform === "other" && event.button === 1) trackDownloadStoreClick(option.key);
+                  }}
+                >
                   <img src={option.image} alt="" width="154" height="46" />
                   <span className="download-link">{option.label}<span aria-hidden="true">↗</span></span>
                 </a>
