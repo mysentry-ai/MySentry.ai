@@ -83,3 +83,13 @@
 - [x] Validate navigation at eight viewport widths, newsletter success/error with intercepted requests, print behavior, root navigation, and 14 production-mode shell-parity checks.
 - [x] Pass TypeScript, 172/172 serial tests, production build, exact root-document delivery, no-overflow/content-clearance checks, and protected-file preservation.
 - [x] Keep this validated release staging-only. Do not push to GitHub, deploy, or change database, Docker, environment, or infrastructure without owner authorization.
+
+## Public Shell and Current Action Links - November 5, 2026
+
+- [x] Cross-check 175 public/diagnostic URLs at desktop/mobile widths: 350 checks, matching homepage header/banner/footer, no broken internal destinations, missing linked fragments, or CTA overflow.
+- [x] Correct homepage audience/feature/pricing actions, direct Google Play and Ring App Store actions, and existing company social-profile links without changing page design or copy.
+- [x] Keep Ring enrollment, integration information, standard plan review, and selected plan/billing checkout destinations distinct.
+- [x] Connect the standalone newsletter to the existing tRPC contract; verify invalid input, pending guards, success/duplicate/reactivation/error behavior with intercepted requests and no database writes.
+- [x] Repair employer hero demo action and preserve tracking; add keyboard access to existing pricing selection cards.
+- [x] Pass TypeScript, 183 serial tests, production build, preservation/diff checks, 20 runtime action checks, and eight captured checkout combinations.
+- [x] Preserve private admin, print behavior, held/noindex governance, legal copy, citations, original assets, SEO source, and all infrastructure/database configuration. Staging only; GitHub push and deployment require owner approval.

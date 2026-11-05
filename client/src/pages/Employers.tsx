@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { industries } from "@/data/industries";
 import EmployerDemoModal from "@/components/EmployerDemoModal";
+import { trackLeadEvent } from "@/lib/metaPixel";
 
 export default function Employers() {
   const [activeIndustry, setActiveIndustry] = useState(industries[0]);
@@ -195,8 +196,20 @@ export default function Employers() {
         imageSrc="/images/business-meeting-happy.jpg"
         imageAlt="Diverse team having a productive meeting"
         ctaText="BOOK A DEMO"
-        ctaLink="#"
-      />
+      >
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button
+            type="button"
+            onClick={() => {
+              trackLeadEvent();
+              setIsDemoModalOpen(true);
+            }}
+            className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-10 h-16 text-lg transition-all hover:scale-105 shadow-xl flex items-center justify-center"
+          >
+            BOOK A DEMO
+          </button>
+        </div>
+      </HeroSection>
 
       {/* PEACE: The Problem & Empathy */}
       <section className="py-32 bg-white relative overflow-hidden">

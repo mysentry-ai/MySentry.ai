@@ -135,18 +135,18 @@ function BannerSlider() {
   );
 }
 
-const RING_CTA_LINK = "/pricing#pricing-plans";
+const RING_CTA_LINK = "https://ring.com/appstore/mysentry?q=mysen";
 
 function PrimaryCTA({ className = "" }: { className?: string }) {
   return (
-    <Link
+    <a
       href={RING_CTA_LINK}
       onClick={trackLeadEvent}
       className={`inline-flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full px-8 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg ${className}`}
-    >
+     target="_blank" rel="noopener noreferrer">
       Start Free with Ring
       <ArrowRight className="w-4 h-4" />
-    </Link>
+    </a>
   );
 }
 
@@ -598,16 +598,16 @@ export default function RingLandingPage() {
               Your Ring cameras are already helping you monitor your home. MySentry adds a live safety response layer when you need action, context, and support.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Link
+              <a
                 href={RING_CTA_LINK}
                 onClick={trackLeadEvent}
                 className="inline-flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full px-8 py-4 hover:bg-primary/90 transition-all hover:scale-105 shadow-lg"
-              >
+               target="_blank" rel="noopener noreferrer">
                 Activate MySentry with Ring
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
               <Link
-                href={RING_CTA_LINK}
+                href="/pricing#pricing-plans"
                 onClick={trackLeadEvent}
                 className="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-bold rounded-full px-8 py-4 hover:bg-white/20 transition-all"
               >
@@ -646,14 +646,14 @@ export default function RingLandingPage() {
 
       {/* Sticky mobile CTA */}
       <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-100 shadow-lg px-4 py-3">
-        <Link
+        <a
           href={RING_CTA_LINK}
           onClick={trackLeadEvent}
           className="flex items-center justify-center gap-2 bg-primary text-white font-bold rounded-full w-full py-4 text-base hover:bg-primary/90 transition-all"
-        >
+         target="_blank" rel="noopener noreferrer">
           Start Free with Ring
           <ArrowRight className="w-4 h-4" />
-        </Link>
+        </a>
       </div>
     </Layout>
   );

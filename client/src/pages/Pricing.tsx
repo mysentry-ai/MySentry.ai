@@ -591,6 +591,16 @@ function SelectCard({ active = false, disabled = false, onClick, icon, title, de
   return (
     <div
       onClick={disabled ? undefined : onClick}
+      role={onClick ? "button" : undefined}
+      tabIndex={onClick && !disabled ? 0 : undefined}
+      aria-pressed={onClick ? active : undefined}
+      aria-disabled={disabled || undefined}
+      onKeyDown={onClick && !disabled ? (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onClick();
+        }
+      } : undefined}
       className={cn(
         "relative border-2 rounded-2xl p-5 transition-all text-left",
         disabled

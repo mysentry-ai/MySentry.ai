@@ -90,7 +90,7 @@ describe("owner-supplied v17 homepage", () => {
     // 2. Official hero badges are enlarged without altering their real links.
     expect(template).toContain('.store-badges a{flex:0 0 136px;min-width:136px;height:42px}');
     expect(template).toContain("https://apps.apple.com/us/app/mysentry-safety-health/id6740518837");
-    expect(template).toContain("https://play.google.com/store/search?q=MySentry&amp;c=apps");
+    expect(template).toContain("https://play.google.com/store/apps/details?id=com.eagleeye.mysentry");
 
     // 3. The provided logo and semibold blue navigation are used.
     expect(template).toContain('/manus-storage/mysentry-logo-tagline_b866a0e6.svg');

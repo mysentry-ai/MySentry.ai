@@ -37,10 +37,11 @@ describe("homepage notification perimeter adjustment", () => {
     for (const pill of pills) expect(pill).toContain('<svg aria-hidden="true" focusable="false"');
   });
 
-  it("preserves all earlier styles and scripts byte-for-byte, including mockup sizing and animation", () => {
+  it("preserves all earlier styles and non-newsletter scripts, including mockup sizing and animation", () => {
     const styles = (template.match(/<style[^>]*>[\s\S]*?<\/style>/g) ?? []).filter(style => !style.includes('id="homepage-notification-perimeter"')).join("");
     const scripts = (template.match(/<script[^>]*>[\s\S]*?<\/script>/g) ?? []).join("");
     expect(hash(styles)).toBe("dbcb0a59dd9ab4825a53e5a84bf8be3227355eceb7522092654aa08fb8537c38");
-    expect(hash(scripts)).toBe("aace01648b8e1c448091af7241987fd3a07576c00b5364f55efb88c2f00354ec");
+    const preservedScripts = scripts.replace(/const news=document.querySelector\('#newsletterForm'\);[\s\S]*?(?=<\/script>)/, "");
+    expect(hash(preservedScripts)).toBe("1449f8a28f7b04d0741ba8e75487bafef64a39343b5744a3f1300a8173a59a68");
   });
 });

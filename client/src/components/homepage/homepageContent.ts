@@ -24,7 +24,7 @@ export const HOMEPAGE_LINKS = {
   appStore: "https://apps.apple.com/us/app/mysentry-safety-health/id6740518837",
   googlePlay:
     "https://play.google.com/store/apps/details?id=com.eagleeye.mysentry",
-  ringAppstore: "https://ring.com/appstore/mysentry",
+  ringAppstore: "https://ring.com/appstore/mysentry?q=mysen",
   ringDetails: "/integrations/ring",
   pricing: "/pricing",
   rapidResponse: "https://www.rrms.com/",
