@@ -1,5 +1,6 @@
 import { DEFAULT_OG_IMAGE, SITE_NAME } from "../../shared/seo/route-meta";
 import { canonicalizeBlogContentLinks } from "../../shared/seo/blog-assets";
+import { buildCanonicalBreadcrumbs } from "../../shared/seo/breadcrumbs";
 import type { ResolvedMeta } from "./resolve-meta";
 import { buildEarlyDownloadScript, DOWNLOAD_OPTIONS, DOWNLOAD_PAGE_CSS, SMART_DOWNLOAD_STORES } from "../../shared/smart-app-download";
 
@@ -72,23 +73,6 @@ function replaceCanonical(html: string, canonicalUrl: string): string {
   return html.replace(tag, markHelmetOwned(nextTag));
 }
 
-function buildBreadcrumbs(path: string): Array<{ name: string; url: string }> {
-  const parts = path.split("/").filter(Boolean);
-  const breadcrumbs = [{ name: "Home", url: SITE_ORIGIN }];
-  let current = "";
-  for (const part of parts) {
-    current += `/${part}`;
-    breadcrumbs.push({
-      name: part
-        .split("-")
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" "),
-      url: `${SITE_ORIGIN}${current}`,
-    });
-  }
-  return breadcrumbs;
-}
-
 function buildSchemas(meta: ResolvedMeta, canonicalUrl: string): Record<string, unknown>[] {
   if (meta.robots.startsWith("noindex")) return [];
 
@@ -127,7 +111,7 @@ function buildSchemas(meta: ResolvedMeta, canonicalUrl: string): Record<string, 
     },
   ];
 
-  const breadcrumbItems = buildBreadcrumbs(meta.canonicalPath);
+  const breadcrumbItems = buildCanonicalBreadcrumbs(meta.canonicalPath);
   if (breadcrumbItems.length > 1) {
     schemas.push({
       "@context": "https://schema.org",
@@ -197,6 +181,7 @@ function buildFallback(meta: ResolvedMeta): string {
 export function renderSeoHtml(template: string, meta: ResolvedMeta): string {
   const canonicalUrl = `${SITE_ORIGIN}${meta.canonicalPath}`;
   let html = replaceTitle(template, meta.title);
+  html = replaceMeta(html, "name", "viewport", "width=device-width, initial-scale=1, maximum-scale=5");
   html = replaceMeta(html, "name", "description", meta.description);
   html = replaceMeta(html, "name", "robots", meta.robots);
   html = replaceMeta(html, "property", "og:type", meta.ogType);

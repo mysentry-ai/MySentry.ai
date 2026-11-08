@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { ROUTE_META, SITE_NAME, DEFAULT_OG_IMAGE } from "@shared/seo/route-meta";
 import { isNoindexPath } from "@shared/seo/indexability";
+import { buildCanonicalBreadcrumbs } from "@shared/seo/breadcrumbs";
 
 /**
  * SEO component  -  injects per-page meta tags via react-helmet-async.
@@ -95,6 +96,7 @@ export default function SEO({
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://mysentry.ai/#organization",
     name: "MySentry",
     url: "https://mysentry.ai",
     logo: "https://mysentry.ai/favicon.svg",
@@ -140,28 +142,17 @@ export default function SEO({
       return "/";
     }
   })();
-  const breadcrumbParts = canonicalPath.split("/").filter(Boolean);
-  const breadcrumbSchema = breadcrumbParts.length
+  const breadcrumbItems = buildCanonicalBreadcrumbs(canonicalPath);
+  const breadcrumbSchema = breadcrumbItems.length > 1
     ? {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "Home",
-            item: "https://mysentry.ai",
-          },
-          ...breadcrumbParts.map((part, index) => ({
-            "@type": "ListItem",
-            position: index + 2,
-            name: part
-              .split("-")
-              .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-              .join(" "),
-            item: `https://mysentry.ai/${breadcrumbParts.slice(0, index + 1).join("/")}`,
-          })),
-        ],
+        itemListElement: breadcrumbItems.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.name,
+          item: item.url,
+        })),
       }
     : null;
 

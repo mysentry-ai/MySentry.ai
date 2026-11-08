@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import GetStartedSection from "@/components/GetStartedSection";
-import { useState } from "react";
+import { useId, useState } from "react";
 
 interface FAQ {
   question: string;
@@ -107,6 +107,7 @@ export default function SEOPageTemplate({
   heroImagePresentation = "editorial",
 }: SEOPageTemplateProps) {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const faqId = useId();
   const showHeroLabel = label.trim().toLowerCase() !== "feature";
 
   // Build FAQPage schema
@@ -175,18 +176,18 @@ export default function SEOPageTemplate({
 
               {/* CTAs  -  immediately after subtitle, fully visible above fold */}
               <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-                <a href={primaryCta.href} className="w-full sm:w-auto">
-                  <Button size="lg" className="h-auto min-h-14 w-full whitespace-normal rounded-full bg-[#6AD990] px-5 py-4 text-center text-base font-bold uppercase tracking-wider text-[#1a1a1a] hover:bg-[#5bc97e] sm:w-auto sm:px-8 sm:text-lg">
+                <Button asChild size="lg" className="h-auto min-h-14 w-full whitespace-normal rounded-full bg-[#6AD990] px-5 py-4 text-center text-base font-bold uppercase tracking-wider text-[#1a1a1a] hover:bg-[#5bc97e] sm:w-auto sm:px-8 sm:text-lg">
+                  <a href={primaryCta.href}>
                     {primaryCta.text}
                     <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </a>
+                  </a>
+                </Button>
                 {secondaryCta && (
-                  <Link href={secondaryCta.href} className="w-full sm:w-auto">
-                    <Button variant="outline" size="lg" className="h-auto min-h-14 w-full whitespace-normal rounded-full border-2 border-[#1a1a1a] px-5 py-4 text-center text-base font-bold uppercase tracking-wider text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white sm:w-auto sm:px-8 sm:text-lg">
+                  <Button asChild variant="outline" size="lg" className="h-auto min-h-14 w-full whitespace-normal rounded-full border-2 border-[#1a1a1a] px-5 py-4 text-center text-base font-bold uppercase tracking-wider text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white sm:w-auto sm:px-8 sm:text-lg">
+                    <Link href={secondaryCta.href}>
                       {secondaryCta.text}
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 )}
               </div>
             </div>
@@ -398,17 +399,24 @@ export default function SEOPageTemplate({
               {faqs.map((faq, i) => (
                 <div key={i} className="border border-gray-200 rounded-xl overflow-hidden">
                   <button
+                    type="button"
+                    id={`${faqId}-trigger-${i}`}
+                    aria-expanded={openFaq === i}
+                    aria-controls={`${faqId}-panel-${i}`}
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
                     className="w-full flex items-center justify-between p-5 text-left hover:bg-gray-50 transition-colors"
                   >
                     <span className="font-bold text-[#1a1a1a] pr-4">{faq.question}</span>
-                    <ChevronDown className={`w-5 h-5 text-gray-500 shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
+                    <ChevronDown aria-hidden="true" className={`w-5 h-5 text-gray-500 shrink-0 transition-transform ${openFaq === i ? 'rotate-180' : ''}`} />
                   </button>
-                  {openFaq === i && (
-                    <div className="px-5 pb-5">
-                      <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
-                    </div>
-                  )}
+                  <div
+                    id={`${faqId}-panel-${i}`}
+                    aria-labelledby={`${faqId}-trigger-${i}`}
+                    hidden={openFaq !== i}
+                    className="px-5 pb-5"
+                  >
+                    <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
+                  </div>
                 </div>
               ))}
             </div>
