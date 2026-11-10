@@ -1,3 +1,5 @@
+import { buildDownloadActivityBrowserFunctions } from "./download-activity-browser";
+
 // This utility deliberately uses the exact destinations requested for /download.
 // Existing download buttons and enrollment links elsewhere remain unchanged.
 export const SMART_DOWNLOAD_STORES = {
@@ -54,7 +56,7 @@ export function attemptDownloadRedirect(
 export function buildEarlyDownloadScript(): string {
   // Serialize pure functions after TypeScript compilation. No user input, device
   // hints, URL parameters, or remote scripts are interpolated into executable code.
-  return `(() => {const SMART_DOWNLOAD_STORES=${JSON.stringify(SMART_DOWNLOAD_STORES)};const detectDownloadPlatform=${detectDownloadPlatform.toString()};const attemptDownloadRedirect=${attemptDownloadRedirect.toString()};try{window.__mysentrySmartDownload=window.__mysentrySmartDownload||{};attemptDownloadRedirect(navigator,window.location,window.__mysentrySmartDownload);}catch{}})();`;
+  return `(() => {const SMART_DOWNLOAD_STORES=${JSON.stringify(SMART_DOWNLOAD_STORES)};const detectDownloadPlatform=${detectDownloadPlatform.toString()};const attemptDownloadRedirect=${attemptDownloadRedirect.toString()};${buildDownloadActivityBrowserFunctions()}const start=()=>{try{window.__mysentrySmartDownload=window.__mysentrySmartDownload||{};const platform=detectDownloadPlatform(navigator);try{initializeDownloadActivity(platform,platform!=="other"&&!window.__mysentrySmartDownload.attempted);}catch{}attemptDownloadRedirect(navigator,window.location,window.__mysentrySmartDownload);}catch{}};if(typeof document!=="undefined"&&document.prerendering){document.addEventListener("prerenderingchange",start,{once:true});}else{start();}})();`;
 }
 
 export const DOWNLOAD_OPTIONS = [

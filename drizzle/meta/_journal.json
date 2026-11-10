@@ -22,6 +22,13 @@
       "when": 1772140224283,
       "tag": "0002_fantastic_ghost_rider",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1794292509635,
+      "tag": "0003_wooden_korath",
+      "breakpoints": true
     }
   ]
 }

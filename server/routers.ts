@@ -14,6 +14,7 @@ import {
 import { notifyOwner } from "./_core/notification";
 import { blogRouter } from "./routers/blogRouter";
 import { aiRouter } from "./routers/aiRouter";
+import { downloadActivityRouter } from "./routers/downloadActivityRouter";
 import {
   isDatabaseUnavailableError,
   submitSmsConsentToManagedBackend,
@@ -24,6 +25,7 @@ export const appRouter = router({
   system: systemRouter,
   blog: blogRouter,
   ai: aiRouter,
+  downloadActivity: downloadActivityRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
     logout: publicProcedure.mutation(({ ctx }) => {

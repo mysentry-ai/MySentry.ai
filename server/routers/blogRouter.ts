@@ -23,6 +23,7 @@ import {
   createRedirect,
 } from "../blogDb";
 import { getContactSubmissions } from "../db";
+import { getDownloadActivitySummary } from "../downloadActivityDb";
 import {
   listPublicBlogCategories,
   listPublicBlogs,
@@ -186,6 +187,14 @@ export const blogRouter = router({
     .input(z.object({ token: z.string() }))
     .query(async ({ input }) => {
       return { valid: adminSessionTokens.has(input.token) };
+    }),
+
+  downloadActivitySummary: publicProcedure
+    .input(z.object({ days: z.union([z.literal(7), z.literal(30), z.literal(90)]).default(30) }))
+    .query(async ({ ctx, input }) => {
+      requireAdmin(ctx);
+      ctx.res.setHeader("Cache-Control", "no-store");
+      return getDownloadActivitySummary(input.days);
     }),
 
   // ---- Website submissions ----
