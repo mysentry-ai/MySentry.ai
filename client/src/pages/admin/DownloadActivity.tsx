@@ -64,12 +64,12 @@ export default function DownloadActivity() {
           </p>
           <a
             className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[#004f7b] underline underline-offset-4"
-            href="https://mysentry.ai/download"
+            href="https://mysentry-5pk35fzr.manus.space/download"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Link2 className="h-4 w-4" aria-hidden="true" />
-            mysentry.ai/download
+            Open independent smart download link
             <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
           </a>
         </div>
