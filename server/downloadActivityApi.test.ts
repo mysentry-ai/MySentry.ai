@@ -169,18 +169,34 @@ describe("download activity HTTP and access guards", () => {
     );
     expect(response.status).toBe(200);
   });
-  it("refuses to use the unrelated preview database", () => {
+  it("uses only the explicitly approved Manus tracking database", () => {
     expect(
       isApprovedDownloadDatabase(
-        "mysql://user:password@localhost/manus-mysentry"
+        "mysql://user:password@gateway06.us-east-1.prod.aws.tidbcloud.com/5pk35fzRuLVvrjtZdt4C3R"
       )
     ).toBe(true);
     expect(
       isApprovedDownloadDatabase(
-        "mysql://user:password@localhost/another_database"
+        "mysql://user:password@gateway06.us-east-1.prod.aws.tidbcloud.com/another_database"
+      )
+    ).toBe(false);
+    expect(
+      isApprovedDownloadDatabase(
+        "mysql://user:password@db.dentasmart.ai/manus-mysentry"
+      )
+    ).toBe(false);
+    expect(
+      isApprovedDownloadDatabase(
+        "mysql://user:password@unapproved.example/5pk35fzRuLVvrjtZdt4C3R"
       )
     ).toBe(false);
     expect(isApprovedDownloadDatabase(undefined)).toBe(false);
+  });
+  it("groups daily aggregates by their selected UTC-day alias", () => {
+    const source = readFileSync("server/downloadActivityDb.ts", "utf8");
+    expect(source).toMatch(/\.as\(\s*"utc_day"\s*\)/);
+    expect(source).toContain('.groupBy(sql`utc_day`)');
+    expect(source).toContain('.orderBy(sql`utc_day`)');
   });
   it("keeps aggregates inaccessible without a valid existing admin session and after logout", async () => {
     const path =

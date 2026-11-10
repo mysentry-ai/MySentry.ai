@@ -118,14 +118,12 @@ export default function DownloadActivity() {
             Tracking data is not available
           </div>
           <p className="mt-2 text-sm leading-6">
-            The approved database connection or tracking table is not ready.
-            This is not a zero count. Your download link and store buttons still
-            work.
+            The download tracking storage is unavailable. This is not a zero
+            count. Your download link and store buttons still work.
           </p>
           <p className="mt-2 text-sm leading-6">
-            Once storage is connected and this update is deployed, new visits
-            will appear here. Past visits cannot be reconstructed by this
-            counter.
+            Try refreshing the report. Visits from before tracking was activated
+            cannot be reconstructed by this counter.
           </p>
         </div>
       ) : data ? (

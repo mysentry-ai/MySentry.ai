@@ -1,4 +1,4 @@
-import { eq, sql } from "drizzle-orm";
+import { sql } from "drizzle-orm";
 import { TRPCError } from "@trpc/server";
 import { downloadActivityEvents } from "../drizzle/schema";
 import { getDb } from "./db";
@@ -13,9 +13,12 @@ export function isApprovedDownloadDatabase(
 ): boolean {
   if (!connectionString) return false;
   try {
+    const connection = new URL(connectionString);
     return (
-      decodeURIComponent(new URL(connectionString).pathname.slice(1)) ===
-      "manus-mysentry"
+      connection.protocol === "mysql:" &&
+      connection.hostname === "gateway06.us-east-1.prod.aws.tidbcloud.com" &&
+      decodeURIComponent(connection.pathname.slice(1)) ===
+        "5pk35fzRuLVvrjtZdt4C3R"
     );
   } catch {
     return false;
@@ -23,12 +26,13 @@ export function isApprovedDownloadDatabase(
 }
 
 async function activityDb() {
-  // Never silently write this approved counter into the unrelated preview DB.
+  // Owner approved this Manus project DB for download tracking only.
+  // Never redirect other website data or silently fall back to the AWS DB.
   if (!isApprovedDownloadDatabase(process.env.DATABASE_URL)) {
     throw new TRPCError({
       code: "SERVICE_UNAVAILABLE",
       message:
-        "Download activity storage is not connected to the approved MySentry database.",
+        "Download activity storage is not connected to the approved Manus web database.",
     });
   }
   const db = await getDb();
@@ -86,15 +90,17 @@ export async function getDownloadActivitySummary(days: number) {
       .groupBy(t.store),
     db
       .select({
-        day: sql<number>`FLOOR(${t.receivedAt} / ${DOWNLOAD_ACTIVITY_DAY_MS}) * ${DOWNLOAD_ACTIVITY_DAY_MS}`,
+        day: sql<number>`FLOOR(${t.receivedAt} / 86400000) * 86400000`.as(
+          "utc_day"
+        ),
         visits: visit,
         redirects,
         clicks,
       })
       .from(t)
       .where(inRange)
-      .groupBy(sql`FLOOR(${t.receivedAt} / ${DOWNLOAD_ACTIVITY_DAY_MS})`)
-      .orderBy(sql`FLOOR(${t.receivedAt} / ${DOWNLOAD_ACTIVITY_DAY_MS})`),
+      .groupBy(sql`utc_day`)
+      .orderBy(sql`utc_day`),
   ]);
   const number = (value: unknown) => Number(value || 0);
   const dailyMap = new Map(daily.map(row => [number(row.day), row]));
