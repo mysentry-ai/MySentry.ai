@@ -41,7 +41,12 @@ describe("homepage notification perimeter adjustment", () => {
     const styles = (template.match(/<style[^>]*>[\s\S]*?<\/style>/g) ?? []).filter(style => !style.includes('id="homepage-notification-perimeter"')).join("");
     const scripts = (template.match(/<script[^>]*>[\s\S]*?<\/script>/g) ?? []).join("");
     expect(hash(styles)).toBe("dbcb0a59dd9ab4825a53e5a84bf8be3227355eceb7522092654aa08fb8537c38");
-    const preservedScripts = scripts.replace(/const news=document.querySelector\('#newsletterForm'\);[\s\S]*?(?=<\/script>)/, "");
-    expect(hash(preservedScripts)).toBe("1449f8a28f7b04d0741ba8e75487bafef64a39343b5744a3f1300a8173a59a68");
+    const originalObserver = "const io=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('on');io.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));";
+    const preservedScripts = scripts
+      .replace(/const news=document.querySelector\('#newsletterForm'\);[\s\S]*?(?=<\/script>)/, "")
+      .replace(/<script id="homepage-deferred-images">[\s\S]*?<\/script>/, "")
+      .replace("if('IntersectionObserver' in window){" + originalObserver + "}else{document.querySelectorAll('.reveal').forEach(e=>e.classList.add('on'));}", originalObserver)
+      .replace("let badgeBottom=badges.offsetHeight;\n  for(let el=badges;el&&el!==hero;el=el.offsetParent)badgeBottom+=el.offsetTop;", "const top=hero.getBoundingClientRect().top;\n  const badgeBottom=badges.getBoundingClientRect().bottom-top;");
+    expect(hash(preservedScripts)).toBe("88aa3e6827678c9bfca37058b8ccb7626fc63655ec5c6a623d81fe50fb7f88c6");
   });
 });
