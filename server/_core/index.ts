@@ -15,7 +15,6 @@ const compression = _require("compression") as () => any;
 import { serveStatic, setupVite } from "./vite";
 import { registerSitemapRoutes } from "../sitemaps";
 import { registerStorageProxy } from "./storageProxy";
-import { registerDownloadActivityGuards } from "../downloadActivityGuards";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -49,7 +48,6 @@ async function startServer() {
   });
   // Brotli + gzip compression via standard Express middleware
   app.use(compression());
-  registerDownloadActivityGuards(app);
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));

@@ -42,12 +42,10 @@ describe("homepage mobile, loading and live-navigation repair", () => {
     expect(html).toContain("max-height: calc(100dvh - var(--nav-header-height))");
   });
 
-  it("reserves the hero geometry and defers optimized below-fold art with original SVG provenance", () => {
-    expect(html).toMatch(/fetchpriority="high" width="1270" height="714" src="\/homepage-art\/mysentry-hero-/);
-    expect(html).toContain('data-original-src="assets/hero-mysentry-app-composite.svg"');
+  it("reserves the hero geometry and defers the exact below-fold art without changing its source", () => {
+    expect(html).toContain('fetchpriority="high" width="1270" height="714" src="assets/hero-mysentry-app-composite.svg"');
     expect(html).toContain('id="homepage-deferred-images"');
-    expect(html).toContain("rootMargin:'1200px 0px'");
-    expect(html).toContain("Promise.all(current.map(load))");
+    expect(html).toContain("rootMargin:'300px 0px'");
     expect(html).toContain("img.src=img.dataset.deferredSrc");
     expect(html).toContain("<noscript>");
     expect(html).toContain('href="/favicon.svg"');

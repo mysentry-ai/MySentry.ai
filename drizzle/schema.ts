@@ -1,4 +1,4 @@
-import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, json, longtext, bigint, primaryKey, index } from "drizzle-orm/mysql-core";
+import { int, mysqlEnum, mysqlTable, text, timestamp, varchar, boolean, json, longtext } from "drizzle-orm/mysql-core";
 
 /**
  * Core user table backing auth flow.
@@ -210,15 +210,3 @@ export const blogRedirects = mysqlTable("blog_redirects", {
 
 export type BlogRedirect = typeof blogRedirects.$inferSelect;
 export type InsertBlogRedirect = typeof blogRedirects.$inferInsert;
-
-/** Anonymous navigation-scoped download events, not people or install records. */
-export const downloadActivityEvents = mysqlTable("download_activity_events", {
-  visitId: varchar("visitId", { length: 36 }).notNull(),
-  eventType: mysqlEnum("eventType", ["visit", "auto_redirect", "store_click"]).notNull(),
-  platform: mysqlEnum("platform", ["ios", "android", "other"]).notNull(),
-  store: mysqlEnum("store", ["none", "ios", "android", "ring"]).notNull(),
-  receivedAt: bigint("receivedAt", { mode: "number", unsigned: true }).notNull(),
-}, table => [
-  primaryKey({ columns: [table.visitId, table.eventType, table.store] }),
-  index("download_activity_received_at_idx").on(table.receivedAt),
-]);

@@ -619,11 +619,11 @@ export default function Features() {
                 <p className="text-xl text-[#d6f4ff] mb-12 max-w-2xl mx-auto">
             Review current plans, supported devices, eligibility, privacy controls, monitoring availability, and service limitations.
           </p>
-          <Link href="/pricing#pricing-plans">
-            <Button className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-8 md:px-12 h-16 md:h-20 text-lg md:text-xl transition-all hover:scale-105 shadow-2xl w-full md:w-auto whitespace-normal md:whitespace-nowrap">
+          <Button asChild className="bg-primary text-white hover:bg-primary/90 font-bold uppercase tracking-wider rounded-full px-8 md:px-12 h-16 md:h-20 text-lg md:text-xl transition-all hover:scale-105 shadow-2xl w-full md:w-auto whitespace-normal md:whitespace-nowrap">
+            <Link href="/pricing#pricing-plans">
               Review Plans and Eligibility
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         </div>
       </section>
       </div>

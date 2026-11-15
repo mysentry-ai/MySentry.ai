@@ -8,10 +8,8 @@ import viteConfig from "../../vite.config";
 import { registerExactHomepageAssetAliases } from "./exactHomepageAssetAliases";
 import { renderSeoHtml } from "../seo/render-seo-html";
 import { resolveMeta } from "../seo/resolve-meta";
-import { registerHomepageArtworkPreview } from "../homepageArtwork";
 
 export async function setupVite(app: Express, server: Server) {
-  registerHomepageArtworkPreview(app);
   // Keep development preview parity with the owner-supplied v17 homepage
   // document used at production root. Vite continues to serve every asset and
   // all non-root SPA routes normally.
