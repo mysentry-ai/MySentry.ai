@@ -99,6 +99,7 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
       {/* Left Navigation Arrow */}
       <button
         onClick={() => scroll("left")}
+        disabled={!canScrollLeft}
         className={cn(
           "absolute left-0 top-1/2 -translate-y-1/2 z-20 -ml-4 md:-ml-12 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none",
           canScrollLeft ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
@@ -111,6 +112,7 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
       {/* Right Navigation Arrow */}
       <button
         onClick={() => scroll("right")}
+        disabled={!canScrollRight}
         className={cn(
           "absolute right-0 top-1/2 -translate-y-1/2 z-20 -mr-4 md:-mr-12 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none",
           canScrollRight ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4 pointer-events-none"
