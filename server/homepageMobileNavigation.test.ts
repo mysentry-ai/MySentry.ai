@@ -43,9 +43,11 @@ describe("homepage mobile, loading and live-navigation repair", () => {
   });
 
   it("reserves the hero geometry and defers the exact below-fold art without changing its source", () => {
-    expect(html).toContain('fetchpriority="high" width="1270" height="714" src="assets/hero-mysentry-app-composite.svg"');
+    expect(html).toContain('fetchpriority="high" width="1270" height="714"');
+    expect(html).toContain('data-original-src="assets/hero-mysentry-app-composite.svg"');
+    expect(html).toContain('imagesrcset=');
     expect(html).toContain('id="homepage-deferred-images"');
-    expect(html).toContain("rootMargin:'300px 0px'");
+    expect(html).toContain("rootMargin:'1200px 0px'");
     expect(html).toContain("img.src=img.dataset.deferredSrc");
     expect(html).toContain("<noscript>");
     expect(html).toContain('href="/favicon.svg"');

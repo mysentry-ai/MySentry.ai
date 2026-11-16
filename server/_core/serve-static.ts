@@ -4,6 +4,7 @@ import path from "path";
 import { resolveMeta } from "../seo/resolve-meta";
 import { renderSeoHtml } from "../seo/render-seo-html";
 import { registerExactHomepageAssetAliases } from "./exactHomepageAssetAliases";
+import { createRoutePreloader } from "../routePreloads";
 
 // ─── Main export ─────────────────────────────────────────────────────────────
 
@@ -12,10 +13,16 @@ export function serveStatic(app: Express) {
   // regardless of where the compiled bundle lives in the deployment container.
   const distPath = path.resolve(process.cwd(), "dist", "public");
   const indexHtmlPath = path.resolve(distPath, "index.html");
+  const preloadRoute = createRoutePreloader(distPath);
   const exactHomepagePath = path.resolve(
     distPath,
     "mysentry-homepage-v17.html"
   );
+  // A production artifact is immutable for the lifetime of this process.
+  // Preserve the error path without an unhandled startup rejection.
+  const templatePromise = fs.promises.readFile(indexHtmlPath, "utf-8")
+    .then(template => ({ template, error: null as unknown }))
+    .catch(error => ({ template: "", error }));
 
   if (!fs.existsSync(distPath)) {
     console.error(
@@ -86,11 +93,9 @@ export function serveStatic(app: Express) {
       // Resolve meta asynchronously; blog routes may use the database and a 60-second cache.
       const meta = await resolveMeta(cleanPath, "https://mysentry.ai");
 
-      // Read template on every request so hot-reloads in staging work;
-      // in production the OS page cache makes this effectively free.
-      const template = fs.readFileSync(indexHtmlPath, "utf-8");
-
-      const html = renderSeoHtml(template, meta);
+      const loaded = await templatePromise;
+      if (loaded.error) throw loaded.error;
+      const html = await preloadRoute(renderSeoHtml(loaded.template, meta), cleanPath);
 
       res
         .status(meta.found ? 200 : 404)
@@ -107,9 +112,12 @@ export function serveStatic(app: Express) {
   // index.html is never served by this middleware because the SSR middleware
   // above already handled all HTML requests.
   app.use(express.static(distPath, {
-    maxAge: "1y",
-    immutable: true,
+    maxAge: "1d",
+    immutable: false,
     setHeaders(res, filePath) {
+      if (/[.-][a-f0-9]{8,64}[.-]/i.test(path.basename(filePath))) {
+        res.setHeader("Cache-Control", "public, max-age=31536000, immutable");
+      }
       // HTML, robots.txt, and sitemaps must always be re-fetched
       if (
         filePath.endsWith(".html") ||

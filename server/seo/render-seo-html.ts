@@ -2,6 +2,7 @@ import { DEFAULT_OG_IMAGE, SITE_NAME } from "../../shared/seo/route-meta";
 import { canonicalizeBlogContentLinks } from "../../shared/seo/blog-assets";
 import type { ResolvedMeta } from "./resolve-meta";
 import { buildEarlyDownloadScript, DOWNLOAD_OPTIONS, DOWNLOAD_PAGE_CSS, SMART_DOWNLOAD_STORES } from "../../shared/smart-app-download";
+import { optimizePublicImageHtml } from "../../shared/performance-image-html";
 
 const SITE_ORIGIN = "https://mysentry.ai";
 
@@ -220,5 +221,5 @@ export function renderSeoHtml(template: string, meta: ResolvedMeta): string {
     // Run before the application bundle and before rendering the fallback body.
     html = html.replace(/<head(?:\s[^>]*)?>/i, match => `${match}\n<script id="mysentry-smart-download">${buildEarlyDownloadScript()}</script><style>${DOWNLOAD_PAGE_CSS}</style>`);
   }
-  return html;
+  return optimizePublicImageHtml(html);
 }

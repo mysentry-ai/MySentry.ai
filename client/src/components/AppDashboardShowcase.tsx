@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { motion } from "framer-motion";
 import { HeartPulse, MapPin, Users, ShieldAlert, Activity, Thermometer } from "lucide-react";
 import { Link } from "wouter";
@@ -70,7 +71,7 @@ export default function AppDashboardShowcase() {
               <div className="absolute inset-0 bg-primary/15 blur-3xl rounded-full scale-90" />
               {/* Phone frame */}
               <div className="relative z-10 bg-[#1a1a1a] rounded-[3rem] p-3 shadow-2xl">
-                <img
+                <PerformanceImage
                   src="/images/app-home.png"
                   alt="MySentry app home screen showing the PANIC button, emergency contacts, Family Connectivity, and Health Monitoring with Watch Connected"
                   className="w-[280px] rounded-[2.5rem]"

@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import {
   Activity,
   ArrowRight,
@@ -257,7 +258,7 @@ export default function OuraRingIntegration() {
             <div className="relative mx-auto w-full max-w-2xl">
               <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-[#6AD990]/30 to-[#007BC2]/20 blur-2xl" />
               <div className="relative overflow-hidden rounded-[2rem] border border-white/80 bg-white p-3 shadow-2xl shadow-[#004F7B]/15">
-                <img
+                <PerformanceImage
                   src={heroImage}
                   alt="Oura Ring beside a phone, representing a possible future MySentry connection"
                   className="aspect-[16/10] w-full rounded-[1.55rem] object-cover"

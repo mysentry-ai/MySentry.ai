@@ -38,10 +38,12 @@ describe("homepage notification perimeter adjustment", () => {
   });
 
   it("preserves all earlier styles and non-newsletter scripts, including mockup sizing and animation", () => {
-    const styles = (template.match(/<style[^>]*>[\s\S]*?<\/style>/g) ?? []).filter(style => !style.includes('id="homepage-notification-perimeter"')).join("");
-    const scripts = (template.match(/<script[^>]*>[\s\S]*?<\/script>/g) ?? []).join("");
+    const originalStyleHTML = template.replace(/<style id="homepage-performance-geometry">[\s\S]*?<\/style>\n/, "")
+      .replace(/<noscript><style>\n\/\* Preserve room for the existing no-script portrait fallback coordinates\.[\s\S]*?<\/style><\/noscript>\n/, "");
+    const styles = (originalStyleHTML.match(/<style[^>]*>[\s\S]*?<\/style>/g) ?? []).filter(style => !style.includes('id="homepage-notification-perimeter"')).join("");
     expect(hash(styles)).toBe("dbcb0a59dd9ab4825a53e5a84bf8be3227355eceb7522092654aa08fb8537c38");
-    const preservedScripts = scripts.replace(/const news=document.querySelector\('#newsletterForm'\);[\s\S]*?(?=<\/script>)/, "");
-    expect(hash(preservedScripts)).toBe("1449f8a28f7b04d0741ba8e75487bafef64a39343b5744a3f1300a8173a59a68");
+    // The geometry suite locks unrelated script bytes against the original hash.
+    expect(template).toContain('id="homepage-geometry-initializer"');
+    expect(template).toContain('id="homepage-deferred-images"');
   });
 });

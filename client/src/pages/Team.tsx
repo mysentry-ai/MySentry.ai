@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -79,7 +80,7 @@ const TeamSection = ({ title, subtitle, members, bgColor = "bg-white", sub }: { 
               className="group"
             >
               <div className="relative overflow-hidden rounded-3xl mb-6 aspect-[4/5] shadow-lg">
-                <img 
+                <PerformanceImage
                   src={member.image} 
                   alt={member.name} 
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"

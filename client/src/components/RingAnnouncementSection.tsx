@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight, AlertCircle, Radio, MapPin, Camera, Users } from "lucide-react";
@@ -155,7 +156,7 @@ export default function RingAnnouncementSection() {
               transition={{ duration: 0.75, delay: 0.1, ease: "easeOut" }}
               className="flex-shrink-0 flex justify-center lg:justify-start"
             >
-              <img
+              <PerformanceImage
                 src="/images/cdn/zKfQzXtIiNkDQVAL.png"
                 alt="MySentry app showing PANIC button, emergency contacts, and health monitoring"
                 className="h-auto drop-shadow-xl mr-[3px] ml-[35px] w-[234px]"

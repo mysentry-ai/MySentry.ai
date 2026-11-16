@@ -39,7 +39,7 @@ describe("TCR SMS consent flow", () => {
     const page = read("client", "src", "pages", "SmsConsent.tsx");
     const meta = await resolveMeta(consentRoute, "https://mysentry.ai");
 
-    expect(app).toContain('import SmsConsent from "./pages/SmsConsent";');
+    expect(app).toContain('const SmsConsent = lazyPublicPage(() => import("./pages/SmsConsent"));');
     expect(app).toContain(
       '<Route path="/sms-consent" component={SmsConsent} />'
     );

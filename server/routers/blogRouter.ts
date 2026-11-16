@@ -957,14 +957,14 @@ Must include CTA: "Review Plans and Eligibility" (use natural wording, not spamm
         limit: z.number().optional(),
         offset: z.number().optional(),
       }).optional())
-      .query(async ({ input }) => {
-        return listPublicBlogs(input || {});
+      .query(async ({ ctx, input }) => {
+        return listPublicBlogs(input || {}, { skipManagedFallback: ctx.req.headers["x-mysentry-public-relay"] === "1" });
       }),
 
     getBySlug: publicProcedure
       .input(z.object({ slug: z.string() }))
-      .query(async ({ input }) => {
-        return resolvePublicBlogBySlug(input.slug);
+      .query(async ({ ctx, input }) => {
+        return resolvePublicBlogBySlug(input.slug, { skipManagedFallback: ctx.req.headers["x-mysentry-public-relay"] === "1" });
       }),
 
     related: publicProcedure
@@ -974,12 +974,12 @@ Must include CTA: "Review Plans and Eligibility" (use natural wording, not spamm
         tags: z.array(z.string()).nullable().optional(),
         limit: z.number().optional(),
       }))
-      .query(async ({ input }) => {
-        return listPublicRelatedBlogs(input);
+      .query(async ({ ctx, input }) => {
+        return listPublicRelatedBlogs(input, { skipManagedFallback: ctx.req.headers["x-mysentry-public-relay"] === "1" });
       }),
 
-    categories: publicProcedure.query(async () => {
-      return listPublicBlogCategories();
+    categories: publicProcedure.query(async ({ ctx }) => {
+      return listPublicBlogCategories({ skipManagedFallback: ctx.req.headers["x-mysentry-public-relay"] === "1" });
     }),
   }),
 });

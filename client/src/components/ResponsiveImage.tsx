@@ -1,59 +1,29 @@
-import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { cn } from '@/lib/utils';
+import { useState, type ImgHTMLAttributes } from 'react';
+import PerformanceImage from './PerformanceImage';
+import { resolvePerformanceImage } from '@shared/performance-images';
 
-interface ResponsiveImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+interface ResponsiveImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
-  className?: string;
-  sizes?: string;
-  fetchPriority?: "high" | "low" | "auto";
+  fetchPriority?: 'high' | 'low' | 'auto';
 }
 
-export default function ResponsiveImage({ 
-  src, 
-  alt, 
-  className, 
-  sizes = "(max-width: 640px) 480px, (max-width: 1024px) 800px, 1200px",
-  loading,
-  fetchPriority,
-  width = 1200,
-  height = 675,
-  ...props 
-}: ResponsiveImageProps) {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  // Helper to generate srcset string
-  const generateSrcSet = (originalSrc: string) => {
-    // Skip for SVGs or external URLs
-    if (originalSrc.endsWith('.svg') || originalSrc.startsWith('http')) {
-      return undefined;
-    }
-
-    const ext = originalSrc.substring(originalSrc.lastIndexOf('.'));
-    const base = originalSrc.substring(0, originalSrc.lastIndexOf('.'));
-    
-    // Check if we have resized versions (assuming they exist based on our script)
-    // We'll generate the string optimistically
-    return `${base}-480w${ext} 480w, ${base}-800w${ext} 800w, ${originalSrc} 1200w`;
-  };
-
-  return (
-    <img
-      src={src}
-      srcSet={generateSrcSet(src)}
-      sizes={sizes}
-      alt={alt}
-      loading={loading ?? "lazy"}
-      fetchPriority={fetchPriority}
-      width={width}
-      height={height}
-      onLoad={() => setIsLoaded(true)}
-      className={cn(
-        "transition-opacity duration-300",
-        isLoaded ? "opacity-100" : "opacity-0",
-        className
-      )}
-      {...props}
-    />
-  );
+export default function ResponsiveImage({ src, alt, className, sizes = '(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1200px', loading, fetchPriority, width, height, onLoad, onError, ...props }: ResponsiveImageProps) {
+  const [loadedSrc, setLoadedSrc] = useState('');
+  const image = resolvePerformanceImage(src);
+  return <PerformanceImage
+    {...props}
+    src={src}
+    alt={alt}
+    sizes={sizes}
+    loading={loading ?? 'lazy'}
+    fetchPriority={fetchPriority}
+    width={width ?? image?.width ?? 1200}
+    height={height ?? image?.height ?? 675}
+    ref={node => { if (node?.complete && node.naturalWidth > 0 && loadedSrc !== src) setLoadedSrc(src); }}
+    onLoad={event => { setLoadedSrc(src); onLoad?.(event); }}
+    onError={event => { setLoadedSrc(src); onError?.(event); }}
+    className={cn('transition-opacity duration-300', loadedSrc === src ? 'opacity-100' : 'opacity-0', className)}
+  />;
 }

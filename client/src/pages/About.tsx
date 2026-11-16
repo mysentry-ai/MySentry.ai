@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -13,7 +14,7 @@ export const About = () => {
       {/* Hero Section - Standardized */}
       <section className="relative min-h-[80vh] flex items-center bg-[#e8f5e9] pt-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
+          <PerformanceImage
             src="/images/cdn/QVNDUrAMsxMgicVc.jpg" 
             alt="MySentry Vision" 
             className="absolute inset-0 w-full h-full object-cover opacity-60"
@@ -91,7 +92,7 @@ export const About = () => {
               </div>
             </div>
             <div className="relative h-[600px] rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-               <img 
+               <PerformanceImage
                 src="/images/cdn/QRKKwqMiGpYMAFfR.jpg" 
                 alt="MySentry Promise" 
                 className="w-full h-full object-cover"

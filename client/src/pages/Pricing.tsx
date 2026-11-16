@@ -1,4 +1,4 @@
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import { User, Users, Shield, HeartPulse, Calendar, CalendarCheck, Building2, Check, X, Loader2 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -115,7 +115,19 @@ function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boole
 
   return (
     <Dialog open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DialogContent className="sm:max-w-[520px] p-0 gap-0 bg-white border-0 shadow-2xl rounded-2xl overflow-hidden">
+      <DialogContent showCloseButton={false} className="pricing-quote-dialog block sm:max-w-[520px] p-0 gap-0 bg-white border-0 shadow-2xl rounded-2xl overflow-y-auto overscroll-contain">
+        <style>{`
+          .pricing-quote-dialog { max-height: calc(100vh - 32px); max-height: calc(100dvh - 32px); }
+        `}</style>
+        <div className="sticky top-0 z-10 h-0">
+          <button
+            onClick={handleClose}
+            className="absolute top-4 right-4 rounded-xs bg-white text-[#94A3B8] hover:text-[#0F172A] transition-colors"
+            aria-label="Close"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
         {isSuccess ? (
           <div className="flex flex-col items-center justify-center py-16 px-8 text-center space-y-4">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
@@ -132,15 +144,6 @@ function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boole
           </div>
         ) : (
           <div className="p-8">
-            {/* Close button */}
-            <button
-              onClick={handleClose}
-              className="absolute top-4 right-4 text-[#94A3B8] hover:text-[#0F172A] transition-colors"
-              aria-label="Close"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
             {/* Title */}
             <h2 className="text-2xl font-bold text-[#0F172A] mb-2">Get a Custom Quote</h2>
             <p className="text-[#64748B] text-sm mb-8">
@@ -165,7 +168,7 @@ function CustomQuoteModal({ isOpen, onClose, defaultEmployees }: { isOpen: boole
               </div>
 
               {/* Number of Employees + Work Email */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="quote-employees" className="text-[#0F172A] font-bold text-sm mb-2 block">
                     Number of Employees
@@ -258,6 +261,26 @@ export default function Pricing() {
   const [licenses, setLicenses] = useState(2);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
+  const summaryRef = useRef<HTMLDivElement>(null);
+  const [summaryFitsViewport, setSummaryFitsViewport] = useState(true);
+
+  useEffect(() => {
+    const summary = summaryRef.current;
+    if (!summary) return;
+    const measure = () => {
+      const inset = parseFloat(getComputedStyle(summary).top) || 0;
+      // Tall plan states scroll naturally instead of trapping a CTA below the viewport.
+      setSummaryFitsViewport(summary.offsetHeight <= window.innerHeight - inset - 16);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(summary);
+    window.addEventListener("resize", measure);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
 
   /* Derived pricing: same logic for B2C (1 license) and B2B (N licenses) */
   const calculated = useMemo(() => {
@@ -379,7 +402,12 @@ export default function Pricing() {
       </section>
 
       {/* ─── Main Layout: Configurator + Summary ─── */}
-      <section className="max-w-[1200px] mx-auto px-6 pb-24">
+      <section className="pricing-layout max-w-[1200px] mx-auto px-6 pb-24">
+        <style>{`
+          .pricing-layout { --pricing-fixed-header-height: 93px; }
+          @media (max-width: 1279px) { .pricing-layout { --pricing-fixed-header-height: 78px; } }
+          @media (max-width: 740px) { .pricing-layout { --pricing-fixed-header-height: 74px; } }
+        `}</style>
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-10 items-start">
 
           {/* ─── LEFT: Configurator ─── */}
@@ -482,7 +510,7 @@ export default function Pricing() {
           </div>
 
           {/* ─── RIGHT: Sticky Summary ─── */}
-          <div className="lg:sticky lg:top-10">
+          <div ref={summaryRef} className={cn("lg:top-[calc(var(--public-fixed-header-height,var(--pricing-fixed-header-height))+16px)]", summaryFitsViewport && "lg:sticky")}>
             <div className="bg-white rounded-3xl p-8 shadow-[0_20px_40px_rgba(0,0,0,0.08)] border border-black/5">
               {/* Header */}
               <div className="flex justify-between items-center text-xs uppercase tracking-widest font-extrabold text-[#2E7D6F] mb-6">

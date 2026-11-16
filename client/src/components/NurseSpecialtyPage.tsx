@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowRight,
@@ -150,7 +151,7 @@ export default function NurseSpecialtyPage({
 
             <div className="relative mx-auto w-full max-w-2xl">
               <div className="absolute -inset-5 rounded-[2.5rem] bg-gradient-to-br from-[#0b6848]/15 to-[#007bc2]/15 blur-2xl" />
-              <img
+              <PerformanceImage
                 src={heroImage}
                 alt={heroAlt}
                 className="relative aspect-[4/3] w-full rounded-[2rem] object-cover shadow-2xl shadow-[#0b2f4f]/15"

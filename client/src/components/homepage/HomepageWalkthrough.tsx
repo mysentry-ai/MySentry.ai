@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   Activity,
@@ -171,7 +172,7 @@ export default function HomepageWalkthrough() {
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.28, delay: index * 0.06 }}
           >
-            <img
+            <PerformanceImage
               src={scenarios[key].image}
               alt={scenarios[key].alt}
               loading="eager"

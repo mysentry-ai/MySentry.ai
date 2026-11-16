@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { useLayoutEffect, useState } from "react";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
@@ -62,7 +63,7 @@ export default function Download() {
                     if (platform === "other" && event.button === 1) trackDownloadStoreClick(option.key);
                   }}
                 >
-                  <img src={option.image} alt="" width="154" height="46" />
+                  <PerformanceImage src={option.image} alt="" width="154" height="46" />
                   <span className="download-link">{option.label}<span aria-hidden="true">↗</span></span>
                 </a>
               </div>

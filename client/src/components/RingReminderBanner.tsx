@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -32,7 +33,7 @@ export default function RingReminderBanner() {
                 transition={{ duration: 0.5 }}
                 className="mb-6"
               >
-                <img
+                <PerformanceImage
                   src="/images/cdn/tBeRfeegjUlLnzcw.png"
                   alt="Ring and MySentry logos"
                   className="h-[70px] w-auto"

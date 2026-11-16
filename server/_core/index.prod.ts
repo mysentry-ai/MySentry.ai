@@ -14,6 +14,7 @@ import { createContext } from "./context";
 import { serveStatic } from "./serve-static";
 import { registerSitemapRoutes } from "../sitemaps";
 import { registerStorageProxy } from "./storageProxy";
+import { registerPerformanceArtwork } from "../performanceArtwork";
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -54,6 +55,7 @@ async function startServer() {
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
   // Durable project storage must resolve before auth and static fallbacks.
+  registerPerformanceArtwork(app);
   registerStorageProxy(app);
   // OAuth callback under /api/oauth/callback
   registerOAuthRoutes(app);

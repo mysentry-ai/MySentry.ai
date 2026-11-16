@@ -82,6 +82,6 @@ export const DOWNLOAD_PAGE_CSS = `
 .smart-download .download-primary{display:inline-flex;align-items:center;gap:12px;padding:13px 22px;border-radius:999px;background:#004f7b;color:#fff!important;font-size:15px;font-weight:600;text-decoration:none}
 .smart-download .download-note{font-size:14px;line-height:1.65;color:#37586a;margin:28px 0 0;max-width:720px}
 @media(max-width:1279px){.smart-download{--download-header-space:78px}}
-@media(max-width:640px){.smart-download{--download-header-space:74px}}
+@media(max-width:740px){.smart-download{--download-header-space:74px}}
 @media(max-width:760px){.smart-download{padding:calc(var(--download-header-space) + 32px) 20px 56px}.smart-download .download-grid{grid-template-columns:1fr;gap:16px}.smart-download .download-intro{font-size:16px;margin-bottom:28px}.smart-download .download-card{padding:24px}.smart-download .download-store{gap:18px}.smart-download .download-store img{height:42px}.smart-download .download-fallback{padding:18px}.smart-download h1{max-width:560px}}
 `;

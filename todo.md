@@ -93,3 +93,14 @@
 - [x] Repair employer hero demo action and preserve tracking; add keyboard access to existing pricing selection cards.
 - [x] Pass TypeScript, 183 serial tests, production build, preservation/diff checks, 20 runtime action checks, and eight captured checkout combinations.
 - [x] Preserve private admin, print behavior, held/noindex governance, legal copy, citations, original assets, SEO source, and all infrastructure/database configuration. Staging only; GitHub push and deployment require owner approval.
+
+## Whole-site Performance Repair, 16 November 2026
+- [x] Complete the unchanged 203-URL, six-width baseline before implementation; preserve live Google PageSpeed mobile and desktop results separately from local Lighthouse results.
+- [x] Split public route startup, generate exact shared shell fragments, isolate optional chatbot loading, and preload only the selected public route.
+- [x] Package 334 checksum-verified image originals/variants with responsive same-origin delivery, reserved dimensions, preserved mockup pixels/transparency/profiles, and exact missing-original recovery. No database URL migration.
+- [x] Stabilize homepage geometry and idle work; fix tablet carousel expansion/margins, sticky pricing, and short-screen quote dialog containment without redesigning content or animations.
+- [x] Bound public blog transport/resolver fallbacks and prevent recursive managed relay; preserve publication precedence, exact PR words, holds, noindex and all mutation transports.
+- [x] Restore three feature CTA aliases to existing canonical pages without changing protected homepage labels or markup.
+- [x] Pass TypeScript, 314/314 serial tests, the portable production build and diff checks; repeat 1,218 route/viewport checks with zero horizontal overflow and verify 153 discovered image URLs return HTTP 200.
+- [x] Record actual local score changes: homepage mobile 47 to 84, homepage desktop 78 to 100, features mobile 44 to 60, families mobile 41 to 59, blogs desktop 84 to 96. Keep field INP unavailable and acknowledge remaining constrained-mobile LCP/TBT limits.
+- [x] Keep Docker, .dockerignore, environment, database, AWS, DNS and production untouched. GitHub push and deployment require separate owner approval.

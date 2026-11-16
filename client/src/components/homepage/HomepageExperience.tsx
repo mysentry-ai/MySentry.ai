@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import {
   ArrowRight,
@@ -54,7 +55,7 @@ function StoreBadges({
         onClick={trackLeadEvent}
         aria-label="Download MySentry on the App Store"
       >
-        <img
+        <PerformanceImage
           loading="eager"
           src={HOMEPAGE_ASSETS.appStoreBadge}
           alt="Download on the App Store"
@@ -68,7 +69,7 @@ function StoreBadges({
         onClick={trackLeadEvent}
         aria-label="Get MySentry on Google Play"
       >
-        <img
+        <PerformanceImage
           loading="eager"
           src={HOMEPAGE_ASSETS.googlePlayBadge}
           alt="Get it on Google Play"
@@ -84,7 +85,7 @@ function StoreBadges({
           onClick={trackLeadEvent}
           aria-label="Explore MySentry in the Ring Appstore"
         >
-          <img
+          <PerformanceImage
             loading="eager"
             src={HOMEPAGE_ASSETS.ringBadge}
             alt="Available in the Ring Appstore"
@@ -105,7 +106,7 @@ function RingBadge() {
       onClick={trackLeadEvent}
       aria-label="Explore MySentry in the Ring Appstore"
     >
-      <img
+      <PerformanceImage
         loading="eager"
         src={HOMEPAGE_ASSETS.ringBadge}
         alt="Available in the Ring Appstore"
@@ -166,7 +167,7 @@ export default function HomepageExperience() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.08, ease: "easeOut" }}
               >
-                <img
+                <PerformanceImage
                   className="hp-hero-device hp-device--hero"
                   src={HOMEPAGE_ASSETS.allInOne}
                   alt="Actual MySentry app mockups showing Panic Alarm, MeetSafe, family connectivity and smartwatch support"
@@ -226,7 +227,7 @@ export default function HomepageExperience() {
                 </article>
               </div>
               <div className="hp-stage-visual hp-mockup-inline">
-                <img
+                <PerformanceImage
                   src={HOMEPAGE_ASSETS.emergencyContacts}
                   alt="Person holding MySentry with a map and emergency contact context visible"
                   loading="eager"
@@ -235,7 +236,7 @@ export default function HomepageExperience() {
               </div>
               <div className="hp-app-details">
                 <div className="hp-app-detail">
-                  <img
+                  <PerformanceImage
                     src={HOMEPAGE_ASSETS.meetSafe}
                     alt="Supplied MySentry MeetSafe app screens for safe meetings"
                     width={649}
@@ -252,7 +253,7 @@ export default function HomepageExperience() {
                   </Link>
                 </div>
                 <div className="hp-app-detail">
-                  <img
+                  <PerformanceImage
                     src={HOMEPAGE_ASSETS.safetyCheck}
                     alt="Supplied MySentry safety check alert and contact notification screens"
                     width={704}
@@ -313,7 +314,7 @@ export default function HomepageExperience() {
                     onClick={() => setVideoOpen(true)}
                     aria-label="Load the MySentry YouTube explainer"
                   >
-                    <img
+                    <PerformanceImage
                       src="https://i.ytimg.com/vi/7eT5sQQgsm8/hqdefault.jpg"
                       alt="MySentry explainer video thumbnail"
                       width={480}
@@ -353,7 +354,7 @@ export default function HomepageExperience() {
                     transition={{ duration: 0.18, delay: index * 0.06 }}
                   >
                     <Link className="hp-audience-card" href={audience.href}>
-                      <img
+                      <PerformanceImage
                         src={audience.image}
                         alt={audience.alt}
                         loading="eager"
@@ -482,7 +483,7 @@ export default function HomepageExperience() {
                 </p>
               </div>
               <div className="hp-ring-art hp-mockup-plain">
-                <img
+                <PerformanceImage
                   className="hp-ring-device"
                   width={2628}
                   height={1755}
@@ -518,7 +519,7 @@ export default function HomepageExperience() {
                 </p>
               </div>
               <div className="hp-watch-visual hp-mockup-plain">
-                <img
+                <PerformanceImage
                   src={HOMEPAGE_ASSETS.watchPanic}
                   width={202}
                   height={341}
@@ -629,7 +630,7 @@ export default function HomepageExperience() {
                   <StoreBadges includeRing={false} />
                 </div>
                 <div className="hp-final-phone hp-mockup-plain">
-                  <img
+                  <PerformanceImage
                     src={HOMEPAGE_ASSETS.heroSenior}
                     alt="Older adult holding the MySentry app with personal safety alert context"
                     width={1018}
@@ -686,7 +687,7 @@ export default function HomepageExperience() {
           <div className="hp-shell">
             <div className="hp-footer-grid">
               <div className="hp-footer-brand">
-                <img src="/images/logo.png" alt="MySentry" />
+                <PerformanceImage src="/images/logo.png" alt="MySentry" />
                 <p>Never face an emergency alone.</p>
                 <StoreBadges compact includeRing={false} />
               </div>

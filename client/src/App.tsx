@@ -1,138 +1,290 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
-import { useEffect } from "react";
+import { lazy, Suspense, useEffect, type ComponentType } from "react";
+import Layout from "./components/Layout";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ScrollToTop from "./components/ScrollToTop";
 import Home from "./pages/Home";
-import Download from "./pages/Download";
-import Seniors from "./pages/Seniors";
-import Families from "./pages/Families";
-import Employers from "./pages/Employers";
-import Pricing from "./pages/Pricing";
-import PricingLegacy from "./pages/PricingLegacy";
-import HowItWorks from "./pages/HowItWorks";
-import Females from "./pages/Females";
-import Nurses from "./pages/Nurses";
-import TravelNurses from "./pages/nurses/TravelNurses";
-import HomeHealthNurses from "./pages/nurses/HomeHealthNurses";
-import ErTraumaNurses from "./pages/nurses/ErTraumaNurses";
-import NightShiftNurses from "./pages/nurses/NightShiftNurses";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Team from "./pages/Team";
-import Blogs from "./pages/Blogs";
-import BlogPost from "./pages/BlogPost";
-import Privacy from "./pages/Privacy";
-import AccountDeletion from "./pages/AccountDeletion";
-import Partners from "./pages/Partners";
-import Terms from "./pages/Terms";
-import SmsConsent from "./pages/SmsConsent";
+// A page owns its existing Layout/Navbar/Footer. The fallback replaces that page,
+// rather than wrapping it, so the approved public shell is rendered exactly once.
+function PublicRouteFallback() {
+  return (
+    <Layout>
+      <section
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+        className="container flex min-h-[55vh] flex-col justify-center pb-16 pt-48"
+      >
+        <h1 className="text-2xl font-semibold">Loading MySentry...</h1>
+        <p className="mt-3">Your page will be ready shortly.</p>
+      </section>
+    </Layout>
+  );
+}
 
-// SEO Pages - Features
-import FeaturesHub from "./pages/features/FeaturesHub";
-import PanicButtonApp from "./pages/features/PanicButtonApp";
-import FallDetectionApp from "./pages/features/FallDetectionApp";
-import CrashDetection from "./pages/features/CrashDetection";
-import ProfessionalMonitoring from "./pages/features/ProfessionalMonitoring";
-import EmergencyContacts from "./pages/features/EmergencyContacts";
-import LiveVideoResponse from "./pages/features/LiveVideoResponse";
-import HealthMonitoring from "./pages/features/HealthMonitoring";
-import MeetSafeCheckIns from "./pages/features/MeetSafeCheckIns";
-import SafetyCheckInApp from "./pages/features/SafetyCheckInApp";
-import FamilyConnectivity from "./pages/features/FamilyConnectivity";
-import AutomatedCall from "./pages/features/AutomatedCall";
-import SecureRoute from "./pages/features/SecureRoute";
+function lazyPublicPage(load: () => Promise<{ default: ComponentType }>) {
+  const Page = lazy(load);
+  return function LazyPublicPage() {
+    return (
+      <Suspense fallback={<PublicRouteFallback />}>
+        <Page />
+      </Suspense>
+    );
+  };
+}
 
-// SEO Pages - Use Cases
-import UseCasesHub from "./pages/UseCasesHub";
-import SafetyAppForWomen from "./pages/use-cases/SafetyAppForWomen";
-import FamilySafetyApp from "./pages/use-cases/FamilySafetyApp";
-import MedicalAlertForSeniors from "./pages/use-cases/MedicalAlertForSeniors";
-import LoneWorkerSafetyApp from "./pages/use-cases/LoneWorkerSafetyApp";
-import HomeHealthcareWorkerSafety from "./pages/use-cases/HomeHealthcareWorkerSafety";
-import TeenDriverSafety from "./pages/use-cases/TeenDriverSafety";
+function AdminRouteFallback() {
+  return (
+    <div
+      className="min-h-screen bg-white flex items-center justify-center"
+      role="status"
+      aria-live="polite"
+      aria-busy="true"
+    >
+      <div className="flex flex-col items-center gap-3">
+        <div
+          className="w-10 h-10 border-3 border-[#6AD990] border-t-transparent rounded-full animate-spin"
+          aria-hidden="true"
+        />
+        <span className="text-sm text-[#5C5C5C]">Loading...</span>
+      </div>
+    </div>
+  );
+}
 
-// SEO Pages - Industries
-import IndustriesHub from "./pages/IndustriesHub";
-import HomeHealthcare from "./pages/industries/HomeHealthcare";
-import Construction from "./pages/industries/Construction";
-import Retail from "./pages/industries/Retail";
-import Hospitality from "./pages/industries/Hospitality";
-import RealEstate from "./pages/industries/RealEstate";
-import Education from "./pages/industries/Education";
-import SecurityGuarding from "./pages/industries/SecurityGuarding";
+// Signal a paint opportunity after React has committed real UI (including a
+// nonblank route fallback). The chatbot listens independently in index.html.
+function FirstAppPaint() {
+  useEffect(() => {
+    let secondFrame = 0;
+    const firstFrame = window.requestAnimationFrame(() => {
+      secondFrame = window.requestAnimationFrame(() => {
+        document.documentElement.dataset.mysentryAppPainted = "true";
+        window.dispatchEvent(new Event("mysentry:app-painted"));
+      });
+    });
+    return () => {
+      window.cancelAnimationFrame(firstFrame);
+      window.cancelAnimationFrame(secondFrame);
+    };
+  }, []);
+  return null;
+}
 
-// SEO Pages - Compare
-import CompareHub from "./pages/CompareHub";
-import NoonlightVsMysentry from "./pages/compare/NoonlightVsMysentry";
-import Life360VsMysentry from "./pages/compare/Life360VsMysentry";
-import FallCallVsMysentry from "./pages/compare/FallCallVsMysentry";
-import GooglePersonalSafetyVsMysentry from "./pages/compare/GooglePersonalSafetyVsMysentry";
-import SOSecureAdtVsMysentry from "./pages/compare/SOSecureAdtVsMysentry";
-import MedicalAlertDevicesVsMysentry from "./pages/compare/MedicalAlertDevicesVsMysentry";
-import OuraRingVsMysentry from "./pages/compare/OuraRingVsMysentry";
-import WhoopVsMysentry from "./pages/compare/WhoopVsMysentry";
-import MedicalGuardianVsMysentry from "./pages/compare/MedicalGuardianVsMysentry";
-import LivelyVsMysentry from "./pages/compare/LivelyVsMysentry";
-import AppleWatchFallDetectionVsMysentry from "./pages/compare/AppleWatchFallDetectionVsMysentry";
-import SamsungGalaxyWatchVsMysentry from "./pages/compare/SamsungGalaxyWatchVsMysentry";
-import TraditionalMedicalAlertsComparison from "./pages/compare/TraditionalMedicalAlertsComparison";
-import FitnessWearablesComparison from "./pages/compare/FitnessWearablesComparison";
+// Keep Home eager: it performs the existing full-document root handoff without
+// waiting for a chunk or changing the server-owned homepage/redirect behavior.
 
-// New SEO Pages - Audience & Pillar
-import PersonalSafetyApp from "./pages/PersonalSafetyApp";
-import WhoWeProtectSeniors from "./pages/who-we-protect/Seniors";
-import WhoWeProtectWomen from "./pages/who-we-protect/Women";
-import WhoWeProtectEmployers from "./pages/who-we-protect/Employers";
-import WhoWeProtectDrivers from "./pages/who-we-protect/Drivers";
-import WhoWeProtectStudents from "./pages/who-we-protect/Students";
-import WhoWeProtectChildrenAndTeens from "./pages/who-we-protect/ChildrenAndTeens";
-
-// Phase 2 - Solutions (Vertical-Specific BOFU)
-import DeliveryDriversSolution from "./pages/solutions/DeliveryDriversSolution";
-import RetailWorkersSolution from "./pages/solutions/RetailWorkersSolution";
-
-// Phase 2 - Safety For (Audience-Specific BOFU)
-import WomenLivingAlone from "./pages/safety-for/WomenLivingAlone";
-import SeniorsAgingInPlace from "./pages/safety-for/SeniorsAgingInPlace";
-import SoloTravelers from "./pages/safety-for/SoloTravelers";
-
-// Phase 2 - Case Studies (B2B Sales Enablement)
-import HomeHealthcareCaseStudy from "./pages/case-studies/HomeHealthcareCaseStudy";
-import RealEstateCaseStudy from "./pages/case-studies/RealEstateCaseStudy";
-import FieldServicesCaseStudy from "./pages/case-studies/FieldServicesCaseStudy";
-
-// Phase 2 - Resources
-import EmployerOnePager from "./pages/resources/EmployerOnePager";
-
-// Phase 2 - Integrations (Wearable Pages)
-import AppleWatchIntegration from "./pages/integrations/AppleWatchIntegration";
-import SamsungGalaxyWatchIntegration from "./pages/integrations/SamsungGalaxyWatchIntegration";
-import OuraRingIntegration from "./pages/integrations/OuraRingIntegration";
-import RingIntegration from "./pages/integrations/RingIntegration";
-
-// Ring Landing Page
-import RingLandingPage from "./pages/RingLandingPage";
-
-// Phase 2 - Guides (Authority Content)
-import LoneWorkerSafetyGuide from "./pages/guides/LoneWorkerSafetyGuide";
-import ProfessionalMonitoringGuide from "./pages/guides/ProfessionalMonitoringGuide";
-import SeniorSafetyPlanningGuide from "./pages/guides/SeniorSafetyPlanningGuide";
-import {
-  AgingInPlaceChecklistPage,
-  FamilySafetyWithoutTrackingPage,
-  NightShiftNurseChecklistPage,
-  PeopleLivingAlonePage,
-  RenterSafetyPage,
-  UtilityWorkersPage,
-  WearableFallLimitationsPage,
-} from "./pages/growth/OrganicGrowthPages";
-
-// Admin
-import AdminLayout from "./pages/admin/AdminLayout";
+const NotFound = lazyPublicPage(() => import("./pages/NotFound"));
+const Download = lazyPublicPage(() => import("./pages/Download"));
+const Seniors = lazyPublicPage(() => import("./pages/Seniors"));
+const Families = lazyPublicPage(() => import("./pages/Families"));
+const Employers = lazyPublicPage(() => import("./pages/Employers"));
+const Pricing = lazyPublicPage(() => import("./pages/Pricing"));
+const PricingLegacy = lazyPublicPage(() => import("./pages/PricingLegacy"));
+const HowItWorks = lazyPublicPage(() => import("./pages/HowItWorks"));
+const Females = lazyPublicPage(() => import("./pages/Females"));
+const Nurses = lazyPublicPage(() => import("./pages/Nurses"));
+const TravelNurses = lazyPublicPage(
+  () => import("./pages/nurses/TravelNurses")
+);
+const HomeHealthNurses = lazyPublicPage(
+  () => import("./pages/nurses/HomeHealthNurses")
+);
+const ErTraumaNurses = lazyPublicPage(
+  () => import("./pages/nurses/ErTraumaNurses")
+);
+const NightShiftNurses = lazyPublicPage(
+  () => import("./pages/nurses/NightShiftNurses")
+);
+const About = lazyPublicPage(() => import("./pages/About"));
+const Contact = lazyPublicPage(() => import("./pages/Contact"));
+const Team = lazyPublicPage(() => import("./pages/Team"));
+const Blogs = lazyPublicPage(() => import("./pages/Blogs"));
+const BlogPost = lazyPublicPage(() => import("./pages/BlogPost"));
+const Privacy = lazyPublicPage(() => import("./pages/Privacy"));
+const AccountDeletion = lazyPublicPage(() => import("./pages/AccountDeletion"));
+const Partners = lazyPublicPage(() => import("./pages/Partners"));
+const Terms = lazyPublicPage(() => import("./pages/Terms"));
+const SmsConsent = lazyPublicPage(() => import("./pages/SmsConsent"));
+const FeaturesHub = lazyPublicPage(
+  () => import("./pages/features/FeaturesHub")
+);
+const PanicButtonApp = lazyPublicPage(
+  () => import("./pages/features/PanicButtonApp")
+);
+const FallDetectionApp = lazyPublicPage(
+  () => import("./pages/features/FallDetectionApp")
+);
+const CrashDetection = lazyPublicPage(
+  () => import("./pages/features/CrashDetection")
+);
+const ProfessionalMonitoring = lazyPublicPage(
+  () => import("./pages/features/ProfessionalMonitoring")
+);
+const EmergencyContacts = lazyPublicPage(
+  () => import("./pages/features/EmergencyContacts")
+);
+const LiveVideoResponse = lazyPublicPage(
+  () => import("./pages/features/LiveVideoResponse")
+);
+const HealthMonitoring = lazyPublicPage(
+  () => import("./pages/features/HealthMonitoring")
+);
+const SafetyCheckInApp = lazyPublicPage(
+  () => import("./pages/features/SafetyCheckInApp")
+);
+const FamilyConnectivity = lazyPublicPage(
+  () => import("./pages/features/FamilyConnectivity")
+);
+const AutomatedCall = lazyPublicPage(
+  () => import("./pages/features/AutomatedCall")
+);
+const SecureRoute = lazyPublicPage(
+  () => import("./pages/features/SecureRoute")
+);
+const UseCasesHub = lazyPublicPage(() => import("./pages/UseCasesHub"));
+const SafetyAppForWomen = lazyPublicPage(
+  () => import("./pages/use-cases/SafetyAppForWomen")
+);
+const FamilySafetyApp = lazyPublicPage(
+  () => import("./pages/use-cases/FamilySafetyApp")
+);
+const MedicalAlertForSeniors = lazyPublicPage(
+  () => import("./pages/use-cases/MedicalAlertForSeniors")
+);
+const LoneWorkerSafetyApp = lazyPublicPage(
+  () => import("./pages/use-cases/LoneWorkerSafetyApp")
+);
+const TeenDriverSafety = lazyPublicPage(
+  () => import("./pages/use-cases/TeenDriverSafety")
+);
+const IndustriesHub = lazyPublicPage(() => import("./pages/IndustriesHub"));
+const HomeHealthcare = lazyPublicPage(
+  () => import("./pages/industries/HomeHealthcare")
+);
+const Construction = lazyPublicPage(
+  () => import("./pages/industries/Construction")
+);
+const Retail = lazyPublicPage(() => import("./pages/industries/Retail"));
+const Hospitality = lazyPublicPage(
+  () => import("./pages/industries/Hospitality")
+);
+const RealEstate = lazyPublicPage(
+  () => import("./pages/industries/RealEstate")
+);
+const Education = lazyPublicPage(() => import("./pages/industries/Education"));
+const SecurityGuarding = lazyPublicPage(
+  () => import("./pages/industries/SecurityGuarding")
+);
+const CompareHub = lazyPublicPage(() => import("./pages/CompareHub"));
+const NoonlightVsMysentry = lazyPublicPage(
+  () => import("./pages/compare/NoonlightVsMysentry")
+);
+const Life360VsMysentry = lazyPublicPage(
+  () => import("./pages/compare/Life360VsMysentry")
+);
+const FallCallVsMysentry = lazyPublicPage(
+  () => import("./pages/compare/FallCallVsMysentry")
+);
+const GooglePersonalSafetyVsMysentry = lazyPublicPage(
+  () => import("./pages/compare/GooglePersonalSafetyVsMysentry")
+);
+const SOSecureAdtVsMysentry = lazyPublicPage(
+  () => import("./pages/compare/SOSecureAdtVsMysentry")
+);
+const MedicalAlertDevicesVsMysentry = lazyPublicPage(
+  () => import("./pages/compare/MedicalAlertDevicesVsMysentry")
+);
+const AppleWatchFallDetectionVsMysentry = lazyPublicPage(
+  () => import("./pages/compare/AppleWatchFallDetectionVsMysentry")
+);
+const SamsungGalaxyWatchVsMysentry = lazyPublicPage(
+  () => import("./pages/compare/SamsungGalaxyWatchVsMysentry")
+);
+const TraditionalMedicalAlertsComparison = lazyPublicPage(
+  () => import("./pages/compare/TraditionalMedicalAlertsComparison")
+);
+const FitnessWearablesComparison = lazyPublicPage(
+  () => import("./pages/compare/FitnessWearablesComparison")
+);
+const PersonalSafetyApp = lazyPublicPage(
+  () => import("./pages/PersonalSafetyApp")
+);
+const DeliveryDriversSolution = lazyPublicPage(
+  () => import("./pages/solutions/DeliveryDriversSolution")
+);
+const SoloTravelers = lazyPublicPage(
+  () => import("./pages/safety-for/SoloTravelers")
+);
+const HomeHealthcareCaseStudy = lazyPublicPage(
+  () => import("./pages/case-studies/HomeHealthcareCaseStudy")
+);
+const RealEstateCaseStudy = lazyPublicPage(
+  () => import("./pages/case-studies/RealEstateCaseStudy")
+);
+const FieldServicesCaseStudy = lazyPublicPage(
+  () => import("./pages/case-studies/FieldServicesCaseStudy")
+);
+const EmployerOnePager = lazyPublicPage(
+  () => import("./pages/resources/EmployerOnePager")
+);
+const AppleWatchIntegration = lazyPublicPage(
+  () => import("./pages/integrations/AppleWatchIntegration")
+);
+const SamsungGalaxyWatchIntegration = lazyPublicPage(
+  () => import("./pages/integrations/SamsungGalaxyWatchIntegration")
+);
+const OuraRingIntegration = lazyPublicPage(
+  () => import("./pages/integrations/OuraRingIntegration")
+);
+const RingIntegration = lazyPublicPage(
+  () => import("./pages/integrations/RingIntegration")
+);
+const LoneWorkerSafetyGuide = lazyPublicPage(
+  () => import("./pages/guides/LoneWorkerSafetyGuide")
+);
+const SeniorSafetyPlanningGuide = lazyPublicPage(
+  () => import("./pages/guides/SeniorSafetyPlanningGuide")
+);
+const AdminLayout = lazy(() => import("./pages/admin/AdminLayout"));
+const AgingInPlaceChecklistPage = lazyPublicPage(() =>
+  import("./pages/growth/OrganicGrowthPages").then(module => ({
+    default: module.AgingInPlaceChecklistPage,
+  }))
+);
+const FamilySafetyWithoutTrackingPage = lazyPublicPage(() =>
+  import("./pages/growth/OrganicGrowthPages").then(module => ({
+    default: module.FamilySafetyWithoutTrackingPage,
+  }))
+);
+const NightShiftNurseChecklistPage = lazyPublicPage(() =>
+  import("./pages/growth/OrganicGrowthPages").then(module => ({
+    default: module.NightShiftNurseChecklistPage,
+  }))
+);
+const PeopleLivingAlonePage = lazyPublicPage(() =>
+  import("./pages/growth/OrganicGrowthPages").then(module => ({
+    default: module.PeopleLivingAlonePage,
+  }))
+);
+const RenterSafetyPage = lazyPublicPage(() =>
+  import("./pages/growth/OrganicGrowthPages").then(module => ({
+    default: module.RenterSafetyPage,
+  }))
+);
+const UtilityWorkersPage = lazyPublicPage(() =>
+  import("./pages/growth/OrganicGrowthPages").then(module => ({
+    default: module.UtilityWorkersPage,
+  }))
+);
+const WearableFallLimitationsPage = lazyPublicPage(() =>
+  import("./pages/growth/OrganicGrowthPages").then(module => ({
+    default: module.WearableFallLimitationsPage,
+  }))
+);
 
 function RedirectRoute({ to }: { to: string }) {
   useEffect(() => {
@@ -180,7 +332,10 @@ function Router() {
       {/* SEO Pages - Features */}
       <Route path="/features" component={FeaturesHub} />
       <Route path="/features/panic-button-app" component={PanicButtonApp} />
+      <Route path="/features/panic-alarm">{() => <RedirectRoute to="/features/panic-button-app" />}</Route>
       <Route path="/features/fall-detection-app" component={FallDetectionApp} />
+      <Route path="/features/fall-detection">{() => <RedirectRoute to="/features/fall-detection-app" />}</Route>
+      <Route path="/features/safety-check">{() => <RedirectRoute to="/features/safety-check-in-app" />}</Route>
       <Route path="/features/crash-detection" component={CrashDetection} />
       <Route path="/features/24-7-professional-monitoring" component={ProfessionalMonitoring} />
       <Route path="/features/emergency-contacts" component={EmergencyContacts} />
@@ -281,10 +436,12 @@ function Router() {
 
       {/* Admin Blog CMS */}
       <Route path="/admin">
-        {() => { window.location.replace("/admin/blog"); return null; }}
+        {() => <RedirectRoute to="/admin/blog" />}
       </Route>
       <Route path="/admin/blog" nest>
-        <AdminLayout />
+        <Suspense fallback={<AdminRouteFallback />}>
+          <AdminLayout />
+        </Suspense>
       </Route>
 
       <Route path="/404" component={NotFound} />
@@ -302,6 +459,7 @@ function App() {
           <ScrollToTop />
           <Toaster />
           <Router />
+          <FirstAppPaint />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

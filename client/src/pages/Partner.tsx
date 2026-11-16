@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -324,7 +325,7 @@ export const Partner = () => {
               className="relative"
             >
               <div className="absolute inset-0 bg-[#4ADE80] rounded-3xl blur-3xl opacity-20" />
-              <img 
+              <PerformanceImage
                 src="/images/cdn/UoakOftbovNQJNav.jpg" 
                 alt="Dealer Dashboard Interface" 
                 className="relative rounded-3xl shadow-2xl border border-white/10"

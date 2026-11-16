@@ -78,7 +78,7 @@ describe("managed public blog runtime fallback", () => {
       expect.stringContaining(
         "https://mysentry-5pk35fzr.manus.space/api/trpc/blog.public.getBySlug?batch=1",
       ),
-      expect.objectContaining({ headers: { Accept: "application/json" } }),
+      expect.objectContaining({ headers: { Accept: "application/json", "x-mysentry-public-relay": "1" } }),
     );
   });
 

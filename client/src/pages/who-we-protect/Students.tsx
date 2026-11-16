@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import GetStartedSection from "@/components/GetStartedSection";
@@ -123,7 +124,7 @@ export default function Students() {
               </div>
             </div>
             <div className="hidden lg:block">
-              <img
+              <PerformanceImage
                 src="/images/cdn/hero-students-AhMp9iSA4mHvg8MTyQsypF.webp"
                 alt="College students walking confidently across campus with smartphones"
                 className="rounded-3xl shadow-2xl w-full object-cover"

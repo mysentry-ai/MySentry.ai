@@ -1,3 +1,5 @@
+import { optimizePublicImageHtml } from "@shared/performance-image-html";
+import PerformanceImage from "@/components/PerformanceImage";
 import { useEffect, useMemo } from 'react';
 import { useRoute, useLocation } from 'wouter';
 import { trpc } from '@/lib/trpc';
@@ -21,15 +23,18 @@ const BlogPost = () => {
   // Fetch from database
   const postQuery = trpc.blog.public.getBySlug.useQuery(
     { slug },
-    { enabled: !!slug }
+    { enabled: !!slug && !isEditorialHold, retry: false, staleTime: 30_000 }
   );
 
-  const apiPost = postQuery.data?.post;
-  const fallbackPost = !postQuery.isLoading && !apiPost ? getFallbackBlogPostBySlug(slug) : null;
-  const post = apiPost || fallbackPost;
-  const useFallbackPost = !apiPost && !!fallbackPost;
   const isRedirect = postQuery.data?.redirect;
   const newSlug = postQuery.data?.newSlug;
+  const apiPost = isRedirect ? null : postQuery.data?.post;
+  const availabilityError = postQuery.isError && /network|fetch|timeout|timed out|deadline|aborted|connection|database not available/i.test(postQuery.error.message);
+  const fallbackPost = !isEditorialHold && !isRedirect && !postQuery.isLoading && !apiPost &&
+    (!postQuery.isError || availabilityError) ? getFallbackBlogPostBySlug(slug) : null;
+  const post = apiPost || fallbackPost;
+  const useFallbackPost = (!apiPost && !!fallbackPost) ||
+    (!!apiPost && apiPost.id === getFallbackBlogPostBySlug(slug)?.id);
 
   // Handle redirect
   useEffect(() => {
@@ -46,17 +51,21 @@ const BlogPost = () => {
       tags: Array.isArray(post?.tags) ? (post.tags as string[]) : null,
       limit: 4,
     },
-    { enabled: !!post?.categoryId && !!post?.id }
+    { enabled: !!post?.categoryId && !!post?.id && !isEditorialHold && !isRedirect && !isExactRingPressRelease && !useFallbackPost, retry: false, staleTime: 30_000 }
   );
   const relatedPosts = useFallbackPost
     ? getFallbackRelatedPosts(post?.categoryId ?? 0, post?.id ?? 0)
     : relatedQuery.data || [];
 
   // Fetch categories for name lookup
-  const categoriesQuery = trpc.blog.public.categories.useQuery();
+  const categoriesQuery = trpc.blog.public.categories.useQuery(undefined, {
+    enabled: !!post && !isEditorialHold && !isRedirect && !isExactRingPressRelease && !useFallbackPost,
+    retry: false,
+    staleTime: 60_000,
+  });
   const categoryMap = useMemo(() => {
     const map: Record<number, string> = {};
-    (useFallbackPost ? fallbackBlogCategories : categoriesQuery.data || []).forEach(c => { map[c.id] = c.name; });
+    (categoriesQuery.data?.length ? categoriesQuery.data : fallbackBlogCategories).forEach(c => { map[c.id] = c.name; });
     return map;
   }, [categoriesQuery.data, useFallbackPost]);
 
@@ -72,7 +81,7 @@ const BlogPost = () => {
   };
 
   // Loading state
-  if (postQuery.isLoading) {
+  if (!isEditorialHold && (postQuery.isLoading || isRedirect)) {
     return (
       <div className="min-h-screen bg-[#fcfbf9]">
         <Navbar />
@@ -118,6 +127,20 @@ const BlogPost = () => {
               </Link>
             </div>
           </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (postQuery.isError && !post) {
+    return (
+      <div className="min-h-screen bg-[#fcfbf9]">
+        <Navbar />
+        <main role="alert" className="text-center pt-40 pb-20">
+          <h1 className="text-4xl font-medium text-gray-900 mb-4">Article could not be loaded</h1>
+          <button onClick={() => postQuery.refetch()} className="text-[#386758] hover:underline">Try again</button>
+          <div className="mt-4"><Link href="/blogs" className="text-[#386758] hover:underline">Return to Safety &amp; Health Hub</Link></div>
         </main>
         <Footer />
       </div>
@@ -261,7 +284,7 @@ const BlogPost = () => {
       {post.heroImageUrl && (
         <div className="w-full max-w-[1400px] mx-auto px-0 md:px-8 mb-16">
           <div className="relative aspect-[4/3] sm:aspect-[16/9] md:aspect-[2/1] overflow-hidden rounded-none sm:rounded-2xl">
-            <img 
+            <PerformanceImage
               src={normalizeBlogImagePath(post.heroImageUrl)}
               alt={post.heroImageAlt || post.title} 
               className="absolute inset-0 w-full h-full object-cover"
@@ -333,8 +356,8 @@ const BlogPost = () => {
             className="prose prose-lg max-w-none blog-content"
             dangerouslySetInnerHTML={{
               __html: isExactRingPressRelease
-                ? post.contentHtml || ''
-                : canonicalizeBlogContentLinks(post.contentHtml || ''),
+                ? optimizePublicImageHtml(post.contentHtml || '')
+                : optimizePublicImageHtml(canonicalizeBlogContentLinks(post.contentHtml || '')),
             }}
           />
 
@@ -382,7 +405,7 @@ const BlogPost = () => {
                 <Link key={rp.id} href={`/blog/${rp.slug}`}>
                   <div className="group cursor-pointer">
                     <div className="relative overflow-hidden rounded-xl aspect-[3/2] mb-6 bg-gray-100">
-                      <img 
+                      <PerformanceImage
                         src={normalizeBlogImagePath(rp.heroImageUrl) || '/images/cdn/GqszcNTBcTbleCyx.jpg'}
                         alt={rp.heroImageAlt || rp.title} 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

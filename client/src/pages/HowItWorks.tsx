@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -151,7 +152,7 @@ export default function Features() {
               </div>
               <div className="order-2 lg:order-2">
                 <div className="aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
-                  <img 
+                  <PerformanceImage
                     src="/images/cdn/tWbqvldwXwmZtLzQ.jpg" 
                     alt="Supported Smartphones" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -187,7 +188,7 @@ export default function Features() {
               </div>
               <div className="order-2 lg:order-1">
                 <div className="aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-gray-100 relative group">
-                  <img 
+                  <PerformanceImage
                     src="/images/cdn/IElpNKDyEyZQAZJG.jpg" 
                     alt="Supported Smartwatches" 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -315,7 +316,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="relative w-full">
-              <img src="/manus-storage/panic-user-iphone_e6412ed5.png" alt="MySentry app screen with a Panic Alarm control and trusted contact options" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="558" height="1086" />
+              <PerformanceImage src="/manus-storage/panic-user-iphone_e6412ed5.png" alt="MySentry app screen with a Panic Alarm control and trusted contact options" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="558" height="1086" />
             </div>
           </motion.div>
         </div>
@@ -332,7 +333,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/manus-storage/watch-fall-detection_d7e1fea3.png" alt="MySentry smartwatch screen for a supported fall-detection workflow" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="758" height="1279" />
+              <PerformanceImage src="/manus-storage/watch-fall-detection_d7e1fea3.png" alt="MySentry smartwatch screen for a supported fall-detection workflow" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="758" height="1279" />
             </div>
           </motion.div>
           <div>
@@ -396,7 +397,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/manus-storage/watch-fall-detection_d7e1fea3.png" alt="MySentry smartwatch screen for a supported fall-related safety check" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="758" height="1279" />
+              <PerformanceImage src="/manus-storage/watch-fall-detection_d7e1fea3.png" alt="MySentry smartwatch screen for a supported fall-related safety check" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="758" height="1279" />
             </div>
           </motion.div>
         </div>
@@ -413,7 +414,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/images/challenge-senior-crash-800w.jpg" alt="Older adult driving, illustrating travel-safety planning" className="w-full h-auto object-contain max-h-[600px] rounded-3xl shadow-xl" loading="lazy" width="800" height="533" />
+              <PerformanceImage src="/images/challenge-senior-crash-800w.jpg" alt="Older adult driving, illustrating travel-safety planning" className="w-full h-auto object-contain max-h-[600px] rounded-3xl shadow-xl" loading="lazy" width="800" height="533" />
             </div>
           </motion.div>
           <div>
@@ -477,7 +478,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/manus-storage/family-connectivity_e54f4d24.png" alt="MySentry Family Connectivity screen for trusted-contact coordination" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="558" height="1086" />
+              <PerformanceImage src="/manus-storage/family-connectivity_e54f4d24.png" alt="MySentry Family Connectivity screen for trusted-contact coordination" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="558" height="1086" />
             </div>
           </motion.div>
         </div>
@@ -494,7 +495,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/manus-storage/health-vitals-phone-cropped_3c4f6e97.png" alt="MySentry Vitals screen showing a personal baseline and supported wellness signals" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="494" height="960" />
+              <PerformanceImage src="/manus-storage/health-vitals-phone-cropped_3c4f6e97.png" alt="MySentry Vitals screen showing a personal baseline and supported wellness signals" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="494" height="960" />
             </div>
           </motion.div>
           <div>
@@ -552,7 +553,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/manus-storage/panic-contact-iphone_209727c2.png" alt="MySentry active alert screen labeled Live video" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="548" height="1114" />
+              <PerformanceImage src="/manus-storage/panic-contact-iphone_209727c2.png" alt="MySentry active alert screen labeled Live video" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="548" height="1114" />
             </div>
           </motion.div>
         </div>
@@ -569,7 +570,7 @@ export default function Features() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className="w-full">
-              <img src="/manus-storage/meetsafe-iphone_64344647.png" alt="MySentry MeetSafe screen for preparing an upcoming meeting" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="548" height="1081" />
+              <PerformanceImage src="/manus-storage/meetsafe-iphone_64344647.png" alt="MySentry MeetSafe screen for preparing an upcoming meeting" className="w-full h-auto object-contain max-h-[600px]" loading="lazy" width="548" height="1081" />
             </div>
           </motion.div>
           <div>

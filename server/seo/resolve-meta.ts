@@ -30,11 +30,37 @@ type BlogMeta = RouteMeta & {
   articleHtml?: string | null;
 };
 
-type CacheEntry = { meta: BlogMeta; expiresAt: number };
+type CacheEntry = { meta: BlogMeta; expiresAt: number; bytes: number };
 const blogCache = new Map<string, CacheEntry>();
 const BLOG_CACHE_TTL_MS = 60_000; // 60 seconds
+const BLOG_CACHE_MAX_ENTRIES = 64;
+const BLOG_CACHE_MAX_BYTES = 2 * 1024 * 1024;
+
+function pruneBlogCache() {
+  blogCache.forEach((entry, key) => {
+    if (Date.now() >= entry.expiresAt) blogCache.delete(key);
+  });
+}
+
+function cacheBlogMeta(key: string, meta: BlogMeta) {
+  pruneBlogCache();
+  const bytes = Buffer.byteLength(JSON.stringify(meta), "utf8");
+  // Large content is still rendered, simply not retained in process memory.
+  if (bytes > BLOG_CACHE_MAX_BYTES) return;
+  blogCache.delete(key);
+  let totalBytes = Array.from(blogCache.values()).reduce((sum, entry) => sum + entry.bytes, 0);
+  while (blogCache.size >= BLOG_CACHE_MAX_ENTRIES || totalBytes + bytes > BLOG_CACHE_MAX_BYTES) {
+    const oldest = blogCache.keys().next().value;
+    if (oldest === undefined) break;
+    totalBytes -= blogCache.get(oldest)!.bytes;
+    blogCache.delete(oldest);
+  }
+  blogCache.set(key, { meta, expiresAt: Date.now() + BLOG_CACHE_TTL_MS, bytes });
+}
 
 async function resolveBlogMeta(slug: string): Promise<BlogMeta | null> {
+  if (isHeldBlogSlug(slug)) return null;
+  pruneBlogCache();
   const cacheKey = `/blog/${slug}`;
   const cached = blogCache.get(cacheKey);
   if (cached && Date.now() < cached.expiresAt) {
@@ -69,7 +95,7 @@ async function resolveBlogMeta(slug: string): Promise<BlogMeta | null> {
       articleHtml: post.contentHtml,
     };
 
-    blogCache.set(cacheKey, { meta, expiresAt: Date.now() + BLOG_CACHE_TTL_MS });
+    cacheBlogMeta(cacheKey, meta);
     return meta;
   } catch {
     return null;

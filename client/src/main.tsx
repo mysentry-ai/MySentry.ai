@@ -2,7 +2,8 @@ import { trpc } from "@/lib/trpc";
 import { getBlogAdminToken } from "@/lib/blogAdminToken";
 import { UNAUTHED_ERR_MSG } from '@shared/const';
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { httpBatchLink, TRPCClientError } from "@trpc/client";
+import { httpBatchLink, splitLink, TRPCClientError } from "@trpc/client";
+import { fetchPublicBlog } from "@/lib/publicBlogTransport";
 import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import superjson from "superjson";
@@ -41,7 +42,14 @@ queryClient.getMutationCache().subscribe(event => {
 
 const trpcClient = trpc.createClient({
   links: [
-    httpBatchLink({
+    splitLink({
+      condition: op => op.type === "query" && op.path.startsWith("blog.public."),
+      true: httpBatchLink({
+        url: "/api/trpc",
+        transformer: superjson,
+        fetch: fetchPublicBlog,
+      }),
+      false: httpBatchLink({
       url: "/api/trpc",
       transformer: superjson,
       headers() {
@@ -58,6 +66,7 @@ const trpcClient = trpc.createClient({
           credentials: "include",
         });
       },
+      }),
     }),
   ],
 });

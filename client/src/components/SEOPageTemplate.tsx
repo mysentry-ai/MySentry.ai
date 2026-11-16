@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { Link } from "wouter";
 import { ArrowRight, Check, AlertTriangle, ChevronDown, Smartphone, Watch, Wifi, Battery, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -195,7 +196,7 @@ export default function SEOPageTemplate({
               <div className="flex w-full justify-center">
                 {heroImagePresentation === "app-screen" ? (
                   <div className="flex min-h-[320px] w-full max-w-[360px] items-center justify-center sm:min-h-[380px] lg:min-h-[460px] lg:max-w-[410px]">
-                    <img
+                    <PerformanceImage
                       src={heroImage}
                       alt={heroImageAlt ?? h1}
                       className="max-h-[440px] w-auto max-w-full object-contain drop-shadow-2xl sm:max-h-[500px] lg:max-h-[560px]"
@@ -205,7 +206,7 @@ export default function SEOPageTemplate({
                     />
                   </div>
                 ) : (
-                  <img
+                  <PerformanceImage
                     src={heroImage}
                     alt={heroImageAlt ?? h1}
                     className="w-full max-w-[560px] rounded-3xl object-cover shadow-2xl"

@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { useState, useMemo } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -15,17 +16,19 @@ const Blogs = () => {
   const [categoryId, setCategoryId] = useState<number | null>(null);
 
   // Fetch categories
-  const categoriesQuery = trpc.blog.public.categories.useQuery();
+  const categoriesQuery = trpc.blog.public.categories.useQuery(undefined, { retry: false, staleTime: 60_000 });
   const remoteCategories = categoriesQuery.data || [];
 
   // Fetch posts from database
   const postsQuery = trpc.blog.public.list.useQuery({
     categoryId: categoryId ?? undefined,
     limit: 200,
-  });
+  }, { retry: false, staleTime: 30_000 });
   const remotePosts = postsQuery.data?.posts || [];
-  const useFallbackPosts = !postsQuery.isLoading && remotePosts.length === 0;
-  const categories = useFallbackPosts ? fallbackBlogCategories : remoteCategories;
+  // A real empty response remains empty; the server supplies the approved catalog
+  // on known availability failures. Do not turn arbitrary errors into success.
+  const useFallbackPosts = postsQuery.isError && /network|fetch|timeout|timed out|deadline|aborted|connection|database not available/i.test(postsQuery.error.message);
+  const categories = remoteCategories.length > 0 ? remoteCategories : fallbackBlogCategories;
   const sourcePosts = useFallbackPosts
     ? fallbackBlogPosts.filter((post) => categoryId === null || post.categoryId === categoryId)
     : remotePosts;
@@ -96,13 +99,21 @@ const Blogs = () => {
             <Loader2 className="w-8 h-8 animate-spin text-[#386758]" />
           </div>
         )}
+        {postsQuery.isError && !useFallbackPosts && (
+          <div role="alert" className="text-center py-20">
+            <p className="text-xl text-gray-500 font-light">Articles could not be loaded.</p>
+            <button onClick={() => postsQuery.refetch()} className="mt-4 text-[#386758] font-medium hover:underline">
+              Try again
+            </button>
+          </div>
+        )}
 
         {/* Featured Article (Only show on 'All' view) */}
         {!isLoading && featuredBlog && categoryId === null && (
           <Link href={`/blog/${featuredBlog.slug}`}>
             <div className="group cursor-pointer grid lg:grid-cols-2 gap-8 mb-24 items-center">
               <div className="relative overflow-hidden rounded-2xl aspect-[4/3] lg:aspect-[16/10]">
-                <img 
+                <PerformanceImage
                   src={normalizeBlogImagePath(featuredBlog.heroImageUrl) || '/images/cdn/GqszcNTBcTbleCyx.jpg'}
                   alt={featuredBlog.heroImageAlt || featuredBlog.title} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -153,7 +164,7 @@ const Blogs = () => {
                   <div className="group cursor-pointer flex flex-col h-full">
                     {/* Image */}
                     <div className="relative overflow-hidden rounded-xl aspect-[3/2] mb-6 bg-gray-100">
-                      <img 
+                      <PerformanceImage
                         src={normalizeBlogImagePath(blog.heroImageUrl) || '/images/cdn/GqszcNTBcTbleCyx.jpg'}
                         alt={blog.heroImageAlt || blog.title} 
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -195,10 +206,10 @@ const Blogs = () => {
           </AnimatePresence>
         )}
 
-        {!isLoading && posts.length === 0 && !useFallbackPosts && (
+        {!isLoading && !postsQuery.isError && posts.length === 0 && !useFallbackPosts && (
           <div className="text-center py-20">
             <p className="text-xl text-gray-500 font-light">No articles found in this category.</p>
-            <button 
+            <button
               onClick={() => setCategoryId(null)}
               className="mt-4 text-[#386758] font-medium hover:underline"
             >

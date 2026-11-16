@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
@@ -86,7 +87,7 @@ function BannerSlider() {
           transition={{ duration: 0.55, ease: "easeInOut" }}
           className="w-full"
         >
-          <img
+          <PerformanceImage
             src={BANNER_SLIDES[current].src}
             alt={BANNER_SLIDES[current].alt}
             className="w-full h-auto block"

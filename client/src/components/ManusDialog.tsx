@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -55,7 +56,7 @@ export function ManusDialog({
         <div className="flex flex-col items-center gap-2 p-5 pt-12">
           {logo ? (
             <div className="w-16 h-16 bg-[#e8f5e9] rounded-xl border border-[rgba(0,0,0,0.08)] flex items-center justify-center">
-              <img
+              <PerformanceImage
                 src={logo}
                 alt="Dialog graphic"
                 className="w-10 h-10 rounded-md"

@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Plus, X, ArrowRight } from "lucide-react";
@@ -23,9 +24,29 @@ interface ExpandableCarouselProps {
   items: CarouselItem[];
 }
 
+// Coordinates are local to the strip; never scroll the page to reveal a card.
+export function getCarouselScrollTarget(
+  scrollLeft: number,
+  scrollWidth: number,
+  clientWidth: number,
+  cardLeft: number,
+  cardWidth: number,
+) {
+  const inset = 16;
+  let target = scrollLeft;
+  if (cardLeft < scrollLeft + inset) {
+    target = cardLeft - inset;
+  } else if (cardLeft + cardWidth > scrollLeft + clientWidth - inset) {
+    target = cardLeft + cardWidth - clientWidth + inset;
+  }
+  return Math.max(0, Math.min(target, scrollWidth - clientWidth));
+}
+
 export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef(new Map<string, HTMLDivElement>());
+  const [expandedMaxWidth, setExpandedMaxWidth] = useState<number>();
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const [, setLocation] = useLocation();
@@ -55,6 +76,48 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
       window.removeEventListener("resize", checkScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+    const measure = () => {
+      // Preserve the 600px desktop expansion. Cap only constrained smaller strips.
+      setExpandedMaxWidth(window.innerWidth < 1024 ? Math.max(0, container.clientWidth - 32) : undefined);
+      checkScroll();
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(container);
+    window.addEventListener("resize", measure);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!expandedId) return;
+    // Read final geometry after the existing 500ms width/layout transition.
+    const timer = window.setTimeout(() => {
+      const container = scrollContainerRef.current;
+      const card = cardRefs.current.get(expandedId);
+      if (!container || !card) return;
+      const containerBox = container.getBoundingClientRect();
+      const cardBox = card.getBoundingClientRect();
+      const target = getCarouselScrollTarget(
+        container.scrollLeft,
+        container.scrollWidth,
+        container.clientWidth,
+        cardBox.left - containerBox.left + container.scrollLeft,
+        cardBox.width,
+      );
+      if (Math.abs(target - container.scrollLeft) > 1) {
+        container.scrollTo({ left: target, behavior: "smooth" });
+      }
+      checkScroll();
+    }, 550);
+    return () => window.clearTimeout(timer);
+  }, [expandedId, expandedMaxWidth]);
 
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
@@ -101,8 +164,8 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
         onClick={() => scroll("left")}
         disabled={!canScrollLeft}
         className={cn(
-          "absolute left-0 top-1/2 -translate-y-1/2 z-20 -ml-4 md:-ml-12 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none",
-          canScrollLeft ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4 pointer-events-none"
+          "absolute left-0 top-1/2 -translate-y-1/2 z-20 -ml-2 md:-ml-6 lg:-ml-12 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-[transform,translate,scale,opacity,box-shadow] duration-300 hover:scale-110 focus:outline-none",
+          canScrollLeft ? "opacity-100 translate-x-0" : "opacity-0 translate-x-0 lg:-translate-x-4 pointer-events-none"
         )}
         aria-label="Scroll left"
       >
@@ -114,8 +177,8 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
         onClick={() => scroll("right")}
         disabled={!canScrollRight}
         className={cn(
-          "absolute right-0 top-1/2 -translate-y-1/2 z-20 -mr-4 md:-mr-12 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none",
-          canScrollRight ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4 pointer-events-none"
+          "absolute right-0 top-1/2 -translate-y-1/2 z-20 -mr-2 md:-mr-6 lg:-mr-12 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center transition-[transform,translate,scale,opacity,box-shadow] duration-300 hover:scale-110 focus:outline-none",
+          canScrollRight ? "opacity-100 translate-x-0" : "opacity-0 translate-x-0 lg:translate-x-4 pointer-events-none"
         )}
         aria-label="Scroll right"
       >
@@ -131,18 +194,23 @@ export default function ExpandableCarousel({ items }: ExpandableCarouselProps) {
         {items.map((item) => (
           <motion.div
             key={item.id}
+            ref={(card) => {
+              if (card) cardRefs.current.set(item.id, card);
+              else cardRefs.current.delete(item.id);
+            }}
             layoutId={`card-${item.id}`}
             onClick={() => handleCardClick(item.id)}
+            style={expandedId === item.id && expandedMaxWidth !== undefined ? { maxWidth: expandedMaxWidth } : undefined}
             className={cn(
               "relative flex-shrink-0 rounded-[2rem] overflow-hidden cursor-pointer transition-all duration-500 snap-center",
-              expandedId === item.id 
+              expandedId === item.id
                 ? "w-[85vw] md:w-[600px] h-[500px] md:h-[600px]" 
                 : "w-[280px] md:w-[320px] h-[400px] md:h-[450px] hover:shadow-xl"
             )}
           >
             {/* Background Image */}
             <div className="absolute inset-0">
-              <img
+              <PerformanceImage
                 src={item.image}
                 alt={item.title}
                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"

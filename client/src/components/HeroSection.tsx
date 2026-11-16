@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
@@ -46,7 +47,7 @@ export default function HeroSection({
     <section className={cn("relative min-h-screen flex items-center bg-[#e8f5e9] pt-32 md:pt-40 lg:pt-24 pb-20 overflow-hidden", className)}>
       {showBackgroundImage && (
         <div className="absolute inset-0 z-0">
-          <img
+          <PerformanceImage
             src={imageSrc}
             alt={imageAlt}
             className="absolute inset-0 w-full h-full object-cover opacity-60"
@@ -111,7 +112,7 @@ export default function HeroSection({
               >
                 {/* Subtle glow behind the phone */}
                 <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-75" />
-                <img
+                <PerformanceImage
                   src={phoneMockupSrc}
                   alt={phoneMockupAlt}
                   className={cn(
@@ -120,7 +121,7 @@ export default function HeroSection({
                       ? "w-[240px] sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[480px] -mb-8 lg:-mb-[145px]"
                       : "w-[350px] md:w-[400px] lg:w-[420px] xl:w-[480px] -mb-[145px]"
                   )}
-                  loading="eager"
+                  loading="eager" fetchPriority="high"
                   width="480" height="1040"
                 />
               </motion.div>

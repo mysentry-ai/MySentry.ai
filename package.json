@@ -5,13 +5,14 @@
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development tsx watch server/_core/index.ts",
-    "build": "vite build && esbuild server/_core/index.prod.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js",
+    "build": "node scripts/generate-public-shell.mjs && vite build && node scripts/prepare-route-preloads.mjs && node scripts/prepare-performance-artwork.mjs --output dist/public/performance-art && esbuild server/_core/index.prod.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js",
     "prestart": "pnpm build",
     "start": "NODE_ENV=production node dist/index.js",
     "check": "tsc --noEmit",
     "format": "prettier --write .",
     "test": "vitest run",
-    "db:push": "drizzle-kit generate && drizzle-kit migrate"
+    "db:push": "drizzle-kit generate && drizzle-kit migrate",
+    "predev": "node scripts/prepare-performance-artwork.mjs && node scripts/generate-public-shell.mjs"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.693.0",

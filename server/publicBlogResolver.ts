@@ -14,9 +14,24 @@ import {
   getRelatedPosts,
 } from "./blogDb";
 import { getDb } from "./db";
+import { createPublicReadGate, isDatabaseAvailabilityFailure } from "./publicBlogRead";
+export { isDatabaseAvailabilityFailure } from "./publicBlogRead";
 
 const MANAGED_PUBLIC_BLOG_ORIGIN = "https://mysentry-5pk35fzr.manus.space";
-const MANAGED_FETCH_TIMEOUT_MS = process.env.NODE_ENV === "test" ? 250 : 8_000;
+const LOCAL_PUBLIC_READ_DEADLINE_MS = 1_500;
+const MANAGED_FETCH_TIMEOUT_MS = 2_000;
+const localPublicReads = createPublicReadGate({
+  deadlineMs: LOCAL_PUBLIC_READ_DEADLINE_MS,
+  maxInFlight: 4,
+  unavailableCooldownMs: 5_000,
+  isAvailabilityFailure: isDatabaseAvailabilityFailure,
+});
+const managedPublicReads = createPublicReadGate({
+  deadlineMs: MANAGED_FETCH_TIMEOUT_MS,
+  maxInFlight: 2,
+  unavailableCooldownMs: 5_000,
+  isAvailabilityFailure: () => true,
+});
 
 export type PublicBlogPost = {
   id: number;
@@ -159,6 +174,7 @@ export function getAllPublicFallbackBlogPosts(): PublicBlogPost[] {
 
 function getTrpcData(payload: unknown): unknown {
   if (!Array.isArray(payload) || payload.length !== 1) return undefined;
+  if (!payload[0] || typeof payload[0] !== "object") return undefined;
   const entry = payload[0] as {
     error?: { json?: { message?: string } };
     result?: { data?: { json?: unknown } | unknown };
@@ -184,31 +200,44 @@ async function queryManagedPublicBlog<T>(
   );
   const url = `${MANAGED_PUBLIC_BLOG_ORIGIN}/api/trpc/${procedure}?batch=1&input=${encodedInput}`;
 
-  for (let attempt = 0; attempt < 2; attempt += 1) {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), MANAGED_FETCH_TIMEOUT_MS);
-
-    try {
-      const response = await globalThis.fetch(url, {
-        headers: { Accept: "application/json" },
-        signal: controller.signal,
-      });
-      if (response.ok) {
-        const result = getTrpcData(await response.json());
-        return (result ?? null) as T | null;
+  const outcome = await managedPublicReads.read<T | null>(url, async signal => {
+    for (let attempt = 0; attempt < 2 && !signal.aborted; attempt += 1) {
+      let transient = false;
+      let response: Response | undefined;
+      try {
+        response = await globalThis.fetch(url, {
+          headers: { Accept: "application/json", "x-mysentry-public-relay": "1" },
+          signal,
+        });
+      } catch (error) {
+        // Only transport failures are retryable. Parsing/API errors below fail once.
+        transient = !signal.aborted && (error instanceof TypeError || isDatabaseAvailabilityFailure(error));
+        if (!transient) throw error;
       }
-    } catch {
-      // Retry a transient managed-runtime network or startup failure once.
-    } finally {
-      clearTimeout(timeout);
+      if (response?.ok) {
+        const contentType = response.headers.get("content-type") ?? "";
+        if (!/^application\/(?:[\w.-]+\+)?json(?:\s*;|$)/i.test(contentType)) {
+          void response.body?.cancel().catch(() => undefined);
+          throw new Error("Managed public blog API returned non-JSON content");
+        }
+        const data = getTrpcData(await response.json());
+        if (data === undefined) throw new Error("Invalid managed public blog API envelope");
+        return data as T | null;
+      }
+      if (response) {
+        transient = [502, 503, 504].includes(response.status);
+        void response.body?.cancel().catch(() => undefined);
+      }
+      if (!transient || attempt === 1 || signal.aborted) throw new Error("Managed public blog API unavailable");
+      await new Promise<void>(resolve => {
+        const done = () => { clearTimeout(timer); signal.removeEventListener("abort", done); resolve(); };
+        const timer = setTimeout(done, 100);
+        signal.addEventListener("abort", done, { once: true });
+      });
     }
-
-    if (attempt === 0) {
-      await new Promise(resolve => setTimeout(resolve, 250));
-    }
-  }
-
-  return null;
+    throw new Error("Managed public blog API deadline exceeded");
+  }, null);
+  return outcome.value;
 }
 
 export async function getManagedPublicBlogBySlug(
@@ -218,7 +247,8 @@ export async function getManagedPublicBlogBySlug(
     "blog.public.getBySlug",
     { slug },
   );
-  if (!resolution) return null;
+  if (!resolution || typeof resolution !== "object" || typeof resolution.redirect !== "boolean" ||
+      !("post" in resolution) || (resolution.redirect && typeof resolution.newSlug !== "string")) return null;
   return {
     redirect: resolution.redirect === true,
     newSlug: resolution.newSlug ?? null,
@@ -239,7 +269,7 @@ export async function getManagedPublicBlogPosts(input: {
     "blog.public.list",
     input,
   );
-  if (!result) return null;
+  if (!result || !Array.isArray(result.posts) || !Number.isFinite(result.total) || result.total < 0) return null;
   const posts = asPublicBlogPosts(result.posts);
   return { posts, total: Number(result.total ?? posts.length) };
 }
@@ -247,10 +277,13 @@ export async function getManagedPublicBlogPosts(input: {
 export async function getManagedPublicBlogCategories(): Promise<
   PublicBlogCategory[] | null
 > {
-  return queryManagedPublicBlog<PublicBlogCategory[]>(
+  const result = await queryManagedPublicBlog<PublicBlogCategory[]>(
     "blog.public.categories",
     undefined,
   );
+  return Array.isArray(result) ? result.filter(category =>
+    category && typeof category.id === "number" && typeof category.name === "string"
+  ) : null;
 }
 
 export async function getManagedRelatedPublicBlogPosts(input: {
@@ -305,13 +338,6 @@ export function mergePublicBlogCategories(
   return Array.from(categories.values()).sort((a, b) => a.name.localeCompare(b.name));
 }
 
-export function isDatabaseAvailabilityFailure(error: unknown): boolean {
-  const message = error instanceof Error ? error.message : String(error ?? "");
-  return /database not available|database connection|connect.*database|ECONNREFUSED|ETIMEDOUT|ENOTFOUND|PROTOCOL_CONNECTION_LOST|access denied|ER_ACCESS_DENIED_ERROR/i.test(
-    message,
-  );
-}
-
 function asPublicBlogPost(value: unknown): PublicBlogPost | null {
   if (!value || typeof value !== "object") return null;
   const post = value as Record<string, unknown>;
@@ -345,52 +371,44 @@ function asPublicBlogPosts(value: unknown): PublicBlogPost[] {
 }
 
 async function readAvailableLocalBlogData<T>(
-  operation: () => Promise<T>,
+  key: string,
+  operation: (signal: AbortSignal) => Promise<T>,
   fallback: T,
-): Promise<{ available: boolean; value: T }> {
-  if (!(await getDb())) {
-    return { available: false, value: fallback };
-  }
-
-  try {
-    return { available: true, value: await operation() };
-  } catch (error) {
-    if (!isDatabaseAvailabilityFailure(error)) throw error;
-    return { available: false, value: fallback };
-  }
+) {
+  return localPublicReads.read(key, async signal => {
+    if (!(await getDb()) || signal.aborted) throw new Error("Database not available");
+    return operation(signal);
+  }, fallback);
 }
 
 export async function resolvePublicBlogBySlug(
   slug: string,
+  options: { skipManagedFallback?: boolean } = {},
 ): Promise<PublicBlogResolution> {
   if (isHeldBlogSlug(slug)) {
     return { redirect: false, newSlug: null, post: null };
   }
 
-  const localRedirectResult = await readAvailableLocalBlogData(
-    () => getRedirectByOldSlug(slug),
-    undefined,
+  // One local phase: a stalled redirect must not start a second DB read after timeout.
+  const localResult = await readAvailableLocalBlogData<PublicBlogResolution>(
+    `detail:${slug}`,
+    async signal => {
+      const redirect = await getRedirectByOldSlug(slug);
+      if (signal.aborted) throw new Error("Database not available");
+      if (redirect) return { redirect: true, newSlug: redirect.newSlug, post: null };
+      const post = asPublicBlogPost(await getPublishedPostBySlug(slug));
+      return { redirect: false, newSlug: null, post };
+    },
+    { redirect: false, newSlug: null, post: null },
   );
-  const localRedirect = localRedirectResult.value;
-  if (localRedirect) {
-    return { redirect: true, newSlug: localRedirect.newSlug, post: null };
-  }
-
-  const localPostResult = await readAvailableLocalBlogData(
-    () => getPublishedPostBySlug(slug),
-    undefined,
-  );
-  const localPost = asPublicBlogPost(localPostResult.value);
-  if (localPost) {
-    return { redirect: false, newSlug: null, post: localPost };
-  }
+  if (localResult.value.redirect || localResult.value.post) return localResult.value;
 
   const staticFallbackPost = toPublicFallbackBlogPost(slug);
   if (staticFallbackPost) {
     return { redirect: false, newSlug: null, post: staticFallbackPost };
   }
 
-  const managedResolution = await getManagedPublicBlogBySlug(slug);
+  const managedResolution = options.skipManagedFallback ? null : await getManagedPublicBlogBySlug(slug);
   if (managedResolution?.redirect && managedResolution.newSlug) {
     return {
       redirect: true,
@@ -416,14 +434,15 @@ export async function listPublicBlogs(filters: {
   keyword?: string;
   limit?: number;
   offset?: number;
-} = {}): Promise<{ posts: PublicBlogPost[]; total: number }> {
+} = {}, options: { skipManagedFallback?: boolean } = {}): Promise<{ posts: PublicBlogPost[]; total: number }> {
   const localResult = await readAvailableLocalBlogData(
+    `list:${JSON.stringify(filters)}`,
     () => getPublishedPosts(filters),
     { posts: [], total: 0 },
   );
   const local = localResult.value;
   const remote =
-    localResult.available && local.total > 0
+    options.skipManagedFallback || localResult.state !== "available" || local.total > 0
       ? null
       : await getManagedPublicBlogPosts(filters);
   const primaryPosts = asPublicBlogPosts(remote?.posts ?? local.posts);
@@ -435,11 +454,11 @@ export async function listPublicBlogs(filters: {
   );
 }
 
-export async function listPublicBlogCategories(): Promise<PublicBlogCategory[]> {
-  const localResult = await readAvailableLocalBlogData(() => getAllCategories(), []);
+export async function listPublicBlogCategories(options: { skipManagedFallback?: boolean } = {}): Promise<PublicBlogCategory[]> {
+  const localResult = await readAvailableLocalBlogData("categories", () => getAllCategories(), []);
   const local = localResult.value;
   const remote =
-    localResult.available && local.length > 0
+    options.skipManagedFallback || localResult.state !== "available" || local.length > 0
       ? null
       : await getManagedPublicBlogCategories();
   return mergePublicBlogCategories((remote ?? local) as PublicBlogCategory[]);
@@ -450,12 +469,13 @@ export async function listPublicRelatedBlogs(input: {
   excludeId: number;
   tags?: string[] | null;
   limit?: number;
-}): Promise<PublicBlogPost[]> {
+}, options: { skipManagedFallback?: boolean } = {}): Promise<PublicBlogPost[]> {
   const limit = input.limit ?? 4;
   const fallbackPosts = getAllPublicFallbackBlogPosts()
     .filter(post => post.categoryId === input.categoryId && post.id !== input.excludeId);
 
   const localResult = await readAvailableLocalBlogData(
+    `related:${JSON.stringify(input)}`,
     () =>
       getRelatedPosts(
         input.categoryId,
@@ -467,7 +487,7 @@ export async function listPublicRelatedBlogs(input: {
   );
   const local = localResult.value;
   const remote =
-    localResult.available && local.length > 0
+    options.skipManagedFallback || localResult.state !== "available" || local.length > 0
       ? null
       : await getManagedRelatedPublicBlogPosts(input);
   const primaryPosts = asPublicBlogPosts(remote ?? local);

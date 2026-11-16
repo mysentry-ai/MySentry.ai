@@ -1,3 +1,4 @@
+import PerformanceImage from "@/components/PerformanceImage";
 import { Play } from "lucide-react";
 
 export default function UGCSection() {
@@ -24,7 +25,7 @@ export default function UGCSection() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {videos.map((video) => (
             <div key={video.id} className="group relative aspect-[9/16] rounded-2xl overflow-hidden bg-gray-900 cursor-pointer">
-              <img 
+              <PerformanceImage
                 src={video.thumbnail} 
                 alt={video.title} 
                 className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-300"

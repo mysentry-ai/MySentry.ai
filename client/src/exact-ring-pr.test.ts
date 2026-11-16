@@ -59,7 +59,7 @@ describe("exact supplied Ring press release rendering", () => {
       "!isExactRingPressRelease && relatedPosts.length > 0",
     );
     expect(source).toContain(
-      "isExactRingPressRelease\n                ? post.contentHtml || ''",
+      "isExactRingPressRelease\n                ? optimizePublicImageHtml(post.contentHtml || '')",
     );
   });
 

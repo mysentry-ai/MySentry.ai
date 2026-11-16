@@ -56,7 +56,7 @@ describe("public source policy", () => {
   });
 
   it("does not link visitor-facing source files through approved redirects", () => {
-    for (const file of files.filter(file => !file.endsWith(`${path.sep}App.tsx`))) {
+    for (const file of files.filter(file => !file.endsWith(`${path.sep}App.tsx`) && !/\.test\.tsx?$/.test(file))) {
       const text = fs.readFileSync(file, "utf8");
       for (const source of Object.keys(CANONICAL_REDIRECTS)) {
         const escaped = source.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");

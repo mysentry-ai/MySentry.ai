@@ -155,8 +155,8 @@ describe("owner-supplied v17 homepage", () => {
     const template = fs.readFileSync(templatePath, "utf8");
     const style = template.split('<style id="story-mockup-reference-sizing">')[1].split("</style>")[0];
     const scriptedTemplate = template.replace(/<noscript>[\s\S]*?<\/noscript>/g, "");
-    expect(scriptedTemplate).toMatch(/<img[^>]*class="scene-art"[^>]*data-scene="3"[^>]*data-deferred-src="\/manus-storage\/automated_call_08c12f8e.svg"/);
-    expect((scriptedTemplate.match(/data-deferred-src="\/manus-storage\/automated_call_08c12f8e.svg"/g) ?? []).length).toBe(1);
+    expect(scriptedTemplate).toMatch(/<img[^>]*class="scene-art"[^>]*data-scene="3"[^>]*data-original-src="\/manus-storage\/automated_call_08c12f8e.svg"/);
+    expect((scriptedTemplate.match(/data-original-src="\/manus-storage\/automated_call_08c12f8e.svg"/g) ?? []).length).toBe(1);
     for (const notification of ["left", "right", "bottom"]) {
       expect(style).toContain(`#how #storyPin .auto-chip-${notification}[data-scene="3"]`);
     }
