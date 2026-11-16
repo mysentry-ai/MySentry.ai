@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, MessageSquare, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Mail, MapPin, MessageSquare, AlertCircle, CheckCircle2 } from 'lucide-react';
 import HeroSection from "@/components/HeroSection";
 import { cn } from "@/lib/utils";
 
@@ -113,19 +113,6 @@ export const Contact = () => {
               </p>
               
               <div className="space-y-10">
-                <div className="flex items-start gap-6">
-                  <div className="w-14 h-14 bg-[#e8f5e9] rounded-full flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-7 h-7 text-[#386758]" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2 text-[#1a1a1a] font-barlow uppercase">Call Us</h3>
-                    <p className="text-gray-600 mb-1 text-lg">Andrew Caldwell, Chief Revenue Officer</p>
-                    <a href="tel:+16143615073" className="text-xl font-bold text-[#386758] hover:underline">
-                      +1 (614) 361-5073
-                    </a>
-                  </div>
-                </div>
-
                 <div className="flex items-start gap-6">
                   <div className="w-14 h-14 bg-[#e8f5e9] rounded-full flex items-center justify-center flex-shrink-0">
                     <Mail className="w-7 h-7 text-[#386758]" />
