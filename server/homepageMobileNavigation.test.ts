@@ -47,7 +47,9 @@ describe("homepage mobile, loading and live-navigation repair", () => {
     expect(html).toContain('data-original-src="assets/hero-mysentry-app-composite.svg"');
     expect(html).toContain('imagesrcset=');
     expect(html).toContain('id="homepage-deferred-images"');
-    expect(html).toContain("rootMargin:'1200px 0px'");
+    expect(html).toContain("rootMargin:'500px 0px'");
+    expect(html).toContain("if(inFlight.has(img))return inFlight.get(img)");
+    expect(html).toContain("if(next)load(next,'low')");
     expect(html).toContain("img.src=img.dataset.deferredSrc");
     expect(html).toContain("<noscript>");
     expect(html).toContain('href="/favicon.svg"');

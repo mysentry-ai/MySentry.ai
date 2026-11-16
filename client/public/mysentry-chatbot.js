@@ -190,6 +190,95 @@
     window.setTimeout(startChatbot, 1200);
   }
 
+  function afterHomepagePaint() {
+    if (state.status !== "waiting" || isAdmin()) return;
+    state.status = "waiting-images";
+    let finished = false;
+    let fallback;
+    const cleanups = [];
+
+    function finish() {
+      if (finished) return;
+      finished = true;
+      window.clearTimeout(fallback);
+      for (const cleanup of cleanups) cleanup();
+      if (isAdmin()) {
+        state.status = "skipped";
+        return;
+      }
+      state.status = "scheduled";
+      // Keep the optional delay, then yield SDK parsing/init to idle time. The
+      // timeout still allows the automatic widget on continuously busy pages.
+      window.setTimeout(() => {
+        if (typeof window.requestIdleCallback === "function") {
+          window.requestIdleCallback(startChatbot, { timeout: 2000 });
+        } else {
+          startChatbot();
+        }
+      }, 1200);
+    }
+
+    try {
+      const { width, height } = viewport();
+      // Only the visible header logo and main hero artwork are critical here;
+      // never wait for all document images, offscreen artwork, or window.load.
+      const images = [...document.querySelectorAll(".brand img, #heroDevice img, .hero-device img")]
+        .filter(image => {
+          const rect = image.getBoundingClientRect();
+          const style = window.getComputedStyle(image);
+          return rect.width > 0 && rect.height > 0 && rect.bottom > 0 &&
+            rect.right > 0 && rect.top < height && rect.left < width &&
+            style.display !== "none" && style.visibility !== "hidden" &&
+            style.visibility !== "collapse";
+        });
+      if (!images.length) {
+        finish();
+        return;
+      }
+      // Includes load AND decode time; a hung request/decode cannot hide chat.
+      fallback = window.setTimeout(finish, 8000);
+      let remaining = images.length;
+      for (const image of images) {
+        let done = false;
+        let decoding = false;
+        const cleanup = () => {
+          image.removeEventListener("load", loaded);
+          image.removeEventListener("error", ready);
+        };
+        function ready() {
+          if (done || finished) return;
+          done = true;
+          cleanup();
+          if (--remaining === 0) finish();
+        }
+        function loaded() {
+          if (done || decoding || finished) return;
+          decoding = true;
+          try {
+            if (typeof image.decode === "function") {
+              Promise.resolve(image.decode()).then(ready, ready);
+            } else {
+              ready();
+            }
+          } catch {
+            ready();
+          }
+        }
+        cleanups.push(cleanup);
+        image.addEventListener("load", loaded);
+        image.addEventListener("error", ready);
+        // Cover cached images and load/error events preceding this script.
+        if (image.complete) {
+          if (image.naturalWidth > 0) loaded();
+          else ready();
+        }
+      }
+    } catch {
+      // Optional readiness checks must not break the page or remove chat.
+      finish();
+    }
+  }
+
   function afterDom() {
     if (document.getElementById("root")) {
       // DOM readiness is not a committed SPA UI. Respect its existing signal,
@@ -200,9 +289,9 @@
         window.addEventListener("mysentry:app-painted", afterPaint, { once: true });
       }
     } else {
-      // The standalone homepage has no React root or app paint event. Two frames
-      // provide a first-paint opportunity without waiting for every image/load.
-      window.requestAnimationFrame(() => window.requestAnimationFrame(afterPaint));
+      // The standalone homepage has no React root or app paint event. Give its
+      // first paint two frames, then protect only visible critical images.
+      window.requestAnimationFrame(() => window.requestAnimationFrame(afterHomepagePaint));
     }
   }
 
