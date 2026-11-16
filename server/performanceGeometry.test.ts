@@ -97,10 +97,12 @@ describe("homepage performance geometry", () => {
   it("preserves all original style blocks and all unrelated script bytes, without blessing new hashes", () => {
     // Baseline hashes are from the pre-repair cad8d11 document. Only explicit authorized blocks are excluded.
     const originalStyleHTML = html.replace(/<style id="homepage-performance-geometry">[\s\S]*?<\/style>\n/, "")
+      .replace(/<style id="homepage-mobile-section-repair">[\s\S]*?<\/style>\n/, "")
       .replace(/<noscript><style>\n\/\* Preserve room for the existing no-script portrait fallback coordinates\.[\s\S]*?<\/style><\/noscript>\n/, "");
     const originalStyles = (originalStyleHTML.match(/<style[^>]*>[\s\S]*?<\/style>/g) ?? []).join("");
     expect(hash(originalStyles)).toBe("74ff1da838abe8b5ea56bb87dc77b2119c2739bd88d11b1e8e2e27b6adff6cd3");
     const protectedScripts = (html.match(/<script[^>]*>[\s\S]*?<\/script>/g) ?? [])
+      .filter(s => !s.includes('src="/mysentry-chatbot.js"'))
       .filter(s => !s.includes('id="homepage-geometry-initializer"') && !s.includes('id="mysentry-health-v13-scroll-script"'))
       .map(s => (s.includes('id="homepage-deferred-images"') ? originalLoader : s).replace(/\/\* Fine-pointer parallax:[\s\S]*?(?=const peopleArea=)/, "[PARALLAX-REVEAL]")
         .replace(/const scrollHero=document.querySelector\('#heroDevice'\);\nfunction update\(\)\{[\s\S]*?(?=let queued=false;)/, "[SCROLL-UPDATE]"))

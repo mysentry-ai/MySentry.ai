@@ -86,8 +86,14 @@ function appHelpers(
 }
 
 const widget = [...html.matchAll(/<script([^>]*)>([\s\S]*?)<\/script>/g)].find(
-  match => match[2].includes("Chatbot.init")
+  match => match[1].includes('src="/mysentry-chatbot.js"')
 )!;
+const widgetSource = read("client/public/mysentry-chatbot.js");
+// Safety-only shadow-DOM CSS is new; every existing Flowise option stays frozen.
+function chatbotConfigHash(config: { theme: Record<string, unknown> }) {
+  const { customCSS, ...theme } = config.theme;
+  return hash({ ...config, theme });
+}
 
 function chatbotHarness({
   pathname = "/pricing",
@@ -115,7 +121,7 @@ function chatbotHarness({
   };
   const scriptTree = ts.createSourceFile(
     "chatbot.js",
-    widget[2],
+    widgetSource,
     ts.ScriptTarget.Latest,
     true,
     ts.ScriptKind.JS
@@ -129,12 +135,15 @@ function chatbotHarness({
   const importNode = imports[0];
   // Stub only the dynamic import expression. Preserve every scheduling/init byte.
   const code =
-    widget[2].slice(0, importNode.getStart(scriptTree)) +
+    widgetSource.slice(0, importNode.getStart(scriptTree)) +
     "__loadChatbot()" +
-    widget[2].slice(importNode.end);
+    widgetSource.slice(importNode.end);
   vm.runInNewContext(code, {
     window,
     document: {
+      readyState: "complete",
+      getElementById: (id: string) => id === "root" ? {} : null,
+      querySelector: () => null,
       documentElement: {
         dataset: { mysentryAppPainted: painted ? "true" : undefined },
       },
@@ -299,13 +308,13 @@ describe("independent optional chatbot startup", () => {
     expect(widget[1]).not.toContain('type="module"');
     const parsed = ts.createSourceFile(
       "widget.js",
-      widget[2],
+      widgetSource,
       ts.ScriptTarget.Latest,
       true,
       ts.ScriptKind.JS
     );
     expect(allNodes(parsed).filter(ts.isImportDeclaration)).toHaveLength(0);
-    expect(widget[2]).toContain(
+    expect(widgetSource).toContain(
       "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
     );
     expect(read("client/src/main.tsx")).not.toContain("flowise-embed");
@@ -358,7 +367,7 @@ describe("independent optional chatbot startup", () => {
         load: vi.fn().mockResolvedValue({ default: { init } }),
       });
       await harness.timers[0].callback();
-      expect(hash(init.mock.calls[0][0])).toBe(expected);
+      expect(chatbotConfigHash(init.mock.calls[0][0])).toBe(expected);
     }
   );
 
@@ -371,7 +380,7 @@ describe("independent optional chatbot startup", () => {
     harness.window.innerWidth = 390;
     harness.window.innerHeight = 844;
     await harness.timers[0].callback();
-    expect(hash(init.mock.calls[0][0])).toBe(
+    expect(chatbotConfigHash(init.mock.calls[0][0])).toBe(
       "b59c0c3fda4ff4e9edd6df92ded074e16ebbaa270da5e3b6c5198309b2b7a707"
     );
   });

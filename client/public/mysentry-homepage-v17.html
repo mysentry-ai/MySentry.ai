@@ -1099,6 +1099,78 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media(max-width:740px){#home{min-height:calc(910px + 69px + 75px)}}
 .reveal{opacity:1;transform:none;filter:none}.intro-copy .help-step{opacity:1;transform:none}
 </style></noscript>
+<style id="homepage-mobile-section-repair">
+/* The video owns its width; its old fixed height must not derive a wider grid child. */
+#intro .intro-video{min-width:0;max-width:100%}
+#intro .intro-video-frame{width:100%;min-width:0;max-width:100%;height:auto;min-height:0;aspect-ratio:16/9;box-sizing:border-box}
+#intro .video-launch{position:absolute;inset:0;width:100%;height:100%;min-height:0;box-sizing:border-box}
+#intro .video-launch-title,#intro .video-launch-subtitle{max-width:100%;white-space:normal;text-align:center;overflow-wrap:break-word;line-height:1.2}
+@media(max-width:900px){
+ #intro .intro-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+ #intro .intro-copy,#intro .intro-video{width:100%;min-width:0}
+ .feature.twilight .feature-inner{display:grid;grid-template-columns:minmax(0,1fr);width:calc(100% - 36px);gap:24px;align-items:start}
+ .feature.twilight .feature-inner>div:not(.feature-media){order:1;min-width:0;max-width:100%}
+ .feature.twilight .feature-media{order:0;min-height:0;width:100%;max-width:430px;aspect-ratio:1;justify-self:center}
+ .feature.twilight .feature-media img.health-svg{width:100%;height:auto;max-width:100%;max-height:none;object-fit:contain}
+ .feature.twilight h2{font-size:clamp(32px,8vw,43px);line-height:1.12}
+ .feature.twilight p{font-size:16px;line-height:1.6;max-width:100%}
+ #ring .ring-grid{display:grid;grid-template-columns:minmax(0,1fr);width:calc(100% - 36px);gap:28px}
+ #ring .ring-grid>div{min-width:0;max-width:100%}
+ #ring .ring-picture{width:100%;max-width:480px;justify-self:center}
+ #ring .ring-picture img{width:100%;max-width:100%;height:auto;object-fit:contain}
+ #support .reassurance-inner{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 18px;min-height:0;height:auto;padding:0 0 20px;align-items:center}
+ #support .reassurance-photos{position:relative;inset:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-column:1/-1;gap:24px 18px;width:100%;min-width:0}
+ #support .reassurance-copy{position:relative;inset:auto;order:-1;grid-column:1/-1;width:100%;max-width:100%;padding:0 0 16px}
+ #support .reassurance-copy h2{font-size:clamp(24px,6.5vw,34px);line-height:1.18}
+ #support .rphoto{position:relative;inset:auto;width:85%;max-width:160px;height:auto;aspect-ratio:1.2;justify-self:center;margin:0}
+ #support .support-store-badges{max-width:100%;gap:12px;justify-content:center}
+ #support .support-store-badges a{min-width:0;max-width:32%}
+ #support .support-store-badges img{max-width:100%;height:auto;max-height:34px;object-fit:contain}
+}
+@media(max-width:740px){
+ #intro .video-launch{padding:14px}
+ #intro .video-launch-title{font-size:clamp(18px,5.6vw,25px)}
+ #intro .video-launch-subtitle{font-size:11px;letter-spacing:.04em}
+ #intro .video-play-circle{width:50px;height:50px;font-size:20px}
+ #how #storyPin{top:74px;height:calc(100svh - 74px);min-height:0;padding-block:12px;box-sizing:border-box}
+ #how #storyPin .story-inner{--mobile-stage-height:clamp(255px,calc(100svh - 377px),415px);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:var(--mobile-stage-height) minmax(0,1fr);gap:8px;height:100%;width:calc(100% - 36px);align-items:stretch}
+ #how #storyPin .scene-stage{order:0;width:100%;height:var(--mobile-stage-height);min-height:0;max-height:none;flex:none;--story-reference-width:min(88cqw,300px,calc((var(--mobile-stage-height) - 64px)*.86))}
+ #how #storyPin .story-text{order:1;min-height:0;height:auto;width:100%;align-self:stretch}
+ #how #storyPin .story-progress-label{font-size:10px;line-height:1.2}
+ #how #storyPin .story-progress-label b{font-size:22px}
+ #how #storyPin .story-bar{margin:5px 0;height:3px}
+ #how #storyPin .scene-copy{top:43px;max-width:100%}
+ #how #storyPin .scene-copy .mini{font-size:11px;line-height:1.3}
+ #how #storyPin .scene-copy h2{font-size:clamp(28px,7.5vw,36px);line-height:1.1;margin:8px 0}
+ #how #storyPin .scene-copy p{font-size:14px;line-height:1.45;margin-bottom:11px}
+ #how #storyPin .scene-copy .btn{font-size:12px;min-height:40px;padding:9px 14px;max-width:100%;white-space:normal;box-sizing:border-box}
+ #how #storyPin .auto-chip[data-scene="3"]{min-height:28px;font-size:10px;width:125px;padding:4px 6px;gap:5px}
+ #how #storyPin .auto-chip-left[data-scene="3"],#how #storyPin .auto-chip-right[data-scene="3"]{top:max(0px,calc(50% - var(--story-reference-width)*.53125 - 34px))}
+ #how #storyPin .auto-chip-bottom[data-scene="3"]{top:calc(50% + var(--story-reference-width)*.53125 + 8px);margin-left:-62.5px}
+}
+@media(max-width:740px) and (min-height:501px) and (max-height:620px){
+ #how #storyPin .story-inner{--mobile-stage-height:max(190px,calc(100svh - 370px))}
+ #how #storyPin .scene-copy h2{font-size:26px;margin:6px 0}
+ #how #storyPin .scene-copy p{font-size:13px;line-height:1.4;margin-bottom:8px}
+ #how #storyPin .scene-copy .btn{font-size:11px;min-height:36px;padding:7px 12px}
+}
+@media(max-width:740px) and (max-height:500px){
+ #how #storyPin .story-inner{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:minmax(0,1fr);gap:18px}
+ #how #storyPin .story-text{order:0}
+ #how #storyPin .scene-stage{order:1;height:100%;--story-reference-width:min(82cqw,calc((100svh - 160px)*.77))}
+ #how #storyPin .scene-copy{top:36px}
+ #how #storyPin .story-progress-label b{font-size:18px}
+ #how #storyPin .scene-copy .mini{font-size:9px}
+ #how #storyPin .scene-copy h2{font-size:clamp(20px,3.6vw,27px);margin:5px 0;line-height:1.08}
+ #how #storyPin .scene-copy p{font-size:12px;line-height:1.35;margin-bottom:8px}
+ #how #storyPin .scene-copy .btn{font-size:11px;min-height:34px;padding:6px 10px}
+ #how #storyPin .auto-chip[data-scene="3"]{width:110px;min-height:24px;font-size:9px;padding:3px 4px;gap:3px}
+ #how #storyPin .auto-chip-left[data-scene="3"]{left:0;top:0}
+ #how #storyPin .auto-chip-right[data-scene="3"]{right:0;top:0}
+ #how #storyPin .auto-chip-bottom[data-scene="3"]{top:auto;bottom:0;margin-left:-55px}
+}
+</style>
+<script defer src="/mysentry-chatbot.js"></script>
 </head><body><header class="site-header" id="siteHeader" data-menu-open="false">
   <div class="header-inner">
     <a aria-label="MySentry home" class="brand" href="/">
