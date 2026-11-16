@@ -1,0 +1,20 @@
+/* Preserve the visual-editor desktop placement without applying its offsets to smaller screens. */
+.hero-phone-visual-edit {
+  height: auto;
+  max-width: 100%;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-right: 0;
+  object-fit: contain;
+}
+
+@media (min-width: 1280px) {
+  .hero-phone-visual-edit {
+    width: 451px;
+    height: 429px;
+    margin-bottom: -111px;
+    margin-left: 99px;
+    padding-right: 232px;
+    object-fit: fill;
+  }
+}

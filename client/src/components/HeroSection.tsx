@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { HeroHeading, HeroText, LabelText } from "@/components/ui/typography";
 import { cn } from "@/lib/utils";
 import { trackLeadEvent } from "@/lib/metaPixel";
+import "./HeroSection.css";
 
 interface HeroSectionProps {
   label: string;
@@ -116,7 +117,7 @@ export default function HeroSection({
                   src={phoneMockupSrc}
                   alt={phoneMockupAlt}
                   className={cn(
-                    "relative z-10 drop-shadow-2xl rounded-[2.5rem]",
+                    "hero-phone-visual-edit relative z-10 drop-shadow-2xl rounded-[2.5rem]",
                     showPhoneMockupOnMobile
                       ? "w-[240px] sm:w-[300px] md:w-[360px] lg:w-[420px] xl:w-[480px] -mb-8 lg:-mb-[145px]"
                       : "w-[350px] md:w-[400px] lg:w-[420px] xl:w-[480px] -mb-[145px]"
