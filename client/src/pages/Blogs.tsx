@@ -70,7 +70,8 @@ const Blogs = () => {
         <div className="flex flex-wrap gap-8 border-b border-gray-200 pb-4 mb-16">
           <button
             onClick={() => setCategoryId(null)}
-            className={`text-sm font-medium uppercase tracking-widest transition-all duration-300 pb-4 -mb-4 border-b-2 ${
+            aria-pressed={categoryId === null}
+            className={`text-sm font-medium uppercase tracking-widest transition-all duration-300 pb-4 -mb-4 border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#005f91] focus-visible:ring-offset-2 ${
               categoryId === null
                 ? 'text-[#1a1a1a] border-[#1a1a1a]' 
                 : 'text-gray-400 border-transparent hover:text-[#1a1a1a]'
@@ -82,7 +83,8 @@ const Blogs = () => {
             <button
               key={cat.id}
               onClick={() => setCategoryId(cat.id)}
-              className={`text-sm font-medium uppercase tracking-widest transition-all duration-300 pb-4 -mb-4 border-b-2 ${
+              aria-pressed={categoryId === cat.id}
+              className={`text-sm font-medium uppercase tracking-widest transition-all duration-300 pb-4 -mb-4 border-b-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#005f91] focus-visible:ring-offset-2 ${
                 categoryId === cat.id
                   ? 'text-[#1a1a1a] border-[#1a1a1a]' 
                   : 'text-gray-400 border-transparent hover:text-[#1a1a1a]'
@@ -95,8 +97,8 @@ const Blogs = () => {
 
         {/* Loading State */}
         {isLoading && (
-          <div className="flex items-center justify-center py-20">
-            <Loader2 className="w-8 h-8 animate-spin text-[#386758]" />
+          <div role="status" aria-label="Loading articles" className="flex items-center justify-center py-20">
+            <Loader2 aria-hidden="true" className="w-8 h-8 animate-spin text-[#386758]" />
           </div>
         )}
         {postsQuery.isError && !useFallbackPosts && (

@@ -176,18 +176,18 @@ export default function SEOPageTemplate({
 
               {/* CTAs  -  immediately after subtitle, fully visible above fold */}
               <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap">
-                <a href={primaryCta.href} className="w-full sm:w-auto">
-                  <Button size="lg" className="h-auto min-h-14 w-full whitespace-normal rounded-full bg-[#6AD990] px-5 py-4 text-center text-base font-bold uppercase tracking-wider text-[#1a1a1a] hover:bg-[#5bc97e] sm:w-auto sm:px-8 sm:text-lg">
+                <Button asChild size="lg" className="h-auto min-h-14 w-full whitespace-normal rounded-full bg-[#6AD990] px-5 py-4 text-center text-base font-bold uppercase tracking-wider text-[#1a1a1a] hover:bg-[#5bc97e] sm:w-auto sm:px-8 sm:text-lg">
+                  <a href={primaryCta.href}>
                     {primaryCta.text}
                     <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </a>
+                  </a>
+                </Button>
                 {secondaryCta && (
-                  <Link href={secondaryCta.href} className="w-full sm:w-auto">
-                    <Button variant="outline" size="lg" className="h-auto min-h-14 w-full whitespace-normal rounded-full border-2 border-[#1a1a1a] px-5 py-4 text-center text-base font-bold uppercase tracking-wider text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white sm:w-auto sm:px-8 sm:text-lg">
+                  <Button asChild variant="outline" size="lg" className="h-auto min-h-14 w-full whitespace-normal rounded-full border-2 border-[#1a1a1a] px-5 py-4 text-center text-base font-bold uppercase tracking-wider text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white sm:w-auto sm:px-8 sm:text-lg">
+                    <Link href={secondaryCta.href}>
                       {secondaryCta.text}
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 )}
               </div>
             </div>
