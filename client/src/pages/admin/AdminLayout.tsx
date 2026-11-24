@@ -7,6 +7,7 @@ import BlogEditor from "./BlogEditor";
 import AIWizard from "./AIWizard";
 import CategoryManager from "./CategoryManager";
 import SubmissionList from "./SubmissionList";
+import DownloadActivity from "./DownloadActivity";
 import { Button } from "@/components/ui/button";
 import {
   FileText,
@@ -17,6 +18,7 @@ import {
   Menu,
   X,
   ChevronRight,
+  BarChart3,
 } from "lucide-react";
 
 export default function AdminLayout() {
@@ -48,7 +50,19 @@ export default function AdminLayout() {
   const isWizard = location === "/wizard";
   const isCategories = location === "/categories";
   const isSubmissions = location === "/submissions";
+  const isDownloadActivity = location === "/download-activity";
   const isList = location === "/" || location === "";
+
+  useEffect(() => {
+    if (!isDownloadActivity) return;
+    const mobile = window.matchMedia("(max-width:767px)");
+    const closeMobileSidebar = () => {
+      if (mobile.matches) setSidebarOpen(false);
+    };
+    closeMobileSidebar();
+    mobile.addEventListener("change", closeMobileSidebar);
+    return () => mobile.removeEventListener("change", closeMobileSidebar);
+  }, [isDownloadActivity]);
 
   if (isLoading) {
     return (
@@ -94,6 +108,12 @@ export default function AdminLayout() {
       label: "Blog Posts",
       icon: FileText,
       active: isList,
+    },
+    {
+      href: "~/admin/blog/download-activity",
+      label: "Download Activity",
+      icon: BarChart3,
+      active: isDownloadActivity,
     },
     {
       href: submissionsHref,
@@ -221,6 +241,7 @@ export default function AdminLayout() {
         <div className="flex-1 p-6 overflow-auto">
           {isList && <BlogList token={token} />}
           {isSubmissions && <SubmissionList />}
+          {isDownloadActivity && <DownloadActivity />}
           {isCategories && <CategoryManager token={token} />}
         </div>
       </div>

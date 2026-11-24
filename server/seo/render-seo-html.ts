@@ -165,7 +165,7 @@ function buildSchemas(meta: ResolvedMeta, canonicalUrl: string): Record<string, 
 
 function buildFallback(meta: ResolvedMeta): string {
   if (meta.canonicalPath === "/download") {
-    const stores = DOWNLOAD_OPTIONS.map(option => `<div class="download-card"><h2>${escapeHtml(option.heading)}</h2><a class="download-store" href="${escapeHtml(SMART_DOWNLOAD_STORES[option.key])}"><img src="${option.image}" alt="" width="154" height="46"><span class="download-link">${escapeHtml(option.label)}<span aria-hidden="true">↗</span></span></a></div>`).join("");
+    const stores = DOWNLOAD_OPTIONS.map(option => `<div class="download-card"><h2>${escapeHtml(option.heading)}</h2><a class="download-store" data-download-store="${option.key}" href="${escapeHtml(SMART_DOWNLOAD_STORES[option.key])}"><img src="${option.image}" alt="" width="154" height="46"><span class="download-link">${escapeHtml(option.label)}<span aria-hidden="true">↗</span></span></a></div>`).join("");
     return `<main id="ssr-content" data-ssr-fallback="true" class="smart-download"><div class="smart-download-inner"><p class="download-eyebrow">Live Safe. Stay Healthy.</p><h1>Download MySentry.</h1><p class="download-intro">Choose the store for your device. For Ring, open the MySentry listing in the Ring Appstore.</p><div class="download-grid">${stores}</div><p class="download-note">You can share this same download link with someone using a different device.</p></div></main>`;
   }
   const heading = escapeHtml(meta.heading);

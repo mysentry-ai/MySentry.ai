@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import SEO from "@/components/SEO";
 import { ROUTE_META } from "@shared/seo/route-meta";
 import { trackDownloadStoreClick } from "@/lib/downloadTracking";
+import { downloadActivityAllowed, initializeDownloadActivity } from "@shared/download-activity-browser";
 import {
   attemptDownloadRedirect,
   detectDownloadPlatform,
@@ -27,8 +28,23 @@ export default function Download() {
 
   useLayoutEffect(() => {
     window.__mysentrySmartDownload ??= {};
-    attemptDownloadRedirect(navigator as DownloadDevice, window.location, window.__mysentrySmartDownload);
-  }, []);
+    const start = () => {
+      initializeDownloadActivity(platform, platform !== "other" && !window.__mysentrySmartDownload?.attempted);
+      attemptDownloadRedirect(navigator as DownloadDevice, window.location, window.__mysentrySmartDownload!);
+    };
+    if ((document as Document & { prerendering?: boolean }).prerendering) {
+      document.addEventListener("prerenderingchange", start, { once: true });
+    } else {
+      start();
+    }
+    return () => {
+      document.removeEventListener("prerenderingchange", start);
+      if (window.location.pathname.replace(/\/+$/, "") !== "/download") {
+        delete window.__mysentryDownloadActivity;
+        delete window.__mysentrySmartDownload;
+      }
+    };
+  }, [platform]);
 
   const primary = platform === "other" ? null : DOWNLOAD_OPTIONS.find(option => option.key === platform);
 
@@ -44,7 +60,7 @@ export default function Download() {
           {primary && (
             <div className="download-fallback" role="status">
               <p>If the store did not open, use the button below.</p>
-              <a className="download-primary" href={SMART_DOWNLOAD_STORES[primary.key]}>
+              <a className="download-primary" data-download-store={primary.key} href={SMART_DOWNLOAD_STORES[primary.key]}>
                 {primary.label}<span aria-hidden="true">↗</span>
               </a>
             </div>
@@ -55,12 +71,13 @@ export default function Download() {
                 <h2>{option.heading}</h2>
                 <a
                   className="download-store"
+                  data-download-store={option.key}
                   href={SMART_DOWNLOAD_STORES[option.key]}
                   onClick={() => {
-                    if (platform === "other") trackDownloadStoreClick(option.key);
+                    if (platform === "other" && downloadActivityAllowed()) trackDownloadStoreClick(option.key);
                   }}
                   onAuxClick={event => {
-                    if (platform === "other" && event.button === 1) trackDownloadStoreClick(option.key);
+                    if (platform === "other" && event.button === 1 && downloadActivityAllowed()) trackDownloadStoreClick(option.key);
                   }}
                 >
                   <PerformanceImage src={option.image} alt="" width="154" height="46" />
