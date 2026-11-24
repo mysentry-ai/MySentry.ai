@@ -56,6 +56,9 @@ COPY --from=builder /app/dist ./dist
 # Copy drizzle schema/migrations (needed at runtime for db:push if ever run)
 COPY --from=builder /app/drizzle ./drizzle
 
+# Copy the Jenkins workspace runtime configuration for the non-root server.
+COPY --chown=appuser:appgroup .env ./.env
+
 # Switch to non-root user
 USER appuser
 
