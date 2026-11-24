@@ -10,6 +10,7 @@ const style = html.split('<style id="homepage-mobile-section-repair">')[1]?.spli
 describe("focused homepage mobile repair", () => {
   it("retains every original byte outside the new scoped style and widget tag", () => {
     const original = html.replace(/<style id="homepage-mobile-section-repair">[\s\S]*?<\/style>\n/, "")
+      .replace('<meta name="facebook-domain-verification" content="zybf8i6ichc8jxbdnecqe9szzc017j" />\n', "")
       .replace('<script defer src="/mysentry-chatbot.js"></script>\n', "")
       .replace(/<script id="homepage-deferred-images">[\s\S]*?<\/script>/, () => `<script id="homepage-deferred-images">${before.loader}</script>`);
     expect(createHash("sha256").update(original).digest("hex")).toBe("9df3e83c4644769ae1669e125a1ebf41dcc2e79e328fdf824e009e410d776e53");
